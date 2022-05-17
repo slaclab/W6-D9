@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the slac_core module.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site.
+ */
+function slac_core_install() {
+  // Assign user 1 the "administrator" role. This typically happens in the
+  // standard profile installer, but we're using minimal so we can install
+  // from existing configuration.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+}

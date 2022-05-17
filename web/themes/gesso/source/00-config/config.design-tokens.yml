@@ -3,44 +3,85 @@
 gesso:
   palette:
     brand:
-      blue:
-        base: '#0071BC'
-        light: '#4773aa'
-        light-1: '#8ba6ca'
-        light-2: '#dce4ef'
-        dark: '#205493'
-        dark-1: '#112E51'
-      ocean-blue:
-        base: '#1dc2ae'
-        light: '#29e1cb'
-        light-1: '#7efbe1'
-        dark: '#008480'
-        dark-1: '#0b4b3f'
+      cardinal:
+        base: '#8c1515'
+        light: '#b83a4b'
+        dark: '#820000'
+      digital-red:
+        base: '#b1040e'
+        light: '#e50808'
+      lagunita:
+        base: '#007c92'
+        light: '#1aa4bc'
+        dark: '#006983'
+      sky:
+        base: '#4298b5'
+        slac: '#0099cc'
+        light: '#67afd2'
+        dark: '#016895'
+      stormy:
+        dark: '#013948'
+      palo-verde:
+        base: '#279989'
+        light: '#59b3a9'
+        dark: '#017e7c'
+      palo-alto:
+        base: '#175e54'
+        light: '#2d716f'
+        dark: '#014240'
+      teal:
+        base: '#00505c'
+      bay:
+        base: '#6fa287'
+        light: '#8ab8a7'
+        light-1: '#c9ded6'
+        dark: '#4a7865'
+      sage:
+        light: '#c7d1c5'
+      lime:
+        base: '#8bc751'
+      illuminating:
+        base: '#fedd5c'
+        light: '#ffe781'
+        dark: '#fec51d'
+      poppy:
+        base: '#e98300'
+        light: '#f9a44a'
+        dark: '#d1660f'
+      spirited:
+        base: '#e04f39'
+        light: '#f4795b'
+        dark: '#c74632'
+      stone:
+        base: '#928b81'
+        light: '#d4d1d1'
+        dark: '#544948'
+      clay:
+        base: '#5f574f'
+      fog:
+        base: '#dad7cb'
+        light: '#f4f4f4'
+        dark: '#b6b1a9'
+      purple:
+        base: '#53284f'
+        light: '#665264'
+        dark: '#3d1e3a'
+      lavender:
+        base: '#765e99'
     grayscale:
       white: '#ffffff'
-      gray-1: '#f1f1f1'
-      gray-2: '#e6e6e6'
-      gray-3: '#adadad'
-      gray-4: '#757575'
-      gray-5: '#5c5c5c'
-      gray-6: '#454545'
-      gray-7: '#1b1b1b'
+      gray-1: '#eaeaea'
+      gray-2: '#d5d5d4'
+      gray-3: '#c0c0bf'
+      gray-4: '#ababa9'
+      gray-5: '#979694'
+      gray-6: '#767674'
+      gray-7: '#6d6c69'
+      gray-8: '#585754'
+      gray-9: '#43423e'
+      cool-gray: '#53565a'
+      stanford-black: '#2e2d29'
       black: '#000000'
-    other:
-      yellow:
-        base: '#fad980'
-        light: '#fff1d2'
-      yellow-neon:
-        base: '#ff0'
-      green:
-        base: '#94bfa2'
-        light: '#e7f4e4'
-      red:
-        base: '#e31c3d'
-        light: '#e59393'
-        light-1: '#f9dede'
-        dark: '#cd2026'
-        dark-1: '#981b1e'
   box-shadow:
     0: none
     1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
@@ -63,54 +104,55 @@ gesso:
     widescreen: 1400px
   colors:
     text:
-      primary: grayscale.gray-7
-      secondary: grayscale.gray-5
-      on-light: grayscale.gray-7
+      primary: grayscale.stanford-black
+      secondary: grayscale.gray-6
+      on-light: grayscale.stanford-black
       on-dark: grayscale.white
-      link: brand.blue.base
-      link-hover: brand.blue.dark
-      link-active: brand.blue.dark
-      link-visited: brand.blue.dark
+      link: grayscale.stanford-black
+      link-hover: brand.digital-red.base
+      link-active: brand.digital-red.base
+      link-visited: grayscale.stanford-black
+      link-underline: brand.digital-red.base
     background:
       site: grayscale.white
     button:
       primary:
-        background: brand.blue.base
-        background-hover: brand.blue.dark
-        background-active: brand.blue.dark-1
-        border: brand.blue.base
-        border-hover: brand.blue.dark
+        background: grayscale.black
+        background-hover: grayscale.white
+        background-active: grayscale.white
+        border: grayscale.black
+        border-hover: grayscale.black
         text: grayscale.white
-        text-hover: grayscale.white
-        text-active: grayscale.white
+        text-hover: grayscale.black
+        text-active: grayscale.black
       secondary:
-        background: brand.ocean-blue.light-1
-        background-hover: brand.ocean-blue.light
-        background-active: brand.ocean-blue.base
-        border: brand.ocean-blue.light-1
-        border-hover: brand.ocean-blue.light
-        text: brand.ocean-blue.dark-1
-        text-hover: brand.ocean-blue.dark-1
-        text-active: grayscale.gray-7
-      base:
-        background: grayscale.gray-4
-        background-hover: grayscale.gray-5
-        background-active: grayscale.gray-6
-        border: grayscale.gray-4
-        border-hover: grayscale.gray-5
-        text: grayscale.white
+        background: grayscale.white
+        background-hover: grayscale.black
+        background-active: grayscale.black
+        border: grayscale.black
+        border-hover: grayscale.black
+        text: grayscale.black
         text-hover: grayscale.white
         text-active: grayscale.white
+      base:
+        background: grayscale.black
+        background-hover: grayscale.white
+        background-active: grayscale.white
+        border: grayscale.black
+        border-hover: grayscale.black
+        text: grayscale.white
+        text-hover: grayscale.black
+        text-active: grayscale.black
       disabled:
         background: grayscale.gray-1
         border: grayscale.gray-1
         text: grayscale.gray-3
       danger:
-        background: other.red.base
-        background-hover: other.red.dark
-        background-active: other.red.dark-1
-        border: other.red.base
-        border-hover: other.red.dark
+        background: brand.digital-red.light
+        background-hover: brand.digital-red.base
+        background-active: brand.digital-red.base
+        border: brand.digital-red.base
+        border-hover: brand.digital-red.base
         text: grayscale.white
         text-hover: grayscale.white
         text-active: grayscale.white
@@ -122,7 +164,7 @@ gesso:
     form:
       background: grayscale.gray-1
       background-active: grayscale.white
-      background-checked: brand.blue.base
+      background-checked: brand.cardinal.base
       background-unchecked: grayscale.white
       border: grayscale.gray-2
       border-dark: grayscale.gray-5
@@ -130,10 +172,10 @@ gesso:
       thumb: grayscale.gray-5
       track: grayscale.gray-3
     mark:
-      background: other.yellow-neon.base
+      background: brand.illuminating.base
       text: grayscale.gray-7
     selection:
-      background: brand.blue.base
+      background: brand.cardinal.base
       text: grayscale.white
     table:
       border: grayscale.gray-5
@@ -154,24 +196,27 @@ gesso:
         text-light: grayscale.gray-3
         text-dark: grayscale.gray-5
         text-darker: grayscale.gray-7
-        accent: brand.blue.base
-        accent-dark: brand.blue.dark-1
-        accent-light: brand.blue.light
-        focus: brand.blue.light
+        accent: brand.cardinal.base
+        accent-dark: brand.stormy.dark
+        accent-light: brand.cardinal.light
+        focus: brand.digital-red.base
       error:
-        background: other.red.light-1
-        border: other.red.light
+        background: brand.digital-red.light
+        border: brand.digital-red.base
       success:
-        background: other.green.light
-        border: other.green.base
+        background: brand.bay.light-1
+        border: brand.bay.dark
       warning:
-        background: other.yellow.light
-        border: other.yellow.base
+        background: brand.illuminating.light
+        border: brand.illuminating.dark
   typography:
     font-family:
       primary:
         name: Primary
-        stack: '"Source Sans Pro", Arial, sans-serif'
+        stack: '"Lato", Arial, sans-serif'
+      secondary:
+        name: Secondary
+        stack: '"Merriweather", Georgia, serif'
       system:
         name: System
         stack: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Fira Sans", Droid Sans, sans-serif'
@@ -180,92 +225,109 @@ gesso:
         stack: 'Menlo, Consolas, "Lucida Console", "Liberation Mono", "Courier New", monospace, sans-serif'
     base-font-size: 16px
     font-size:
-      1: 12px
-      2: 14px
-      3: 16px
-      4: 20px
-      5: 25px
-      6: 31.25px
-      7: 39.06625px
-      8: 48.8281px
-      9: 61.0352px
-      10: 76.2939px
+      1: 14px
+      2: 16px
+      3: 18px
+      4: 22px
+      5: 26px
+      6: 30px
+      7: 38px
+      8: 40px
+      9: 42px
+      10: 50px
+      11: 62px
     responsive-font-size-min-width: 360px
     responsive-font-size-max-width: 1600px
     responsive-font-size:
       1:
-        min: 12px
-        val: auto
-        max: 12px
-      2:
         min: 14px
         val: auto
         max: 14px
-      3:
+      2:
         min: 16px
         val: auto
         max: 16px
-      4:
+      3:
         min: 18px
         val: auto
-        max: 20px
+        max: 18px
+      4:
+        min: 20px
+        val: auto
+        max: 24px
       5:
-        min: 20.25px
+        min: 24px
         val: auto
-        max: 25px
+        max: 26px
       6:
-        min: 22.7813px
+        min: 26px
         val: auto
-        max: 31.25px
+        max: 30px
       7:
-        min: 25.6289px
+        min: 30px
         val: auto
-        max: 39.0625px
+        max: 38px
       8:
-        min: 28.8325px
+        min: 34px
         val: auto
-        max: 48.8281px
+        max: 40px
       9:
-        min: 32.4366px
+        min: 18px
         val: auto
-        max: 61.0352px
+        max: 42px
       10:
-        min: 36.4912px
+        min: 28px
         val: auto
-        max: 76.2939px
+        max: 42px
+      11:
+        min: 36px
+        val: auto
+        max: 42px
+      12:
+        min: 42px
+        val: auto
+        max: 48px
+      13:
+        min: 42px
+        val: auto
+        max: 50px
+      14:
+        min: 50px
+        val: auto
+        max: 62px
     font-weight:
       light: 300
       regular: 400
-      semibold: 600
       bold: 700
+      black: 900
     line-height:
-      tight: 1.1
-      base: 1.45
-      loose: 1.7
+      tight: 1.2
+      base: 1.4
+      loose: 1.8
     display:
       display:
         color: text.primary
         font-family: primary.stack
-        font-weight: bold
+        font-weight: black
         line-height: tight
-        responsive-font-size: 10
+        responsive-font-size: 12
       h1:
         color: text.primary
         font-family: primary.stack
-        font-weight: bold
-        line-height: tight
-        responsive-font-size: 8
+        font-weight: black
+        line-height: base
+        responsive-font-size: 11
       h2:
         color: text.primary
         font-family: primary.stack
         font-weight: bold
-        line-height: tight
-        responsive-font-size: 7
+        line-height: base
+        responsive-font-size: 11
       h3:
         color: text.primary
         font-family: primary.stack
         font-weight: bold
-        line-height: tight
+        line-height: base
         responsive-font-size: 6
       h4:
         color: text.primary
@@ -277,42 +339,39 @@ gesso:
         color: text.primary
         font-family: primary.stack
         font-weight: bold
-        line-height: base
-        responsive-font-size: 3
+        line-height: tight
+        responsive-font-size: 4
       h6:
         color: text.primary
         font-family: primary.stack
-        font-weight: semibold
-        letter-spacing: -0.04em
-        line-height: loose
-        text-transform: uppercase
-        responsive-font-size: 2
+        font-weight: bold
+        line-height: base
+        responsive-font-size: 3
       blockquote:
-        color: text.link
-        font-family: primary.stack
+        color: text.primary
+        font-family: secondary.stack
         font-size: 5
-        font-weight: regular
+        font-weight: bold
         line-height: base
       body:
         color: text.primary
-        font-family: primary.stack
+        font-family: secondary.stack
         font-size: 3
         font-weight: regular
-        line-height: base
+        line-height: loose
       body-large:
         color: text.primary
         font-family: primary.stack
         font-size: 4
         font-weight: regular
-        line-height: base
+        line-height: loose
       cite:
-        color: text.secondary
+        color: text.primary
         font-family: primary.stack
-        font-size: 2
+        font-size: 3
         font-style: normal
-        font-weight: semibold
-        letter-spacing: .02em
-        line-height: tight
+        font-weight: regular
+        line-height: base
   transitions:
     ease:
       ease-in-out: 'cubic-bezier(0.4, 0, 0.2, 1)'

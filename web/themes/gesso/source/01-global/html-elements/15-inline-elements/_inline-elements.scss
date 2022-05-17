@@ -2,11 +2,15 @@
 
 @use '00-config' as *;
 
-a {
+:where(a) {
   @include focus();
   background-color: transparent;
   color: gesso-color(text, link);
-  -webkit-text-decoration-skip: objects;
+  text-decoration-color: gesso-color(text, link-underline);
+  text-decoration-skip: objects;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 1px;
+  text-underline-position: under;
   transition-duration: gesso-duration(short);
   transition-property: background-color, border-color, color, outline-color;
   transition-timing-function: gesso-easing(ease-in);

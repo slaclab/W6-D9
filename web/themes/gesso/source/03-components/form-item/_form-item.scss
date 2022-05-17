@@ -24,7 +24,7 @@ $form-text-size: gesso-base-font-size() !default;
 .c-form-item__label {
   @extend %disabled-form-styles;
   display: block;
-  font-weight: gesso-font-weight(semibold);
+  font-weight: gesso-font-weight(bold);
 }
 
 .c-form-item__element {

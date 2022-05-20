@@ -1,0 +1,13 @@
+{% set classes = [
+  'c-tagline',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <h2 class="c-tagline__heading">
+    {{ tagline1 }}<br>
+    {{ tagline2 }}<br>
+    {{ tagline3 }}
+  </h2>
+  {{ tagline_content }}
+</div>

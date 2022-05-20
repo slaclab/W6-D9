@@ -1,0 +1,48 @@
+{% set classes = [
+  'l-subfooter',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+
+{% set constrain_classes = [
+  'l-constrain',
+  constrain_modifier_classes ? constrain_modifier_classes : '',
+]|join(' ')|trim %}
+
+<footer {{ add_attributes({ class: classes }) }}>
+  {% if has_constrain %}
+  <div {{ add_attributes({ 'class': constrain_classes }) }}>
+  {% endif %}
+    <div class="l-subfooter__brand">
+    {% block subfooter_brand %}
+      {% include '@components/logo/logo.twig' with {
+        logo: 'images/SLAC_Logo_W.svg',
+        url: '/',
+        title: 'Home'
+      } %}
+    {% endblock %}
+    </div>
+    <div class="l-subfooter__content">
+    {% block subfooter_content %}
+      {{ subfooter_menu }}
+      <p>&copy; 2022 SLAC National Accelerator Laboratory is operated by Stanford University for the U.S. Department of Energy Office of Science.</p>
+    {% endblock %}
+    </div>
+    <div class="l-subfooter__logos">
+    {% block subfooter_logos %}
+      {% include '@components/logo/logo.twig' with {
+        logo: 'images/StanfordUniversity.svg',
+        url: 'https://www.stanford.edu/',
+        title: 'Stanford University'
+      } %}
+      {% include '@components/logo/logo.twig' with {
+        logo: 'images/DOE.svg',
+        url: 'https://science.energy.gov/',
+        title: 'U.S. Department of Energy'
+      } %}
+    {% endblock %}
+    </div>
+  {% if has_constrain %}
+  </div>
+  {% endif %}
+</footer>

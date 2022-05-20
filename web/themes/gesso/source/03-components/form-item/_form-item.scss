@@ -13,6 +13,10 @@ $form-text-size: gesso-base-font-size() !default;
 
 .c-form-item {
   margin: 0 0 rem(gesso-spacing(3));
+
+  .is-inline > & {
+    margin-bottom: 0;
+  }
 }
 
 %disabled-form-styles {
@@ -90,7 +94,7 @@ $form-text-size: gesso-base-font-size() !default;
   appearance: none;
   background-color: $form-background-color;
   border: 1px solid $form-border-color;
-  border-radius: 0;
+  border-radius: 4px;
   display: inline-block;
   font-size: rem($form-text-size);
   height: rem(44px);
@@ -121,6 +125,10 @@ $form-text-size: gesso-base-font-size() !default;
 
   .is-full-width > & {
     width: 100%;
+  }
+
+  .is-inline & {
+    margin: 0;
   }
 }
 

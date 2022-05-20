@@ -91,7 +91,7 @@ gesso:
     5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)
   constrains:
     sm: 800px
-    md: 1440px
+    md: 1240px
     lg: 2200px
   breakpoints:
     mobile: 320px
@@ -115,6 +115,7 @@ gesso:
       link-underline: brand.digital-red.base
     background:
       site: grayscale.white
+      subfooter: brand.cardinal.base
     button:
       primary:
         background: grayscale.black
@@ -127,10 +128,10 @@ gesso:
         text-active: grayscale.black
       secondary:
         background: grayscale.white
-        background-hover: grayscale.black
-        background-active: grayscale.black
-        border: grayscale.black
-        border-hover: grayscale.black
+        background-hover: 'transparent'
+        background-active: 'transparent'
+        border: grayscale.white
+        border-hover: grayscale.white
         text: grayscale.black
         text-hover: grayscale.white
         text-active: grayscale.white
@@ -191,7 +192,7 @@ gesso:
         background-lighter: grayscale.gray-1
         border: grayscale.gray-3
         border-dark: grayscale.gray-6
-        border-light: grayscale.gray-1
+        border-light: brand.sky.base
         text-lighter: grayscale.white
         text-light: grayscale.gray-3
         text-dark: grayscale.gray-5
@@ -199,7 +200,7 @@ gesso:
         accent: brand.cardinal.base
         accent-dark: brand.stormy.dark
         accent-light: brand.cardinal.light
-        focus: brand.digital-red.base
+        focus: brand.lagunita.light
       error:
         background: brand.digital-red.light
         border: brand.digital-red.base
@@ -306,43 +307,36 @@ gesso:
       loose: 1.8
     display:
       display:
-        color: text.primary
         font-family: primary.stack
         font-weight: black
         line-height: tight
         responsive-font-size: 12
       h1:
-        color: text.primary
         font-family: primary.stack
         font-weight: black
         line-height: base
         responsive-font-size: 11
       h2:
-        color: text.primary
         font-family: primary.stack
         font-weight: bold
         line-height: base
         responsive-font-size: 11
       h3:
-        color: text.primary
         font-family: primary.stack
         font-weight: bold
         line-height: base
         responsive-font-size: 6
       h4:
-        color: text.primary
         font-family: primary.stack
         font-weight: bold
         line-height: base
         responsive-font-size: 5
       h5:
-        color: text.primary
         font-family: primary.stack
         font-weight: bold
         line-height: tight
         responsive-font-size: 4
       h6:
-        color: text.primary
         font-family: primary.stack
         font-weight: bold
         line-height: base
@@ -354,13 +348,11 @@ gesso:
         font-weight: bold
         line-height: base
       body:
-        color: text.primary
         font-family: secondary.stack
         font-size: 3
         font-weight: regular
         line-height: loose
       body-large:
-        color: text.primary
         font-family: primary.stack
         font-size: 4
         font-weight: regular

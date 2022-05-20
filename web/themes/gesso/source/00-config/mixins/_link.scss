@@ -1,4 +1,7 @@
 // Mixins: Link
+@use '../functions/unit-convert' as *;
+@use './svg-background' as *;
+@use '../functions/gesso' as *;
 
 @mixin link($link, $hover: $link, $active: $hover, $visit: $link) {
   color: $link;
@@ -14,5 +17,36 @@
 
   &:active {
     color: $active;
+  }
+}
+
+@mixin arrow-link($color) {
+  &:not(.external-link) {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+
+    &::after {
+      @include svg-background(arrow-#{$color});
+      content: '';
+      display: inline-block;
+      height: rem(12px);
+      margin-left: rem(gesso-spacing(0.5));
+      margin-top: -2px;
+      transition: transform gesso-duration(shortest) ease-out;
+      vertical-align: middle;
+      width: rem(16px);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      @media (prefers-reduced-motion: no-preference) {
+        &::after {
+          transform: translateX(rem(6px));
+        }
+      }
+    }
   }
 }

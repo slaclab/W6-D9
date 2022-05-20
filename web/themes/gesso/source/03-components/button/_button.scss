@@ -4,7 +4,13 @@
 
 .c-button,
 %c-button {
-  @include button();
+  @include button($border-width: 1px, $border-radius: 4px);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    gesso-color(button, primary, background-hover) 50%,
+    gesso-color(button, primary, background) 50%
+  );
   margin-bottom: rem(gesso-spacing(1));
 
   & + & {
@@ -17,11 +23,16 @@
       }
     }
   }
+
+  .is-inline > & {
+    margin-bottom: 0;
+  }
 }
 
 // This button class is used for Drupal tabs.
 .c-button--base {
   background-color: gesso-color(button, base, background);
+  background-image: none;
   color: gesso-color(button, base, text);
 
   &:hover,
@@ -40,6 +51,7 @@
 // Drupal outputs this class on buttons that can delete content.
 .c-button--danger {
   background-color: gesso-color(button, danger, background);
+  background-image: none;
   color: gesso-color(button, danger, text);
 
   &:hover,
@@ -57,12 +69,17 @@
 
 // This custom button class, included as an example, is not output by Drupal by default.
 .c-button--secondary {
-  background-color: gesso-color(button, secondary, background);
+  background-image: linear-gradient(
+    to right,
+    gesso-color(button, secondary, background-hover) 50%,
+    gesso-color(button, secondary, background) 50%
+  );
+  border-color: gesso-color(button, secondary, border);
   color: gesso-color(button, secondary, text);
 
   &:hover,
   &:focus {
-    background-color: gesso-color(button, secondary, background-hover);
+    border-color: gesso-color(button, secondary, border-hover);
     color: gesso-color(button, secondary, text-hover);
   }
 
@@ -70,6 +87,49 @@
   &.is-active {
     background-color: gesso-color(button, secondary, background-active);
     color: gesso-color(button, secondary, text-active);
+  }
+}
+
+// This custom button class, included as an example, is not output by Drupal by default.
+.c-button--outline {
+  background-image: linear-gradient(
+    to right,
+    gesso-color(button, primary, background) 50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  border-color: gesso-color(button, primary, border);
+  color: gesso-color(button, primary, text-hover);
+
+  &:hover,
+  &:focus {
+    color: gesso-color(button, primary, text);
+  }
+
+  &:active,
+  &.is-active {
+    color: gesso-color(button, primary, text);
+  }
+}
+
+// This custom button class, included as an example, is not output by Drupal by default.
+.c-button--outline-secondary {
+  background-image: linear-gradient(
+    to right,
+    gesso-color(button, secondary, background) 50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  border-color: gesso-color(button, secondary, border);
+  color: gesso-color(button, secondary, text-hover);
+
+  &:hover,
+  &:focus {
+    border-color: gesso-color(button, secondary, border-hover);
+    color: gesso-color(button, secondary, text);
+  }
+
+  &:active,
+  &.is-active {
+    color: gesso-color(button, secondary, text);
   }
 }
 

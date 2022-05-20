@@ -2,11 +2,11 @@
 menu_name: 'footer-utility'
 items:
   - title: 'Staff Portal'
-    url: '#0'
+    url: 'https://intranet.slac.stanford.edu/'
     original_link:
       options:
         attributes:
-          class: 'is-locked'
+          class: ''
     in_active_trail: false
   - title: 'A-Z Index'
     url: '#0'

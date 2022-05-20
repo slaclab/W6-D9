@@ -29,7 +29,11 @@
     &:hover,
     &:focus,
     &:active {
-      color: gesso-color(ui, generic, border-light);
+      text-decoration: underline;
+    }
+
+    .c-icon {
+      color: inherit;
     }
   }
 

@@ -21,26 +21,31 @@
 }
 
 @mixin arrow-link($color) {
-  display: inline-block;
-  text-decoration: none;
-  vertical-align: middle;
-
-  &::after {
-    @include svg-background(arrow-#{$color});
-    content: '';
+  &:not(.external-link) {
     display: inline-block;
-    height: rem(12px);
-    margin-left: rem(gesso-spacing(0.5));
-    margin-top: -2px;
-    transition: transform gesso-duration(shortest) ease-out;
+    text-decoration: none;
     vertical-align: middle;
-    width: rem(16px);
-  }
 
-  &:hover {
-    @media (prefers-reduced-motion: no-preference) {
-      &::after {
-        transform: translateX(rem(6px));
+    &::after {
+      @include svg-background(arrow-#{$color});
+      content: '';
+      display: inline-block;
+      height: rem(12px);
+      margin-left: rem(gesso-spacing(0.5));
+      margin-top: -2px;
+      transition: transform gesso-duration(shortest) ease-out;
+      vertical-align: middle;
+      width: rem(16px);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      @media (prefers-reduced-motion: no-preference) {
+        &::after {
+          transform: translateX(rem(6px));
+        }
       }
     }
   }

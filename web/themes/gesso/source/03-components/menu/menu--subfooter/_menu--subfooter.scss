@@ -9,6 +9,7 @@
     $inline-on-mobile: false,
     $wrap: nowrap
   );
+  @include responsive-font-size(1);
   margin-bottom: rem(gesso-spacing(2));
 
   .c-menu__link {
@@ -20,6 +21,10 @@
     &:active {
       color: inherit;
       text-decoration: underline;
+    }
+
+    .c-icon {
+      color: inherit;
     }
   }
 }

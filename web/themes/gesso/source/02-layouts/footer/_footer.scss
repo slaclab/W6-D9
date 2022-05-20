@@ -37,6 +37,10 @@
 }
 
 .l-footer > .l-constrain {
+  display: grid;
+  gap: rem(gesso-spacing(3));
+  grid-template-columns: 100%;
+
   @include breakpoint(gesso-breakpoint(tablet)) {
     display: grid;
     gap: rem(gesso-spacing(8));
@@ -67,6 +71,14 @@
     max-width: rem(280px);
   }
 
+  input {
+    width: 100%;
+  }
+
+  @media (min-width: 20.625em) {
+    width: auto;
+  }
+
   @include breakpoint(gesso-breakpoint(desktop)) {
     input {
       width: rem(280px);
@@ -75,6 +87,8 @@
 }
 
 .l-footer__signup-form.is-inline {
-  display: flex;
-  gap: rem(gesso-spacing(1));
+  @media (min-width: 20.625em) {
+    display: flex;
+    gap: rem(gesso-spacing(1));
+  }
 }

@@ -4,37 +4,27 @@
 @use 'sass:math';
 @use '00-config' as *;
 
-$mobile-menu-bg-color: rgba(
-  gesso-color(ui, generic, background-light),
-  0.98
-) !default;
-$mobile-menu-link-color: gesso-color(ui, generic, text-dark) !default;
-$mobile-menu-link-hover-color: gesso-color(ui, generic, text-darker) !default;
-$mobile-menu-submenu-fallback-bg-color: gesso-color(
-  ui,
-  generic,
-  background-lighter
-) !default;
-$mobile-menu-submenu-bg-color: rgba(
-  gesso-color(ui, generic, background-lighter),
-  0.98
-) !default;
-$mobile-menu-submenu-link-color: gesso-color(ui, generic, text-dark) !default;
-$mobile-menu-submenu-link-hover-color: gesso-color(
-  ui,
-  generic,
-  text-darker
-) !default;
-$mobile-menu-button-height: 54px;
-$mobile-menu-button-width: 44px;
-$mobile-menu-font-size: gesso-font-size(4);
-$mobile-menu-line-height: gesso-line-height(base);
+$mobile-menu-bg-color: linear-gradient(
+  to bottom,
+  gesso-brand(sky, dark),
+  gesso-brand(palo-verde, dark)
+);
+$mobile-menu-link-color: gesso-color(text, on-dark);
+$mobile-menu-link-hover-color: gesso-color(text, on-dark);
+$mobile-menu-submenu-bg-color: transparent;
+$mobile-menu-submenu-link-color: inherit;
+$mobile-menu-submenu-link-hover-color: inherit;
+$mobile-menu-button-height: 49px;
+$mobile-menu-button-width: 49px;
+$mobile-menu-font-size: gesso-font-size(3);
+$mobile-menu-line-height: gesso-line-height(tight);
 
 .c-mobile-menu {
-  background-color: $mobile-menu-bg-color;
+  background: $mobile-menu-bg-color;
+  color: $mobile-menu-link-color;
   display: none;
+  height: 100vh;
   left: 0;
-  max-height: 100vh;
   overflow-y: auto;
   padding-bottom: 4px;
   padding-top: 0;
@@ -64,9 +54,7 @@ $mobile-menu-line-height: gesso-line-height(base);
   border: 0;
   color: $mobile-menu-link-color;
   display: block;
-  font-family: gesso-font-family(system);
   font-size: rem($mobile-menu-font-size);
-  font-weight: gesso-font-weight(bold);
   line-height: $mobile-menu-line-height;
   margin: 0;
   padding: rem(

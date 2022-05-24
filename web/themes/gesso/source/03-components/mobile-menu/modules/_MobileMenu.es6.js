@@ -42,6 +42,7 @@ class MobileMenu extends OverlayMenu {
       classPrefix,
     };
     this.toggleMenuDisplay = this.toggleMenuDisplay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   /**
@@ -301,6 +302,30 @@ class MobileMenu extends OverlayMenu {
         }
       });
     }
+  }
+
+  /**
+   * Handle mouse clicks.
+   * @param {MouseEvent} event - The click event
+   * @return void
+   */
+  handleClick(event) {
+    if (
+      !event.target.closest('.c-mobile-menu') &&
+      !event.target.matches('.c-hamburger-button')
+    ) {
+      this.closeMenu();
+    }
+  }
+
+  openMenu() {
+    super.openMenu();
+    window.addEventListener('click', this.handleClick);
+  }
+
+  closeMenu() {
+    window.removeEventListener('click', this.handleClick);
+    super.closeMenu();
   }
 
   /**

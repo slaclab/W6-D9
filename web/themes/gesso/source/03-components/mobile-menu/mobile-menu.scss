@@ -37,6 +37,23 @@ $mobile-menu-border-color: gesso-brand(sky, base);
   &.is-open {
     display: block;
   }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    left: auto;
+    right: 0;
+    width: rem(375px);
+
+    &::after {
+      background: rgba(gesso-grayscale(black), 0.7);
+      content: '';
+      height: 100vh;
+      left: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      width: calc(100vw - #{rem(375px)});
+    }
+  }
 }
 
 .c-mobile-menu__menu {

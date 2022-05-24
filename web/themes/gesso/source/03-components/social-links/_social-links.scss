@@ -5,6 +5,10 @@
 .c-social-links {
   @include list-inline;
   gap: rem(gesso-spacing(2.5));
+
+  a {
+    color: inherit;
+  }
 }
 
 .c-social-links__facebook:hover {

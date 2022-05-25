@@ -1,3 +1,5 @@
 // Layout: Site Container
 
-// .l-site-container {}
+.l-site-container {
+  padding-top: var(--gesso-header-initial-height);
+}

@@ -11,7 +11,7 @@
   text-decoration-thickness: 0.09em;
   text-underline-offset: 1px;
   text-underline-position: under;
-  transition-duration: gesso-duration(short);
+  transition-duration: gesso-duration(shortest);
   transition-property: background-color, border-color, color, outline-color;
   transition-timing-function: gesso-easing(ease-in);
 

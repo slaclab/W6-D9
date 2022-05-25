@@ -97,9 +97,9 @@ gesso:
     mobile: 320px
     mobile-lg: 480px
     tablet: 640px
-    mobile-menu: 699px
     tablet-lg: 880px
     desktop: 1024px
+    mobile-menu: 1099px
     desktop-lg: 1200px
     widescreen: 1400px
   colors:
@@ -116,6 +116,7 @@ gesso:
     background:
       site: grayscale.white
       subfooter: brand.cardinal.base
+      mega-menu: grayscale.white
     button:
       primary:
         background: grayscale.black
@@ -390,6 +391,7 @@ gesso:
     2.5: 20px
     3: 24px
     4: 32px
+    4.5: 36px
     5: 40px
     6: 48px
     7: 56px

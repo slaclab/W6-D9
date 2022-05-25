@@ -23,6 +23,7 @@ class MobileMenu extends OverlayMenu {
     {
       searchBlockClass = '.search',
       utilityNavClass = '.c-menu--utility',
+      logoClass = '.l-header__logo',
       toggleSubnav = true,
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
@@ -36,12 +37,14 @@ class MobileMenu extends OverlayMenu {
     this.utilityNav = utilityNavClass
       ? context.querySelector(utilityNavClass)
       : null;
+    this.logo = logoClass ? context.querySelector(logoClass) : null;
     this.options = {
       toggleSubnav,
       mobileMenuBreakpoint,
       classPrefix,
     };
     this.toggleMenuDisplay = this.toggleMenuDisplay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   /**
@@ -59,7 +62,7 @@ class MobileMenu extends OverlayMenu {
    * Clone a Drupal block to include in the mobile menu.
    * @param {HTMLElement} block - The block to clone
    * @param {string} blockClass - Optional CSS class to add to the cloned block
-   * @return {Node}
+   * @return {HTMLElement}
    */
   cloneBlock(block, blockClass = '') {
     const blockClone = block.cloneNode(true);
@@ -79,10 +82,13 @@ class MobileMenu extends OverlayMenu {
    */
   createToggleButton(subnav) {
     const button = document.createElement('button');
-    button.classList.add('c-mobile-menu__subnav-arrow');
+    button.classList.add('c-mobile-menu__subnav-toggle');
     button.setAttribute('aria-controls', subnav.id);
     button.setAttribute('aria-expanded', 'false');
-    button.innerHTML = '<span class="u-visually-hidden">Toggle Subnav</span>';
+    button.innerHTML = `<svg class="c-icon c-mobile-menu__subnav-icon" role="img">
+  <title>Toggle submenu</title>
+  <use xlink:href="images/sprite.artifact.svg#plus"></use>
+</svg>`;
     return subnav.insertAdjacentElement('beforebegin', button);
   }
 
@@ -101,11 +107,17 @@ class MobileMenu extends OverlayMenu {
       if (toggleButton.getAttribute('aria-expanded') === 'true') {
         subnav.style.display = 'none';
         toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.parentElement
+          .querySelector('.c-mobile-menu__link')
+          .classList.remove('is-expanded');
         subnav.classList.remove('is-open');
         this.enableTab(this.overlay);
       } else {
         subnav.style.display = 'block';
         toggleButton.setAttribute('aria-expanded', 'true');
+        toggleButton.parentElement
+          .querySelector('.c-mobile-menu__link')
+          .classList.add('is-expanded');
         subnav.classList.add('is-open');
         subnav.hidden = false;
         subnav.querySelector('.c-mobile-menu__link').focus();
@@ -151,6 +163,15 @@ class MobileMenu extends OverlayMenu {
       link.classList.add('c-mobile-menu__link');
     });
 
+    // Swap classes on mobile menu descriptions.
+    const menuDescriptions = menuClone.querySelectorAll(
+      `.${this.options.classPrefix}__description`
+    );
+    menuDescriptions.forEach(description => {
+      description.classList.remove(`${this.options.classPrefix}__description`);
+      description.classList.add('c-mobile-menu__description');
+    });
+
     // Swap classes on menu sections, if applicable.
     const menuSections = menuClone.querySelectorAll(
       `.${this.options.classPrefix}__section`
@@ -181,13 +202,25 @@ class MobileMenu extends OverlayMenu {
       });
     }
 
+    // Add class to social links
+    const socialLinks = menuClone.querySelectorAll('.c-social-links');
+    socialLinks.forEach(socialLink => {
+      socialLink.classList.add('c-mobile-menu__social');
+    });
+
+    // Add class to cards
+    const cards = menuClone.querySelectorAll('.c-card');
+    cards.forEach(card => {
+      card.classList.add('c-card--on-dark');
+    });
+
     // Prep sub-menus, if applicable.
     const subMenus = menuClone.querySelectorAll(
       `.${this.options.classPrefix}__subnav`
     );
     if (subMenus.length) {
       subMenus.forEach((submenu, index) => {
-        const link = submenu
+        let link = submenu
           .closest('.c-mobile-menu__item')
           .querySelector('.c-mobile-menu__link');
         // Swap submenu classes and ID.
@@ -196,7 +229,23 @@ class MobileMenu extends OverlayMenu {
         submenu.id = cleanString(
           `mobile-menu-${link.innerText.trim()}${index || ''}`
         );
-        if (this.options.toggleSubnav) {
+        if (
+          this.options.toggleSubnav &&
+          submenu.parentElement.classList.contains(
+            'c-mobile-menu__section-inner'
+          )
+        ) {
+          if (link.tagName === 'BUTTON') {
+            const linkParent = link.parentElement;
+            const newItem = linkParent.querySelector('.c-mobile-menu__item');
+            if (newItem) {
+              const newLink = newItem.querySelector('.c-mobile-menu__link');
+              linkParent.insertAdjacentElement('afterbegin', newLink);
+              linkParent.removeChild(link);
+              newItem.parentElement.removeChild(newItem);
+              link = newLink;
+            }
+          }
           this.setupSubnav(link, link.nextElementSibling);
         }
       });
@@ -238,7 +287,9 @@ class MobileMenu extends OverlayMenu {
   enableTab(startingPoint) {
     super.enableTab(startingPoint);
     if (this.options.toggleSubnav) {
-      let subSections = startingPoint.querySelectorAll('.c-mobile-menu__section');
+      let subSections = startingPoint.querySelectorAll(
+        '.c-mobile-menu__section'
+      );
       if (!subSections.length) {
         subSections = startingPoint.querySelectorAll('.c-mobile-menu__subnav');
       }
@@ -256,6 +307,30 @@ class MobileMenu extends OverlayMenu {
   }
 
   /**
+   * Handle mouse clicks.
+   * @param {MouseEvent} event - The click event
+   * @return void
+   */
+  handleClick(event) {
+    if (
+      !event.target.closest('.c-mobile-menu') &&
+      !event.target.matches('.c-hamburger-button')
+    ) {
+      this.closeMenu();
+    }
+  }
+
+  openMenu() {
+    super.openMenu();
+    window.addEventListener('click', this.handleClick);
+  }
+
+  closeMenu() {
+    window.removeEventListener('click', this.handleClick);
+    super.closeMenu();
+  }
+
+  /**
    * Initialize the mobile menu.
    * @return void
    */
@@ -263,6 +338,16 @@ class MobileMenu extends OverlayMenu {
     if (!this.menu) return;
     this.overlay = this.overlay ?? this.createMenuOverlay();
     super.init();
+    if (this.logo) {
+      const overlayHeader = document.createElement('div');
+      overlayHeader.classList.add('c-mobile-menu__header');
+      overlayHeader.insertAdjacentElement(
+        'afterbegin',
+        this.cloneBlock(this.logo, 'c-mobile-menu__logo')
+      );
+      overlayHeader.insertAdjacentElement('beforeend', this.closeButton);
+      this.overlay.insertAdjacentElement('afterbegin', overlayHeader);
+    }
     if (this.searchBlock) {
       this.overlay.appendChild(
         this.cloneBlock(this.searchBlock, 'c-mobile-menu__search')

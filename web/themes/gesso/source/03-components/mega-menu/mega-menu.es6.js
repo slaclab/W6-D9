@@ -11,6 +11,7 @@ Drupal.behaviors.megaMenu = {
         megaMenu.init();
         const mobileMenu = new MobileMenu(menu, context, {
           classPrefix: 'c-mega-menu',
+          utilityNavClass: false,
         });
         mobileMenu.init();
       });

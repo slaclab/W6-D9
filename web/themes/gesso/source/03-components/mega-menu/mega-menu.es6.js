@@ -9,9 +9,11 @@ Drupal.behaviors.megaMenu = {
       menus.forEach(menu => {
         const megaMenu = new MegaMenu(menu);
         megaMenu.init();
-        const mobileMenu = new MobileMenu(menu, context, {
+        const menuElem = menu.querySelector('.c-mega-menu');
+        const mobileMenu = new MobileMenu(menuElem, context, {
           classPrefix: 'c-mega-menu',
           utilityNavClass: false,
+          searchBlockClass: '.c-search__form',
         });
         mobileMenu.init();
       });

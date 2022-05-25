@@ -2,6 +2,7 @@
 @use '00-config' as *;
 
 .l-header {
+  --gesso-scroll-progress: 0%;
   border-bottom: 1px solid rgba(gesso-grayscale(stanford-black), 0.3);
   left: 0;
   position: fixed;
@@ -49,4 +50,18 @@
       }
     }
   }
+}
+
+.l-header__progress {
+  background: linear-gradient(
+    to right,
+    gesso-brand(cardinal, base) 0%,
+    gesso-brand(cardinal, base) var(--gesso-scroll-progress),
+    rgba(255, 255, 255, 0) var(--gesso-scroll-progress)
+  );
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }

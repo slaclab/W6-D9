@@ -26,6 +26,15 @@ Drupal.behaviors.header = {
           header.classList.add('is-sticky');
         }
       }, 16);
+      const updateScrollProgress = throttle(() => {
+        const scrollTop =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolledAmt = Math.round((scrollTop / height) * 100);
+        header.style.setProperty('--gesso-scroll-progress', `${scrolledAmt}%`);
+      }, 16);
       mediaQuery.addEventListener('change', event => {
         if (event.matches) {
           window.addEventListener('scroll', changeOnScroll);
@@ -41,6 +50,7 @@ Drupal.behaviors.header = {
         header.addEventListener('transitionend', updateHeaderHeight);
         changeOnScroll();
       }
+      window.addEventListener('scroll', updateScrollProgress);
     }
   },
 };

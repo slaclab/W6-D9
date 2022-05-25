@@ -5,6 +5,9 @@ global:
       dist/css/styles.css: {}
   js:
     dist/js/external-link.es6.js: {}
+    dist/js/header.es6.js: {}
+  dependencies:
+    - gesso/common
 
 back_to_top:
   css:

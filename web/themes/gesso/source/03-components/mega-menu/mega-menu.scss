@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
+  max-width: 813px;
   padding-left: 0;
   position: relative;
   width: 100%;
@@ -102,16 +103,18 @@
   @include layout-full-bleed;
   background-color: gesso-color(background, mega-menu);
   border-top: 1px solid rgba(#2e2929, 0.3);
+  bottom: 100%;
   box-shadow: gesso-box-shadow(1);
   color: gesso-color(text, link);
   margin-bottom: 0;
   margin-top: 0;
+  opacity: 1;
   overflow-wrap: normal;
   padding: rem(gesso-spacing(4.5)) 0;
-  position: absolute;
-  top: 100%;
-  transform: translate3d(0, 0, 0);
-  transition: transform gesso-duration(long) gesso-easing(ease-in-out);
+  position: fixed;
+  transform: translate3d(0, calc(100% + var(--gesso-header-current-height)), 0);
+  transition: transform gesso-duration(long) gesso-easing(ease-in-out),
+    opacity gesso-duration(long) gesso-easing(ease-in-out);
   z-index: 0;
 
   a,
@@ -124,7 +127,8 @@
   &[hidden] {
     box-shadow: none;
     display: block;
-    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    transform: translate3d(0, calc(0 - var(--gesso-header-current-height)), 0);
     z-index: -1;
   }
 }

@@ -23,6 +23,7 @@ class MobileMenu extends OverlayMenu {
     {
       searchBlockClass = '.search',
       utilityNavClass = '.c-menu--utility',
+      logoClass = '.l-header__logo',
       toggleSubnav = true,
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
@@ -36,6 +37,7 @@ class MobileMenu extends OverlayMenu {
     this.utilityNav = utilityNavClass
       ? context.querySelector(utilityNavClass)
       : null;
+    this.logo = logoClass ? context.querySelector(logoClass) : null;
     this.options = {
       toggleSubnav,
       mobileMenuBreakpoint,
@@ -60,7 +62,7 @@ class MobileMenu extends OverlayMenu {
    * Clone a Drupal block to include in the mobile menu.
    * @param {HTMLElement} block - The block to clone
    * @param {string} blockClass - Optional CSS class to add to the cloned block
-   * @return {Node}
+   * @return {HTMLElement}
    */
   cloneBlock(block, blockClass = '') {
     const blockClone = block.cloneNode(true);
@@ -336,6 +338,16 @@ class MobileMenu extends OverlayMenu {
     if (!this.menu) return;
     this.overlay = this.overlay ?? this.createMenuOverlay();
     super.init();
+    if (this.logo) {
+      const overlayHeader = document.createElement('div');
+      overlayHeader.classList.add('c-mobile-menu__header');
+      overlayHeader.insertAdjacentElement(
+        'afterbegin',
+        this.cloneBlock(this.logo, 'c-mobile-menu__logo')
+      );
+      overlayHeader.insertAdjacentElement('beforeend', this.closeButton);
+      this.overlay.insertAdjacentElement('afterbegin', overlayHeader);
+    }
     if (this.searchBlock) {
       this.overlay.appendChild(
         this.cloneBlock(this.searchBlock, 'c-mobile-menu__search')

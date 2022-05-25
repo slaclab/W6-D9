@@ -56,9 +56,22 @@ $mobile-menu-border-color: gesso-brand(sky, base);
   }
 }
 
+.c-mobile-menu__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-mobile-menu__logo {
+  path {
+    fill: gesso-color(text, on-dark);
+  }
+}
+
 .c-mobile-menu__menu {
   @include list-clean();
   margin: 0.75em 0 0;
+  width: 100%;
 }
 
 .c-mobile-menu__item {

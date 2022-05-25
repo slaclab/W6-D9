@@ -4,14 +4,16 @@ import MobileMenu from '../mobile-menu/modules/_MobileMenu.es6';
 
 Drupal.behaviors.megaMenu = {
   attach(context) {
-    const menus = context.querySelectorAll('.c-mega-menu');
+    const menus = context.querySelectorAll('.l-header');
     if (menus.length) {
       menus.forEach(menu => {
         const megaMenu = new MegaMenu(menu);
         megaMenu.init();
-        const mobileMenu = new MobileMenu(menu, context, {
+        const menuElem = menu.querySelector('.c-mega-menu');
+        const mobileMenu = new MobileMenu(menuElem, context, {
           classPrefix: 'c-mega-menu',
           utilityNavClass: false,
+          searchBlockClass: '.c-search__form',
         });
         mobileMenu.init();
       });

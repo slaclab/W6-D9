@@ -349,9 +349,13 @@ class MobileMenu extends OverlayMenu {
       this.overlay.insertAdjacentElement('afterbegin', overlayHeader);
     }
     if (this.searchBlock) {
-      this.overlay.appendChild(
-        this.cloneBlock(this.searchBlock, 'c-mobile-menu__search')
+      const newSearchBlock = this.cloneBlock(
+        this.searchBlock,
+        'c-mobile-menu__search'
       );
+      newSearchBlock.hidden = false;
+      newSearchBlock.classList.remove('c-mega-menu__section');
+      this.overlay.appendChild(newSearchBlock);
     }
     this.overlay.appendChild(this.cloneMenu(this.menu, 'c-mobile-menu__menu'));
     if (this.utilityNav) {

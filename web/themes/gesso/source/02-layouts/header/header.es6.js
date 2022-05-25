@@ -51,6 +51,7 @@ Drupal.behaviors.header = {
         changeOnScroll();
       }
       window.addEventListener('scroll', updateScrollProgress);
+      updateHeaderHeight();
     }
   },
 };

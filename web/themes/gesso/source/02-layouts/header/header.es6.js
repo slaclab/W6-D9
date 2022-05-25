@@ -10,6 +10,10 @@ Drupal.behaviors.header = {
         '--gesso-header-initial-height',
         `${header.getBoundingClientRect().height}px`
       );
+      document.documentElement.style.setProperty(
+        '--gesso-header-current-height',
+        `${header.getBoundingClientRect().height}px`
+      );
       const updateHeaderHeight = () => {
         document.documentElement.style.setProperty(
           '--gesso-header-current-height',

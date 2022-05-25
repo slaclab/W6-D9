@@ -4,7 +4,7 @@ import MobileMenu from '../mobile-menu/modules/_MobileMenu.es6';
 
 Drupal.behaviors.megaMenu = {
   attach(context) {
-    const menus = context.querySelectorAll('.c-mega-menu');
+    const menus = context.querySelectorAll('.l-header');
     if (menus.length) {
       menus.forEach(menu => {
         const megaMenu = new MegaMenu(menu);

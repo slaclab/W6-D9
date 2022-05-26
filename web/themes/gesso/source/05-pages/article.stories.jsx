@@ -11,11 +11,9 @@ export default {
   title: 'Pages/Article',
   parameters: {
     controls: {
-      include: [
-        'show_admin_info',
-      ]
-    }
-  }
+      include: ['show_admin_info'],
+    },
+  },
 };
 
 // For an example of reusing the same content as the Article component,
@@ -28,7 +26,8 @@ const articleDemoContent = `
   handle? You mean you wish to surrender to me? Very well, I accept. But how can
   you be sure? Will this do? You truly love each other and so you might have
   been truly happy. Not one couple in a century has that chance, no matter what
-  the story books say. And so I think no man in a century will suffer as greatly
+  the story books say.</p>
+  <p>And so I think no man in a century will suffer as greatly
   as you will. You only think I guessed wrong! That’s what’s so funny! I
   switched glasses when your back was turned! Ha ha! You fool! You fell victim
   to one of the classic blunders - The most famous of which is “never get
@@ -53,25 +52,28 @@ const articleDemoContent = `
 
 // For an example of customizing the content block on a demo page,
 // see Page.
-const articleContent = args => twigTemplate({
-  ...args,
-  title: 'As You Wish',
-  show_footer: true,
-  date_format: 'medium-date',
-  year: {
-    long: '1987',
-  },
-  month: {
-    long: 'October',
-  },
-  day: {
-    short: '9',
-  },
-  author_name: 'William Goldman',
-  content: articleDemoContent,
-});
+const articleContent = args =>
+  twigTemplate({
+    ...args,
+    title: 'As You Wish',
+    show_footer: true,
+    date_format: 'medium-date',
+    year: {
+      long: '1987',
+    },
+    month: {
+      long: 'October',
+    },
+    day: {
+      short: '9',
+    },
+    author_name: 'William Goldman',
+    content: articleDemoContent,
+  });
 
-const Article = args => <PageWrapper>{parse(articleContent(args))}</PageWrapper>;
+const Article = args => (
+  <PageWrapper>{parse(articleContent(args))}</PageWrapper>
+);
 Article.args = {
   ...globalData,
 };

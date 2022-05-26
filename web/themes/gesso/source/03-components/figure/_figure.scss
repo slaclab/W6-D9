@@ -24,6 +24,10 @@
       margin-left: rem(gesso-spacing(4));
       max-width: calc(50% - #{rem(gesso-spacing(2))});
     }
+
+    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+      margin-right: calc(-50% - #{rem(gesso-spacing(4))});
+    }
   }
 
   // Tweak styling in WYSIWYG editor.
@@ -49,9 +53,13 @@
 }
 
 .c-figure__caption {
+  @include responsive-font-size(2);
   caption-side: bottom;
   display: table-caption;
-  font-weight: gesso-font-weight(bold);
+  font-family: gesso-font-family(primary);
+  font-style: italic;
+  font-weight: gesso-font-weight(regular);
+  line-height: gesso-line-height(base);
   margin-top: rem(gesso-spacing(1));
 }
 

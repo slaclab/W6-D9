@@ -3,5 +3,21 @@
 @use '00-config' as *;
 
 .l-section {
-  margin-bottom: rem(gesso-spacing(5));
+  padding-bottom: rem(gesso-spacing(5));
+
+  &:last-child {
+    padding-bottom: calc(
+      #{rem(gesso-spacing(5))} + var(--gesso-footer-overlap)
+    );
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding-bottom: rem(gesso-spacing(10));
+
+    &:last-child {
+      padding-bottom: calc(
+        #{rem(gesso-spacing(10))} + var(--gesso-footer-overlap)
+      );
+    }
+  }
 }

@@ -2,4 +2,5 @@
 
 .c-wysiwyg {
   @include display-text-style(body);
+  @include layout-constrain(gesso-constrain(sm));
 }

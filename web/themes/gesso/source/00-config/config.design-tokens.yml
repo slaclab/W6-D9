@@ -321,27 +321,27 @@ gesso:
         font-family: primary.stack
         font-weight: bold
         line-height: base
-        responsive-font-size: 11
+        responsive-font-size: 6
       h3:
         font-family: primary.stack
         font-weight: bold
         line-height: base
-        responsive-font-size: 6
+        responsive-font-size: 5
       h4:
         font-family: primary.stack
         font-weight: bold
         line-height: base
-        responsive-font-size: 5
+        responsive-font-size: 4
       h5:
         font-family: primary.stack
         font-weight: bold
         line-height: tight
-        responsive-font-size: 4
+        responsive-font-size: 3
       h6:
         font-family: primary.stack
         font-weight: bold
         line-height: base
-        responsive-font-size: 3
+        responsive-font-size: 2
       blockquote:
         color: text.primary
         font-family: secondary.stack

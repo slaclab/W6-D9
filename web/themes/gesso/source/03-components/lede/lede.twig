@@ -1,0 +1,8 @@
+{% set classes = [
+  'c-lede',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {{ lede_content }}
+</div>

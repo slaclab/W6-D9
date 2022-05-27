@@ -1,0 +1,15 @@
+// @file
+// Component: c-kicker
+
+@use '00-config' as *;
+
+.c-kicker {
+  font-size: rem(gesso-font-size(1));
+  font-weight: gesso-font-weight(bold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.c-kicker--big {
+  font-size: rem(gesso-font-size(2));
+}

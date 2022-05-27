@@ -7,6 +7,7 @@
 }
 
 .c-tagline__heading {
+  @include responsive-font-size(10);
   color: rgba(gesso-brand(lagunita, light), 0.6);
   font-weight: gesso-font-weight(black);
   line-height: gesso-line-height(tight);

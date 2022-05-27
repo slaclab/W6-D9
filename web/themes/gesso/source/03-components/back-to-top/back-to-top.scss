@@ -2,6 +2,9 @@
 
 @use '00-config' as *;
 
+$back-to-top-font-size: rem(gesso-font-size(1));
+$back-to-top-line-height: gesso-line-height(tight);
+
 .c-back-to-top {
   display: none;
 
@@ -9,18 +12,21 @@
     align-items: center;
     background-color: gesso-color(button, back-to-top, background);
     border-radius: 50%;
-    bottom: rem(gesso-spacing(2.5));
+    bottom: rem(gesso-spacing(2.5)) +
+      ($back-to-top-font-size * $back-to-top-line-height);
+    box-shadow: 5px 5px 20px 0 rgba(gesso-grayscale(black), 0.1);
     color: gesso-color(button, back-to-top, color);
     display: flex;
-    font-size: rem(60px);
-    height: rem(70px);
+    font-size: rem(18px);
+    height: rem(53px);
     justify-content: center;
     position: fixed;
     right: rem(gesso-spacing(2.5));
+    text-decoration: none;
     transition-duration: gesso-duration(short);
     transition-property: background-color, color, opacity;
     transition-timing-function: gesso-easing(ease-in);
-    width: rem(70px);
+    width: rem(53px);
 
     &:visited {
       color: gesso-color(button, back-to-top, color);
@@ -35,6 +41,20 @@
     &[aria-hidden='true'] {
       opacity: 0;
     }
+  }
+}
+
+.c-back-to-top__text {
+  color: gesso-color(button, back-to-top, background);
+  display: block;
+  font-size: $back-to-top-font-size;
+  font-weight: gesso-font-weight(bold);
+  line-height: $back-to-top-line-height;
+  position: absolute;
+  top: 100%;
+
+  .c-back-to-top--on-dark & {
+    color: gesso-color(text, on-dark);
   }
 }
 

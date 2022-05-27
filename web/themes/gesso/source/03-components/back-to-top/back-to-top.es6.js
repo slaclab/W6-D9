@@ -4,6 +4,7 @@ Drupal.behaviors.backToTop = {
   attach(context, settings) {
     const threshold = settings?.gesso?.backToTopThreshold ?? 200;
     const smoothScroll = settings?.gesso?.backToTopSmoothScroll ?? true;
+    const footer = context.querySelector('.l-footer');
     const backToTop = context.querySelector('.c-back-to-top');
     if (backToTop) {
       if (!Number.isNaN(threshold) && threshold > 0) {
@@ -22,6 +23,14 @@ Drupal.behaviors.backToTop = {
           ) {
             backToTop.setAttribute('aria-hidden', 'true');
             backToTop.setAttribute('tabIndex', '-1');
+          }
+          if (footer) {
+            const { top, bottom } = footer.getBoundingClientRect();
+            if (top < window.innerHeight && bottom >= 0) {
+              backToTop.classList.add('c-back-to-top--on-dark');
+            } else if (backToTop.classList.contains('c-back-to-top--on-dark')) {
+              backToTop.classList.remove('c-back-to-top--on-dark');
+            }
           }
         };
         let stillScrolling = false;
@@ -53,4 +62,4 @@ Drupal.behaviors.backToTop = {
       }
     }
   },
-}
+};

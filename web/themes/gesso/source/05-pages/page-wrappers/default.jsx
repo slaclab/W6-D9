@@ -12,10 +12,11 @@ import { BackToTop } from '../../03-components/back-to-top/back-to-top.stories.j
 import { Footer } from '../../02-layouts/footer/footer.stories.jsx';
 import { Subfooter } from '../../02-layouts/subfooter/subfooter.stories';
 import { Header } from '../../02-layouts/header/header.stories';
+import { SocialShare } from '../../03-components/social-share/social-share.stories';
 
 const PageWrapper = props => {
   // eslint-disable-next-line react/prop-types
-  const { children } = props;
+  const { hideSocialLinks, children } = props;
   return (
     <>
       {parse(SkiplinksTwig())}
@@ -30,6 +31,7 @@ const PageWrapper = props => {
           })
         )}
         <main id="main" className="c-main" role="main" tabIndex="-1">
+          {!hideSocialLinks && SocialShare(SocialShare.args)}
           {parse(
             ContentTwig({
               has_constrain: true,

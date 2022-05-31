@@ -1,0 +1,47 @@
+// @file
+// Component: c-social-share
+@use '00-config' as *;
+
+.c-social-share {
+  font-size: rem(gesso-font-size(1));
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c-social-share__link {
+  background: transparent;
+  display: block;
+  margin-bottom: rem(gesso-spacing(0.5));
+  padding: rem(10px);
+  text-decoration: none;
+  transform: translateX(60px);
+  transition: all gesso-duration(standard) gesso-easing(ease-out);
+  width: rem(94px);
+
+  &:hover {
+    background: gesso-grayscale(white);
+    color: gesso-color(text, primary);
+    transform: translateX(0);
+  }
+}
+
+.c-social-share__icon {
+  margin-right: rem(gesso-spacing(1));
+
+  .c-social-share__facebook:hover & {
+    color: #3b5998;
+  }
+
+  .c-social-share__twitter:hover & {
+    color: #1da1f2;
+  }
+
+  .c-social-share__linkedin:hover & {
+    color: #0a66c2;
+  }
+
+  .c-social-share__email:hover & {
+    color: gesso-color(text, link-hover);
+  }
+}

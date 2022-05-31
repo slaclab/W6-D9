@@ -80,6 +80,13 @@ overlay_menu:
     - gesso/common
     - gesso/hamburger_button
 
+social_share:
+  css:
+    theme:
+      dist/css/social-share.css: {}
+  js:
+    dist/js/social-share.es6.js: {}
+
 side_menu:
   css:
     theme:

@@ -6,6 +6,7 @@ import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../04-templates/page/page.twig';
 import { FigureRightAligned } from '../03-components/figure/figure.stories.jsx';
+import { ArticleHero } from '../03-components/article-hero/article-hero.stories';
 
 export default {
   title: 'Pages/Article',
@@ -19,35 +20,20 @@ export default {
 // For an example of reusing the same content as the Article component,
 // see Page page.
 const articleDemoContent = `
-  ${ReactDOMServer.renderToStaticMarkup(
-    <>{FigureRightAligned(FigureRightAligned.args)}</>
-  )}
-  <p>You’re the Dread Pirate Roberts, admit it. How many do you think you could
-  handle? You mean you wish to surrender to me? Very well, I accept. But how can
-  you be sure? Will this do? You truly love each other and so you might have
-  been truly happy. Not one couple in a century has that chance, no matter what
-  the story books say.</p>
-  <p>And so I think no man in a century will suffer as greatly
-  as you will. You only think I guessed wrong! That’s what’s so funny! I
-  switched glasses when your back was turned! Ha ha! You fool! You fell victim
-  to one of the classic blunders - The most famous of which is “never get
-  involved in a land war in Asia” - but only slightly less well-known is this:
-  “Never go against a Sicilian when death is on the line!” Ha ha ha ha ha ha ha!
-  Ha ha ha ha ha ha ha! Ha ha ha…</p>
-  <p>They were both poisoned. I spent the last few years building up an immunity
-  to iocane powder. Unless the enemy has studied his Agrippa… which I have.
-  Move? You’re alive. If you want I can fly. You just shook your head… doesn’t
-  that make you happy? Truly, you have a dizzying intellect. Probably he means
-  no *harm*.</p>
-  <p>Well, I’m not saying I’d like to build a summer home here, but the trees
-  are actually quite lovely. And YOU: friendless, brainless, helpless, hopeless!
-  Do you want me to send you back to where you were? Unemployed, in Greenland?
-  No, there is too much. Let me sum up. Buttercup is marry Humperdinck in a
-  little less than half an hour. So all we have to do is get in, break up the
-  wedding, steal the princess, make our escape… after I kill Count Rugen. You
-  seem a decent fellow… I hate to kill you. You seem a decent fellow… I hate to
-  die. Naturally… but I find that Thibault cancels out Capa Ferro. Don’t you?
-  </p>
+  <p>Scientists have taken a major step forward in harnessing machine learning to accelerate the design for better batteries: Instead of using it just to speed up scientific analysis by looking for patterns in data, as researchers generally do, they combined it with knowledge gained from experiments and equations guided by physics to discover and explain a process that shortens the lifetimes of fast-charging lithium-ion batteries.</p>
+  <p>It was the first time this approach, known as “scientific machine learning,” has been applied to battery cycling, said Will Chueh, an associate professor at Stanford University and investigator with the Department of Energy’s SLAC National Accelerator Laboratory who led the study. </p>
+  <p>The research, reported today in Nature Materials, is the latest result from a collaboration between Stanford, SLAC, the Massachusetts Institute of Technology and Toyota Research Institute (TRI). The goal is to bring together foundational research and industry know-how to develop a long-lived electric vehicle battery that can be charged in 10 minutes.</p>
+  <p>“Battery technology is important for any type of electric powertrain," said Patrick Herring, senior research scientist for Toyota Research Institute. “By understanding the fundamental reactions that occur within the battery we can extend its life, enable faster charging and ultimately design better battery materials. We look forward to building on this work through future experiments to achieve lower-cost, better-performing batteries.”</p>
+  <h2>A trio of advances</h2>
+  <p>The new study builds on two previous advances where the group used more conventional forms of machine learning to dramatically accelerate both battery testing and the process of winnowing down many possible charging methods to find the ones that work best.</p>
+  <p>While these studies allowed researchers to make much faster progress – reducing the time needed to determine battery lifetimes by 98%, for instance – they didn’t reveal the underlying physics or chemistry that made some batteries last longer than others, as the latest study did.</p>
+  <h3>Combining all three approaches</h3>
+  <p>Combining all three approaches could potentially slash the time needed to bring a new battery technology from the lab bench to the consumer by as much as two-thirds, Chueh said.</p>
+  <p>“In this case, we are teaching the machine how to learn the physics of a new type of failure mechanism that could help us design better and safer fast-charging batteries,” Chueh said. “Fast charging is incredibly stressful and damaging to batteries, and solving this problem is key to expanding the nation’s fleet of electric vehicles as part of the overall strategy for fighting climate change.”</p>
+  <p>The new combined approach can also be applied to developing the grid-scale battery systems needed for a greater deployment of wind and solar electricity, which will become even more urgent as the nation pursues recently announced Biden Administration goals of eliminating fossil fuels from electric power generation by 2035 and achieving net-zero carbon emissions by 2050.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio. </p>
+  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>
+  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>
 `;
 
 // For an example of customizing the content block on a demo page,
@@ -55,24 +41,45 @@ const articleDemoContent = `
 const articleContent = args =>
   twigTemplate({
     ...args,
-    title: 'As You Wish',
-    show_footer: true,
+    title:
+      'In a leap for battery research, machine learning gets scientific smarts',
     date_format: 'medium-date',
     year: {
-      long: '1987',
+      long: '2021',
     },
     month: {
-      long: 'October',
+      long: 'March',
     },
     day: {
-      short: '9',
+      short: '8',
     },
-    author_name: 'William Goldman',
+    author_name: 'Glennda Chui',
     content: articleDemoContent,
+    lede: '<p>The latest advance from a research collaboration with industry could dramatically accelerate the development of sturdier batteries for fast-charging electric vehicles.</p>',
+    toc_links: [
+      {
+        url: '#0',
+        title: 'A trio of advances',
+      },
+      {
+        url: '#1',
+        title: 'Zooming in for closeups',
+      },
+      {
+        url: '#2',
+        title: 'The-rich-get-richer effect',
+      },
+      {
+        url: '#3',
+        title: 'Image Gallery',
+      },
+    ],
   });
 
 const Article = args => (
-  <PageWrapper>{parse(articleContent(args))}</PageWrapper>
+  <PageWrapper hero={ArticleHero(ArticleHero.args)}>
+    {parse(articleContent(args))}
+  </PageWrapper>
 );
 Article.args = {
   ...globalData,

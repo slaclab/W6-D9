@@ -16,22 +16,25 @@ import { SocialShare } from '../../03-components/social-share/social-share.stori
 
 const PageWrapper = props => {
   // eslint-disable-next-line react/prop-types
-  const { hideSocialLinks, children } = props;
+  const { hideSocialLinks, hero, children } = props;
   return (
     <>
       {parse(SkiplinksTwig())}
       {Header(Header.args)}
       <div className="l-site-container">
-        {parse(
-          BreadcrumbTwig({
-            has_constrain: false,
-            breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
-              <>{Breadcrumb(Breadcrumb.args)}</>
-            ),
-          })
-        )}
+        {hero}
         <main id="main" className="c-main" role="main" tabIndex="-1">
-          {!hideSocialLinks && SocialShare(SocialShare.args)}
+          <div className="c-main__meta">
+            {parse(
+              BreadcrumbTwig({
+                has_constrain: false,
+                breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
+                  <>{Breadcrumb(Breadcrumb.args)}</>
+                ),
+              })
+            )}
+            {!hideSocialLinks && SocialShare(SocialShare.args)}
+          </div>
           {parse(
             ContentTwig({
               has_constrain: true,

@@ -7,6 +7,7 @@ import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../04-templates/page/page.twig';
 import { FigureRightAligned } from '../03-components/figure/figure.stories.jsx';
 import { ArticleHero } from '../03-components/article-hero/article-hero.stories';
+import { Quote } from '../03-components/quote/quote.stories';
 
 export default {
   title: 'Pages/Article',
@@ -23,6 +24,7 @@ const articleDemoContent = `
   <p>Scientists have taken a major step forward in harnessing machine learning to accelerate the design for better batteries: Instead of using it just to speed up scientific analysis by looking for patterns in data, as researchers generally do, they combined it with knowledge gained from experiments and equations guided by physics to discover and explain a process that shortens the lifetimes of fast-charging lithium-ion batteries.</p>
   <p>It was the first time this approach, known as “scientific machine learning,” has been applied to battery cycling, said Will Chueh, an associate professor at Stanford University and investigator with the Department of Energy’s SLAC National Accelerator Laboratory who led the study. </p>
   <p>The research, reported today in Nature Materials, is the latest result from a collaboration between Stanford, SLAC, the Massachusetts Institute of Technology and Toyota Research Institute (TRI). The goal is to bring together foundational research and industry know-how to develop a long-lived electric vehicle battery that can be charged in 10 minutes.</p>
+  ${ReactDOMServer.renderToStaticMarkup(Quote(Quote.args))}
   <p>“Battery technology is important for any type of electric powertrain," said Patrick Herring, senior research scientist for Toyota Research Institute. “By understanding the fundamental reactions that occur within the battery we can extend its life, enable faster charging and ultimately design better battery materials. We look forward to building on this work through future experiments to achieve lower-cost, better-performing batteries.”</p>
   <h2>A trio of advances</h2>
   <p>The new study builds on two previous advances where the group used more conventional forms of machine learning to dramatically accelerate both battery testing and the process of winnowing down many possible charging methods to find the ones that work best.</p>

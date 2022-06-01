@@ -239,7 +239,7 @@ gesso:
       10: 50px
       11: 62px
     responsive-font-size-min-width: 360px
-    responsive-font-size-max-width: 1600px
+    responsive-font-size-max-width: 1400px
     responsive-font-size:
       1:
         min: 14px
@@ -258,7 +258,7 @@ gesso:
         val: auto
         max: 24px
       5:
-        min: 24px
+        min: 22px
         val: auto
         max: 26px
       6:
@@ -345,19 +345,19 @@ gesso:
       blockquote:
         color: text.primary
         font-family: secondary.stack
-        font-size: 5
         font-weight: bold
         line-height: base
+        responsive-font-size: 5
       body:
         font-family: secondary.stack
-        font-size: 3
         font-weight: regular
         line-height: loose
+        responsive-font-size: 3
       body-large:
         font-family: primary.stack
-        font-size: 4
         font-weight: regular
         line-height: loose
+        responsive-font-size: 4
       cite:
         color: text.primary
         font-family: primary.stack

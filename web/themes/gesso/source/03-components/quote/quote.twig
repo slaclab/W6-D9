@@ -1,0 +1,21 @@
+{% set classes = [
+  'c-quote',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% set constrain_classes = [
+  'l-constrain',
+  'l-constrain--small'
+]|join(' ')|trim %}
+{% if has_constrain %}<div class="{{ constrain_classes }}">{% endif %}
+  <blockquote {{ add_attributes({ class: classes }) }}>
+    {{ quote_content }}
+    {% if quote_author or quote_author_desc %}
+      <cite class="c-quote__cite">
+        {% if quote_author %}<span class="c-quote__author">{{ quote_author }}</span>{% endif %}
+        {% if quote_author_desc %}<span class="c-quote__desc">{{ quote_author_desc }}</span>{% endif %}
+        {% if quote_image %}<span class="c-quote__image">{{ quote_image }}</span>{% endif %}
+      </cite>
+    {% endif %}
+  </blockquote>
+{% if has_constrain %}</div>{% endif %}

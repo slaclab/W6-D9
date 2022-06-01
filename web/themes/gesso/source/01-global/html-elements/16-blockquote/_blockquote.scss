@@ -32,7 +32,6 @@ blockquote {
   cite {
     display: block;
     margin-top: rem(gesso-spacing(2));
-    text-align: right;
 
     em {
       border-left: 1px solid $blockquote-cite-divider-color;

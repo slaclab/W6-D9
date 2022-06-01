@@ -187,7 +187,7 @@ gesso:
     ui:
       generic:
         background: grayscale.gray-3
-        background-darker: grayscale.gray-7
+        background-darker: grayscale.stanford-black
         background-dark: grayscale.gray-6
         background-light: grayscale.gray-1
         background-lighter: grayscale.gray-1
@@ -250,7 +250,7 @@ gesso:
         val: auto
         max: 16px
       3:
-        min: 18px
+        min: 16px
         val: auto
         max: 18px
       4:
@@ -282,7 +282,7 @@ gesso:
         val: auto
         max: 42px
       11:
-        min: 36px
+        min: 26px
         val: auto
         max: 42px
       12:

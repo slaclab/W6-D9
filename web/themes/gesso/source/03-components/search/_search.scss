@@ -11,6 +11,10 @@
   .is-sticky & {
     position: static;
   }
+
+  @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
+    display: none;
+  }
 }
 
 .c-search__form {

@@ -218,7 +218,7 @@ class MegaMenu {
    * @return {void}
    */
   handleClickAnywhere(event) {
-    if (!event.target.closest(this.menu)) {
+    if (!this.menu.contains(event.target)) {
       this.toggleExpand(this.openIndex, false);
       this.closeMenu();
     }

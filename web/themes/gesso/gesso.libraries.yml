@@ -86,6 +86,8 @@ social_share:
       dist/css/social-share.css: {}
   js:
     dist/js/social-share.es6.js: {}
+  dependencies:
+    - gesso/common
 
 side_menu:
   css:
@@ -96,3 +98,12 @@ side_menu:
   dependencies:
     - gesso/common
     - gesso/hamburger_button
+
+toc:
+  css:
+    theme:
+      dist/css/toc.css: {}
+  js:
+    dist/js/toc.es6.js: {}
+  dependencies:
+    - gesso/common

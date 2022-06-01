@@ -30,6 +30,9 @@
           'lede_content': lede
         } %}
       {% endif %}
+      {% if byline %}
+        <p>{{ 'By'|t }} {{ byline }}</p>
+      {% endif %}
     </div>
     {% if sidebar_content %}
       <div class="c-page-title__sidebar">

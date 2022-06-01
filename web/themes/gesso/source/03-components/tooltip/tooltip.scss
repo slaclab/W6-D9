@@ -1,0 +1,57 @@
+// @file
+// Component: c-tooltip
+@use '00-config' as *;
+@use 'sass:math';
+
+$tooltip-arrow-height: 21px;
+
+.c-tooltip__button {
+  background: gesso-grayscale(white);
+  border: 0;
+  border-radius: 50%;
+  color: gesso-color(text, primary);
+  cursor: pointer;
+  font-size: rem(gesso-font-size(4));
+}
+
+.c-tooltip__tooltip {
+  background: gesso-color(ui, generic, background-darker);
+  border: solid gesso-color(ui, generic, accent);
+  border-radius: 4px;
+  border-width: 0 0 rem(gesso-spacing(1));
+  bottom: calc(100% + #{$tooltip-arrow-height} + #{rem(gesso-spacing(1))});
+  color: gesso-color(text, on-dark);
+  font-size: rem(gesso-font-size(1));
+  padding: rem(gesso-spacing(2.5)) rem(gesso-spacing(2.5))
+    rem(gesso-spacing(1.5));
+  position: absolute;
+  right: 0;
+  width: min(#{rem(280px)}, 100%);
+
+  a {
+    color: inherit;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    border-left: math.div($tooltip-arrow-height, 2) solid transparent;
+    border-right: math.div($tooltip-arrow-height, 2) solid transparent;
+    border-top: $tooltip-arrow-height solid gesso-color(ui, generic, accent);
+    content: '';
+    height: 0;
+    position: absolute;
+    right: rem(gesso-site-margins(mobile));
+    top: calc(100% + #{rem(gesso-spacing(1))});
+    transform: translateX(-25%);
+    width: 0;
+
+    @include breakpoint(gesso-breakpoint(desktop)) {
+      right: rem(gesso-site-margins(desktop));
+    }
+  }
+}

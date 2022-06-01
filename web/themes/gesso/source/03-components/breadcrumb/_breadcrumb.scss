@@ -14,10 +14,6 @@ $breadcrumb-text-color: gesso-grayscale(gray-3);
   min-height: rem(40px);
   padding-bottom: gesso-spacing(2);
   padding-top: gesso-spacing(2);
-
-  @include breakpoint-max(gesso-breakpoint(tablet), true) {
-    display: none;
-  }
 }
 
 .c-breadcrumb__title {
@@ -48,4 +44,24 @@ $breadcrumb-text-color: gesso-grayscale(gray-3);
 .c-breadcrumb__link {
   @include link($breadcrumb-link-color, gesso-color(text, link-hover));
   text-decoration-color: currentColor;
+}
+
+.c-breadcrumb__list .c-breadcrumb__item {
+  @include breakpoint-max(gesso-breakpoint(desktop), true) {
+    display: none;
+
+    &:nth-last-child(2) {
+      display: block;
+
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        color: $breadcrumb-divider-color;
+        content: '<';
+        margin-right: 0.5em;
+      }
+    }
+  }
 }

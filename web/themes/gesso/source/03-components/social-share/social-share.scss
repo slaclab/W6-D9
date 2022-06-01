@@ -4,25 +4,35 @@
 
 .c-social-share {
   font-size: rem(gesso-font-size(1));
-  position: absolute;
-  right: 0;
-  top: 0;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    position: absolute;
+    right: 0;
+    top: rem(gesso-spacing(7));
+  }
 }
 
 .c-social-share__link {
   background: transparent;
-  display: block;
+  display: inline-block;
+  height: rem(34px);
   margin-bottom: rem(gesso-spacing(0.5));
+  overflow: hidden;
   padding: rem(10px);
   text-decoration: none;
-  transform: translateX(60px);
-  transition: all gesso-duration(standard) gesso-easing(ease-out);
-  width: rem(94px);
+  width: rem(34px);
 
   &:hover {
     background: gesso-grayscale(white);
     color: gesso-color(text, primary);
     transform: translateX(0);
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    transform: translateX(60px);
+    transition: all gesso-duration(standard) gesso-easing(ease-out);
+    width: rem(94px);
   }
 }
 

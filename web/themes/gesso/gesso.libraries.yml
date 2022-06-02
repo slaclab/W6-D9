@@ -6,6 +6,7 @@ global:
   js:
     dist/js/external-link.es6.js: {}
     dist/js/header.es6.js: {}
+    dist/js/transitions.es6.js: {}
   dependencies:
     - gesso/common
 

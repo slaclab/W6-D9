@@ -75,8 +75,6 @@
     {% endif %}
   {% endblock %}
   {% block content %}
-    {% include '@components/wysiwyg/wysiwyg.twig' with {
-      'content': content,
-    } %}
+    {{ content }}
   {% endblock %}
 </article>

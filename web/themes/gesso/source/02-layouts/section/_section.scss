@@ -2,7 +2,7 @@
 
 @use '00-config' as *;
 
-.l-section {
+.l-section:not(.l-section--no-padding) {
   padding-bottom: rem(gesso-spacing(5));
   padding-top: rem(gesso-spacing(5));
 
@@ -16,6 +16,21 @@
     padding-bottom: rem(gesso-spacing(10));
     padding-top: rem(gesso-spacing(10));
 
+    &:last-child {
+      padding-bottom: calc(
+        #{rem(gesso-spacing(10))} + var(--gesso-footer-overlap)
+      );
+    }
+  }
+}
+
+.l-section--no-padding {
+  &:last-child {
+    padding-bottom: calc(
+      #{rem(gesso-spacing(5))} + var(--gesso-footer-overlap)
+    );
+  }
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
     &:last-child {
       padding-bottom: calc(
         #{rem(gesso-spacing(10))} + var(--gesso-footer-overlap)

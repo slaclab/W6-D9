@@ -37,7 +37,7 @@ const PageWrapper = props => {
           </div>
           {parse(
             ContentTwig({
-              has_constrain: true,
+              has_constrain: false,
               content_content: ReactDOMServer.renderToStaticMarkup(
                 <>{children}</>
               ),

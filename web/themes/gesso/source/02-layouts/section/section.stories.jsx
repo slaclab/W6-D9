@@ -66,10 +66,21 @@ SectionWithBlueGreenGradient.args = {
   `,
 };
 
+const SectionWithCutout = Template.bind({});
+SectionWithCutout.args = {
+  ...data,
+  modifier_classes: 'l-section--dark l-section--cutout',
+  section_buttons: `
+    <a href="#0" class="c-button c-button--secondary">Button 1</a>
+    <a href="#1" class="c-button c-button--secondary">Button 2</a>
+  `,
+};
+
 export default settings;
 export {
   Section,
   SectionWithBackgroundImage,
   SectionWithPurpleBlackGradient,
   SectionWithBlueGreenGradient,
+  SectionWithCutout,
 };

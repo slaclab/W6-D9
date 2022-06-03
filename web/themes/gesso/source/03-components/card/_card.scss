@@ -30,15 +30,12 @@ $card-padding: rem(gesso-spacing(2)) !default;
     }
   }
 
-  .c-card--on-dark &,
-  .l-section--dark & {
+  .c-card--on-dark & {
     @include arrow-link(white);
   }
 
   .c-card--on-dark:hover &,
-  .c-card--on-dark:focus-within &,
-  .l-section--dark .c-card:hover &,
-  .l-section--dark .c-card:focus-within & {
+  .c-card--on-dark:focus-within & {
     color: gesso-color(text, on-dark);
   }
 }
@@ -58,10 +55,17 @@ $card-padding: rem(gesso-spacing(2)) !default;
 }
 
 .c-card__body {
+  background: gesso-color(background, site);
+  color: gesso-color(text, primary);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: $card-padding 0;
+  padding: $card-padding;
+
+  .c-card--on-dark & {
+    background: transparent;
+    color: inherit;
+  }
 }
 
 .c-card__header {

@@ -82,8 +82,8 @@ SectionWithPattern.args = {
   modifier_classes: 'l-section--pattern',
 };
 
-const SectionWithYellow = Template.bind({});
-SectionWithYellow.args = {
+const SectionWithYellowBackground = Template.bind({});
+SectionWithYellowBackground.args = {
   ...data,
   modifier_classes: 'l-section--yellow',
 };
@@ -94,6 +94,26 @@ SectionWithGrayGradient.args = {
   modifier_classes: 'l-section--gray-gradient',
 };
 
+const SectionWithPurpleBackground = Template.bind({});
+SectionWithPurpleBackground.args = {
+  ...data,
+  modifier_classes: 'l-section--dark l-section--purple',
+  section_buttons: `
+    <a href="#0" class="c-button c-button--secondary">Button 1</a>
+    <a href="#1" class="c-button c-button--secondary">Button 2</a>
+  `,
+};
+
+const SectionWithBlueBackground = Template.bind({});
+SectionWithBlueBackground.args = {
+  ...data,
+  modifier_classes: 'l-section--dark l-section--blue',
+  section_buttons: `
+    <a href="#0" class="c-button c-button--secondary">Button 1</a>
+    <a href="#1" class="c-button c-button--secondary">Button 2</a>
+  `,
+};
+
 export default settings;
 export {
   Section,
@@ -102,6 +122,8 @@ export {
   SectionWithBlueGreenGradient,
   SectionWithCutout,
   SectionWithPattern,
-  SectionWithYellow,
+  SectionWithYellowBackground,
   SectionWithGrayGradient,
+  SectionWithPurpleBackground,
+  SectionWithBlueBackground,
 };

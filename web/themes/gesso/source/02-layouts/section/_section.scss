@@ -131,3 +131,11 @@
     gesso-grayscale(gray-1)
   );
 }
+
+.l-section--purple {
+  background-color: gesso-brand(purple, dark);
+}
+
+.l-section--blue {
+  background-color: gesso-brand(lagunita, dark);
+}

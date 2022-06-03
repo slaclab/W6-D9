@@ -88,12 +88,30 @@
 }
 
 .l-section--cutout {
-  background-image: url('images/backgrounds/graphene_02_reverse.svg'),
+  background-image: url('images/backgrounds/graphene_03_reverse.svg'),
     linear-gradient(
       to bottom,
       gesso-brand(sky, dark),
       gesso-brand(palo-verde, dark)
     );
-  background-position: top right, top 11px right 0;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100% auto, cover;
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    background-image: url('images/backgrounds/graphene_02_reverse.svg'),
+      linear-gradient(
+        to bottom,
+        gesso-brand(sky, dark),
+        gesso-brand(palo-verde, dark)
+      );
+    background-position: top right, top 11px right 0;
+    background-size: auto, cover;
+  }
+}
+
+.l-section--pattern {
+  background-image: url('images/backgrounds/g271.svg');
+  background-position: bottom right;
   background-repeat: no-repeat;
 }

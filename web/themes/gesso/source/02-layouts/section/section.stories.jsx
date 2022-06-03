@@ -46,5 +46,15 @@ SectionWithBackgroundImage.args = {
   modifier_classes: 'l-section--dark l-section--bg-image',
 };
 
+const SectionWithPurpleBlackGradient = Template.bind({});
+SectionWithPurpleBlackGradient.args = {
+  ...data,
+  modifier_classes: 'l-section--dark l-section--purple-black',
+  section_buttons: `
+    <a href="#0" class="c-button c-button--secondary">Button 1</a>
+    <a href="#1" class="c-button c-button--secondary">Button 2</a>
+  `,
+};
+
 export default settings;
-export { Section, SectionWithBackgroundImage };
+export { Section, SectionWithBackgroundImage, SectionWithPurpleBlackGradient };

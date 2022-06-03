@@ -61,3 +61,12 @@
   background-position: bottom center;
   background-size: cover;
 }
+
+.l-section--purple-black {
+  background-image: linear-gradient(
+    to bottom,
+    gesso-brand(purple, dark),
+    gesso-brand(purple, dark) 78%,
+    gesso-grayscale(stanford-black)
+  );
+}

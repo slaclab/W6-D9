@@ -30,12 +30,15 @@ $card-padding: rem(gesso-spacing(2)) !default;
     }
   }
 
-  .c-card--on-dark & {
+  .c-card--on-dark &,
+  .l-section--dark & {
     @include arrow-link(white);
   }
 
   .c-card--on-dark:hover &,
-  .c-card--on-dark:focus-within & {
+  .c-card--on-dark:focus-within &,
+  .l-section--dark .c-card:hover &,
+  .l-section--dark .c-card:focus-within & {
     color: gesso-color(text, on-dark);
   }
 }

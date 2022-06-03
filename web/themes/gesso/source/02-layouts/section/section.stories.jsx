@@ -29,14 +29,22 @@ const SectionContent = gridTemplate({
   num_of_cols: 3,
 });
 
-const Section = args =>
+const Template = args =>
   parse(
     twigTemplate({
       ...args,
       section_content: SectionContent,
     })
   );
+
+const Section = Template.bind({});
 Section.args = { ...data };
 
+const SectionWithBackgroundImage = Template.bind({});
+SectionWithBackgroundImage.args = {
+  ...data,
+  modifier_classes: 'l-section--dark l-section--bg-image',
+};
+
 export default settings;
-export { Section };
+export { Section, SectionWithBackgroundImage };

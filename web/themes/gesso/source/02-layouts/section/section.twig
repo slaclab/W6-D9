@@ -31,7 +31,8 @@
   {% if section_intro %}
     <div class="l-section__intro">
       {% include '@components/wysiwyg/wysiwyg.twig' with {
-        content: section_intro
+        content: section_intro,
+        modifier_classes: false
       } %}
     </div>
   {% endif %}

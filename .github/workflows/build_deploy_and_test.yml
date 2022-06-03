@@ -1,5 +1,8 @@
 name: Build, deploy and test
-on: push
+on:
+  push:
+    branches:
+      - integration
 defaults:
   run:
     shell: bash
@@ -116,12 +119,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup node
-        uses: actions/checkout@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: |
           cd web/themes/gesso
-          echo $PWD
           npm ci
           npm run build-storybook
           rm -rf node_modules
@@ -193,6 +195,9 @@ jobs:
       # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
       - name: setup-environment-vars
         run: /build-tools-ci/scripts/set-environment
+
+      - name: override-environment-vars
+        run: ./.ci/deploy/pantheon/override-environment-vars
 
       # Deploy to Pantheon
       - name: deploy to Pantheon

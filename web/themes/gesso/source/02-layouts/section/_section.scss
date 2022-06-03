@@ -123,3 +123,11 @@
     @include arrow-link(black);
   }
 }
+
+.l-section--gray-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    gesso-grayscale(white),
+    gesso-grayscale(gray-1)
+  );
+}

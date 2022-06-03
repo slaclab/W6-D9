@@ -88,6 +88,12 @@ SectionWithYellow.args = {
   modifier_classes: 'l-section--yellow',
 };
 
+const SectionWithGrayGradient = Template.bind({});
+SectionWithGrayGradient.args = {
+  ...data,
+  modifier_classes: 'l-section--gray-gradient',
+};
+
 export default settings;
 export {
   Section,
@@ -97,4 +103,5 @@ export {
   SectionWithCutout,
   SectionWithPattern,
   SectionWithYellow,
+  SectionWithGrayGradient,
 };

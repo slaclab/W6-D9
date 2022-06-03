@@ -115,3 +115,11 @@
   background-position: bottom right;
   background-repeat: no-repeat;
 }
+
+.l-section--yellow {
+  background-color: gesso-brand(illuminating, base);
+
+  .l-section__title a {
+    @include arrow-link(black);
+  }
+}

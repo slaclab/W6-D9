@@ -70,3 +70,11 @@
     gesso-grayscale(stanford-black)
   );
 }
+
+.l-section--blue-green {
+  background-image: linear-gradient(
+    to bottom,
+    gesso-brand(sky, dark),
+    gesso-brand(palo-verde, dark)
+  );
+}

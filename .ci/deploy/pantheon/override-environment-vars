@@ -1,0 +1,45 @@
+#!/bin/bash
+set -eo pipefail
+
+# Override the environment variable logic so that we only deploy to existing
+# multidev environments:
+#   - integration (integration branch)
+#   - stage (main branch)
+#
+# Additionally, the live branch from GitHub maps to the master branch on
+# Pantheon.
+#
+# This script is based on: https://raw.githubusercontent.com/pantheon-systems/docker-build-tools-ci/6.x/scripts/set-environment
+#
+
+# Set up BASH_ENV if it was not set for us.
+BASH_ENV=${BASH_ENV:-$HOME/.bashrc}
+
+# By default, we will make the main branch live.
+DEFAULT_BRANCH=${DEFAULT_BRANCH:-live}
+
+# If we are on the default branch.
+if [[ ${CI_BRANCH} == ${DEFAULT_BRANCH} ]] ; then
+  # Use dev as the environment.
+	DEFAULT_ENV=${DEFAULT_ENV:-dev}
+elif [[ ${CI_BRANCH} == "integration" ]] ; then
+  # Otherwise, name the environment after the CI build number.
+	DEFAULT_ENV=integration
+elif [[ ${CI_BRANCH} == "main" ]] ; then
+  # Otherwise, name the environment after the CI build number.
+  DEFAULT_ENV=stage
+fi
+
+#=====================================================================================================================
+# EXPORT needed environment variables
+#=====================================================================================================================
+(
+  echo "export DEFAULT_ENV='$DEFAULT_ENV'"
+  echo "export DEFAULT_BRANCH='$DEFAULT_BRANCH'"
+) >> $BASH_ENV
+
+source $BASH_ENV
+
+echo 'Overriden contents of BASH_ENV:'
+cat $BASH_ENV
+echo

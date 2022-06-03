@@ -55,10 +55,17 @@ $card-padding: rem(gesso-spacing(2)) !default;
 }
 
 .c-card__body {
+  background: gesso-color(background, site);
+  color: gesso-color(text, primary);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: $card-padding 0;
+  padding: $card-padding;
+
+  .c-card--on-dark & {
+    background: transparent;
+    color: inherit;
+  }
 }
 
 .c-card__header {

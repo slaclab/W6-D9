@@ -9,11 +9,12 @@
     position: absolute;
     right: 0;
     top: rem(gesso-spacing(7));
+    z-index: 2;
   }
 }
 
 .c-social-share__link {
-  background: transparent;
+  background: gesso-grayscale(white);
   display: inline-block;
   height: rem(34px);
   margin-bottom: rem(gesso-spacing(0.5));
@@ -23,7 +24,6 @@
   width: rem(34px);
 
   &:hover {
-    background: gesso-grayscale(white);
     color: gesso-color(text, primary);
     transform: translateX(0);
   }

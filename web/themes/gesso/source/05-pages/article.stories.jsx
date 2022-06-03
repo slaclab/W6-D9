@@ -5,11 +5,12 @@ import parse from 'html-react-parser';
 import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../04-templates/page/page.twig';
-import { FigureRightAligned } from '../03-components/figure/figure.stories.jsx';
+import sectionTwigTemplate from '../02-layouts/section/section.twig';
 import { ArticleHero } from '../03-components/article-hero/article-hero.stories';
 import { Quote } from '../03-components/quote/quote.stories';
 import { FiftyFiftyLeftFadeIn } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
+import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
 
 export default {
   title: 'Pages/Article',
@@ -38,9 +39,15 @@ const articleDemoContent = `
   <p>The new study builds on two previous advances where the group used more conventional forms of machine learning to dramatically accelerate both battery testing and the process of winnowing down many possible charging methods to find the ones that work best.</p>`,
     })
   )}
-  ${ReactDOMServer.renderToStaticMarkup(
-    FiftyFiftyLeftFadeIn(FiftyFiftyLeftFadeIn.args)
-  )}
+  ${sectionTwigTemplate({
+    no_padding: true,
+    section_content: ReactDOMServer.renderToStaticMarkup(
+      FiftyFiftyLeftFadeIn({
+        ...FiftyFiftyLeftFadeIn.args,
+        has_constrain: true,
+      })
+    ),
+  })}
   ${ReactDOMServer.renderToStaticMarkup(
     WYSIWYG({
       content: `  <p>While these studies allowed researchers to make much faster progress – reducing the time needed to determine battery lifetimes by 98%, for instance – they didn’t reveal the underlying physics or chemistry that made some batteries last longer than others, as the latest study did.</p>
@@ -98,6 +105,7 @@ const articleContent = args =>
 const Article = args => (
   <PageWrapper hero={ArticleHero(ArticleHero.args)}>
     {parse(articleContent(args))}
+    {SectionWithBlueGreenGradient(SectionWithBlueGreenGradient.args)}
   </PageWrapper>
 );
 Article.args = {

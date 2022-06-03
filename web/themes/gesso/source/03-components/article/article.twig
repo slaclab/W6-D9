@@ -1,80 +1,83 @@
 {% set classes = [
   'l-section',
+  'l-section--no-padding',
   'c-article',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 <article {{ add_attributes({ 'class': classes }) }}>
-  {% if show_admin_info %}
-    {% if not admin_info %}
-      {% set admin_info %}
-        {% include '@components/message/message.twig' with {
-          'heading': 'Status message',
-          'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
-        } %}
-        {% include '@components/button-group/button-group.twig' with {
-          'heading': 'Primary tabs',
-          'element': 'nav',
-          'button_modifier_classes': 'c-button--base',
-          'buttons': [
-            {
-              'text': 'View',
-              'active': true,
-            },
-            {
-              'text': 'Edit',
-            },
-            {
-              'text': 'Delete',
-            },
-            {
-              'text': 'Revisions',
-            },
-          ],
+  <div class="l-constrain">
+    {% if show_admin_info %}
+      {% if not admin_info %}
+        {% set admin_info %}
+          {% include '@components/message/message.twig' with {
+            'heading': 'Status message',
+            'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
+          } %}
+          {% include '@components/button-group/button-group.twig' with {
+            'heading': 'Primary tabs',
+            'element': 'nav',
+            'button_modifier_classes': 'c-button--base',
+            'buttons': [
+              {
+                'text': 'View',
+                'active': true,
+              },
+              {
+                'text': 'Edit',
+              },
+              {
+                'text': 'Delete',
+              },
+              {
+                'text': 'Revisions',
+              },
+            ],
+          } %}
+        {% endset %}
+      {% endif %}
+
+      {% block admin_info %}
+        {{ admin_info }}
+      {% endblock %}
+    {% endif %}
+    {{ title_prefix }}
+    {% if not date %}
+      {% set date %}
+        {% include '@components/date/date.twig' with {
+          'date_format': date_format,
         } %}
       {% endset %}
     {% endif %}
-
-    {% block admin_info %}
-      {{ admin_info }}
-    {% endblock %}
-  {% endif %}
-  {{ title_prefix }}
-  {% if not date %}
-    {% set date %}
-      {% include '@components/date/date.twig' with {
-        'date_format': date_format,
-      } %}
-    {% endset %}
-  {% endif %}
-  {% if not author %}
-    {% set author %}
-      {% include '@components/author/author.twig' with {
-        'author': author_name,
-      } %}
-    {% endset %}
-  {% endif %}
-  {% block title %}
-    {% include '@components/page-title/page-title.twig' with {
-      'page_title': title,
-      'kicker': date,
-      'lede': lede,
-      'byline': author
-    } %}
-  {% endblock %}
-  {{ title_suffix }}
-
-  {% block toc %}
-    {% if toc_links %}
-      <div class="l-constrain l-constrain--small">
-      {% include '@components/toc/toc.twig' with {
-        'toc_links': toc_links,
-        'modifier_classes': 'c-article__toc',
-      } %}
-      </div>
+    {% if not author %}
+      {% set author %}
+        {% include '@components/author/author.twig' with {
+          'author': author_name,
+        } %}
+      {% endset %}
     {% endif %}
-  {% endblock %}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    {% block title %}
+      {% include '@components/page-title/page-title.twig' with {
+        'page_title': title,
+        'kicker': date,
+        'lede': lede,
+        'byline': author
+      } %}
+    {% endblock %}
+    {{ title_suffix }}
+
+    {% block toc %}
+      {% if toc_links %}
+        <div class="l-constrain l-constrain--small">
+        {% include '@components/toc/toc.twig' with {
+          'toc_links': toc_links,
+          'modifier_classes': 'c-article__toc',
+        } %}
+        </div>
+      {% endif %}
+    {% endblock %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 </article>

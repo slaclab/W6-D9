@@ -16,7 +16,15 @@ set -eo pipefail
 BASH_ENV=${BASH_ENV:-$HOME/.bashrc}
 
 # By default, we will make the main branch live.
-DEFAULT_BRANCH=${DEFAULT_BRANCH:-live}
+DEFAULT_BRANCH=live
+
+# Set CI_BRANCH based on the branch we are currently on.
+# Example syntax:
+# $ GITHUB_REF=refs/heads/feature-branch-1
+# $ echo ${GITHUB_REF##*/}
+# feature-branch-1
+
+CI_BRANCH=${GITHUB_REF##*/}
 
 # If we are on the default branch.
 if [[ ${CI_BRANCH} == ${DEFAULT_BRANCH} ]] ; then

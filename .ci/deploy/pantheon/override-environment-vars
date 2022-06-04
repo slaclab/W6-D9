@@ -38,6 +38,8 @@ elif [[ ${CI_BRANCH} == "main" ]] ; then
   DEFAULT_ENV=stage
 fi
 
+TERMINUS_ENV=$DEFAULT_ENV
+
 #=====================================================================================================================
 # EXPORT needed environment variables
 #=====================================================================================================================
@@ -45,6 +47,7 @@ fi
   echo "export DEFAULT_ENV='$DEFAULT_ENV'"
   echo "export DEFAULT_BRANCH='$DEFAULT_BRANCH'"
   echo "export CI_BRANCH='$CI_BRANCH'"
+  echo "export TERMINUS_ENV='$TERMINUS_ENV'"
 ) >> $BASH_ENV
 
 source $BASH_ENV

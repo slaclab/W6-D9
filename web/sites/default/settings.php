@@ -33,10 +33,8 @@ if (file_exists($local_settings)) {
   include $local_settings;
 }
 
-// Properly set config install directory for local environments.
-if (getenv('IS_DDEV_PROJECT') == 'true') {
-  $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
-}
+// Set config install directory consistently across environments.
+$settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
 
 // Automatically generated include for settings managed by ddev.
 $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';

@@ -126,7 +126,12 @@ jobs:
           cd web/themes/gesso
           npm ci
           npm run build-storybook
-          rm -rf node_modules
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gesso-dist-files
+          path: |
+            web/themes/gesso/dist
+            web/themes/gesso/storybook
 
   deploy_to_pantheon:
     container:
@@ -139,6 +144,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: gesso-dist-files
+          path: web/themes/gesso
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: web/themes/gesso
 
       - name: Set bash_env env var
         run: echo BASH_ENV=${RUNNER_TEMP}/bash_env.txt >> $GITHUB_ENV

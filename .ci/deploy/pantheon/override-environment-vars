@@ -44,6 +44,7 @@ fi
 (
   echo "export DEFAULT_ENV='$DEFAULT_ENV'"
   echo "export DEFAULT_BRANCH='$DEFAULT_BRANCH'"
+  echo "export CI_BRANCH='$CI_BRANCH'"
 ) >> $BASH_ENV
 
 source $BASH_ENV

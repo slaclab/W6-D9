@@ -11,6 +11,7 @@ import { Quote } from '../03-components/quote/quote.stories';
 import { FiftyFiftyLeftFadeIn } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
+import { PromoBox } from '../03-components/promo-box/promo-box.stories';
 
 export default {
   title: 'Pages/Article',
@@ -54,10 +55,7 @@ const articleDemoContent = `
   <h3>Combining all three approaches</h3>
   <p>Combining all three approaches could potentially slash the time needed to bring a new battery technology from the lab bench to the consumer by as much as two-thirds, Chueh said.</p>
   <p>“In this case, we are teaching the machine how to learn the physics of a new type of failure mechanism that could help us design better and safer fast-charging batteries,” Chueh said. “Fast charging is incredibly stressful and damaging to batteries, and solving this problem is key to expanding the nation’s fleet of electric vehicles as part of the overall strategy for fighting climate change.”</p>
-  <p>The new combined approach can also be applied to developing the grid-scale battery systems needed for a greater deployment of wind and solar electricity, which will become even more urgent as the nation pursues recently announced Biden Administration goals of eliminating fossil fuels from electric power generation by 2035 and achieving net-zero carbon emissions by 2050.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio. </p>
-  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>
-  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>`,
+  <p>The new combined approach can also be applied to developing the grid-scale battery systems needed for a greater deployment of wind and solar electricity, which will become even more urgent as the nation pursues recently announced Biden Administration goals of eliminating fossil fuels from electric power generation by 2035 and achieving net-zero carbon emissions by 2050.</p>`,
     })
   )}
 `;
@@ -105,6 +103,18 @@ const articleContent = args =>
 const Article = args => (
   <PageWrapper hero={ArticleHero(ArticleHero.args)}>
     {parse(articleContent(args))}
+    {PromoBox(PromoBox.args)}
+    {parse(
+      sectionTwigTemplate({
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          WYSIWYG({
+            content: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio. </p>
+  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>
+  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>`,
+          })
+        ),
+      })
+    )}
     {SectionWithBlueGreenGradient(SectionWithBlueGreenGradient.args)}
   </PageWrapper>
 );

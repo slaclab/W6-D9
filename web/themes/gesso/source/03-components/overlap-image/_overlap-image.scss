@@ -83,8 +83,8 @@
       rgba(gesso-grayscale(white), 0.51) 0%,
       gesso-grayscale(white) 51.6%
     );
-    position: relative;
     bottom: -14.4vw;
+    position: relative;
 
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       position: absolute;

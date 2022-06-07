@@ -17,6 +17,8 @@
 }
 
 .c-overlap-image__image {
+  position: relative;
+
   .c-overlap-image--parallax & {
     background-position: center center;
     background-repeat: no-repeat;
@@ -134,5 +136,19 @@
   .c-overlap-image--teal & {
     background: gesso-brand(stormy, dark);
     color: gesso-color(text, on-dark);
+  }
+}
+
+.c-overlap-image__caption {
+  bottom: rem(gesso-spacing(2.5));
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 100%;
+
+  .c-overlap-image--top-left &,
+  .c-overlap-image--center-left &,
+  .c-overlap-image--bottom-left & {
+    text-align: right;
   }
 }

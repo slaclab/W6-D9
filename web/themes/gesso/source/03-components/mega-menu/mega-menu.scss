@@ -69,8 +69,16 @@
         transform-origin: left center;
         transition: transform gesso-duration(long)
             cubic-bezier(0.23, 1, 0.32, 1),
+          max-width gesso-duration(long) cubic-bezier(0.23, 1, 0.32, 1),
           transform-origin 0s gesso-duration(long);
         width: 100%;
+      }
+
+      &.is-active-trail {
+        &::after {
+          max-width: rem(60px);
+          transform: scaleX(0.5);
+        }
       }
 
       &:hover,
@@ -78,6 +86,14 @@
         &::after {
           transform: scaleX(1);
           transform-origin: right center;
+        }
+
+        // stylelint-disable max-nesting-depth
+        &.is-active-trail {
+          &::after {
+            max-width: none;
+            transform-origin: left center;
+          }
         }
       }
     }

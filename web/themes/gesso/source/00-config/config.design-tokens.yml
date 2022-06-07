@@ -200,7 +200,7 @@ gesso:
         text-darker: grayscale.gray-7
         accent: brand.cardinal.base
         accent-dark: brand.stormy.dark
-        accent-light: brand.cardinal.light
+        accent-light: brand.digital-red.base
         focus: brand.lagunita.light
       error:
         background: brand.digital-red.light

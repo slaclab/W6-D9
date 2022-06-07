@@ -8,7 +8,7 @@
 // z-index in order to cover the mega menu.
 .l-header {
   background: gesso-color('background', 'site');
-  z-index: 2;
+  z-index: gesso-z-index(nav);
 }
 
 .c-mega-menu {
@@ -132,7 +132,7 @@
   transform: translate3d(0, calc(100% + var(--gesso-header-current-height)), 0);
   transition: transform gesso-duration(long) gesso-easing(ease-in-out),
     opacity gesso-duration(long) gesso-easing(ease-in-out);
-  z-index: 0;
+  z-index: gesso-z-index(social-share) + 1;
 
   a,
   button {

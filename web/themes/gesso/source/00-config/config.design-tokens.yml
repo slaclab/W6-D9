@@ -379,6 +379,7 @@ gesso:
       intro: 270ms
       outro: 195ms
   z-index:
+    social-share: 2
     nav: 1000
     drawer: 1200
     modal: 1300

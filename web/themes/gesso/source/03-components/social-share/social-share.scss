@@ -9,7 +9,7 @@
     position: absolute;
     right: 0;
     top: rem(gesso-spacing(7));
-    z-index: 2;
+    z-index: gesso-z-index(social-share);
   }
 }
 

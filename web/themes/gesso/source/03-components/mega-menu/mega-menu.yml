@@ -175,7 +175,7 @@ items:
       options:
         attributes:
           class: ''
-    in_active_trail: false
+    in_active_trail: true
     description: 'In our large-scale facilities and research centers, scientists take advantage of specialized tools and expertise and collaborate with colleagues from a wide range of fields.'
     below:
       - title: 'Scientific Facilities'
@@ -184,7 +184,7 @@ items:
           options:
             attributes:
               class: ''
-        in_active_trail: false
+        in_active_trail: true
         below:
           - title: 'LCLS website'
             url: 'https://lcls.slac.stanford.edu/'

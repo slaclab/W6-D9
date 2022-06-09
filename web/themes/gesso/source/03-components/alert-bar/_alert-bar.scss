@@ -6,7 +6,6 @@
   background-color: gesso-brand(cardinal, dark);
   color: gesso-grayscale(white);
   font-size: 13px;
-  line-height: 1;
   padding: gesso-spacing(1) 0;
   width: 100%;
 
@@ -26,6 +25,7 @@
 
 .c-alert-bar__inner {
   display: flex;
+  gap: gesso-spacing(2);
   justify-content: space-between;
 }
 
@@ -41,6 +41,7 @@
   @include text-button;
   @include underline;
   color: inherit;
+  white-space: nowrap;
 
   &:hover,
   &:focus {

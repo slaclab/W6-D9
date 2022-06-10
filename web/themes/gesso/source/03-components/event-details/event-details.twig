@@ -1,0 +1,102 @@
+{# The event type taxonomy maps to different color styles #}
+{% set type_color = null %}
+{% if type is not empty %}
+  {% set type_label = type|replace(' ', '-')|lower %}
+
+  {# Teal/lagunitas (default) #}
+  {% if type_label in ['lecture', 'slac-on-tap'] %}
+    {% set type_color = 'tl' %}
+
+    {# Purple/lavender #}
+  {% elseif type_label in ['tour', 'art-meets-science'] %}
+    {% set type_color = 'pl' %}
+
+    {# Teal/palo-verde #}
+  {% elseif type_label in ['science-festival', 'block-party', 'community-day'] %}
+    {% set type_color = 'tp' %}
+
+    {# Cardinal/digital red #}
+  {% elseif type_label in ['conference', 'special-event'] %}
+    {% set type_color = 'cd' %}
+  {% endif %}
+{% endif %}
+
+{% set classes = [
+  'c-event-details',
+  type_color ? 'c-event-details--' ~ type_color : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {% if type %}
+    <div class="c-event-details__type">
+      {{ type }}
+    </div>
+  {% endif %}
+
+  <div class="c-event-details__image">
+    {% if image_url %}
+      <img src="{{ image_url }}" alt="{{ image_alt }}" role="presentation">
+    {% endif %}
+    <div class="c-event-details__date">
+      {{ month ? '<span>' ~ month ~ '</span>' }}
+      {{ day }}
+    </div>
+  </div>
+
+  <div class="c-event-details__section">
+    {% if calendar_link_url %}
+      <div class="c-event-details__when">
+        {% include '@components/icon/icon.twig' with {
+          hidden: true,
+          label: 'Date',
+          icon_name: 'calendar',
+        } %}
+        <a href="{{ calendar_link_url }}" title="{{ 'Add to calendar'|t }}">
+          {{ calendar_link_text|raw }}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if map_link_url %}
+      <div class="c-event-details__where">
+        {% include '@components/icon/icon.twig' with {
+            hidden: true,
+            label: 'Location',
+            icon_name: 'location',
+          } %}
+        <a href="{{ map_link_url }}" title="{{ 'Get directions'|t }}">
+          {{ map_link_text|raw }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="c-event-details__section">
+    {% for cta in ctas %}
+      {% include '@components/button/button.twig' with {
+        is_button_tag: false,
+        url: cta.url,
+        text: cta.text,
+        modifier_classes: 'c-event-details__button',
+    } %}
+    {% endfor %}
+
+    {% if zoom_details %}
+      <div class="c-event-details__info">
+        {{ zoom_details|raw }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if additional_links %}
+    <div class="c-event-details__section">
+      {% for link in additional_links %}
+        <a href="{{ link.url }}" class="c-event-details__link">
+          {{ link.text }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>

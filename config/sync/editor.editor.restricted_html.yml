@@ -1,14 +1,12 @@
-uuid: 0a2b6a24-fbf6-4835-8a12-f450475002ec
+uuid: 127c3171-da82-4bcd-8d62-b20378d095af
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.basic_html
+    - filter.format.restricted_html
   module:
     - ckeditor
-_core:
-  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
-format: basic_html
+format: restricted_html
 editor: ckeditor
 settings:
   toolbar:
@@ -17,27 +15,18 @@ settings:
         -
           name: Formatting
           items:
-            - Format
             - Bold
             - Italic
-            - Strike
-            - Subscript
-            - Superscript
             - DrupalLink
-            - BulletedList
-            - NumberedList
-            - Blockquote
-            - Table
             - Undo
             - Redo
-            - RemoveFormat
   plugins:
     language:
       language_list: un
     stylescombo:
       styles: ''
 image_upload:
-  status: true
+  status: false
   scheme: public
   directory: inline-images
   max_size: ''

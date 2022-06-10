@@ -101,6 +101,7 @@ packages:
     myclabs/deep-copy: 1.11.0
     nikic/php-parser: v4.13.2
     pantheon-systems/drupal-integrations: 9.0.2
+    pantheon-upstreams/upstream-configuration: dev-main
     pdepend/pdepend: 2.10.3
     pear/archive_tar: 1.4.14
     pear/console_getopt: v1.4.3

@@ -14,12 +14,10 @@
     }
   ],
   "require": {
-    "pantheon-upstreams/upstream-configuration": "self.version",
-    "pantheon-systems/drupal-integrations": "^9",
     "composer/installers": "^1.10",
     "cweagans/composer-patches": "^1.7",
     "drupal/admin_toolbar": "^3.0",
-    "drupal/allowed_formats": "^1.3",
+    "drupal/allowed_formats": "^1.5",
     "drupal/components": "^2.4",
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
@@ -47,6 +45,8 @@
     "drupal/username_enumeration_prevention": "^1.2",
     "drush/drush": "^10",
     "joachim-n/composer-manifest": "^1",
+    "pantheon-systems/drupal-integrations": "^9",
+    "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"

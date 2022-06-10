@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35d250688cdfcb3dbe5bf0b7f10ae26d",
+    "content-hash": "5dc8cd9c37ceb1d489b3728a79432513",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5565,6 +5565,22 @@
                 "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.2"
             },
             "time": "2021-05-18T19:28:30+00:00"
+        },
+        {
+            "name": "pantheon-upstreams/upstream-configuration",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "upstream-configuration",
+                "reference": "9542d5ac59c22fe5b54868cc99367db9e9895f51"
+            },
+            "type": "project",
+            "extra": {
+                "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "pear/archive_tar",
@@ -13912,18 +13928,17 @@
         "drupal/inline_entity_form": 5,
         "drupal/libraries": 10,
         "drupal/maxlength": 5,
-        "drupal/rabbit_hole": 10
+        "drupal/rabbit_hole": 10,
+        "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=7.3"
-    },
+    "platform": [],
     "platform-dev": [],
     "platform-overrides": {
         "ext-gd": "1.0.0",
         "ext-opcache": "1.0.0",
         "ext-pdo": "1.0.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

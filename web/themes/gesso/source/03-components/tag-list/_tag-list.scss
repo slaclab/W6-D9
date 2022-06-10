@@ -4,10 +4,12 @@
 
 .c-tag-list {
   @include list-clean();
-}
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(14px);
+  margin: gesso-spacing(2) 0;
 
-.c-tag-list__item {
-  display: inline-block;
-  margin-bottom: rem(gesso-spacing(1));
-  margin-right: rem(gesso-spacing(1));
+  li {
+    margin: 0;
+  }
 }

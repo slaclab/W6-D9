@@ -1,0 +1,15 @@
+{% set classes = [
+  'c-cookie-banner',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes, role: 'alert' } ) }}>
+  <div class="l-constrain c-cookie-banner__inner">
+    <p>
+      {{ cookie_banner_text }}
+    </p>
+    <button type="button" class="c-cookie-banner__button">
+      {{ cookie_button_text|default('Accept and Close')|t }}
+    </button>
+  </div>
+</div>

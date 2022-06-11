@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
-import globalData from '../../00-config/storybook.global-data.yml';
-import RegionTwig from '../../02-layouts/region/region.twig';
 import SkiplinksTwig from '../../03-components/skiplinks/skiplinks.twig';
 import BreadcrumbTwig from '../../02-layouts/breadcrumb/breadcrumb.twig';
 import ContentTwig from '../../02-layouts/content/content.twig';
@@ -16,23 +14,25 @@ import { SocialShare } from '../../03-components/social-share/social-share.stori
 
 const PageWrapper = props => {
   // eslint-disable-next-line react/prop-types
-  const { hideSocialLinks, hero, children } = props;
+  const { hideSocialLinks, hideBreadcrumbs, hero, bodyClasses, children } =
+    props;
   return (
-    <>
+    <div className={bodyClasses}>
       {parse(SkiplinksTwig())}
       {Header(Header.args)}
       <div className="l-site-container">
         {hero}
         <main id="main" className="c-main" role="main" tabIndex="-1">
           <div className="c-main__meta">
-            {parse(
-              BreadcrumbTwig({
-                has_constrain: false,
-                breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
-                  <>{Breadcrumb(Breadcrumb.args)}</>
-                ),
-              })
-            )}
+            {!hideBreadcrumbs &&
+              parse(
+                BreadcrumbTwig({
+                  has_constrain: false,
+                  breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
+                    <>{Breadcrumb(Breadcrumb.args)}</>
+                  ),
+                })
+              )}
             {!hideSocialLinks && SocialShare(SocialShare.args)}
           </div>
           {parse(
@@ -52,7 +52,7 @@ const PageWrapper = props => {
         top_element: 'top',
         is_demo: false,
       })}
-    </>
+    </div>
   );
 };
 

@@ -2,4 +2,8 @@
 
 .l-site-container {
   padding-top: var(--gesso-header-initial-height);
+
+  .has-transparent-nav & {
+    padding-top: 0;
+  }
 }

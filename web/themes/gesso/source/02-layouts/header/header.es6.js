@@ -1,6 +1,5 @@
 import Drupal from 'drupal';
 import { throttle } from 'lodash';
-import { BREAKPOINTS } from '../../00-config/_GESSO.es6';
 
 Drupal.behaviors.header = {
   attach(context) {

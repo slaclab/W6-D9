@@ -1,0 +1,33 @@
+// @file
+// Component: c-video-hero
+@use '00-config' as *;
+
+.c-video-hero {
+  position: relative;
+}
+
+.c-video-hero__media {
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    height: 0;
+    padding-bottom: percentage(9/16);
+    position: relative;
+    width: 100%;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.c-video-hero__overlay {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}

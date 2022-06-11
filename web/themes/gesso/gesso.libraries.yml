@@ -108,3 +108,12 @@ toc:
     dist/js/toc.es6.js: {}
   dependencies:
     - gesso/common
+
+video_hero:
+  css:
+    theme:
+      dist/css/video-hero.css: {}
+  js:
+    dist/js/video-hero.es6.js: {}
+  dependencies:
+    - gesso/common

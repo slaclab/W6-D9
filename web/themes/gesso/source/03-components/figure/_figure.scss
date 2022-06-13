@@ -9,20 +9,13 @@
 
   &.u-align-center {
     clear: both;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: rem(gesso-spacing(2));
+    margin: rem(gesso-spacing(9)) auto;
     max-width: 812px;
     width: 100%;
 
     img,
     video {
       width: 100%;
-    }
-
-    @include breakpoint(gesso-breakpoint(tablet)) {
-      margin-bottom: rem(gesso-spacing(9));
-      margin-top: rem(gesso-spacing(9));
     }
   }
 
@@ -80,6 +73,22 @@
   margin-top: rem(gesso-spacing(2.5));
   max-width: 940px;
   width: 100%;
+
+  .u-align-center & {
+    padding: 0 rem(gesso-spacing(2.5));
+
+    @include breakpoint(860px) {
+      padding: 0;
+    }
+  }
+
+  .u-align-wide & {
+    padding: 0 rem(gesso-spacing(2.5));
+
+    @include breakpoint(1280px) {
+      padding: 0;
+    }
+  }
 }
 
 .c-figure--iframe {

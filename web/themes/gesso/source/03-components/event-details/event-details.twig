@@ -1,22 +1,22 @@
 {# The event type taxonomy maps to different color styles #}
 {% set type_color = null %}
 {% if type is not empty %}
-  {% set type_label = type|replace(' ', '-')|lower %}
+  {% set type_label = type|lower %}
 
   {# Teal/lagunitas (default) #}
-  {% if type_label in ['lecture', 'slac-on-tap'] %}
+  {% if type_label in ['lecture', 'slac on tap'] %}
     {% set type_color = 'tl' %}
 
     {# Purple/lavender #}
-  {% elseif type_label in ['tour', 'art-meets-science'] %}
+  {% elseif type_label in ['tour', 'art meets science'] %}
     {% set type_color = 'pl' %}
 
-    {# Teal/palo-verde #}
-  {% elseif type_label in ['science-festival', 'block-party', 'community-day'] %}
+    {# Teal/palo verde #}
+  {% elseif type_label in ['science festival', 'block party', 'community day'] %}
     {% set type_color = 'tp' %}
 
     {# Cardinal/digital red #}
-  {% elseif type_label in ['conference', 'special-event'] %}
+  {% elseif type_label in ['conference', 'special event'] %}
     {% set type_color = 'cd' %}
   {% endif %}
 {% endif %}
@@ -36,7 +36,7 @@
 
   <div class="c-event-details__image">
     {% if image_url %}
-      <img src="{{ image_url }}" alt="{{ image_alt }}" role="presentation">
+      <img src="{{ image_url }}" alt="{{ image_alt }}">
     {% endif %}
     <div class="c-event-details__date">
       {{ month ? '<span>' ~ month ~ '</span>' }}

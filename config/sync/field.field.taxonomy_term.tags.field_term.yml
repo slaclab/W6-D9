@@ -1,0 +1,25 @@
+uuid: 08c1d54f-ee99-40c3-a673-9cd7261e454f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_term
+    - taxonomy.vocabulary.tags
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: taxonomy_term.tags.field_term
+field_name: field_term
+entity_type: taxonomy_term
+bundle: tags
+label: 'Term name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

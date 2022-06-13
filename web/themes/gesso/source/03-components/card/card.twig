@@ -5,17 +5,30 @@
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<div {{ add_attributes({ 'class': classes }) }}>
+<div {{ add_attributes({ 'class': classes } ) }}>
   <div class="c-card__body">
+    {% if type %}
+      <div class="c-card__kicker c-card__type">
+        {{ type }}
+      </div>
+    {% endif %}
     <div class="c-card__header">
       {% if kicker %}
         <div class="c-card__kicker">
           {{ kicker }}
         </div>
       {% endif %}
+      {% apply spaceless %}
       <h3 class="c-card__title h5">
-        {% if url %}<a href="{{ url }}" class="c-card__link">{% endif %}{{ title }}{% if url %}</a>{% endif %}
+        {% if url %}
+          <a href="{{ url }}" class="c-card__link">
+            {{- title -}}
+          </a>
+        {% else %}
+          {{- title -}}
+        {% endif %}
       </h3>
+      {% endapply %}
     </div>
     <div class="c-card__content">
       {{ card_content }}

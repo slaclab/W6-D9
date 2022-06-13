@@ -3,6 +3,7 @@ title: 'Card title'
 url: '#0'
 footer: ''
 kicker: 'Kicker'
+type: 'Upcoming Event'
 read_more: false
 media: |-
   <img src="https://picsum.photos/id/1015/387/185">

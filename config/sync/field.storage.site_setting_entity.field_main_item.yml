@@ -1,0 +1,20 @@
+uuid: 8f586634-d822-4eae-82d3-966c599caed6
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+    - system
+id: site_setting_entity.field_main_item
+field_name: field_main_item
+entity_type: site_setting_entity
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

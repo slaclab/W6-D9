@@ -1,0 +1,23 @@
+uuid: c113918d-0f89-41f4-ba9c-36591c0e9934
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_main_item
+    - site_settings.site_setting_entity_type.mega_menu_cards
+id: site_setting_entity.mega_menu_cards.field_main_item
+field_name: field_main_item
+entity_type: site_setting_entity
+bundle: mega_menu_cards
+label: 'Main Item'
+description: 'Choose the mega menu section where this card should appear. Cards can only be added to top-level items.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

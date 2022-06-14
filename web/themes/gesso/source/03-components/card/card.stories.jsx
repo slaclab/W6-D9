@@ -3,6 +3,10 @@ import parse from 'html-react-parser';
 import twigTemplate from './card.twig';
 import data from './card.yml';
 
+import eventCardData from './card-event.yml';
+import eventFallbackCardData from './card-event-fallback.yml';
+import globalData from '../../00-config/storybook.global-data.yml';
+
 const settings = {
   title: 'Components/Card',
 };
@@ -12,15 +16,21 @@ const Default = args => (
     ...args,
   }))
 );
-Default.args = { ...data };
+Default.args = { ...globalData, ...data };
 
-const FeatureCard = args => (
+const EventCard = args => (
   parse(twigTemplate({
     ...args,
-    modifier_classes: 'c-card--feature',
   }))
 );
-FeatureCard.args = { ...data };
+EventCard.args = { ...globalData, ...eventCardData };
+
+const EventFallbackCard = args => (
+  parse(twigTemplate({
+    ...args,
+  }))
+);
+EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
 export default settings;
-export { Default, FeatureCard };
+export { Default, EventCard, EventFallbackCard };

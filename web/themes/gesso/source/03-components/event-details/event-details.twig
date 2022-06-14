@@ -1,51 +1,24 @@
-{# The event type taxonomy maps to different color styles #}
-{% set type_color = null %}
-{% if type is not empty %}
-  {% set type_label = type|lower %}
-
-  {# Teal/lagunitas (default) #}
-  {% if type_label in ['lecture', 'slac on tap'] %}
-    {% set type_color = 'tl' %}
-
-    {# Purple/lavender #}
-  {% elseif type_label in ['tour', 'art meets science'] %}
-    {% set type_color = 'pl' %}
-
-    {# Teal/palo verde #}
-  {% elseif type_label in ['science festival', 'block party', 'community day'] %}
-    {% set type_color = 'tp' %}
-
-    {# Cardinal/digital red #}
-  {% elseif type_label in ['conference', 'special event'] %}
-    {% set type_color = 'cd' %}
-  {% endif %}
-{% endif %}
-
 {% set classes = [
   'c-event-details',
-  type_color ? 'c-event-details--' ~ type_color : '',
   modifier_classes ? modifier_classes : ''
 ] %}
 
 <div {{ add_attributes({ class: classes } ) }}>
-  {% if type %}
-    <div class="c-event-details__type">
-      {{ type }}
-    </div>
+  {% if event_type %}
+    {% include '@components/event-hat/event-hat.twig' %}
   {% endif %}
 
   <div class="c-event-details__image">
     {% if image_url %}
       <img src="{{ image_url }}" alt="{{ image_alt }}">
     {% endif %}
-    <div class="c-event-details__date">
-      {{ month ? '<span>' ~ month ~ '</span>' }}
-      {{ day }}
-    </div>
+    {% if month and day %}
+      {% include '@components/event-date/event-date.twig' %}
+    {% endif %}
   </div>
 
   <div class="c-event-details__section">
-    {% if calendar_link_url %}
+    {% if calendar_link_url and calendar_link_text %}
       <div class="c-event-details__when">
         {% include '@components/icon/icon.twig' with {
           hidden: true,
@@ -58,7 +31,7 @@
       </div>
     {% endif %}
 
-    {% if map_link_url %}
+    {% if map_link_url and map_link_text %}
       <div class="c-event-details__where">
         {% include '@components/icon/icon.twig' with {
             hidden: true,

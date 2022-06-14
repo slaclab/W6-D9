@@ -1,0 +1,24 @@
+// @file
+// Component: c-event-date
+@use '00-config' as *;
+
+.c-event-date {
+  background-image: url('images/backgrounds/arch-gradient.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  color: gesso-grayscale(white);
+  font-family: gesso-font-family(secondary);
+  font-size: 60px;
+  inset: 0;
+  line-height: 0.75;
+  padding: 50px 0 0 30px;
+  position: absolute;
+
+  span {
+    display: table;
+    font-family: gesso-font-family(primary);
+    font-size: em(26px, 60px);
+    font-weight: gesso-font-weight(black);
+    text-transform: uppercase;
+  }
+}

@@ -1,5 +1,3 @@
-{% import '@global/gesso.macro.twig' as macros %}
-
 {% set classes = [
   'c-card',
   modifier_classes ? modifier_classes : '',
@@ -8,13 +6,13 @@
 <div {{ add_attributes({ 'class': classes } ) }}>
   <div class="c-card__body">
     {% if type %}
-      <div class="c-card__kicker c-card__type">
+      <div class="c-kicker c-card__type">
         {{ type }}
       </div>
     {% endif %}
     <div class="c-card__header">
       {% if kicker %}
-        <div class="c-card__kicker">
+        <div class="c-kicker">
           {{ kicker }}
         </div>
       {% endif %}
@@ -33,27 +31,45 @@
     <div class="c-card__content">
       {{ card_content }}
     </div>
-    {% if footer or read_more or tags %}
+    {% if footer or event_date or event_location %}
       <div class="c-card__footer">
         {{ footer }}
-        {% if tags %}
-          <div class="c-card__tags">
-            {% include "@components/tag-list/tag-list.twig" with {
-              items: tags
-            } %}
+
+        {% if event_date %}
+          <div class="c-card__date">
+            {% include '@components/icon/icon.twig' with {
+            'icon_name': 'calendar',
+            'hidden': true,
+            'label': 'Date',
+          } %}
+            {{ event_date }}
           </div>
         {% endif %}
-        {% if read_more and url %}
-          <div class="c-card__readmore">
-            {{ macros.readmore(url, title) }}
+
+        {% if event_location %}
+          <div class="c-card__location">
+            {% include '@components/icon/icon.twig' with {
+            'icon_name': 'location',
+            'hidden': true,
+            'label': 'Location',
+          } %}
+            {{ event_location }}
           </div>
         {% endif %}
+
       </div>
     {% endif %}
   </div>
   {% if media %}
     <div class="c-card__media">
       {{ media }}
+
+      {% if is_event %}
+        {% include '@components/event-date/event-date.twig' with {
+          month: event_month,
+          day: event_day,
+        } %}
+      {% endif %}
     </div>
   {% endif %}
 </div>

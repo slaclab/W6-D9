@@ -11,6 +11,7 @@ $card-padding: 30px !default;
 .c-card {
   display: flex;
   flex-direction: column;
+  line-height: gesso-line-height(loose);
   position: relative;
   transition: box-shadow gesso-duration(short) gesso-easing(ease-in-out);
 
@@ -18,11 +19,21 @@ $card-padding: 30px !default;
   &:focus-within {
     box-shadow: gesso-box-shadow(1);
   }
+
+  .c-kicker {
+    color: $card-meta-color;
+    margin-bottom: rem(gesso-spacing(1.5));
+  }
 }
 
 .c-card__title {
   @include arrow-link(red);
+  @include responsive-font-size(5);
   margin: 0;
+
+  &::after {
+    margin-top: -8px;
+  }
 
   .c-card:hover &,
   .c-card:focus-within & {
@@ -66,6 +77,7 @@ $card-padding: 30px !default;
   flex-direction: column;
   flex-grow: 1;
   padding: $card-padding;
+  z-index: 1;
 
   .c-card--on-dark & {
     background: transparent;
@@ -75,16 +87,6 @@ $card-padding: 30px !default;
 
 .c-card__header {
   margin-bottom: rem(gesso-spacing(1.5));
-}
-
-.c-card__kicker {
-  color: $card-meta-color;
-  font-size: rem(gesso-font-size(1));
-  font-weight: gesso-font-weight(bold);
-  letter-spacing: 1px;
-  line-height: gesso-line-height(tight);
-  margin-bottom: rem(gesso-spacing(1.5));
-  text-transform: uppercase;
 }
 
 .c-card__type {
@@ -100,16 +102,23 @@ $card-padding: 30px !default;
 
 .c-card__content {
   font-family: gesso-font-family(secondary);
-  font-size: rem(gesso-font-size(1));
+  font-size: rem(gesso-font-size(2));
   line-height: gesso-line-height(loose);
-  margin-bottom: rem(gesso-spacing(1.5));
+  margin-bottom: rem(30px);
+}
+
+.c-card__footer {
+  font-size: rem(14px);
 }
 
 .c-card__media {
+  aspect-ratio: 387 / 246;
   order: -1;
 
   img {
-    width: 100%;
+    max-width: none;
+    min-width: 100%;
+    object-fit: cover;
   }
 
   @media (prefers-reduced-motion: no-preference) {

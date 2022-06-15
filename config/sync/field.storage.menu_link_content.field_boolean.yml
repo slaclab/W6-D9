@@ -1,11 +1,11 @@
-uuid: 4ef0e011-dcc1-4332-b267-ea02b7d6552e
+uuid: 4bab8e73-af66-4bd6-af53-2bbcf577c96e
 langcode: en
 status: true
 dependencies:
   module:
     - menu_link_content
-id: menu_link_content.field_display_horizontal_arrow_
-field_name: field_display_horizontal_arrow_
+id: menu_link_content.field_boolean
+field_name: field_boolean
 entity_type: menu_link_content
 type: boolean
 settings: {  }

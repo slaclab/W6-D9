@@ -10,7 +10,7 @@ field_name: field_link_description
 entity_type: menu_link_content
 bundle: main
 label: 'Link description'
-description: 'Add a description to top-level menu items and the first menu item in a sub-menu.'
+description: 'A description can be displayed with top-level menu items and second or third-level items that do not have any sub-menu links.'
 required: false
 translatable: false
 default_value: {  }

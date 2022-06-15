@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.main.field_display_horizontal_arrow_
+    - field.field.menu_link_content.main.field_boolean
     - field.field.menu_link_content.main.field_link_description
     - field.field.menu_link_content.main.field_research_area_icon
     - system.menu.main
@@ -15,9 +15,9 @@ targetEntityType: menu_link_content
 bundle: main
 mode: default
 content:
-  field_display_horizontal_arrow_:
+  field_boolean:
     type: boolean_checkbox
-    weight: 23
+    weight: 26
     region: content
     settings:
       display_label: true

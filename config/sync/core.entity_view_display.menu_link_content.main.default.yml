@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.main.field_display_horizontal_arrow_
+    - field.field.menu_link_content.main.field_boolean
     - field.field.menu_link_content.main.field_link_description
     - field.field.menu_link_content.main.field_research_area_icon
     - system.menu.main
@@ -19,7 +19,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_display_horizontal_arrow_:
+  field_boolean:
     type: boolean
     label: above
     settings:
@@ -27,7 +27,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 7
     region: content
   field_link_description:
     type: basic_string

@@ -1,41 +1,62 @@
-uuid: 0a2b6a24-fbf6-4835-8a12-f450475002ec
+uuid: e3ba7c1c-6615-48a3-a324-22297c09d6dd
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+    - ckeditor5
 format: basic_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Format
-            - Bold
-            - Italic
-            - Strike
-            - Subscript
-            - Superscript
-            - DrupalLink
-            - BulletedList
-            - NumberedList
-            - Blockquote
-            - Table
-            - Undo
-            - Redo
-            - RemoveFormat
+    items:
+      - heading
+      - bold
+      - italic
+      - strikethrough
+      - subscript
+      - superscript
+      - link
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - insertTable
+      - '|'
+      - undo
+      - redo
+      - removeFormat
+      - '|'
+      - sourceEditing
+      - '-'
   plugins:
-    language:
-      language_list: un
-    stylescombo:
-      styles: ''
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<span>'
+        - '<a hreflang>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
 image_upload:
   status: true
   scheme: public

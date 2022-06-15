@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.site_setting_entity.mega_menu_cards.field_cards
-    - field.field.site_setting_entity.mega_menu_cards.field_main_item
+    - field.field.site_setting_entity.mega_menu_cards.field_menu_link
     - site_settings.site_setting_entity_type.mega_menu_cards
   module:
     - entity_reference_revisions
@@ -23,13 +23,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_main_item:
+  field_menu_link:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   fieldset:
     type: string

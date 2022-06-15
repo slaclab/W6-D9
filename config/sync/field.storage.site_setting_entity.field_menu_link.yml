@@ -1,16 +1,16 @@
-uuid: 8f586634-d822-4eae-82d3-966c599caed6
+uuid: f3b54892-37c8-4b73-83ed-4440e6b2d8af
 langcode: en
 status: true
 dependencies:
   module:
+    - menu_link_content
     - site_settings
-    - system
-id: site_setting_entity.field_main_item
-field_name: field_main_item
+id: site_setting_entity.field_menu_link
+field_name: field_menu_link
 entity_type: site_setting_entity
 type: entity_reference
 settings:
-  target_type: menu
+  target_type: menu_link_content
 module: core
 locked: false
 cardinality: 1

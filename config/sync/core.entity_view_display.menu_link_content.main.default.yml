@@ -1,0 +1,46 @@
+uuid: 258777ba-ac4c-490b-8a7a-8881ebfec4f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_display_horizontal_arrow_
+    - field.field.menu_link_content.main.field_link_description
+    - field.field.menu_link_content.main.field_research_area_icon
+    - system.menu.main
+  module:
+    - options
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_horizontal_arrow_:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_research_area_icon:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

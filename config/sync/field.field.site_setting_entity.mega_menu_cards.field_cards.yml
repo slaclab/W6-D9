@@ -1,0 +1,25 @@
+uuid: 5ba4e04c-6d29-4cea-b2fc-7b4ad014a81f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_cards
+    - site_settings.site_setting_entity_type.mega_menu_cards
+  module:
+    - entity_reference_revisions
+id: site_setting_entity.mega_menu_cards.field_cards
+field_name: field_cards
+entity_type: site_setting_entity
+bundle: mega_menu_cards
+label: Cards
+description: 'Create a card to display on a mega menu section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+field_type: entity_reference_revisions

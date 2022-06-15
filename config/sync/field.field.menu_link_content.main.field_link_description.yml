@@ -1,0 +1,19 @@
+uuid: fb1a1870-f4bf-4b53-a651-f9e98da370f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_link_description
+    - system.menu.main
+id: menu_link_content.main.field_link_description
+field_name: field_link_description
+entity_type: menu_link_content
+bundle: main
+label: 'Link description'
+description: 'Add a description to top-level menu items and the first menu item in a sub-menu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

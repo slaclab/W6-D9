@@ -1,0 +1,18 @@
+uuid: 4ef0e011-dcc1-4332-b267-ea02b7d6552e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.field_display_horizontal_arrow_
+field_name: field_display_horizontal_arrow_
+entity_type: menu_link_content
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

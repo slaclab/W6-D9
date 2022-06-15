@@ -145,3 +145,25 @@
   font-size: rem(gesso-font-size(1));
   padding: rem(gesso-spacing(0.5)) rem(gesso-spacing(1));
 }
+
+.c-button--chevron {
+  &::after {
+    background-image: url('images/backgrounds/chevron-white.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7px auto;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: bottom;
+    width: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      filter: invert(1);
+    }
+  }
+}

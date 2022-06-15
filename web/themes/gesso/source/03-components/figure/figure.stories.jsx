@@ -23,6 +23,14 @@ const FigureCentered = args => (
 );
 FigureCentered.args = { ...data };
 
+const FigureCenteredWide = args => (
+  parse(twigTemplate({
+    ...args,
+    modifier_classes: 'u-align-center u-align-wide',
+  }))
+);
+FigureCenteredWide.args = { ...data };
+
 const FigureLeftAligned = args => (
   parse(twigTemplate({
     ...args,
@@ -72,4 +80,4 @@ const FigureWithVideoRightAligned = args => (
 FigureWithVideoRightAligned.args = { ...videoData };
 
 export default settings;
-export { Default, FigureCentered, FigureLeftAligned, FigureRightAligned, FigureWithVideo, FigureWithVideoCentered, FigureWithVideoLeftAligned, FigureWithVideoRightAligned };
+export { Default, FigureCentered, FigureCenteredWide, FigureLeftAligned, FigureRightAligned, FigureWithVideo, FigureWithVideoCentered, FigureWithVideoLeftAligned, FigureWithVideoRightAligned };

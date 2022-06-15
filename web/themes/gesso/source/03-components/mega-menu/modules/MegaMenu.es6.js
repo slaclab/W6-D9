@@ -256,6 +256,7 @@ class MegaMenu {
   closeMenu() {
     window.removeEventListener('click', this.handleClickAnywhere);
     window.removeEventListener('keydown', this.handleKeydownAnywhere);
+    document.body.classList.remove('has-open-menu');
   }
 
   /**
@@ -265,6 +266,7 @@ class MegaMenu {
   openMenu() {
     window.addEventListener('click', this.handleClickAnywhere);
     window.addEventListener('keydown', this.handleKeydownAnywhere);
+    document.body.classList.add('has-open-menu');
   }
 
   /**

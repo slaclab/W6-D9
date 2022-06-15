@@ -4,13 +4,10 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
-    - field.field.taxonomy_term.tags.field_description
     - field.field.taxonomy_term.tags.field_image
     - field.field.taxonomy_term.tags.field_rss
-    - field.field.taxonomy_term.tags.field_term
     - taxonomy.vocabulary.tags
   module:
-    - image
     - link
     - text
 id: taxonomy_term.tags.full
@@ -25,22 +22,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_description:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_rss:
     type: link
     label: above
@@ -53,11 +34,5 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_term:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-hidden: {  }
+hidden:
+  field_image: true

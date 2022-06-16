@@ -1,12 +1,18 @@
-uuid: 5fc06972-897e-404b-88a1-49a1a1aaa3cd
+uuid: da919025-f965-4bf0-b183-3b992cde8f63
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_attribution_name
+    - field.storage.paragraph.field_text
     - paragraphs.paragraphs_type.quote
-id: paragraph.quote.field_attribution_name
-field_name: field_attribution_name
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: paragraph.quote.field_text
+field_name: field_text
 entity_type: paragraph
 bundle: quote
 label: 'Attribution name'
@@ -16,4 +22,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: text

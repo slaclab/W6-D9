@@ -1,0 +1,26 @@
+uuid: 5d051a19-ad61-4f56-ab63-8f230b4cd432
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_link
+    - paragraphs.paragraphs_type.promo_box
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: paragraph.promo_box.field_button_link
+field_name: field_button_link
+entity_type: paragraph
+bundle: promo_box
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

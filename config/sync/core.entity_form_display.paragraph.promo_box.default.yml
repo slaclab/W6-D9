@@ -18,12 +18,12 @@ bundle: promo_box
 mode: default
 content:
   field_button_link:
-    type: text_textfield
-    weight: 1
+    type: link_default
+    weight: 4
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_image:
     type: media_library_widget

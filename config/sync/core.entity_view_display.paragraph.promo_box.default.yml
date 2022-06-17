@@ -17,9 +17,14 @@ bundle: promo_box
 mode: default
 content:
   field_button_link:
-    type: text_default
+    type: link
     label: above
-    settings: {  }
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 3
     region: content

@@ -1,4 +1,4 @@
-uuid: 5d051a19-ad61-4f56-ab63-8f230b4cd432
+uuid: 274723d6-9997-4d98-9ff9-bb1ce6018398
 langcode: en
 status: true
 dependencies:
@@ -6,12 +6,7 @@ dependencies:
     - field.storage.paragraph.field_button_link
     - paragraphs.paragraphs_type.promo_box
   module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
+    - link
 id: paragraph.promo_box.field_button_link
 field_name: field_button_link
 entity_type: paragraph
@@ -22,5 +17,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: text
+settings:
+  title: 1
+  link_type: 17
+field_type: link

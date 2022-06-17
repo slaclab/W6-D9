@@ -23,7 +23,8 @@
   text-decoration: none;
   width: rem(34px);
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     color: gesso-color(text, primary);
     transform: translateX(0);
   }

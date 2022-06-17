@@ -1,0 +1,57 @@
+uuid: 555fef63-6e5d-4759-92e7-53071cd60385
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.mega_menu_cards.field_cards
+    - field.field.site_setting_entity.mega_menu_cards.field_menu_link
+    - site_settings.site_setting_entity_type.mega_menu_cards
+  module:
+    - entity_reference_revisions
+    - user
+id: site_setting_entity.mega_menu_cards.default
+targetEntityType: site_setting_entity
+bundle: mega_menu_cards
+mode: default
+content:
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_link:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -4,8 +4,8 @@
 @use '00-config' as *;
 
 .c-kicker {
-  font-size: rem(gesso-font-size(1));
   font-family: gesso-font-family(primary);
+  font-size: rem(gesso-font-size(1));
   font-weight: gesso-font-weight(bold);
   letter-spacing: 1px;
   text-transform: uppercase;

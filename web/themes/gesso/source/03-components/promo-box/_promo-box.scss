@@ -11,12 +11,14 @@
   clip-path: polygon(0% 0%, 100% 0%, calc(100% - 98px) 100%, 0% 100%);
   gap: rem(gesso-spacing(5));
   max-width: gesso-constrain(md);
-  padding: rem(gesso-spacing(4)) rem(gesso-spacing(4)) rem(gesso-spacing(4))
-    rem(gesso-spacing(8));
+  padding: rem(gesso-spacing(4)) rem(gesso-spacing(4) + 98px)
+    rem(gesso-spacing(4)) rem(gesso-spacing(8));
+  width: max-content;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     clip-path: polygon(0% 0%, 100% 0%, calc(100% - 156px) 100%, 0% 100%);
     display: flex;
+    padding-right: rem(gesso-spacing(4) + 156px);
   }
 }
 
@@ -33,6 +35,7 @@
 }
 
 .c-promo-box__title {
+  max-width: rem(280px);
   a {
     @include arrow-link(red);
   }

@@ -90,6 +90,15 @@
         width: 100%;
       }
 
+      .has-inverse-nav & {
+        color: gesso-color(text, on-dark);
+      }
+
+      .has-open-menu &,
+      .is-sticky & {
+        color: gesso-color(text, link);
+      }
+
       &.is-active-trail {
         &::after {
           max-width: rem(60px);

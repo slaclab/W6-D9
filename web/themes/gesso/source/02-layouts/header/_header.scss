@@ -71,10 +71,22 @@
   height: auto;
   width: clamp(150px, 42.133333vw, 236px);
 
+  .has-inverse-nav & {
+    filter: brightness(0) invert(1);
+  }
+
+  .is-sticky & {
+    filter: initial;
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     height: rem(40px);
     transition: height gesso-duration(short) gesso-easing(ease-out);
     width: auto;
+
+    .has-open-menu & {
+      filter: initial;
+    }
 
     .is-sticky & {
       height: rem(32px);

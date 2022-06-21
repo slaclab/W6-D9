@@ -58,6 +58,8 @@
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    min-height: 66.1971831vw;
+
     .c-tagline__section img {
       left: 0;
       position: absolute;

@@ -1,0 +1,26 @@
+uuid: 2e543329-432e-4fa4-811a-8f16b325b212
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.footer_address
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: site_setting_entity.footer_address.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: footer_address
+label: WYSIWYG
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -55,6 +55,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  yaml_content: 0
   views: 10
   paragraphs: 11
   minimal: 1000

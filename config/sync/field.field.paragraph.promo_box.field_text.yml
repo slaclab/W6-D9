@@ -10,7 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats: {  }
+    allowed_formats:
+      - plain_text
 id: paragraph.promo_box.field_text
 field_name: field_text
 entity_type: paragraph

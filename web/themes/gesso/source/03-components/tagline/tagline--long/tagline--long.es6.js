@@ -24,7 +24,8 @@ Drupal.behaviors.taglineLong = {
         if (event.matches) {
           const timelineTrigger = ScrollTrigger.create({
             trigger: sections[0],
-            start: 'top top',
+            start: 'top 75%',
+            scrub: true,
           });
           gsap.set(sections, {
             autoAlpha: 0,

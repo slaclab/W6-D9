@@ -1,0 +1,6 @@
+slac_yaml_content.settings_form:
+  title: slac_yaml_content
+  description: Configure slac_yaml_content.
+  parent: system.admin_config_system
+  route_name: slac_yaml_content.settings_form
+  weight: 10

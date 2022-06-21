@@ -1,0 +1,6 @@
+services:
+  slac_yaml_content.event_subscriber:
+    class: Drupal\slac_yaml_content\EventSubscriber\SlacYamlContentSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }

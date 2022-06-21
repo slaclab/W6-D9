@@ -1,0 +1,243 @@
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "X-ray and Ultrafast Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Physics of the Universe"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Accelerator Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Science of Life"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "New Technologies"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Medicine"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "research area"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Fundamental Science"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "X-ray and Ultrafast Science"
+  - entity: "taxonomy_term"
+    vid: "research area"
+    name: "Life's Secrets"
+    parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "X-ray and Ultrafast Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Clean Energy"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "X-ray and Ultrafast Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Matter in Extreme Conditions"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "X-ray and Ultrafast Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Future Materials and Technology"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "X-ray and Ultrafast Science"
+
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Elementary Particle Physics"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Physics of the Universe"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Astrophysics and Cosmology"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Physics of the Universe"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Accelerator Physics"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Accelerator Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Accelerator R&D"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Accelerator Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Advanced Accelerators"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Accelerator Science"
+
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Materials for Energy"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Energy Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Modernizing the Grid"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Energy Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Sustainable Chemistry"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Energy Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Advanced Manufacturing"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Energy Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Water Desalination"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Energy Science"
+
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Accelerator R&D"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Accelerator Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Advanced Accelerators"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Accelerator Science"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Bioimaging"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Science of Life"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Deciphering life's structures"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Science of Life"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Fighting COVID-19"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "Science of Life"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Quantum Information Science (QIS)"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "New Technologies"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Machine Learning"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "New Technologies"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Big data"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "New Technologies"
+- entity: "taxonomy_term"
+  vid: "research area"
+  name: "Technology Innovation"
+  parent:
+  - "#process":
+      callback: "reference"
+      args:
+        - "taxonomy_term"
+        - vid: "New Technologies"

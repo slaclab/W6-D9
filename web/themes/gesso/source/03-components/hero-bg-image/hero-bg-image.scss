@@ -107,3 +107,13 @@
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+.c-hero-bg-image__caption {
+  bottom: rem(gesso-spacing(2.5));
+  left: 50%;
+  position: absolute;
+  text-align: right;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 3;
+}

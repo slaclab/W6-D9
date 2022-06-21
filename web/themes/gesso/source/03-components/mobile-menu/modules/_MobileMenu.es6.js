@@ -16,17 +16,19 @@ class MobileMenu extends OverlayMenu {
    * @param {boolean} toggleSubnav - Whether sub-menus should be hidden initially and toggleable.
    * @param {string} mobileMenuBreakpoint - Breakpoint at which to switch to the mobile menu.
    * @param {string} classPrefix - BEM prefix used for original menu classes, e.g. '.dropdown-menu'
+   * @param {string} otherBlockClass - Optional selector for additional block(s) to clone.
    */
   constructor(
     domNode,
     context,
     {
-      searchBlockClass = '.search',
+      searchBlockClass = '.c-search',
       utilityNavClass = '.c-menu--utility',
       logoClass = '.l-header__logo',
       toggleSubnav = true,
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
+      otherBlockClass = '',
     } = {}
   ) {
     super(null);
@@ -36,6 +38,9 @@ class MobileMenu extends OverlayMenu {
       : null;
     this.utilityNav = utilityNavClass
       ? context.querySelector(utilityNavClass)
+      : null;
+    this.otherBlocks = otherBlockClass
+      ? context.querySelectorAll(otherBlockClass)
       : null;
     this.logo = logoClass ? context.querySelector(logoClass) : null;
     this.options = {
@@ -145,21 +150,23 @@ class MobileMenu extends OverlayMenu {
 
     // Swap classes on the mobile menu items.
     const menuItems = menuClone.querySelectorAll(
-      `.${this.options.classPrefix}__item`
+      `.${this.options.classPrefix}__item, .${this.options.classPrefix}-item`
     );
     if (menuItems.length) {
       menuItems.forEach(item => {
         item.classList.remove(`${this.options.classPrefix}__item`);
+        item.classList.remove(`${this.options.classPrefix}-item`);
         item.classList.add('c-mobile-menu__item');
       });
     }
 
     // Swap classes on mobile menu links.
     const menuLinks = menuClone.querySelectorAll(
-      `.${this.options.classPrefix}__link`
+      `.${this.options.classPrefix}__link, .${this.options.classPrefix}-link`
     );
     menuLinks.forEach(link => {
       link.classList.remove(`${this.options.classPrefix}__link`);
+      link.classList.remove(`${this.options.classPrefix}-link`);
       link.classList.add('c-mobile-menu__link');
     });
 
@@ -356,6 +363,13 @@ class MobileMenu extends OverlayMenu {
       newSearchBlock.hidden = false;
       newSearchBlock.classList.remove('c-mega-menu__section');
       this.overlay.appendChild(newSearchBlock);
+    }
+    if (this.otherBlocks) {
+      this.otherBlocks.forEach(block => {
+        const newBlock = this.cloneBlock(block, 'c-mobile-menu__block');
+        newBlock.hidden = false;
+        this.overlay.appendChild(newBlock);
+      });
     }
     this.overlay.appendChild(this.cloneMenu(this.menu, 'c-mobile-menu__menu'));
     if (this.utilityNav) {

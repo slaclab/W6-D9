@@ -36,6 +36,7 @@
 
 .c-promo-box__title {
   max-width: rem(280px);
+
   a {
     @include arrow-link(red);
   }

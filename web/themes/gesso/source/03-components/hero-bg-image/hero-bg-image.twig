@@ -7,7 +7,18 @@
   modifier_classes ? modifier_classes : ''
 ]|join(' ')|trim %}
 
-<div {{ add_attributes({ 'class': classes }) }}>
+{% set caption_id = 'caption'|unique_id %}
+
+{% set hero_attributes = {
+  class: classes
+} %}
+{% if hero_caption %}
+  {% set hero_attributes = hero_attributes|merge({
+    'aria-describedby': caption_id
+  }) %}
+{% endif %}
+
+<div {{ add_attributes(hero_attributes) }}>
   {{ hero_image }}
   <div class="c-hero-bg-image__content">
     <div class="l-constrain">
@@ -30,4 +41,12 @@
       } %}
     </div>
   </div>
+  {% if hero_caption %}
+    <div class="l-constrain c-hero-bg-image__caption">
+      {% include '@components/tooltip/tooltip.twig' with {
+        tooltip_content: hero_caption,
+        tooltip_id: caption_id
+      } %}
+    </div>
+  {% endif %}
 </div>

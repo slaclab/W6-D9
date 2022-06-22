@@ -167,6 +167,19 @@
       filter: invert(1);
     }
   }
+
+  &.c-button--outline {
+    &::after {
+      filter: invert(1);
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        filter: none;
+      }
+    }
+  }
 }
 
 .c-button--download {

@@ -1,0 +1,38 @@
+{% set classes = [
+  'c-bio-page',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-bio-page__inner">
+    {% include '@components/page-title/page-title.twig' with {
+      kicker: bio_kicker,
+      page_title: bio_name,
+      lede: bio_job_title,
+      has_constrain: false,
+      modifier_classes: 'c-bio-page__title'
+    } %}
+    {% if bio_image %}
+      {% include '@components/figure/figure.twig' with {
+        media: bio_image,
+        caption: bio_image_caption,
+        modifier_classes: 'c-bio-page__image u-align-center'
+      } %}
+    {% endif %}
+    {% if bio_page_content %}
+      {% include '@components/wysiwyg/wysiwyg.twig' with {
+        content: bio_page_content,
+        modifier_classes: 'c-bio-page__content c-wysiwyg--no-constrain'
+      } %}
+    {% endif %}
+    {% if bio_page_quote %}
+      {% include '@components/quote/quote.twig' with {
+        quote_content: bio_page_quote,
+        modifier_classes: 'c-bio-page__quote'
+      } %}
+    {% endif %}
+    {% if bio_page_buttons %}
+      <div class="c-bio-page__buttons">{{ bio_page_buttons }}</div>
+    {% endif %}
+  </div>
+</div>

@@ -41,4 +41,27 @@
       transform-origin 0s gesso-duration(long);
     width: 100%;
   }
+
+  &.is-active-trail {
+    &::after {
+      max-width: rem(60px);
+      transform: scaleX(0.5);
+    }
+  }
+
+  &:hover,
+  &[aria-expanded='true'] {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: right center;
+    }
+
+    // stylelint-disable max-nesting-depth
+    &.is-active-trail {
+      &::after {
+        max-width: none;
+        transform-origin: left center;
+      }
+    }
+  }
 }

@@ -12,6 +12,12 @@
   flex-wrap: nowrap;
   gap: rem(gesso-spacing(5));
   justify-content: flex-end;
+
+  .is-sticky & {
+    gap: rem(gesso-spacing(4));
+    margin-right: rem(gesso-spacing(4));
+    width: auto;
+  }
 }
 
 .c-microsite-hero__menu-item {
@@ -25,6 +31,7 @@
     letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 }
 
@@ -33,6 +40,7 @@
   font-weight: gesso-font-weight(bold);
   line-height: gesso-line-height(tight);
   margin: 0 0 rem(gesso-spacing(1.5));
+  width: 100%;
 
   .l-header__brand & {
     display: none;
@@ -43,9 +51,24 @@
     display: none;
     margin-bottom: 0;
     padding-left: rem(gesso-spacing(2.5));
+    width: auto;
 
     .l-header__brand & {
       display: block;
+    }
+
+    .is-sticky & {
+      font-size: rem(gesso-font-size(5));
+    }
+  }
+}
+
+.c-microsite-hero__brand {
+  @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
+    .is-sticky & {
+      .hide-on-sticky {
+        display: block;
+      }
     }
   }
 }

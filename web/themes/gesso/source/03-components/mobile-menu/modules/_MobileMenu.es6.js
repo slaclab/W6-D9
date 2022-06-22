@@ -320,8 +320,9 @@ class MobileMenu extends OverlayMenu {
    */
   handleClick(event) {
     if (
-      !event.target.closest('.c-mobile-menu') &&
-      !event.target.matches('.c-hamburger-button')
+      event.target.matches('a') ||
+      (!event.target.closest('.c-mobile-menu') &&
+        !event.target.matches('.c-hamburger-button'))
     ) {
       this.closeMenu();
     }

@@ -2,6 +2,6 @@
 
 .l-site-container {
   .has-transparent-nav & {
-    margin-top: -(--gesso-header-initial-height);
+    margin-top: calc(-1 * var(--gesso-header-initial-height, 0));
   }
 }

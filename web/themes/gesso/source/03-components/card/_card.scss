@@ -54,6 +54,10 @@ $card-padding: 30px !default;
   .c-card--on-dark:focus-within & {
     color: gesso-color(text, on-dark);
   }
+
+  .c-card--large & {
+    @include responsive-font-size(10);
+  }
 }
 
 .c-card__link {
@@ -139,6 +143,18 @@ $card-padding: 30px !default;
 
 .c-card__footer {
   margin-top: auto;
+}
+
+.c-card__date,
+.c-card__location {
+  align-items: flex-start;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: auto 1fr;
+
+  .c-icon {
+    top: 6px;
+  }
 }
 
 .c-card__tags {

@@ -18,6 +18,14 @@ const Default = args => (
 );
 Default.args = { ...globalData, ...data };
 
+const LargeCard = args => (
+  parse(twigTemplate({
+    ...args,
+    modifier_classes: 'c-card--large',
+  }))
+);
+LargeCard.args = { ...globalData, ...data };
+
 const EventCard = args => (
   parse(twigTemplate({
     ...args,
@@ -33,4 +41,4 @@ const EventFallbackCard = args => (
 EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
 export default settings;
-export { Default, EventCard, EventFallbackCard };
+export { Default, LargeCard, EventCard, EventFallbackCard };

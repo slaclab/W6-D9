@@ -47,6 +47,7 @@ module:
   shortcut: 0
   site_settings: 0
   slac_core: 0
+  slac_yaml_content: 0
   system: 0
   taxonomy: 0
   text: 0

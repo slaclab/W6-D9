@@ -65,10 +65,22 @@
       {{ media }}
 
       {% if is_event %}
+        <div class="c-card__gradient"></div>
         {% include '@components/event-date/event-date.twig' with {
           month: event_month,
           day: event_day,
         } %}
+      {% endif %}
+
+      {% if is_video %}
+        <div class="c-card__gradient"></div>
+        <div class="c-card__icon">
+          {% include '@components/icon/icon.twig' with {
+            icon_name: 'play',
+            hidden: true,
+            label: 'Video',
+          } %}
+        </div>
       {% endif %}
     </div>
   {% endif %}

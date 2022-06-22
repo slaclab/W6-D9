@@ -26,6 +26,16 @@ const LargeCard = args => (
 );
 LargeCard.args = { ...globalData, ...data };
 
+const VideoCard = args => (
+  parse(twigTemplate({
+    ...args,
+    is_video: true,
+    type: 'Video',
+    footer: 'Jun 2, 2020 · 1:08:48 runtime',
+  }))
+);
+VideoCard.args = { ...globalData, ...data };
+
 const EventCard = args => (
   parse(twigTemplate({
     ...args,
@@ -41,4 +51,4 @@ const EventFallbackCard = args => (
 EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
 export default settings;
-export { Default, LargeCard, EventCard, EventFallbackCard };
+export { Default, LargeCard, VideoCard, EventCard, EventFallbackCard };

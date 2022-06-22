@@ -8,6 +8,7 @@ defaults:
 
 jobs:
   static_tests:
+    name: PHP Static Tests
     container:
       image: quay.io/pantheon-public/build-tools-ci:8.x-php7.4
       options: --user root

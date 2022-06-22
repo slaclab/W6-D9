@@ -3,11 +3,11 @@
 @use '00-config' as *;
 
 .c-cookie-banner {
-  background: rgba(gesso-grayscale(stanford-black), 0.85);
+  background: rgba(gesso-grayscale(stanford-black), 0.9);
   bottom: 0;
   color: gesso-grayscale(white);
   font-size: gesso-font-size(2);
-  padding: gesso-spacing(2) 0;
+  padding: gesso-spacing(3) 0 gesso-spacing(4);
   position: sticky;
 
   a,

@@ -6,7 +6,7 @@ import './video-hero.scss';
 import './video-hero.es6';
 
 const settings = {
-  title: 'Components/Video Hero',
+  title: 'Components/Hero/Video Hero',
 };
 
 const VideoHero = args =>

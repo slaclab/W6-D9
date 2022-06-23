@@ -146,18 +146,19 @@
   padding: rem(gesso-spacing(0.5)) rem(gesso-spacing(1));
 }
 
-.c-button--chevron {
+.c-button--chevron,
+.c-button--download {
   &::after {
-    background-image: url('images/backgrounds/chevron-white.svg');
+    @include svg-background(chevron-white);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 7px auto;
+    background-size: rem(7px) auto;
     content: '';
     display: inline-block;
-    height: 20px;
-    margin-left: 10px;
+    height: rem(20px);
+    margin-left: rem(gesso-spacing(1));
     vertical-align: bottom;
-    width: 20px;
+    width: rem(20px);
   }
 
   &:hover,
@@ -165,5 +166,12 @@
     &::after {
       filter: invert(1);
     }
+  }
+}
+
+.c-button--download {
+  &::after {
+    @include svg-background(download);
+    background-size: rem(11px) auto;
   }
 }

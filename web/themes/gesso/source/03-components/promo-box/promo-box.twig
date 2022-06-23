@@ -16,14 +16,18 @@
       {{ promo_box_title }}
       {% if promo_box_url %}</a>{% endif %}
     </h2>
-    {{ promo_box_button }}
+    {% if promo_box_button %}
+      {{ promo_box_button }}
+    {% endif %}
   </div>
   {% if promo_box_image %}
   <div class="c-promo-box__col">
     {{ promo_box_image }}
   </div>
   {% endif %}
-  <div class="c-promo-box__col c-promo-box__content">
-    {{ promo_box_content }}
-  </div>
+  {% if promo_box_content %}
+    <div class="c-promo-box__col c-promo-box__content">
+      {{ promo_box_content }}
+    </div>
+  {% endif %}
 </div>

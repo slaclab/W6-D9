@@ -5,9 +5,9 @@
 
 <div {{ add_attributes({ class: classes }) }}>
   <h2 class="c-tagline__heading">
-    {{ tagline1 }}<br>
-    {{ tagline2 }}<br>
-    {{ tagline3 }}
+    <span>{{ tagline1 }}</span><br>
+    <span>{{ tagline2 }}</span><br>
+    <span>{{ tagline3 }}</span>
   </h2>
-  {{ tagline_content }}
+  {% if tagline_content %}{{ tagline_content }}{% endif %}
 </div>

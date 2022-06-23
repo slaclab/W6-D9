@@ -8,23 +8,25 @@
 }
 
 @include breakpoint-min(gesso-breakpoint(tablet)) {
-  .c-bio-page__inner {
-    display: grid;
-    gap: 0 rem(gesso-spacing(5));
-    grid-template-columns: min(50%, 387px) 1fr;
-    margin-left: 0;
-  }
-
-  .c-bio-page__image {
-    grid-column: 1;
-    grid-row: 1 / span 4;
-
-    &.c-figure.u-align-center {
-      margin-top: 0;
+  .c-bio-page--image {
+    .c-bio-page__inner {
+      display: grid;
+      gap: 0 rem(gesso-spacing(5));
+      grid-template-columns: min(50%, 387px) 1fr;
+      margin-left: 0;
     }
-  }
 
-  .c-bio-page__title {
-    grid-column: 2;
+    .c-bio-page__image {
+      grid-column: 1;
+      grid-row: 1 / span 4;
+
+      &.c-figure.u-align-center {
+        margin-top: 0;
+      }
+    }
+
+    .c-bio-page__title {
+      grid-column: 2;
+    }
   }
 }

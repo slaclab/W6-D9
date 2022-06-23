@@ -1,0 +1,10 @@
+uuid: ca689bfc-6e96-49e5-8446-01adc9a1a1fd
+langcode: en
+status: true
+dependencies: {  }
+id: overlap_image
+label: 'Overlap Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

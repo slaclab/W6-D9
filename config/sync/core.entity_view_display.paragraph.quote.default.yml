@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.quote.field_attribution_name
     - field.field.paragraph.quote.field_body
     - field.field.paragraph.quote.field_image
     - field.field.paragraph.quote.field_short_text
+    - field.field.paragraph.quote.field_text
     - paragraphs.paragraphs_type.quote
   module:
     - text
@@ -15,14 +15,6 @@ targetEntityType: paragraph
 bundle: quote
 mode: default
 content:
-  field_attribution_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_body:
     type: text_default
     label: above
@@ -46,5 +38,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden: {  }

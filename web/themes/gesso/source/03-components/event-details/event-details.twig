@@ -11,6 +11,7 @@
   <div class="c-event-details__image">
     {% if image_url %}
       <img src="{{ image_url }}" alt="{{ image_alt }}">
+      <div class="c-card__gradient"></div>
     {% endif %}
     {% if month and day %}
       {% include '@components/event-date/event-date.twig' %}

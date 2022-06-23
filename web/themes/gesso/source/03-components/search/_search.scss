@@ -64,6 +64,14 @@
 
 .c-search__button {
   z-index: 4;
+
+  .has-inverse-nav & {
+    color: gesso-color(text, on-dark);
+  }
+
+  .has-open-menu & {
+    color: gesso-color(text, link);
+  }
 }
 
 .c-search__submit {

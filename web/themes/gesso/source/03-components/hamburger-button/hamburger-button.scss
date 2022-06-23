@@ -21,6 +21,14 @@
   &[hidden] {
     display: none;
   }
+
+  .has-inverse-nav & {
+    color: gesso-color(text, on-dark);
+  }
+
+  .is-sticky & {
+    color: inherit;
+  }
 }
 
 .c-hamburger-button__icon {
@@ -31,6 +39,14 @@
   padding-right: 15px + gesso-spacing(1);
   pointer-events: none;
   vertical-align: middle;
+
+  .has-inverse-nav & {
+    filter: brightness(0) invert(1);
+  }
+
+  .is-sticky & {
+    filter: initial;
+  }
 }
 
 .c-hamburger-button--close {

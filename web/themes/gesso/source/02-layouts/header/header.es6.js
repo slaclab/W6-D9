@@ -1,15 +1,33 @@
 import Drupal from 'drupal';
 import { throttle } from 'lodash';
+import { BREAKPOINTS } from '../../00-config/_GESSO.es6';
 
 Drupal.behaviors.header = {
   attach(context) {
     const header = context.querySelector('.l-header');
     if (header) {
-      document.documentElement.style.setProperty(
-        '--gesso-header-initial-height',
-        `${header.getBoundingClientRect().height}px`
-      );
-      const updateHeaderHeight = () => {
+      const updateHeaderInitialHeight = () => {
+        const isAlreadySticky = header.classList.contains('is-sticky');
+        const runOnceOnTransition = () => {
+          document.documentElement.style.setProperty(
+            '--gesso-header-initial-height',
+            `${header.getBoundingClientRect().height}px`
+          );
+          header.removeEventListener('transitionend', runOnceOnTransition);
+          if (isAlreadySticky) {
+            header.classList.add('is-sticky');
+          }
+        };
+        header.addEventListener('transitionend', runOnceOnTransition);
+        if (isAlreadySticky) {
+          header.classList.remove('is-sticky');
+        }
+        document.documentElement.style.setProperty(
+          '--gesso-header-initial-height',
+          `${header.getBoundingClientRect().height}px`
+        );
+      };
+      const updateHeaderCurrentHeight = () => {
         document.documentElement.style.setProperty(
           '--gesso-header-current-height',
           `${header.getBoundingClientRect().height}px`
@@ -31,10 +49,18 @@ Drupal.behaviors.header = {
         const scrolledAmt = Math.round((scrollTop / height) * 100);
         header.style.setProperty('--gesso-scroll-progress', `${scrolledAmt}%`);
       }, 16);
+      const mediaQuery = window.matchMedia(
+        `(max-width: ${BREAKPOINTS['mobile-menu']})`
+      );
+      mediaQuery.addEventListener('change', updateHeaderInitialHeight);
       window.addEventListener('scroll', changeOnScroll);
-      header.addEventListener('transitionend', updateHeaderHeight);
+      header.addEventListener('transitionend', updateHeaderCurrentHeight);
       window.addEventListener('scroll', updateScrollProgress);
-      updateHeaderHeight();
+      document.documentElement.style.setProperty(
+        '--gesso-header-initial-height',
+        `${header.getBoundingClientRect().height}px`
+      );
+      updateHeaderCurrentHeight();
     }
   },
 };

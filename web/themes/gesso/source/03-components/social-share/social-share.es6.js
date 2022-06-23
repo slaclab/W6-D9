@@ -29,7 +29,15 @@ Drupal.behaviors.socialShare = {
         if (event.matches) {
           trigger = ScrollTrigger.create({
             trigger: socialLink,
-            start: 'top 100px',
+            start: () => {
+              const headerHeight = parseInt(
+                document.documentElement.style.getPropertyValue(
+                  '--gesso-header-current-height'
+                ),
+                10
+              );
+              return `top ${headerHeight + 60}px`;
+            },
             end: 'max',
             pin: true,
           });

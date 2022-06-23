@@ -224,3 +224,9 @@ button.c-mobile-menu__link {
 .c-mobile-menu__section-inner {
   background-color: $mobile-menu-submenu-bg-color;
 }
+
+.c-mobile-menu__block {
+  .is-open & {
+    color: inherit;
+  }
+}

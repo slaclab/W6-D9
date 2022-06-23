@@ -3,6 +3,8 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
+{{ attach_library('gesso/video_hero') }}
+
 <div {{ add_attributes({ class: classes }) }}>
   <div class="c-video-hero__media">
     {{ fallback_image }}

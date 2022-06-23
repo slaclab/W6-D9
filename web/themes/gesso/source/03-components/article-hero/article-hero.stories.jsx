@@ -6,7 +6,7 @@ import globalData from '../../00-config/storybook.global-data.yml';
 import './article-hero.scss';
 
 const settings = {
-  title: 'Components/Article Hero',
+  title: 'Components/Hero/Article Hero',
 };
 
 const ArticleHero = args =>

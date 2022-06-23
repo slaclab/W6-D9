@@ -1,0 +1,14 @@
+---
+is_event: true
+type: 'Upcoming Event'
+event_month: 'Apr'
+event_day: '20'
+kicker: 'Public Lecture'
+event_date: 'Thursday, April 20, 2022<br>1:00 - 3:00 p.m. PT'
+event_location: '123 Fastest Way, Menlo Park, CA 94025'
+footer: ''
+title: 'Card title'
+media: |-
+  <img src="https://picsum.photos/id/1015/800/500">
+card_content: |-
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>

@@ -1,5 +1,5 @@
 ---
-type: 'Lecture'
+event_type: 'Lecture'
 month: 'Apr'
 day: '19'
 image_url: 'http://fpoimg.com/600x600?text='

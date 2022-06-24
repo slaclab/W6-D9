@@ -10,7 +10,7 @@
 ]|join(' ')|trim %}
 
 <header {{ add_attributes({ 'class': classes })}}>
-  <div class="{{ constrain_classes }}">
+  {% if has_constrain %}<div class="{{ constrain_classes }}">{% endif %}
     <div>
       {% if kicker %}
         {% include '@components/kicker/kicker.twig' with {
@@ -39,5 +39,5 @@
         {{ sidebar_content }}
       </div>
     {% endif %}
-  </div>
+    {% if has_constrain %}</div>{% endif %}
 </header>

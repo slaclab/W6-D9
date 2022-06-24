@@ -74,7 +74,7 @@ $button-font-size: gesso-base-font-size() !default;
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-position: left bottom;
     @if $border-width != 0 {
       border-color: $color-border-hover;

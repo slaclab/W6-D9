@@ -24,8 +24,8 @@
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
-    margin-bottom: rem(gesso-spacing(10));
-    margin-top: calc(var(--quote-size) / 2 + #{rem(gesso-spacing(10))});
+    margin-bottom: rem(gesso-spacing(8));
+    margin-top: calc(var(--quote-size) / 2 + #{rem(gesso-spacing(8))});
     padding-top: rem(gesso-spacing(7));
   }
 }

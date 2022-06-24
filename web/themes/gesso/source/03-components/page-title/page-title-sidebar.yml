@@ -9,3 +9,4 @@ lede: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique placerat arcu. </p>
 kicker: 'Kicker'
 rss_url: '/taxonomy/term/81/feed'
+has_constrain: true

@@ -32,4 +32,8 @@ window.drupalSettings = {};
   Drupal.theme = function (themeFunction, options) {
     return Drupal.theme[themeFunction](options);
   };
+
+  drupalSettings.gesso = {
+    gessoImagePath: 'images',
+  };
 })(Drupal, window.drupalSettings);

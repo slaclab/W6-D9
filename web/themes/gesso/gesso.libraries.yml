@@ -9,6 +9,8 @@ global:
     dist/js/transitions.es6.js: {}
   dependencies:
     - gesso/common
+    - core/drupal
+    - core/drupalSettings
 
 back_to_top:
   css:

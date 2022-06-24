@@ -1,4 +1,5 @@
 import Drupal from 'drupal';
+import drupalSettings from 'drupalSettings';
 
 Drupal.behaviors.externalLinks = {
   attach(context) {
@@ -52,13 +53,13 @@ Drupal.behaviors.externalLinks = {
         if (linkIsLocked(el)) {
           el.insertAdjacentHTML(
             'beforeend',
-            `<svg class="c-icon" role="img"><title>(requires login)</title><use xlink:href="../images/sprite.artifact.svg#lock-solid"></use></svg>`
+            `<svg class="c-icon" role="img"><title>(requires login)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#lock-solid"></use></svg>`
           );
           el.classList.add('external-link', 'external-link--locked');
         } else if (linkIsExternal(el)) {
           el.insertAdjacentHTML(
             'beforeend',
-            `<svg class="c-icon" role="img"><title>(external link)</title><use xlink:href="../images/sprite.artifact.svg#diagonal-arrow"></use></svg>`
+            `<svg class="c-icon" role="img"><title>(external link)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#diagonal-arrow"></use></svg>`
           );
           el.classList.add('external-link');
         }

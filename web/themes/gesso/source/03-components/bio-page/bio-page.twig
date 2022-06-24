@@ -4,6 +4,8 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
+{{ attach_library('gesso/bio_page') }}
+
 <div {{ add_attributes({ class: classes }) }}>
   <div class="c-bio-page__inner">
     {% include '@components/page-title/page-title.twig' with {
@@ -21,8 +23,24 @@
       } %}
     {% endif %}
     {% if bio_page_content %}
+      {% set bio_page_content_stripped = bio_page_content|striptags|trim %}
+      {% set bio_page_content_collapsed_stripped = bio_page_content_collapsed|striptags|trim %}
+      {% set bio_page_content_display %}
+        {% if bio_page_content_stripped and bio_page_content_collapsed_stripped and bio_page_content_stripped != bio_page_content_collapsed_stripped %}
+          {% include '@components/drawer/drawer.twig' with {
+            'drawer_content_placement': 'above',
+            'drawer_default_state': 'collapsed',
+            'drawer_content_expanded': bio_page_content,
+            'drawer_content_collapsed': bio_page_content_collapsed,
+            'drawer_trigger_label_expanded': 'Show less',
+            'drawer_trigger_label_collapsed': 'Show more'
+          } %}
+        {% elseif bio_page_content_stripped %}
+          {{ bio_page_content }}
+        {% endif %}
+      {% endset %}
       {% include '@components/wysiwyg/wysiwyg.twig' with {
-        content: bio_page_content,
+        content: bio_page_content_display,
         modifier_classes: 'c-bio-page__content c-wysiwyg--no-constrain'
       } %}
     {% endif %}

@@ -9,6 +9,9 @@
   name: 'Accelerator Science'
 - entity: 'taxonomy_term'
   vid: 'research_area'
+  name: 'Energy Science'
+- entity: 'taxonomy_term'
+  vid: 'research_area'
   name: 'Science of Life'
 - entity: 'taxonomy_term'
   vid: 'research_area'
@@ -173,26 +176,6 @@
         - 'taxonomy_term'
         - vid: 'reasearch_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
-  name: 'Accelerator R&D'
-  parent:
-  - '#process':
-      callback: 'reference'
-      args:
-        - 'taxonomy_term'
-        - vid: 'research_area'
-          name: 'Accelerator Science'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
-  name: 'Advanced Accelerators'
-  parent:
-  - '#process':
-      callback: 'reference'
-      args:
-        - 'taxonomy_term'
-        - vid: 'research_area'
-          name: 'Accelerator Science'
 - entity: 'taxonomy_term'
   vid: 'research_area'
   name: 'Bioimaging'

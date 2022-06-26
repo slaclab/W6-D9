@@ -10,52 +10,6 @@
   }
 }
 
-.c-event-details__type {
-  background-color: gesso-brand(teal, base);
-  background-size: cover;
-  color: gesso-grayscale(white);
-  font-size: gesso-font-size(6);
-  font-weight: gesso-font-weight(black);
-  padding: 0.5em 1em;
-  text-transform: uppercase;
-
-  .c-event-details--tl & {
-    background-color: gesso-brand(teal, base);
-    background-image: linear-gradient(
-      to right,
-      #{gesso-brand(teal, base)},
-      #{gesso-brand(lagunita, base)}
-    );
-  }
-
-  .c-event-details--pl & {
-    background-color: gesso-brand(purple, base);
-    background-image: linear-gradient(
-      to right,
-      #{gesso-brand(purple, base)},
-      #{gesso-brand(lavender, base)}
-    );
-  }
-
-  .c-event-details--tp & {
-    background-color: gesso-brand(teal, base);
-    background-image: linear-gradient(
-      to right,
-      #{gesso-brand(teal, base)},
-      #{gesso-brand(palo-verde, base)}
-    );
-  }
-
-  .c-event-details--cd & {
-    background-color: gesso-brand(cardinal, base);
-    background-image: linear-gradient(
-      to right,
-      #{gesso-brand(cardinal, base)},
-      #{gesso-brand(digital-red, base)}
-    );
-  }
-}
-
 .c-event-details__image {
   background: gesso-grayscale(stanford-black);
   position: relative;

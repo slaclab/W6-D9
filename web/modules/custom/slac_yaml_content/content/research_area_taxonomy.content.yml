@@ -1,23 +1,23 @@
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'Physics of the Universe'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'Accelerator Science'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'Energy Science'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'Science of Life'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'New Technologies'
-- entity: 'taxonomy_term'
-  vid: 'research_area'
+- entity: "taxonomy_term"
+  vid: "research_area"
   name: 'Medicine'
   parent:
   - '#process':
@@ -26,7 +26,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Fundamental Science'
   parent:
@@ -36,7 +36,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
-  - entity: 'taxonomy_term'
+  - entity: "taxonomy_term"
     vid: 'research_area'
     name: "Life's Secrets"
     parent:
@@ -46,7 +46,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Clean Energy'
   parent:
@@ -56,7 +56,7 @@
         - 'taxonomy_term'
         - vid: 'research-area'
           name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Matter in Extreme Conditions'
   parent:
@@ -66,7 +66,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Future Materials and Technology'
   parent:
@@ -76,7 +76,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Elementary Particle Physics'
   parent:
@@ -86,7 +86,7 @@
         - 'taxonomy_term'
         - vid: 'reasearch_area'
           name: 'Physics of the Universe'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Astrophysics and Cosmology'
   parent:
@@ -96,7 +96,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Physics of the Universe'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Accelerator Physics'
   parent:
@@ -106,7 +106,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Accelerator Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Accelerator R&D'
   parent:
@@ -116,7 +116,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Accelerator Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Advanced Accelerators'
   parent:
@@ -126,7 +126,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Accelerator Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Materials for Energy'
   parent:
@@ -136,7 +136,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Modernizing the Grid'
   parent:
@@ -146,7 +146,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Sustainable Chemistry'
   parent:
@@ -156,7 +156,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Advanced Manufacturing'
   parent:
@@ -166,7 +166,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Water Desalination'
   parent:
@@ -176,7 +176,7 @@
         - 'taxonomy_term'
         - vid: 'reasearch_area'
           name: 'Energy Science'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Bioimaging'
   parent:
@@ -186,7 +186,7 @@
         - 'taxonomy_term'
         - vid: 'research'
           name: 'Science of Life'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: "Deciphering life's structures"
   parent:
@@ -196,7 +196,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'Science of Life'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Fighting COVID-19'
   parent:
@@ -216,7 +216,7 @@
         - 'taxonomy_term'
         - vid: 'taxonomy_term'
           name: 'New Technologies'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Machine Learning'
   parent:
@@ -226,7 +226,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'New Technologies'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Big data'
   parent:
@@ -236,7 +236,7 @@
         - 'taxonomy_term'
         - vid: 'research_area'
           name: 'New Technologies'
-- entity: 'taxonomy_term'
+- entity: "taxonomy_term"
   vid: 'research_area'
   name: 'Technology Innovation'
   parent:

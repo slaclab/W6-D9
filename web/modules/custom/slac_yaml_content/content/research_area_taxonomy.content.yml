@@ -1,21 +1,23 @@
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'X-ray and Ultrafast Science'
+  name: "X-ray and Ultrafast Science"
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'Physics of the Universe'
+  name: "Physics of the Universe"
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'Accelerator Science'
+  name: "Accelerator Science"
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'Energy Science'
+  name: "Energy Science"
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'Science of Life'
+  name: "Science of Life"
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'New Technologies'
+  name: "New Technologies"
+
+  
 - entity: "taxonomy_term"
   vid: "research_area"
   name: "Medicine"

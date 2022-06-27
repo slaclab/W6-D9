@@ -10,8 +10,7 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats:
-      - restricted_html
+    allowed_formats: {  }
 id: paragraph.quote.field_text
 field_name: field_text
 entity_type: paragraph

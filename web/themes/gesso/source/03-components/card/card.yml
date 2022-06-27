@@ -1,10 +1,10 @@
 ---
 title: 'Card title'
 url: '#0'
-footer: ''
-kicker: 'Kicker'
-read_more: false
+kicker: ''
+type: 'News brief'
 media: |-
-  <img src="https://picsum.photos/id/1015/387/185">
+  <img src="https://picsum.photos/id/1015/800/500">
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
+footer: 'March 4, 2021 • 10 min read'

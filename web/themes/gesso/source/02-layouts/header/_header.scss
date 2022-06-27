@@ -6,7 +6,7 @@
   background: gesso-color(background, site);
   border-bottom: 1px solid rgba(gesso-grayscale(stanford-black), 0.3);
   left: 0;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: gesso-z-index(nav);

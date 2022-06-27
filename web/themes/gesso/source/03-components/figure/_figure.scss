@@ -69,7 +69,7 @@
   font-family: gesso-font-family(primary);
   font-style: normal;
   font-weight: gesso-font-weight(regular);
-  line-height: 1.6;
+  line-height: gesso-line-height(loose);
   margin-top: rem(gesso-spacing(2.5));
   max-width: 940px;
   width: 100%;

@@ -4,4 +4,12 @@
 ] %}
 
 <div {{ add_attributes({ class: classes }) }}>
+  <a href="{{ url }}" class="c-icon-card__link">
+    {% include '@components/animated-icon/animated-icon.twig' with {
+      animation: icon,
+      color: 'black'
+    } %}
+    <h3 class="c-icon-card__title">{{ card_title }}</h3>
+    <p class="c-icon-card__description">{{ card_description }}</p>
+  </a>
 </div>

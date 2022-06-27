@@ -25,4 +25,4 @@
 
 {% set animation_file = animation_file_base ~ ' ' ~ color ~ '.json' %}
 
-<lottie-player class="{{ classes }}" src="animations/{{ animation_file }}" background="transparent" speed="1" {% if hover %} hover{% endif %}></lottie-player>
+<lottie-player class="{{ classes }}" src="animations/{{ animation_file }}" background="transparent" speed="1" loop="true" count="1"{% if hover %} hover{% endif %}></lottie-player>

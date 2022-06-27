@@ -1,6 +1,11 @@
 @use '00-config' as *;
 
 .c-animated-icon {
-  height: rem(108px);
-  width: rem(108px);
+  height: rem(90px);
+  width: rem(90px);
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    height: rem(108px);
+    width: rem(108px);
+  }
 }

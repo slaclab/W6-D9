@@ -18,7 +18,7 @@
   name: 'New Technologies'
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: 'Medicine'
+  name: "Medicine"
   parent:
   - '#process':
       callback: 'reference'
@@ -27,8 +27,8 @@
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Fundamental Science'
+  vid: "research_area"
+  name: "Fundamental Science"
   parent:
   - '#process':
       callback: 'reference'
@@ -37,7 +37,7 @@
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
   - entity: "taxonomy_term"
-    vid: 'research_area'
+    vid: "research_area"
     name: "Life's Secrets"
     parent:
   - '#process':
@@ -47,8 +47,8 @@
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Clean Energy'
+  vid: "research_area"
+  name: "Clean Energy"
   parent:
   - '#process':
       callback: 'reference'
@@ -57,8 +57,8 @@
         - vid: 'research-area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Matter in Extreme Conditions'
+  vid: "research_area"
+  name: "Matter in Extreme Conditions"
   parent:
   - '#process':
       callback: 'reference'
@@ -67,8 +67,8 @@
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Future Materials and Technology'
+  vid: "research_area"
+  name: "Future Materials and Technology"
   parent:
   - '#process':
       callback: 'reference'
@@ -77,8 +77,8 @@
         - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Elementary Particle Physics'
+  vid: "research_area"
+  name: "Elementary Particle Physics"
   parent:
   - '#process':
       callback: 'reference'
@@ -87,8 +87,8 @@
         - vid: 'reasearch_area'
           name: 'Physics of the Universe'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Astrophysics and Cosmology'
+  vid: "research_area"
+  name: "Astrophysics and Cosmology"
   parent:
   - '#process':
       callback: 'reference'
@@ -97,8 +97,8 @@
         - vid: 'research_area'
           name: 'Physics of the Universe'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Accelerator Physics'
+  vid: "research_area"
+  name: "Accelerator Physics"
   parent:
   - '#process':
       callback: 'reference'
@@ -107,8 +107,8 @@
         - vid: 'research_area'
           name: 'Accelerator Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Accelerator R&D'
+  vid: "research_area"
+  name: "Accelerator R&D"
   parent:
   - '#process':
       callback: 'reference'
@@ -117,8 +117,8 @@
         - vid: 'research_area'
           name: 'Accelerator Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Advanced Accelerators'
+  vid: "research_area"
+  name: "Advanced Accelerators"
   parent:
   - '#process':
       callback: 'reference'
@@ -127,8 +127,8 @@
         - vid: 'research_area'
           name: 'Accelerator Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Materials for Energy'
+  vid: "research_area"
+  name: "Materials for Energy"
   parent:
   - '#process':
       callback: 'reference'
@@ -137,8 +137,8 @@
         - vid: 'research_area'
           name: 'Energy Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Modernizing the Grid'
+  vid: "research_area"
+  name: "Modernizing the Grid"
   parent:
   - '#process':
       callback: 'reference'
@@ -147,8 +147,8 @@
         - vid: 'research_area'
           name: 'Energy Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Sustainable Chemistry'
+  vid: "research_area"
+  name: "Sustainable Chemistry"
   parent:
   - '#process':
       callback: 'reference'
@@ -157,8 +157,8 @@
         - vid: 'research_area'
           name: 'Energy Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Advanced Manufacturing'
+  vid: "research_area"
+  name: "Advanced Manufacturing"
   parent:
   - '#process':
       callback: 'reference'
@@ -167,8 +167,8 @@
         - vid: 'research_area'
           name: 'Energy Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Water Desalination'
+  vid: "research_area"
+  name: "Water Desalination"
   parent:
   - '#process':
       callback: 'reference'
@@ -177,8 +177,8 @@
         - vid: 'reasearch_area'
           name: 'Energy Science'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Bioimaging'
+  vid: "research_area"
+  name: "Bioimaging"
   parent:
   - '#process':
       callback: 'reference'
@@ -187,7 +187,7 @@
         - vid: 'research'
           name: 'Science of Life'
 - entity: "taxonomy_term"
-  vid: 'research_area'
+  vid: "research_area"
   name: "Deciphering life's structures"
   parent:
   - '#process':
@@ -197,8 +197,8 @@
         - vid: 'research_area'
           name: 'Science of Life'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Fighting COVID-19'
+  vid: "research_area"
+  name: "Fighting COVID-19"
   parent:
   - '#process':
       callback: 'reference'
@@ -207,8 +207,8 @@
         - vid: 'research_area'
           name: 'Science of Life'
 - entity: 'taxonomy_term'
-  vid: 'research_area'
-  name: 'Quantum Information Science (QIS)'
+  vid: "research_area"
+  name: "Quantum Information Science (QIS)"
   parent:
   - '#process':
       callback: 'reference'
@@ -217,8 +217,8 @@
         - vid: 'taxonomy_term'
           name: 'New Technologies'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Machine Learning'
+  vid: "research_area"
+  name: "Machine Learning"
   parent:
   - '#process':
       callback: 'reference'
@@ -227,8 +227,8 @@
         - vid: 'research_area'
           name: 'New Technologies'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Big data'
+  vid: "research_area"
+  name: "Big data"
   parent:
   - '#process':
       callback: 'reference'
@@ -237,8 +237,8 @@
         - vid: 'research_area'
           name: 'New Technologies'
 - entity: "taxonomy_term"
-  vid: 'research_area'
-  name: 'Technology Innovation'
+  vid: "research_area"
+  name: "Technology Innovation"
   parent:
   - '#process':
       callback: 'reference'

@@ -14,11 +14,11 @@ bundle: footer_tagline
 mode: default
 content:
   field_body:
-    type: text_textfield
-    weight: 11
+    type: text_textarea
+    weight: 13
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_heading:

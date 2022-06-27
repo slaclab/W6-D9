@@ -1,4 +1,4 @@
-uuid: 548c4347-0af6-43fa-b28d-2de8cd7e405a
+uuid: 3067fe1c-4ae5-4067-8cf7-947059d3c72e
 langcode: en
 status: true
 dependencies:
@@ -19,8 +19,8 @@ bundle: footer_tagline
 label: WYSIWYG
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: text_long

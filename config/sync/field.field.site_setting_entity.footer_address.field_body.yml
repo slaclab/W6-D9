@@ -1,4 +1,4 @@
-uuid: 2e543329-432e-4fa4-811a-8f16b325b212
+uuid: f2ba34dc-4b38-4630-b51c-ec7e66440e9b
 langcode: en
 status: true
 dependencies:
@@ -19,8 +19,8 @@ bundle: footer_address
 label: WYSIWYG
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: text_long

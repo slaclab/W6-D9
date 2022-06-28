@@ -7,4 +7,4 @@ media: |-
   <img src="https://picsum.photos/id/1015/800/500">
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
-footer: 'March 4, 2021 • 10 min read'
+footer: 'March 4, 2021 · 10 min read'

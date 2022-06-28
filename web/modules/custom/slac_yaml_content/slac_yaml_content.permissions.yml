@@ -1,4 +1,0 @@
-administer slac_yaml_content configuration:
-  title: 'Administer slac_yaml_content configuration'
-  description: 'Optional description.'
-  restrict access: true

@@ -68,7 +68,7 @@
         - vid: 'tags'
           name: 'Partnerships'
 - entity: "taxonomy_term"
-  vid: 'tags'
+  vid: "tags"
   name: "Technology Transfer"
   parent:
   - '#process':

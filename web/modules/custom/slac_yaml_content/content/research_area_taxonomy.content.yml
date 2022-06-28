@@ -56,7 +56,7 @@
       callback: 'reference'
       args:
         - 'taxonomy_term'
-        - vid: 'research-area'
+        - vid: 'research_area'
           name: 'X-ray and Ultrafast Science'
 - entity: "taxonomy_term"
   vid: "research_area"
@@ -186,7 +186,7 @@
       callback: 'reference'
       args:
         - 'taxonomy_term'
-        - vid: 'research'
+        - vid: 'research_area'
           name: 'Science of Life'
 - entity: "taxonomy_term"
   vid: "research_area"

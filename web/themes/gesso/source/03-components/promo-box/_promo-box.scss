@@ -8,29 +8,38 @@
   background-color: gesso-color(ui, generic, background-light);
   background-repeat: repeat-x;
   background-size: auto 100%;
-  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 98px) 100%, 0% 100%);
   gap: rem(gesso-spacing(5));
-  max-width: gesso-constrain(md);
-  padding: rem(gesso-spacing(4)) rem(gesso-spacing(4) + 98px)
-    rem(gesso-spacing(4)) rem(gesso-spacing(8));
-  width: max-content;
+  max-width: 100%;
+  padding: rem(gesso-spacing(4)) rem(gesso-spacing(8)) rem(gesso-spacing(4))
+    rem(gesso-spacing(8));
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 98px) 100%, 0% 100%);
+    padding-right: rem(gesso-spacing(4) + 98px);
+    width: max-content;
+  }
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     clip-path: polygon(0% 0%, 100% 0%, calc(100% - 156px) 100%, 0% 100%);
     display: flex;
     padding-right: rem(gesso-spacing(4) + 156px);
   }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    max-width: gesso-constrain(md);
+  }
 }
 
-.c-promo-box__col {
+.c-promo-box__col--image {
   display: none;
-
-  &:first-of-type {
-    display: block;
-  }
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     display: block;
+
+    img {
+      max-width: 280px;
+      width: 100%;
+    }
   }
 }
 

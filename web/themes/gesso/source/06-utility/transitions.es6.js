@@ -1,6 +1,7 @@
 import Drupal from 'drupal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { animateIcon } from '../03-components/animated-icon/animated-icon.es6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +47,19 @@ Drupal.behaviors.gessoTransitions = {
               x: 0,
               ease: 'power3.out',
             });
+          },
+        });
+      });
+
+      // Animate Icon on Page Load
+      const icons = gsap.utils.toArray('.u-animate-icon', context);
+      icons.forEach(item => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: 'top 50%',
+          once: true,
+          onEnter: () => {
+            animateIcon(item);
           },
         });
       });

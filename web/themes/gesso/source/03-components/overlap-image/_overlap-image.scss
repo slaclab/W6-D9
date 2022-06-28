@@ -152,6 +152,7 @@
 
     h2 a {
       @include arrow-link(white);
+      color: inherit;
     }
   }
 
@@ -161,6 +162,7 @@
 
     h2 a {
       @include arrow-link(white);
+      color: inherit;
     }
   }
 
@@ -170,6 +172,7 @@
 
     h2 a {
       @include arrow-link(white);
+      color: inherit;
     }
   }
 }
@@ -197,4 +200,8 @@
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
     }
   }
+}
+
+.c-overlap-image__icon {
+  margin-bottom: rem(gesso-spacing(2));
 }

@@ -7,3 +7,4 @@ overlap_image_content: |-
   <p>Originally founded for breakthrough research in particle physics, SLAC has evolved into a multipurpose lab whose mission is to explore the world at all scales, from the tiniest fundamental particles to the largest structures in the universe.</p>
 has_parallax: true
 box_color: 'white'
+icon: 'space1'

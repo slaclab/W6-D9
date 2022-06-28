@@ -1,0 +1,55 @@
+uuid: b41c78a9-12b7-4b5c-88b5-39d0d7610b15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.footer_tagline.field_body
+    - field.field.site_setting_entity.footer_tagline.field_heading
+    - site_settings.site_setting_entity_type.footer_tagline
+  module:
+    - text
+    - user
+id: site_setting_entity.footer_tagline.default
+targetEntityType: site_setting_entity
+bundle: footer_tagline
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

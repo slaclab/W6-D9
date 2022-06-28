@@ -40,6 +40,7 @@ const OurStory = args => (
 <h2><a href="#0">SLAC History and legacy</a></h2>
 <p>Hatched in 1956, the bold plan to build our accelerator was known as project “M” for monster, the biggest government-funded science project built to date.  While our research has expanded in many directions since then, the SLAC linac is still the lab’s backbone, generating incredibly brilliant pulses for our pioneering X-ray free-electron laser. Our path to becoming a multipurpose lab includes four Nobel prizes, the first website in North America and a stretch of highway to nowhere.</p>`,
             position: 'bottom-right',
+            icon: false,
           })
         ),
         has_constrain: true,
@@ -61,8 +62,9 @@ const OurStory = args => (
             overlap_image_content: `<div class="c-kicker">Public Tours</div>
 <h2><a href="#0">Visit our lab</a></h2>
 <p>Sign up for an in-person tour at SLAC led by a guide who can answer your questions, sign-up for a guided virtual tour or explore the lab on your own with our virtual tour any time.</p>
-<p><a href="#0" class="c-button c-button--chevron">In-person tours</a><a href="#0" class="c-button c-button--chevron">Virtual tour</a></p>`,
+<p><a href="#0" class="c-button c-button--secondary">In-person tours</a><a href="#0" class="c-button c-button--secondary">Virtual tour</a></p>`,
             position: 'bottom-left',
+            box_color: 'purple',
           })
         ),
         has_constrain: true,

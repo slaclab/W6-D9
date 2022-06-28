@@ -22,6 +22,13 @@
   {{ hero_image }}
   <div class="c-hero-bg-image__content">
     <div class="l-constrain">
+      {% if icon %}
+        {% include '@components/animated-icon/animated-icon.twig' with {
+          modifier_classes: 'c-hero-bg-image__icon c-animated-icon--small',
+          animation: icon,
+          color: 'white',
+        } %}
+      {% endif %}
       {% if hero_kicker %}
         {% include '@components/kicker/kicker.twig' with {
           kicker_content: hero_kicker,

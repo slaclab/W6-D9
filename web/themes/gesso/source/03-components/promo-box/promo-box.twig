@@ -21,8 +21,10 @@
     {% endif %}
   </div>
   {% if promo_box_image %}
-  <div class="c-promo-box__col">
-    {{ promo_box_image }}
+  <div class="c-promo-box__col c-promo-box__col--image">
+    {% if promo_box_url %}<a href="{{ promo_box_url }}">{% endif %}
+      {{ promo_box_image }}
+    {% if promo_box_url %}</a>{% endif %}
   </div>
   {% endif %}
   {% if promo_box_content %}

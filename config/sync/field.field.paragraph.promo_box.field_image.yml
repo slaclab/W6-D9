@@ -1,18 +1,18 @@
-uuid: e1e19020-f342-4604-ad35-f2587c607016
+uuid: 8b0a3dd5-6325-4e42-b254-229471202f14
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_image
     - media.type.image
-    - paragraphs.paragraphs_type.article_hero
-id: paragraph.article_hero.field_image
+    - paragraphs.paragraphs_type.promo_box
+id: paragraph.promo_box.field_image
 field_name: field_image
 entity_type: paragraph
-bundle: article_hero
+bundle: promo_box
 label: Image
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

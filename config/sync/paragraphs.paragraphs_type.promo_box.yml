@@ -1,9 +1,9 @@
-uuid: ca689bfc-6e96-49e5-8446-01adc9a1a1fd
+uuid: 1456e319-5d44-4217-8f9e-b5790c959a8c
 langcode: en
 status: true
 dependencies: {  }
-id: overlap_image
-label: 'Overlap Image'
+id: promo_box
+label: 'Promo Box'
 icon_uuid: null
 icon_default: null
 description: ''

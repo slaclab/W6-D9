@@ -67,426 +67,446 @@
         - 'taxonomy_term'
         - vid: 'tags'
           name: 'Partnerships'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Technology Transfer"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Partnerships'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Partnerships and Agreements"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Partnerships'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "A.I. and Machine Learning"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Accelerator Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Advanced Accelerator R&D"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Advanced Manufacturing"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Astrophysics and Cosmology"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Batteries"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Bioimaging"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Biological Sciences"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Chemistry and Catalysis"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Computer Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Condensed-Matter Physics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "COVID-19"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Cryo-EM"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Dark Energy"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Dark Matter"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Detectors"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "The Early Universe"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Electric Grid"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Electron Diffraction/Microscopy"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Energy Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name : 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Engineering"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Environmental Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Extremely Large Datasets"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Higgs Boson"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Lasers"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Materials Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Matter in Extreme Conditions"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Medical"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Molecular Movies"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Nanoscience"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Particle Physics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Plasma Physics and Fusion Energy Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Plasma Wakefield Acceleratio"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Quantum Information Science (QIS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Quantum Materials"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Quantum Sensors and Detectors"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Scientific Computing"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Solar Cells"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Structural Molecular Biology"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Superconductivity"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Technology Transfer"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Partnerships'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Partnerships and Agreements"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Partnerships'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "A.I. and Machine Learning"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Accelerator Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Advanced Accelerator R&D"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Advanced Manufacturing"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Astrophysics and Cosmology"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Batteries"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Bioimaging"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Biological Sciences"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Chemistry and Catalysis"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Computer Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Condensed-Matter Physics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "COVID-19"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Cryo-EM"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Dark Energy"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Dark Matter"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Detectors"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "The Early Universe"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Electric Grid"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Electron Diffraction/Microscopy"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Energy Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name : 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Engineering"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Environmental Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Extremely Large Datasets"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Higgs Boson"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Lasers"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Materials Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Matter in Extreme Conditions"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Medical"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Molecular Movies"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Nanoscience"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Neutrinos"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Particle Physics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Plasma Physics and Fusion Energy Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Plasma Wakefield Acceleration"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Quantum Information Science (QIS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Quantum Materials"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Quantum Physics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Quantum Sensors and Detectors"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Scientific Computing"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Solar Cells"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Structural Molecular Biology"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Superconductivity"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
 # - entity: "taxonomy_term"
 #   vid: "tags"
 #   name: "Sustainability"
@@ -497,943 +517,953 @@
 #         - 'taxonomy_term'
 #         - vid: 'tags'
 #           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Ultrafast Electron Diffraction (UED)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Ultrafast Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "X-ray Science"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "X-ray Crystallography"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "X-ray Imaging"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "X-ray Scattering/Diffraction"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "X-ray Spectroscopy"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Science News'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Accelerator Engineering"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Accelerator Operations & Safety"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "FACET"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "FACET-II"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LHC Accelerator R&D"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Linear Collider R&D"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Next Linear Collider Test Accelerator (NLCTA)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Acceleration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Applied Energy"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Energy Science'    
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "GISMo"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Energy Science'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Stanford PULSE Institute"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Energy Science'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SUNCAT Center for Interface Science and Catalysis"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Energy Science'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Stanford Institute for Materials & Energy Sciences (SIMES)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Energy Science'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Q-NEXT"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "ATLAS Experiment"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "BaBar"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "DUNE/LBNF"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Enriched Xenon Observatory (EXO)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "nEXO experiment"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Geant4"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Heavy Photon Search (HPS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "High Energy Density Science Division (HEDS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "International Linear Collider (ILC)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Particle Astrophysics & Cosmology (PAC)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "BICEP"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Computational Astrophysics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Cosmic Microwave Background (CMB)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Cryogenic Dark Matter Search (CDMS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Dark Energy Survey (DES)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Fermi Gamma-ray Space Telescope"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Kavli Institute for Particle Astrophysics & Cosmology (KIPAC)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Rubin Observatory/LSSTCam"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Light Dark Matter Experiment (LDMX)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LUX-ZEPLIN (LZ)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SuperCDMS"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Theoretical Physics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Neutrino Physics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Fundamental Physics'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Linac Coherent Light Source (LCLS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Macromolecular Femtosecond Crystallography (MFX)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Atomic, Molecular & Optical Science (AMO)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Soft X-ray Materials Science (SXR)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS X-ray Pump Probe (XPP)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS X-ray Correlation Spectroscopy (XCS)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Coherent X-ray Imaging (CXI)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Matter in Extreme Conditions (MEC)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS Ultrafast Science Instruments (LUSI)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS-II"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "LCLS-II-HE"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "MeV-UED"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Stanford Synchrotron Radiation Lightsource (SSRL)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "PEP-X"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Stanford-SLAC Cryo-EM Facilities"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Future Light Sources"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'X-ray Light Sources and Electron Imaging'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Data, Controls, Scientific Computing Systems"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Technology Innovation' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Sensors, Integrated Circuits and Electronics"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Technology Innovation' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "RF and Accelerator Research"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Technology Innovation' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Device Microfabrication Facility (DMF)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Technology Innovation' 
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Environment, Safety & Health (ES&H)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Project Management & Work Planning"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Scientific Computing"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SLAC Computing"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Enterprise Resource Planning (ERP)"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Facilities & Operations"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Infrastructure & Safety'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Communications"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Department of Energy"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Director’s Columns"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Finance & Administration"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Laboratory Directed R&D"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SLAC Human Resources"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SLAC Organization"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Stanford University"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Lab Administration'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Community Service"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Diversity, Equity & Inclusion"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Educational Programs"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Media"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "History & Lore"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SLAC Science & Society"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Science Training & Mentorship"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Honors & Awards"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Staff Milestones & Events"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Sustainability"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'SLAC Community & Careers'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Community Event"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Conferences & Workshops"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Public Events & Tours"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "SLAC Colloquium Series"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Staff Celebrations"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Summer School Programs"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
-# - entity: "taxonomy_term"
-#   vid: "tags"
-#   name: "Talks, Seminars & Colloquia"
-#   parent:
-#   - '#process':
-#       callback: 'reference'
-#       args:
-#         - 'taxonomy_term'
-#         - vid: 'tags'
-#           name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Ultrafast Electron Diffraction (UED)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Ultrafast Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "X-ray Science"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "X-ray Crystallography"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "X-ray Imaging"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "X-ray Scattering/Diffraction"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "X-ray Spectroscopy"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Science News'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Accelerator Engineering"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Accelerator Operations & Safety"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "FACET"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "FACET-II"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LHC Accelerator R&D"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Linear Collider R&D"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Next Linear Collider Test Accelerator (NLCTA)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Accelerators'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Applied Energy"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Energy Sciences'    
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "GISMo"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Energy Sciences'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Stanford PULSE Institute"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Energy Sciences'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SUNCAT Center for Interface Science and Catalysis"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Energy Sciences'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Stanford Institute for Materials & Energy Sciences (SIMES)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Energy Sciences'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Q-NEXT"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "ATLAS Experiment"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "BaBar"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "DUNE/LBNF"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Enriched Xenon Observatory (EXO)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "nEXO experiment"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Geant4"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Heavy Photon Search (HPS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "High Energy Density Science Division (HEDS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "International Linear Collider (ILC)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Particle Astrophysics & Cosmology (PAC)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "BICEP"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Computational Astrophysics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Cosmic Microwave Background (CMB)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Cryogenic Dark Matter Search (CDMS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Dark Energy Survey (DES)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Fermi Gamma-ray Space Telescope"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Kavli Institute for Particle Astrophysics & Cosmology (KIPAC)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Rubin Observatory/LSSTCam"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Light Dark Matter Experiment (LDMX)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LUX-ZEPLIN (LZ)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SuperCDMS"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Theoretical Physics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Neutrino Physics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Fundamental Physics'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Linac Coherent Light Source (LCLS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Macromolecular Femtosecond Crystallography (MFX)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Atomic, Molecular & Optical Science (AMO)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Soft X-ray Materials Science (SXR)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS X-ray Pump Probe (XPP)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS X-ray Correlation Spectroscopy (XCS)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Coherent X-ray Imaging (CXI)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Matter in Extreme Conditions (MEC)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS Ultrafast Science Instruments (LUSI)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS-II"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "LCLS-II-HE"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "MeV-UED"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Stanford Synchrotron Radiation Lightsource (SSRL)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "PEP-X"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Stanford-SLAC Cryo-EM Facilities"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Future Light Sources"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Data, Controls, Scientific Computing Systems"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Technology Innovation' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Sensors, Integrated Circuits and Electronics"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Technology Innovation' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "RF and Accelerator Research"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Technology Innovation' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Device Microfabrication Facility (DMF)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Technology Innovation' 
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Environment, Safety & Health (ES&H)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Project Management & Work Planning"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Scientific Computing"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC Computing"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Enterprise Resource Planning (ERP)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Facilities & Operations"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Infrastructure & Safety'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Communications"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Department of Energy"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Director’s Columns"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Finance & Administration"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Laboratory Directed R&D"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC Human Resources"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC Organization"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Stanford University"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Lab Administration'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Community Service"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Diversity, Equity & Inclusion"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Educational Programs"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Media"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "History & Lore"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC Science & Society"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC People"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Science Training & Mentorship"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Honors & Awards"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Staff Milestones & Events"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Sustainability"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC Community & Careers'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Community Event"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Conferences & Workshops"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Public Events & Tours"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "SLAC Colloquium Series"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Staff Celebrations"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Summer School Programs"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "Talks, Seminars & Colloquia"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'Events'

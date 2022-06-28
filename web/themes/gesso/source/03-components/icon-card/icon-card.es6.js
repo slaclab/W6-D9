@@ -1,5 +1,5 @@
 import Drupal from 'drupal';
-import { animateIcon, resetIcon } from '../animated-icon/animated-icon.es6';
+import { animateIcon } from '../animated-icon/animated-icon.es6';
 
 Drupal.behaviors.iconCard = {
   attach(context) {

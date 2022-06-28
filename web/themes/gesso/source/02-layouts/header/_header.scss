@@ -115,4 +115,8 @@
   left: 0;
   position: absolute;
   width: 100%;
+
+  .has-open-menu & {
+    display: none;
+  }
 }

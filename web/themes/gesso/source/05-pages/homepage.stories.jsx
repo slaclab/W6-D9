@@ -4,11 +4,13 @@ import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 import globalData from '../00-config/storybook.global-data.yml';
 import sectionTwigTemplate from '../02-layouts/section/section.twig';
+import gridTwigTemplate from '../02-layouts/grid/grid.twig';
 import PageWrapper from './page-wrappers/default.jsx';
 import { VideoHero } from '../03-components/video-hero/video-hero.stories';
 import { FiftyFifty } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { ColorfulTagline } from '../03-components/tagline/tagline.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
+import { IconCard } from '../03-components/icon-card/icon-card.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -41,6 +43,54 @@ const Homepage = args => (
             ),
           })
         ),
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        modifier_classes: 'l-section--bg-image',
+        section_content: gridTwigTemplate({
+          grid_content: ReactDOMServer.renderToStaticMarkup(
+            <>
+              {IconCard(IconCard.args)}
+              {IconCard({
+                icon: 'space2',
+                url: '#0',
+                card_title: 'Physics of the Universe',
+                card_description:
+                  'Studying the particles & forces that knit the cosmos together',
+              })}
+              {IconCard({
+                icon: 'accelerator1',
+                url: '#0',
+                card_title: 'Advanced Accelerators',
+                card_description:
+                  'Building smaller, faster, more powerful accelerators for all',
+              })}
+              {IconCard({
+                icon: 'cryo2',
+                url: '#0',
+                card_title: 'Science of Life',
+                card_description:
+                  'Understanding the machinery of life at its most basic level',
+              })}
+              {IconCard({
+                icon: 'accelerator2',
+                url: '#0',
+                card_title: 'New Technologies',
+                card_description: 'Inventing new tools for science and society',
+              })}
+              {IconCard({
+                icon: 'space1',
+                url: '#0',
+                card_title: 'Energy Sciences',
+                card_description:
+                  "Finding clean, sustainable solutions for the world's energy challenges",
+              })}
+            </>
+          ),
+          num_of_cols: 3,
+        }),
       })
     )}
   </PageWrapper>

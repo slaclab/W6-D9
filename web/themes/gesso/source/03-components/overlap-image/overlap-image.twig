@@ -10,7 +10,16 @@
 
 <div {{ add_attributes({ class: classes }) }}>
   {% if position == 'top-left' or position == 'top-right' or overlap_image_content_2 %}
-    <div class="c-overlap-image__text">{{ overlap_image_content }}</div>
+    <div class="c-overlap-image__text{% if icon %} u-animate-icon{% endif %}">
+      {% if icon %}
+        {% include '@components/animated-icon/animated-icon.twig' with {
+          animation: icon,
+          color: box_color == 'white' ? 'black' : 'white',
+          modifier_classes: 'c-overlap-image__icon c-animated-icon--small'
+        } %}
+      {% endif %}
+      {{ overlap_image_content }}
+    </div>
   {% endif  %}
   <div class="c-overlap-image__image"{% if has_parallax %}style="background-image: url({{ image_url }})" role="img" aria-label="{{ image_alt }}"{% endif %}{% if image_caption %} aria-describedby="{{ caption_id }}" {% endif %}>
     {% if not has_parallax %}<img src="{{ image_url }}" alt="{{ image_alt }}" />{% endif %}
@@ -24,7 +33,16 @@
     {% endif %}
   </div>
   {% if position != 'top-left' and position != 'top-right' and not overlap_image_content_2 %}
-    <div class="c-overlap-image__text">{{ overlap_image_content }}</div>
+    <div class="c-overlap-image__text{% if icon %} u-animate-icon{% endif %}">
+      {% if icon %}
+        {% include '@components/animated-icon/animated-icon.twig' with {
+          animation: icon,
+          color: box_color == 'white' ? 'black' : 'white',
+          modifier_classes: 'c-overlap-image__icon c-animated-icon--small'
+        } %}
+      {% endif %}
+      {{ overlap_image_content }}
+    </div>
   {% endif %}
   {% if overlap_image_content_2 %}
     <div class="c-overlap-image__text">{{ overlap_image_content_2 }}</div>

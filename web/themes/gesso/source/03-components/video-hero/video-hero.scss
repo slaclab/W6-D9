@@ -31,3 +31,22 @@
   position: absolute;
   width: 100%;
 }
+
+.c-video-hero__caption {
+  bottom: rem(gesso-spacing(2.5));
+  left: calc(50% + #{rem(gesso-site-margins(mobile))});
+  position: absolute;
+  text-align: right;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5;
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    left: calc(50% + #{rem(gesso-site-margins(desktop))});
+  }
+}
+
+.c-video-hero__video {
+  display: none;
+  text-align: right;
+}

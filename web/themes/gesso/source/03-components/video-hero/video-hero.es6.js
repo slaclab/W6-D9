@@ -8,6 +8,7 @@ Drupal.behaviors.videoHero = {
       const mediaQuery = window.matchMedia(
         `(min-width: ${BREAKPOINTS.desktop})`
       );
+      const caption = videoHero.querySelector('.c-video-hero__caption');
       const handleMediaQueryChange = event => {
         if (event.matches) {
           const videos = videoHero.querySelectorAll('.c-video-hero__video');
@@ -18,12 +19,19 @@ Drupal.behaviors.videoHero = {
             `<iframe allowfullscreen src="${selectedVideo.dataset.src}"></iframe>`
           );
           selectedVideo.parentElement.classList.add('has-video');
+          const captionText = selectedVideo.innerHTML.trim();
+          if (captionText) {
+            caption.querySelector('.c-tooltip__tooltip').innerHTML =
+              captionText;
+            caption.classList.remove('u-hidden');
+          }
         } else {
           const video = videoHero.querySelector('iframe');
           if (video) {
             video.parentElement.classList.remove('has-video');
             video.parentNode.removeChild(video);
           }
+          caption.classList.add('u-hidden');
         }
       };
       mediaQuery.addEventListener('change', handleMediaQueryChange);

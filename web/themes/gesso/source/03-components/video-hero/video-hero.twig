@@ -9,9 +9,13 @@
   <div class="c-video-hero__media">
     {{ fallback_image }}
     {% for video in hero_videos %}
-      <div data-src="{{ video }}" class="c-video-hero__video"></div>
+      <div data-src="{{ video.embed }}" class="c-video-hero__video">
+        {{ video.caption }}
+      </div>
     {% endfor %}
-{#    <iframe allowfullscreen="" frameborder="0" mozallowfullscreen="" src="https://player.vimeo.com/video/347180654?autoplay=1&amp;muted=1&amp;loop=1" webkitallowfullscreen=""></iframe>#}
+  </div>
+  <div class="l-constrain c-video-hero__caption u-hidden">
+    {% include '@components/tooltip/tooltip.twig' %}
   </div>
   <svg class="c-video-hero__overlay" viewBox="0 0 1440 53" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g style="mix-blend-mode:hard-light" clip-path="url(#clip0_4886_64489)">

@@ -2,6 +2,7 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './video-hero.twig';
 import data from './video-hero.yml';
+import globalData from '../../00-config/storybook.global-data.yml';
 import './video-hero.scss';
 import './video-hero.es6';
 
@@ -15,7 +16,7 @@ const VideoHero = args =>
       ...args,
     })
   );
-VideoHero.args = { ...data };
+VideoHero.args = { ...globalData, ...data };
 
 export default settings;
 export { VideoHero };

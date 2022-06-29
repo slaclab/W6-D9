@@ -89,6 +89,15 @@
       padding: 0;
     }
   }
+
+  .c-carousel--dark & {
+    color: gesso-color(text, on-dark);
+
+    a {
+      color: inherit;
+      text-decoration-color: currentcolor;
+    }
+  }
 }
 
 .c-figure--iframe {

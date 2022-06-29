@@ -11,6 +11,7 @@ import { FiftyFifty } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { ColorfulTagline } from '../03-components/tagline/tagline.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import { IconCard } from '../03-components/icon-card/icon-card.stories';
+import { Carousel } from '../03-components/carousel/carousel.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -91,6 +92,36 @@ const Homepage = args => (
           ),
           num_of_cols: 3,
         }),
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Where Research Happens',
+        section_title: 'Facilities & Centers',
+        section_title_url: '#0',
+        section_intro: `<p>At our large-scale facilities and specialized centers, scientists take advantage of powerful tools and unique expertise and collaborate with each other across a wide range of disciplines. Working together is what makes science tick.</p>
+<p><a href="#0" class="c-button c-button--chevron">Scientific Facilities</a><a href="#0" class="c-button c-button--chevron">Joint Institutes & Centers</a></p>`,
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          <>{Carousel(Carousel.args)}</>
+        ),
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Meet Our Teams',
+        section_title: 'SLAC People',
+        section_title_url: '#0',
+        section_intro: `<p>To achieve our ambitious goals and keep SLAC a great place to work, the lab needs a creative, diverse and united workforce – people with a wide variety of experiences and ideas, skills and backgrounds.</p>`,
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          <>
+            {Carousel({
+              ...Carousel.args,
+            })}
+          </>
+        ),
+        modifier_classes: 'l-section--dark l-section--purple-black',
       })
     )}
   </PageWrapper>

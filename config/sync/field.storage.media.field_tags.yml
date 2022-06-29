@@ -1,17 +1,16 @@
-uuid: e57cd24e-3800-432d-b2ce-467bee882c23
+uuid: f1c406ec-8435-4e17-a931-b63a5f8cc501
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.field_media_oembed_video
-field_name: field_media_oembed_video
+    - taxonomy
+id: media.field_tags
+field_name: field_tags
 entity_type: media
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

@@ -45,4 +45,9 @@
   {% if has_constrain %}
   </div>
   {% endif %}
+  {% include '@components/back-to-top/back-to-top.twig' with {
+    is_demo: false,
+    text: 'Top',
+    top_element: 'top'
+  } %}
 </footer>

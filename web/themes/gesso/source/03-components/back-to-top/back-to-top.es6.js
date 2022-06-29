@@ -5,6 +5,7 @@ Drupal.behaviors.backToTop = {
     const threshold = settings?.gesso?.backToTopThreshold ?? 200;
     const smoothScroll = settings?.gesso?.backToTopSmoothScroll ?? true;
     const footer = context.querySelector('.l-footer');
+    const subfooter = context.querySelector('.l-subfooter');
     const backToTop = context.querySelector('.c-back-to-top');
     if (backToTop) {
       if (!Number.isNaN(threshold) && threshold > 0) {
@@ -32,13 +33,21 @@ Drupal.behaviors.backToTop = {
               backToTop.classList.remove('c-back-to-top--on-dark');
             }
           }
+          if (subfooter) {
+            const { top } = subfooter.getBoundingClientRect();
+            if (top - 100 < window.innerHeight) {
+              backToTop.classList.add('is-stopped');
+            } else if (backToTop.classList.contains('is-stopped')) {
+              backToTop.classList.remove('is-stopped');
+            }
+          }
         };
         let stillScrolling = false;
         window.addEventListener('scroll', () => {
           if (stillScrolling !== false) {
             clearTimeout(stillScrolling);
           }
-          stillScrolling = setTimeout(scrollHandler, 60);
+          stillScrolling = setTimeout(scrollHandler, 20);
         });
       } else {
         backToTop.setAttribute('aria-hidden', 'false');

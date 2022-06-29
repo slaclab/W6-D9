@@ -380,6 +380,7 @@ gesso:
       outro: 195ms
   z-index:
     social-share: 2
+    back-to-top: 5
     nav: 1000
     drawer: 1200
     modal: 1300

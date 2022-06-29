@@ -1,0 +1,14 @@
+uuid: 7c1fca83-bdc1-458b-81d9-cdecced2d1c5
+langcode: en
+status: true
+dependencies: {  }
+id: remote_audio
+label: 'Remote Audio'
+description: ''
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_audio_file
+field_map:
+  name: name

@@ -1,0 +1,27 @@
+uuid: d16667ea-8cff-4e38-8231-6c836b8d1675
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_file
+    - media.type.remote_audio
+  module:
+    - file
+id: media.remote_audio.field_media_audio_file
+field_name: field_media_audio_file
+entity_type: media
+bundle: remote_audio
+label: 'Audio file'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: art19
+  max_filesize: ''
+  description_field: false
+field_type: file

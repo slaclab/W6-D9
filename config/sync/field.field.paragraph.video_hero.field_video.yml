@@ -1,9 +1,10 @@
-uuid: c26a2b13-6ac0-4ce9-8b2b-f7f322334f95
+uuid: 5d3c5cf4-fa94-4c61-85ef-b3d57e5ac7e3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_video
+    - media.type.remote_video
     - paragraphs.paragraphs_type.video_hero
 id: paragraph.video_hero.field_video
 field_name: field_video
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:media'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC

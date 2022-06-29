@@ -19,6 +19,10 @@ ul {
     margin-top: rem(math.div(gesso-spacing(2), 2));
   }
 
+  ul {
+    list-style-type: circle;
+  }
+
   li::marker {
     color: gesso-color(ui, generic, accent-light);
   }

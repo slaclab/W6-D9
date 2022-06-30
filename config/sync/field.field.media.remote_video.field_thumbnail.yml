@@ -1,18 +1,18 @@
-uuid: 5d3c5cf4-fa94-4c61-85ef-b3d57e5ac7e3
+uuid: ce3df077-21a1-4f00-b4d5-3ec05cdda349
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_video
+    - field.storage.media.field_thumbnail
+    - media.type.image
     - media.type.remote_video
-    - paragraphs.paragraphs_type.video_hero
-id: paragraph.video_hero.field_video
-field_name: field_video
-entity_type: paragraph
-bundle: video_hero
-label: Video
+id: media.remote_video.field_thumbnail
+field_name: field_thumbnail
+entity_type: media
+bundle: remote_video
+label: 'Stillframe Image'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      remote_video: remote_video
+      image: image
     sort:
       field: _none
       direction: ASC

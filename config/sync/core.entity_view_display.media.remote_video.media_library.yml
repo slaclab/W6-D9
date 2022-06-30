@@ -1,10 +1,17 @@
-uuid: 9d7d9c3b-1f68-43f5-8fcd-21780c2e7bcc
+uuid: 9be82e8e-7bac-415b-ab59-1f5ae57064d1
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.remote_video.field_boolean
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_link
+    - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_thumbnail
+    - field.field.media.remote_video.field_transcript
     - image.style.medium
     - media.type.remote_video
   module:
@@ -27,6 +34,13 @@ content:
     region: content
 hidden:
   created: true
+  field_boolean: true
+  field_caption: true
+  field_link: true
+  field_long_text: true
   field_media_oembed_video: true
+  field_tags: true
+  field_thumbnail: true
+  field_transcript: true
   name: true
   uid: true

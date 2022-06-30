@@ -1,17 +1,14 @@
-uuid: e57cd24e-3800-432d-b2ce-467bee882c23
+uuid: 96f9c9cf-05f2-4971-ba45-19239441a208
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.field_media_oembed_video
-field_name: field_media_oembed_video
+id: media.field_boolean
+field_name: field_boolean
 entity_type: media
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

@@ -1,10 +1,17 @@
-uuid: a9a26515-8049-4367-838c-eb25bc2e5c45
+uuid: 5345bd99-af28-4cf6-8419-b654b4d89d00
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.remote_video.field_boolean
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_link
+    - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_thumbnail
+    - field.field.media.remote_video.field_transcript
     - media.type.remote_video
 id: media.remote_video.media_library
 targetEntityType: media
@@ -21,7 +28,14 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_boolean: true
+  field_caption: true
+  field_link: true
+  field_long_text: true
   field_media_oembed_video: true
+  field_tags: true
+  field_thumbnail: true
+  field_transcript: true
   path: true
   status: true
   uid: true

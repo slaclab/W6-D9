@@ -45,6 +45,7 @@
     "drupal/search_api": "^1.21",
     "drupal/simple_sitemap": "^3.11",
     "drupal/site_settings": "^1.19",
+    "drupal/sitewide_alert": "^2.0",
     "drupal/twig_field_value": "^2.0",
     "drupal/twig_tweak": "^3.1",
     "drupal/username_enumeration_prevention": "^1.2",

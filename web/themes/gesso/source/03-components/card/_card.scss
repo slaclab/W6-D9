@@ -165,6 +165,27 @@ $card-padding: 30px !default;
   text-align: right;
 }
 
+.c-card__gradient {
+  background-image: url('images/backgrounds/arch-gradient.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  inset: 0;
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
+.c-card__icon {
+  font-size: 38px;
+  left: 45px;
+  line-height: 1;
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+}
+
+// Variants
+
 .c-card--feature {
   .c-card__media {
     flex-grow: 1;
@@ -184,21 +205,29 @@ $card-padding: 30px !default;
   }
 }
 
-.c-card__gradient {
-  background-image: url('images/backgrounds/arch-gradient.svg');
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  inset: 0;
-  mix-blend-mode: multiply;
-  position: absolute;
-}
+.c-card--teaser {
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-.c-card__icon {
-  font-size: 38px;
-  left: 45px;
-  line-height: 1;
-  position: absolute;
-  top: 45px;
-  z-index: 1;
+    .c-card__media {
+      aspect-ratio: 1;
+      flex-shrink: 0;
+      width: 280px;
+
+      img {
+        height: 100%;
+        object-position: center;
+        width: auto;
+      }
+    }
+
+    .c-card__gradient {
+      width: 360px;
+    }
+  }
+
+  .c-card__type {
+    display: none;
+  }
 }

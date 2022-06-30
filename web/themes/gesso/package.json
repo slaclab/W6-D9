@@ -90,6 +90,7 @@
     "svg-transform-loader": "^2.0.13",
     "svgo-loader": "^3.0.0",
     "terser-webpack-plugin": "^5.2.4",
+    "tiny-slider": "^2.9.4",
     "twig": "^1.15.4",
     "webpack-merge": "^5.7.3",
     "yaml": "^1.10.2"

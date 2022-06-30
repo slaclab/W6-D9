@@ -26,6 +26,22 @@ const LargeCard = args => (
 );
 LargeCard.args = { ...globalData, ...data };
 
+const TeaserCard = args => (
+  parse(twigTemplate({
+    ...args,
+    modifier_classes: 'c-card--teaser',
+  }))
+);
+TeaserCard.args = { ...globalData, ...data };
+
+const EventTeaserCard = args => (
+  parse(twigTemplate({
+    ...args,
+    modifier_classes: 'c-card--teaser',
+  }))
+);
+EventTeaserCard.args = { ...globalData, ...eventCardData };
+
 const VideoCard = args => (
   parse(twigTemplate({
     ...args,
@@ -51,4 +67,4 @@ const EventFallbackCard = args => (
 EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
 export default settings;
-export { Default, LargeCard, VideoCard, EventCard, EventFallbackCard };
+export { Default, LargeCard, VideoCard, EventCard, EventFallbackCard, TeaserCard, EventTeaserCard };

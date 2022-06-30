@@ -32,7 +32,7 @@
               {{ menus.menu_links(item.below, attributes, 1) }}
               {% if item.section == 'about' or item.section == 'news-events' %}
                 <li class="c-mega-menu__item">
-                  <span class="c-mega-menu__link">{{ 'Connect with Us'|t }}</span>
+                  <a class="c-mega-menu__link" href="#0">{{ 'Connect with Us'|t }}</a>
                   {% include '@components/social-links/social-links.twig' with {
                     'facebook': '#',
                     'twitter': '#',

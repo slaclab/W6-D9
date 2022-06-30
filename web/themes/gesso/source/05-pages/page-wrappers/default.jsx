@@ -51,11 +51,6 @@ const PageWrapper = props => {
         {Subfooter(Subfooter.args)}
         {CookieBanner(CookieBanner.args)}
       </div>
-      {BackToTop({
-        ...BackToTop.args,
-        top_element: 'top',
-        is_demo: false,
-      })}
     </div>
   );
 };

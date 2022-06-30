@@ -83,6 +83,10 @@
     url('images/backgrounds/Mask-Background.jpg');
   background-position: bottom center;
   background-size: cover;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    margin-bottom: 120px;
+  }
 }
 
 .l-section--purple-black {

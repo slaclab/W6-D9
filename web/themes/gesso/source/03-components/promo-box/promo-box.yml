@@ -2,7 +2,7 @@
 promo_box_kicker: 'Kicker'
 promo_box_title: 'Promo Box Title'
 promo_box_url: '#0'
-promo_box_button: '<a href="#0" class="c-button c-button--outline c-button--small">Button</a>'
+promo_box_button: '<a href="#0" class="c-button c-button--outline">Button</a>'
 promo_box_image: '<img src="https://picsum.photos/280" alt="Placeholder Image" />'
 promo_box_content: |-
   <p><a href="#0">Link One</a></p>

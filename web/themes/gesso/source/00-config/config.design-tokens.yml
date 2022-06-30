@@ -177,7 +177,7 @@ gesso:
       background: brand.illuminating.base
       text: grayscale.gray-7
     selection:
-      background: brand.cardinal.base
+      background: grayscale.stanford-black
       text: grayscale.white
     table:
       border: grayscale.gray-5
@@ -380,6 +380,7 @@ gesso:
       outro: 195ms
   z-index:
     social-share: 2
+    back-to-top: 5
     nav: 1000
     drawer: 1200
     modal: 1300

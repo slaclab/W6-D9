@@ -1,2 +1,13 @@
 // @file
 // Component: c-fifty-fifty
+@use '00-config' as *;
+
+.c-fifty-fifty {
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+}

@@ -3,24 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_hero.field_body
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_text
     - paragraphs.paragraphs_type.image_hero
-  module:
-    - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
 bundle: image_hero
 mode: default
 content:
-  field_body:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_image:
     type: entity_reference_label
     label: above

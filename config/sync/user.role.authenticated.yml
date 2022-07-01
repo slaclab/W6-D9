@@ -11,6 +11,7 @@ dependencies:
     - media
     - search
     - shortcut
+    - sitewide_alert
     - system
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -28,3 +29,4 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
+  - 'view published sitewide alert entities'

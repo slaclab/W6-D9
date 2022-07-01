@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.quote.field_body
     - field.field.paragraph.quote.field_image
+    - field.field.paragraph.quote.field_link
     - field.field.paragraph.quote.field_short_text
     - field.field.paragraph.quote.field_text
     - paragraphs.paragraphs_type.quote
   module:
+    - link
     - text
 id: paragraph.quote.default
 targetEntityType: paragraph
@@ -30,6 +32,18 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_short_text:
     type: string

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5a3d2e624a56189f18295888349d446",
+    "content-hash": "0c11110365c2eb08fb9437475293fb64",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4270,6 +4270,57 @@
             }
         },
         {
+            "name": "drupal/sitewide_alert",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/sitewide_alert.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/sitewide_alert-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "3cf4c5f440660208155b6ea97b17993fe42aa8dc"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10",
+                "php": ">=7.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1655433471",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Snyder",
+                    "homepage": "https://www.drupal.org/user/1988434",
+                    "email": "chris@chrissnyder.org",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides ability to display an alert message at the top of all pages.",
+            "homepage": "https://www.drupal.org/project/sitewide_alert",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/sitewide_alert",
+                "issues": "https://www.drupal.org/project/issues/sitewide_alert"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.10.0",
             "source": {
@@ -4480,6 +4531,66 @@
             "homepage": "https://www.drupal.org/project/username_enumeration_prevention",
             "support": {
                 "source": "https://git.drupalcode.org/project/username_enumeration_prevention"
+            }
+        },
+        {
+            "name": "drupal/yaml_content",
+            "version": "1.0.0-alpha7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/yaml_content.git",
+                "reference": "8.x-1.0-alpha7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/yaml_content-8.x-1.0-alpha7.zip",
+                "reference": "8.x-1.0-alpha7",
+                "shasum": "9aaf271446a64c9bffc5639589d5c8e6dc40c06c"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha7",
+                    "datestamp": "1588173300",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "shrop",
+                    "homepage": "https://www.drupal.org/user/14767"
+                },
+                {
+                    "name": "slucero",
+                    "homepage": "https://www.drupal.org/user/1612534"
+                }
+            ],
+            "description": "Demo content generator using yaml content templates.",
+            "homepage": "https://www.drupal.org/project/yaml_content",
+            "support": {
+                "source": "https://git.drupalcode.org/project/yaml_content"
             }
         },
         {
@@ -14229,6 +14340,7 @@
         "drupal/libraries": 10,
         "drupal/maxlength": 5,
         "drupal/rabbit_hole": 10,
+        "drupal/yaml_content": 15,
         "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,

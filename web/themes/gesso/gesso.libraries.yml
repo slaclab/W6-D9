@@ -24,6 +24,16 @@ bio_page:
     theme:
       dist/css/bio-page.css: {}
 
+carousel:
+  css:
+    theme:
+      dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 drawer:
   css:
     theme:

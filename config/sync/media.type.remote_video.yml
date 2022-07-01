@@ -1,4 +1,4 @@
-uuid: d5d23f32-2dd4-4051-a323-53e99b032086
+uuid: 8cc6f1a6-f0f7-4517-91d4-23ca507b39b7
 langcode: en
 status: true
 dependencies: {  }
@@ -11,5 +11,7 @@ new_revision: false
 source_configuration:
   source_field: field_media_oembed_video
   thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
-  providers: {  }
+  providers:
+    - YouTube
+    - Vimeo
 field_map: {  }

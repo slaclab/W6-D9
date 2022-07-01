@@ -1,0 +1,19 @@
+uuid: 5a98db67-72db-4bcc-b584-b800d66c68b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_oembed_art_19
+    - media.type.remote_audio
+id: media.remote_audio.field_media_oembed_art_19
+field_name: field_media_oembed_art_19
+entity_type: media
+bundle: remote_audio
+label: 'Art 19 URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

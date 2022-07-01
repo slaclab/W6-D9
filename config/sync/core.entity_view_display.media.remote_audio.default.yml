@@ -1,4 +1,4 @@
-uuid: f4fab58b-0806-4961-8072-bd544bd8acca
+uuid: eb777cc7-1932-4d34-9649-c22642cca577
 langcode: en
 status: true
 dependencies:
@@ -6,12 +6,12 @@ dependencies:
     - field.field.media.remote_audio.field_boolean
     - field.field.media.remote_audio.field_caption
     - field.field.media.remote_audio.field_long_text
-    - field.field.media.remote_audio.field_media_audio_file
+    - field.field.media.remote_audio.field_media_oembed_art_19
     - field.field.media.remote_audio.field_tags
     - field.field.media.remote_audio.field_transcript
     - media.type.remote_audio
   module:
-    - file
+    - media
     - text
 id: media.remote_audio.default
 targetEntityType: media
@@ -42,14 +42,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_media_audio_file:
-    type: file_audio
+  field_media_oembed_art_19:
+    type: oembed
     label: visually_hidden
     settings:
-      controls: true
-      autoplay: false
-      loop: false
-      multiple_file_display_type: tags
+      max_width: 0
+      max_height: 0
     third_party_settings: {  }
     weight: 0
     region: content

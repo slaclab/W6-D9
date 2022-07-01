@@ -1,14 +1,20 @@
-uuid: 7c1fca83-bdc1-458b-81d9-cdecced2d1c5
+uuid: 31d382b0-54c8-4186-8a74-68b5c96ee00a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - oembed_providers.bucket.art_19
+  module:
+    - oembed_providers
 id: remote_audio
 label: 'Remote Audio'
 description: ''
-source: audio_file
+source: 'oembed:art_19'
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
-  source_field: field_media_audio_file
-field_map:
-  name: name
+  source_field: field_media_oembed_art_19
+  thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
+  providers:
+    - 'Art 19'
+field_map: {  }

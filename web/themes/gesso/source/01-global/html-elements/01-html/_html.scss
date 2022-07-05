@@ -4,8 +4,8 @@
 @use '00-config' as *;
 
 html {
+  @include font-family-primary;
   box-sizing: border-box;
-  font-family: gesso-font-family(primary);
   font-size: 100% * (math.div(gesso-base-font-size(), 16px));
   line-height: gesso-line-height(base);
   min-height: 100%;

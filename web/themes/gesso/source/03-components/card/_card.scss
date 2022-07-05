@@ -1,12 +1,15 @@
 // Component: Card
 
 @use '00-config' as *;
+@use 'sass:math';
+@use './card--small/card--small' as *;
+@use './card--link/card--link' as *;
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
 $card-link-color-hover: gesso-brand(digital-red, base) !default;
 $card-meta-color: inherit;
-$card-padding: 30px !default;
+$card-padding: rem(gesso-spacing(4));
 
 .c-card {
   display: flex;
@@ -90,7 +93,7 @@ $card-padding: 30px !default;
 }
 
 .c-card__header {
-  margin-bottom: rem(gesso-spacing(1.5));
+  padding-bottom: rem(gesso-spacing(1.5));
 }
 
 .c-card__type {
@@ -108,7 +111,7 @@ $card-padding: 30px !default;
   font-family: gesso-font-family(secondary);
   font-size: rem(gesso-font-size(2));
   line-height: gesso-line-height(loose);
-  margin-bottom: rem(30px);
+  padding-bottom: rem(30px);
 }
 
 .c-card__footer {
@@ -229,5 +232,75 @@ $card-padding: 30px !default;
 
   .c-card__type {
     display: none;
+  }
+}
+
+.c-card--xlarge {
+  + * {
+    margin-top: rem(gesso-get-map(gutter-width));
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    .c-card__media {
+      aspect-ratio: 1340/600;
+    }
+
+    .c-card__type {
+      margin: 0;
+      padding: 0;
+      position: static;
+    }
+
+    .c-card__body {
+      @include layout-constrain(
+        gesso-constrain(md) - gesso-site-margins(desktop)
+      );
+      background: transparent;
+      bottom: rem(gesso-spacing(5));
+      padding-bottom: 0;
+      padding-top: 0;
+      position: absolute;
+      width: 100%;
+
+      > *:first-child {
+        padding-top: $card-padding;
+      }
+
+      > *:last-child {
+        padding-bottom: $card-padding;
+      }
+    }
+
+    .c-card__type,
+    .c-card__header,
+    .c-card__content,
+    .c-card__footer {
+      background: #fff;
+      padding-left: $card-padding;
+      padding-right: $card-padding;
+      width: calc(
+        #{percentage(1/3)} - #{math.div(gesso-get-map(gutter-width), 2)}
+      );
+    }
+
+    + * {
+      margin-top: rem(gesso-spacing(9));
+    }
+  }
+
+  &.c-card--align-right {
+    .c-card__body {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c-card__type {
+      align-self: flex-end;
+    }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    @include layout-half-full-bleed;
   }
 }

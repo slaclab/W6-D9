@@ -17,12 +17,12 @@
   }
 
   .c-tagline__box {
+    @include font-family-secondary;
     background: linear-gradient(
       rgba(gesso-grayscale(white), 0.51) 0%,
       gesso-grayscale(white) 51.6%
     );
     bottom: 0;
-    font-family: gesso-font-family(secondary);
     left: gesso-site-margins(mobile);
     line-height: gesso-line-height(loose);
     padding: rem(gesso-spacing(5)) rem(gesso-spacing(2.5))

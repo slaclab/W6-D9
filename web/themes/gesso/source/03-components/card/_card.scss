@@ -108,7 +108,7 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card__content {
-  font-family: gesso-font-family(secondary);
+  @include font-family-secondary;
   font-size: rem(gesso-font-size(2));
   line-height: gesso-line-height(loose);
   padding-bottom: rem(30px);

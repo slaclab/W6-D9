@@ -1,16 +1,15 @@
-uuid: a5475c53-42da-433f-97a8-dd8709373b7b
+uuid: 8f2cc90b-d926-4dfc-b3a4-b1d2febe5a02
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
-id: paragraph.field_long_text
-field_name: field_long_text
+id: paragraph.field_boolean
+field_name: field_boolean
 entity_type: paragraph
-type: text_long
+type: boolean
 settings: {  }
-module: text
+module: core
 locked: false
 cardinality: 1
 translatable: true

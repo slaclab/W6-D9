@@ -1,13 +1,13 @@
-uuid: a5475c53-42da-433f-97a8-dd8709373b7b
+uuid: a096239a-e121-4c08-a895-e04c699348d4
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
+    - media
     - text
-id: paragraph.field_long_text
-field_name: field_long_text
-entity_type: paragraph
+id: media.field_credit
+field_name: field_credit
+entity_type: media
 type: text_long
 settings: {  }
 module: text

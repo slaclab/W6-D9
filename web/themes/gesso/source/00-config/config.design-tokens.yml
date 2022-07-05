@@ -100,7 +100,7 @@ gesso:
     tablet-lg: 880px
     desktop: 1024px
     mobile-menu: 1099px
-    desktop-lg: 1200px
+    desktop-lg: 1280px
     widescreen: 1400px
   colors:
     text:

@@ -26,6 +26,7 @@
     "drupal/devel": "^4.1",
     "drupal/diff": "^1.0",
     "drupal/entity_reference_revisions": "^1.9",
+    "drupal/eu_cookie_compliance": "^1.19",
     "drupal/field_group": "^3.2",
     "drupal/focal_point": "^1.5",
     "drupal/gin": "^3.0@beta",

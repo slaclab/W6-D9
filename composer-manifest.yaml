@@ -57,6 +57,7 @@ packages:
     drupal/devel: 4.1.5
     drupal/diff: 1.0.0
     drupal/entity_reference_revisions: 1.9.0
+    drupal/eu_cookie_compliance: 1.19.0
     drupal/field_group: 3.2.0
     drupal/focal_point: 1.5.0
     drupal/gin: 3.0.0-beta3

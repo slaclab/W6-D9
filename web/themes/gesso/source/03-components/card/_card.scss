@@ -3,6 +3,7 @@
 @use '00-config' as *;
 @use 'sass:math';
 @use './card--small/card--small' as *;
+@use './card--link/card--link' as *;
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;

@@ -17,6 +17,7 @@ import {
   ExtraLargeCardWithRightText,
 } from '../03-components/card/card.stories';
 import { SmallCard } from '../03-components/card/card--small/card--small.stories';
+import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -174,6 +175,28 @@ const Homepage = args => (
           num_of_cols: 4,
         }),
         modifier_classes: 'l-section--yellow',
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Quick Links',
+        section_title: 'Resources',
+        section_title_url: '#0',
+        section_content: gridTwigTemplate({
+          grid_content: ReactDOMServer.renderToStaticMarkup(
+            <>
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+            </>
+          ),
+          num_of_cols: 3,
+        }),
+        modifier_classes: 'l-section--gray-gradient',
       })
     )}
   </PageWrapper>

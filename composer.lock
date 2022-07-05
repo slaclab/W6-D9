@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84c658c8db338fb85775360c11671c5a",
+    "content-hash": "24eb086b88dff4b5e07b3082552c8c4c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3470,34 +3470,30 @@
         },
         {
             "name": "drupal/layout_paragraphs",
-            "version": "2.0.0-beta9",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_paragraphs.git",
-                "reference": "2.0.0-beta9"
+                "reference": "1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.0.0-beta9.zip",
-                "reference": "2.0.0-beta9",
-                "shasum": "9891615664289134f607377a70bb1a5c1a386dae"
+                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "6b4bbb8fc50f70092d1c1ed720076be9f8904218"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
                 "drupal/paragraphs": "^1.6"
             },
-            "require-dev": {
-                "drupal/entity_usage": "2.x-dev",
-                "drupal/paragraphs-paragraphs_library": "*"
-            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta9",
-                    "datestamp": "1649970500",
+                    "version": "1.0.0",
+                    "datestamp": "1621524309",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -14507,7 +14503,6 @@
         "drupal/gin": 10,
         "drupal/gin_toolbar": 10,
         "drupal/inline_entity_form": 5,
-        "drupal/layout_paragraphs": 10,
         "drupal/libraries": 10,
         "drupal/maxlength": 5,
         "drupal/rabbit_hole": 10,

@@ -11,7 +11,7 @@
   }
 
   .c-card__content {
-    font-family: gesso-font-family(primary);
+    @include font-family-primary;
     font-weight: gesso-font-weight(bold);
   }
 

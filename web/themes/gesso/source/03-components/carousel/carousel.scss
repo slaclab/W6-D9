@@ -4,12 +4,9 @@
 @use '00-config' as *;
 
 .c-carousel {
-  @include breakpoint-min(gesso-breakpoint(widescreen)) {
-    max-width: calc(
-      #{gesso-constrain(md)} + (100vw - #{gesso-constrain(md)}) / 2
-    );
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    @include layout-half-full-bleed;
     position: relative;
-    width: 100vw;
   }
 }
 
@@ -19,7 +16,7 @@
     margin-right: auto;
   }
 
-  @include breakpoint-min(gesso-breakpoint(widescreen)) {
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     > * {
       margin-left: initial;
       margin-right: initial;
@@ -43,7 +40,7 @@
     color: gesso-brand(illuminating, light);
   }
 
-  @include breakpoint-min(gesso-breakpoint(widescreen)) {
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     margin-left: 0;
     padding-right: rem(gesso-site-margins(desktop));
   }

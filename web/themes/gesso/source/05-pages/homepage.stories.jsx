@@ -12,6 +12,10 @@ import { ColorfulTagline } from '../03-components/tagline/tagline.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import { IconCard } from '../03-components/icon-card/icon-card.stories';
 import { Carousel } from '../03-components/carousel/carousel.stories';
+import {
+  Default,
+  ExtraLargeCardWithRightText,
+} from '../03-components/card/card.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -122,6 +126,31 @@ const Homepage = args => (
           </>
         ),
         modifier_classes: 'l-section--dark l-section--purple-black',
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Latest Updates',
+        section_title: 'SLAC News Center',
+        section_title_url: '#0',
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          <>
+            {ExtraLargeCardWithRightText(ExtraLargeCardWithRightText.args)}
+            {parse(
+              gridTwigTemplate({
+                grid_content: ReactDOMServer.renderToStaticMarkup(
+                  <>
+                    {Default(Default.args)}
+                    {Default(Default.args)}
+                    {Default(Default.args)}
+                  </>
+                ),
+                num_of_cols: 3,
+              })
+            )}
+          </>
+        ),
       })
     )}
   </PageWrapper>

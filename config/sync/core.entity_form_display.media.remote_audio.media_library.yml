@@ -1,4 +1,4 @@
-uuid: dffec336-b6ab-4767-ac20-15ecdd0439ee
+uuid: a29103c7-d3c3-42d0-92ff-92bd60416136
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - field.field.media.remote_audio.field_boolean
     - field.field.media.remote_audio.field_caption
     - field.field.media.remote_audio.field_long_text
-    - field.field.media.remote_audio.field_media_oembed_art_19
+    - field.field.media.remote_audio.field_media_oembed_art19
     - field.field.media.remote_audio.field_tags
     - field.field.media.remote_audio.field_transcript
     - media.type.remote_audio
@@ -29,7 +29,7 @@ hidden:
   field_boolean: true
   field_caption: true
   field_long_text: true
-  field_media_oembed_art_19: true
+  field_media_oembed_art19: true
   field_tags: true
   field_transcript: true
   path: true

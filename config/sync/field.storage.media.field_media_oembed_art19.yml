@@ -1,11 +1,11 @@
-uuid: a16b50d9-24e2-4898-a190-47e42a95bb97
+uuid: b0cb400d-c9a6-4919-bcea-17d3c0484090
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.field_media_oembed_art_19
-field_name: field_media_oembed_art_19
+id: media.field_media_oembed_art19
+field_name: field_media_oembed_art19
 entity_type: media
 type: string
 settings:

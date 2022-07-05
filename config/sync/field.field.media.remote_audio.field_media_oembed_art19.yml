@@ -1,15 +1,15 @@
-uuid: 5a98db67-72db-4bcc-b584-b800d66c68b5
+uuid: cda1b76d-ebba-41a7-a98b-08ffdd27e1d0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_oembed_art_19
+    - field.storage.media.field_media_oembed_art19
     - media.type.remote_audio
-id: media.remote_audio.field_media_oembed_art_19
-field_name: field_media_oembed_art_19
+id: media.remote_audio.field_media_oembed_art19
+field_name: field_media_oembed_art19
 entity_type: media
 bundle: remote_audio
-label: 'Art 19 URL'
+label: 'ART19 URL'
 description: ''
 required: true
 translatable: true

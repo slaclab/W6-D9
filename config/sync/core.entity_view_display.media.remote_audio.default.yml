@@ -1,4 +1,4 @@
-uuid: eb777cc7-1932-4d34-9649-c22642cca577
+uuid: 3e6562da-c0ad-42d8-bcff-efd3955e518c
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.field.media.remote_audio.field_boolean
     - field.field.media.remote_audio.field_caption
     - field.field.media.remote_audio.field_long_text
-    - field.field.media.remote_audio.field_media_oembed_art_19
+    - field.field.media.remote_audio.field_media_oembed_art19
     - field.field.media.remote_audio.field_tags
     - field.field.media.remote_audio.field_transcript
     - media.type.remote_audio
@@ -42,7 +42,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_media_oembed_art_19:
+  field_media_oembed_art19:
     type: oembed
     label: visually_hidden
     settings:

@@ -1,12 +1,13 @@
 // Component: Card
 
 @use '00-config' as *;
+@use './card--small/card--small' as *;
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
 $card-link-color-hover: gesso-brand(digital-red, base) !default;
 $card-meta-color: inherit;
-$card-padding: 30px !default;
+$card-padding: rem(gesso-spacing(4));
 
 .c-card {
   display: flex;

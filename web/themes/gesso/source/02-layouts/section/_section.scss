@@ -47,13 +47,23 @@
     @include arrow-link(red);
     color: inherit;
   }
+
+  + .l-section__content {
+    margin-top: rem(gesso-spacing(7));
+
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      margin-top: rem(gesso-spacing(9));
+    }
+  }
 }
 
 .l-section__intro {
-  margin-bottom: rem(gesso-spacing(5));
+  + .l-section__content {
+    margin-top: rem(gesso-spacing(5));
 
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    margin-bottom: rem(gesso-spacing(7));
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      margin-top: rem(gesso-spacing(7));
+    }
   }
 }
 

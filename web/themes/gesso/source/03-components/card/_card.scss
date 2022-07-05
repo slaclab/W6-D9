@@ -2,12 +2,14 @@
 
 @use '00-config' as *;
 @use 'sass:math';
+@use './card--small/card--small' as *;
+@use './card--link/card--link' as *;
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
 $card-link-color-hover: gesso-brand(digital-red, base) !default;
 $card-meta-color: inherit;
-$card-padding: 30px !default;
+$card-padding: rem(gesso-spacing(4));
 
 .c-card {
   display: flex;
@@ -106,7 +108,7 @@ $card-padding: 30px !default;
 }
 
 .c-card__content {
-  font-family: gesso-font-family(secondary);
+  @include font-family-secondary;
   font-size: rem(gesso-font-size(2));
   line-height: gesso-line-height(loose);
   padding-bottom: rem(30px);

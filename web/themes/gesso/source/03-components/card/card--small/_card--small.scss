@@ -1,0 +1,18 @@
+// @file
+// Component: c-card--small
+@use '00-config' as *;
+
+.c-card.c-card--small {
+  background: gesso-grayscale(white);
+
+  .c-card__media {
+    border-radius: 50%;
+    height: 120px;
+    margin-bottom: rem(gesso-spacing(0.5));
+    width: 120px;
+  }
+
+  .c-kicker {
+    margin-bottom: 0;
+  }
+}

@@ -16,6 +16,8 @@ import {
   Default,
   ExtraLargeCardWithRightText,
 } from '../03-components/card/card.stories';
+import { SmallCard } from '../03-components/card/card--small/card--small.stories';
+import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -53,7 +55,9 @@ const Homepage = args => (
     {parse(
       sectionTwigTemplate({
         has_constrain: true,
-        modifier_classes: 'l-section--bg-image',
+        modifier_classes: 'l-section--dark l-section--bg-image',
+        section_kicker: 'Visionary Science',
+        section_title: 'Explore Our Frontier Research',
         section_content: gridTwigTemplate({
           grid_content: ReactDOMServer.renderToStaticMarkup(
             <>
@@ -151,6 +155,48 @@ const Homepage = args => (
             )}
           </>
         ),
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Dig Deeper',
+        section_title: 'Explore SLAC',
+        section_title_url: '#0',
+        section_content: gridTwigTemplate({
+          grid_content: ReactDOMServer.renderToStaticMarkup(
+            <>
+              {SmallCard(SmallCard.args)}
+              {SmallCard(SmallCard.args)}
+              {SmallCard(SmallCard.args)}
+              {SmallCard(SmallCard.args)}
+            </>
+          ),
+          num_of_cols: 4,
+        }),
+        modifier_classes: 'l-section--yellow',
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'Quick Links',
+        section_title: 'Resources',
+        section_title_url: '#0',
+        section_content: gridTwigTemplate({
+          grid_content: ReactDOMServer.renderToStaticMarkup(
+            <>
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard(VerticalLinkCard.args)}
+            </>
+          ),
+          num_of_cols: 3,
+        }),
+        modifier_classes: 'l-section--gray-gradient',
       })
     )}
   </PageWrapper>

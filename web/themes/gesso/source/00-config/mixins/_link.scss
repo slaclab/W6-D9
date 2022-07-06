@@ -21,9 +21,16 @@
 }
 
 @mixin arrow-link($color) {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
   &:not(.external-link) {
     display: inline-block;
-    text-decoration: none;
     vertical-align: middle;
 
     &::after {
@@ -43,7 +50,6 @@
     &:hover,
     &:focus,
     &:active {
-      text-decoration: underline;
       @media (prefers-reduced-motion: no-preference) {
         &::after {
           transform: translateX(rem(6px));

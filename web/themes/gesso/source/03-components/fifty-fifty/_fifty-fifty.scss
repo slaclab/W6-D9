@@ -3,11 +3,11 @@
 @use '00-config' as *;
 
 .c-fifty-fifty {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  padding-bottom: rem(gesso-spacing(6));
+  padding-top: rem(gesso-spacing(6));
 
   @include breakpoint(gesso-breakpoint(tablet)) {
-    margin-bottom: 80px;
-    margin-top: 80px;
+    padding-bottom: rem(gesso-spacing(10));
+    padding-top: rem(gesso-spacing(10));
   }
 }

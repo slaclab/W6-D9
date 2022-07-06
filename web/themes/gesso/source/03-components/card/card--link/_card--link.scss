@@ -14,17 +14,9 @@
     @include font-family-primary;
     font-weight: gesso-font-weight(bold);
   }
-
-  .c-card__title a {
-    @include arrow-link(red);
-  }
 }
 
 .c-card__list {
   @include list-clean;
   margin-top: rem(gesso-spacing(2));
-
-  a {
-    @include arrow-link(red);
-  }
 }

@@ -44,7 +44,6 @@
   color: inherit;
 
   a {
-    @include arrow-link(red);
     color: inherit;
   }
 
@@ -79,7 +78,7 @@
 .l-section--dark {
   color: gesso-color(text, on-dark);
 
-  .l-section__title a {
+  .l-section__title .c-arrow-link {
     @include arrow-link(white);
   }
 }
@@ -149,7 +148,7 @@
 .l-section--yellow {
   background-color: gesso-brand(illuminating, base);
 
-  .l-section__title a {
+  .l-section__title .c-arrow-link {
     @include arrow-link(black);
   }
 }
@@ -175,17 +174,31 @@
 }
 
 .l-section--horizontal {
-  > .l-constrain {
-    display: grid;
-    gap: rem(gesso-get-map(gutter-width));
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  @include breakpoint-min(gesso-breakpoint(tablet-lg)) {
+    > .l-constrain {
+      column-gap: rem(gesso-get-map(gutter-width));
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
-  .l-section__content {
-    grid-column-start: span 2;
-  }
+    .l-section__kicker,
+    .l-section__title,
+    .l-section__intro {
+      grid-column-start: 1;
 
-  .l-section__buttons {
-    grid-column-start: span 3;
+      + .l-section__content {
+        margin-top: 0;
+      }
+    }
+
+    .l-section__content {
+      align-self: flex-start;
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 3;
+    }
+
+    .l-section__buttons {
+      grid-column-start: span 3;
+    }
   }
 }

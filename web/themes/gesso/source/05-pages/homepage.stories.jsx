@@ -253,22 +253,22 @@ const Homepage = args => (
                 ...VerticalLinkCard.args,
                 title: 'For Facility Users',
                 card_links: [
-                  '<a href="https://userportal.slac.stanford.edu/">Facility User Portal</a>',
-                  '<a href="#0">SLAC User Organization (SLUO)</a>',
-                  '<a href="#0">FACET-II Users</a>',
-                  '<a href="#0">LCLS Users</a>',
-                  '<a href="#0">SSRL Users</a>',
-                  '<a href="#0">Coming to SLAC</a>',
+                  '<a href="https://userportal.slac.stanford.edu/" class="c-arrow-link">Facility User Portal</a>',
+                  '<a href="#0" class="c-arrow-link">SLAC User Organization (SLUO)</a>',
+                  '<a href="#0" class="c-arrow-link">FACET-II Users</a>',
+                  '<a href="#0" class="c-arrow-link">LCLS Users</a>',
+                  '<a href="#0" class="c-arrow-link">SSRL Users</a>',
+                  '<a href="#0" class="c-arrow-link">Coming to SLAC</a>',
                 ],
               })}
               {VerticalLinkCard({
                 ...VerticalLinkCard.args,
                 title: 'For Industry Partners',
                 card_links: [
-                  '<a href="#0">SLAC Strategic Partnership</a>',
-                  '<a href="#0">Laboratory Directed Research & Partnerships (LDRD)</a>',
-                  '<a href="#0">Technology Innovation Directorate</a>',
-                  '<a href="#0">Suppliers & Vendors</a>',
+                  '<a href="#0" class="c-arrow-link">SLAC Strategic Partnership</a>',
+                  '<a href="#0" class="c-arrow-link">Laboratory Directed Research & Partnerships (LDRD)</a>',
+                  '<a href="#0" class="c-arrow-link">Technology Innovation Directorate</a>',
+                  '<a href="#0" class="c-arrow-link">Suppliers & Vendors</a>',
                 ],
               })}
               {VerticalLinkCard(VerticalLinkCard.args)}
@@ -276,22 +276,22 @@ const Homepage = args => (
                 ...VerticalLinkCard.args,
                 title: 'For Facility Users',
                 card_links: [
-                  '<a href="https://userportal.slac.stanford.edu/">Facility User Portal</a>',
-                  '<a href="#0">SLAC User Organization (SLUO)</a>',
-                  '<a href="#0">FACET-II Users</a>',
-                  '<a href="#0">LCLS Users</a>',
-                  '<a href="#0">SSRL Users</a>',
-                  '<a href="#0">Coming to SLAC</a>',
+                  '<a href="https://userportal.slac.stanford.edu/" class="c-arrow-link">Facility User Portal</a>',
+                  '<a href="#0" class="c-arrow-link">SLAC User Organization (SLUO)</a>',
+                  '<a href="#0" class="c-arrow-link">FACET-II Users</a>',
+                  '<a href="#0" class="c-arrow-link">LCLS Users</a>',
+                  '<a href="#0" class="c-arrow-link">SSRL Users</a>',
+                  '<a href="#0" class="c-arrow-link">Coming to SLAC</a>',
                 ],
               })}
               {VerticalLinkCard({
                 ...VerticalLinkCard.args,
                 title: 'For Industry Partners',
                 card_links: [
-                  '<a href="#0">SLAC Strategic Partnership</a>',
-                  '<a href="#0">Laboratory Directed Research & Partnerships (LDRD)</a>',
-                  '<a href="#0">Technology Innovation Directorate</a>',
-                  '<a href="#0">Suppliers & Vendors</a>',
+                  '<a href="#0" class="c-arrow-link">SLAC Strategic Partnership</a>',
+                  '<a href="#0" class="c-arrow-link">Laboratory Directed Research & Partnerships (LDRD)</a>',
+                  '<a href="#0" class="c-arrow-link">Technology Innovation Directorate</a>',
+                  '<a href="#0" class="c-arrow-link">Suppliers & Vendors</a>',
                 ],
               })}
               {VerticalLinkCard(VerticalLinkCard.args)}

@@ -30,28 +30,29 @@
   }
 
   &:not(.external-link) {
-    display: inline-block;
-    vertical-align: middle;
+    span {
+      white-space: nowrap;
 
-    &::after {
-      @include svg-background(arrow-#{$color});
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: '';
-      display: inline-block;
-      height: 0.75em;
-      margin-left: rem(gesso-spacing(0.5));
-      margin-top: em(-3px, gesso-base-font-size());
-      transition: transform gesso-duration(shortest) ease-out;
-      vertical-align: middle;
-      width: 1em;
+      &::after {
+        @include svg-background(arrow-#{$color});
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block;
+        height: 0.75em;
+        margin-left: rem(gesso-spacing(0.5));
+        margin-top: em(-3px, gesso-base-font-size());
+        transition: transform gesso-duration(shortest) ease-out;
+        vertical-align: middle;
+        width: 1em;
+      }
     }
 
     &:hover,
     &:focus,
     &:active {
       @media (prefers-reduced-motion: no-preference) {
-        &::after {
+        span::after {
           transform: translateX(rem(6px));
         }
       }

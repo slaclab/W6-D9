@@ -191,28 +191,28 @@ items:
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Linac Coherent Light Source'
           - title: 'SSRL website'
             url: 'https://www-ssrl.slac.stanford.edu/content/'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Stanford Synchrotron Radiation Lightsource'
           - title: 'FACET website'
             url: '/facilities/facet-ii'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Facility for Advanced Accelerator Experimental Tests'
           - title: 'Cryo-EM Website'
             url: 'https://cryoem.slac.stanford.edu/'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Cryogenic Electron Microscopy'
       - title: 'Joint Institutes & Centers'
         url: '#0'
@@ -227,28 +227,28 @@ items:
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Stanford Institute for Materials & Energy Sciences'
           - title: 'KIPAC website'
             url: 'https://kipac-web.stanford.edu/'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Kavli Institute for Particle Astrophysics & Cosmology'
           - title: 'PULSE website'
             url: 'https://ultrafast.stanford.edu/'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Stanford/PULSE Institute'
           - title: 'SUNCAT Website'
             url: 'https://suncat.stanford.edu/'
             original_link:
               options:
                 attributes:
-                  class: ''
+                  class: 'c-arrow-link'
             description: 'Center for Interface Science & Catalysis'
     section: 'facilities-centers'
   - title: 'Work with Us'
@@ -256,7 +256,7 @@ items:
     original_link:
       options:
         attributes:
-          class: ''
+          class: 'c-arrow-link'
     in_active_trail: false
     description: "Find a career, partner with us or apply to use our tools and facilities."
     below:

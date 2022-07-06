@@ -16,3 +16,7 @@
     }
   }
 }
+
+.c-arrow-link--white {
+  @include arrow-link(white);
+}

@@ -70,10 +70,6 @@
   padding: rem(gesso-spacing(5));
   width: 85%;
 
-  h2 a {
-    @include arrow-link(red);
-  }
-
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     padding-bottom: rem(gesso-spacing(9));
     padding-top: rem(gesso-spacing(9));
@@ -151,7 +147,6 @@
     color: gesso-color(text, on-dark);
 
     h2 a {
-      @include arrow-link(white);
       color: inherit;
     }
   }
@@ -161,7 +156,6 @@
     color: gesso-color(text, on-dark);
 
     h2 a {
-      @include arrow-link(white);
       color: inherit;
     }
   }
@@ -171,7 +165,6 @@
     color: gesso-color(text, on-dark);
 
     h2 a {
-      @include arrow-link(white);
       color: inherit;
     }
   }

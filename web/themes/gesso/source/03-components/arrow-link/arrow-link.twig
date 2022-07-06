@@ -3,5 +3,4 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-<div {{ add_attributes({ class: classes }) }}>
-</div>
+{{ link(link_text, link_url, {class: classes}) }}

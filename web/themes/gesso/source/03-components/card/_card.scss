@@ -30,7 +30,6 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card__title {
-  @include arrow-link(red);
   @include responsive-font-size(5);
   margin: 0;
 
@@ -47,10 +46,6 @@ $card-padding: rem(gesso-spacing(4));
         transform: translateX(rem(6px));
       }
     }
-  }
-
-  .c-card--on-dark & {
-    @include arrow-link(white);
   }
 
   .c-card--on-dark:hover &,

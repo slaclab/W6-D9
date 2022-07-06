@@ -3,16 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_hero.field_body
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_text
     - paragraphs.paragraphs_type.image_hero
   module:
+    - allowed_formats
     - media_library
+    - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
 bundle: image_hero
 mode: default
 content:
+  field_body:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_image:
     type: media_library_widget
     weight: 2

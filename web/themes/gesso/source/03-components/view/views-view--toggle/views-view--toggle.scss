@@ -1,0 +1,43 @@
+// @file
+// Component: c-views-view--toggle
+
+@use '00-config' as *;
+
+.c-views-view--toggle {
+  .c-view__exposed {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .c-view__display {
+    display: inline-flex;
+    gap: rem(gesso-spacing(1));
+  }
+
+  .c-view__toggle {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: gesso-color(button, disabled, text);
+    cursor: pointer;
+    display: none;
+    font-size: rem(gesso-font-size(6));
+    padding: 0;
+
+    &[aria-expanded='true'] {
+      color: gesso-color(text, primary);
+    }
+
+    @include breakpoint-min(gesso-breakpoint(tablet)) {
+      display: inline-block;
+    }
+  }
+
+  .c-view__list {
+    @include layout-constrain(rem(1026px), 0, 0);
+
+    .c-view__row + .c-view__row {
+      margin-top: rem(gesso-get-map(gutter-width));
+    }
+  }
+}

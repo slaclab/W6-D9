@@ -69,6 +69,7 @@
 
 .l-section__buttons {
   margin-top: rem(gesso-spacing(5));
+  text-align: center;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     margin-top: rem(gesso-spacing(7));
@@ -167,4 +168,24 @@
 
 .l-section--blue {
   background-color: gesso-brand(lagunita, dark);
+}
+
+.l-section--divider {
+  border-top: 1px solid;
+}
+
+.l-section--horizontal {
+  > .l-constrain {
+    display: grid;
+    gap: rem(gesso-get-map(gutter-width));
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .l-section__content {
+    grid-column-start: span 2;
+  }
+
+  .l-section__buttons {
+    grid-column-start: span 3;
+  }
 }

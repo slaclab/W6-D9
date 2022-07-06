@@ -4,7 +4,11 @@
 @use '00-config' as *;
 
 .c-bio-page__inner {
-  @include layout-constrain($max-width: rem(1075px));
+  @include layout-constrain(
+    $max-width: rem(1075px),
+    $margins-mobile: 0,
+    $margins: 0
+  );
 }
 
 @include breakpoint-min(gesso-breakpoint(tablet)) {

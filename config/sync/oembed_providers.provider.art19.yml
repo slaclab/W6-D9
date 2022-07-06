@@ -1,4 +1,4 @@
-uuid: 889bb4b9-d663-4af1-b19f-f4493724dc56
+uuid: 58105344-19a4-43b9-9007-173449be7356
 langcode: en
 status: true
 dependencies: {  }
@@ -10,6 +10,10 @@ endpoints:
     schemes:
       - 'https://art19.com/shows/*'
       - 'https://art19.com/shows/*/episodes/*'
+      - 'https://www.art19.com/shows/*'
+      - 'https://www.art19.com/shows/*/episodes/*'
+      - 'http://art19.com/shows/*'
+      - 'http://art19.com/shows/*/episodes/*'
       - 'http://www.art19.com/shows/*'
       - 'http://www.art19.com/shows/*/episodes/*'
     url: 'https://art19.com/oembed.json'

@@ -1,4 +1,4 @@
-uuid: cda1b76d-ebba-41a7-a98b-08ffdd27e1d0
+uuid: 5b356f12-6a9f-447d-9f21-a6e2b8e9cd8f
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_media_oembed_art19
 entity_type: media
 bundle: remote_audio
 label: 'ART19 URL'
-description: ''
+description: 'Post a URL for a show or an episode'
 required: true
 translatable: true
 default_value: {  }

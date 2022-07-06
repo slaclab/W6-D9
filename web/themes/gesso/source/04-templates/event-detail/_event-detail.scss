@@ -1,2 +1,56 @@
 // @file
 // Component: event-detail
+@use '00-config' as *;
+
+.event-detail {
+  .c-wysiwyg {
+    margin-bottom: 65px;
+  }
+
+  .c-fifty-fifty {
+    margin-bottom: 60px;
+    margin-top: 60px;
+
+    p:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  .c-fifty-fifty__col:nth-of-type(2) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include breakpoint(600px) {
+      padding-left: 0;
+    }
+  }
+
+  .c-button,
+  .c-button::after {
+    margin-left: 0;
+  }
+
+  .c-button:first-of-type {
+    margin-right: 16px;
+  }
+}
+
+.event-detail__col:nth-of-type(2) {
+  @media (max-width: 600px) {
+    order: -1;
+  }
+}
+
+// shenanigans to support mobile order of elements
+.event-details--mobile-only {
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    display: none;
+  }
+}
+
+.event-details--desktop-only {
+  display: none;
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    display: block;
+  }
+}

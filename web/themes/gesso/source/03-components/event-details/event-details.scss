@@ -41,7 +41,12 @@
 }
 
 .c-event-details__section {
-  padding: 30px;
+  padding: 20px 0;
+
+  // grid layout change bp
+  @include breakpoint(600px) {
+    padding: 30px;
+  }
 
   &:not(:last-child) {
     border-bottom: 1px solid gesso-grayscale(gray-4);

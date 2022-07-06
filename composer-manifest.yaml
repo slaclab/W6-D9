@@ -64,6 +64,7 @@ packages:
     drupal/gin_toolbar: 1.0.0-beta22
     drupal/google_tag: 1.5.0
     drupal/inline_entity_form: 1.0.0-rc11
+    drupal/layout_paragraphs: 1.0.0
     drupal/libraries: 3.0.0-beta2
     drupal/maxlength: 2.0.0-rc2
     drupal/menu_item_extras: 2.17.0
@@ -79,6 +80,7 @@ packages:
     drupal/simple_sitemap: 3.11.0
     drupal/site_settings: 1.19.0
     drupal/sitewide_alert: 2.0.2
+    drupal/style_options: 1.0.0-alpha1
     drupal/token: 1.10.0
     drupal/twig_field_value: 2.0.0
     drupal/twig_tweak: 3.1.3

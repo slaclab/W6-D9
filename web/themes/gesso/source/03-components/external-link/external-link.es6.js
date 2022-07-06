@@ -4,12 +4,19 @@ import drupalSettings from 'drupalSettings';
 Drupal.behaviors.externalLinks = {
   attach(context) {
     const allowedDomains = [];
-    const lockedDomains = ['intranet.slac.stanford.edu'];
+    const lockedDomains = [
+      'intranet.slac.stanford.edu',
+      'userportal.slac.stanford.edu',
+      'www-internal.slac.stanford.edu',
+      'internal.slac.stanford.edu',
+      'sallie.stanford.edu',
+    ];
     function linkIsExternal(linkElement) {
       let isExternal = true;
       if (
         linkElement.host === 'www6.slac.stanford.edu' ||
         linkElement.host.endsWith('.slac.stanford.edu') ||
+        linkElement.host === 'sallie.stanford.edu' ||
         linkElement.host === window.location.host
       ) {
         isExternal = false;

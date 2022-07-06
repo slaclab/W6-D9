@@ -10,6 +10,10 @@
   padding-top: rem(gesso-spacing(5));
   position: relative;
 
+  .c-fifty-fifty & {
+    margin-top: 0;
+  }
+
   &::before {
     @include svg-background(quote-left);
     background-color: gesso-grayscale(white);

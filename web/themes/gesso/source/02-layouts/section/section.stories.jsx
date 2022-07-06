@@ -114,6 +114,9 @@ SectionWithBlueBackground.args = {
   `,
 };
 
+const SectionHorizontal = Template.bind({});
+SectionHorizontal.args = { ...data, modifier_classes: 'l-section--horizontal' };
+
 export default settings;
 export {
   Section,
@@ -126,4 +129,5 @@ export {
   SectionWithGrayGradient,
   SectionWithPurpleBackground,
   SectionWithBlueBackground,
+  SectionHorizontal,
 };

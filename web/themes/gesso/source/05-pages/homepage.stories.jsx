@@ -13,11 +13,14 @@ import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import { IconCard } from '../03-components/icon-card/icon-card.stories';
 import { Carousel } from '../03-components/carousel/carousel.stories';
 import {
-  Default,
+  Default as Card,
+  EventCard,
   ExtraLargeCardWithRightText,
 } from '../03-components/card/card.stories';
 import { SmallCard } from '../03-components/card/card--small/card--small.stories';
 import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories';
+import { Quote } from '../03-components/quote/quote.stories';
+import { Default } from '../03-components/figure/figure.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -145,9 +148,9 @@ const Homepage = args => (
               gridTwigTemplate({
                 grid_content: ReactDOMServer.renderToStaticMarkup(
                   <>
-                    {Default(Default.args)}
-                    {Default(Default.args)}
-                    {Default(Default.args)}
+                    {Card(Card.args)}
+                    {Card(Card.args)}
+                    {Card(Card.args)}
                   </>
                 ),
                 num_of_cols: 3,
@@ -155,6 +158,50 @@ const Homepage = args => (
             )}
           </>
         ),
+        section_buttons: `
+<a href="0" class="c-button c-button--chevron">News Archive</a>
+<a href="0" class="c-button c-button--chevron">Media Mentions</a>
+<a href="0" class="c-button c-button--chevron">Media Resources</a>
+`,
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: 'SLAC Events',
+        section_title: "What's Happening",
+        section_title_url: '#0',
+        section_content: gridTwigTemplate({
+          grid_content: ReactDOMServer.renderToStaticMarkup(
+            <>
+              {EventCard(EventCard.args)}
+              {EventCard(EventCard.args)}
+            </>
+          ),
+          num_of_cols: 2,
+        }),
+        modifier_classes:
+          'l-section--dark l-section--cutout l-section--horizontal',
+      })
+    )}
+    {parse(
+      sectionTwigTemplate({
+        has_constrain: true,
+        section_kicker: false,
+        section_title: false,
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          <>
+            {FiftyFifty({
+              col_1: ReactDOMServer.renderToStaticMarkup(
+                <>{Quote(Quote.args)}</>
+              ),
+              col_2: ReactDOMServer.renderToStaticMarkup(
+                <>{Default(Default.args)}</>
+              ),
+            })}
+          </>
+        ),
+        modifier_classes: 'l-section--pattern l-section--no-padding',
       })
     )}
     {parse(
@@ -166,10 +213,26 @@ const Homepage = args => (
         section_content: gridTwigTemplate({
           grid_content: ReactDOMServer.renderToStaticMarkup(
             <>
-              {SmallCard(SmallCard.args)}
-              {SmallCard(SmallCard.args)}
-              {SmallCard(SmallCard.args)}
-              {SmallCard(SmallCard.args)}
+              {SmallCard({
+                ...SmallCard.args,
+                kicker: 'Public Tours',
+                title: 'Take an Interactive or Virtual Tour',
+              })}
+              {SmallCard({
+                ...SmallCard.args,
+                kicker: 'The Basics',
+                title: 'SLAC Science Explained',
+              })}
+              {SmallCard({
+                ...SmallCard.args,
+                kicker: 'Media Resources',
+                title: 'Images, Videos, and More',
+              })}
+              {SmallCard({
+                ...SmallCard.args,
+                kicker: 'Lab Overview',
+                title: 'Brochures & Fact Sheets',
+              })}
             </>
           ),
           num_of_cols: 4,
@@ -186,11 +249,51 @@ const Homepage = args => (
         section_content: gridTwigTemplate({
           grid_content: ReactDOMServer.renderToStaticMarkup(
             <>
+              {VerticalLinkCard({
+                ...VerticalLinkCard.args,
+                title: 'For Facility Users',
+                card_links: [
+                  '<a href="https://userportal.slac.stanford.edu/">Facility User Portal</a>',
+                  '<a href="#0">SLAC User Organization (SLUO)</a>',
+                  '<a href="#0">FACET-II Users</a>',
+                  '<a href="#0">LCLS Users</a>',
+                  '<a href="#0">SSRL Users</a>',
+                  '<a href="#0">Coming to SLAC</a>',
+                ],
+              })}
+              {VerticalLinkCard({
+                ...VerticalLinkCard.args,
+                title: 'For Industry Partners',
+                card_links: [
+                  '<a href="#0">SLAC Strategic Partnership</a>',
+                  '<a href="#0">Laboratory Directed Research & Partnerships (LDRD)</a>',
+                  '<a href="#0">Technology Innovation Directorate</a>',
+                  '<a href="#0">Suppliers & Vendors</a>',
+                ],
+              })}
               {VerticalLinkCard(VerticalLinkCard.args)}
-              {VerticalLinkCard(VerticalLinkCard.args)}
-              {VerticalLinkCard(VerticalLinkCard.args)}
-              {VerticalLinkCard(VerticalLinkCard.args)}
-              {VerticalLinkCard(VerticalLinkCard.args)}
+              {VerticalLinkCard({
+                ...VerticalLinkCard.args,
+                title: 'For Facility Users',
+                card_links: [
+                  '<a href="https://userportal.slac.stanford.edu/">Facility User Portal</a>',
+                  '<a href="#0">SLAC User Organization (SLUO)</a>',
+                  '<a href="#0">FACET-II Users</a>',
+                  '<a href="#0">LCLS Users</a>',
+                  '<a href="#0">SSRL Users</a>',
+                  '<a href="#0">Coming to SLAC</a>',
+                ],
+              })}
+              {VerticalLinkCard({
+                ...VerticalLinkCard.args,
+                title: 'For Industry Partners',
+                card_links: [
+                  '<a href="#0">SLAC Strategic Partnership</a>',
+                  '<a href="#0">Laboratory Directed Research & Partnerships (LDRD)</a>',
+                  '<a href="#0">Technology Innovation Directorate</a>',
+                  '<a href="#0">Suppliers & Vendors</a>',
+                ],
+              })}
               {VerticalLinkCard(VerticalLinkCard.args)}
             </>
           ),

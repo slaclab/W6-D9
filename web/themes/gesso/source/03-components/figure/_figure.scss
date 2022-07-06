@@ -98,6 +98,10 @@
       text-decoration-color: currentcolor;
     }
   }
+
+  .l-section--pattern & {
+    background-color: gesso-color(background, site);
+  }
 }
 
 .c-figure--iframe {

@@ -6,17 +6,18 @@
   display: table;
   margin-bottom: rem(gesso-spacing(2));
   margin-top: 0;
+  position: relative;
 
   &.u-align-center {
     clear: both;
     margin: rem(gesso-spacing(9)) auto;
     max-width: 812px;
     width: 100%;
+  }
 
-    img,
-    video {
-      width: 100%;
-    }
+  img,
+  video {
+    width: 100%;
   }
 
   &.u-align-wide {
@@ -61,6 +62,10 @@
       top: rem(gesso-spacing(1));
     }
   }
+}
+
+.c-figure__media {
+  position: relative;
 }
 
 .c-figure__caption {
@@ -111,4 +116,15 @@
   .c-figure__caption {
     display: block;
   }
+}
+
+.c-figure__button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
 }

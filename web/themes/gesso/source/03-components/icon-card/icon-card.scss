@@ -13,7 +13,7 @@
 
   &:hover,
   &:focus-visible {
-    color: inherit;
+    color: gesso-color(text, primary);
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {

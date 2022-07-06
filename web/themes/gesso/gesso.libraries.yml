@@ -148,3 +148,13 @@ video_hero:
     dist/js/video-hero.es6.js: {}
   dependencies:
     - gesso/common
+
+views-toggle:
+  css:
+    theme:
+      dist/css/views-view--toggle.css: {}
+  js:
+    dist/js/views-view--toggle.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal

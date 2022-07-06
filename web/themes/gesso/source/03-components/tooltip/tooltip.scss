@@ -3,7 +3,9 @@
 @use '00-config' as *;
 @use 'sass:math';
 
-$tooltip-arrow-height: 21px;
+$tooltip-arrow-height: 14px;
+$tooltip-border-color: gesso-brand(digital-red, base);
+$tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
 
 .c-tooltip__button {
   background: gesso-grayscale(white);
@@ -12,11 +14,16 @@ $tooltip-arrow-height: 21px;
   color: gesso-color(text, primary);
   cursor: pointer;
   font-size: rem(gesso-font-size(4));
+  height: $tooltip-button-size;
+  line-height: gesso-line-height(base);
+  padding: 0;
+  text-align: center;
+  width: $tooltip-button-size;
 }
 
 .c-tooltip__tooltip {
-  background: gesso-color(ui, generic, background-darker);
-  border: solid gesso-color(ui, generic, accent);
+  background: gesso-grayscale(black);
+  border: solid $tooltip-border-color;
   border-radius: 4px;
   border-width: 0 0 rem(gesso-spacing(1));
   bottom: calc(100% + #{$tooltip-arrow-height} + #{rem(gesso-spacing(1))});
@@ -26,6 +33,7 @@ $tooltip-arrow-height: 21px;
     rem(gesso-spacing(1.5));
   position: absolute;
   right: 0;
+  text-align: left;
   width: min(#{rem(280px)}, 100%);
 
   a {
@@ -39,9 +47,9 @@ $tooltip-arrow-height: 21px;
   }
 
   &::after {
-    border-left: math.div($tooltip-arrow-height, 2) solid transparent;
-    border-right: math.div($tooltip-arrow-height, 2) solid transparent;
-    border-top: $tooltip-arrow-height solid gesso-color(ui, generic, accent);
+    border-left: math.div($tooltip-arrow-height, 1.45) solid transparent;
+    border-right: math.div($tooltip-arrow-height, 1.45) solid transparent;
+    border-top: $tooltip-arrow-height solid $tooltip-border-color;
     content: '';
     height: 0;
     position: absolute;

@@ -64,9 +64,9 @@
 }
 
 .c-figure__caption {
+  @include font-family-primary;
   @include responsive-font-size(2);
   caption-side: bottom;
-  font-family: gesso-font-family(primary);
   font-style: normal;
   font-weight: gesso-font-weight(regular);
   line-height: gesso-line-height(loose);

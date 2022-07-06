@@ -1,0 +1,43 @@
+uuid: 20873c71-0a4c-4804-a0a4-c25efb87bffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.microsite_hero.field_image
+    - field.field.paragraph.microsite_hero.field_link
+    - field.field.paragraph.microsite_hero.field_text
+    - paragraphs.paragraphs_type.microsite_hero
+  module:
+    - link
+    - media_library
+id: paragraph.microsite_hero.default
+targetEntityType: paragraph
+bundle: microsite_hero
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

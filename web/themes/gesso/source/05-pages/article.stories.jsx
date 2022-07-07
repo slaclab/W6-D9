@@ -23,6 +23,7 @@ import {
   FigureWithVideoCentered,
 } from '../03-components/figure/figure.stories';
 import { Carousel } from '../03-components/carousel/carousel.stories';
+import { CalloutBox } from '../03-components/callout-box/callout-box.stories';
 
 export default {
   title: 'Pages/Article',
@@ -63,6 +64,7 @@ const articleDemoContent = `
     WYSIWYG({
       content: `<h2>A trio of advances</h2>
 <p>The new study builds on two previous advances where the group used more conventional forms of machine learning to dramatically accelerate both battery testing and the process of winnowing down many possible charging methods to find the ones that work best.</p>
+  ${ReactDOMServer.renderToStaticMarkup(CalloutBox(CalloutBox.args))}
     <p>While these studies allowed researchers to make much faster progress – reducing the time needed to determine battery lifetimes by 98%, for instance – they didn’t reveal the underlying physics or chemistry that made some batteries last longer than others, as the latest study did.</p>
   <h3>Combining all three approaches</h3>
   <p>Combining all three approaches could potentially slash the time needed to bring a new battery technology from the lab bench to the consumer by as much as two-thirds, Chueh said.</p>

@@ -67,6 +67,10 @@
   }
 }
 
+.c-figure__media {
+  position: relative;
+}
+
 .c-figure__caption {
   @include responsive-font-size(2);
   caption-side: bottom;

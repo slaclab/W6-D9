@@ -107,6 +107,18 @@ const BioCard = args =>
   );
 BioCard.args = { ...globalData, ...bioCardData };
 
+const LargeBioCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+LargeBioCard.args = {
+  ...globalData,
+  ...bioCardData,
+  modifier_classes: 'c-card--bio c-card--bio-large',
+};
+
 export default settings;
 export {
   Default,
@@ -119,4 +131,5 @@ export {
   ExtraLargeCardWithRightText,
   ExtraLargeCardWithLeftText,
   BioCard,
+  LargeBioCard,
 };

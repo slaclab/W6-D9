@@ -310,3 +310,13 @@ $card-padding: rem(gesso-spacing(4));
     aspect-ratio: 1/1;
   }
 }
+
+.c-card--bio-large {
+  .c-card__title {
+    @include responsive-font-size(10);
+  }
+
+  .c-card__metadata {
+    @include responsive-font-size(4);
+  }
+}

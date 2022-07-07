@@ -102,6 +102,7 @@ gesso:
     mobile-menu: 1099px
     desktop-lg: 1200px
     widescreen: 1400px
+    grid-2col: 600px
   colors:
     text:
       primary: grayscale.stanford-black

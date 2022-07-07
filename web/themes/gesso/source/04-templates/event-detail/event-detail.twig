@@ -8,7 +8,7 @@
     {% embed '@layouts/grid/grid.twig' with { num_of_cols: 2 } %}
       {% block content %}
         <div class="event-detail__col">
-          <div class="event-details--desktop-only">
+          <div class="u-desktop-only">
             {% include '@components/kicker/kicker.twig' %}
             {% include '@components/page-title/page-title.twig' %}
             {% include '@components/lede/lede.twig' %}
@@ -26,7 +26,7 @@
           {% include '@components/tag-list/tag-list.twig' with { items: related_topics } %}
         </div>
         <div class="event-detail__col">
-          <div class="event-details--mobile-only">
+          <div class="u-mobile-only">
             {% include '@components/kicker/kicker.twig' %}
             {% include '@components/page-title/page-title.twig' %}
             {% include '@components/lede/lede.twig' %}

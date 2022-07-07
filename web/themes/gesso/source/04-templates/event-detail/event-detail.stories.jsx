@@ -23,9 +23,6 @@ const visitingText = `
   <p>Nunc interdum lacinia felis ultricies sodales. Curabitur tortor tortor, commodo a porta et, dignissim a nunc. Integer efficitur eleifend posuere.</p>
   <p>Cras dui lectus, aliquam posuere sagittis a, sollicitudin ac nunc. Etiam finibus urna et arcu venenatis, sit amet molestie sapien laoreet. Nam maximus lectus non augue faucibus, eget iaculis ligula ultricies. Nam sed libero augue. Aenean sed tempor dui. Etiam dignissim erat ac nibh tempus, non aliquet ipsum semper. Nulla venenatis bibendum purus id varius. Proin ligula orci, lobortis et tristique aliquet, sodales quis odio.</p>`;
 
-// const visitingButtons = ReactDOMServer.renderToStaticMarkup(<>{Button({
-//   modifier_classes: 'c-button--chevron',
-// })}</>);
 
 const visitingButton1 = ReactDOMServer.renderToStaticMarkup(<>{Chevron({
   is_demo: false,
@@ -39,9 +36,10 @@ const visitingButton2 = ReactDOMServer.renderToStaticMarkup(<>{Chevron({
   url: '#'
 })}</>);
 
-const fargs = {
+const FiftyFiftyargs = {
   col_1: ReactDOMServer.renderToStaticMarkup(<>{Figure({...Figure.args, caption: false})}</>),
   col_2: visitingText + visitingButton1 + visitingButton2,
+  modifier_classes: 'c-fifty-fifty--alt',
 };
 
 
@@ -61,7 +59,7 @@ EventDetail.args = {
   map_iframe: mapData.map_iframe,
   related_topics: tagData.items,
   details: ReactDOMServer.renderToStaticMarkup(<>{EventDetails(EventDetails.args)}</>),
-  visiting: ReactDOMServer.renderToStaticMarkup(<>{FiftyFifty(fargs)}</>),
+  visiting: ReactDOMServer.renderToStaticMarkup(<>{FiftyFifty(FiftyFiftyargs)}</>),
 };
 
 export default settings;

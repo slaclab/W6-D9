@@ -19,7 +19,7 @@ $grid-gutter: gesso-get-map(gutter-width);
     @include css-fixed-grid(1);
   }
 
-  @include breakpoint(600px) {
+  @include breakpoint(gesso-breakpoint(grid-2col)) {
     > * {
       @include set-flex-column(2, $grid-gutter, 275px);
     }
@@ -55,7 +55,7 @@ $grid-gutter: gesso-get-map(gutter-width);
     @include css-fixed-grid(1);
   }
 
-  @include breakpoint-min-max(600px, 800px) {
+  @include breakpoint-min-max(gesso-breakpoint(grid-2col), 800px) {
     > * {
       @include set-flex-column(2, $grid-gutter, 275px);
     }
@@ -83,7 +83,7 @@ $grid-gutter: gesso-get-map(gutter-width);
     @include css-fixed-grid(1);
   }
 
-  @include breakpoint-min-max(600px, 999px) {
+  @include breakpoint-min-max(gesso-breakpoint(grid-2col), 999px) {
     > * {
       @include set-flex-column(3, $grid-gutter, 0);
     }

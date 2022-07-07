@@ -1,2 +1,22 @@
 // @file
 // Component: c-fifty-fifty
+@use '00-config' as *;
+
+// Alt version with slight tweaks, used on event detail.
+.c-fifty-fifty--alt {
+  margin-bottom: 60px;
+  margin-top: 60px;
+
+  p:last-of-type {
+    margin-bottom: 40px;
+  }
+}
+
+.c-fifty-fifty__col:nth-of-type(2) {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include breakpoint(gesso-breakpoint(grid-2col)) {
+    padding-left: 0;
+  }
+}

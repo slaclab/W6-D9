@@ -5,6 +5,7 @@ import data from './card.yml';
 
 import eventCardData from './card-event.yml';
 import eventFallbackCardData from './card-event-fallback.yml';
+import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
 const settings = {
@@ -98,6 +99,14 @@ ExtraLargeCardWithLeftText.args = {
   alignment: 'left',
 };
 
+const BioCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+BioCard.args = { ...globalData, ...bioCardData };
+
 export default settings;
 export {
   Default,
@@ -109,4 +118,5 @@ export {
   EventTeaserCard,
   ExtraLargeCardWithRightText,
   ExtraLargeCardWithLeftText,
+  BioCard,
 };

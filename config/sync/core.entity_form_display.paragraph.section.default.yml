@@ -1,0 +1,36 @@
+uuid: 849c7b99-8b53-4242-a36b-a02a626e32a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section.field_long_text
+    - field.field.paragraph.section.field_paragraphs
+    - paragraphs.paragraphs_type.section
+  module:
+    - layout_paragraphs
+    - text
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content:
+  field_long_text:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraphs:
+    type: layout_paragraphs
+    weight: 1
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

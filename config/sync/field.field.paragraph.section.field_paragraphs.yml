@@ -1,0 +1,65 @@
+uuid: 44f52138-3bcc-4cae-ab69-0943243c588f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.section
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: section
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 13
+        enabled: false
+      accordion_item:
+        weight: 14
+        enabled: false
+      article_hero:
+        weight: 15
+        enabled: false
+      grid:
+        weight: 17
+        enabled: false
+      image_embed:
+        weight: 16
+        enabled: false
+      image_hero:
+        weight: 17
+        enabled: false
+      microsite_hero:
+        weight: 18
+        enabled: false
+      overlap_image:
+        weight: 19
+        enabled: false
+      promo_box:
+        weight: 20
+        enabled: false
+      quote:
+        weight: 21
+        enabled: false
+      section:
+        weight: 22
+        enabled: false
+      video_hero:
+        weight: 23
+        enabled: false
+      wysiwyg:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

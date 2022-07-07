@@ -102,6 +102,11 @@ $card-padding: rem(gesso-spacing(4));
   z-index: 1;
 }
 
+.c-card__metadata {
+  line-height: gesso-line-height(base);
+  margin-top: 0.75rem;
+}
+
 .c-card__content {
   @include font-family-secondary;
   font-size: rem(gesso-font-size(2));
@@ -297,5 +302,11 @@ $card-padding: rem(gesso-spacing(4));
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     @include layout-half-full-bleed;
+  }
+}
+
+.c-card--bio {
+  .c-card__media {
+    aspect-ratio: 1/1;
   }
 }

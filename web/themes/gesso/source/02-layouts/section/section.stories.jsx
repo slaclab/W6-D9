@@ -32,8 +32,8 @@ const SectionContent = gridTemplate({
 const Template = args =>
   parse(
     twigTemplate({
-      ...args,
       section_content: SectionContent,
+      ...args,
     })
   );
 

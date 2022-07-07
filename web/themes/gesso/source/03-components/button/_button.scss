@@ -35,6 +35,10 @@
   background-image: none;
   color: gesso-color(button, base, text);
 
+  &:visited {
+    color: gesso-color(button, base, text);
+  }
+
   &:hover,
   &:focus-visible {
     background-color: gesso-color(button, base, background-hover);
@@ -53,6 +57,10 @@
   background-color: gesso-color(button, danger, background);
   background-image: none;
   color: gesso-color(button, danger, text);
+
+  &:visited {
+    color: gesso-color(button, danger, text);
+  }
 
   &:hover,
   &:focus-visible {
@@ -77,6 +85,10 @@
   border-color: gesso-color(button, secondary, border);
   color: gesso-color(button, secondary, text);
 
+  &:visited {
+    color: gesso-color(button, secondary, text);
+  }
+
   &:hover,
   &:focus-visible {
     border-color: gesso-color(button, secondary, border-hover);
@@ -100,6 +112,10 @@
   border-color: gesso-color(button, primary, border);
   color: gesso-color(button, primary, text-hover);
 
+  &:visited {
+    color: gesso-color(button, primary, text-hover);
+  }
+
   &:hover,
   &:focus-visible {
     color: gesso-color(button, primary, text);
@@ -120,6 +136,10 @@
   );
   border-color: gesso-color(button, secondary, border);
   color: gesso-color(button, secondary, text-hover);
+
+  &:visited {
+    color: gesso-color(button, secondary, text-hover);
+  }
 
   &:hover,
   &:focus-visible {

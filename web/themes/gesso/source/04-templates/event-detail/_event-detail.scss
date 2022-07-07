@@ -1,0 +1,24 @@
+// @file
+// Component: event-detail
+@use '00-config' as *;
+
+.event-detail {
+  .c-wysiwyg {
+    margin-bottom: 65px;
+  }
+
+  .c-button,
+  .c-button::after {
+    margin-left: 0;
+  }
+
+  .c-button:first-of-type {
+    margin-right: 16px;
+  }
+}
+
+.event-detail__col:nth-of-type(2) {
+  @media (max-width: 600px) {
+    order: -1;
+  }
+}

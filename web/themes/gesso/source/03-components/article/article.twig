@@ -42,14 +42,14 @@
       {% endblock %}
     {% endif %}
     {{ title_prefix }}
-    {% if not date %}
+    {% if not date and date_format %}
       {% set date %}
         {% include '@components/date/date.twig' with {
           'date_format': date_format,
         } %}
       {% endset %}
     {% endif %}
-    {% if not author %}
+    {% if not author and author_name %}
       {% set author %}
         {% include '@components/author/author.twig' with {
           'author': author_name,

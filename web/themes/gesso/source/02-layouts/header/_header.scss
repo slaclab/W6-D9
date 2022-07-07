@@ -34,7 +34,7 @@
     }
 
     &.is-sticky {
-      padding: 0 0 1.25rem;
+      padding: 1rem 0 1.25rem;
     }
   }
 }
@@ -66,9 +66,15 @@
     flex: initial;
     gap: rem(gesso-spacing(2.5));
     justify-content: flex-start;
+    position: relative;
+    top: -2px; // minor visual tweak
 
     .has-open-menu & {
       background-color: gesso-color(background, site);
+    }
+
+    .is-sticky & {
+      top: 0;
     }
   }
 }

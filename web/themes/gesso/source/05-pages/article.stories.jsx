@@ -115,6 +115,23 @@ const Article = args => (
         ),
       })
     )}
+    {parse(
+      sectionTwigTemplate({
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          WYSIWYG({
+            content: `<hr /><p class="c-small-paragraph">Editor's note: This story is based on a <a href="#0">press release</a> from Fermilab.</p>
+<p class="c-small-paragraph">This research was funded by Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien eleifend vitae mattis viverra ut scelerisque proin. Risus proin dignissim amet ac. Diam nisi, pretium non sem sed vel nam. Ut eu egestas mauris in aenean. Sit ornare pretium, donec elit.</p>
+<h5>Citation</h5>
+<p class="c-small-paragraph">Jungjin Park et al., Nature Materials, 8 March 2021 [10.1038/s41563-021-00936-1]</p>
+<h5>Contact</h5>
+<p class="c-small-paragraph">For questions or comments, contact the SLAC Lorem ipsum dolor sit amet at <a href="mailto:name@slac.stanford.edu">name@slac.stanford.edu</a>.</p>
+<hr />
+<p class="c-small-paragraph"><i>SLAC is a vibrant multiprogram laboratory that explores how the universe works at the biggest, smallest and fastest scales and invents powerful tools used by scientists around the globe. With research spanning particle physics, astrophysics and cosmology, materials, chemistry, bio- and energy sciences and scientific computing, we help solve real-world problems and advance the interests of the nation.</i></p> 
+<p class="c-small-paragraph"><i>SLAC is operated by Stanford University for the U.S. Department of Energy’s Office of Science. The Office of Science is the single largest supporter of basic research in the physical sciences in the United States and is working to address some of the most pressing challenges of our time.</i></p>`,
+          })
+        ),
+      })
+    )}
     {SectionWithBlueGreenGradient(SectionWithBlueGreenGradient.args)}
   </PageWrapper>
 );

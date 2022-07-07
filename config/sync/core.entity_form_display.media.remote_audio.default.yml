@@ -1,4 +1,4 @@
-uuid: 0fa247a2-0981-4866-a005-2b6316dfe8e2
+uuid: f37e53cc-0233-4dfb-b800-ad80308b77e1
 langcode: en
 status: true
 dependencies:
@@ -76,13 +76,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true

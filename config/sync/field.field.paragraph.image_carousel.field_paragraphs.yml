@@ -1,0 +1,67 @@
+uuid: dc40cb8f-b4f8-4f9d-aea1-9e73d337d089
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.image_carousel
+    - paragraphs.paragraphs_type.image_embed
+  module:
+    - entity_reference_revisions
+id: paragraph.image_carousel.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: image_carousel
+label: Images
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_embed: image_embed
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_item:
+        weight: 15
+        enabled: false
+      article_hero:
+        weight: 16
+        enabled: false
+      image_carousel:
+        weight: 17
+        enabled: false
+      image_embed:
+        weight: 18
+        enabled: true
+      image_hero:
+        weight: 19
+        enabled: false
+      microsite_hero:
+        weight: 20
+        enabled: false
+      overlap_image:
+        weight: 21
+        enabled: false
+      promo_box:
+        weight: 22
+        enabled: false
+      quote:
+        weight: 23
+        enabled: false
+      video_hero:
+        weight: 24
+        enabled: false
+      video_lightbox:
+        weight: 25
+        enabled: false
+      wysiwyg:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

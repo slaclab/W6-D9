@@ -367,6 +367,12 @@ gesso:
         font-weight: regular
         line-height: loose
         responsive-font-size: 4
+      body-small:
+        font-family: primary.stack
+        font-feature-settings: "'liga' off"
+        font-weight: regular
+        line-height: loose
+        responsive-font-size: 2
       cite:
         color: text.primary
         font-family: primary.stack

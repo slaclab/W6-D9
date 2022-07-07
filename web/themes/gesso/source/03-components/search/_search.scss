@@ -3,6 +3,7 @@
 @use '00-config' as *;
 
 .c-search {
+  align-self: flex-end;
   bottom: 100%;
   position: absolute;
   right: rem(gesso-site-margins(desktop));

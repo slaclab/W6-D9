@@ -3,17 +3,17 @@
 @use '00-config' as *;
 
 .c-event-date {
+  @include font-family-secondary;
   color: gesso-grayscale(white);
-  font-family: gesso-font-family(secondary);
   font-size: 60px;
   inset: 50px auto auto 30px;
-  line-height: 0.75;
+  line-height: 0.9;
   position: absolute;
   z-index: 1;
 
   span {
+    @include font-family-primary;
     display: table;
-    font-family: gesso-font-family(primary);
     font-size: em(26px, 60px);
     font-weight: gesso-font-weight(black);
     text-transform: uppercase;

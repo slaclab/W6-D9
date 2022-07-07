@@ -46,11 +46,6 @@ const PageWrapper = props => {
         {Footer(Footer.args)}
         {Subfooter(Subfooter.args)}
       </div>
-      {BackToTop({
-        ...BackToTop.args,
-        top_element: 'top',
-        is_demo: false,
-      })}
     </div>
   );
 };

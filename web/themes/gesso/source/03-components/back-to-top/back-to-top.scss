@@ -27,6 +27,7 @@ $back-to-top-line-height: gesso-line-height(tight);
     transition-property: background-color, color, opacity;
     transition-timing-function: gesso-easing(ease-in);
     width: rem(53px);
+    z-index: gesso-z-index(back-to-top);
 
     &:visited {
       color: gesso-color(button, back-to-top, color);
@@ -41,6 +42,11 @@ $back-to-top-line-height: gesso-line-height(tight);
     &[aria-hidden='true'] {
       opacity: 0;
     }
+
+    &.is-stopped {
+      bottom: calc(100% + 100px);
+      position: absolute;
+    }
   }
 }
 
@@ -51,7 +57,7 @@ $back-to-top-line-height: gesso-line-height(tight);
   font-weight: gesso-font-weight(bold);
   line-height: $back-to-top-line-height;
   position: absolute;
-  top: 100%;
+  top: calc(100% + #{rem(gesso-spacing(0.5))});
 
   .c-back-to-top--on-dark & {
     color: gesso-color(text, on-dark);

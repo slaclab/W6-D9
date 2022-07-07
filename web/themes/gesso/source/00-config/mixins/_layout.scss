@@ -73,3 +73,10 @@
   right: auto;
   width: auto;
 }
+
+@mixin layout-half-full-bleed($max-width: gesso-constrain(md)) {
+  margin-left: auto;
+  margin-right: 0;
+  max-width: calc(#{$max-width} + (100vw - #{$max-width}) / 2);
+  width: 100vw;
+}

@@ -24,6 +24,7 @@
           <div class="c-mega-menu__section-inner">
             <ul {{ add_attributes({class: ['c-mega-menu__subnav']}) }}>
               <li class="c-mega-menu__item">
+                {% set link_classes = ['c-mega-menu__link'] %}
                 {{ link(item.title, item.url, {class: ['c-mega-menu__link']}) }}
                 {% if item.description %}
                   <p class="c-mega-menu__description">{{ item.description }}</p>

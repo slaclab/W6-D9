@@ -1,5 +1,6 @@
 {% set classes = [
   'c-card',
+  alignment ? 'c-card--align-' ~ alignment : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
@@ -13,7 +14,7 @@
 {% endif %}
 
 <div {{ add_attributes({ 'class': classes } ) }}>
-  <div class="c-card__body">
+  <div class="c-card__body{% if alignment %} u-fade-{{ alignment }}-desktop{% endif %}">
     {% if type and not is_teaser %}
       <div class="c-kicker c-card__type">
         {{ type }}
@@ -28,7 +29,7 @@
       {% apply spaceless %}
       <h3 class="c-card__title h5">
         {% if url %}
-          <a href="{{ url }}" class="c-card__link">
+          <a href="{{ url }}" class="c-card__link c-arrow-link{% if 'c-card--on-dark' in modifier_classes %} c-arrow-link{% endif %}">
             {{- title -}}
           </a>
         {% else %}

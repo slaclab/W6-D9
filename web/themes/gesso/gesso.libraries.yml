@@ -7,6 +7,7 @@ global:
     dist/js/external-link.es6.js: {}
     dist/js/header.es6.js: {}
     dist/js/transitions.es6.js: {}
+    dist/js/arrow-link.es6.js: {}
   dependencies:
     - gesso/common
     - core/drupal
@@ -23,6 +24,16 @@ bio_page:
   css:
     theme:
       dist/css/bio-page.css: {}
+
+carousel:
+  css:
+    theme:
+      dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 drawer:
   css:
@@ -138,3 +149,13 @@ video_hero:
     dist/js/video-hero.es6.js: {}
   dependencies:
     - gesso/common
+
+views-toggle:
+  css:
+    theme:
+      dist/css/views-view--toggle.css: {}
+  js:
+    dist/js/views-view--toggle.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal

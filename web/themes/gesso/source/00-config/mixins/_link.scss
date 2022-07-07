@@ -21,31 +21,38 @@
 }
 
 @mixin arrow-link($color) {
-  &:not(.external-link) {
-    display: inline-block;
-    text-decoration: none;
-    vertical-align: middle;
+  text-decoration: none;
 
-    &::after {
-      @include svg-background(arrow-#{$color});
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: '';
-      display: inline-block;
-      height: 0.75em;
-      margin-left: rem(gesso-spacing(0.5));
-      margin-top: em(-3px, gesso-base-font-size());
-      transition: transform gesso-duration(shortest) ease-out;
-      vertical-align: middle;
-      width: 1em;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:not(.external-link) {
+    span {
+      white-space: nowrap;
+
+      &::after {
+        @include svg-background(arrow-#{$color});
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block;
+        height: 0.75em;
+        margin-left: rem(gesso-spacing(0.5));
+        margin-top: em(-3px, gesso-base-font-size());
+        transition: transform gesso-duration(shortest) ease-out;
+        vertical-align: middle;
+        width: 1em;
+      }
     }
 
     &:hover,
     &:focus,
     &:active {
-      text-decoration: underline;
       @media (prefers-reduced-motion: no-preference) {
-        &::after {
+        span::after {
           transform: translateX(rem(6px));
         }
       }

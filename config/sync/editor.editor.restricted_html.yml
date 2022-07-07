@@ -14,9 +14,10 @@ settings:
       - bold
       - italic
       - link
-      - '|'
       - undo
       - redo
+      - removeFormat
+      - '|'
       - sourceEditing
       - '-'
   plugins:

@@ -1,9 +1,6 @@
 // @ts-check
 
-const {
-  NaniError,
-  fromArray
-} = require('nani');
+const { NaniError, fromArray } = require('nani');
 
 const SassValue = require('./SassValue');
 
@@ -12,10 +9,7 @@ const SassValue = require('./SassValue');
  * @return {node is import('yaml').ast.ScalarNode}
  */
 function isScalar(node) {
-  const {
-    tag,
-    type
-  } = node;
+  const { tag, type } = node;
 
   return (
     type === 'BLOCK_FOLDED' ||
@@ -38,8 +32,7 @@ const paletteTransformer = (node, doc, map) => {
   }
 
   // If the value is a quoted string, don't try to look it up anywhere.
-  if (node.type === 'QUOTE_DOUBLE' ||
-    node.type === 'QUOTE_SINGLE') {
+  if (node.type === 'QUOTE_DOUBLE' || node.type === 'QUOTE_SINGLE') {
     return identityTransformer(node);
   }
 
@@ -51,7 +44,7 @@ const paletteTransformer = (node, doc, map) => {
   if (value === undefined) {
     throw map.errorForRange(
       `Could not resolve '${key}' in gesso.palette`,
-      node.range,
+      node.range
     );
   }
 
@@ -103,7 +96,7 @@ const fontFamilyTransformer = (node, doc, map) => {
   if (value === undefined) {
     throw map.errorForRange(
       `Could not resolve '${key}' in gesso.colors`,
-      node.range,
+      node.range
     );
   }
 
@@ -157,6 +150,10 @@ function getScalarVisitor(path) {
       return fontFamilyTransformer;
     }
 
+    if (prefix === 'font-feature-settings') {
+      return identityTransformer;
+    }
+
     return (node, doc, map) => {
       const nodeValue = node.value;
       if (nodeValue instanceof SassValue) {
@@ -174,7 +171,7 @@ function getScalarVisitor(path) {
       }
 
       // Push key onto our nested access array.
-      keys.push( /** @type {string | number} */ (key));
+      keys.push(/** @type {string | number} */ (key));
 
       // Perform another lookup
       // @ts-ignore
@@ -182,7 +179,7 @@ function getScalarVisitor(path) {
       if (value === undefined) {
         throw map.errorForRange(
           `Could not resolve '${prefix}.${key}'`,
-          node.range,
+          node.range
         );
       }
 
@@ -245,8 +242,8 @@ function transform(parsed) {
           errors.push(
             map.errorForRange(
               `Can't handle non-pair '${item.type}'`,
-              item.range,
-            ),
+              item.range
+            )
           );
 
           continue;
@@ -257,8 +254,8 @@ function transform(parsed) {
           errors.push(
             map.errorForRange(
               `Can't handle complex key of type '${keyNode.type}'`,
-              keyNode.range,
-            ),
+              keyNode.range
+            )
           );
 
           continue;
@@ -286,8 +283,8 @@ function transform(parsed) {
     errors.push(
       map.errorForRange(
         `Can't handle YAML node of type '${node.type}'`,
-        node.range,
-      ),
+        node.range
+      )
     );
   }
 }

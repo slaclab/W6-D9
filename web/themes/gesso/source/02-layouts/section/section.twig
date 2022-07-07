@@ -23,7 +23,7 @@
 
   {% if section_title %}
     <{{ section_title_element ?: 'h2' }} class="l-section__title">
-      {% if section_title_url %}<a href="{{ section_title_url }}">{% endif %}
+      {% if section_title_url %}<a href="{{ section_title_url }}" class="c-arrow-link">{% endif %}
         {{ section_title }}
       {% if section_title_url %}</a>{% endif %}
     </{{ section_title_element ?: 'h2' }}>

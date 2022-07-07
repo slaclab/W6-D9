@@ -7,10 +7,12 @@ dependencies:
   module:
     - comment
     - contact
+    - eu_cookie_compliance
     - filter
     - media
     - search
     - shortcut
+    - sitewide_alert
     - system
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
@@ -23,8 +25,10 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
+  - 'view published sitewide alert entities'

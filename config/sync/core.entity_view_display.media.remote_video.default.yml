@@ -1,17 +1,62 @@
-uuid: 144e5a08-40b4-48df-bbc9-b3fc120f3ba5
+uuid: 2b6aca22-cb47-40c8-a1dd-420d1d048277
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.remote_video.field_boolean
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_link
+    - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_thumbnail
+    - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
+    - link
     - media
+    - text
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video
 mode: default
 content:
+  field_boolean:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_caption:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_long_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_media_oembed_video:
     type: oembed
     label: visually_hidden
@@ -20,6 +65,30 @@ content:
       max_height: 0
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_thumbnail:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_transcript:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
   created: true

@@ -4,16 +4,15 @@
 
 .c-icon-card {
   background: rgba(gesso-grayscale(white), 0.87);
-}
-
-.c-icon-card__link {
+  color: gesso-color(text, primary);
   display: block;
   padding: rem(gesso-spacing(2.5));
+  position: relative;
   text-decoration: none;
 
   &:hover,
   &:focus-visible {
-    color: inherit;
+    color: gesso-color(text, primary);
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -27,14 +26,23 @@
   }
 }
 
-.c-icon-card__title span {
-  @include arrow-link(red);
-  white-space: nowrap;
+.c-icon-card__link {
+  &::after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
 
+.c-icon-card__title span {
   &:not(.external-link) {
     vertical-align: baseline;
 
     &::after {
+      margin-top: -1px;
       width: 0.75em;
     }
 

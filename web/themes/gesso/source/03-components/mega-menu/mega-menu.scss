@@ -243,21 +243,10 @@
     color: gesso-brand(digital-red, base);
     text-decoration: underline;
   }
-
-  .c-menu-menu__section--facilities-centers & {
-    @include arrow-link(red);
-  }
-}
-
-.c-mega-menu__subnav .c-mega-menu__subnav a.c-mega-menu__link {
-  > span::after {
-    content: '';
-    display: none;
-  }
 }
 
 .c-mega-menu__description {
-  font-family: gesso-font-family(secondary);
+  @include font-family-secondary;
   font-size: 1em;
   line-height: gesso-line-height(loose);
 
@@ -265,7 +254,7 @@
     .c-mega-menu__subnav
     .c-mega-menu__subnav
     & {
-    font-family: gesso-font-family(primary);
+    @include font-family-primary;
     font-size: 0.93333333em;
   }
 }

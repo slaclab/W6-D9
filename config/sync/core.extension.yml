@@ -17,6 +17,7 @@ module:
   contact: 0
   contextual: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
@@ -29,6 +30,8 @@ module:
   help: 0
   history: 0
   image: 0
+  layout_discovery: 0
+  layout_paragraphs: 0
   link: 0
   media: 0
   media_library: 0
@@ -37,6 +40,7 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   path: 0
@@ -46,7 +50,9 @@ module:
   search: 0
   shortcut: 0
   site_settings: 0
+  sitewide_alert: 0
   slac_core: 0
+  slac_yaml_content: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -55,9 +61,11 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  yaml_content: 0
   views: 10
   paragraphs: 11
   minimal: 1000
+  eu_cookie_compliance: 1001
 theme:
   bartik: 0
   seven: 0

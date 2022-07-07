@@ -2,21 +2,28 @@
 // Component: c-fifty-fifty
 @use '00-config' as *;
 
-// Alt version with slight tweaks, used on event detail.
-.c-fifty-fifty--alt {
-  margin-bottom: 60px;
-  margin-top: 60px;
+.c-fifty-fifty {
+  padding-bottom: rem(gesso-spacing(6));
+  padding-top: rem(gesso-spacing(6));
 
-  p:last-of-type {
-    margin-bottom: 40px;
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    padding-bottom: rem(gesso-spacing(10));
+    padding-top: rem(gesso-spacing(10));
   }
 }
 
-.c-fifty-fifty__col:nth-of-type(2) {
-  padding-left: 20px;
-  padding-right: 20px;
+// Alt version with slight tweaks, used on event detail.
+.c-fifty-fifty--alt {
+  p:last-of-type {
+    margin-bottom: 40px;
+  }
 
-  @include breakpoint(gesso-breakpoint(grid-2col)) {
-    padding-left: 0;
+  .c-fifty-fifty__col:nth-of-type(2) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include breakpoint(gesso-breakpoint(grid-2col)) {
+      padding-left: 0;
+    }
   }
 }

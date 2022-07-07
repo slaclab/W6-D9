@@ -24,6 +24,7 @@
 
     @include breakpoint(gesso-breakpoint(grid-2col)) {
       padding-left: 0;
+      padding-top: 70px;
     }
   }
 }

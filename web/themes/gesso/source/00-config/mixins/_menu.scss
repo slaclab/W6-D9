@@ -33,7 +33,7 @@
     left: 0;
     margin-top: rem(gesso-spacing(1.5));
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform gesso-duration(long) cubic-bezier(0.23, 1, 0.32, 1),
@@ -44,7 +44,7 @@
 
   &.is-active-trail {
     &::after {
-      max-width: rem(60px);
+      max-width: rem(40px);
       transform: scaleX(0.5);
     }
   }

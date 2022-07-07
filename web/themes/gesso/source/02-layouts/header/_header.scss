@@ -34,7 +34,7 @@
     }
 
     &.is-sticky {
-      padding: rem(gesso-spacing(1)) 0;
+      padding: 0 0 1.25rem;
     }
   }
 }
@@ -45,6 +45,8 @@
   justify-content: space-between;
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
+    align-items: baseline;
+    margin-bottom: 5px;
     position: relative;
   }
 }
@@ -110,7 +112,7 @@
     gesso-brand(cardinal, base) var(--gesso-scroll-progress),
     rgba(255, 255, 255, 0) var(--gesso-scroll-progress)
   );
-  bottom: 0;
+  bottom: -1px;
   height: 4px;
   left: 0;
   position: absolute;

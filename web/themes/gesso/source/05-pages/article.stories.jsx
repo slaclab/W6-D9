@@ -6,12 +6,14 @@ import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../04-templates/page/page.twig';
 import sectionTwigTemplate from '../02-layouts/section/section.twig';
+import expandableContentTemplate from '../03-components/expandable-grid/expandable-grid.twig';
 import { ArticleHero } from '../03-components/article-hero/article-hero.stories';
 import { Quote } from '../03-components/quote/quote.stories';
 import { FiftyFiftyLeftFadeIn } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
 import { PromoBox } from '../03-components/promo-box/promo-box.stories';
+import { Default as Card } from '../03-components/card/card.stories';
 
 export default {
   title: 'Pages/Article',
@@ -132,7 +134,23 @@ const Article = args => (
         ),
       })
     )}
-    {SectionWithBlueGreenGradient(SectionWithBlueGreenGradient.args)}
+    {SectionWithBlueGreenGradient({
+      ...SectionWithBlueGreenGradient.args,
+      section_content: expandableContentTemplate({
+        ...globalData,
+        grid_items: [
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
+        ],
+      }),
+      section_buttons: false,
+    })}
   </PageWrapper>
 );
 Article.args = {

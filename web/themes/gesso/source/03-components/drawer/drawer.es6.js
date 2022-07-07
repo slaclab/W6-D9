@@ -20,6 +20,7 @@ Drupal.behaviors.drawer = {
           contentTransitionCallback
         );
         currentContent.style.height = null;
+        currentContent.scrollIntoView();
       };
 
       let state = drawer.classList.contains('drawer--expanded')

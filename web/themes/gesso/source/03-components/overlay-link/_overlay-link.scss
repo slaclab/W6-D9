@@ -1,0 +1,64 @@
+// @file
+// Component: c-overlay-link
+@use '00-config' as *;
+
+.c-overlay-link {
+  @include arrow-link(white);
+  display: table;
+  position: relative;
+  z-index: 0;
+
+  img {
+    display: block;
+  }
+
+  span.c-overlay-link__title {
+    white-space: normal;
+  }
+}
+
+.c-overlay-link__content {
+  background: rgba(0, 0, 0, 0.8);
+  color: gesso-grayscale(white);
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: flex-end;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  transition: gesso-duration(standard) opacity;
+  z-index: 2;
+
+  .c-overlay-link:hover &,
+  .c-overlay-link:focus &,
+  .c-overlay-link:active & {
+    opacity: 1;
+  }
+}
+
+.c-overlay-link__title {
+  @include responsive-font-size(7);
+}
+
+.c-overlay-link__label {
+  background: gesso-grayscale(white);
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+}
+
+.c-overlay-link__arrow {
+  @include svg-background(arrow-white);
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: 0.75em;
+  margin-left: rem(gesso-spacing(0.5));
+  margin-top: em(-3px, gesso-base-font-size());
+  transition: transform gesso-duration(shortest) ease-out;
+  vertical-align: middle;
+  width: 1em;
+}

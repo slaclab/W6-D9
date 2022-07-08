@@ -3,7 +3,8 @@
 
 @use '00-config' as *;
 
-.c-kicker {
+.c-kicker,
+%c-kicker {
   @include font-family-primary;
   font-size: rem(gesso-font-size(1));
   font-weight: gesso-font-weight(bold);

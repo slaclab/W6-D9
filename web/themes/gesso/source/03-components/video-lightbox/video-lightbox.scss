@@ -8,36 +8,76 @@
   height: 100vh;
   left: 0;
   overflow-y: auto;
+  padding-bottom: rem(gesso-spacing(4));
+  padding-top: rem(gesso-spacing(4));
   position: fixed;
   top: 0;
   width: 100vw;
+}
+
+.c-video-lightbox__inner {
+  min-height: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
-    > .l-constrain {
-      column-gap: gesso-get-map(gutter-width);
-      display: grid;
-      grid-template-rows: auto;
-      grid-template-columns: 1fr 167px;
-    }
+    column-gap: gesso-get-map(gutter-width);
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 167px;
+    place-items: initial;
   }
 }
 
 .c-video-lightbox__title {
-  grid-column-start: span 2;
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    grid-column-start: span 2;
+    margin: 0;
+  }
 }
 
 .c-video-lightbox__date {
-  grid-column-start: span 2;
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    grid-column-start: span 2;
+  }
 }
 
 .c-video-lightbox__embed {
   aspect-ratio: 16/9;
-  grid-row-start: span 3;
+  height: calc(100% - #{rem(gesso-font-size(3))});
+  width: auto;
 
   iframe {
+    display: block;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
     object-fit: cover;
     width: 100%;
+  }
+
+  @media (orientation: portrait) {
+    height: auto;
+    width: 100%;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    aspect-ratio: initial;
+    grid-row-start: span 3;
+    width: 100%;
+
+    iframe {
+      aspect-ratio: 16/9;
+      height: auto;
+      margin: 0;
+      width: 100%;
+    }
   }
 }
 
@@ -47,6 +87,58 @@
   grid-column-start: 2;
 }
 
+.c-video-lightbox__description {
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    font-weight: gesso-font-weight(bold);
+    padding-bottom: gesso-get-map(gutter-width);
+  }
+}
+
+.c-video-lightbox__credit {
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    border-top: 1px solid currentcolor;
+    display: block;
+    font-style: italic;
+    padding-top: gesso-get-map(gutter-width);
+
+    a {
+      color: inherit;
+      text-decoration-color: currentcolor;
+      text-decoration-thickness: 1px;
+    }
+  }
+}
+
+.c-video-lightbox__close {
+  @include focus;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: gesso-color(text, on-dark);
+  cursor: pointer;
+  font-weight: gesso-font-weight(bold);
+  line-height: 1;
+  position: absolute;
+  right: rem(gesso-site-margins(desktop));
+  text-transform: uppercase;
+  top: 0;
+
+  .c-icon {
+    margin-left: rem(gesso-spacing(1));
+  }
+}
+
 .c-video-lightbox__button {
-  align-self: flex-end;
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    align-self: flex-end;
+    display: inline-block;
+  }
 }

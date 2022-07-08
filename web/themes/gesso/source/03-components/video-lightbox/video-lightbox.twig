@@ -1,0 +1,18 @@
+{% set classes = [
+  'c-video-lightbox',
+  'u-hidden',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/video-lightbox') }}
+
+<div {{ add_attributes({ class: classes, id: lightbox_id }) }}>
+  <div class="l-constrain">
+    <h2 class="c-video-lightbox__title">{{ video_title }}</h2>
+    {% if video_date %}<div class="c-video-lightbox__date">{{ video_date }}</div>{% endif %}
+    <div class="c-video-lightbox__embed">{{ video_embed }}</div>
+    {% if video_description %}<div class="c-video-lightbox__description">{{ video_description }}</div>{% endif %}
+    {% if video_credit %}<div class="c-video-lightbox__credit">{{ video_credit }}</div>{% endif %}
+    {% if video_details_url %}<a class="c-video-lightbox__button c-button c-button--outline-secondary" href="{{ video_details_url }}" target="_blank">{{ 'Video Details'|t }}</a>{% endif %}
+  </div>
+</div>

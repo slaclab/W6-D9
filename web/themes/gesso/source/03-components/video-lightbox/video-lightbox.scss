@@ -1,0 +1,52 @@
+// @file
+// Component: c-video-lightbox
+
+@use '00-config' as *;
+.c-video-lightbox {
+  background: rgba(gesso-grayscale(black), 0.92);
+  color: gesso-color(text, on-dark);
+  height: 100vh;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    > .l-constrain {
+      column-gap: gesso-get-map(gutter-width);
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 167px;
+    }
+  }
+}
+
+.c-video-lightbox__title {
+  grid-column-start: span 2;
+}
+
+.c-video-lightbox__date {
+  grid-column-start: span 2;
+}
+
+.c-video-lightbox__embed {
+  aspect-ratio: 16/9;
+  grid-row-start: span 3;
+
+  iframe {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.c-video-lightbox__description,
+.c-video-lightbox__credit,
+.c-video-lightbox__button {
+  grid-column-start: 2;
+}
+
+.c-video-lightbox__button {
+  align-self: flex-end;
+}

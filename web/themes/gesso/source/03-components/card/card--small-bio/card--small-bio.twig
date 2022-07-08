@@ -1,0 +1,26 @@
+{% set classes = [
+  'c-card',
+  'c-card--small-bio',
+  color ? 'c-card--' ~ color : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-card__media">
+    {% spaceless %}
+    <h3 class="c-card__title">
+      {% if title_url %}<a href="{{- title_url -}}">{% endif %}
+        {{- title -}}
+        {% if title_url %}{% include '@components/icon/icon.twig' with {
+          'icon_name': 'angle-right',
+          'hidden': true
+        } %}</a>{% endif %}
+    </h3>
+    {% endspaceless %}
+  </div>
+  <div class="c-card__body">
+    {% if name %}
+      {% if name_url %}<a href="{{ name_url }}" class="c-arrow-link">{% endif %}{{ name }}{% if name_url %}</a>{% endif %}
+    {% endif %}
+  </div>
+</div>

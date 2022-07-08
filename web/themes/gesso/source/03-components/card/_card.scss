@@ -4,6 +4,7 @@
 @use 'sass:math';
 @use './card--small/card--small' as *;
 @use './card--link/card--link' as *;
+@use './card--small-bio/card--small-bio' as *;
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;

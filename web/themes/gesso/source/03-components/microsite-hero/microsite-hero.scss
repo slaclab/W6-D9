@@ -3,8 +3,14 @@
 
 @use '00-config' as *;
 
-.c-microsite-hero__header .l-constrain {
-  flex-wrap: wrap;
+.c-microsite-hero__header {
+  .l-constrain {
+    flex-wrap: wrap;
+  }
+
+  .c-search {
+    align-self: center;
+  }
 }
 
 .c-microsite-hero__menu {

@@ -176,9 +176,11 @@
 .l-section--horizontal {
   @include breakpoint-min(gesso-breakpoint(tablet-lg)) {
     > .l-constrain {
+      align-items: flex-start;
       column-gap: rem(gesso-get-map(gutter-width));
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: min-content min-content 1fr;
     }
 
     .l-section__kicker,

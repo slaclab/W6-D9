@@ -1,0 +1,18 @@
+{% set classes = [
+  'c-wide-card',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ 'class': classes } ) }}>
+  <div class="l-media">
+    {% if image %}
+      <div class="l-media__object">
+        {{ image }}
+      </div>
+    {% endif %}
+
+    <div class="l-media__content">
+      {{ content }}
+    </div>
+  </div>
+</article>

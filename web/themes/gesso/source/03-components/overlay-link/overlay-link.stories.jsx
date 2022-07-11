@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './overlay-link.twig';
 import data from './overlay-link.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
+import '../arrow-link/arrow-link.es6';
 
 const settings = {
   title: 'Components/Overlay Link',

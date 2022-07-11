@@ -40,7 +40,7 @@
         content: '';
         display: inline-block;
         height: 0.75em;
-        margin-left: rem(gesso-spacing(0.5));
+        margin-left: 0.25em;
         margin-top: em(-3px, gesso-base-font-size());
         transition: transform gesso-duration(shortest) ease-out;
         vertical-align: middle;
@@ -53,7 +53,7 @@
     &:active {
       @media (prefers-reduced-motion: no-preference) {
         span::after {
-          transform: translateX(rem(6px));
+          transform: translateX(em(6px, 16px));
         }
       }
     }

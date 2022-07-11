@@ -1,0 +1,12 @@
+{% set classes = [
+  'c-topic-grid',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {% for item in items %}
+    <div class="grid-item">
+      {{ item.title }}
+    </div>
+  {% endfor %}
+</div>

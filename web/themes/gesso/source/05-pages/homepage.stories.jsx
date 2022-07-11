@@ -20,7 +20,7 @@ import {
 import { SmallCard } from '../03-components/card/card--small/card--small.stories';
 import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories';
 import { Quote } from '../03-components/quote/quote.stories';
-import { Default } from '../03-components/figure/figure.stories';
+import { FigureWithVideo } from '../03-components/figure/figure.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -196,7 +196,9 @@ const Homepage = args => (
                 <>{Quote(Quote.args)}</>
               ),
               col_2: ReactDOMServer.renderToStaticMarkup(
-                <>{Default(Default.args)}</>
+                <>
+                  {FigureWithVideo({ ...globalData, ...FigureWithVideo.args })}
+                </>
               ),
             })}
           </>

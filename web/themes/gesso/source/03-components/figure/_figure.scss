@@ -107,3 +107,15 @@
     display: block;
   }
 }
+
+.c-figure__button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  inset: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}

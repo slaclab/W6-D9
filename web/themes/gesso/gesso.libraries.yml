@@ -150,6 +150,16 @@ video_hero:
   dependencies:
     - gesso/common
 
+video_lightbox:
+  css:
+    theme:
+      dist/css/video-lightbox.css: {}
+  js:
+    dist/js/video-lightbox.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 views-toggle:
   css:
     theme:

@@ -13,6 +13,17 @@ global:
     - core/drupal
     - core/drupalSettings
 
+accordion:
+  header: true
+  css:
+    theme:
+      dist/css/accordion.css: {}
+  js:
+    dist/js/accordion.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 back_to_top:
   css:
     theme:

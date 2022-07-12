@@ -1,0 +1,34 @@
+// @file
+// Component: c-large-link
+@use '00-config' as *;
+
+.c-large-link__title {
+  @include responsive-font-size(4);
+  font-weight: gesso-font-weight(semibold);
+
+  a {
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: 1px;
+  }
+
+  .c-icon {
+    color: inherit;
+  }
+}
+
+.c-large-link__footer {
+  @include responsive-font-size(2);
+}
+
+.c-large-link__source {
+  display: inline-block;
+  font-style: italic;
+}
+
+.c-large-link__date {
+  display: inline-block;
+
+  .c-large-link__source + & {
+    margin-left: rem(gesso-spacing(3));
+  }
+}

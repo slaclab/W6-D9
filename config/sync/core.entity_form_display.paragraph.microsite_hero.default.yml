@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.microsite_hero.field_image
     - field.field.paragraph.microsite_hero.field_link
+    - field.field.paragraph.microsite_hero.field_lottiefile
     - field.field.paragraph.microsite_hero.field_text
     - paragraphs.paragraphs_type.microsite_hero
   module:
     - link
+    - lottiefiles_field
     - media_library
 id: paragraph.microsite_hero.default
 targetEntityType: paragraph
@@ -27,6 +29,23 @@ content:
     weight: 2
     region: content
     settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_lottiefile:
+    type: lottiefiles_field
+    weight: 3
+    region: content
+    settings:
+      autoplay: 0
+      background: transparent
+      controls: 0
+      hover: 0
+      loop: 0
+      mode: Normal
+      speed: 1
+      selector: ''
+      width: 0
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }

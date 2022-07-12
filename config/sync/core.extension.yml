@@ -33,6 +33,7 @@ module:
   layout_discovery: 0
   layout_paragraphs: 0
   link: 0
+  lottiefiles_field: 0
   media: 0
   media_library: 0
   menu_item_extras: 0

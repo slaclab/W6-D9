@@ -6,8 +6,10 @@ dependencies:
     - field.field.paragraph.overlap_image.field_body
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_long_text
+    - field.field.paragraph.overlap_image.field_lottiefile
     - paragraphs.paragraphs_type.overlap_image
   module:
+    - lottiefiles_field
     - text
 id: paragraph.overlap_image.default
 targetEntityType: paragraph
@@ -35,5 +37,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden: {  }

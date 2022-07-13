@@ -44,10 +44,10 @@ $gutter: 2%;
 @include breakpoint(gesso-breakpoint(desktop)) {
   .c-topic-grid__item,
   .c-topic-grid__sizer {
-    width: 31%;
+    width: 32%;
   }
 
   .c-topic-grid__item--width2 {
-    width: 64%;
+    width: 66%;
   }
 }

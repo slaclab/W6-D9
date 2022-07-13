@@ -78,3 +78,8 @@ optgroup {
 textarea {
   overflow: auto;
 }
+
+::placeholder {
+  color: gesso-color(text, primary);
+  opacity: 1;
+}

@@ -1,0 +1,11 @@
+// @file
+// Component: c-facet
+@use '00-config' as *;
+
+.c-facet {
+  text-decoration: none;
+}
+
+.c-facet__icon {
+  margin-left: rem(gesso-spacing(1));
+}

@@ -1,0 +1,13 @@
+{% set classes = [
+  'c-facet',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<a {{ add_attributes({ class: classes, href: facet_url }) }}>
+  {{ facet_label }}
+  {% include '@components/icon/icon.twig' with {
+    'icon_name': 'remove',
+    'hidden': true,
+    'modifier_classes': 'c-facet__icon'
+  } %}
+</a>

@@ -78,16 +78,6 @@ const Large = args =>
   );
 Large.args = { ...data };
 
-
-const Chevron = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      modifier_classes: 'c-button--chevron',
-    })
-  );
-Chevron.args = { ...data };
-
 export default settings;
 export {
   Primary,
@@ -98,5 +88,4 @@ export {
   Danger,
   Large,
   Small,
-  Chevron,
 };

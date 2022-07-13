@@ -14,12 +14,14 @@
   margin-bottom: rem(gesso-spacing(1));
 
   & + & {
-    margin-left: rem(gesso-spacing(1)); // LTR
+    @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+      margin-left: rem(gesso-spacing(1)); // LTR
 
-    @if $support-for-rtl {
-      [dir='rtl'] & {
-        margin-left: 0;
-        margin-right: rem(gesso-spacing(1));
+      @if $support-for-rtl {
+        [dir='rtl'] & {
+          margin-left: 0;
+          margin-right: rem(gesso-spacing(1));
+        }
       }
     }
   }
@@ -188,7 +190,8 @@
     }
   }
 
-  &.c-button--outline {
+  &.c-button--outline,
+  &.c-button--secondary {
     &::after {
       filter: invert(1);
     }

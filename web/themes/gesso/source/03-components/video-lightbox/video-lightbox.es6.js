@@ -3,6 +3,7 @@ import Drupal from 'drupal';
 Drupal.behaviors.videoLightbox = {
   attach(context) {
     const triggers = context.querySelectorAll('.js-video-lightbox');
+    let triggerUsed;
     triggers.forEach(trigger => {
       const lightbox = document.getElementById(
         trigger.getAttribute('aria-controls')
@@ -44,18 +45,22 @@ Drupal.behaviors.videoLightbox = {
           videoIFrame.removeAttribute('src');
         }
         lightbox.classList.add('u-hidden');
-        trigger.focus();
+        if (triggerUsed) {
+          triggerUsed.focus();
+          triggerUsed = null;
+        }
         window.removeEventListener('keydown', handleKeydown);
       }
       const closeButton = lightbox.querySelector('.c-video-lightbox__close');
       closeButton.addEventListener('click', closeLightbox);
-      trigger.addEventListener('click', () => {
+      trigger.addEventListener('click', event => {
         const videoIFrame = lightbox.querySelector('iframe');
         if (videoIFrame && videoIFrame.hasAttribute('data-src')) {
           videoIFrame.setAttribute('src', videoIFrame.getAttribute('data-src'));
         }
         lightbox.classList.remove('u-hidden');
         closeButton.focus();
+        triggerUsed = event.target;
         window.addEventListener('keydown', handleKeydown);
       });
     });

@@ -2,6 +2,7 @@
 
 @use '../functions/' as *;
 @use './focus' as *;
+@use 'breakpoint' as *;
 
 $button-border-width: 0 !default;
 $button-border-radius: 0 !default;
@@ -55,7 +56,7 @@ $button-font-size: gesso-base-font-size() !default;
   border-radius: $border-radius;
   color: $color-text;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-family: gesso-font-family(primary);
   font-size: rem($font-size);
   -moz-osx-font-smoothing: grayscale;
@@ -96,6 +97,10 @@ $button-font-size: gesso-base-font-size() !default;
     color: $color-text-disabled;
     cursor: default;
     pointer-events: none;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
   }
 }
 

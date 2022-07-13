@@ -5,8 +5,10 @@
   @include layout-constrain(gesso-constrain(sm));
 
   .l-constrain & {
-    padding-left: 0;
-    padding-right: 0;
+    &:not(.c-wysiwyg--with-background) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   .l-section__intro & {
@@ -20,4 +22,9 @@
   max-width: none;
   padding-left: 0;
   padding-right: 0;
+}
+
+.c-wysiwyg--with-background {
+  background: gesso-grayscale(white);
+  padding: rem(gesso-spacing(2.5));
 }

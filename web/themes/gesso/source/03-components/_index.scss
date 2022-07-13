@@ -15,6 +15,8 @@
 @use 'external-link/external-link';
 @use 'event-date/event-date';
 @use 'event-hat/event-hat';
+@use 'facet/facet';
+@use 'facet-list/facet-list';
 @use 'field/field';
 @use 'field/field--list/field--list';
 @use 'field/field--tight/field--tight';
@@ -32,6 +34,7 @@
 @use 'icon/icon--pager';
 @use 'image-teaser/image-teaser';
 @use 'kicker/kicker';
+@use 'large-link/large-link';
 @use 'lede/lede';
 @use 'list/list';
 @use 'logo/logo';
@@ -42,6 +45,7 @@
 @use 'menu/menu--subfooter/menu--subfooter';
 @use 'message/message';
 @use 'overlap-image/overlap-image';
+@use 'overlay-link/overlay-link';
 @use 'page-title/page-title';
 @use 'pager/pager';
 @use 'pager/pager--mini/pager--mini';
@@ -59,8 +63,10 @@
 @use 'tag/tag';
 @use 'tagline/tagline';
 @use 'tag-list/tag-list';
+@use 'text-block/text-block';
 @use 'video/video';
 @use 'view/view';
 @use 'view/views-view/views-view';
 @use 'view/views-view-unformatted/views-view-unformatted';
+@use 'wide-card/wide-card';
 @use 'wysiwyg/wysiwyg';

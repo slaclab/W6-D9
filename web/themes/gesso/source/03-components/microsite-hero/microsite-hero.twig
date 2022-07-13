@@ -3,37 +3,47 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-<div {{ add_attributes({ class: classes }) }}>
-  {% embed '@layouts/header/header.twig' with {
+{% embed '@layouts/header/header.twig' with {
     modifier_classes: 'c-microsite-hero__header',
     has_constrain: true
   } %}
-    {% block logo %}
-      <div class="l-header__brand c-microsite-hero__brand">
-        <a href="{{ url('<front>') }}">
-          {% include '@layouts/header/_slac-logo.twig' %}
-        </a>
-        <h1 class="c-microsite-hero__title">{{ microsite_hero_title }}</h1>
-      </div>
-    {% endblock %}
-    {% block content %}
-      <ul class="c-microsite-hero__menu">
+  {% block logo %}
+    <div class="l-header__brand c-microsite-hero__brand">
+      <a href="{{ url('<front>') }}">
+        {% include '@layouts/header/_slac-logo.twig' %}
+      </a>
+      <h1 class="c-microsite-hero__title">
+        {{ microsite_hero_title }}
+      </h1>
+    </div>
+  {% endblock %}
+  {% block content %}
+    <ul class="c-microsite-hero__menu">
       {% for menu_link in microsite_hero_links %}
-        <li class="c-microsite-hero__menu-item">{{ link(menu_link.text, menu_link.url, {'class': ['c-microsite-hero__menu-link']}) }}</li>
+        <li class="c-microsite-hero__menu-item">
+          {{ link(menu_link.text, menu_link.url, {'class': ['c-microsite-hero__menu-link']}) }}
+        </li>
       {% endfor %}
-        {% if microsite_hero_button %}
-          <li class="c-microsite-hero__menu-item">{{ microsite_hero_button }}</li>
-        {% endif %}
-      </ul>
-      {% include '@components/search/search.twig' %}
-      <h1 class="c-microsite-hero__title c-microsite-hero__title--mobile">{{ microsite_hero_title }}</h1>
-    {% endblock %}
-  {% endembed %}
+      {% if microsite_hero_button %}
+        <li class="c-microsite-hero__menu-item">
+          {{ microsite_hero_button }}
+        </li>
+      {% endif %}
+    </ul>
+    {% include '@components/search/search.twig' %}
+    <h1 class="c-microsite-hero__title c-microsite-hero__title--mobile">
+      {{ microsite_hero_title }}
+    </h1>
+  {% endblock %}
+{% endembed %}
+
+<div {{ add_attributes({ class: classes } ) }}>
   {% include '@components/hero-bg-image/hero-bg-image.twig' with {
     hero_image: microsite_hero_image,
     hero_caption: microsite_hero_caption,
     hero_title: 'Take a tour of SLAC lab',
     hero_kicker: 'Lorem ipsum',
-    has_overlay: true
+    has_overlay: true,
+    icon: icon
   } %}
 </div>

@@ -6,6 +6,7 @@ import twigTemplate from './section.twig';
 import gridTemplate from '../grid/grid.twig';
 import data from './section.yml';
 import { Default as Card } from '../../03-components/card/card.stories';
+import { WYSIWYG } from '../../03-components/wysiwyg/wysiwyg.stories';
 
 const settings = {
   title: 'Layouts/Section',
@@ -115,7 +116,19 @@ SectionWithBlueBackground.args = {
 };
 
 const SectionHorizontal = Template.bind({});
-SectionHorizontal.args = { ...data, modifier_classes: 'l-section--horizontal' };
+SectionHorizontal.args = {
+  ...data,
+  modifier_classes: 'l-section--gray-gradient l-section--horizontal',
+  section_content: gridTemplate({
+    grid_content: ReactDOMServer.renderToStaticMarkup(
+      <>
+        {WYSIWYG({ ...WYSIWYG.args, has_background: true })}
+        {WYSIWYG({ ...WYSIWYG.args, has_background: true })}
+      </>
+    ),
+    num_of_cols: 2,
+  }),
+};
 
 export default settings;
 export {

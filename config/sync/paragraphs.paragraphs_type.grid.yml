@@ -1,0 +1,20 @@
+uuid: 8ec6c3b6-5284-4540-a570-8e4048cafeb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: grid
+label: Grid
+icon_uuid: null
+icon_default: null
+description: 'Place components into a grid-based layout.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol: 'Two column'
+      layout_twocol_bricks: 'Two column bricks'
+      layout_threecol_25_50_25: 'Three column 25/50/25'
+      layout_threecol_33_34_33: 'Three column 33/34/33'

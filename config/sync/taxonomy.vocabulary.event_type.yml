@@ -1,8 +1,8 @@
-uuid: 00463be6-28c3-4ba3-8ada-4cdbfa736904
+uuid: ac1fee03-7f88-4897-85cb-2a91861ceeaa
 langcode: en
 status: true
 dependencies: {  }
 name: 'Event Type'
-vid: event_
+vid: event_type
 description: ''
 weight: 0

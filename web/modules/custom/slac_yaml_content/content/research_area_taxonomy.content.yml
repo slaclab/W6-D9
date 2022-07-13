@@ -188,7 +188,7 @@
           name: 'Science of Life'
 - entity: "taxonomy_term"
   vid: "research_area"
-  name: "Deciphering life's structures"
+  name: "Deciphering Life’s Structures"
   parent:
   - '#process':
       callback: 'reference'

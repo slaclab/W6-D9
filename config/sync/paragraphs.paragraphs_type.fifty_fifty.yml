@@ -1,0 +1,10 @@
+uuid: bb58da63-ebae-42e3-8677-30d0d5c8aa5c
+langcode: en
+status: true
+dependencies: {  }
+id: fifty_fifty
+label: 'Fifty Fifty'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

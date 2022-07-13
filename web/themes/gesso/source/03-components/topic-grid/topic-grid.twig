@@ -3,15 +3,26 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-<ul {{ add_attributes({ class: classes } ) }}>
+<select class="c-topic-grid__select">
+  {% for item in research_areas %}
+    <option {{ add_attributes({ value: 'js-filter-' ~ item.id } ) }}>
+      {{ item.label }}
+    </option>
+  {% endfor %}
+</select>
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="c-topic-grid__sizer"></div>
+  <div class="c-topic-grid__gutter"></div>
   {% for item in items %}
-    <li class="grid-item">
+    <div class="c-topic-grid__item c-topic-grid__item--width{{ item.width }} js-filter-{{ item.filter }}">
       {% include '@components/overlay-link/overlay-link.twig' with {
         image: item.image,
         label: item.title,
         kicker: 'Tagged in',
         title: item.title,
+        link: item.link,
       } %}
-    </li>
+    </div>
   {% endfor %}
-</ul>
+</div>

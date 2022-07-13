@@ -1,7 +1,75 @@
 ---
+research_areas:
+  - id: 1
+    label: 'X-ray and Ultrafast Science'
+  - id: 2
+    label: 'Physics of the Universe'
+  - id: 3
+    label: 'Accelerator Science'
+  - id: 4
+    label: 'Energy Science'
+  - id: 5
+    label: 'Science of Life'
+  - id: 6
+    label: 'New Technologies'
 items:
-  - title: 'Item One'
-  - title: 'The second item'
-  - title: 'This item is #3'
-  - title: 'Item the fourth'
-  - title: 'The fifth item'
+  - title: 'Square'
+    image: 'https://picsum.photos/400/400'
+    link: '#'
+    width: 1
+    filter: 1
+  - title: 'Wide'
+    image: 'https://picsum.photos/800/400'
+    link: '#'
+    width: 2
+    filter: 3
+  - title: 'Short'
+    image: 'https://picsum.photos/400/190'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Large Square'
+    image: 'https://picsum.photos/400/400'
+    link: '#'
+    width: 1
+    filter: 5
+  - title: 'Short'
+    image: 'https://picsum.photos/400/190'
+    link: '#'
+    width: 1
+    filter: 1
+  - title: 'One column tall'
+    image: 'https://picsum.photos/400/580'
+    link: '#'
+    width: 1
+    filter: 3
+  - title: 'Square'
+    image: 'https://picsum.photos/400/400'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Wide'
+    image: 'https://picsum.photos/800/400'
+    link: '#'
+    width: 2
+    filter: 4
+  - title: 'Square'
+    image: 'https://picsum.photos/400/400'
+    link: '#'
+    width: 1
+    filter: 5
+  - title: 'Short'
+    image: 'https://picsum.photos/400/180'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Wide and short'
+    image: 'https://picsum.photos/800/200'
+    link: '#'
+    width: 2
+    filter: 3
+  - title: 'Short'
+    image: 'https://picsum.photos/400/180'
+    link: '#'
+    width: 1
+    filter: 4

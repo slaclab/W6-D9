@@ -9,7 +9,7 @@ import mapData from '../../03-components/map/map.yml';
 import { EventDetails } from '../../03-components/event-details/event-details.stories';
 import { FiftyFifty } from '../../03-components/fifty-fifty/fifty-fifty.stories';
 import { Default as Figure } from '../../03-components/figure/figure.stories';
-import { Chevron } from '../../03-components/button/button.stories';
+import { Primary } from '../../03-components/button/button.stories';
 
 const visitingText = `
   <p class="c-kicker">Attending a public event</p>
@@ -24,16 +24,18 @@ const visitingText = `
   <p>Cras dui lectus, aliquam posuere sagittis a, sollicitudin ac nunc. Etiam finibus urna et arcu venenatis, sit amet molestie sapien laoreet. Nam maximus lectus non augue faucibus, eget iaculis ligula ultricies. Nam sed libero augue. Aenean sed tempor dui. Etiam dignissim erat ac nibh tempus, non aliquet ipsum semper. Nulla venenatis bibendum purus id varius. Proin ligula orci, lobortis et tristique aliquet, sodales quis odio.</p>`;
 
 
-const visitingButton1 = ReactDOMServer.renderToStaticMarkup(<>{Chevron({
+const visitingButton1 = ReactDOMServer.renderToStaticMarkup(<>{Primary({
   is_demo: false,
   text: 'Site Entry Information',
-  url: '#'
+  url: '#',
+  modifier_classes: 'c-button--chevron',
 })}</>);
 
-const visitingButton2 = ReactDOMServer.renderToStaticMarkup(<>{Chevron({
+const visitingButton2 = ReactDOMServer.renderToStaticMarkup(<>{Primary({
   is_demo: false,
   text: 'Maps & Directions',
-  url: '#'
+  url: '#',
+  modifier_classes: 'c-button--chevron',
 })}</>);
 
 const FiftyFiftyargs = {

@@ -77,6 +77,8 @@
     "gsap": "^3.10.4",
     "html-react-parser": "^1.4.0",
     "inquirer": "^8.1.5",
+    "isotope-layout": "^3.0.6",
+    "isotope-packery": "^2.0.1",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^1.6.0",

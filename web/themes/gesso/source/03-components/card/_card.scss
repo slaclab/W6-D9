@@ -112,7 +112,10 @@ $card-padding: rem(gesso-spacing(4));
   @include font-family-secondary;
   font-size: rem(gesso-font-size(2));
   line-height: gesso-line-height(loose);
-  padding-bottom: rem(30px);
+
+  &:not(:last-child) {
+    padding-bottom: rem(30px);
+  }
 }
 
 .c-card__footer {

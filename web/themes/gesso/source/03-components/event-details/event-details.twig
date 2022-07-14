@@ -14,7 +14,9 @@
       <div class="c-card__gradient"></div>
     {% endif %}
     {% if month and day %}
-      {% include '@components/event-date/event-date.twig' %}
+      {% include '@components/event-date/event-date.twig' with {
+        modifier_classes: is_multiday ? 'c-event-date--multiday' : false
+      } %}
     {% endif %}
   </div>
 

@@ -4,6 +4,7 @@ import twigTemplate from './card.twig';
 import data from './card.yml';
 
 import eventCardData from './card-event.yml';
+import multidayEventCardData from './card-multiday-event.yml';
 import eventFallbackCardData from './card-event-fallback.yml';
 import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
@@ -66,6 +67,14 @@ const EventCard = args =>
   );
 EventCard.args = { ...globalData, ...eventCardData };
 
+const EventMultidayCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+EventMultidayCard.args = { ...globalData, ...multidayEventCardData };
+
 const EventFallbackCard = args =>
   parse(
     twigTemplate({
@@ -125,6 +134,7 @@ export {
   LargeCard,
   VideoCard,
   EventCard,
+  EventMultidayCard,
   EventFallbackCard,
   TeaserCard,
   EventTeaserCard,

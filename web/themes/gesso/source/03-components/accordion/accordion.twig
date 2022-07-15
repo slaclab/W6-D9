@@ -6,10 +6,14 @@
 ] %}
 
 <div {{ add_attributes({ class: classes }) }}>
+  {% if accordion_title %}
+  <{{ title_tag|default('h2') }} class="c-accordion__title">{{ accordion_title }}</{{ title_tag|default('h2')  }}>
+  {% endif %}
   {% if accordion_items %}
     <div
         class="c-accordion__content js-accordion"
         {{ allow_multiple ? 'data-allow-multiple' : '' }}
+        data-allow-toggle
     >
       {{ accordion_items }}
     </div>

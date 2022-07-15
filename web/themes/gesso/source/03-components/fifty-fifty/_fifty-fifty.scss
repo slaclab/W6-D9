@@ -10,6 +10,26 @@
     padding-bottom: rem(gesso-spacing(10));
     padding-top: rem(gesso-spacing(10));
   }
+
+  &:first-child {
+    .l-section & {
+      padding-top: 0;
+
+      @include breakpoint(gesso-breakpoint(tablet)) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .l-section & {
+      padding-bottom: 0;
+
+      @include breakpoint(gesso-breakpoint(tablet)) {
+        padding-bottom: 0;
+      }
+    }
+  }
 }
 
 // Alt version with slight tweaks, used on event detail.

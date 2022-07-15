@@ -1,4 +1,5 @@
 ---
+accordion_title: ''
 allow_multiple: true
 accordions:
   - accordion_title: 'Auctor sit Amet'

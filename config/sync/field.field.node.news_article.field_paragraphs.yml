@@ -1,0 +1,84 @@
+uuid: 8043c22e-e66b-4849-a5ed-6644f321b1e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.news_article
+    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.promo_box
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: node.news_article.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: news_article
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fifty_fifty: fifty_fifty
+      image_embed: image_embed
+      promo_box: promo_box
+      quote: quote
+      wysiwyg: wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 17
+        enabled: false
+      accordion_item:
+        weight: 18
+        enabled: false
+      article_hero:
+        weight: 19
+        enabled: false
+      fifty_fifty:
+        weight: 20
+        enabled: true
+      grid:
+        weight: 21
+        enabled: false
+      image_carousel:
+        weight: 22
+        enabled: false
+      image_embed:
+        weight: 23
+        enabled: true
+      image_hero:
+        weight: 24
+        enabled: false
+      microsite_hero:
+        weight: 25
+        enabled: false
+      overlap_image:
+        weight: 26
+        enabled: false
+      promo_box:
+        weight: 27
+        enabled: true
+      quote:
+        weight: 28
+        enabled: true
+      section:
+        weight: 29
+        enabled: false
+      video_hero:
+        weight: 30
+        enabled: false
+      video_lightbox:
+        weight: 31
+        enabled: false
+      wysiwyg:
+        weight: 32
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,19 +1,19 @@
-uuid: 160fbd04-cd69-4368-b2a2-df40a83585f9
+uuid: c94ff3fa-306f-437b-a5fa-8c3cc7ba6cd9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_person_image
     - media.type.image
-    - node.type.article
-id: node.article.field_image
-field_name: field_image
+    - node.type.event
+id: node.event.field_person_image
+field_name: field_person_image
 entity_type: node
-bundle: article
-label: Image
+bundle: event
+label: 'Speaker Image'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

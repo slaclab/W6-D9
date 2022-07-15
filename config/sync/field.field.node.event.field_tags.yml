@@ -1,29 +1,29 @@
-uuid: 160fbd04-cd69-4368-b2a2-df40a83585f9
+uuid: c581541a-6f46-44b2-970b-d72198aaa119
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - media.type.image
-    - node.type.article
-id: node.article.field_image
-field_name: field_image
+    - field.storage.node.field_tags
+    - node.type.event
+    - taxonomy.vocabulary.tags
+id: node.event.field_tags
+field_name: field_tags
 entity_type: node
-bundle: article
-label: Image
+bundle: event
+label: Tags
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      image: image
+      tags: tags
     sort:
-      field: _none
-      direction: ASC
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

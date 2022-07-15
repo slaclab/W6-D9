@@ -1,26 +1,26 @@
-uuid: 160fbd04-cd69-4368-b2a2-df40a83585f9
+uuid: 76e7e204-8510-41b4-8fd1-873d780f685a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - media.type.image
-    - node.type.article
-id: node.article.field_image
-field_name: field_image
+    - field.storage.node.field_video
+    - media.type.remote_video
+    - node.type.event
+id: node.event.field_video
+field_name: field_video
 entity_type: node
-bundle: article
-label: Image
+bundle: event
+label: 'Event Video'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC

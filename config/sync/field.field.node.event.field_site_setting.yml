@@ -1,26 +1,26 @@
-uuid: 160fbd04-cd69-4368-b2a2-df40a83585f9
+uuid: 25d2740c-7dd7-4df2-b066-62c737dc9822
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - media.type.image
-    - node.type.article
-id: node.article.field_image
-field_name: field_image
+    - field.storage.node.field_site_setting
+    - node.type.event
+    - site_settings.site_setting_entity_type.map
+id: node.event.field_site_setting
+field_name: field_site_setting
 entity_type: node
-bundle: article
-label: Image
+bundle: event
+label: Map
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:site_setting_entity'
   handler_settings:
     target_bundles:
-      image: image
+      map: map
     sort:
       field: _none
       direction: ASC

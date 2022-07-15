@@ -1,0 +1,66 @@
+uuid: 455494e6-b8fc-4d10-9996-d2d261d8834d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_bio_related_content
+    - field.field.node.event.field_body
+    - field.field.node.event.field_boolean
+    - field.field.node.event.field_boolean2
+    - field.field.node.event.field_datetime_range
+    - field.field.node.event.field_detail_text
+    - field.field.node.event.field_external_link
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_image
+    - field.field.node.event.field_lede
+    - field.field.node.event.field_link
+    - field.field.node.event.field_link2
+    - field.field.node.event.field_links
+    - field.field.node.event.field_long_text
+    - field.field.node.event.field_name
+    - field.field.node.event.field_override_text
+    - field.field.node.event.field_person_image
+    - field.field.node.event.field_site_setting
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_teaser
+    - field.field.node.event.field_text
+    - field.field.node.event.field_type
+    - field.field.node.event.field_video
+    - node.type.event
+  module:
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_bio_related_content: true
+  field_body: true
+  field_boolean: true
+  field_boolean2: true
+  field_datetime_range: true
+  field_detail_text: true
+  field_external_link: true
+  field_featured: true
+  field_image: true
+  field_lede: true
+  field_link: true
+  field_link2: true
+  field_links: true
+  field_long_text: true
+  field_name: true
+  field_override_text: true
+  field_person_image: true
+  field_site_setting: true
+  field_tags: true
+  field_teaser: true
+  field_text: true
+  field_type: true
+  field_video: true

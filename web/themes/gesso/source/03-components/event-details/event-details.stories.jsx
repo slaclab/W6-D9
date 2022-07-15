@@ -19,18 +19,32 @@ const settings = {
         'ctas',
         'zoom_details',
         'additional_links',
-      ]
-    }
-  }
+      ],
+    },
+  },
 };
 
 const EventDetails = args =>
   parse(
     twigTemplate({
-      ...args
+      ...args,
     })
   );
 EventDetails.args = { ...globalData, ...data };
 
+const EventDetailsMultiday = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+EventDetailsMultiday.args = {
+  ...globalData,
+  ...data,
+  is_multiday: true,
+  day: '19-22',
+  calendar_link_text: 'Thursday, April 19, 2022 - Saturday, April 22, 2022',
+};
+
 export default settings;
-export { EventDetails };
+export { EventDetails, EventDetailsMultiday };

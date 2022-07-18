@@ -62,7 +62,7 @@ const OurStory = args => (
             overlap_image_content: `<div class="c-kicker">Public Tours</div>
 <h2><a href="#0" class="c-arrow-link--white">Visit our lab</a></h2>
 <p>Sign up for an in-person tour at SLAC led by a guide who can answer your questions, sign-up for a guided virtual tour or explore the lab on your own with our virtual tour any time.</p>
-<p><a href="#0" class="c-button c-button--secondary">In-person tours</a><a href="#0" class="c-button c-button--secondary">Virtual tour</a></p>`,
+<p><a href="#0" class="c-button c-button--secondary c-button--chevron">In-person tours</a><a href="#0" class="c-button c-button--secondary c-button--chevron">Virtual tour</a></p>`,
             position: 'bottom-left',
             box_color: 'purple',
           })

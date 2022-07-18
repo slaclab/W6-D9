@@ -82,7 +82,8 @@
         {% include '@components/event-date/event-date.twig' with {
           month: event_month,
           day: event_day,
-        } %}
+          modifier_classes: is_multiday ? 'c-event-date--multiday' : false
+          } %}
       {% endif %}
 
       {% if is_video %}

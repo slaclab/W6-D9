@@ -27,7 +27,8 @@
       <div class="l-constrain c-overlap-image__caption">
         {% include '@components/tooltip/tooltip.twig' with {
           tooltip_content: image_caption,
-          tooltip_id: caption_id
+          tooltip_id: caption_id,
+          modifier_classes: position == 'top-right' or position == 'center-right' or position == 'bottom-right' ? 'c-tooltip--align-left' : ''
         } %}
       </div>
     {% endif %}

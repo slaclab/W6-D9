@@ -1,0 +1,15 @@
+{% set classes = [
+  'c-fifty-fifty-staggered',
+  modifier_classes ? modifier_classes : ''
+]|join(' ')|trim %}
+
+
+{% set content %}
+  {% for col in cols %}<div class="c-fifty-fifty-staggered__col">{{ col }}</div>{% endfor %}
+{% endset %}
+
+{% include '@layouts/grid/grid.twig' with {
+  grid_content: content,
+  num_of_cols: 2,
+  modifier_classes: classes
+} %}

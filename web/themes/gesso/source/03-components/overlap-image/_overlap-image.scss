@@ -3,10 +3,10 @@
 @use '00-config' as *;
 
 .c-overlap-image {
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   max-width: rem(1240px);
+  position: relative;
 
   &.c-overlap-image--top-left,
   &.c-overlap-image--top-right,

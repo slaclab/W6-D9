@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// We need to import Packery for layout, but it's not directly referenced.
 import Isotope from 'isotope-layout';
 import Packery from 'isotope-packery';
 import imagesLoaded from 'imagesloaded';
@@ -17,7 +19,7 @@ Drupal.behaviors.carousel = {
     });
 
     const filterSelect = context.querySelector('.c-topic-grid__select');
-    filterSelect.addEventListener('change', function filterGrid(e) {
+    filterSelect.addEventListener('change', function filterGrid() {
       iso.arrange({ filter: this.value });
     });
 

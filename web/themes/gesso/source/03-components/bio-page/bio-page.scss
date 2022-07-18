@@ -33,4 +33,13 @@
       grid-column: 2;
     }
   }
+
+  .c-bio-page--no-image {
+    .c-bio-page__title,
+    .c-bio-page__content,
+    .c-bio-page__quote,
+    .c-bio-page__buttons {
+      max-width: rem(688px);
+    }
+  }
 }

@@ -5,32 +5,24 @@
 @use '../form-item' as *;
 $form-select-arrow-size: 20px !default;
 
-.c-form-item--select {
-  .c-form-item__select {
-    @include svg-background(select-arrows);
-    background-position: right rem(math.div($form-select-arrow-size, 2)) center; // LTR
-    background-repeat: no-repeat;
-    background-size: rem($form-select-arrow-size);
-    padding-right: rem($form-select-arrow-size * 2); // LTR
+select,
+.c-form-item__select {
+  background: gesso-grayscale(white);
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 16px 12px;
 
-    @if $support-for-rtl {
-      [dir='rtl'] & {
-        background-position: left
-          rem(math.div($form-select-arrow-size, 2))
-          center;
-        padding-left: rem($form-select-arrow-size * 2);
-        padding-right: 0;
-      }
-    }
+  // Remove inner focus styling on Firefox.
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
 
-    // Remove inner focus styling on Firefox.
-    &:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 #000;
-    }
-
-    &::-ms-expand {
-      display: none;
-    }
+  &:hover,
+  &:focus {
+    border: 0;
+    border-bottom: 1px solid currentColor;
   }
 }

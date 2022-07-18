@@ -68,7 +68,8 @@ $accordion-item-icon-size: gesso-font-size(2);
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     .c-accordion--large & {
       padding-bottom: rem(gesso-spacing(6));
-      padding-left: rem(gesso-spacing(4));
+      padding-left: rem(gesso-spacing(8));
+      padding-top: rem(gesso-spacing(6));
     }
   }
 }

@@ -34,7 +34,7 @@
   }
 
   .c-view__list {
-    @include layout-constrain(rem(1026px), 0, 0);
+    @include layout-constrain(rem(gesso-constrain(teaser)), 0, 0);
 
     .c-view__row + .c-view__row {
       margin-top: rem(gesso-get-map(gutter-width));

@@ -168,7 +168,7 @@ gesso:
     form:
       background: grayscale.white
       background-active: grayscale.white
-      background-checked: brand.cardinal.base
+      background-checked: grayscale.black
       background-unchecked: grayscale.white
       border: grayscale.gray-2
       border-dark: grayscale.gray-5

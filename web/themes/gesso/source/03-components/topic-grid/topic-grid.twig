@@ -4,8 +4,11 @@
 ] %}
 
 <select class="c-topic-grid__select">
+  <option value="*">
+    Filter by Research Area
+  </option>
   {% for item in research_areas %}
-    <option {{ add_attributes({ value: 'js-filter-' ~ item.id } ) }}>
+    <option value="{{ '.js-filter-' ~ item.id }}">
       {{ item.label }}
     </option>
   {% endfor %}

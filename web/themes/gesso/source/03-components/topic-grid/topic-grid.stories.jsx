@@ -1,5 +1,3 @@
-import parse from 'html-react-parser';
-
 import twigTemplate from './topic-grid.twig';
 import data from './topic-grid.yml';
 
@@ -9,12 +7,17 @@ const settings = {
   title: 'Components/Topic Grid'
 };
 
-const TopicGrid = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
+// Workaround for a bug in the html parser related to <option value="">
+const TopicGrid = args => (
+  <div
+    dangerouslySetInnerHTML={{
+      __html: twigTemplate({
+        ...args
+      }),
+    }}
+  />
+);
+
 TopicGrid.args = { ...data };
 
 export default settings;

@@ -30,6 +30,10 @@ $gutter: 2%;
   width: $gutter;
 }
 
+.c-topic-grid__select {
+  margin: 40px 0 60px;
+}
+
 @include breakpoint(gesso-breakpoint(tablet)) {
   .c-topic-grid__item,
   .c-topic-grid__sizer {

@@ -4,6 +4,9 @@
 
 .c-overlap-image {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(1240px);
 
   &.c-overlap-image--top-left,
   &.c-overlap-image--top-right,
@@ -38,7 +41,7 @@
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
       background-attachment: fixed;
-      background-size: auto;
+      background-size: 100% auto;
     }
   }
 
@@ -64,13 +67,17 @@
 .c-overlap-image__text {
   @include display-text-style(body);
   background: linear-gradient(
-    rgba(gesso-grayscale(white), 0.51) 0%,
-    gesso-grayscale(white) 33%
+    rgba(gesso-grayscale(white), 0.51) 0,
+    gesso-grayscale(white) 55px
   );
   padding: rem(gesso-spacing(5));
   width: 85%;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
+    background: linear-gradient(
+      rgba(gesso-grayscale(white), 0.51) 0%,
+      gesso-grayscale(white) 33%
+    );
     padding-bottom: rem(gesso-spacing(9));
     padding-top: rem(gesso-spacing(9));
     width: 50%;

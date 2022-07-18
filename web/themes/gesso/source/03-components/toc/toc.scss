@@ -14,6 +14,9 @@
     border: 0;
     border-radius: 0;
     max-width: rem(175px);
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     padding: 0;
   }
 }

@@ -1,16 +1,16 @@
-uuid: 160fbd04-cd69-4368-b2a2-df40a83585f9
+uuid: b6534f6a-1c9e-4b81-931a-85b632125c8c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
     - media.type.image
-    - node.type.article
-id: node.article.field_image
+    - node.type.person
+id: node.person.field_image
 field_name: field_image
 entity_type: node
-bundle: article
-label: Image
+bundle: person
+label: Headshot
 description: ''
 required: false
 translatable: true

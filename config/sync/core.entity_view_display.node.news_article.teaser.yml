@@ -1,0 +1,44 @@
+uuid: e7cb0bcd-bcc8-4ab4-8292-16d85e19da09
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_article.field_bio
+    - field.field.node.news_article.field_bio_related_content
+    - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_override_text
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - user
+id: node.news_article.teaser
+targetEntityType: node
+bundle: news_article
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_bio: true
+  field_bio_related_content: true
+  field_boolean: true
+  field_hero_paragraph: true
+  field_news_source: true
+  field_override_text: true
+  field_paragraphs: true
+  field_source_link: true
+  field_tags: true
+  field_teaser: true
+  field_text: true
+  field_type: true

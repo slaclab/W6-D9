@@ -203,7 +203,7 @@ const Homepage = args => (
             })}
           </>
         ),
-        modifier_classes: 'l-section--pattern l-section--no-padding',
+        modifier_classes: 'l-section--pattern',
       })
     )}
     {parse(

@@ -22,7 +22,7 @@ Drupal.behaviors.gessoTransitions = {
 
         ScrollTrigger.create({
           trigger: item,
-          start: 'bottom bottom',
+          start: 'top 50%',
           once: true,
           onEnter: () => {
             gsap.to(item, {
@@ -47,7 +47,7 @@ Drupal.behaviors.gessoTransitions = {
 
           ScrollTrigger.create({
             trigger: item,
-            start: 'bottom bottom',
+            start: 'top 50%',
             once: true,
             onEnter: () => {
               gsap.to(item, {

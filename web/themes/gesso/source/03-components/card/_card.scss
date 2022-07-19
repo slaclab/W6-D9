@@ -324,3 +324,10 @@ $card-padding: rem(gesso-spacing(4));
     @include responsive-font-size(4);
   }
 }
+
+.c-card--menu {
+  &:hover,
+  &:focus-within {
+    box-shadow: none;
+  }
+}

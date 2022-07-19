@@ -1,0 +1,32 @@
+---
+filter_by_research_area:
+  label: 'Filter by research area'
+  options:
+    - label: 'X-ray & Ultrafast Science'
+      id: 'xray'
+    - label: 'Physics of the Universe'
+      id: 'universe'
+    - label: 'Science of Life'
+      id: 'life'
+filter_by_type:
+  label: 'Filter by type'
+  options:
+    - label: 'News'
+      id: 'news'
+      checked: true
+    - label: 'Events'
+      id: 'events'
+    - label: 'Images'
+      id: 'images'
+    - label: 'Video'
+      id: 'video'
+sort_by:
+  label: 'Sort by'
+  options:
+    - label: 'Relevancy'
+      id: 'relevant'
+      checked: true
+    - label: 'Newest'
+      id: 'newest'
+    - label: 'Oldest'
+      id: 'oldest'

@@ -12,6 +12,7 @@
 
   &:hover,
   &:focus-visible {
+    box-shadow: gesso-box-shadow(1);
     color: gesso-color(text, primary);
   }
 

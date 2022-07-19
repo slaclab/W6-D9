@@ -4,15 +4,40 @@
 ] %}
 
 <div {{ add_attributes({ class: classes } ) }}>
-  <form>
-    {# Filter by research area #}
-    <fieldset>
-      <legend class="c-kicker">
-        {{ filter_by_research_area.label }}
-      </legend>
-      {{ filter_by_area }}
+  <div class="c-filter-modal__inner">
+    <button class="c-filter-modal__close" type="button">
+      Close
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'close',
+        'hidden': true
+      } %}
+    </button>
+    <form
+      class="c-filter-modal__content">
+      {# Filter by content type #}
+      <fieldset class="c-filter-modal__col">
+        <legend class="c-form-item__legend c-kicker c-kicker--big">
+          {{ 'Filter by Type'|t }}
+        </legend>
+        {{ filter_by_type }}
+      </fieldset>
 
-    </fieldset>
+      {# Filter by research area #}
+      <fieldset class="c-filter-modal__col">
+        <legend class="c-form-item__legend c-kicker c-kicker--big">
+          {{ 'Filter by Research Area'|t }}
+        </legend>
+        {{ filter_by_area }}
+      </fieldset>
 
-  </form>
+      {# Sorting #}
+      <fieldset class="c-filter-modal__col">
+        <legend class="c-form-item__legend c-kicker c-kicker--big">
+          {{ 'Sort by'|t }}
+        </legend>
+        {{ sort_by }}
+      </fieldset>
+
+    </form>
+  </div>
 </div>

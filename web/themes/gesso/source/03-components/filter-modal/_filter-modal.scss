@@ -1,2 +1,81 @@
 // @file
 // Component: c-filter-modal
+@use '00-config' as *;
+
+.c-filter-modal {
+  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+.c-filter-modal__inner {
+  background: gesso-grayscale(white);
+  height: 100%;
+  padding: 50px gesso-site-margins(mobile);
+  position: relative;
+  width: 100%;
+}
+
+.c-filter-modal__content {
+  overflow-y: auto;
+}
+
+.c-filter-modal__close {
+  @include focus;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  position: absolute;
+  right: rem(gesso-site-margins(desktop));
+  text-transform: uppercase;
+  top: 20px;
+
+  .c-icon {
+    margin-left: rem(gesso-spacing(1));
+  }
+}
+
+@include breakpoint(gesso-breakpoint(tablet-lg)) {
+  .c-filter-modal {
+    align-items: center;
+    display: flex;
+    justify-items: center;
+  }
+
+  .c-filter-modal__inner {
+    border: 1px solid gesso-grayscale(gray-1);
+    height: auto;
+    margin: auto;
+    padding: 60px 120px 50px 60px;
+    width: auto;
+  }
+
+  .c-filter-modal__content {
+    display: flex;
+    gap: 50px;
+  }
+
+  .c-filter-modal__col {
+    flex: 1 0 auto;
+  }
+
+  .c-filter-modal__close {
+    right: 30px;
+  }
+}
+
+@include breakpoint(gesso-breakpoint(desktop)) {
+  .c-filter-modal__inner {
+    padding-right: 150px;
+  }
+
+  .c-filter-modal__content {
+    gap: 90px;
+  }
+}

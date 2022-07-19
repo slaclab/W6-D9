@@ -10,6 +10,7 @@
       {% include '@components/figure/figure.twig' with {
         media: item.image,
         caption: item.caption,
+        modifier_classes: 'c-carousel__media'
       } %}
     </div>
     {% endfor %}

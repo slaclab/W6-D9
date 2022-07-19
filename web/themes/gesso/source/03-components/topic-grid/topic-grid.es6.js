@@ -20,9 +20,11 @@ Drupal.behaviors.topicGrid = {
       });
 
       const filterSelect = context.querySelector('.c-topic-grid__select');
-      filterSelect.addEventListener('change', function filterGrid() {
-        iso.arrange({ filter: this.value });
-      });
+      if (filterSelect) {
+        filterSelect.addEventListener('change', function filterGrid() {
+          iso.arrange({ filter: this.value });
+        });
+      }
 
       imagesLoaded(grid).on('progress', () => {
         iso.layout();

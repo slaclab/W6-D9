@@ -28,6 +28,11 @@
     grid-template-columns: 1fr 167px;
     grid-template-rows: auto;
     place-items: initial;
+
+    .l-constrain & {
+      padding-left: rem(gesso-site-margins(desktop));
+      padding-right: rem(gesso-site-margins(desktop));
+    }
   }
 }
 

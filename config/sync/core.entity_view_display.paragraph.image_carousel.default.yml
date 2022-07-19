@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_carousel.field_link
+    - field.field.paragraph.image_carousel.field_links
     - field.field.paragraph.image_carousel.field_long_text
     - field.field.paragraph.image_carousel.field_paragraphs
     - field.field.paragraph.image_carousel.field_text
@@ -17,7 +17,7 @@ targetEntityType: paragraph
 bundle: image_carousel
 mode: default
 content:
-  field_link:
+  field_links:
     type: link
     label: above
     settings:

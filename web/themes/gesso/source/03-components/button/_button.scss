@@ -30,6 +30,12 @@
   .is-inline > & {
     margin-bottom: 0;
   }
+
+  &.external-link {
+    .c-icon {
+      color: inherit;
+    }
+  }
 }
 
 // This button class is used for Drupal tabs.

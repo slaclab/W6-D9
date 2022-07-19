@@ -166,9 +166,9 @@ gesso:
         color: grayscale.white
         color-hover: grayscale.white
     form:
-      background: grayscale.gray-1
+      background: grayscale.white
       background-active: grayscale.white
-      background-checked: brand.cardinal.base
+      background-checked: grayscale.black
       background-unchecked: grayscale.white
       border: grayscale.gray-2
       border-dark: grayscale.gray-5

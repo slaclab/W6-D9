@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.image_hero.field_body
     - field.field.paragraph.image_hero.field_image
+    - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
     - paragraphs.paragraphs_type.image_hero
   module:
     - allowed_formats
+    - lottiefiles_field
     - media_library
     - text
 id: paragraph.image_hero.default
@@ -33,6 +35,23 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_lottiefile:
+    type: lottiefiles_field
+    weight: 4
+    region: content
+    settings:
+      autoplay: 0
+      background: transparent
+      controls: 0
+      hover: 0
+      loop: 0
+      mode: Normal
+      speed: 1
+      selector: ''
+      width: 0
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_text:
     type: string_textfield

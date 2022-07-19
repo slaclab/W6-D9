@@ -8,11 +8,12 @@ Drupal.behaviors.carousel = {
     carousels.forEach(carousel => {
       tns({
         arrowKeys: true,
-        center: true,
+        autoWidth: true,
+        center: false,
         container: carousel,
         controls: true,
         controlsPosition: 'bottom',
-        items: 1,
+        items: 2,
         gutter: parseInt(SITE_MARGINS.mobile, 10),
         loop: false,
         navAsThumbnails: true,
@@ -25,9 +26,10 @@ Drupal.behaviors.carousel = {
             gutter: parseInt(SITE_MARGINS.desktop, 10),
           },
           1200: {
-            center: false,
+            autoWidth: false,
+            // center: false,
             fixedWidth: 920,
-            items: 2,
+            // items: 2,
           },
         },
         slideBy: 1,

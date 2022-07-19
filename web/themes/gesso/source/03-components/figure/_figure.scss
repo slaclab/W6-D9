@@ -72,15 +72,19 @@
 }
 
 .c-figure__caption {
-  @include responsive-font-size(2);
+  @include custom-responsive-font-size(rem(12px), rem(16px));
   caption-side: bottom;
   font-family: gesso-font-family(primary);
   font-style: normal;
   font-weight: gesso-font-weight(regular);
-  line-height: gesso-line-height(loose);
+  line-height: gesso-line-height(tight);
   margin-top: rem(gesso-spacing(2.5));
   max-width: 940px;
   width: 100%;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    line-height: gesso-line-height(base);
+  }
 
   .u-align-center & {
     padding: 0 rem(gesso-spacing(2.5));

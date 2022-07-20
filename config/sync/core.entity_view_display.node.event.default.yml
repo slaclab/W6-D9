@@ -29,9 +29,91 @@ dependencies:
     - node.type.event
   module:
     - datetime_range
+    - field_group
     - link
     - text
     - user
+third_party_settings:
+  field_group:
+    group_page_content:
+      children:
+        - links
+        - group_event_details
+        - group_speaker_details
+        - group_metadata
+      label: 'Page Content'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_event_details:
+      children:
+        - field_text
+        - field_datetime_range
+        - field_lede
+        - field_body
+        - field_image
+        - field_boolean
+        - field_external_link
+        - field_video
+        - field_link
+        - field_override_text
+        - field_links
+        - field_detail_text
+        - field_link2
+        - field_boolean2
+        - field_site_setting
+      label: 'Event Details'
+      parent_name: group_page_content
+      region: content
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+    group_speaker_details:
+      children:
+        - field_name
+        - field_person_image
+        - field_long_text
+      label: 'Speaker Details'
+      parent_name: group_page_content
+      region: content
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+    group_metadata:
+      children:
+        - field_teaser
+        - field_featured
+        - field_type
+        - field_tags
+        - field_bio_related_content
+      label: Metadata
+      parent_name: group_page_content
+      region: content
+      weight: 3
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -43,14 +125,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 126
+    weight: 8
     region: content
   field_body:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 7
     region: content
   field_boolean:
     type: boolean
@@ -60,7 +142,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 107
+    weight: 9
     region: content
   field_boolean2:
     type: boolean
@@ -70,7 +152,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 116
+    weight: 17
     region: content
   field_datetime_range:
     type: daterange_default
@@ -80,14 +162,14 @@ content:
       format_type: medium
       separator: '-'
     third_party_settings: {  }
-    weight: 103
+    weight: 4
     region: content
   field_detail_text:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 114
+    weight: 15
     region: content
   field_external_link:
     type: link
@@ -99,7 +181,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 108
+    weight: 10
     region: content
   field_featured:
     type: boolean
@@ -109,7 +191,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 123
+    weight: 4
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -118,14 +200,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 110
+    weight: 8
     region: content
   field_lede:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 104
+    weight: 5
     region: content
   field_link:
     type: link
@@ -137,7 +219,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 111
+    weight: 12
     region: content
   field_link2:
     type: link
@@ -149,7 +231,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 117
+    weight: 16
     region: content
   field_links:
     type: link
@@ -161,28 +243,28 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 113
+    weight: 14
     region: content
   field_long_text:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 121
+    weight: 4
     region: content
   field_name:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 119
+    weight: 2
     region: content
   field_override_text:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 112
+    weight: 13
     region: content
   field_person_image:
     type: entity_reference_entity_view
@@ -191,7 +273,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 120
+    weight: 3
     region: content
   field_site_setting:
     type: entity_reference_label
@@ -199,7 +281,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 118
+    weight: 18
     region: content
   field_tags:
     type: entity_reference_label
@@ -207,21 +289,21 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 125
+    weight: 7
     region: content
   field_teaser:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 122
+    weight: 3
     region: content
   field_text:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_type:
     type: entity_reference_label
@@ -229,7 +311,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 124
+    weight: 5
     region: content
   field_video:
     type: entity_reference_entity_view
@@ -238,11 +320,11 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 109
+    weight: 11
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden: {  }

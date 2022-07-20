@@ -11,16 +11,17 @@
 }
 
 .c-carousel__slide {
-  > * {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 80vw;
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-    > * {
-      margin-left: initial;
-      margin-right: initial;
-    }
+    width: initial;
+  }
+}
+
+.c-carousel__media {
+  img {
+    height: auto;
+    width: 100%;
   }
 }
 

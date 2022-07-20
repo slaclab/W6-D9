@@ -30,6 +30,16 @@ const LargeCard = args =>
   );
 LargeCard.args = { ...globalData, ...data };
 
+const MenuCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      footer: false,
+      modifier_classes: 'c-card--menu',
+    })
+  );
+MenuCard.args = { ...globalData, ...data };
+
 const TeaserCard = args =>
   parse(
     twigTemplate({
@@ -132,6 +142,7 @@ export default settings;
 export {
   Default,
   LargeCard,
+  MenuCard,
   VideoCard,
   EventCard,
   EventMultidayCard,

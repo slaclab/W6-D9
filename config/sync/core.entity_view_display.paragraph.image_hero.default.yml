@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.image_hero.field_body
     - field.field.paragraph.image_hero.field_image
+    - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
     - paragraphs.paragraphs_type.image_hero
   module:
+    - lottiefiles_field
     - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
@@ -28,6 +30,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_text:
     type: string

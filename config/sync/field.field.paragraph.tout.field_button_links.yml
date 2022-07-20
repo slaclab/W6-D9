@@ -1,17 +1,17 @@
-uuid: 7437d94f-e564-4ef0-aec2-b5be52dd6f3b
+uuid: b7fa2b49-203f-4467-9e7e-9c7627cea241
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
-    - paragraphs.paragraphs_type.image_carousel
+    - field.storage.paragraph.field_button_links
+    - paragraphs.paragraphs_type.tout
   module:
     - link
-id: paragraph.image_carousel.field_link
-field_name: field_link
+id: paragraph.tout.field_button_links
+field_name: field_button_links
 entity_type: paragraph
-bundle: image_carousel
-label: 'CTA Link'
+bundle: tout
+label: Button
 description: ''
 required: false
 translatable: true

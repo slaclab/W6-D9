@@ -1,0 +1,26 @@
+uuid: 5b8c9618-77ba-4394-b991-2ce6b76299e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lede
+    - node.type.event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.event.field_lede
+field_name: field_lede
+entity_type: node
+bundle: event
+label: Lede
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

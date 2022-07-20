@@ -73,7 +73,6 @@ const articleDemoContent = `
     })
   )}
     ${sectionTwigTemplate({
-      no_padding: true,
       section_content: ReactDOMServer.renderToStaticMarkup(
         FiftyFiftyLeftFadeIn({
           ...FiftyFiftyLeftFadeIn.args,
@@ -87,7 +86,6 @@ const articleDemoContent = `
       })
     )}
     ${sectionTwigTemplate({
-      no_padding: true,
       section_content: ReactDOMServer.renderToStaticMarkup(
         FiftyFiftyRightFadeIn({
           ...FiftyFiftyRightFadeIn.args,
@@ -101,7 +99,6 @@ const articleDemoContent = `
       })
     )}
     ${sectionTwigTemplate({
-      no_padding: true,
       section_content: ReactDOMServer.renderToStaticMarkup(
         FiftyFiftyLeftFadeIn({
           ...FiftyFiftyLeftFadeIn.args,

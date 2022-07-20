@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.microsite_hero.field_image
     - field.field.paragraph.microsite_hero.field_link
+    - field.field.paragraph.microsite_hero.field_lottiefile
     - field.field.paragraph.microsite_hero.field_text
     - paragraphs.paragraphs_type.microsite_hero
   module:
     - link
+    - lottiefiles_field
 id: paragraph.microsite_hero.default
 targetEntityType: paragraph
 bundle: microsite_hero
@@ -33,6 +35,13 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_text:
     type: string

@@ -1,6 +1,11 @@
-{% set classes = [
+{# {% set classes = [
   'c-filter-modal',
   'u-hidden',
+  modifier_classes ? modifier_classes : ''
+] %} #}
+
+{% set classes = [
+  'c-filter-modal',
   modifier_classes ? modifier_classes : ''
 ] %}
 
@@ -9,7 +14,7 @@
   {{ 'Filter (' ~ total_results ~ ' results)'|t }}
 </button>
 <div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
-  <div class="c-filter-modal__inner">
+  <form class="c-filter-modal__inner">
     <button class="js-lightbox__close c-filter-modal__close" type="button">
       Close
       {% include '@components/icon/icon.twig' with {
@@ -17,7 +22,7 @@
         'hidden': true
       } %}
     </button>
-    <form
+    <div
       class="c-filter-modal__content">
 
       {# Filter by research area #}
@@ -43,7 +48,20 @@
         </legend>
         {{ sort_by }}
       </fieldset>
+    </div>
 
-    </form>
-  </div>
+    <div class="c-filter-modal__footer">
+      <div class="c-filter-modal__actions">
+        <span class="c-filter-modal__count">
+          {{ total_results ~ ' results'|t }}
+        </span>
+        <button class="c-filter-modal__clear" type="button">
+          {{ 'Clear all'|t }}
+        </button>
+        <button class="c-button c-filter-modal__apply" type="button">
+          {{ 'Apply and Close'|t }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>

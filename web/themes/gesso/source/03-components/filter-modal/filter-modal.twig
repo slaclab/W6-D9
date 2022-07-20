@@ -5,6 +5,9 @@
 ] %}
 
 {{ attach_library('gesso/lightbox') }}
+<button class="js-lightbox c-kicker c-kicker--big c-filter-modal__trigger" type="button" aria-controls="{{ lightbox_id }}">
+  {{ 'Filter (' ~ total_results ~ ' results)'|t }}
+</button>
 <div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
   <div class="c-filter-modal__inner">
     <button class="js-lightbox__close c-filter-modal__close" type="button">

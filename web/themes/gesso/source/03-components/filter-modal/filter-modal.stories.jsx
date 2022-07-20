@@ -104,28 +104,17 @@ const sortBy = ReactDOMServer.renderToStaticMarkup(
   </>
 );
 
-const FilterModal = args => {
-  const { lightbox_id } = args;
-  return (
-    <>
-    <button
-      type="button"
-      aria-controls={lightbox_id}
-      className="js-lightbox"
-      >
-      Trigger Modal
-    </button>
-    {parse(
-      twigTemplate({
-        ...args,
-        filter_by_area: filterByArea,
-        filter_by_type: filterByType,
-        sort_by: sortBy,
-      })
-    )}
-    </>
-  );
-};
+const FilterModal = args => (
+  parse(
+    twigTemplate({
+      ...args,
+      filter_by_area: filterByArea,
+      filter_by_type: filterByType,
+      sort_by: sortBy,
+    })
+  )
+);
+
 
 FilterModal.args = { ...globalData, ...data };
 

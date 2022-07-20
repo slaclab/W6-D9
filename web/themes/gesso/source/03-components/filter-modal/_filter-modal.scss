@@ -50,6 +50,14 @@
   }
 }
 
+.c-filter-modal__trigger {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+}
+
 @include breakpoint(gesso-breakpoint(tablet-lg)) {
   .c-filter-modal {
     align-items: center;

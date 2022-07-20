@@ -8,6 +8,10 @@ import Drupal from 'drupal';
 Drupal.behaviors.carousel = {
   attach(context) {
     const grid = context.querySelector('.c-topic-grid');
+    if (!grid) {
+      return;
+    }
+
     const iso = new Isotope(grid, {
       layoutMode: 'packery',
       itemSelector: '.c-topic-grid__item',

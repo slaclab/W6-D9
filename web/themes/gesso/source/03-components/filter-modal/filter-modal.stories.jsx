@@ -3,10 +3,12 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import twigTemplate from './filter-modal.twig';
-// import inputTemplate from '../form-item/form-item.twig';
-// import labelTemplate from '../form-item/_input.twig';
 import { Checkbox } from '../form-item/form-item--checkbox/form-item--checkbox.stories';
 import { Radio } from '../form-item/form-item--radio/form-item--radio.stories';
+
+import '../lightbox/lightbox.es6';
+import './filter-modal.es6';
+
 import data from './filter-modal.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
@@ -102,15 +104,29 @@ const sortBy = ReactDOMServer.renderToStaticMarkup(
   </>
 );
 
-const FilterModal = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      filter_by_area: filterByArea,
-      filter_by_type: filterByType,
-      sort_by: sortBy,
-    })
+const FilterModal = args => {
+  const { lightbox_id } = args;
+  return (
+    <>
+    <button
+      type="button"
+      aria-controls={lightbox_id}
+      className="js-lightbox"
+      >
+      Trigger Modal
+    </button>
+    {parse(
+      twigTemplate({
+        ...args,
+        filter_by_area: filterByArea,
+        filter_by_type: filterByType,
+        sort_by: sortBy,
+      })
+    )}
+    </>
   );
+};
+
 FilterModal.args = { ...globalData, ...data };
 
 export default settings;

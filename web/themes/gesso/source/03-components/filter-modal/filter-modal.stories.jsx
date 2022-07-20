@@ -18,28 +18,28 @@ const settings = {
 
 const filterByType = ReactDOMServer.renderToStaticMarkup(
   <>
-    {Radio({
-      ...Radio.args,
+    {Checkbox({
+      ...Checkbox.args,
       title: 'News (327)',
       id: 'type-1',
       name: 'type',
     })}
-    {Radio({
-      ...Radio.args,
+    {Checkbox({
+      ...Checkbox.args,
       title: 'Events (112)',
       id: 'type-2',
       name: 'type',
     })}
-    {Radio({
-      ...Radio.args,
+    {Checkbox({
+      ...Checkbox.args,
       title: 'Images (45)',
       id: 'type-3',
       name: 'type',
     })}
-    {Radio({
-      ...Radio.args,
+    {Checkbox({
+      ...Checkbox.args,
       title: 'Video (34)',
-      id: 'type-3',
+      id: 'type-4',
       name: 'type',
     })}
   </>

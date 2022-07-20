@@ -1,0 +1,26 @@
+uuid: 054dcfad-ed84-4cbe-a15b-ba5232ccf572
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.extra_large_card
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.extra_large_card.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: extra_large_card
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

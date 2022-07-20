@@ -1,0 +1,10 @@
+uuid: 29b26772-3d6c-46b5-940c-4acf7075507c
+langcode: en
+status: true
+dependencies: {  }
+id: small_cad_with_icon
+label: 'Small Cad with Icon'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

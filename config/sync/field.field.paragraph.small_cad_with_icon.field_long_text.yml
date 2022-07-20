@@ -1,0 +1,26 @@
+uuid: 4174c525-7d31-4a40-bd42-e2e1e83ec9d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.small_cad_with_icon
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.small_cad_with_icon.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: small_cad_with_icon
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

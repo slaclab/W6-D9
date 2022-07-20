@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -30,6 +31,7 @@ settings:
       image_embed: image_embed
       promo_box: promo_box
       quote: quote
+      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -72,12 +74,15 @@ settings:
       section:
         weight: 29
         enabled: false
+      tout:
+        weight: 31
+        enabled: false
       video_hero:
         weight: 30
         enabled: false
       video_lightbox:
         weight: 31
-        enabled: false
+        enabled: true
       wysiwyg:
         weight: 32
         enabled: true

@@ -19,13 +19,6 @@
     </button>
     <form
       class="c-filter-modal__content">
-      {# Filter by content type #}
-      <fieldset class="c-filter-modal__col">
-        <legend class="c-form-item__legend c-kicker c-kicker--big">
-          {{ 'Filter by Type'|t }}
-        </legend>
-        {{ filter_by_type }}
-      </fieldset>
 
       {# Filter by research area #}
       <fieldset class="c-filter-modal__col">
@@ -33,6 +26,14 @@
           {{ 'Filter by Research Area'|t }}
         </legend>
         {{ filter_by_area }}
+      </fieldset>
+
+      {# Filter by content type #}
+      <fieldset class="c-filter-modal__col">
+        <legend class="c-form-item__legend c-kicker c-kicker--big">
+          {{ 'Filter by Type'|t }}
+        </legend>
+        {{ filter_by_type }}
       </fieldset>
 
       {# Sorting #}

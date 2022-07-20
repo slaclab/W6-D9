@@ -1,0 +1,39 @@
+uuid: ad0a5fa7-3961-4793-942e-8455c13a08dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wide_card.field_body
+    - field.field.paragraph.wide_card.field_image
+    - field.field.paragraph.wide_card.field_long_text
+    - paragraphs.paragraphs_type.wide_card
+  module:
+    - text
+id: paragraph.wide_card.default
+targetEntityType: paragraph
+bundle: wide_card
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_long_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

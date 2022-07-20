@@ -54,6 +54,7 @@ const EventTeaserCard = args =>
     twigTemplate({
       ...args,
       modifier_classes: 'c-card--teaser',
+      event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
     })
   );
 EventTeaserCard.args = { ...globalData, ...eventCardData };

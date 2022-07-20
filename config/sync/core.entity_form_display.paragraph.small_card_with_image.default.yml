@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_image
   module:
     - link
+    - media_library
     - text
 id: paragraph.small_card_with_image.default
 targetEntityType: paragraph
@@ -26,14 +27,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_link:
     type: link_default

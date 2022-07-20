@@ -18,25 +18,25 @@ const filterByType = ReactDOMServer.renderToStaticMarkup(
   <>
     {Radio({
       ...Radio.args,
-      title: 'News',
+      title: 'News (327)',
       id: 'type-1',
       name: 'type',
     })}
     {Radio({
       ...Radio.args,
-      title: 'Events',
+      title: 'Events (112)',
       id: 'type-2',
       name: 'type',
     })}
     {Radio({
       ...Radio.args,
-      title: 'Images',
+      title: 'Images (45)',
       id: 'type-3',
       name: 'type',
     })}
     {Radio({
       ...Radio.args,
-      title: 'Video',
+      title: 'Video (34)',
       id: 'type-3',
       name: 'type',
     })}
@@ -47,18 +47,33 @@ const filterByArea = ReactDOMServer.renderToStaticMarkup(
   <>
     {Checkbox({
       ...Checkbox.args,
-      title: 'X-Ray & Ultrafast Science',
+      title: 'X-Ray & Ultrafast Science (80)',
       id: 'checkbox-1',
     })}
     {Checkbox({
       ...Checkbox.args,
-      title: 'Physics of the Universe',
+      title: 'Physics of the Universe (125)',
       id: 'checkbox-2',
     })}
     {Checkbox({
       ...Checkbox.args,
-      title: 'Science of Life',
+      title: 'Advanced Accelerators (122)',
       id: 'checkbox-3',
+    })}
+    {Checkbox({
+      ...Checkbox.args,
+      title: 'Science of Life (61)',
+      id: 'checkbox-4',
+    })}
+    {Checkbox({
+      ...Checkbox.args,
+      title: 'New Technologies (11)',
+      id: 'checkbox-5',
+    })}
+    {Checkbox({
+      ...Checkbox.args,
+      title: 'Energy Sciences (2)',
+      id: 'checkbox-6',
     })}
   </>
 );

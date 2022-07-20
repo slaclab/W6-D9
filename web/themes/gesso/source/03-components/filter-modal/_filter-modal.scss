@@ -5,20 +5,29 @@
 .c-filter-modal {
   background: rgba(0, 0, 0, 0.5);
   inset: 0;
-  overflow: hidden;
   position: fixed;
 }
 
 .c-filter-modal__inner {
   background: gesso-grayscale(white);
   height: 100%;
-  padding: 50px gesso-site-margins(mobile);
+  overflow: hidden;
+  padding: 50px gesso-site-margins(mobile) 30px;
   position: relative;
   width: 100%;
 }
 
 .c-filter-modal__content {
+  height: 100%;
   overflow-y: auto;
+}
+
+.c-filter-modal__col {
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 10px;
+  }
 }
 
 .c-filter-modal__close {
@@ -32,7 +41,7 @@
   letter-spacing: 0.08em;
   line-height: 1;
   position: absolute;
-  right: rem(gesso-site-margins(desktop));
+  right: rem(gesso-site-margins(mobile));
   text-transform: uppercase;
   top: 20px;
 
@@ -52,6 +61,7 @@
     border: 1px solid gesso-grayscale(gray-1);
     height: auto;
     margin: auto;
+    overflow: auto;
     padding: 60px 120px 50px 60px;
     width: auto;
   }
@@ -59,10 +69,13 @@
   .c-filter-modal__content {
     display: flex;
     gap: 50px;
+    height: auto;
+    overflow: visible;
   }
 
   .c-filter-modal__col {
     flex: 1 0 auto;
+    margin-bottom: 0;
   }
 
   .c-filter-modal__close {

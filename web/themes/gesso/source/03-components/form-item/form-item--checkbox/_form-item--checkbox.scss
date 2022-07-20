@@ -5,6 +5,10 @@
 
 .c-form-item--checkbox {
   margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .c-form-item--checkbox.has-visible-label-after {

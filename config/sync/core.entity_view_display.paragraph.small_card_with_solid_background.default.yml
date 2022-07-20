@@ -1,0 +1,44 @@
+uuid: 8976ae28-e26d-404e-b58a-206dfc06720d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.small_card_with_solid_background.field_footer
+    - field.field.paragraph.small_card_with_solid_background.field_link
+    - field.field.paragraph.small_card_with_solid_background.field_long_text
+    - paragraphs.paragraphs_type.small_card_with_solid_background
+  module:
+    - link
+    - text
+id: paragraph.small_card_with_solid_background.default
+targetEntityType: paragraph
+bundle: small_card_with_solid_background
+mode: default
+content:
+  field_footer:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_long_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

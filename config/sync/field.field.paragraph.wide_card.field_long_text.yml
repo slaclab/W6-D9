@@ -1,0 +1,26 @@
+uuid: fea0aaef-406f-4113-b0a5-601d7f3385a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.wide_card
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.wide_card.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: wide_card
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

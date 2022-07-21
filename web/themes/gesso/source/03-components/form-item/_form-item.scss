@@ -59,7 +59,9 @@ $form-text-size: gesso-font-size(3);
   padding: 0;
 }
 
-// .c-form-item__legend {}
+.c-form-item__legend {
+  margin-bottom: 1em;
+}
 
 .c-form-item__description {
   @extend %disabled-form-styles;

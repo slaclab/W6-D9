@@ -2,7 +2,7 @@ import Drupal from 'drupal';
 
 Drupal.behaviors.backToTop = {
   attach(context, settings) {
-    const threshold = settings?.gesso?.backToTopThreshold ?? 200;
+    const threshold = settings?.gesso?.backToTopThreshold ?? 750;
     const smoothScroll = settings?.gesso?.backToTopSmoothScroll ?? true;
     const footer = context.querySelector('.l-footer');
     const subfooter = context.querySelector('.l-subfooter');

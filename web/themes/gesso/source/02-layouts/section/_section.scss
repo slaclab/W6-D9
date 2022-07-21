@@ -70,6 +70,18 @@
   }
 }
 
+.l-section--white {
+  + .l-section--white {
+    padding-top: 0;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    + .l-section--white {
+      padding-top: 0;
+    }
+  }
+}
+
 .l-section--dark {
   color: gesso-color(text, on-dark);
 

@@ -24,6 +24,7 @@ import {
 } from '../03-components/figure/figure.stories';
 import { Carousel } from '../03-components/carousel/carousel.stories';
 import { CalloutBox } from '../03-components/callout-box/callout-box.stories';
+import { TagList } from '../03-components/tag-list/tag-list.stories';
 
 export default {
   title: 'Pages/Article',
@@ -172,6 +173,7 @@ const Article = args => (
   <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>`,
           })
         ),
+        modifier_classes: 'l-section--white',
       })
     )}
     {parse(
@@ -180,6 +182,7 @@ const Article = args => (
         section_content: ReactDOMServer.renderToStaticMarkup(
           Carousel(Carousel.args)
         ),
+        modifier_classes: 'l-section--white',
         section_kicker: 'Image Gallery',
         section_title: 'Arrillaga Science Center Batter Research',
         section_buttons:
@@ -188,9 +191,13 @@ const Article = args => (
     )}
     {parse(
       sectionTwigTemplate({
+        has_constrain: true,
+        modifier_classes: 'l-section--white',
+        constrain_modifier_classes: 'l-constrain--small',
         section_content: ReactDOMServer.renderToStaticMarkup(
-          WYSIWYG({
-            content: `<hr /><p class="c-small-paragraph">Editor's note: This story is based on a <a href="#0">press release</a> from Fermilab.</p>
+          <>
+            {WYSIWYG({
+              content: `<hr /><p class="c-small-paragraph">Editor's note: This story is based on a <a href="#0">press release</a> from Fermilab.</p>
 <p class="c-small-paragraph">This research was funded by Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien eleifend vitae mattis viverra ut scelerisque proin. Risus proin dignissim amet ac. Diam nisi, pretium non sem sed vel nam. Ut eu egestas mauris in aenean. Sit ornare pretium, donec elit.</p>
 <h5>Citation</h5>
 <p class="c-small-paragraph">Jungjin Park et al., Nature Materials, 8 March 2021 [10.1038/s41563-021-00936-1]</p>
@@ -199,7 +206,9 @@ const Article = args => (
 <hr />
 <p class="c-small-paragraph"><i>SLAC is a vibrant multiprogram laboratory that explores how the universe works at the biggest, smallest and fastest scales and invents powerful tools used by scientists around the globe. With research spanning particle physics, astrophysics and cosmology, materials, chemistry, bio- and energy sciences and scientific computing, we help solve real-world problems and advance the interests of the nation.</i></p> 
 <p class="c-small-paragraph"><i>SLAC is operated by Stanford University for the U.S. Department of Energy’s Office of Science. The Office of Science is the single largest supporter of basic research in the physical sciences in the United States and is working to address some of the most pressing challenges of our time.</i></p>`,
-          })
+            })}
+            {TagList(TagList.args)}
+          </>
         ),
       })
     )}

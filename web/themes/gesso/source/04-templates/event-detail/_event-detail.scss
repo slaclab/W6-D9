@@ -3,10 +3,6 @@
 @use '00-config' as *;
 
 .event-detail {
-  .c-wysiwyg {
-    margin-bottom: 65px;
-  }
-
   .c-button,
   .c-button::after {
     margin-left: 0;

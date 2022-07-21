@@ -39,7 +39,7 @@ const Template = args =>
   );
 
 const Section = Template.bind({});
-Section.args = { ...data };
+Section.args = { ...data, modifier_classes: 'l-section--white' };
 
 const SectionWithBackgroundImage = Template.bind({});
 SectionWithBackgroundImage.args = {

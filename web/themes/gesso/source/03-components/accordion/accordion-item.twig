@@ -17,7 +17,7 @@
         aria-controls="{{ section_id }}"
         tabindex="-1"
     >
-      {{ accordion_title }}
+      <span>{{ accordion_title }}</span>
       {% include '@components/icon/icon.twig' with {
         'icon_name': 'close',
         'label': 'Open/Close Accordion',

@@ -88,9 +88,9 @@ hero_bg_image:
       dist/css/hero-bg-image.css: {}
   js:
     dist/js/hero-bg-image.es6.js: {}
- dependencies:
-   - gesso/common
-   - core/drupal
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 hero_inline_image:
   css:

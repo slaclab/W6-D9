@@ -32,7 +32,9 @@ const Poster = args =>
   parse(
     twigTemplate({
       ...args,
-      image: 'https://picsum.photos/390/600?image=237"',
+      image: {
+        src: 'https://picsum.photos/390/600?image=237',
+      },
       label: '',
       kicker: 'Poster Details',
       title: 'Arianna Gleason lecture',
@@ -44,7 +46,9 @@ const Topic = args =>
   parse(
     twigTemplate({
       ...args,
-      image: 'https://picsum.photos/400/400?image=237"',
+      image: {
+        src: 'https://picsum.photos/400/400?image=237',
+      },
       label: 'Dark Energy',
       kicker: 'Tagged in',
       title: 'Dark Energy',

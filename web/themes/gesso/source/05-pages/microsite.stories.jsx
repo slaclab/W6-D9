@@ -76,7 +76,7 @@ const Microsite = args => (
             modifier_classes: 'c-accordion--large',
             accordion_items: [
               TourTypes({
-                accordion_is_open: true,
+                accordion_is_open: false,
               }),
               TourTypes({
                 accordion_title: 'Educational tour',

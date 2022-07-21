@@ -1,17 +1,10 @@
-uuid: 3450daa0-daa5-458e-9d3a-6c1afef8b758
+uuid: 0987653d-d776-4fbf-bbbe-9e7972de407c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_text
     - node.type.event
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 id: node.event.field_text
 field_name: field_text
 entity_type: node
@@ -19,8 +12,8 @@ bundle: event
 label: Kicker
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

@@ -1,11 +1,11 @@
-uuid: 197e31f9-b804-46c7-af45-f91cab6f0c15
+uuid: 1a86f615-2ddc-4bbf-b4b2-ce0b26e40036
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_text_title
-field_name: field_text_title
+id: node.field_override_text2
+field_name: field_override_text2
 entity_type: node
 type: string
 settings:

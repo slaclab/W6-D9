@@ -9,12 +9,11 @@ dependencies:
     - field.field.node.news_article.field_boolean
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_news_source
-    - field.field.node.news_article.field_override_text
+    - field.field.node.news_article.field_override_text2
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
-    - field.field.node.news_article.field_text
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
@@ -35,10 +34,9 @@ hidden:
   field_boolean: true
   field_hero_paragraph: true
   field_news_source: true
-  field_override_text: true
+  field_override_text2: true
   field_paragraphs: true
   field_source_link: true
   field_tags: true
   field_teaser: true
-  field_text: true
   field_type: true

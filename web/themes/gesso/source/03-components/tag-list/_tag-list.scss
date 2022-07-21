@@ -7,7 +7,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: rem(14px);
-  margin: gesso-spacing(2) 0;
+  margin: rem(gesso-spacing(9)) 0 0;
+
+  + * {
+    margin-top: rem(gesso-spacing(9));
+  }
 
   li {
     margin: 0;

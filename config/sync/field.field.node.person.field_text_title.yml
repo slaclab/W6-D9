@@ -1,26 +1,19 @@
-uuid: 48639df2-dcba-4710-a297-47509674d807
+uuid: 7348864d-a29e-49b0-92d5-08c0557673e4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_text_title
     - node.type.person
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 id: node.person.field_text_title
 field_name: field_text_title
 entity_type: node
 bundle: person
-label: 'Job Title'
+label: 'Job title'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

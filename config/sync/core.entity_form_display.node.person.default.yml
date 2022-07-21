@@ -66,7 +66,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_text:
-    type: text_textfield
+    type: string_textfield
     weight: 6
     region: content
     settings:
@@ -74,7 +74,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_text_title:
-    type: text_textfield
+    type: string_textfield
     weight: 7
     region: content
     settings:

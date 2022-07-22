@@ -1,4 +1,4 @@
-uuid: 9212639b-10e2-4593-aac4-929263fa4356
+uuid: e6b4827c-3d71-4200-8f43-51df5d52646b
 langcode: en
 status: true
 dependencies:
@@ -8,20 +8,18 @@ dependencies:
     - system
   theme:
     - gesso
-_core:
-  default_config_hash: 8PJZvAUn1gJamRJ3PwmDcwsuI5CFUhcpCwOTfRxJO7U
-id: gesso_footer
+id: footer_menu
 theme: gesso
-region: footer
+region: disabled
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Footer menu'
+  label: 'Footer Menu'
   label_display: '0'
   provider: system
   level: 1
-  depth: 0
-  expand_all_items: false
+  depth: 2
+  expand_all_items: true
 visibility: {  }

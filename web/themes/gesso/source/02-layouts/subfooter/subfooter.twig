@@ -16,7 +16,7 @@
     <div class="l-subfooter__brand">
     {% block subfooter_brand %}
       {% include '@components/logo/logo.twig' with {
-        logo: 'images/SLAC_Logo_W.svg',
+        logo: gesso_image_path ~ '/SLAC_Logo_W.svg',
         url: '/',
         title: 'Home'
       } %}
@@ -31,12 +31,12 @@
     <div class="l-subfooter__logos">
     {% block subfooter_logos %}
       {% include '@components/logo/logo.twig' with {
-        logo: 'images/StanfordUniversity.svg',
+        logo: gesso_image_path ~ '/StanfordUniversity.svg',
         url: 'https://www.stanford.edu/',
         title: 'Stanford University'
       } %}
       {% include '@components/logo/logo.twig' with {
-        logo: 'images/DOE.svg',
+        logo: gesso_image_path ~ '/DOE.svg',
         url: 'https://science.energy.gov/',
         title: 'U.S. Department of Energy'
       } %}

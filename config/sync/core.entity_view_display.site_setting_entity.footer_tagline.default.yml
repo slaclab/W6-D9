@@ -5,10 +5,11 @@ dependencies:
   config:
     - field.field.site_setting_entity.footer_tagline.field_body
     - field.field.site_setting_entity.footer_tagline.field_heading
+    - field.field.site_setting_entity.footer_tagline.field_line_2
+    - field.field.site_setting_entity.footer_tagline.field_line_3
     - site_settings.site_setting_entity_type.footer_tagline
   module:
     - text
-    - user
 id: site_setting_entity.footer_tagline.default
 targetEntityType: site_setting_entity
 bundle: footer_tagline
@@ -16,40 +17,36 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_heading:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
-  fieldset:
+  field_heading:
     type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  name:
-    type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
-  user_id:
-    type: author
+  field_line_2:
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_line_3:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content
-hidden: {  }
+hidden:
+  fieldset: true
+  name: true
+  user_id: true

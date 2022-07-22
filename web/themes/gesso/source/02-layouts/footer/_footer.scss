@@ -69,12 +69,27 @@
 }
 
 .l-footer__signup {
+  h3 {
+    font-size: 18px;
+  }
+
   > p {
+    font-size: 15px;
+    line-height: gesso-line-height(base);
     max-width: rem(280px);
   }
 
   input {
+    font-weight: gesso-font-weight(bold);
+    height: auto;
+    line-height: 1;
+    padding-bottom: 14px;
+    padding-top: 12px;
     width: 100%;
+  }
+
+  ::placeholder {
+    opacity: 0.8;
   }
 
   @media (min-width: 20.625em) {

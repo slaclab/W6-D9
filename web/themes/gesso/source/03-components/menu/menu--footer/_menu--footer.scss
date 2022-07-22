@@ -10,15 +10,16 @@
     font-weight: gesso-font-weight(bold);
     letter-spacing: 1px;
     margin-bottom: rem(gesso-spacing(2.5));
-    padding-top: rem(gesso-spacing(0.5));
+    padding-top: rem(gesso-spacing(1));
     text-transform: uppercase;
     width: rem(190px);
 
     .c-menu__item {
       border-top: 0;
+      font-size: 15px;
       font-weight: gesso-font-weight(regular);
       letter-spacing: initial;
-      margin-top: rem(gesso-spacing(0.5));
+      margin-top: rem(gesso-spacing(1));
       text-transform: none;
     }
   }

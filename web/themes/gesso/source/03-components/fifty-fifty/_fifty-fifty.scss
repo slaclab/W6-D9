@@ -34,6 +34,8 @@
 
 // Alt version with slight tweaks, used on event detail.
 .c-fifty-fifty--alt {
+  @include layout-constrain();
+
   p:last-of-type {
     margin-bottom: 40px;
   }
@@ -44,7 +46,11 @@
 
     @include breakpoint(gesso-breakpoint(grid-2col)) {
       padding-left: 0;
-      padding-top: 70px;
     }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    @include layout-half-full-bleed($direction: 'left');
+    padding-left: 0;
   }
 }

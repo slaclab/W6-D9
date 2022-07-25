@@ -66,10 +66,7 @@
 
 .c-overlap-image__text {
   @include display-text-style(body);
-  background: linear-gradient(
-    rgba(gesso-grayscale(white), 0.51) 0,
-    gesso-grayscale(white) 55px
-  );
+  background: gesso-grayscale(white);
   padding: rem(gesso-spacing(5));
   width: 85%;
 
@@ -100,15 +97,18 @@
   .c-overlap-image--top-left &,
   .c-overlap-image--top-right &,
   .c-overlap-image--dual &:first-of-type {
-    background-image: linear-gradient(
-      to top,
-      rgba(gesso-grayscale(white), 0.51) 0%,
-      gesso-grayscale(white) 51.6%
-    );
+    background-color: gesso-grayscale(white);
+    background-image: none;
     bottom: -14.4vw;
     position: relative;
 
     @include breakpoint-min(gesso-breakpoint(tablet)) {
+      background-color: transparent;
+      background-image: linear-gradient(
+        to top,
+        rgba(gesso-grayscale(white), 0.51) 0%,
+        gesso-grayscale(white) 51.6%
+      );
       bottom: auto;
       position: absolute;
       top: 0;
@@ -179,25 +179,19 @@
 
 .c-overlap-image__caption {
   bottom: rem(gesso-spacing(2.5));
-  left: calc(50% + #{rem(gesso-site-margins(mobile))});
+  left: 85%;
   position: absolute;
-  transform: translateX(-50%);
-  width: 100%;
-
-  .c-overlap-image--top-left &,
-  .c-overlap-image--center-left &,
-  .c-overlap-image--bottom-left & {
-    left: calc(50% - #{rem(gesso-site-margins(mobile))});
-    text-align: right;
-  }
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     left: calc(50% + #{rem(gesso-site-margins(desktop))});
+    transform: translateX(-50%);
+    width: 100%;
 
     .c-overlap-image--top-left &,
     .c-overlap-image--center-left &,
     .c-overlap-image--bottom-left & {
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
+      text-align: right;
     }
   }
 }

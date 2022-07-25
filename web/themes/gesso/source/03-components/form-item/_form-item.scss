@@ -114,10 +114,9 @@ $form-text-size: gesso-font-size(3);
   transition-timing-function: gesso-easing(ease-in-out);
 
   &:focus {
-    background: rgba(gesso-brand(sky, light), 0.1);
+    background: #f0f7fa;
     border-color: gesso-brand(sky, slac);
-    box-shadow: 1px 1px 4px rgba(gesso-brand(sky, light), 0.4),
-      -1px -1px 6px rgba(gesso-brand(sky, slac), 0.4);
+    box-shadow: 1px 1px 4px #b6dff2, -1px -1px 6px #b6dff2;
     outline: none;
   }
 

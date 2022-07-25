@@ -10,6 +10,7 @@ import { EventDetails } from '../../03-components/event-details/event-details.st
 import { FiftyFifty } from '../../03-components/fifty-fifty/fifty-fifty.stories';
 import { Default as Figure } from '../../03-components/figure/figure.stories';
 import { Primary } from '../../03-components/button/button.stories';
+import sectionTwigTemplate from '../../02-layouts/section/section.twig';
 
 const visitingText = `
   <p class="c-kicker">Attending a public event</p>
@@ -47,7 +48,14 @@ const visitingButton2 = ReactDOMServer.renderToStaticMarkup(
 
 const FiftyFiftyargs = {
   col_1: ReactDOMServer.renderToStaticMarkup(
-    <>{Figure({ ...Figure.args, caption: false })}</>
+    <>
+      {Figure({
+        ...Figure.args,
+        media:
+          '<img src="https://picsum.photos/703/825?image=237" alt="dog photo">',
+        caption: false,
+      })}
+    </>
   ),
   col_2: visitingText + visitingButton1 + visitingButton2,
   modifier_classes: 'c-fifty-fifty--alt',
@@ -71,9 +79,12 @@ EventDetail.args = {
   details: ReactDOMServer.renderToStaticMarkup(
     <>{EventDetails(EventDetails.args)}</>
   ),
-  visiting: ReactDOMServer.renderToStaticMarkup(
-    <>{FiftyFifty(FiftyFiftyargs)}</>
-  ),
+  visiting: sectionTwigTemplate({
+    has_constrain: false,
+    section_content: ReactDOMServer.renderToStaticMarkup(
+      FiftyFifty(FiftyFiftyargs)
+    ),
+  }),
 };
 
 export default settings;

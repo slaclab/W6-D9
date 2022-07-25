@@ -1,0 +1,10 @@
+uuid: a4b1bf60-73ed-49c7-aad7-a1391b8a90d4
+langcode: en
+status: true
+dependencies: {  }
+id: small_card_with_solid_background
+label: 'Small Card with Solid Background'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

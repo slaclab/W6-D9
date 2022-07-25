@@ -1,7 +1,9 @@
 ---
 event_type: 'Lecture'
-month: 'Apr'
-day: '19'
+start_date:
+  month: 'Apr'
+  day: '19'
+end_date: null
 image_url: 'http://fpoimg.com/600x600?text='
 image_alt: 'Close-up shot of a telescope lens'
 calendar_link_url: '#0'

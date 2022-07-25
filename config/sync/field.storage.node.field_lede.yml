@@ -1,17 +1,18 @@
-uuid: f68e8e81-9c75-47c2-b02a-e36e7b00ee3a
+uuid: b3bd057d-5201-4551-b311-8f5873120aad
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
 id: node.field_lede
 field_name: field_lede
 entity_type: node
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

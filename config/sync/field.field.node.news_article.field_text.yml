@@ -1,26 +1,19 @@
-uuid: 8fe8b39e-8aa2-4200-940c-9ab65abf0239
+uuid: 95a8affe-0f1f-4724-905e-f49e57c8f402
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_text
     - node.type.news_article
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 id: node.news_article.field_text
 field_name: field_text
 entity_type: node
 bundle: news_article
-label: Kicker
+label: 'Author (Text)'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

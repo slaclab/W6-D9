@@ -1,17 +1,10 @@
-uuid: 2afed157-6f8b-45eb-851e-dfbdfe8c848b
+uuid: 4e2b453d-1052-431f-8783-77e8232856ae
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_text
     - node.type.person
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 id: node.person.field_text
 field_name: field_text
 entity_type: node
@@ -19,8 +12,8 @@ bundle: person
 label: Kicker
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

@@ -293,14 +293,16 @@ $card-padding: rem(gesso-spacing(4));
   }
 
   &.c-card--align-right {
-    .c-card__body {
-      align-items: flex-end;
-      display: flex;
-      flex-direction: column;
-    }
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      .c-card__body {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+      }
 
-    .c-card__type {
-      align-self: flex-end;
+      .c-card__type {
+        align-self: flex-end;
+      }
     }
   }
 

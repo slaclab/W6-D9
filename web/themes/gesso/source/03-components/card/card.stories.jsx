@@ -106,6 +106,7 @@ ExtraLargeCardWithRightText.args = {
   alignment: 'right',
   modifier_classes: 'c-card--xlarge',
   media: '<img src="https://picsum.photos/id/944/1340/600" alt="">',
+  kicker: false,
 };
 
 const ExtraLargeCardWithLeftText = args =>

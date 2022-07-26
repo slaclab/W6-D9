@@ -1,5 +1,3 @@
-import '@lottiefiles/lottie-player';
-
 function animateIcon(parentElem) {
   const lottiePlayer = parentElem.querySelector('lottie-player');
   if (lottiePlayer) {

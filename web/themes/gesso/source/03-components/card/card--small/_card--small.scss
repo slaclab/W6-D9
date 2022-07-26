@@ -20,4 +20,10 @@
   .c-kicker {
     margin-bottom: 0;
   }
+
+  .c-card__description {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

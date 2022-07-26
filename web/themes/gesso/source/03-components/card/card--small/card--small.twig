@@ -20,6 +20,9 @@
         {{- title -}}
       {% endif %}
     </h3>
+    {% if description %}
+      <div class="c-card__description">{{ description }}</div>
+    {% endif %}
     <div class="c-card__media">
       {{ media }}
     </div>

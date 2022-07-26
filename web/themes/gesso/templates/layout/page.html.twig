@@ -37,6 +37,7 @@
  * - page.content: The main content of the current page.
  * - page.postscript: Items for the postscript content region.
  * - page.footer: Items for the footer region.
+ * - page.subfooter: Items for the subfooter region.
  *
  * @see template_preprocess_page()
  * @see html.html.twig
@@ -66,4 +67,5 @@
   </main>
 
   {{ page.footer }}
+  {{ page.subfooter }}
 {% endblock %}

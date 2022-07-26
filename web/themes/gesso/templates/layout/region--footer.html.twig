@@ -12,14 +12,41 @@
  * @see template_preprocess_region()
  */
 #}
-{% if content %}
-  {% embed '@layouts/footer/footer.twig' with {
-    'has_constrain': true,
-  } %}
+{% embed '@layouts/footer/footer.twig' with {
+  'has_constrain': true,
+} %}
 
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+  {% block footer_contact %}
+    {{ content }}
+  {% endblock %}
 
-  {% endembed %}
-{% endif %}
+  {% block footer_signup %}
+    <h3 class="h6 l-footer__signup-title">Sign up for our email</h3>
+    <p>Monthly newsletter for cutting edge science, SLAC milestones and events.</p>
+    <form action="#" class="l-footer__signup-form is-inline">
+      {% set form_input %}
+        {% include '@components/form-item/_input.twig' with {
+          'type': 'email',
+          'placeholder': 'email address',
+        }  %}
+      {% endset %}
+      {% include '@components/form-item/form-item.twig' with {
+        'children': form_input,
+      } %}
+      <button type="submit" class="c-button c-button--outline-secondary">Sign up</button>
+    </form>
+  {% endblock %}
+
+  {% block footer_tagline %}
+    {{ drupal_entity('block', 'footer_tagline', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_menu %}
+    {{ drupal_entity('block', 'footer_menu', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_utility_menu %}
+    {{ drupal_entity('block', 'footer_utility', check_access=false) }}
+  {% endblock %}
+
+{% endembed %}

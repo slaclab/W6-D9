@@ -33,5 +33,6 @@ regions:
   content: Content
   postscript: Postscript
   footer: Footer
+  subfooter: Subfooter
   disabled: Disabled
   page_bottom: 'Page bottom'

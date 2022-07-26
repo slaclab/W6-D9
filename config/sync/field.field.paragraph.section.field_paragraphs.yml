@@ -4,7 +4,12 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
 id: paragraph.section.field_paragraphs
@@ -20,30 +25,47 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
-    negate: 0
+    target_bundles:
+      accordion_item: accordion_item
+      article_hero: article_hero
+      image_hero: image_hero
+      microsite_hero: microsite_hero
+      video_hero: video_hero
+    negate: 1
     target_bundles_drag_drop:
       accordion:
         weight: 13
         enabled: false
       accordion_item:
         weight: 14
-        enabled: false
+        enabled: true
       article_hero:
         weight: 15
+        enabled: true
+      card:
+        weight: 27
+        enabled: false
+      extra_large_card:
+        weight: 28
+        enabled: false
+      fifty_fifty:
+        weight: 29
         enabled: false
       grid:
         weight: 17
+        enabled: false
+      image_carousel:
+        weight: 31
         enabled: false
       image_embed:
         weight: 16
         enabled: false
       image_hero:
         weight: 17
-        enabled: false
+        enabled: true
       microsite_hero:
         weight: 18
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 19
         enabled: false
@@ -56,8 +78,26 @@ settings:
       section:
         weight: 22
         enabled: false
+      small_cad_with_icon:
+        weight: 39
+        enabled: false
+      small_card_with_image:
+        weight: 40
+        enabled: false
+      small_card_with_solid_background:
+        weight: 41
+        enabled: false
+      tout:
+        weight: 42
+        enabled: false
       video_hero:
         weight: 23
+        enabled: true
+      video_lightbox:
+        weight: 44
+        enabled: false
+      wide_card:
+        weight: 45
         enabled: false
       wysiwyg:
         weight: 24

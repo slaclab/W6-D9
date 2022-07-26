@@ -1,9 +1,12 @@
 ---
 is_event: true
-is_multiday: true
 type: 'Upcoming Event'
-event_month: 'Aug'
-event_day: '8-19'
+start_date:
+  month: 'Aug'
+  day: '8'
+end_date:
+  month: 'Aug'
+  day: '19'
 kicker: 'Public Lecture'
 event_date: 'Monday, August 8, 2022 - Friday, August 19, 2022'
 event_location: '123 Fastest Way, Menlo Park, CA 94025'

@@ -1,0 +1,4 @@
+{% include '@components/wide-card/wide-card.twig' with {
+  image: content.field_image,
+  content: content|without('field_image')
+} %}

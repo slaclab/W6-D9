@@ -24,6 +24,13 @@ accordion:
     - gesso/common
     - core/drupal
 
+animated_icon:
+  css:
+    theme:
+      dist/css/animated-icon.css: {}
+  dependencies:
+    - lottiefiles_field/lottiefiles
+
 back_to_top:
   css:
     theme:
@@ -96,6 +103,16 @@ hero_inline_image:
   css:
     theme:
       dist/css/hero-inline-image.css: {}
+
+icon_card:
+  css:
+    theme:
+      dist/css/icon-card.css: {}
+  js:
+    dist/js/icon-card.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 mega_menu:
   css:

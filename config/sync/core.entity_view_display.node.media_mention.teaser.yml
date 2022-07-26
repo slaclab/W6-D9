@@ -1,0 +1,22 @@
+uuid: c16dac1f-3489-4c4e-a355-a055ecbdf713
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.media_mention.field_link
+    - node.type.media_mention
+  module:
+    - user
+id: node.media_mention.teaser
+targetEntityType: node
+bundle: media_mention
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_link: true

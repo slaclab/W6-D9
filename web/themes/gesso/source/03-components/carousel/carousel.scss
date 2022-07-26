@@ -4,9 +4,9 @@
 @use '00-config' as *;
 
 .c-carousel {
+  position: relative;
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     @include layout-half-full-bleed;
-    position: relative;
   }
 }
 
@@ -59,6 +59,7 @@
   border-radius: 50%;
   box-shadow: none;
   color: inherit;
+  cursor: pointer;
   height: rem(12px);
   width: rem(12px);
 
@@ -85,5 +86,19 @@
   border: 0;
   box-shadow: none;
   color: inherit;
+  cursor: pointer;
   padding: 0;
+}
+
+.tns-item {
+  .c-figure__caption {
+    opacity: 0;
+    transition: 0.35s opacity 0.15s;
+  }
+}
+
+.tns-slide-active:not(.tns-slide-active + .tns-slide-active) {
+  .c-figure__caption {
+    opacity: 1;
+  }
 }

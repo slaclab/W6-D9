@@ -69,7 +69,7 @@
 
 {% set paragraph_content %}
   {%- block paragraph_content -%}
-    {{ content|without('field_text', 'field_short_text', 'field_long_text', 'field_button_links') }}
+    {{ content|without('field_text', 'field_short_text', 'field_long_text', 'field_button_links', 'field_link') }}
   {%- endblock -%}
 {% endset %}
 
@@ -81,6 +81,7 @@
   'section_title': content.field_short_text|field_value,
   'section_title_element': paragraph_title_element,
   'section_intro': content.field_long_text|field_value,
+  'section_title_url': content.field_link|field_value,
   'section_buttons': content.field_button_links|field_value
 } %}
 

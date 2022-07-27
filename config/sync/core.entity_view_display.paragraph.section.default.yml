@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.section.field_button_links
+    - field.field.paragraph.section.field_link
     - field.field.paragraph.section.field_long_text
     - field.field.paragraph.section.field_paragraphs
     - field.field.paragraph.section.field_short_text
@@ -12,6 +13,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - gesso_helper
+    - link
     - text
 id: paragraph.section.default
 targetEntityType: paragraph
@@ -30,14 +32,26 @@ content:
       button_size: Standard
       button_style: Primary
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_long_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -46,7 +60,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_short_text:
     type: string

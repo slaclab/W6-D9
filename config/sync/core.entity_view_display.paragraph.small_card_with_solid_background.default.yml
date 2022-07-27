@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.small_card_with_solid_background.field_footer
     - field.field.paragraph.small_card_with_solid_background.field_link
-    - field.field.paragraph.small_card_with_solid_background.field_long_text
     - paragraphs.paragraphs_type.small_card_with_solid_background
   module:
     - link
@@ -33,12 +32,5 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_long_text:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
     region: content
 hidden: {  }

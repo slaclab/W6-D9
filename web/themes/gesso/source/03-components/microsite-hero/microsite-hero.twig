@@ -10,7 +10,7 @@
   {% block logo %}
     <div class="l-header__brand c-microsite-hero__brand">
       <a href="{{ url('<front>') }}">
-        {% include '@layouts/header/_slac-logo.twig' %}
+        {% include '@layouts/header/_slac-logo.twig' with { modifier_classes: false } %}
       </a>
       <h1 class="c-microsite-hero__title">
         {{ microsite_hero_title }}
@@ -30,7 +30,7 @@
         </li>
       {% endif %}
     </ul>
-    {% include '@components/search/search.twig' %}
+    {% include '@components/search/search.twig' with { modifier_classes: false } %}
     <h1 class="c-microsite-hero__title c-microsite-hero__title--mobile">
       {{ microsite_hero_title }}
     </h1>

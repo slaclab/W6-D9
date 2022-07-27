@@ -1,5 +1,6 @@
 ---
 image: '<img src="https://picsum.photos/280/280?image=237" alt="">'
+title: ''
 content: |-
   <p>The <a href="#">linear accelerator (linac)</a>, the longest modern building on Earth.
   The building above ground, nearly 2 miles long, houses klystrons that generate

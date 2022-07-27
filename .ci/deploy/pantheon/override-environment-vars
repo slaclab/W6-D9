@@ -29,12 +29,12 @@ CI_BRANCH=${GITHUB_REF##*/}
 # If we are on the default branch.
 if [[ ${CI_BRANCH} == ${DEFAULT_BRANCH} ]] ; then
   # Use dev as the environment.
-	DEFAULT_ENV=${DEFAULT_ENV:-dev}
+	DEFAULT_ENV=dev
 elif [[ ${CI_BRANCH} == "integration" ]] ; then
-  # Otherwise, name the environment after the CI build number.
+  # Use the integration multidev for the integration branch..
 	DEFAULT_ENV=integration
 elif [[ ${CI_BRANCH} == "main" ]] ; then
-  # Otherwise, name the environment after the CI build number.
+  # Use the stage environment for the main branch.
   DEFAULT_ENV=stage
 fi
 

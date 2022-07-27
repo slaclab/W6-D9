@@ -15,9 +15,6 @@ set -eo pipefail
 # Set up BASH_ENV if it was not set for us.
 BASH_ENV=${BASH_ENV:-$HOME/.bashrc}
 
-# By default, we will make the main branch live.
-DEFAULT_BRANCH=live
-
 # Set CI_BRANCH based on the branch we are currently on.
 # Example syntax:
 # $ GITHUB_REF=refs/heads/feature-branch-1
@@ -27,7 +24,7 @@ DEFAULT_BRANCH=live
 CI_BRANCH=${GITHUB_REF##*/}
 
 # If we are on the default branch.
-if [[ ${CI_BRANCH} == ${DEFAULT_BRANCH} ]] ; then
+if [[ ${CI_BRANCH} == "live" ]] ; then
   # Use dev as the environment.
 	DEFAULT_ENV=dev
 elif [[ ${CI_BRANCH} == "integration" ]] ; then
@@ -45,7 +42,6 @@ TERMINUS_ENV=$DEFAULT_ENV
 #=====================================================================================================================
 (
   echo "export DEFAULT_ENV='$DEFAULT_ENV'"
-  echo "export DEFAULT_BRANCH='$DEFAULT_BRANCH'"
   echo "export CI_BRANCH='$CI_BRANCH'"
   echo "export TERMINUS_ENV='$TERMINUS_ENV'"
 ) >> $BASH_ENV

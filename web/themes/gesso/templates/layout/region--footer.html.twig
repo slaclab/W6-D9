@@ -21,20 +21,7 @@
   {% endblock %}
 
   {% block footer_signup %}
-    <h3 class="h6 l-footer__signup-title">Sign up for our email</h3>
-    <p>Monthly newsletter for cutting edge science, SLAC milestones and events.</p>
-    <form action="#" class="l-footer__signup-form is-inline">
-      {% set form_input %}
-        {% include '@components/form-item/_input.twig' with {
-          'type': 'email',
-          'placeholder': 'email address',
-        }  %}
-      {% endset %}
-      {% include '@components/form-item/form-item.twig' with {
-        'children': form_input,
-      } %}
-      <button type="submit" class="c-button c-button--outline-secondary">Sign up</button>
-    </form>
+    {{ drupal_entity('block', 'footer_signup', check_access=false) }}
   {% endblock %}
 
   {% block footer_tagline %}

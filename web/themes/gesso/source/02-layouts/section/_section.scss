@@ -98,9 +98,18 @@
       rgba(gesso-grayscale(black), 0.93),
       rgba(0, 0, 0, 0) 407px
     ),
-    url('images/backgrounds/Mask-Background.jpg');
+    url('images/backgrounds/mask-background-mobile.jpg');
   background-position: bottom center;
   background-size: cover;
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(gesso-grayscale(black), 0.93),
+        rgba(0, 0, 0, 0) 407px
+      ),
+      url('images/backgrounds/Mask-Background.jpg');
+  }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     margin-bottom: 120px;
@@ -151,6 +160,7 @@
   background-image: url('images/backgrounds/g271.svg');
   background-position: bottom right;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .l-section--yellow {

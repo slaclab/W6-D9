@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
-    - paragraphs.paragraphs_type.small_cad_with_icon
+    - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.tout
@@ -43,7 +43,7 @@ settings:
       image_carousel: image_carousel
       promo_box: promo_box
       quote: quote
-      small_cad_with_icon: small_cad_with_icon
+      small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
       tout: tout
@@ -96,7 +96,7 @@ settings:
       section:
         weight: 38
         enabled: false
-      small_cad_with_icon:
+      small_card_with_icon:
         weight: 39
         enabled: true
       small_card_with_image:

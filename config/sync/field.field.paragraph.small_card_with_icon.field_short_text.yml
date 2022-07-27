@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_short_text
-    - paragraphs.paragraphs_type.small_cad_with_icon
-id: paragraph.small_cad_with_icon.field_short_text
+    - paragraphs.paragraphs_type.small_card_with_icon
+id: paragraph.small_card_with_icon.field_short_text
 field_name: field_short_text
 entity_type: paragraph
-bundle: small_cad_with_icon
+bundle: small_card_with_icon
 label: Title
 description: ''
 required: false

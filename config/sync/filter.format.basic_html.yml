@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - token_filter
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -14,7 +15,7 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: 7
     settings:
       allowed_html: '<cite> <dl> <dt> <dd> <span> <a hreflang href> <blockquote cite> <ul type> <ol type start> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <br> <p> <strong> <em> <s> <sub> <sup> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
       filter_html_help: false
@@ -23,23 +24,43 @@ filters:
     id: filter_align
     provider: filter
     status: true
-    weight: 7
+    weight: 8
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: 8
+    weight: 9
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: true
-    weight: 9
+    weight: 11
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: 11
+    weight: -10
     settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: 10
+    settings:
+      filter_url_length: 72
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: 0
+    settings: {  }
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: true
+    weight: -50
+    settings:
+      replace_empty: '0'

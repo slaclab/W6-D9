@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: footer_tagline
 label: 'Footer tagline'
-fieldset: 'Footer tagline'
+fieldset: 'Footer Settings'
 multiple: false

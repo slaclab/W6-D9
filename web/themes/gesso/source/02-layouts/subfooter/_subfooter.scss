@@ -31,19 +31,26 @@
 
 .l-subfooter__content {
   flex: 1;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .l-subfooter__logos {
+  display: flex;
+  flex-wrap: nowrap;
+  order: -999;
   text-align: center;
-  @include breakpoint(gesso-breakpoint(tablet)) {
-    display: flex;
-    flex-wrap: nowrap;
-    text-align: right;
 
-    > * + * {
-      border-left: 1px solid currentColor;
-      margin-left: rem(gesso-spacing(1.5));
-      padding-left: rem(gesso-spacing(1.5));
-    }
+  > * + * {
+    border-left: 1px solid currentColor;
+    margin-left: rem(gesso-spacing(1.5));
+    padding-left: rem(gesso-spacing(1.5));
+  }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    order: initial;
+    text-align: right;
   }
 }

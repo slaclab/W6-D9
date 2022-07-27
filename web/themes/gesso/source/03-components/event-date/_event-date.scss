@@ -4,7 +4,9 @@
 
 .c-event-date {
   @include font-family-secondary;
+  align-items: flex-end;
   color: gesso-grayscale(white);
+  display: flex;
   font-size: 60px;
   font-weight: gesso-font-weight(black);
   inset: 30px auto auto 30px;

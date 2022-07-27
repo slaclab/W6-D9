@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.fifty_fifty.field_paragraphs
-    - field.field.paragraph.fifty_fifty.field_paragraphs2
+    - field.field.paragraph.fifty_fifty.field_paragraph
+    - field.field.paragraph.fifty_fifty.field_paragraph_2
     - paragraphs.paragraphs_type.fifty_fifty
   module:
     - entity_reference_revisions
@@ -13,7 +13,7 @@ targetEntityType: paragraph
 bundle: fifty_fifty
 mode: default
 content:
-  field_paragraphs:
+  field_paragraph:
     type: entity_reference_revisions_entity_view
     label: above
     settings:
@@ -22,7 +22,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_paragraphs2:
+  field_paragraph_2:
     type: entity_reference_revisions_entity_view
     label: above
     settings:

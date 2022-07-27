@@ -61,6 +61,8 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
+  token_filter: 0
   toolbar: 0
   tour: 0
   twig_field_value: 0

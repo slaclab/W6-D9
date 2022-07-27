@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_lottiefile
-    - paragraphs.paragraphs_type.small_cad_with_icon
+    - paragraphs.paragraphs_type.small_card_with_icon
   module:
     - lottiefiles_field
-id: paragraph.small_cad_with_icon.field_lottiefile
+id: paragraph.small_card_with_icon.field_lottiefile
 field_name: field_lottiefile
 entity_type: paragraph
-bundle: small_cad_with_icon
+bundle: small_card_with_icon
 label: Icon
 description: ''
 required: true

@@ -11,8 +11,8 @@ const settings = {
     controls: {
       include: [
         'event_type',
-        'month',
-        'day',
+        'start_date',
+        'end_date',
         'image_url',
         'map_link_text',
         'calendar_link_text',
@@ -41,10 +41,32 @@ const EventDetailsMultiday = args =>
 EventDetailsMultiday.args = {
   ...globalData,
   ...data,
-  is_multiday: true,
-  day: '19-22',
+  end_date: {
+    month: 'Apr',
+    day: '22',
+  },
   calendar_link_text: 'Thursday, April 19, 2022 - Saturday, April 22, 2022',
 };
 
+const EventDetailsMultimonth = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+EventDetailsMultimonth.args = {
+  ...globalData,
+  ...data,
+  start_date: {
+    month: 'Sep',
+    day: '26',
+  },
+  end_date: {
+    month: 'Oct',
+    day: '9',
+  },
+  calendar_link_text: 'Monday, September 28 - Friday, October 9, 2020',
+};
+
 export default settings;
-export { EventDetails, EventDetailsMultiday };
+export { EventDetails, EventDetailsMultiday, EventDetailsMultimonth };

@@ -1,20 +1,20 @@
-uuid: 2d60af9d-7d30-4f2f-9c18-cb36047c0bf3
+uuid: 3a9e5b81-48aa-4a16-ab39-6f075ae55581
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraphs
+    - field.storage.paragraph.field_paragraph
     - paragraphs.paragraphs_type.fifty_fifty
   module:
     - entity_reference_revisions
-id: paragraph.fifty_fifty.field_paragraphs
-field_name: field_paragraphs
+id: paragraph.fifty_fifty.field_paragraph
+field_name: field_paragraph
 entity_type: paragraph
 bundle: fifty_fifty
 label: Content
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,45 +24,72 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 15
-        enabled: false
-      accordion_item:
-        weight: 16
-        enabled: false
-      article_hero:
-        weight: 17
-        enabled: false
-      fifty_fifty:
-        weight: 18
-        enabled: false
-      image_carousel:
-        weight: 19
-        enabled: false
-      image_embed:
-        weight: 20
-        enabled: false
-      image_hero:
-        weight: 21
-        enabled: false
-      microsite_hero:
-        weight: 22
-        enabled: false
-      overlap_image:
-        weight: 23
-        enabled: false
-      promo_box:
         weight: 24
         enabled: false
-      quote:
+      accordion_item:
         weight: 25
         enabled: false
-      video_hero:
+      article_hero:
         weight: 26
         enabled: false
-      video_lightbox:
+      card:
         weight: 27
         enabled: false
-      wysiwyg:
+      extra_large_card:
         weight: 28
+        enabled: false
+      fifty_fifty:
+        weight: 29
+        enabled: false
+      grid:
+        weight: 30
+        enabled: false
+      image_carousel:
+        weight: 31
+        enabled: false
+      image_embed:
+        weight: 32
+        enabled: false
+      image_hero:
+        weight: 33
+        enabled: false
+      microsite_hero:
+        weight: 34
+        enabled: false
+      overlap_image:
+        weight: 35
+        enabled: false
+      promo_box:
+        weight: 36
+        enabled: false
+      quote:
+        weight: 37
+        enabled: false
+      section:
+        weight: 38
+        enabled: false
+      small_card_with_icon:
+        weight: 39
+        enabled: false
+      small_card_with_image:
+        weight: 40
+        enabled: false
+      small_card_with_solid_background:
+        weight: 41
+        enabled: false
+      tout:
+        weight: 42
+        enabled: false
+      video_hero:
+        weight: 43
+        enabled: false
+      video_lightbox:
+        weight: 44
+        enabled: false
+      wide_card:
+        weight: 45
+        enabled: false
+      wysiwyg:
+        weight: 46
         enabled: false
 field_type: entity_reference_revisions

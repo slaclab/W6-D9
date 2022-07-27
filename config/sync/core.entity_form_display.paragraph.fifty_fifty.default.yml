@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.fifty_fifty.field_paragraphs
-    - field.field.paragraph.fifty_fifty.field_paragraphs2
+    - field.field.paragraph.fifty_fifty.field_paragraph
+    - field.field.paragraph.fifty_fifty.field_paragraph_2
     - paragraphs.paragraphs_type.fifty_fifty
   module:
     - paragraphs
@@ -13,7 +13,7 @@ targetEntityType: paragraph
 bundle: fifty_fifty
 mode: default
 content:
-  field_paragraphs:
+  field_paragraph:
     type: paragraphs
     weight: 0
     region: content
@@ -31,7 +31,7 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_paragraphs2:
+  field_paragraph_2:
     type: paragraphs
     weight: 1
     region: content

@@ -13,10 +13,8 @@
       <img src="{{ image_url }}" alt="{{ image_alt }}">
       <div class="c-card__gradient"></div>
     {% endif %}
-    {% if month and day %}
-      {% include '@components/event-date/event-date.twig' with {
-        modifier_classes: is_multiday ? 'c-event-date--multiday' : false
-      } %}
+    {% if start_date %}
+      {% include '@components/event-date/event-date.twig' %}
     {% endif %}
   </div>
 

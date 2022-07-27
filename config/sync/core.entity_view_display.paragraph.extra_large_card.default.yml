@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.extra_large_card.field_body
     - field.field.paragraph.extra_large_card.field_image
     - field.field.paragraph.extra_large_card.field_link
-    - field.field.paragraph.extra_large_card.field_long_text
+    - field.field.paragraph.extra_large_card.field_short_text
     - field.field.paragraph.extra_large_card.field_text
     - paragraphs.paragraphs_type.extra_large_card
   module:
@@ -44,12 +44,13 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_long_text:
-    type: text_default
+  field_short_text:
+    type: string
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 5
     region: content
   field_text:
     type: string

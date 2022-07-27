@@ -1,9 +1,9 @@
-uuid: 29b26772-3d6c-46b5-940c-4acf7075507c
+uuid: 1ceb8348-ab20-49ed-81f4-a76a016c144d
 langcode: en
 status: true
 dependencies: {  }
-id: small_cad_with_icon
-label: 'Small Cad with Icon'
+id: small_card_with_icon
+label: 'Small Card with Icon'
 icon_uuid: null
 icon_default: null
 description: ''

@@ -12,7 +12,8 @@
     {% endif %}
 
     <div class="l-media__content">
+      {% if title %}<h2>{{ title }}</h2>{% endif %}
       {{ content }}
     </div>
   </div>
-</article>
+</div>

@@ -7,7 +7,7 @@
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     position: absolute;
-    right: 0;
+    right: 8px;
     top: rem(gesso-spacing(7));
     z-index: gesso-z-index(social-share);
   }
@@ -31,6 +31,7 @@
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     display: block;
+    height: auto;
     transform: translateX(60px);
     transition: all gesso-duration(standard) gesso-easing(ease-out);
     width: rem(94px);
@@ -38,7 +39,9 @@
 }
 
 .c-social-share__icon {
-  margin-right: rem(gesso-spacing(1));
+  height: rem(18px);
+  margin-right: rem(12px);
+  width: rem(18px);
 
   .c-social-share__facebook:hover & {
     color: #3b5998;

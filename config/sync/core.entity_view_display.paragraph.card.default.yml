@@ -60,11 +60,11 @@ content:
     region: content
   field_short_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_text:
     type: string

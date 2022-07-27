@@ -16,12 +16,12 @@
 
   & + & {
     @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
-      margin-left: rem(gesso-spacing(1)); // LTR
+      margin-left: rem(gesso-spacing(2)); // LTR
 
       @if $support-for-rtl {
         [dir='rtl'] & {
           margin-left: 0;
-          margin-right: rem(gesso-spacing(1));
+          margin-right: rem(gesso-spacing(2));
         }
       }
     }
@@ -35,6 +35,10 @@
     .c-icon {
       color: inherit;
     }
+  }
+
+  .c-wysiwyg & {
+    margin-top: rem(gesso-spacing(2));
   }
 }
 

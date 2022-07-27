@@ -1,8 +1,8 @@
 {% embed '@components/icon-card/icon-card.twig' with {
-  card_title: content.field_long_text|render|striptags|trim,
+  card_title: content.field_short_text|field_value,
   url: content.field_link|field_value,
   kicker: content.field_text|field_value,
-  card_description: content|without('field_long_text', 'field_link', 'field_text', 'field_lottiefile')
+  card_description: content|without('field_short_text', 'field_link', 'field_text', 'field_lottiefile')
 } %}
   {% block animated_icon %}
     {{ content.field_lottiefile }}

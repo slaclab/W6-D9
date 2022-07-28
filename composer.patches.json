@@ -1,7 +1,7 @@
 {
-    "patches": {
-      "drupal/HTML5_validation": {
-        "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch"
-        }
-    }
+  "patches": {
+    "drupal/core": {
+      "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch"
+     }
+  }
 }

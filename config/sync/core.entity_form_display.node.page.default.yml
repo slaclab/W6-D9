@@ -11,23 +11,25 @@ dependencies:
     - node.type.page
   module:
     - field_group
-    - layout_paragraphs
+    - paragraphs
     - path
     - text
 third_party_settings:
   field_group:
     group_page_content:
-      children: {  }
+      children:
+        - group_metadata
+        - group_main_content
       label: 'Page Content'
       region: content
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        direction: vertical
+        direction: horizontal
         width_breakpoint: 640
     group_metadata:
       children:
@@ -36,14 +38,30 @@ third_party_settings:
         - field_tags
       label: Metadata
       region: content
-      parent_name: ''
-      weight: 8
+      parent_name: group_page_content
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
         formatter: closed
+        description: ''
+        required_fields: true
+    group_main_content:
+      children:
+        - field_hero_paragraph
+        - field_paragraphs
+      label: 'Main Content'
+      region: hidden
+      parent_name: group_page_content
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
         description: ''
         required_fields: true
 _core:
@@ -60,26 +78,44 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_hero_paragraph:
-    type: layout_paragraphs
-    weight: 6
+    type: paragraphs
+    weight: 11
     region: content
     settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_paragraphs:
-    type: layout_paragraphs
-    weight: 7
+    type: paragraphs
+    weight: 12
     region: content
     settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -89,7 +125,7 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
-    weight: 10
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -105,20 +141,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -132,7 +168,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60

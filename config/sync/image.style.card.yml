@@ -1,0 +1,15 @@
+uuid: 778ffdd4-9b0c-4f85-bbfd-b39c1bf4f2c6
+langcode: en
+status: true
+dependencies: {  }
+name: card
+label: 'Card (800x500)'
+effects:
+  d5c105cd-860f-4520-a09e-8a1113146c58:
+    uuid: d5c105cd-860f-4520-a09e-8a1113146c58
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 500
+      anchor: center-center

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.small_card_with_solid_background.field_footer
     - field.field.paragraph.small_card_with_solid_background.field_link
+    - field.field.paragraph.small_card_with_solid_background.field_short_text
     - paragraphs.paragraphs_type.small_card_with_solid_background
   module:
     - link
@@ -29,6 +30,14 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

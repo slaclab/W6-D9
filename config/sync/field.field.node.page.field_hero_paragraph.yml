@@ -1,26 +1,34 @@
-uuid: 3a9e5b81-48aa-4a16-ab39-6f075ae55581
+uuid: 907ea9dd-7e06-4e53-a176-33c3d8fac271
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph
-    - paragraphs.paragraphs_type.fifty_fifty
+    - field.storage.node.field_hero_paragraph
+    - node.type.page
+    - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
-id: paragraph.fifty_fifty.field_paragraph
-field_name: field_paragraph
-entity_type: paragraph
-bundle: fifty_fifty
-label: Content
+id: node.page.field_hero_paragraph
+field_name: field_hero_paragraph
+entity_type: node
+bundle: page
+label: Hero
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      article_hero: article_hero
+      image_hero: image_hero
+      microsite_hero: microsite_hero
+      video_hero: video_hero
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -31,7 +39,7 @@ settings:
         enabled: false
       article_hero:
         weight: 26
-        enabled: false
+        enabled: true
       card:
         weight: 27
         enabled: false
@@ -52,10 +60,10 @@ settings:
         enabled: false
       image_hero:
         weight: 33
-        enabled: false
+        enabled: true
       microsite_hero:
         weight: 34
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 35
         enabled: false
@@ -68,7 +76,7 @@ settings:
       section:
         weight: 38
         enabled: false
-      small_card_with_iconn:
+      small_cad_with_icon:
         weight: 39
         enabled: false
       small_card_with_image:
@@ -82,7 +90,7 @@ settings:
         enabled: false
       video_hero:
         weight: 43
-        enabled: false
+        enabled: true
       video_lightbox:
         weight: 44
         enabled: false

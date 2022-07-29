@@ -10,7 +10,7 @@ field_name: field_boolean
 entity_type: node
 bundle: event
 label: 'Is external event?'
-description: ''
+description: 'If checked, then this event will not have a detail page and all references will link to the URL included in the external link field.'
 required: false
 translatable: false
 default_value:

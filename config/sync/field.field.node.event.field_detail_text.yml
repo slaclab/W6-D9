@@ -17,7 +17,7 @@ field_name: field_detail_text
 entity_type: node
 bundle: event
 label: 'CTA Details'
-description: ''
+description: 'If you need to include additional information about this event below the CTA buttons, enter it here.'
 required: false
 translatable: false
 default_value: {  }

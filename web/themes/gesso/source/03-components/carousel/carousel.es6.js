@@ -23,18 +23,21 @@ Drupal.behaviors.carousel = {
         nextButton: carousel.parentNode.querySelector('.c-carousel__next'),
         prevButton: carousel.parentNode.querySelector('.c-carousel__prev'),
         responsive: {
-          1024: {
-            gutter: parseInt(SITE_MARGINS.desktop, 10),
-          },
           1200: {
             autoWidth: false,
             fixedWidth: 920,
+            gutter: parseInt(SITE_MARGINS.desktop, 10),
           },
         },
         slideBy: 1,
       });
-      const handleResize = debounce(() => {
+      slider.events.on('newBreakpointEnd', () => {
         slider.refresh();
+      });
+      const handleResize = debounce(() => {
+        if (slider && slider.refresh) {
+          slider.refresh();
+        }
       }, 16);
       window.addEventListener('resize', handleResize);
     });

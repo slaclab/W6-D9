@@ -332,4 +332,12 @@ $card-padding: rem(gesso-spacing(4));
   &:focus-within {
     box-shadow: none;
   }
+
+  .c-card__body {
+    padding-bottom: 0;
+  }
+
+  .c-card__content p:last-child {
+    margin-bottom: 0;
+  }
 }

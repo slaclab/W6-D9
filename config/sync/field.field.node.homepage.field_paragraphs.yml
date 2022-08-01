@@ -5,19 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.homepage
-    - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.card
-    - paragraphs.paragraphs_type.extra_large_card
-    - paragraphs.paragraphs_type.fifty_fifty
-    - paragraphs.paragraphs_type.grid
-    - paragraphs.paragraphs_type.image_carousel
-    - paragraphs.paragraphs_type.small_card_with_icon
-    - paragraphs.paragraphs_type.small_card_with_image
-    - paragraphs.paragraphs_type.small_card_with_solid_background
-    - paragraphs.paragraphs_type.tout
-    - paragraphs.paragraphs_type.video_lightbox
-    - paragraphs.paragraphs_type.wide_card
-    - paragraphs.paragraphs_type.wysiwyg
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
 id: node.homepage.field_paragraphs
@@ -34,57 +26,49 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      accordion: accordion
-      card: card
-      extra_large_card: extra_large_card
-      fifty_fifty: fifty_fifty
-      grid: grid
-      image_carousel: image_carousel
-      small_card_with_icon: small_card_with_icon
-      small_card_with_image: small_card_with_image
-      small_card_with_solid_background: small_card_with_solid_background
-      tout: tout
-      video_lightbox: video_lightbox
-      wide_card: wide_card
-      wysiwyg: wysiwyg
-    negate: 0
+      accordion_item: accordion_item
+      article_hero: article_hero
+      image_hero: image_hero
+      microsite_hero: microsite_hero
+      video_hero: video_hero
+    negate: 1
     target_bundles_drag_drop:
       accordion:
         weight: 24
-        enabled: true
+        enabled: false
       accordion_item:
         weight: 25
-        enabled: false
+        enabled: true
       article_hero:
         weight: 26
-        enabled: false
+        enabled: true
       card:
         weight: 27
-        enabled: true
+        enabled: false
       embed_block:
         weight: 29
         enabled: false
       extra_large_card:
         weight: 28
-        enabled: true
+        enabled: false
       fifty_fifty:
         weight: 29
-        enabled: true
+        enabled: false
       grid:
         weight: 30
-        enabled: true
+        enabled: false
       image_carousel:
         weight: 31
-        enabled: true
+        enabled: false
       image_embed:
         weight: 32
         enabled: false
       image_hero:
         weight: 33
-        enabled: false
+        enabled: true
       microsite_hero:
         weight: 34
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 35
         enabled: false
@@ -99,26 +83,26 @@ settings:
         enabled: false
       small_card_with_icon:
         weight: 39
-        enabled: true
+        enabled: false
       small_card_with_image:
         weight: 40
-        enabled: true
+        enabled: false
       small_card_with_solid_background:
         weight: 41
-        enabled: true
+        enabled: false
       tout:
         weight: 42
-        enabled: true
+        enabled: false
       video_hero:
         weight: 43
-        enabled: false
+        enabled: true
       video_lightbox:
         weight: 44
-        enabled: true
+        enabled: false
       wide_card:
         weight: 45
-        enabled: true
+        enabled: false
       wysiwyg:
         weight: 46
-        enabled: true
+        enabled: false
 field_type: entity_reference_revisions

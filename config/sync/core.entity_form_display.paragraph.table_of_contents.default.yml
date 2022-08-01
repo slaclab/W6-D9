@@ -1,0 +1,27 @@
+uuid: 8b41baf8-4e70-4aa5-aad9-8edd79054bbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.table_of_contents.field_paragraphs
+    - paragraphs.paragraphs_type.table_of_contents
+  module:
+    - entity_reference_revisions
+id: paragraph.table_of_contents.default
+targetEntityType: paragraph
+bundle: table_of_contents
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

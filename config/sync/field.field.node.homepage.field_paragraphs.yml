@@ -11,7 +11,6 @@ dependencies:
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.grid
     - paragraphs.paragraphs_type.image_carousel
-    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
@@ -41,7 +40,6 @@ settings:
       fifty_fifty: fifty_fifty
       grid: grid
       image_carousel: image_carousel
-      section: section
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
@@ -98,7 +96,7 @@ settings:
         enabled: false
       section:
         weight: 38
-        enabled: true
+        enabled: false
       small_card_with_icon:
         weight: 39
         enabled: true

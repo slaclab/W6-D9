@@ -1,7 +1,7 @@
 // @file
 // Component: c-topic-grid
 @use '00-config' as *;
-$gutter: 2%;
+$gutter: clamp(10px, 2%, gesso-get-map(gutter-width));
 
 .c-topic-grid {
   &::after {

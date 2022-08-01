@@ -7,9 +7,8 @@ dependencies:
     - node.type.news_article
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.image_embed
-    - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
-    - paragraphs.paragraphs_type.video_lightbox
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -29,9 +28,8 @@ settings:
     target_bundles:
       fifty_fifty: fifty_fifty
       image_embed: image_embed
-      promo_box: promo_box
       quote: quote
-      video_lightbox: video_lightbox
+      section: section
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -43,6 +41,12 @@ settings:
         enabled: false
       article_hero:
         weight: 19
+        enabled: false
+      card:
+        weight: 27
+        enabled: false
+      extra_large_card:
+        weight: 28
         enabled: false
       fifty_fifty:
         weight: 20
@@ -67,12 +71,21 @@ settings:
         enabled: false
       promo_box:
         weight: 27
-        enabled: true
+        enabled: false
       quote:
         weight: 28
         enabled: true
       section:
         weight: 29
+        enabled: true
+      small_card_with_icon:
+        weight: 39
+        enabled: false
+      small_card_with_image:
+        weight: 40
+        enabled: false
+      small_card_with_solid_background:
+        weight: 41
         enabled: false
       tout:
         weight: 31
@@ -82,7 +95,10 @@ settings:
         enabled: false
       video_lightbox:
         weight: 31
-        enabled: true
+        enabled: false
+      wide_card:
+        weight: 45
+        enabled: false
       wysiwyg:
         weight: 32
         enabled: true

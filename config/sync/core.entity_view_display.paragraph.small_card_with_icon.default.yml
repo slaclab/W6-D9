@@ -20,41 +20,41 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_link:
     type: link
-    label: above
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 4
     region: content
   field_lottiefile:
     type: lottiefiles_field
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_short_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

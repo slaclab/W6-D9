@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.grid
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.section
@@ -28,6 +29,7 @@ settings:
     target_bundles:
       accordion_item: accordion_item
       article_hero: article_hero
+      grid: grid
       image_hero: image_hero
       microsite_hero: microsite_hero
       video_hero: video_hero
@@ -53,7 +55,7 @@ settings:
         enabled: false
       grid:
         weight: 17
-        enabled: false
+        enabled: true
       image_carousel:
         weight: 31
         enabled: false

@@ -50,6 +50,8 @@ module:
   migrate: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
+  migrate_plus: 0
+  migrate_upgrade: 0
   mysql: 0
   node: 0
   oembed_providers: 0

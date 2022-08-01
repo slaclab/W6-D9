@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: footer_address
 label: 'Footer address'
-fieldset: 'Footer address'
+fieldset: 'Footer Settings'
 multiple: false

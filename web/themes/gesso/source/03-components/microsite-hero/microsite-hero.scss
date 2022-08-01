@@ -3,6 +3,10 @@
 
 @use '00-config' as *;
 
+// Logo width varies based on stickiness.
+$microsite-logo-large: 190px;
+$microsite-logo-small: 102px;
+
 .c-microsite-hero__header {
   .l-constrain {
     flex-wrap: wrap;
@@ -10,6 +14,14 @@
 
   .c-search {
     align-self: center;
+    padding-top: 1.2rem;
+  }
+
+  @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
+    &,
+    &.is-sticky {
+      padding-bottom: 0.75rem;
+    }
   }
 }
 
@@ -28,6 +40,7 @@
 
 .c-microsite-hero__menu-item {
   @include menu-item;
+  margin: 0;
   padding: 1.25rem 0 0;
 
   a:not(.c-button) {
@@ -35,9 +48,14 @@
     font-size: rem(gesso-font-size(2));
     font-weight: gesso-font-weight(bold);
     letter-spacing: 1px;
+    padding: 0;
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+
+  .c-button {
+    margin: 0;
   }
 }
 
@@ -70,10 +88,22 @@
 }
 
 .c-microsite-hero__brand {
+  // transition: 0.25s margin;
+  flex-basis: auto;
+  min-width: $microsite-logo-large;
+  transition: gesso-duration(short) gesso-easing(ease-out) flex-basis;
+
+  a {
+    max-width: 250px;
+    transition: gesso-duration(short) gesso-easing(ease-out) max-width;
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     .is-sticky & {
-      .hide-on-sticky {
-        display: block;
+      flex-basis: 100%;
+
+      a {
+        max-width: $microsite-logo-small;
       }
     }
   }

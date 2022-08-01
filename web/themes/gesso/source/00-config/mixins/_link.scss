@@ -21,12 +21,13 @@
 }
 
 @mixin arrow-link($color) {
-  text-decoration: none;
+  text-decoration-line: none;
 
   &:hover,
   &:focus,
   &:active {
-    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-line: underline;
   }
 
   &:not(.external-link) {

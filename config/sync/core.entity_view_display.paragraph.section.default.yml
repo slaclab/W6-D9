@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.section.field_button_links
     - field.field.paragraph.section.field_long_text
     - field.field.paragraph.section.field_paragraphs
+    - field.field.paragraph.section.field_short_text
     - field.field.paragraph.section.field_text
     - paragraphs.paragraphs_type.section
   module:
@@ -44,6 +45,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_short_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_text:
     type: string

@@ -23,3 +23,12 @@
 .c-embed--full {
   width: 100%;
 }
+
+.c-embed__wrapper {
+  position: relative;
+
+  iframe {
+    inset: 0;
+    position: absolute;
+  }
+}

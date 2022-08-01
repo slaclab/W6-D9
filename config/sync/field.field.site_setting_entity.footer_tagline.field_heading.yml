@@ -9,11 +9,13 @@ id: site_setting_entity.footer_tagline.field_heading
 field_name: field_heading
 entity_type: site_setting_entity
 bundle: footer_tagline
-label: Heading
+label: 'Line 1'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 'Bold People'
 default_value_callback: ''
 settings: {  }
 field_type: string

@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.section.field_button_links
     - field.field.paragraph.section.field_long_text
     - field.field.paragraph.section.field_paragraphs
+    - field.field.paragraph.section.field_short_text
     - field.field.paragraph.section.field_text
     - paragraphs.paragraphs_type.section
   module:
@@ -19,7 +20,7 @@ mode: default
 content:
   field_button_links:
     type: link_default
-    weight: 3
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
@@ -27,7 +28,7 @@ content:
     third_party_settings: {  }
   field_long_text:
     type: text_textarea
-    weight: 1
+    weight: 2
     region: content
     settings:
       rows: 5
@@ -35,12 +36,20 @@ content:
     third_party_settings: {  }
   field_paragraphs:
     type: layout_paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 0
+    third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_text:
     type: string_textfield

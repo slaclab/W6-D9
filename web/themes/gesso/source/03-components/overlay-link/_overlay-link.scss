@@ -46,9 +46,11 @@
 }
 
 .c-overlay-link__label {
+  @include custom-responsive-font-size(rem(12px), rem(gesso-font-size(1)));
   background: gesso-grayscale(white);
   bottom: 0;
   left: 0;
+  max-width: 70%;
   padding: 10px 20px;
   position: absolute;
 }

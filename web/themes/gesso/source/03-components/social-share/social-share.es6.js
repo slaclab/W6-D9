@@ -38,8 +38,10 @@ Drupal.behaviors.socialShare = {
               );
               return `top ${headerHeight + 60}px`;
             },
-            end: 'max',
             pin: true,
+            end: () => `top ${socialLink.getBoundingClientRect().bottom + 40}px`,
+            endTrigger: '.l-footer',
+            anticipatePin: 1,
           });
         } else if (trigger) {
           trigger.kill();

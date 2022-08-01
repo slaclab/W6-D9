@@ -1,8 +1,9 @@
-uuid: d8ef85e4-90b8-4c86-9686-25d443155acf
+uuid: 3eb3b438-1e41-431a-b475-b358dbb768b1
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_tags
@@ -15,10 +16,10 @@ dependencies:
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
-id: node.page.default
+id: node.page.card
 targetEntityType: node
 bundle: page
-mode: default
+mode: card
 content:
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -62,8 +63,6 @@ content:
     weight: 104
     region: content
   links:
-    settings: {  }
-    third_party_settings: {  }
     weight: 101
     region: content
 hidden: {  }

@@ -69,6 +69,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_modes_display: 0
   views_ui: 0
   yaml_content: 0
   views: 10

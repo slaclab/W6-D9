@@ -50,6 +50,10 @@
       margin-top: rem(gesso-spacing(10));
     }
   }
+
+  a {
+    text-decoration-thickness: em(2px, 42px);
+  }
 }
 
 .l-section__intro {
@@ -168,6 +172,12 @@
 
   .l-section__title .c-arrow-link {
     @include arrow-link(black);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: gesso-color(text, link);
+    }
   }
 }
 

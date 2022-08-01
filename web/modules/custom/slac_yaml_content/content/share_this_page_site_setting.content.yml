@@ -1,0 +1,27 @@
+- entity: "site_setting_entity"
+  type: "share_this_page"
+  name: "Share This Page - Facebook"
+  fieldset: "Social Sharing Links"
+  field_text_list:
+    - "facebook"
+  field_link:
+    - uri: "https://www.facebook.com/sharer/sharer.php?u="
+      title: "Facebook"
+- entity: "site_setting_entity"
+  type: "share_this_page"
+  name: "Share This Page - Twitter"
+  fieldset: "Social Sharing Links"
+  field_text_list:
+    - "twitter"
+  field_link:
+    - uri: "https://www.twitter.com/share?url="
+      title: "Twitter"
+- entity: "site_setting_entity"
+  type: "share_this_page"
+  name: "Share This Page - LinkedIn"
+  fieldset: "Social Sharing Links"
+  field_text_list:
+    - "linkedin"
+  field_link:
+    - uri: "https://www.linkedin.com/sharing/share-offsite/?url="
+      title: "LinkedIn"

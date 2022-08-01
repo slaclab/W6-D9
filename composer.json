@@ -144,6 +144,7 @@
     "patchLevel": {
       "drupal/core": "-p2"
     },
+    "patches-file": "composer.patches.json",
     "drupal-scaffold": {
       "allowed-packages": [
         "pantheon-systems/drupal-integrations"

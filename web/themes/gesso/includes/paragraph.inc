@@ -5,6 +5,9 @@
  * Paragraph-related hook implementations.
  */
 
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__section(&$vars) {
   $paragraph = $vars['paragraph'];
   $content = $vars['content'];

@@ -68,6 +68,10 @@
     outline: 1px solid currentcolor;
     outline-offset: 3px;
 
+    &:focus:not(:focus-visible) {
+      outline: 1px solid currentcolor;
+    }
+
     &:focus-visible {
       outline-color: gesso-color(ui, generic, focus);
       outline-width: 3px;

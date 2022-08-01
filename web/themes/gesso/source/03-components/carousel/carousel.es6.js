@@ -1,12 +1,13 @@
 import { tns } from 'tiny-slider';
 import Drupal from 'drupal';
+import { debounce } from 'lodash';
 import { SITE_MARGINS } from '../../00-config/_GESSO.es6';
 
 Drupal.behaviors.carousel = {
   attach(context) {
     const carousels = context.querySelectorAll('.c-carousel__slides');
     carousels.forEach(carousel => {
-      tns({
+      const slider = tns({
         arrowKeys: true,
         autoWidth: true,
         center: false,
@@ -24,14 +25,21 @@ Drupal.behaviors.carousel = {
         responsive: {
           1200: {
             autoWidth: false,
-            gutter: parseInt(SITE_MARGINS.desktop, 10),
-            // center: false,
             fixedWidth: 920,
-            // items: 2,
+            gutter: parseInt(SITE_MARGINS.desktop, 10),
           },
         },
         slideBy: 1,
       });
+      slider.events.on('newBreakpointEnd', () => {
+        slider.refresh();
+      });
+      const handleResize = debounce(() => {
+        if (slider && slider.refresh) {
+          slider.refresh();
+        }
+      }, 16);
+      window.addEventListener('resize', handleResize);
     });
   },
 };

@@ -17,7 +17,7 @@ field_name: field_body
 entity_type: paragraph
 bundle: card
 label: Content
-description: 'If there are links added to the Description field, the Link field should not be used.'
+description: 'If there are links added to the Description field, the Title Link field should not be used.'
 required: false
 translatable: true
 default_value: {  }

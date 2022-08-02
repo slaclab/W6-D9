@@ -12,7 +12,7 @@ field_name: field_links
 entity_type: paragraph
 bundle: card
 label: 'Vertical Links'
-description: ''
+description: 'If there are vertical links, then the Title Link field should not be used.'
 required: false
 translatable: true
 default_value: {  }

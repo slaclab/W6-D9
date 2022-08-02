@@ -7,8 +7,15 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.small_card_with_icon
+    - paragraphs.paragraphs_type.small_card_with_image
+    - paragraphs.paragraphs_type.small_card_with_solid_background
+    - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -28,8 +35,15 @@ settings:
     target_bundles:
       accordion_item: accordion_item
       article_hero: article_hero
+      card: card
       grid: grid
+      image_carousel: image_carousel
       image_hero: image_hero
+      microsite_hero: microsite_hero
+      small_card_with_icon: small_card_with_icon
+      small_card_with_image: small_card_with_image
+      small_card_with_solid_background: small_card_with_solid_background
+      tout: tout
       video_hero: video_hero
     negate: 1
     target_bundles_drag_drop:
@@ -44,7 +58,7 @@ settings:
         enabled: true
       card:
         weight: 27
-        enabled: false
+        enabled: true
       extra_large_card:
         weight: 28
         enabled: false
@@ -56,7 +70,7 @@ settings:
         enabled: true
       image_carousel:
         weight: 31
-        enabled: false
+        enabled: true
       image_embed:
         weight: 32
         enabled: false
@@ -65,7 +79,7 @@ settings:
         enabled: true
       microsite_hero:
         weight: 34
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 35
         enabled: false
@@ -80,16 +94,16 @@ settings:
         enabled: false
       small_card_with_icon:
         weight: 39
-        enabled: false
+        enabled: true
       small_card_with_image:
         weight: 40
-        enabled: false
+        enabled: true
       small_card_with_solid_background:
         weight: 41
-        enabled: false
+        enabled: true
       tout:
         weight: 42
-        enabled: false
+        enabled: true
       video_hero:
         weight: 43
         enabled: true

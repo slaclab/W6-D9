@@ -68,10 +68,10 @@
 {% set paragraph_title_element = 'h2' %}
 
 {% set paragraph_content %}
-  {%- block paragraph_content -%}
-    {{ content|without('field_text', 'field_short_text', 'field_long_text', 'field_button_links', 'field_link') }}
-  {%- endblock -%}
+  {{ content|without('field_text', 'field_short_text', 'field_long_text', 'field_button_links', 'field_link', 'field_num_of_cols') }}
 {% endset %}
+
+{% set num_of_cols = content.field_num_of_cols|render|striptags|trim %}
 
 {% embed '@layouts/section/section.twig' with {
   'has_constrain': true,
@@ -87,7 +87,14 @@
 } %}
 
   {% block content %}
-    {{ paragraph_content }}
+    {% if num_of_cols > 1 %}
+      {% include '@layouts/grid/grid.twig' with {
+        grid_content: paragraph_content,
+        num_of_cols: num_of_cols
+      } %}
+    {% else %}
+      {{ paragraph_content }}
+    {% endif %}
   {% endblock %}
 
 {% endembed %}

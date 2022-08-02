@@ -63,4 +63,8 @@
 
 .c-icon-card__description {
   @include display-text-style(body);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }

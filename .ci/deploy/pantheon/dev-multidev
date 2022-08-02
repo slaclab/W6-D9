@@ -16,7 +16,7 @@ cd ../../../
 # Authenticate with Terminus
 terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
 
-if [[ $CI_BRANCH != $DEFAULT_BRANCH ]]
+if [[ $CI_BRANCH != 'live' ]]
 then
   # Create a new multidev environment (or push to an existing one)
   terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes

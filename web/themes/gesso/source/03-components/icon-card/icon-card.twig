@@ -3,11 +3,20 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
+{{ attach_library('gesso/icon_card') }}
+
 <div {{ add_attributes({ class: classes }) }}>
-  {% include '@components/animated-icon/animated-icon.twig' with {
-    animation: icon,
-    color: 'black'
-  } %}
+  {% block animated_icon %}
+    {% include '@components/animated-icon/animated-icon.twig' with {
+      animation: icon,
+      color: 'black'
+    } %}
+  {% endblock %}
+  {% if kicker %}
+    {% include "@components/kicker/kicker.twig" with {
+      kicker_content: kicker
+    } %}
+  {% endif %}
   <h3 class="c-icon-card__title"><a href="{{ url }}" class="c-icon-card__link c-arrow-link">{{ card_title }}</a></h3>
-  <p class="c-icon-card__description">{{ card_description }}</p>
+  <div class="c-icon-card__description">{{ card_description }}</div>
 </div>

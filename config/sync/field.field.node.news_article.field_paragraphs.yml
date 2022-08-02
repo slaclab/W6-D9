@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.news_article
-    - paragraphs.paragraphs_type.fifty_fifty
-    - paragraphs.paragraphs_type.image_embed
-    - paragraphs.paragraphs_type.quote
-    - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.wysiwyg
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.grid
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
 id: node.news_article.field_paragraphs
@@ -26,19 +26,19 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      fifty_fifty: fifty_fifty
-      image_embed: image_embed
-      quote: quote
-      section: section
-      wysiwyg: wysiwyg
-    negate: 0
+      accordion_item: accordion_item
+      grid: grid
+      image_hero: image_hero
+      microsite_hero: microsite_hero
+      video_hero: video_hero
+    negate: 1
     target_bundles_drag_drop:
       accordion:
         weight: 17
         enabled: false
       accordion_item:
         weight: 18
-        enabled: false
+        enabled: true
       article_hero:
         weight: 19
         enabled: false
@@ -50,22 +50,22 @@ settings:
         enabled: false
       fifty_fifty:
         weight: 20
-        enabled: true
+        enabled: false
       grid:
         weight: 21
-        enabled: false
+        enabled: true
       image_carousel:
         weight: 22
         enabled: false
       image_embed:
         weight: 23
-        enabled: true
+        enabled: false
       image_hero:
         weight: 24
-        enabled: false
+        enabled: true
       microsite_hero:
         weight: 25
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 26
         enabled: false
@@ -74,10 +74,10 @@ settings:
         enabled: false
       quote:
         weight: 28
-        enabled: true
+        enabled: false
       section:
         weight: 29
-        enabled: true
+        enabled: false
       small_card_with_icon:
         weight: 39
         enabled: false
@@ -92,7 +92,7 @@ settings:
         enabled: false
       video_hero:
         weight: 30
-        enabled: false
+        enabled: true
       video_lightbox:
         weight: 31
         enabled: false
@@ -101,5 +101,5 @@ settings:
         enabled: false
       wysiwyg:
         weight: 32
-        enabled: true
+        enabled: false
 field_type: entity_reference_revisions

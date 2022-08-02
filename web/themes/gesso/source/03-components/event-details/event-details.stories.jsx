@@ -45,7 +45,8 @@ EventDetailsMultiday.args = {
     month: 'Apr',
     day: '22',
   },
-  calendar_link_text: 'Thursday, April 19, 2022 - Saturday, April 22, 2022',
+  calendar_link_text:
+    'Thursday, April 19, 2022 &ndash; Saturday, April 22, 2022',
 };
 
 const EventDetailsMultimonth = args =>
@@ -65,7 +66,7 @@ EventDetailsMultimonth.args = {
     month: 'Oct',
     day: '9',
   },
-  calendar_link_text: 'Monday, September 28 - Friday, October 9, 2020',
+  calendar_link_text: 'Monday, September 28 &ndash; Friday, October 9, 2020',
 };
 
 export default settings;

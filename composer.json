@@ -56,6 +56,7 @@
     "drupal/twig_field_value": "^2.0",
     "drupal/twig_tweak": "^3.1",
     "drupal/username_enumeration_prevention": "^1.2",
+    "drupal/view_modes_display": "^2.3",
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
     "joachim-n/composer-manifest": "^1",
@@ -175,6 +176,7 @@
       "drush/Commands/contrib/{$name}": [
         "type:drupal-drush"
       ]
-    }
+    },
+    "patches-file": "composer.patches.json"
   }
 }

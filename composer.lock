@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8610e0e336b2fc09dd242459974fd7bc",
+    "content-hash": "60ae6b5a3f9943a861138a5c816d61b7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1956,12 +1956,12 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "fethi.krout",
-                    "homepage": "https://www.drupal.org/user/3206765"
-                },
-                {
                     "name": "matio89",
                     "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "Musa.thomas",
+                    "homepage": "https://www.drupal.org/user/1213824"
                 },
                 {
                     "name": "romainj",
@@ -3491,12 +3491,12 @@
             ],
             "authors": [
                 {
-                    "name": "Centarro",
-                    "homepage": "https://www.drupal.org/user/3661446"
-                },
-                {
                     "name": "bojanz",
                     "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "Centarro",
+                    "homepage": "https://www.drupal.org/user/3661446"
                 },
                 {
                     "name": "dawehner",
@@ -4039,6 +4039,10 @@
                     "homepage": "https://www.drupal.org/user/438598"
                 },
                 {
+                    "name": "kporras07",
+                    "homepage": "https://www.drupal.org/user/1349780"
+                },
+                {
                     "name": "stevector",
                     "homepage": "https://www.drupal.org/user/179805"
                 }
@@ -4245,12 +4249,12 @@
                     "homepage": "https://www.drupal.org/user/3426249"
                 },
                 {
-                    "name": "Odd Hill",
-                    "homepage": "https://www.drupal.org/user/789934"
-                },
-                {
                     "name": "mparker17",
                     "homepage": "https://www.drupal.org/user/536298"
+                },
+                {
+                    "name": "Odd Hill",
+                    "homepage": "https://www.drupal.org/user/789934"
                 },
                 {
                     "name": "olofbokedal",
@@ -4477,7 +4481,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-3.11",
-                    "datestamp": "1634344305",
+                    "datestamp": "1658781789",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4501,8 +4505,8 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "gbyte",
-                    "homepage": "https://www.drupal.org/user/2381352"
+                    "name": "WalkingDexter",
+                    "homepage": "https://www.drupal.org/user/3251330"
                 }
             ],
             "description": "Creates a standard conform hreflang XML sitemap of the site content and provides a framework for developing other sitemap types.",
@@ -4764,14 +4768,6 @@
             ],
             "authors": [
                 {
-                    "name": "Dave Reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "Deciphered",
-                    "homepage": "https://www.drupal.org/user/103796"
-                },
-                {
                     "name": "ademarco",
                     "homepage": "https://www.drupal.org/user/186696"
                 },
@@ -4782,6 +4778,14 @@
                 {
                     "name": "darvanen",
                     "homepage": "https://www.drupal.org/user/1068770"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Deciphered",
+                    "homepage": "https://www.drupal.org/user/103796"
                 },
                 {
                     "name": "pescetti",
@@ -4940,6 +4944,58 @@
             "homepage": "https://www.drupal.org/project/username_enumeration_prevention",
             "support": {
                 "source": "https://git.drupalcode.org/project/username_enumeration_prevention"
+            }
+        },
+        {
+            "name": "drupal/view_modes_display",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/view_modes_display.git",
+                "reference": "8.x-2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/view_modes_display-8.x-2.3.zip",
+                "reference": "8.x-2.3",
+                "shasum": "5df47620578c4ee090cf2d2d12e6e19cf7f7cdc4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.3",
+                    "datestamp": "1586890985",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "pvhee",
+                    "homepage": "https://www.drupal.org/user/108811"
+                },
+                {
+                    "name": "zach.bimson",
+                    "homepage": "https://www.drupal.org/user/1644060"
+                }
+            ],
+            "description": "Preview view modes for every entity type",
+            "homepage": "https://www.drupal.org/project/view_modes_display",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/view_modes_display",
+                "issues": "http://drupal.org/project/issues/view_modes_display"
             }
         },
         {

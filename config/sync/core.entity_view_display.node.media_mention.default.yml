@@ -1,0 +1,33 @@
+uuid: 12c8e26b-c664-441a-8817-bc5ef6d1536e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.media_mention.field_link
+    - node.type.media_mention
+  module:
+    - link
+    - user
+id: node.media_mention.default
+targetEntityType: node
+bundle: media_mention
+mode: default
+content:
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

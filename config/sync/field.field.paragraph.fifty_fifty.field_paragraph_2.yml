@@ -68,7 +68,7 @@ settings:
       section:
         weight: 38
         enabled: false
-      small_cad_with_icon:
+      small_card_with_iconn:
         weight: 39
         enabled: false
       small_card_with_image:

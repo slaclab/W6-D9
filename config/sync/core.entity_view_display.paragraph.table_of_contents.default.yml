@@ -3,21 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.table_of_contents.field_paragraphs
+    - field.field.paragraph.table_of_contents.field_short_text
     - paragraphs.paragraphs_type.table_of_contents
-  module:
-    - entity_reference_revisions
 id: paragraph.table_of_contents.default
 targetEntityType: paragraph
 bundle: table_of_contents
 mode: default
 content:
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
+  field_short_text:
+    type: string
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content

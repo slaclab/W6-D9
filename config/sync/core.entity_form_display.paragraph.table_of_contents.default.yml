@@ -3,32 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.table_of_contents.field_paragraphs
+    - field.field.paragraph.table_of_contents.field_short_text
     - paragraphs.paragraphs_type.table_of_contents
-  module:
-    - paragraphs
 id: paragraph.table_of_contents.default
 targetEntityType: paragraph
 bundle: table_of_contents
 mode: default
 content:
-  field_paragraphs:
-    type: paragraphs
+  field_short_text:
+    type: string_textfield
     weight: 0
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

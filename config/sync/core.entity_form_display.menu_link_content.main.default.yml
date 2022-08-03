@@ -40,7 +40,7 @@ content:
       progress_indicator: throbber
       preview_image_max_width: 300
       preview_image_max_height: 300
-    third_party_settings: { }
+    third_party_settings: {  }
   field_menu_section:
     type: options_select
     weight: 1

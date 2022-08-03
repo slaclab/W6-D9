@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60ae6b5a3f9943a861138a5c816d61b7",
+    "content-hash": "aebcd95ff3e13b302b277343ab152999",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5799,50 +5799,6 @@
                 }
             ],
             "time": "2022-06-20T21:43:03+00:00"
-        },
-        {
-            "name": "joachim-n/composer-manifest",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/joachim-n/composer-manifest.git",
-                "reference": "9fb677a59069275b39ee18ee2497a5b68f3a5fb7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/joachim-n/composer-manifest/zipball/9fb677a59069275b39ee18ee2497a5b68f3a5fb7",
-                "reference": "9fb677a59069275b39ee18ee2497a5b68f3a5fb7",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "symfony/yaml": "^3.4 || ^4.2"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "symfony/var-dumper": "^4.2"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "ComposerManifest\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "ComposerManifest\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Joachim Noreiko",
-                    "email": "joachim@107701.no-reply.drupal.org"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/joachim-n/composer-manifest/issues",
-                "source": "https://github.com/joachim-n/composer-manifest/tree/1.1.4"
-            },
-            "time": "2021-10-06T06:56:42+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",

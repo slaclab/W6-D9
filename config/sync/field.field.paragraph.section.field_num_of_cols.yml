@@ -9,8 +9,8 @@ id: paragraph.section.field_num_of_cols
 field_name: field_num_of_cols
 entity_type: paragraph
 bundle: section
-label: 'Number of Columns'
-description: ''
+label: 'Number of Columns per Row'
+description: 'Select a number to specify how many components should be on each row in this section. Components will automatically break into multiple rows as needed.<br /><br />For example, if you select 2 columns and have 3 cards in this section, then there will be two rows, with 2 cards in the first row and 1 card in the second row. All cards will be the same width.'
 required: true
 translatable: false
 default_value:

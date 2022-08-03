@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.field.menu_link_content.main.field_boolean
     - field.field.menu_link_content.main.field_link_description
-    - field.field.menu_link_content.main.field_research_area_icon
+    - field.field.menu_link_content.main.field_list
     - system.menu.main
   module:
     - link
     - menu_item_extras
+    - svg_image_field
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
@@ -30,11 +31,14 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_research_area_icon:
-    type: options_select
-    weight: 24
+  field_list:
+    type: svg_image_field_widget
+    weight: 27
     region: content
-    settings: {  }
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
     third_party_settings: {  }
   title:
     type: string_textfield

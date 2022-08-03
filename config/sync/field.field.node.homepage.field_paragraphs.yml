@@ -1,0 +1,126 @@
+uuid: 623e5d04-77c5-4132-972e-0df6e64ca94e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.homepage
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.extra_large_card
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.small_card_with_icon
+    - paragraphs.paragraphs_type.small_card_with_image
+    - paragraphs.paragraphs_type.small_card_with_solid_background
+    - paragraphs.paragraphs_type.table_of_contents
+    - paragraphs.paragraphs_type.video_hero
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: homepage
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_item: accordion_item
+      article_hero: article_hero
+      card: card
+      extra_large_card: extra_large_card
+      image_hero: image_hero
+      microsite_hero: microsite_hero
+      small_card_with_icon: small_card_with_icon
+      small_card_with_image: small_card_with_image
+      small_card_with_solid_background: small_card_with_solid_background
+      video_hero: video_hero
+      table_of_contents: table_of_contents
+    negate: 1
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      accordion_item:
+        weight: 25
+        enabled: true
+      article_hero:
+        weight: 26
+        enabled: true
+      card:
+        weight: 27
+        enabled: true
+      content_embed:
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 29
+        enabled: false
+      extra_large_card:
+        weight: 28
+        enabled: true
+      fifty_fifty:
+        weight: 29
+        enabled: false
+      image_carousel:
+        weight: 31
+        enabled: false
+      image_embed:
+        weight: 32
+        enabled: false
+      image_hero:
+        weight: 33
+        enabled: true
+      microsite_hero:
+        weight: 34
+        enabled: true
+      overlap_image:
+        weight: 35
+        enabled: false
+      promo_box:
+        weight: 36
+        enabled: false
+      quote:
+        weight: 37
+        enabled: false
+      section:
+        weight: 38
+        enabled: false
+      small_card_with_icon:
+        weight: 39
+        enabled: true
+      small_card_with_image:
+        weight: 40
+        enabled: true
+      small_card_with_solid_background:
+        weight: 41
+        enabled: true
+      table_of_contents:
+        weight: 52
+        enabled: true
+      text_block:
+        weight: 46
+        enabled: false
+      tout:
+        weight: 42
+        enabled: false
+      video_hero:
+        weight: 43
+        enabled: true
+      video_lightbox:
+        weight: 44
+        enabled: false
+      wide_card:
+        weight: 45
+        enabled: false
+      wysiwyg:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

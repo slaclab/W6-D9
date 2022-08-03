@@ -1,8 +1,0 @@
-uuid: cf3d5a95-3397-4458-8bce-1c400a23f962
-langcode: en
-status: true
-dependencies: {  }
-id: colorful_tagline
-label: 'Colorful Tagline'
-fieldset: 'Colorful Tagline'
-multiple: false

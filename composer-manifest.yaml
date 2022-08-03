@@ -84,6 +84,7 @@ packages:
     drupal/site_settings: 1.19.0
     drupal/sitewide_alert: 2.0.2
     drupal/style_options: 1.0.0-alpha1
+    drupal/svg_image_field: 2.1.1
     drupal/token: 1.10.0
     drupal/token_filter: 1.4.0
     drupal/twig_field_value: 2.0.0
@@ -95,6 +96,7 @@ packages:
     easyrdf/easyrdf: 1.1.1
     egulias/email-validator: 3.2.1
     enlightn/security-checker: v1.10.0
+    enshrined/svg-sanitize: 0.15.4
     ezyang/htmlpurifier: v4.14.0
     friends-of-behat/mink-browserkit-driver: v1.6.1
     grasmash/expander: 1.0.0

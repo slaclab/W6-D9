@@ -5,6 +5,7 @@ on:
       - integration
       - main
       - live
+      - uat
 defaults:
   run:
     shell: bash

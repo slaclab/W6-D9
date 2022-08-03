@@ -7,8 +7,13 @@ dependencies:
     - node.type.homepage
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.extra_large_card
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.small_card_with_icon
+    - paragraphs.paragraphs_type.small_card_with_image
+    - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -28,8 +33,13 @@ settings:
     target_bundles:
       accordion_item: accordion_item
       article_hero: article_hero
+      card: card
+      extra_large_card: extra_large_card
       image_hero: image_hero
       microsite_hero: microsite_hero
+      small_card_with_icon: small_card_with_icon
+      small_card_with_image: small_card_with_image
+      small_card_with_solid_background: small_card_with_solid_background
       video_hero: video_hero
     negate: 1
     target_bundles_drag_drop:
@@ -44,13 +54,13 @@ settings:
         enabled: true
       card:
         weight: 27
-        enabled: false
+        enabled: true
       embed_block:
         weight: 29
         enabled: false
       extra_large_card:
         weight: 28
-        enabled: false
+        enabled: true
       fifty_fifty:
         weight: 29
         enabled: false
@@ -83,13 +93,13 @@ settings:
         enabled: false
       small_card_with_icon:
         weight: 39
-        enabled: false
+        enabled: true
       small_card_with_image:
         weight: 40
-        enabled: false
+        enabled: true
       small_card_with_solid_background:
         weight: 41
-        enabled: false
+        enabled: true
       tout:
         weight: 42
         enabled: false

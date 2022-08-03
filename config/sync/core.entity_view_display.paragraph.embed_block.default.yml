@@ -5,17 +5,16 @@ dependencies:
   config:
     - field.field.paragraph.embed_block.field_block
     - paragraphs.paragraphs_type.embed_block
-  module:
-    - block_field
 id: paragraph.embed_block.default
 targetEntityType: paragraph
 bundle: embed_block
 mode: default
 content:
   field_block:
-    type: block_field
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
     weight: 0
     region: content

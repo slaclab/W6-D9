@@ -5,4 +5,4 @@ dependencies: {  }
 id: mega_menu_cards
 label: 'Mega menu cards'
 fieldset: 'Mega menu cards'
-multiple: false
+multiple: true

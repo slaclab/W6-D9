@@ -12,6 +12,7 @@ settings:
   toolbar:
     items:
       - heading
+      - style
       - bold
       - italic
       - strikethrough
@@ -38,6 +39,11 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: Small
+          element: '<p class="body-small">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'

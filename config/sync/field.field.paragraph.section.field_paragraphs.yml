@@ -53,7 +53,7 @@ settings:
         enabled: false
       grid:
         weight: 17
-        enabled: false
+        enabled: true
       image_carousel:
         weight: 31
         enabled: false

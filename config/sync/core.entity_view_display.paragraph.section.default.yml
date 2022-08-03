@@ -5,13 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.section.field_button_links
     - field.field.paragraph.section.field_long_text
+    - field.field.paragraph.section.field_num_of_cols
     - field.field.paragraph.section.field_paragraphs
     - field.field.paragraph.section.field_short_text
     - field.field.paragraph.section.field_text
     - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-    - link
+    - gesso_helper
     - text
 id: paragraph.section.default
 targetEntityType: paragraph
@@ -19,47 +20,57 @@ bundle: section
 mode: default
 content:
   field_button_links:
-    type: link
-    label: above
+    type: gesso_helper_gesso_button
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: None
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_long_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_num_of_cols:
+    type: number_unformatted
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
   field_short_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
 hidden: {  }

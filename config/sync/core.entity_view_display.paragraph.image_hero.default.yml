@@ -21,22 +21,23 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
   field_image:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_lottiefile:
     type: lottiefiles_field
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   field_text:
     type: string
@@ -44,6 +45,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden: {  }

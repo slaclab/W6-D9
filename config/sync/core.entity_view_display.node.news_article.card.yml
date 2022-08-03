@@ -1,0 +1,68 @@
+uuid: 95209f66-2705-4ef9-a45f-ba27df73b8b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.news_article.field_bio
+    - field.field.node.news_article.field_bio_related_content
+    - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.news_article.card
+targetEntityType: node
+bundle: news_article
+mode: card
+content:
+  field_hero_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_news_source:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_bio: true
+  field_bio_related_content: true
+  field_boolean: true
+  field_paragraphs: true
+  field_source_link: true
+  field_tags: true
+  field_text: true
+  links: true

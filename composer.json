@@ -61,7 +61,6 @@
     "drupal/view_modes_display": "^2.3",
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
-    "joachim-n/composer-manifest": "^1",
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
@@ -96,7 +95,6 @@
       "drupal/core-vendor-hardening": true,
       "drupal/console-extend-plugin": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "joachim-n/composer-manifest": true,
       "rvtraveller/qs-composer-installer": true
     }
   },

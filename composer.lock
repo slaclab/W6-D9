@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60ae6b5a3f9943a861138a5c816d61b7",
+    "content-hash": "0a04d4bcc6e3f9953066823cd9b40f7f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2038,6 +2038,70 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/allowed_formats",
                 "issues": "https://www.drupal.org/project/issues/allowed_formats"
+            }
+        },
+        {
+            "name": "drupal/block_field",
+            "version": "1.0.0-rc3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/block_field.git",
+                "reference": "8.x-1.0-rc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_field-8.x-1.0-rc3.zip",
+                "reference": "8.x-1.0-rc3",
+                "shasum": "2c4bad92088df2de02a99f8b94c0da19abc3e103"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc3",
+                    "datestamp": "1658858536",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
+                },
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "fenstrat",
+                    "homepage": "https://www.drupal.org/user/362649"
+                },
+                {
+                    "name": "jrockowitz",
+                    "homepage": "https://www.drupal.org/user/371407"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                },
+                {
+                    "name": "paulocs",
+                    "homepage": "https://www.drupal.org/user/3640109"
+                }
+            ],
+            "description": "Provides a field that allows a content entity to create and configure custom block instances.",
+            "homepage": "https://www.drupal.org/project/block_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/block_field"
             }
         },
         {
@@ -5799,50 +5863,6 @@
                 }
             ],
             "time": "2022-06-20T21:43:03+00:00"
-        },
-        {
-            "name": "joachim-n/composer-manifest",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/joachim-n/composer-manifest.git",
-                "reference": "9fb677a59069275b39ee18ee2497a5b68f3a5fb7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/joachim-n/composer-manifest/zipball/9fb677a59069275b39ee18ee2497a5b68f3a5fb7",
-                "reference": "9fb677a59069275b39ee18ee2497a5b68f3a5fb7",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "symfony/yaml": "^3.4 || ^4.2"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "symfony/var-dumper": "^4.2"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "ComposerManifest\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "ComposerManifest\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Joachim Noreiko",
-                    "email": "joachim@107701.no-reply.drupal.org"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/joachim-n/composer-manifest/issues",
-                "source": "https://github.com/joachim-n/composer-manifest/tree/1.1.4"
-            },
-            "time": "2021-10-06T06:56:42+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -14798,6 +14818,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/block_field": 5,
         "drupal/conditional_fields": 15,
         "drupal/gin": 10,
         "drupal/gin_toolbar": 10,

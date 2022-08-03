@@ -5,10 +5,10 @@ dependencies:
   config:
     - field.field.menu_link_content.main.field_boolean
     - field.field.menu_link_content.main.field_link_description
-    - field.field.menu_link_content.main.field_research_area_icon
+    - field.field.menu_link_content.main.field_list
     - system.menu.main
   module:
-    - options
+    - svg_image_field
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
@@ -36,11 +36,21 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-  field_research_area_icon:
-    type: list_default
+  field_list:
+    type: svg_image_field_formatter
     label: above
-    settings: {  }
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
 hidden: {  }

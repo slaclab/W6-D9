@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: table_of_contents
-label: 'Table of Contents'
+label: 'Table of Contents Marker'
 icon_uuid: null
 icon_default: null
 description: ''

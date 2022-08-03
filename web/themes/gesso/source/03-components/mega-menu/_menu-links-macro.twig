@@ -31,6 +31,9 @@
       {% if menu_item.icon %}
         {% set item_classes = item_classes|merge(['has-icon']) %}
       {% endif %}
+      {% if menu_item.content.field_boolean|render|striptags|trim == 'True' %}
+        {% set link_classes = link_classes|merge(['c-arrow-link']) %}
+      {% endif %}
       {% if menu_item['original_link'].options.attributes.class %}
         {% set original_link_class = menu_item['original_link'].options.attributes.class %}
         {% if original_link_class is not iterable %}

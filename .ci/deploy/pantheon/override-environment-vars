@@ -33,6 +33,9 @@ elif [[ ${CI_BRANCH} == "integration" ]] ; then
 elif [[ ${CI_BRANCH} == "main" ]] ; then
   # Use the stage environment for the main branch.
   DEFAULT_ENV=stage
+elif [[ ${CI_BRANCH} == "uat" ]] ; then
+  # Use the stage environment for the main branch.
+  DEFAULT_ENV=uat
 fi
 
 TERMINUS_ENV=$DEFAULT_ENV

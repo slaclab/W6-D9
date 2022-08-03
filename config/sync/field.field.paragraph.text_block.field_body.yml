@@ -1,10 +1,10 @@
-uuid: cf08c5d5-3f1b-418c-a5e9-e17d8d49b4aa
+uuid: 85b3b5e3-fa3d-418d-aaed-b316630d7ab3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_body
-    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.text_block
   module:
     - allowed_formats
     - text
@@ -12,12 +12,12 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - restricted_html
-id: paragraph.card.field_body
+id: paragraph.text_block.field_body
 field_name: field_body
 entity_type: paragraph
-bundle: card
+bundle: text_block
 label: Content
-description: 'If there are links added to the Description field, the Title Link field should not be used.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

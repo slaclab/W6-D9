@@ -1,18 +1,18 @@
-uuid: e3371b07-0abc-43e6-8f86-f676aa8f797f
+uuid: d1c24567-5a72-418d-ae6e-e686681fd195
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.site_setting_entity.colorful_tagline.field_body
-    - field.field.site_setting_entity.colorful_tagline.field_heading
-    - field.field.site_setting_entity.colorful_tagline.field_line_2
-    - field.field.site_setting_entity.colorful_tagline.field_line_3
-    - site_settings.site_setting_entity_type.colorful_tagline
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_body
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_heading
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_line_2
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_line_3
+    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
   module:
     - text
-id: site_setting_entity.colorful_tagline.default
+id: site_setting_entity.colorful_tagline_for_homepage.default
 targetEntityType: site_setting_entity
-bundle: colorful_tagline
+bundle: colorful_tagline_for_homepage
 mode: default
 content:
   field_body:

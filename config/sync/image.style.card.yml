@@ -1,15 +1,17 @@
 uuid: 778ffdd4-9b0c-4f85-bbfd-b39c1bf4f2c6
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: card
 label: 'Card (800x500)'
 effects:
-  d5c105cd-860f-4520-a09e-8a1113146c58:
-    uuid: d5c105cd-860f-4520-a09e-8a1113146c58
-    id: image_scale_and_crop
-    weight: 1
+  a4b9a0d2-2a9e-4566-95d5-3f028571e183:
+    uuid: a4b9a0d2-2a9e-4566-95d5-3f028571e183
+    id: focal_point_scale_and_crop
+    weight: 2
     data:
       width: 800
       height: 500
-      anchor: center-center
+      crop_type: focal_point

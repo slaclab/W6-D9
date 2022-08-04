@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * News article card display.
+ * Event card display, for both single day and multi-day card styles.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -66,19 +66,14 @@
  * @see template_preprocess_node()
  */
 #}
-{% if content.field_news_source|field_value is not empty %}
-  {% set kicker %}
-    {% trans %}VIA{% endtrans %} {{ content.field_news_source|field_value }}
-  {% endset %}
-{% endif %}
 
 {% include '@components/card/card.twig' with {
   title: label,
   url: url,
-  kicker: kicker,
+  kicker: "Kicker",
   type: content.field_type|field_value,
   footer: node.changed.value|format_date('custom', 'F j, Y'),
-  media: content.field_hero_paragraph|field_value,
+  media: "Media",
   card_content: content.field_teaser|field_value,
 } %}
 

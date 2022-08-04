@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ */
+#}
+
+{% include '@components/card/card.twig' with {
+  title: label,
+  url: url,
+  kicker: kicker,
+  type: content.field_type|field_value,
+  footer: node.changed.value|format_date('custom', 'F j, Y'),
+  media: content.field_hero_paragraph|field_value,
+  card_content: content.field_teaser|field_value,
+} %}
+
+{% set catch_cache = content|render %}

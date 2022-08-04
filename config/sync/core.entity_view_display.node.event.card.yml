@@ -52,18 +52,10 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_lede:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
     region: content
   field_link:
     type: link
@@ -103,7 +95,7 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
@@ -115,6 +107,7 @@ hidden:
   field_detail_text: true
   field_external_link: true
   field_featured: true
+  field_lede: true
   field_link2: true
   field_links: true
   field_long_text: true

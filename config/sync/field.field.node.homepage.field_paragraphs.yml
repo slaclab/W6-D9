@@ -1,28 +1,27 @@
-uuid: 2522c038-2858-4c80-afb6-ff8ca7b2523e
+uuid: 623e5d04-77c5-4132-972e-0df6e64ca94e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - node.type.page
+    - node.type.homepage
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
-    - paragraphs.paragraphs_type.image_carousel
+    - paragraphs.paragraphs_type.extra_large_card
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.table_of_contents
-    - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
-id: node.page.field_paragraphs
+id: node.homepage.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
-bundle: page
+bundle: homepage
 label: Content
 description: ''
 required: false
@@ -36,13 +35,12 @@ settings:
       accordion_item: accordion_item
       article_hero: article_hero
       card: card
-      image_carousel: image_carousel
+      extra_large_card: extra_large_card
       image_hero: image_hero
       microsite_hero: microsite_hero
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
-      tout: tout
       video_hero: video_hero
       table_of_contents: table_of_contents
     negate: 1
@@ -60,17 +58,20 @@ settings:
         weight: 27
         enabled: true
       content_embed:
-        weight: 30
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 29
         enabled: false
       extra_large_card:
         weight: 28
-        enabled: false
+        enabled: true
       fifty_fifty:
         weight: 29
         enabled: false
       image_carousel:
         weight: 31
-        enabled: true
+        enabled: false
       image_embed:
         weight: 32
         enabled: false
@@ -102,14 +103,14 @@ settings:
         weight: 41
         enabled: true
       table_of_contents:
-        weight: 44
+        weight: 52
         enabled: true
       text_block:
-        weight: 45
+        weight: 46
         enabled: false
       tout:
         weight: 42
-        enabled: true
+        enabled: false
       video_hero:
         weight: 43
         enabled: true

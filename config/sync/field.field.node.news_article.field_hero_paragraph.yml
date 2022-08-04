@@ -15,7 +15,7 @@ entity_type: node
 bundle: news_article
 label: Hero
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -36,11 +36,20 @@ settings:
       article_hero:
         weight: 19
         enabled: true
+      card:
+        weight: 30
+        enabled: false
+      content_embed:
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 32
+        enabled: false
+      extra_large_card:
+        weight: 33
+        enabled: false
       fifty_fifty:
         weight: 20
-        enabled: false
-      grid:
-        weight: 21
         enabled: false
       image_carousel:
         weight: 22
@@ -66,11 +75,32 @@ settings:
       section:
         weight: 29
         enabled: false
+      small_card_with_icon:
+        weight: 43
+        enabled: false
+      small_card_with_image:
+        weight: 44
+        enabled: false
+      small_card_with_solid_background:
+        weight: 45
+        enabled: false
+      table_of_contents:
+        weight: 46
+        enabled: false
+      text_block:
+        weight: 47
+        enabled: false
+      tout:
+        weight: 48
+        enabled: false
       video_hero:
         weight: 30
         enabled: false
       video_lightbox:
         weight: 31
+        enabled: false
+      wide_card:
+        weight: 51
         enabled: false
       wysiwyg:
         weight: 32

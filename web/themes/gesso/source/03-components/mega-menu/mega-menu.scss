@@ -109,8 +109,13 @@
   color: gesso-color(text, link);
   margin-bottom: 0;
   margin-top: 0;
+  max-height: calc(
+    100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px) -
+      var(--ginToolbarSecondaryHeight, 0px)
+  );
   opacity: 1;
   overflow-wrap: normal;
+  overflow-y: auto;
   padding: rem(gesso-spacing(4.5)) 0;
   position: fixed;
   transform: translate3d(
@@ -125,6 +130,9 @@
   z-index: gesso-z-index(social-share) + 1;
 
   .is-sticky & {
+    max-height: calc(
+      100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
+    );
     transform: translate3d(
       0,
       calc(

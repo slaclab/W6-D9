@@ -84,6 +84,11 @@ dropdown_menu:
     - gesso/common
     - gesso/mobile_menu
 
+event_details:
+  css:
+    theme:
+      dist/css/event-details.css: {}
+
 hamburger_button:
   css:
     theme:

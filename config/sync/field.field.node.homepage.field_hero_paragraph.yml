@@ -1,31 +1,23 @@
-uuid: 2522c038-2858-4c80-afb6-ff8ca7b2523e
+uuid: 92190646-3416-4d07-8e62-dd50a0bc60d3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
-    - node.type.page
-    - paragraphs.paragraphs_type.accordion_item
+    - field.storage.node.field_hero_paragraph
+    - node.type.homepage
     - paragraphs.paragraphs_type.article_hero
-    - paragraphs.paragraphs_type.card
-    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
-    - paragraphs.paragraphs_type.small_card_with_icon
-    - paragraphs.paragraphs_type.small_card_with_image
-    - paragraphs.paragraphs_type.small_card_with_solid_background
-    - paragraphs.paragraphs_type.table_of_contents
-    - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
-id: node.page.field_paragraphs
-field_name: field_paragraphs
+id: node.homepage.field_hero_paragraph
+field_name: field_hero_paragraph
 entity_type: node
-bundle: page
-label: Content
+bundle: homepage
+label: Hero
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -33,34 +25,23 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      accordion_item: accordion_item
       article_hero: article_hero
-      card: card
-      image_carousel: image_carousel
       image_hero: image_hero
       microsite_hero: microsite_hero
-      small_card_with_icon: small_card_with_icon
-      small_card_with_image: small_card_with_image
-      small_card_with_solid_background: small_card_with_solid_background
-      tout: tout
       video_hero: video_hero
-      table_of_contents: table_of_contents
-    negate: 1
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 24
         enabled: false
       accordion_item:
         weight: 25
-        enabled: true
+        enabled: false
       article_hero:
         weight: 26
         enabled: true
       card:
         weight: 27
-        enabled: true
-      content_embed:
-        weight: 30
         enabled: false
       extra_large_card:
         weight: 28
@@ -68,9 +49,12 @@ settings:
       fifty_fifty:
         weight: 29
         enabled: false
+      grid:
+        weight: 30
+        enabled: false
       image_carousel:
         weight: 31
-        enabled: true
+        enabled: false
       image_embed:
         weight: 32
         enabled: false
@@ -94,22 +78,16 @@ settings:
         enabled: false
       small_card_with_icon:
         weight: 39
-        enabled: true
+        enabled: false
       small_card_with_image:
         weight: 40
-        enabled: true
+        enabled: false
       small_card_with_solid_background:
         weight: 41
-        enabled: true
-      table_of_contents:
-        weight: 44
-        enabled: true
-      text_block:
-        weight: 45
         enabled: false
       tout:
         weight: 42
-        enabled: true
+        enabled: false
       video_hero:
         weight: 43
         enabled: true

@@ -9,6 +9,7 @@ dependencies:
     - field.field.menu_link_content.main.field_menu_section
     - system.menu.main
   module:
+    - options
     - svg_image_field
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
@@ -39,19 +40,19 @@ content:
     region: content
   field_list:
     type: svg_image_field_formatter
-    label: above
+    label: hidden
     settings:
       inline: false
       apply_dimensions: true
-      width: 25
-      height: 25
+      width: 40
+      height: 40
       enable_alt: true
       enable_title: true
       link: ''
       force_fill: false
-      sanitize: true
-      sanitize_remote: false
-    third_party_settings: { }
+      sanitize: '1'
+      sanitize_remote: 0
+    third_party_settings: {  }
     weight: 8
     region: content
   field_menu_section:

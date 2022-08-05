@@ -11,7 +11,8 @@
     {% for menu_item in items %}
       {% set item_classes = ['c-mega-menu__item'] %}
       {% set link_classes = ['c-mega-menu__link'] %}
-      {% set menu_item_description = menu_item.content ? menu_item.content.field_link_description|render|striptags|trim : menu_item.description %}
+      {% set menu_item_description = menu_item.content ? menu_item.content.field_link_description|field_value : menu_item.description %}
+      {% set menu_icon = menu_item.content ? menu_item.content.field_list|field_value : menu_item.icon %}
       {% if menu_item.below %}
         {% set item_classes = item_classes|merge(['has-subnav']) %}
         {% set link_classes = link_classes|merge(['has-subnav']) %}
@@ -28,7 +29,7 @@
         {% set item_classes = item_classes|merge(['is-expanded']) %}
         {% set link_classes = link_classes|merge(['is-expanded']) %}
       {% endif %}
-      {% if menu_item.icon %}
+      {% if menu_icon %}
         {% set item_classes = item_classes|merge(['has-icon']) %}
       {% endif %}
       {% if menu_item.content.field_boolean|render|striptags|trim == 'True' %}
@@ -56,8 +57,8 @@
         'class': link_classes
       } %}
       <li {{ add_attributes(additional_item_attributes) }}>
-        {% if menu_item.icon %}
-          {{ menu_item.icon }}
+        {% if menu_icon %}
+          {{ menu_icon }}
         {% endif %}
         {% if menu_item.url == '<button>' %}
           {# This is needed to work in Storybook. #}

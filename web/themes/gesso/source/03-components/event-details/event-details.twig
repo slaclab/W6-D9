@@ -28,13 +28,15 @@
           label: 'Date',
           icon_name: 'calendar',
         } %}
-        {% if calendar_link_url %}
-          <a href="{{ calendar_link_url }}" title="{{ 'Add to calendar'|t }}">
-            {{ calendar_link_text }}
-          </a>
-        {% else %}
-          {{ calendar_link_text }}
-        {% endif %}
+        <span>
+          {% if calendar_link_url %}
+            <a class="href="{{ calendar_link_url }}" title="{{ 'Add to calendar'|t }}">
+              {{ calendar_link_text|raw }}
+            </a>
+          {% else %}
+            {{ calendar_link_text|raw }}
+          {% endif %}
+        </span>
       </div>
     {% endif %}
 

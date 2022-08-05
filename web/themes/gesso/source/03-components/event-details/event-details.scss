@@ -40,6 +40,7 @@
   flex-wrap: wrap;
   gap: gesso-spacing(1);
 
+  span,
   a {
     flex: 1;
   }
@@ -50,7 +51,7 @@
 }
 
 .c-event-details__when {
-  a {
+  span {
     font-size: gesso-font-size(4);
     font-weight: gesso-font-weight(bold);
   }

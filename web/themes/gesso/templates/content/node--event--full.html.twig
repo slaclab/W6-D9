@@ -95,7 +95,7 @@
     'event_type': content.field_type|render|striptags|trim,
     'zoom_details': content.field_detail_text|field_value,
     'additional_links': additional_links,
-    'calendar_link_text': content.field_datetime_range,
+    'calendar_link_text': formatted_date_time,
     'map_link_text': content.field_link|field_value
   } %}
     {% block event_ctas %}{{ content.field_links }}{% endblock %}

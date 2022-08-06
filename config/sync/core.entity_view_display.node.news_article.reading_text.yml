@@ -1,9 +1,9 @@
-uuid: 95209f66-2705-4ef9-a45f-ba27df73b8b6
+uuid: 6746da9a-1d7c-4640-b349-101eb9916aa0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.reading_text
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
@@ -18,61 +18,40 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
-    - entity_reference_revisions
-    - estimated_read_time
-    - text
+    - layout_paragraphs
     - user
-id: node.news_article.card
+id: node.news_article.reading_text
 targetEntityType: node
 bundle: news_article
-mode: card
+mode: reading_text
 content:
-  field_estimated_read_time:
-    type: estimated_read_time_text
+  field_bio:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      tokenized_string: '@minutes min read'
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_hero_paragraph:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: card_image
-      link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_news_source:
-    type: entity_reference_label
+  field_paragraphs:
+    type: layout_paragraphs
     label: hidden
     settings:
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_teaser:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
-  field_bio: true
   field_bio_related_content: true
   field_boolean: true
-  field_paragraphs: true
+  field_estimated_read_time: true
+  field_hero_paragraph: true
+  field_news_source: true
   field_source_link: true
   field_tags: true
+  field_teaser: true
   field_text: true
+  field_type: true
   links: true

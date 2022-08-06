@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
@@ -16,6 +17,7 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - estimated_read_time
     - field_group
     - link
     - paragraphs
@@ -114,6 +116,13 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_estimated_read_time:
+    type: estimated_read_time_default
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs

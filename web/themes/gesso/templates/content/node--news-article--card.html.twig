@@ -72,12 +72,20 @@
   {% endset %}
 {% endif %}
 
+{% set footer %}
+  {{ node.getCreatedTime|format_date('custom', 'F j, Y') }}
+  {% if content.field_estimated_read_time is not empty %}
+    &nbsp;·&nbsp;
+    {{ content.field_estimated_read_time|field_value }}
+  {% endif %}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
   title: label,
   url: url,
   kicker: kicker,
   type: content.field_type|field_value,
-  footer: node.changed.value|format_date('custom', 'F j, Y'),
+  footer: footer,
   media: content.field_hero_paragraph|field_value,
   card_content: content.field_teaser|field_value,
 } %}

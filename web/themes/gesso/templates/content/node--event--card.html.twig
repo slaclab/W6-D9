@@ -72,7 +72,7 @@
  * Format of date field as defined in the view_mode is standard HTMl format,
  * for example "2022-08-05T13:59:47-0700". Extract event start and end dates.
  * Assumes that the event field contains both a start_date and end_date, note
- * that both are required in the editing of an event and linear date order is
+ * that both are required in the editing of an event and date order is
  * enforced.
  */
 #}
@@ -81,9 +81,9 @@
 
 {#
 /**
- * Compare the event start and end dates "day of the years" and compare to determine
+ * Calculate the event start and end dates "day of the years" and compare to determine
  * if the event is a single day or multiday event. To account for the edge case of an
- * event spanning a year boundary (Dec. 31 - Jan. 1), check the year as well.
+ * event spanning a year boundary (Dec. 31 - Jan. 1), check the year first.
  * Multiday event is signalled to the theming layer by passing null for end_date value.
  */
 #}

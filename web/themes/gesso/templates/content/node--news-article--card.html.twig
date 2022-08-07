@@ -66,15 +66,10 @@
  * @see template_preprocess_node()
  */
 #}
-{% if content.field_news_source|field_value is not empty %}
-  {% set kicker %}
-    {% trans %}VIA{% endtrans %} {{ content.field_news_source|field_value }}
-  {% endset %}
-{% endif %}
 
 {% set footer %}
   {{ node.getCreatedTime|format_date('custom', 'F j, Y') }}
-  {% if content.field_estimated_read_time is not empty %}
+  {% if content.field_estimated_read_time|field_value is not empty %}
     &nbsp;·&nbsp;
     {{ content.field_estimated_read_time|field_value }}
   {% endif %}
@@ -83,7 +78,7 @@
 {% include '@components/card/card.twig' with {
   title: label,
   url: url,
-  kicker: kicker,
+  kicker: content.field_source_name|field_value,
   type: content.field_type|field_value,
   footer: footer,
   media: content.field_hero_paragraph|field_value,

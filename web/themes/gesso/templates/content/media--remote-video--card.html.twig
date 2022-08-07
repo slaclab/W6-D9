@@ -6,17 +6,23 @@
  * Available variables:
  * - name: Name of the media.
  * - content: Media content.
+ * - url: aliased URL of media entity in string format
  *
  * @see template_preprocess_media()
  */
 #}
-{{ dd(content.field_long_text) }}
+
+{% set content_type %}
+  {{ "Video"|t }}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
-  title: content.field_long_text|field_value,
-  url: url,
+  is_video: true,
+  url: content.field_boolean|field_value|number_format == 0 ? url : content.field_media_oembed_video[0]['#attributes']['src'],
+  title: content.field_long_text|field_value is not empty ? content.field_long_text|field_value : content.name|field_value,
   kicker: content.field_source_name|field_value,
-  type: content.field_type|field_value,
-  footer: node.changed.value|format_date('custom', 'F j, Y'),
+  type: content_type,
+  footer: media.changed.value|format_date('custom', 'F j, Y'),
   media: content.field_thumbnail|field_value,
   card_content: content.field_caption|field_value,
 } %}

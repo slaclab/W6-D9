@@ -9,12 +9,12 @@ dependencies:
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
-    - link
     - media
     - text
 id: media.remote_video.card
@@ -39,18 +39,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_long_text:
     type: text_default
     label: hidden
@@ -67,6 +55,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_source_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_thumbnail:
     type: entity_reference_entity_view
     label: hidden
@@ -74,12 +69,20 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
     region: content
 hidden:
   created: true
+  field_link: true
   field_tags: true
   field_transcript: true
-  name: true
   thumbnail: true
   uid: true

@@ -58,6 +58,11 @@ function gesso_preprocess_image(array &$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function gesso_preprocess_media(array &$variables) {
+  // Media items do not pass the aliased URL to the item by default. Retrieve and assign to
+  // a template variable consistent with usage in node and taxonomy_term preprocessing.
+  $variables['url'] = $variables['media']
+    ->toUrl('canonical')
+    ->toString();
   $variables['has_caption'] = isset($variables['attributes']['data-caption']);
   $variables['bundle'] = $variables['media']->bundle();
 }

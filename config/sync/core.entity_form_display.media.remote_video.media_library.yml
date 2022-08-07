@@ -9,6 +9,7 @@ dependencies:
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
@@ -33,6 +34,7 @@ hidden:
   field_link: true
   field_long_text: true
   field_media_oembed_video: true
+  field_source_name: true
   field_tags: true
   field_thumbnail: true
   field_transcript: true

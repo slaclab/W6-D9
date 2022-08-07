@@ -10,15 +10,15 @@
  * @see template_preprocess_media()
  */
 #}
-
+{{ dd(content.field_long_text) }}
 {% include '@components/card/card.twig' with {
-  title: label,
+  title: content.field_long_text|field_value,
   url: url,
-  kicker: kicker,
+  kicker: content.field_source_name|field_value,
   type: content.field_type|field_value,
   footer: node.changed.value|format_date('custom', 'F j, Y'),
-  media: content.field_hero_paragraph|field_value,
-  card_content: content.field_teaser|field_value,
+  media: content.field_thumbnail|field_value,
+  card_content: content.field_caption|field_value,
 } %}
 
 {% set catch_cache = content|render %}

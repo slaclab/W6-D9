@@ -24,6 +24,7 @@
 
 .c-filter-modal__col {
   margin-bottom: 50px;
+  text-indent: 4px; // avoids focus outline cutoffs
 
   &:last-child {
     margin-bottom: 10px;
@@ -106,6 +107,7 @@
     border: 1px solid gesso-grayscale(gray-1);
     height: auto;
     margin: auto;
+    max-height: 100%;
     overflow: auto;
     padding: 60px 120px 20px 60px;
     width: auto;

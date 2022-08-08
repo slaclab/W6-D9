@@ -73,7 +73,7 @@ function gesso_preprocess_node__event(&$vars) {
       }
     } else {
       $vars['end_date'] = [
-        'month' => date('M'. $end_date),
+        'month' => date('M', $end_date),
         'day' => date('j', $end_date),
       ];
       $vars['formatted_date_time'] = date('l, F j', $start_date) . ' &ndash; ' . date('l, F j, Y', $end_date);

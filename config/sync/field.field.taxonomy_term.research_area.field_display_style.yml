@@ -1,0 +1,21 @@
+uuid: 641477b6-c426-44b3-9a94-99047b17ddaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_display_style
+    - taxonomy.vocabulary.research_area
+  module:
+    - options
+id: taxonomy_term.research_area.field_display_style
+field_name: field_display_style
+entity_type: taxonomy_term
+bundle: research_area
+label: 'Display Style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

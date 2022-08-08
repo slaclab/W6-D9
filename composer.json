@@ -51,6 +51,7 @@
     "drupal/redirect": "^1.6",
     "drupal/redis": "^1.5",
     "drupal/search_api": "^1.21",
+    "drupal/selection_sharer": "^1.4",
     "drupal/simple_sitemap": "^3.11",
     "drupal/site_settings": "^1.19",
     "drupal/sitewide_alert": "^2.0",

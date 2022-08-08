@@ -49,7 +49,7 @@
     "drupal/redirect": "^1.6",
     "drupal/redis": "^1.5",
     "drupal/search_api": "^1.21",
-    "drupal/simple_sitemap": "^3.11",
+    "drupal/simple_sitemap": "^4.1",
     "drupal/site_settings": "^1.19",
     "drupal/sitewide_alert": "^2.0",
     "drupal/style_options": "^1.0@alpha",

@@ -126,11 +126,10 @@
  * The external link field is not required, however, so the card title link may have no href.
  */
 #}
-
 {% include '@components/card/card.twig' with {
   is_event: true,
   title: label,
-  url: content.field_boolean|field_value|number_format == 0 ? url : content.field_external_link.0['#url'],
+  url: node.field_boolean.value|number_format == 0 ? url : content.field_external_link.0['#url'],
   start_date: {
     'month': event_start_date|date('M'),
     'day': event_start_date|date('d')

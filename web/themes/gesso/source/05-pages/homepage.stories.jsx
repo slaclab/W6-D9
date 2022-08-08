@@ -48,7 +48,7 @@ const Homepage = args => (
             col_2: ReactDOMServer.renderToStaticMarkup(
               WYSIWYG({
                 content: `<p class="c-lede">We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.</p>
-<p class="c-lede"><a href="#0" class="c-arrow-link"><strong>Our Story</strong></a><a href="#0" class="c-arrow-link"><strong>Our People</strong></a></p>`,
+<p class="c-lede"><a href="#0" class="c-arrow-link">Our Story</a><a href="#0" class="c-arrow-link">Our People</a></p>`,
               })
             ),
           })

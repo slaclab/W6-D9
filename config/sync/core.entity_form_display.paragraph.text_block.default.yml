@@ -6,8 +6,6 @@ dependencies:
     - field.field.paragraph.text_block.field_body
     - field.field.paragraph.text_block.field_image
     - field.field.paragraph.text_block.field_link
-    - field.field.paragraph.text_block.field_primary_button
-    - field.field.paragraph.text_block.field_secondary_button
     - field.field.paragraph.text_block.field_short_text
     - field.field.paragraph.text_block.field_text
     - paragraphs.paragraphs_type.text_block
@@ -38,22 +36,6 @@ content:
   field_link:
     type: link_default
     weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_primary_button:
-    type: link_default
-    weight: 5
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_secondary_button:
-    type: link_default
-    weight: 6
     region: content
     settings:
       placeholder_url: ''

@@ -15,59 +15,29 @@ dependencies:
     - media.type.image
   module:
     - image
-    - link
     - text
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_boolean:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_caption:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   field_credit:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  field_link:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_long_text:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
       image_style: large
@@ -76,24 +46,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
 hidden:
   created: true
+  field_boolean: true
+  field_link: true
+  field_long_text: true
+  field_tags: true
+  field_type: true
   name: true
   thumbnail: true
   uid: true

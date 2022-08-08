@@ -3,9 +3,11 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-{% set map_content %}
-  {% include '@components/map/map.twig' %}
-{% endset %}
+{% if map_iframe %}
+  {% set map_content %}
+    {% include '@components/map/map.twig' %}
+  {% endset %}
+{% endif %}
 
 <div {{ add_attributes({ class: classes } ) }}>
   <div class="l-constrain">
@@ -78,9 +80,11 @@
     {{ title_suffix }}
   </div>
   {{ visiting }}
-  {% include '@layouts/section/section.twig' with {
-    'no_padding': true,
-    'has_constrain': false,
-    'section_content': map_content
-  } %}
+  {% if map_content %}
+    {% include '@layouts/section/section.twig' with {
+      'no_padding': true,
+      'has_constrain': false,
+      'section_content': map_content
+    } %}
+  {% endif %}
 </div>

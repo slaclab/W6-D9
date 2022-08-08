@@ -52,6 +52,10 @@
       content: '';
     }
   }
+
+  &:empty {
+    display: block; // keeps empty anchors from taking up vertical space, counterintuitively
+  }
 }
 
 address {

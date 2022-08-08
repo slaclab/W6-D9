@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.extra_large_card.field_alignment
     - field.field.paragraph.extra_large_card.field_body
     - field.field.paragraph.extra_large_card.field_image
     - field.field.paragraph.extra_large_card.field_link
@@ -18,6 +19,12 @@ targetEntityType: paragraph
 bundle: extra_large_card
 mode: default
 content:
+  field_alignment:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_body:
     type: text_textarea
     weight: 4

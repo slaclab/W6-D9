@@ -44,6 +44,7 @@
   title: content.field_short_text|field_value,
   url: content.field_link|render|striptags|trim,
   kicker: content.field_text,
-  card_content: content|without('field_link', 'field_text', 'field_image', 'field_short_text'),
-  media: content.field_image|field_value
+  card_content: content|without('field_link', 'field_text', 'field_image', 'field_short_text', 'field_alignment'),
+  media: content.field_image|field_value,
+  alignment: content.field_alignment|render|striptags|trim
 } %}

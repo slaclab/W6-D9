@@ -16,7 +16,7 @@ id: paragraph.embed_full_html_.field_body
 field_name: field_body
 entity_type: paragraph
 bundle: embed_full_html_
-label: Caption
+label: Content
 description: ''
 required: false
 translatable: true

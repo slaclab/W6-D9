@@ -14,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
-    - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
@@ -44,7 +43,6 @@ settings:
       small_card_with_solid_background: small_card_with_solid_background
       tout: tout
       video_hero: video_hero
-      table_of_contents: table_of_contents
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -61,6 +59,9 @@ settings:
         enabled: true
       content_embed:
         weight: 30
+        enabled: false
+      embed_block:
+        weight: 32
         enabled: false
       extra_large_card:
         weight: 28
@@ -103,7 +104,7 @@ settings:
         enabled: true
       table_of_contents:
         weight: 44
-        enabled: true
+        enabled: false
       text_block:
         weight: 45
         enabled: false

@@ -32,3 +32,24 @@ function gesso_preprocess_breadcrumb(array &$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_menu__HOOK().
+ */
+function gesso_preprocess_menu__extras__main(&$vars) {
+  $mega_menu_setting = \Drupal::service('site_settings.loader')->loadByFieldset('mega_menu_cards');
+  if (!empty($mega_menu_setting['mega_menu_cards'])) {
+    $mega_menu_cards = [];
+    foreach($mega_menu_setting['mega_menu_cards'] as $card) {
+      $mega_menu_cards[$card['field_menu_link']] = $card['field_cards'];
+    }
+    foreach($vars['items'] as $key => $item) {
+      $menu_id = $item['entity']->id();
+      if (!empty($mega_menu_cards[$menu_id]) && !empty($mega_menu_cards[$menu_id]['target_id'])) {
+        $card_paragraph = \Drupal\paragraphs\Entity\Paragraph::load($mega_menu_cards[$menu_id]['target_id']);
+        $view_builder = \Drupal::entityTypeManager()->getViewBuilder($card_paragraph->getEntityTypeId());
+        $vars['items'][$key]['featured'] = $view_builder->view($card_paragraph, 'menu');
+      }
+    }
+  }
+}

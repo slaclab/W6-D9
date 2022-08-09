@@ -123,6 +123,8 @@ mega_menu:
   dependencies:
     - gesso/common
     - gesso/mobile_menu
+    - core/drupal
+    - core/drupalSettings
 
 mobile_menu:
   css:

@@ -45,3 +45,10 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
   }
   unset($vars['content']['field_long_text']);
 }
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__image_carousel(&$vars) {
+  $vars['pager_items'] = \Drupal\Core\Render\Element::children($vars['content']['field_paragraphs']);
+}

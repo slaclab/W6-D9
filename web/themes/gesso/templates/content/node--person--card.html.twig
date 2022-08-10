@@ -74,13 +74,15 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
+{% set card_content = content.field_teaser[0] is not empty ? content.field_teaser : content.field_body %}
+
 {% include '@components/card/card.twig' with {
   'modifier_classes': 'c-card--bio',
   'title': label,
   'url': url,
   'card_metadata': content.field_text_title|field_value|raw,
   'media': content.field_image|field_value,
-  'card_content': content.field_body,
+  'card_content': card_content|field_value,
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

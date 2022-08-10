@@ -1,16 +1,16 @@
-uuid: 641477b6-c426-44b3-9a94-99047b17ddaa
+uuid: 3293b233-640b-4973-888e-1c4a5f9c4ae9
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_display_style
-    - taxonomy.vocabulary.research_area
+    - taxonomy.vocabulary.tags
   module:
     - options
-id: taxonomy_term.research_area.field_display_style
+id: taxonomy_term.tags.field_display_style
 field_name: field_display_style
 entity_type: taxonomy_term
-bundle: research_area
+bundle: tags
 label: 'Display Style'
 description: ''
 required: false

@@ -401,8 +401,8 @@ gesso:
   z-index:
     social-share: 2
     back-to-top: 5
-    nav: 1000
-    drawer: 1200
+    nav: 500
+    drawer: 501
     modal: 1300
   spacing:
     0: 0

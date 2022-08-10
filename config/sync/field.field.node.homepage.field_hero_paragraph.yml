@@ -17,7 +17,7 @@ entity_type: node
 bundle: homepage
 label: Hero
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -43,14 +43,17 @@ settings:
       card:
         weight: 27
         enabled: false
+      content_embed:
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 32
+        enabled: false
       extra_large_card:
         weight: 28
         enabled: false
       fifty_fifty:
         weight: 29
-        enabled: false
-      grid:
-        weight: 30
         enabled: false
       image_carousel:
         weight: 31
@@ -84,6 +87,12 @@ settings:
         enabled: false
       small_card_with_solid_background:
         weight: 41
+        enabled: false
+      table_of_contents:
+        weight: 46
+        enabled: false
+      text_block:
+        weight: 47
         enabled: false
       tout:
         weight: 42

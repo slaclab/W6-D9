@@ -62,6 +62,7 @@
     "drupal/twig_field_value": "^2.0",
     "drupal/twig_tweak": "^3.1",
     "drupal/username_enumeration_prevention": "^1.2",
+    "drupal/view_mode_switch": "^2.0",
     "drupal/view_modes_display": "^2.3",
     "drupal/viewsreference_filter": "^1.0",
     "drupal/yaml_content": "^1.0@alpha",

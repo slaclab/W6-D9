@@ -2,6 +2,8 @@
 // Component: c-tagline--long
 @use '00-config' as *;
 
+$c-tagline-gutter: rem(30px);
+
 .c-tagline--long {
   .c-tagline__section {
     position: relative;
@@ -47,13 +49,21 @@
     position: relative;
 
     .c-tagline__section {
-      @include css-fixed-grid(2, gesso-get-map(gutter-width));
+      @include css-fixed-grid(2, $c-tagline-gutter);
       position: static;
     }
 
     .c-tagline__box {
       background: transparent;
+      max-width: 70ch; // prevent long lines of text on wide views
+      padding-left: 0;
       position: static;
+    }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    .c-tagline__box {
+      padding-right: rem(gesso-spacing(6)); // space for social share icons
     }
   }
 
@@ -64,7 +74,7 @@
       left: 0;
       position: absolute;
       top: 0;
-      width: 50%;
+      width: calc(50% - #{$c-tagline-gutter/2});
     }
 
     .c-tagline__box {

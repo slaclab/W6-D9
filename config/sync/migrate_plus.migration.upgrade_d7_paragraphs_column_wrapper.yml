@@ -1,0 +1,72 @@
+uuid: 6d30b8d2-bf40-478f-969d-f63f4078a4fa
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_column_wrapper
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Column Wrapper)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: column_wrapper
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_background:
+    -
+      plugin: get
+      source: field_background
+  field_column_wrapper_contentp:
+    -
+      plugin: sub_process
+      source: field_column_wrapper_contentp
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: column_wrapper
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

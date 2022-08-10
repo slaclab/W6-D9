@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.person.field_image
     - field.field.node.person.field_link
     - field.field.node.person.field_long_text
+    - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
     - node.type.person
@@ -67,6 +68,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_text:
     type: string

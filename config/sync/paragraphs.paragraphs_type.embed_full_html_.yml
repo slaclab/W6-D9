@@ -1,0 +1,10 @@
+uuid: cbc80d73-1b63-4248-a44e-b426ea0a9ed6
+langcode: en
+status: true
+dependencies: {  }
+id: embed_full_html_
+label: 'Embed (Full HTML)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

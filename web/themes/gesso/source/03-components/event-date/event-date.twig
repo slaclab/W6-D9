@@ -9,17 +9,17 @@
 <div {{ add_attributes({ class: classes } ) }}>
   {% if start_date %}
     <div>
-      {{ start_date.month ? '<span>' ~ start_date.month ~ '</span>' }}
-      {{ start_date.day ~ (is_multiday and is_multimonth == false ? '-' ~ end_date.day : '' )}}
+      {% if start_date.month %}<span>{{ start_date.month }}</span>{% endif %}
+      {{ start_date.day ~ (is_multiday and is_multimonth == false ? '–' ~ end_date.day : '' )}}
     </div>
   {% endif %}
 
   {% if is_multimonth %}
     <div>
-      &ndash;
+      –
     </div>
     <div>
-      {{ '<span>' ~ end_date.month ~ '</span>' }}
+      <span>{{ end_date.month }}</span>
       {{ end_date.day }}
     </div>
   {% endif %}

@@ -18,8 +18,8 @@ content:
     weight: 1
     region: content
   field_icon:
-    type: list_default
-    label: above
+    type: list_key
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2

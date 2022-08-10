@@ -3,10 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.research_area.field_display_style
     - taxonomy.vocabulary.research_area
   module:
-    - options
     - text
 id: taxonomy_term.research_area.default
 targetEntityType: taxonomy_term
@@ -19,12 +17,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_display_style:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden: {  }

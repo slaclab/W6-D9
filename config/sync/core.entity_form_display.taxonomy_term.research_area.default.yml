@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.research_area.field_display_style
     - taxonomy.vocabulary.research_area
   module:
     - path
@@ -20,12 +19,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_display_style:
-    type: options_select
-    weight: 101
-    region: content
-    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield

@@ -1,8 +1,9 @@
-uuid: 7115354a-1454-401c-8487-56b0f163e9b4
+uuid: 427f5727-bc51-4f4f-b041-39947660b1ce
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.headshot
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
@@ -16,10 +17,10 @@ dependencies:
   module:
     - image
     - text
-id: media.image.default
+id: media.image.headshot
 targetEntityType: media
 bundle: image
-mode: default
+mode: headshot
 content:
   field_caption:
     type: text_default

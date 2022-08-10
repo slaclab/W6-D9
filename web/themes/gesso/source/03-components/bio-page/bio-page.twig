@@ -7,7 +7,42 @@
 {{ attach_library('gesso/bio_page') }}
 
 <div {{ add_attributes({ class: classes }) }}>
+  {% if show_admin_info %}
+    {% if not admin_info %}
+      {% set admin_info %}
+        {% include '@components/message/message.twig' with {
+          'heading': 'Status message',
+          'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
+        } %}
+        {% include '@components/button-group/button-group.twig' with {
+          'heading': 'Primary tabs',
+          'element': 'nav',
+          'button_modifier_classes': 'c-button--base',
+          'buttons': [
+            {
+              'text': 'View',
+              'active': true,
+            },
+            {
+              'text': 'Edit',
+            },
+            {
+              'text': 'Delete',
+            },
+            {
+              'text': 'Revisions',
+            },
+          ],
+        } %}
+      {% endset %}
+    {% endif %}
+
+    {% block admin_info %}
+      {{ admin_info }}
+    {% endblock %}
+  {% endif %}
   <div class="c-bio-page__inner">
+    {{ title_prefix }}
     {% include '@components/page-title/page-title.twig' with {
       kicker: bio_kicker,
       page_title: bio_name,
@@ -15,6 +50,7 @@
       has_constrain: false,
       modifier_classes: 'c-bio-page__title'
     } %}
+    {{ title_suffix }}
     {% if bio_image %}
       {% include '@components/figure/figure.twig' with {
         media: bio_image,
@@ -23,8 +59,8 @@
       } %}
     {% endif %}
     {% if bio_page_content %}
-      {% set bio_page_content_stripped = bio_page_content|striptags|trim %}
-      {% set bio_page_content_collapsed_stripped = bio_page_content_collapsed|striptags|trim %}
+      {% set bio_page_content_stripped = bio_page_content|render|striptags|trim %}
+      {% set bio_page_content_collapsed_stripped = bio_page_content_collapsed|render|striptags|trim %}
       {% set bio_page_content_display %}
         {% if bio_page_content_stripped and bio_page_content_collapsed_stripped and bio_page_content_stripped != bio_page_content_collapsed_stripped %}
           {% include '@components/drawer/drawer.twig' with {

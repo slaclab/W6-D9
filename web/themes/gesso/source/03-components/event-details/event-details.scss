@@ -1,6 +1,7 @@
 // @file
 // Component: c-event-details
 @use '00-config' as *;
+@use '../event-hat/event-hat' as *;
 
 .c-event-details {
   max-width: 600px;
@@ -39,6 +40,7 @@
   flex-wrap: wrap;
   gap: gesso-spacing(1);
 
+  span,
   a {
     flex: 1;
   }
@@ -49,7 +51,7 @@
 }
 
 .c-event-details__when {
-  a {
+  span {
     font-size: gesso-font-size(4);
     font-weight: gesso-font-weight(bold);
   }

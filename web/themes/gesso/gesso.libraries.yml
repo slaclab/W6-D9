@@ -84,6 +84,11 @@ dropdown_menu:
     - gesso/common
     - gesso/mobile_menu
 
+event_details:
+  css:
+    theme:
+      dist/css/event-details.css: {}
+
 hamburger_button:
   css:
     theme:
@@ -123,6 +128,8 @@ mega_menu:
   dependencies:
     - gesso/common
     - gesso/mobile_menu
+    - core/drupal
+    - core/drupalSettings
 
 mobile_menu:
   css:

@@ -9,12 +9,14 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.extra_large_card
+    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.table_of_contents
+    - paragraphs.paragraphs_type.text_block
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -36,12 +38,14 @@ settings:
       article_hero: article_hero
       card: card
       extra_large_card: extra_large_card
+      image_carousel: image_carousel
       image_hero: image_hero
       microsite_hero: microsite_hero
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
       video_hero: video_hero
+      text_block: text_block
       table_of_contents: table_of_contents
     negate: 1
     target_bundles_drag_drop:
@@ -71,7 +75,7 @@ settings:
         enabled: false
       image_carousel:
         weight: 31
-        enabled: false
+        enabled: true
       image_embed:
         weight: 32
         enabled: false
@@ -107,7 +111,7 @@ settings:
         enabled: true
       text_block:
         weight: 46
-        enabled: false
+        enabled: true
       tout:
         weight: 42
         enabled: false

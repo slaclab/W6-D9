@@ -1,0 +1,64 @@
+uuid: 411f1884-c7a4-4568-b5a8-a34cfa2dc846
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_image_bootstrap
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Image Bootstrap)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: image_bootstrap
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_animation:
+    -
+      plugin: get
+      source: field_animation
+  field_animation_setting:
+    -
+      plugin: get
+      source: field_animation_setting
+  field_image:
+    -
+      plugin: sub_process
+      source: field_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+  field_paragraph_link:
+    -
+      plugin: field_link
+      source: field_paragraph_link
+  field_paragraph_width:
+    -
+      plugin: get
+      source: field_paragraph_width
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: image_bootstrap
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

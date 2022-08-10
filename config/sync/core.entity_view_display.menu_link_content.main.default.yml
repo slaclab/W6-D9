@@ -6,8 +6,10 @@ dependencies:
     - field.field.menu_link_content.main.field_boolean
     - field.field.menu_link_content.main.field_link_description
     - field.field.menu_link_content.main.field_list
+    - field.field.menu_link_content.main.field_menu_section
     - system.menu.main
   module:
+    - options
     - svg_image_field
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
@@ -21,9 +23,9 @@ content:
     region: content
   field_boolean:
     type: boolean
-    label: above
+    label: hidden
     settings:
-      format: default
+      format: true-false
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
@@ -31,25 +33,32 @@ content:
     region: content
   field_link_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 6
     region: content
   field_list:
     type: svg_image_field_formatter
-    label: above
+    label: hidden
     settings:
       inline: false
       apply_dimensions: true
-      width: 25
-      height: 25
+      width: 40
+      height: 40
       enable_alt: true
       enable_title: true
       link: ''
       force_fill: false
-      sanitize: true
-      sanitize_remote: false
+      sanitize: '1'
+      sanitize_remote: 0
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_menu_section:
+    type: list_key
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 8
     region: content

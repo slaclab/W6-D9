@@ -1,0 +1,60 @@
+uuid: c4afc80d-be98-40b6-a12d-db3fd17cdb19
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_media_collection
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Media collection)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_media_collection
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_description:
+    -
+      plugin: get
+      source: field_description
+  field_image:
+    -
+      plugin: sub_process
+      source: field_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_title:
+    -
+      plugin: get
+      source: field_title
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: media_collection
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

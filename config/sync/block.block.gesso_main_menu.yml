@@ -12,8 +12,8 @@ _core:
   default_config_hash: iGJatYRbJXpid7LCSEVXj83eDN6uMdhl1-DLbRYKSRE
 id: gesso_main_menu
 theme: gesso
-region: navigation
-weight: 0
+region: header
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -50,6 +50,15 @@ options:
       -
         label: 'Horizontal'
         class: 'l-section--horizontal'
+  accordion_size:
+    plugin: css_class
+    label: 'Accordion Size'
+    options:
+      -
+        label: 'Default'
+      -
+        label: 'Large'
+        class: 'c-accordion--large'
 
 contexts:
   paragraphs:
@@ -58,3 +67,6 @@ contexts:
         section_bg: true
         section_padding: true
         section_layout: true
+    accordion:
+      options:
+        accordion_size: true

@@ -1,0 +1,70 @@
+uuid: 9ac98ed2-bd4c-476d-b2f4-02d801fba464
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_timeline_bundler
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Timeline Bundler)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: timeline_bundler
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_background_image:
+    -
+      plugin: sub_process
+      source: field_background_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_structured_content:
+    -
+      plugin: sub_process
+      source: field_structured_content
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: value
+          -
+            plugin: extract
+            index:
+              - revision_id
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: timeline_bundler
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

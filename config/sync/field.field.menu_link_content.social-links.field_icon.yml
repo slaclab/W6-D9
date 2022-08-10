@@ -13,7 +13,7 @@ entity_type: menu_link_content
 bundle: social-links
 label: Icon
 description: 'Select an icon to display with this link.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

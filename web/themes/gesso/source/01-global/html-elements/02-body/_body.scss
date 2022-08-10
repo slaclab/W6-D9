@@ -18,6 +18,10 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 
+  &.gin--horizontal-toolbar {
+    overflow-anchor: none;
+  }
+
   // Tweak styling in WYSIWYG editor.
   @if $wysiwyg {
     padding: 0 rem(gesso-site-margins(desktop));

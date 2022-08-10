@@ -19,12 +19,12 @@ process:
       plugin: static_map
       source: name
       map:
-        anonymous user: anonymous
-        authenticated user: authenticated
+        'anonymous user': anonymous
+        'authenticated user': authenticated
         administrator: administrator
-        author: content_editor
+        author: author
         editor: content_editor
-        manager: content_editor
+        manager: manager
         site_member: authenticated
     -
       plugin: user_update_8002
@@ -33,13 +33,13 @@ process:
       plugin: static_map
       source: name
       map:
-        anonymous user: Anonymous user
-        authenticated user: Authenticated user
+        'anonymous user': 'Anonymous user'
+        'authenticated user': 'Authenticated user'
         administrator: Administrator
-        author: Content editor
-        editor: Content editor
-        manager: Content editor
-        site_member: Authenticated user
+        author: 'Content author'
+        editor: 'Content editor'
+        manager: Manager
+        site_member: 'Authenticated user'
   permissions:
     -
       plugin: static_map

@@ -180,7 +180,6 @@
       "drush/Commands/contrib/{$name}": [
         "type:drupal-drush"
       ]
-    },
-    "patches-file": "composer.patches.json"
+    }
   }
 }

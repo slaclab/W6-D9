@@ -38,6 +38,24 @@ function gesso_preprocess_paragraph__section(&$vars) {
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
+function gesso_preprocess_paragraph__image_embed(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+  if ($paragraph->field_boolean->value && !empty($vars['content']['field_image'][0])) {
+    $vars['content']['field_image'][0]['#caption_override'] = $vars['content']['field_long_text'];
+  }
+  unset($vars['content']['field_long_text']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__image_carousel(&$vars) {
+  $vars['pager_items'] = \Drupal\Core\Render\Element::children($vars['content']['field_paragraphs']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__accordion(&$vars) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $vars['paragraph'];

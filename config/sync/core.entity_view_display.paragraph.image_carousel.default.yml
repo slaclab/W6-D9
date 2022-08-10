@@ -3,54 +3,22 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_carousel.field_links
-    - field.field.paragraph.image_carousel.field_long_text
     - field.field.paragraph.image_carousel.field_paragraphs
-    - field.field.paragraph.image_carousel.field_text
     - paragraphs.paragraphs_type.image_carousel
   module:
     - entity_reference_revisions
-    - link
-    - text
 id: paragraph.image_carousel.default
 targetEntityType: paragraph
 bundle: image_carousel
 mode: default
 content:
-  field_links:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_long_text:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: carousel
       link: ''
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_text:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
     region: content
 hidden: {  }

@@ -70,9 +70,6 @@ settings:
       embed_full_html_:
         weight: -50
         enabled: false
-      embed_block:
-        weight: 32
-        enabled: false
       extra_large_card:
         weight: -49
         enabled: false

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.carousel
     - core.entity_view_mode.paragraph.centered
     - core.entity_view_mode.paragraph.centered_wide
     - field.storage.paragraph.field_view_mode
@@ -24,7 +23,6 @@ default_value:
 default_value_callback: ''
 settings:
   allowed_view_modes:
-    carousel: carousel
     centered: centered
     centered_wide: centered_wide
 field_type: view_mode_switch

@@ -48,7 +48,7 @@
 <em {{ attributes }}>
   {{- title_suffix.contextual_links }}
 
-  {%- for item in items -%}
+  {%- for item in field_items -%}
     {{- item.content|raw -}}
   {%- endfor -%}
 

@@ -83,3 +83,17 @@ function gesso_preprocess_paragraph__accordion(&$vars) {
   $parent = $paragraph->getParentEntity();
   $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
 }
+
+function gesso_preprocess_paragraph__video_hero(&$vars) {
+  $media_ids = \Drupal\Core\Render\Element::children($vars['content']['field_video_hero_videos']);
+  $hero_videos = [];
+  foreach($media_ids as $id) {
+    /** @var \Drupal\media\Entity\Media $media */
+    $media = $vars['content']['field_video_hero_videos'][$id]['#media'];
+    $hero_videos[] = [
+      'embed' => $media->field_media_oembed_video->view('video_hero'),
+      'caption' => $media->field_caption->view('video_hero'),
+    ];
+  }
+  $vars['hero_videos'] = $hero_videos;
+}

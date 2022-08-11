@@ -5,7 +5,10 @@
  * Node-related hook implementations.
  */
 
+use Drupal\Core\Link;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_node().
@@ -106,13 +109,13 @@ function gesso_preprocess_node__person(&$vars) {
  * Implements hook_preprocess_node().
  */
 function gesso_preprocess_node__news_article(&$vars) {
-  // Extract the node from the preprocess variables.
+  // Extract the node from the preprocessing variables.
   $node = $vars['node'];
 
   // Extract the set of paragraphs from the content field of the node.
   $paragraphs = $node->get('field_paragraphs')->getValue();
   if (count($paragraphs)) {
-    // Collector for list items to be created. Ordered list.
+    // Collector for list items to be created; this will be an ordered list.
     $list_items = [];
 
     // Load each paragraph in turn
@@ -123,14 +126,35 @@ function gesso_preprocess_node__news_article(&$vars) {
       }
     }
 
+    // TOC paragraphs were found, convert list into a toc_list render array.
     if ($list_items) {
       $vars['toc_list'] = _gesso_preprocess_node__news_article_toclist($list_items);
     }
   }
-
 }
 
+/**
+ * _gesso_preprocess_node__news_article_toclist
+ *
+ * Helper function that converts an array of strings into an ordered list
+ * of links. Each link is titled with a string.
+ */
 function _gesso_preprocess_node__news_article_toclist($items) {
+  // Create a URL from a route fragment on the <current> page for theming an anchor link.
+  // Store the link into container and return an array with keys aligned for theming using the
+  // "toc" component. Make explicit the array indexing for later use if needed.
+  // The URL fragment is created using the same function as used in the table_of_contents
+  // paragraph display, see includes/paragraph.inc.
+  $links = [];
 
+  foreach ($items as $ix => $item) {
+    $links[$ix] = [
+      'title' => $item,
+      'href' => Url::fromRoute('<current>', [], ['fragment' => Html::cleanCssIdentifier($item)])
+        ->toString(),
+    ];
+  }
+
+  return $links;
 }
 

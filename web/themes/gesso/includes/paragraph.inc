@@ -5,6 +5,8 @@
  * Paragraph-related hook implementations.
  */
 
+use Drupal\Component\Utility\Html;
+
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
@@ -51,4 +53,14 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
  */
 function gesso_preprocess_paragraph__image_carousel(&$vars) {
   $vars['pager_items'] = \Drupal\Core\Render\Element::children($vars['content']['field_paragraphs']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__table_of_contents(&$vars) {
+  $paragraph = $vars['paragraph'];
+
+  // Create a slug as a cleanCSSIdentifier based on the field_short_text value.
+  $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
 }

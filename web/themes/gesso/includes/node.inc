@@ -5,6 +5,8 @@
  * Node-related hook implementations.
  */
 
+use Drupal\paragraphs\Entity\Paragraph;
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -82,6 +84,9 @@ function gesso_preprocess_node__event(&$vars) {
   }
 }
 
+/**
+ * Implements hook_preprocess_node().
+ */
 function gesso_preprocess_node__person(&$vars) {
   if ($vars['view_mode'] == 'full') {
     if (!empty($vars['content']['field_body'][0])) {
@@ -96,3 +101,36 @@ function gesso_preprocess_node__person(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function gesso_preprocess_node__news_article(&$vars) {
+  // Extract the node from the preprocess variables.
+  $node = $vars['node'];
+
+  // Extract the set of paragraphs from the content field of the node.
+  $paragraphs = $node->get('field_paragraphs')->getValue();
+  if (count($paragraphs)) {
+    // Collector for list items to be created. Ordered list.
+    $list_items = [];
+
+    // Load each paragraph in turn
+    foreach ($paragraphs as $item) {
+      $paragraph = Paragraph::load($item['target_id']);
+      if ($paragraph->getType() == 'table_of_contents') {
+        $list_items[] = $paragraph->field_short_text->value;
+      }
+    }
+
+    if ($list_items) {
+      $vars['toc_list'] = _gesso_preprocess_node__news_article_toclist($list_items);
+    }
+  }
+
+}
+
+function _gesso_preprocess_node__news_article_toclist($items) {
+
+}
+

@@ -46,8 +46,7 @@
 {% endfor %}
 
 <em {{ attributes }}>
-    {{- title_suffix.contextual_links }}
-  {%- endif -%}
+  {{- title_suffix.contextual_links }}
 
   {%- for item in items -%}
     {{- item.content|raw -}}

@@ -3,8 +3,7 @@
   {% if items %}
     {% if menu_level == 0 %}
       {% set additional_classes = [
-        'c-menu',
-        'c-menu--' ~ menu_name,
+        'c-social-links',
       ] %}
       {% if menu_class %}
         {% set additional_classes = additional_classes|merge(menu_class) %}
@@ -18,11 +17,9 @@
     {% endif %}
     {% for item in items %}
 
-      {% set item_classes = ['c-menu__item'] %}
-      {% set link_classes = ['c-menu__link'] %}
-      {% if menu_level == 0 %}
-        {% set link_classes = link_classes|merge(['js-top-level']) %}
-      {% endif %}
+      {% set item_classes = ['c-social-links__' ~ icon] %}
+      {% set link_classes = ['c-social-links__link'] %}
+      {% set icon = item.content.field_icon|render|striptags|trim %}
 
       {% if item.below %}
         {% set item_classes = item_classes|merge(['has-subnav']) %}
@@ -59,16 +56,27 @@
       } %}
 
       {% set link_attributes = {
-        'class': link_classes
+        'class': link_classes,
+        'target': '_blank',
+        'rel': 'noopener'
       } %}
 
-      <li {{ add_attributes(additional_item_attributes) }}>
-        {% if item.url == '<button>' %}
-          {# This is needed to work in Storybook. #}
-          <button {{ add_attributes(link_attributes) }}>{{ item.title }}</button>
+      {% set item_title %}
+        {% if icon %}
+          {% include '@components/icon/icon.twig' with {
+            'icon_name': icon,
+            'label': item.title,
+            'modifier_classes': 'c-social-links__icon c-social-links__icon--' ~ icon,
+            'is_demo': false,
+            'gesso_image_path': gesso_image_path
+          } %}
         {% else %}
-          {{ link(item.title, item.url, link_attributes) }}
+          {{- item.title -}}
         {% endif %}
+      {% endset %}
+
+      <li {{ add_attributes(additional_item_attributes) }}>
+          {{ link(item_title, item.url, link_attributes) }}
 
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

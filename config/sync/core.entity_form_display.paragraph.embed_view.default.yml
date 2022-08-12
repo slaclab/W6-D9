@@ -13,14 +13,10 @@ bundle: embed_view
 mode: default
 content:
   field_viewsreference:
-    type: viewsreference_autocomplete
+    type: viewsreference_select
     weight: 0
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

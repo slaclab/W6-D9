@@ -9,12 +9,12 @@ source_type: 'Drupal 7'
 module: null
 shared_configuration:
   source:
-    key: drupal_7
+    key: drupal7
     database:
       driver: mysql
-      username: db
-      password: db
-      host: db
+      username: ''
+      password: ''
+      host: ''
       port: ''
-      database: drupal7
+      database: ''
       prefix: null

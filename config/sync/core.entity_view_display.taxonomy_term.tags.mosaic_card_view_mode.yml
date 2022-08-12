@@ -1,0 +1,55 @@
+uuid: feabe80d-3e50-4735-bd04-93b8f37c5c4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.mosaic_card_view_mode
+    - field.field.taxonomy_term.tags.field_display_style
+    - field.field.taxonomy_term.tags.field_image
+    - field.field.taxonomy_term.tags.field_rss
+    - taxonomy.vocabulary.tags
+  module:
+    - link
+    - options
+    - text
+id: taxonomy_term.tags.mosaic_card_view_mode
+targetEntityType: taxonomy_term
+bundle: tags
+mode: mosaic_card_view_mode
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_display_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_rss:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

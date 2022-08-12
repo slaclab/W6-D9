@@ -16,38 +16,30 @@ source:
 process:
   id:
     -
-      plugin: machine_name
+      plugin: static_map
       source: name
+      map:
+        'anonymous user': anonymous
+        'authenticated user': authenticated
+        administrator: administrator
+        author: author
+        editor: content_editor
+        manager: manager
+        site_member: authenticated
     -
       plugin: user_update_8002
   label:
     -
-      plugin: get
-      source: name
-  permissions:
-    -
       plugin: static_map
-      source: permissions
-      bypass: true
+      source: name
       map:
-        'use PHP for block visibility': 'use PHP for settings'
-        'administer site-wide contact form': 'administer contact forms'
-        'post comments without approval': 'skip comment approval'
-        'edit own blog entries': 'edit own blog content'
-        'edit any blog entry': 'edit any blog content'
-        'delete own blog entries': 'delete own blog content'
-        'delete any blog entry': 'delete any blog content'
-        'create forum topics': 'create forum content'
-        'delete any forum topic': 'delete any forum content'
-        'delete own forum topics': 'delete own forum content'
-        'edit any forum topic': 'edit any forum content'
-        'edit own forum topics': 'edit own forum content'
-    -
-      plugin: flatten
-  weight:
-    -
-      plugin: get
-      source: weight
+        'anonymous user': 'Anonymous user'
+        'authenticated user': 'Authenticated user'
+        administrator: Administrator
+        author: 'Content author'
+        editor: 'Content editor'
+        manager: Manager
+        site_member: 'Authenticated user'
   skip_missing_permission_deprecation:
     -
       plugin: default_value

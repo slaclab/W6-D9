@@ -51,6 +51,7 @@ module:
   migrate: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
+  migrate_manifest: 0
   migrate_plus: 0
   migrate_upgrade: 0
   mysql: 0
@@ -69,6 +70,7 @@ module:
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
+  slac_migrate: 0
   slac_yaml_content: 0
   style_options: 0
   svg_image_field: 0
@@ -83,6 +85,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0
   viewsreference: 0

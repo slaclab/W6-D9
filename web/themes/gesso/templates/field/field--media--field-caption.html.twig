@@ -45,6 +45,13 @@
   }]) %}
 {% endfor %}
 
-{% include "field--no-wrapper.html.twig" with {
-  items: field_items
-} %}
+{%- if logged_in -%}
+<span {{ attributes }}>
+    {{- title_suffix.contextual_links }}
+  {%- endif -%}
+
+  {%- for item in field_items -%}
+    {{- item.content|raw -}}
+  {%- endfor -%}
+
+  {%- if logged_in %}</span>{% endif -%}

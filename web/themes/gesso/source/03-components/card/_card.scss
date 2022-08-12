@@ -315,6 +315,10 @@ $card-padding: rem(gesso-spacing(4));
   .c-card__media {
     aspect-ratio: 1/1;
   }
+
+  .c-figure {
+    width: 100%;
+  }
 }
 
 .c-card--bio-large {

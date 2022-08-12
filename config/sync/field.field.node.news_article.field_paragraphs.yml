@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.microsite_navigation_marker
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
@@ -44,6 +45,7 @@ settings:
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
+      microsite_navigation_marker: microsite_navigation_marker
       wide_card: wide_card
     negate: 1
     target_bundles_drag_drop:
@@ -56,18 +58,27 @@ settings:
       article_hero:
         weight: 19
         enabled: true
+      callout_box:
+        weight: 33
+        enabled: false
       card:
         weight: 27
         enabled: true
+      content_embed:
+        weight: 35
+        enabled: false
+      embed_block:
+        weight: 36
+        enabled: false
+      embed_full_html_:
+        weight: 37
+        enabled: false
       extra_large_card:
         weight: 28
         enabled: false
       fifty_fifty:
         weight: 20
         enabled: false
-      grid:
-        weight: 21
-        enabled: true
       image_carousel:
         weight: 22
         enabled: true
@@ -79,6 +90,9 @@ settings:
         enabled: true
       microsite_hero:
         weight: 25
+        enabled: true
+      microsite_navigation_marker:
+        weight: 44
         enabled: true
       overlap_image:
         weight: 26
@@ -101,6 +115,12 @@ settings:
       small_card_with_solid_background:
         weight: 41
         enabled: true
+      table_of_contents:
+        weight: 52
+        enabled: false
+      text_block:
+        weight: 53
+        enabled: false
       tout:
         weight: 31
         enabled: true

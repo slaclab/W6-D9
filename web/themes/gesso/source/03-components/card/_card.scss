@@ -30,6 +30,13 @@ $card-padding: rem(gesso-spacing(4));
   }
 }
 
+.c-card--no-link {
+  &:hover,
+  &:focus-within {
+    box-shadow: initial;
+  }
+}
+
 .c-card__title {
   @include responsive-font-size(5);
   margin: 0;
@@ -143,6 +150,13 @@ $card-padding: rem(gesso-spacing(4));
     .c-card:focus-within & {
       img {
         transform: scale(1.075);
+      }
+    }
+
+    .c-card--no-link:hover &,
+    .c-card--no-link:focus-within & {
+      img {
+        transform: none;
       }
     }
   }

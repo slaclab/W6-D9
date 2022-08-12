@@ -4602,6 +4602,60 @@
             }
         },
         {
+            "name": "drupal/rh_media",
+            "version": "1.0.0-beta10",
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/rabbit_hole": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta10",
+                    "datestamp": "1610813035",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dylan Donkersgoed",
+                    "homepage": "https://www.drupal.org/user/2803351"
+                },
+                {
+                    "name": "Matroskeen",
+                    "homepage": "https://www.drupal.org/user/3426249"
+                },
+                {
+                    "name": "mparker17",
+                    "homepage": "https://www.drupal.org/user/536298"
+                },
+                {
+                    "name": "Odd Hill",
+                    "homepage": "https://www.drupal.org/user/789934"
+                },
+                {
+                    "name": "olofbokedal",
+                    "homepage": "https://www.drupal.org/user/1198438"
+                },
+                {
+                    "name": "shumushin",
+                    "homepage": "https://www.drupal.org/user/22093"
+                }
+            ],
+            "description": "Adds Rabbit Hole functionality for media entity.",
+            "homepage": "https://www.drupal.org/project/rabbit_hole",
+            "support": {
+                "source": "https://git.drupalcode.org/project/rabbit_hole"
+            }
+        },
+        {
             "name": "drupal/search_api",
             "version": "1.25.0",
             "source": {
@@ -15320,6 +15374,7 @@
         "drupal/libraries": 10,
         "drupal/maxlength": 5,
         "drupal/rabbit_hole": 10,
+        "drupal/rh_media": 10,
         "drupal/style_options": 15,
         "drupal/yaml_content": 15,
         "pantheon-upstreams/upstream-configuration": 20

@@ -89,6 +89,10 @@
     @include arrow-link(white);
     color: inherit;
   }
+
+  .l-section__intro a {
+    color: inherit;
+  }
 }
 
 .l-section--bg-image {

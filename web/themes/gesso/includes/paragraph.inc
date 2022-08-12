@@ -78,6 +78,16 @@ function gesso_preprocess_paragraph__image_carousel(&$vars) {
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
+function gesso_preprocess_paragraph__accordion(&$vars) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+  $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__table_of_contents(&$vars) {
   $paragraph = $vars['paragraph'];
 

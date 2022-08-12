@@ -14,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
-    - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
@@ -70,6 +69,9 @@ settings:
         enabled: false
       embed_full_html_:
         weight: -50
+        enabled: false
+      embed_block:
+        weight: 32
         enabled: false
       extra_large_card:
         weight: -49

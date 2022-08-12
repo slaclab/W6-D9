@@ -16,8 +16,11 @@ source:
 process:
   uid:
     -
-      plugin: get
-      source: uid
+      plugin: entity_lookup
+      source: name
+      value_key: name
+      entity_type: user
+      ignore_case: true
   name:
     -
       plugin: get

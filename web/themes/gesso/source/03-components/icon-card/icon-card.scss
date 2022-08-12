@@ -27,6 +27,13 @@
   }
 }
 
+.c-icon-card--no-link {
+  &:hover,
+  &:focus-visible {
+    box-shadow: initial;
+  }
+}
+
 .c-icon-card__link {
   &::after {
     content: '';

@@ -91,6 +91,8 @@ module:
   view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0
+  viewsreference: 0
+  viewsreference_filter: 0
   yaml_content: 0
   views: 10
   paragraphs: 11

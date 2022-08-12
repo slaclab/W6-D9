@@ -42,11 +42,10 @@ function gesso_preprocess_paragraph__section(&$vars) {
  */
 function gesso_preprocess_paragraph__image_embed(&$vars) {
   $paragraph = $vars['elements']['#paragraph'];
-
   // If a caption override is selected and the override text field is populated,
   // write the override caption into the media entity for templating by the
   // image template.
-  if ($paragraph->field_boolean->value && !empty($vars['content']['field_image'][0])) {
+  if ($paragraph->field_boolean->value && !empty($vars['content']['field_image'][0]['#media'])) {
     // Extract the media entity from the image field. Note that if the view mode
     // being used to render the field is not Rendered Entity then ['#media'] will not
     // be set and the code will error. Only overwrite the media item's caption with
@@ -56,10 +55,10 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       // the caption field on the image, otherwise empty the image's caption field,
       // presumably because the editor did not want the image's caption to display.
       if ($paragraph->field_long_text->value) {
-        $media->field_caption = $paragraph->field_long_text;
+        $media->field_caption->value = $paragraph->field_long_text->value;
       }
       else {
-        $media->field_caption = NULL;
+        $media->field_caption->value = NULL;
       }
     }
   }
@@ -94,4 +93,19 @@ function gesso_preprocess_paragraph__table_of_contents(&$vars) {
 
   // Create a slug as a cleanCSSIdentifier based on the field_short_text value.
   $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
+}
+
+function gesso_preprocess_paragraph__video_hero(&$vars) {
+  $media_ids = \Drupal\Core\Render\Element::children($vars['content']['field_video_hero_videos']);
+  $hero_videos = [];
+  foreach($media_ids as $id) {
+    /** @var \Drupal\media\Entity\Media $media */
+    $media = $vars['content']['field_video_hero_videos'][$id]['#media'];
+    $hero_videos[] = [
+      'embed' => $media->field_media_oembed_video->view('video_hero'),
+      'caption' => $media->field_caption->view('video_hero'),
+      'fallback_image' => $media->field_thumbnail->view('video_hero')
+    ];
+  }
+  $vars['hero_videos'] = $hero_videos;
 }

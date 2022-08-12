@@ -41,15 +41,15 @@
 {% for item in items %}
   {% set field_items = field_items|merge([{
     attributes: item.attributes,
-    content: '(' ~ item.content|render|striptags('<em><strong><a>')|trim ~ ')'
+    content: '(' ~ item.content|render|striptags('<strong><a>')|trim ~ ')'
   }]) %}
 {% endfor %}
 
-{% include '@components/field/field.twig' with {
-  'element': 'em',
-  'hide_label': true,
-  'hide_content_wrapper': true,
-  'show_separator': true,
-  'separator': ', ',
-  'field_items': field_items,
-} %}
+<em {{ attributes }}>
+  {{- title_suffix.contextual_links }}
+
+  {%- for item in field_items -%}
+    {{- item.content|raw -}}
+  {%- endfor -%}
+
+</em>

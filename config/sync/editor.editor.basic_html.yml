@@ -42,8 +42,8 @@ settings:
     ckeditor5_style:
       styles:
         -
-          label: Small
-          element: '<p class="body-small">'
+          label: 'Small Paragraph'
+          element: '<p class="c-small-paragraph">'
         -
           label: 'Primary Button'
           element: '<a class="c-button c-button--chevron">'

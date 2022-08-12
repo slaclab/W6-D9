@@ -37,6 +37,7 @@ settings:
     frontpage: 0
     media: 0
     media_library: 0
+    related_content_for_detail_pages: 0
     taxonomy_term: 0
     user_admin_people: 0
     watchdog: 0

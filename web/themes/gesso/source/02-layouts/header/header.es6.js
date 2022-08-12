@@ -39,7 +39,13 @@ Drupal.behaviors.header = {
         );
       };
       const changeOnScroll = throttle(() => {
-        if (window.scrollY === 0) {
+        const ginToolbarSecondaryHeight = getComputedStyle(
+          document.documentElement
+        ).getPropertyValue('--ginToolbarSecondaryHeight');
+        const stickyTop = ginToolbarSecondaryHeight
+          ? parseFloat(ginToolbarSecondaryHeight)
+          : 0;
+        if (window.scrollY <= stickyTop) {
           header.classList.remove('is-sticky');
         } else if (!header.classList.contains('is-sticky')) {
           header.classList.add('is-sticky');

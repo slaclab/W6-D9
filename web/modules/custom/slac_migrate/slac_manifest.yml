@@ -1,0 +1,9 @@
+# users
+- upgrade_d7_user_flood
+- upgrade_d7_user_mail
+- upgrade_d7_user_role
+#- upgrade_user_picture_field
+#- upgrade_user_picture_field_instance
+#- upgrade_user_picture_entity_display
+#- upgrade_user_picture_entity_form_display
+- upgrade_d7_user

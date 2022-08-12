@@ -4,8 +4,7 @@ start_date:
   month: 'Apr'
   day: '19'
 end_date: null
-image_url: 'http://fpoimg.com/600x600?text='
-image_alt: 'Close-up shot of a telescope lens'
+image: '<img src="http://fpoimg.com/600x600?text=" alt="Close-up shot of a telescope lens">'
 calendar_link_url: '#0'
 calendar_link_text: |-
   Thursday, March 25, 2022<br>
@@ -23,9 +22,6 @@ zoom_details: |-
   <b>iPhone one-tap (US Toll):</b> +18333021536, 97744554730# or +16507249799, 97744554730#<br>
   <b>Telephone: Dial:</b> +1 650 724 9799 (US, Canada, Caribbean Toll) or +1 833 302 1536 (US, Canada, Caribbean Toll Free)
 additional_links:
-  - url: '#0'
-    text: 'Event Poster'
-  - url: '#0'
-    text: 'SLAC Campus Map'
-  - url: '#0'
-    text: 'Stanford University Campus Map'
+  - '<a href="#0" class="c-event-details__link">Event Poster</a>'
+  - '<a href="#0" class="c-event-details__link">SLAC Campus Map</a>'
+  - '<a href="#0" class="c-event-details__link">Stanford University Campus Map</a>'

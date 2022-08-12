@@ -5,6 +5,8 @@
  * Paragraph-related hook implementations.
  */
 
+use Drupal\Component\Utility\Html;
+
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
@@ -33,4 +35,63 @@ function gesso_preprocess_paragraph__section(&$vars) {
     }
   }
   $vars['content'] = $content;
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__image_embed(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+
+  // If a caption override is selected and the override text field is populated,
+  // write the override caption into the media entity for templating by the
+  // image template.
+  if ($paragraph->field_boolean->value && !empty($vars['content']['field_image'][0])) {
+    // Extract the media entity from the image field. Note that if the view mode
+    // being used to render the field is not Rendered Entity then ['#media'] will not
+    // be set and the code will error. Only overwrite the media item's caption with
+    // the override *if* the field is displayed as a Rendered entity.
+    if ($media = $vars['content']['field_image'][0]['#media']) {
+      // If there's an override string specified in the paragraph, assign it into
+      // the caption field on the image, otherwise empty the image's caption field,
+      // presumably because the editor did not want the image's caption to display.
+      if ($paragraph->field_long_text->value) {
+        $media->field_caption = $paragraph->field_long_text;
+      }
+      else {
+        $media->field_caption = NULL;
+      }
+    }
+  }
+
+  // Regardless of whether an override was selected, the override text is not
+  // needed for theming, so unset as a theming variable.
+  unset($vars['content']['field_long_text']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__image_carousel(&$vars) {
+  $vars['pager_items'] = \Drupal\Core\Render\Element::children($vars['content']['field_paragraphs']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__accordion(&$vars) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+  $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__table_of_contents(&$vars) {
+  $paragraph = $vars['paragraph'];
+
+  // Create a slug as a cleanCSSIdentifier based on the field_short_text value.
+  $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
 }

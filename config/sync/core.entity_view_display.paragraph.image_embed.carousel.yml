@@ -1,8 +1,9 @@
-uuid: b36c05f2-0c91-4385-8567-21889c3d9744
+uuid: 52e9166c-83ca-4558-99b3-6a865467abb0
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.carousel
     - field.field.paragraph.image_embed.field_boolean
     - field.field.paragraph.image_embed.field_image
     - field.field.paragraph.image_embed.field_long_text
@@ -10,42 +11,27 @@ dependencies:
     - paragraphs.paragraphs_type.image_embed
   module:
     - text
-    - view_mode_switch
-id: paragraph.image_embed.default
+id: paragraph.image_embed.carousel
 targetEntityType: paragraph
 bundle: image_embed
-mode: default
+mode: carousel
 content:
-  field_boolean:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: carousel
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
   field_long_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
-  field_view_mode:
-    type: view_mode_switch_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-hidden: {  }
+hidden:
+  field_boolean: true
+  field_view_mode: true

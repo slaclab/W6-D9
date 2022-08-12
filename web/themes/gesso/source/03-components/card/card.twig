@@ -1,6 +1,7 @@
 {% set classes = [
   'c-card',
   alignment ? 'c-card--align-' ~ alignment : '',
+  not url ? 'c-card--no-link' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 

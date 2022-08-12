@@ -25,7 +25,6 @@ components:
 regions:
   page_top: 'Page top'
   header: Header
-  navigation: 'Main navigation'
   breadcrumb: Breadcrumbs
   help: Help
   preface: Preface

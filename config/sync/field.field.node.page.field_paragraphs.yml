@@ -57,15 +57,18 @@ settings:
       card:
         weight: 27
         enabled: true
+      content_embed:
+        weight: 30
+        enabled: false
+      embed_block:
+        weight: 32
+        enabled: false
       extra_large_card:
         weight: 28
         enabled: false
       fifty_fifty:
         weight: 29
         enabled: false
-      grid:
-        weight: 30
-        enabled: true
       image_carousel:
         weight: 31
         enabled: true
@@ -99,6 +102,12 @@ settings:
       small_card_with_solid_background:
         weight: 41
         enabled: true
+      table_of_contents:
+        weight: 44
+        enabled: false
+      text_block:
+        weight: 45
+        enabled: false
       tout:
         weight: 42
         enabled: true

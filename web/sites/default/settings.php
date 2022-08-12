@@ -26,6 +26,42 @@ include __DIR__ . "/settings.pantheon.php";
 // $settings['skip_permissions_hardening'] = TRUE;
 
 /**
+ * Secrets-based settings.
+ */
+if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+  $secrets_file = $_ENV['HOME'] . '/files/private/secrets.json';
+}
+else {
+  $secrets_file = __DIR__ . '/secrets.json';
+}
+
+if (file_exists($secrets_file)) {
+  $secrets = json_decode(file_get_contents($secrets_file), TRUE);
+
+  // D7 Migration Source
+  if (!empty($secrets['migrate_source_db_url'])) {
+    $parsed_url = parse_url($secrets['migrate_source_db_url']);
+    if (!empty($parsed_url['port']) && !empty($parsed_url['host']) && !empty($parsed_url['pass'])) {
+      $databases['drupal7']['default'] = [
+        'database' => 'pantheon',
+        'username' => 'pantheon',
+        'password' => $parsed_url['pass'],
+        'host' => $parsed_url['host'],
+        'port' => $parsed_url['port'],
+        'driver' => 'mysql',
+        'prefix' => '',
+        'collation' => 'utf8mb4_general_ci',
+      ];
+    }
+  }
+
+  // Turn off email during migration
+  if (!empty($secrets['migration_status']) && $secrets['migration_status'] == 'active') {
+    $config['mailsystem.settings']['defaults']['sender'] = 'test_mail_collector';
+  }
+}
+
+/**
  * If there is a local settings file, then include it
  */
 $local_settings = __DIR__ . "/settings.local.php";

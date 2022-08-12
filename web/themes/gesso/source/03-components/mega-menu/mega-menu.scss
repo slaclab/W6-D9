@@ -110,8 +110,7 @@
   margin-bottom: 0;
   margin-top: 0;
   max-height: calc(
-    100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px) -
-      var(--ginToolbarSecondaryHeight, 0px)
+    100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
   );
   opacity: 1;
   overflow-wrap: normal;
@@ -121,8 +120,7 @@
   transform: translate3d(
     0,
     calc(
-      100% + var(--gesso-header-current-height) + var(--ginToolbarHeight, 0px) +
-        var(--ginToolbarSecondaryHeight, 0px)
+      100% + var(--gesso-header-current-height) + var(--ginToolbarHeight, 0px)
     ),
     0
   );

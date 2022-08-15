@@ -1,0 +1,10 @@
+uuid: c8291aa0-93ac-49ec-b642-4833c55d0613
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.poster
+label: Poster
+targetEntityType: media
+cache: true

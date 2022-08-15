@@ -9,11 +9,15 @@ Drupal.behaviors.videoHero = {
         `(min-width: ${BREAKPOINTS.desktop})`
       );
       const caption = videoHero.querySelector('.c-video-hero__caption');
+      const videos = videoHero.querySelectorAll('.c-video-hero__video');
+      const selectedVideoIndex = Math.floor(Math.random() * videos.length);
+      const selectedVideo = videos[selectedVideoIndex];
+      selectedVideo.insertAdjacentHTML(
+        'beforebegin',
+        `<img src="${selectedVideo.dataset.imageSrc}" alt="${selectedVideo.dataset.imageAlt}" />`
+      );
       const handleMediaQueryChange = event => {
         if (event.matches) {
-          const videos = videoHero.querySelectorAll('.c-video-hero__video');
-          const selectedVideoIndex = Math.floor(Math.random() * videos.length);
-          const selectedVideo = videos[selectedVideoIndex];
           selectedVideo.insertAdjacentHTML(
             'beforebegin',
             `<iframe allowfullscreen src="${selectedVideo.dataset.src}"></iframe>`

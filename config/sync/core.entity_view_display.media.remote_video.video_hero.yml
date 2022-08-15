@@ -1,0 +1,58 @@
+uuid: 8082a221-b9f4-4c55-9265-0da8ded174c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.video_hero
+    - field.field.media.remote_video.field_boolean
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_link
+    - field.field.media.remote_video.field_long_text
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_thumbnail
+    - field.field.media.remote_video.field_transcript
+    - media.type.remote_video
+  module:
+    - slac_core
+    - text
+id: media.remote_video.video_hero
+targetEntityType: media
+bundle: remote_video
+mode: video_hero
+content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_oembed_video:
+    type: iframe_url
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_thumbnail:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: url_only
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_boolean: true
+  field_link: true
+  field_long_text: true
+  field_tags: true
+  field_transcript: true
+  name: true
+  thumbnail: true
+  uid: true

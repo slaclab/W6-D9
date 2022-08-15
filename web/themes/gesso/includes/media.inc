@@ -65,4 +65,9 @@ function gesso_preprocess_media(array &$variables) {
     ->toString();
   $variables['has_caption'] = isset($variables['attributes']['data-caption']);
   $variables['bundle'] = $variables['media']->bundle();
+  if ($variables['bundle'] == 'image') {
+    if (!empty($variables['elements']['#caption_override'])) {
+      $variables['content']['field_caption'] = $variables['elements']['#caption_override'];
+    }
+  }
 }

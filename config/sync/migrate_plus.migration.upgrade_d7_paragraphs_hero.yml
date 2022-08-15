@@ -1,0 +1,90 @@
+uuid: 6454521d-4c42-4f05-850b-e07efac30848
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_hero
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Hero)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: hero
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_background_image:
+    -
+      plugin: sub_process
+      source: field_background_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_invert:
+    -
+      plugin: get
+      source: field_invert
+  field_offset:
+    -
+      plugin: get
+      source: field_offset
+  field_overlay:
+    -
+      plugin: get
+      source: field_overlay
+  field_parallax:
+    -
+      plugin: get
+      source: field_parallax
+  field_xeno_content:
+    -
+      plugin: sub_process
+      source: field_xeno_content
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_zoom:
+    -
+      plugin: get
+      source: field_zoom
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: hero
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+  optional:
+    - upgrade_d7_field_instance

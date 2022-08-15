@@ -42,8 +42,20 @@ settings:
     ckeditor5_style:
       styles:
         -
-          label: Small
-          element: '<p class="body-small">'
+          label: 'Small Paragraph'
+          element: '<p class="c-small-paragraph">'
+        -
+          label: 'Primary Button'
+          element: '<a class="c-button c-button--chevron">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="c-button c-button--secondary c-button--chevron">'
+        -
+          label: 'Outline Button'
+          element: '<a class="c-button c-button--outline c-button--chevron">'
+        -
+          label: 'Outline Secondary Button'
+          element: '<a class="c-button c-button--outline-secondary c-button--chevron">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'

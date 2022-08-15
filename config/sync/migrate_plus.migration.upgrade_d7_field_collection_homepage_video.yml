@@ -1,0 +1,50 @@
+uuid: d0416b08-492e-442f-95f2-c6ca322e1ce0
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_homepage_video
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Homepage video)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_homepage_video
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_embed_code:
+    -
+      plugin: get
+      source: field_embed_code
+  field_headline:
+    -
+      plugin: get
+      source: field_headline
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: homepage_video
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

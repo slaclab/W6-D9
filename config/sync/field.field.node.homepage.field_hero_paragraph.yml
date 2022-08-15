@@ -5,9 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_hero_paragraph
     - node.type.homepage
-    - paragraphs.paragraphs_type.article_hero
-    - paragraphs.paragraphs_type.image_hero
-    - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -17,7 +14,7 @@ entity_type: node
 bundle: homepage
 label: Hero
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -25,9 +22,6 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      article_hero: article_hero
-      image_hero: image_hero
-      microsite_hero: microsite_hero
       video_hero: video_hero
     negate: 0
     target_bundles_drag_drop:
@@ -39,18 +33,27 @@ settings:
         enabled: false
       article_hero:
         weight: 26
-        enabled: true
+        enabled: false
+      callout_box:
+        weight: 32
+        enabled: false
       card:
         weight: 27
+        enabled: false
+      content_embed:
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 32
+        enabled: false
+      embed_full_html_:
+        weight: 36
         enabled: false
       extra_large_card:
         weight: 28
         enabled: false
       fifty_fifty:
         weight: 29
-        enabled: false
-      grid:
-        weight: 30
         enabled: false
       image_carousel:
         weight: 31
@@ -60,10 +63,10 @@ settings:
         enabled: false
       image_hero:
         weight: 33
-        enabled: true
+        enabled: false
       microsite_hero:
         weight: 34
-        enabled: true
+        enabled: false
       overlap_image:
         weight: 35
         enabled: false
@@ -84,6 +87,12 @@ settings:
         enabled: false
       small_card_with_solid_background:
         weight: 41
+        enabled: false
+      table_of_contents:
+        weight: 46
+        enabled: false
+      text_block:
+        weight: 47
         enabled: false
       tout:
         weight: 42

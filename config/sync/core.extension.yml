@@ -72,6 +72,7 @@ module:
   search: 0
   selection_sharer: 0
   shortcut: 0
+  simple_sitemap: 0
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.landing_page
+    - paragraphs.paragraphs_type.embed_view
   module:
     - entity_reference_revisions
 id: node.landing_page.field_paragraphs
@@ -20,85 +21,98 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      embed_view: embed_view
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 27
+        weight: -61
         enabled: false
       accordion_item:
-        weight: 28
+        weight: -60
         enabled: false
       article_hero:
-        weight: 29
+        weight: -59
+        enabled: false
+      callout_box:
+        weight: -58
         enabled: false
       card:
-        weight: 30
+        weight: -57
         enabled: false
       content_embed:
-        weight: 31
+        weight: -56
         enabled: false
       embed_block:
-        weight: 32
+        weight: -54
         enabled: false
+      embed_full_html_:
+        weight: -55
+        enabled: false
+      embed_view:
+        weight: -53
+        enabled: true
       extra_large_card:
-        weight: 33
+        weight: -52
         enabled: false
       fifty_fifty:
-        weight: 34
+        weight: -51
         enabled: false
       image_carousel:
-        weight: 35
+        weight: -50
         enabled: false
       image_embed:
-        weight: 36
+        weight: -49
         enabled: false
       image_hero:
-        weight: 37
+        weight: -48
         enabled: false
       microsite_hero:
-        weight: 38
+        weight: -47
+        enabled: false
+      microsite_navigation_marker:
+        weight: -46
         enabled: false
       overlap_image:
-        weight: 39
+        weight: -45
         enabled: false
       promo_box:
-        weight: 40
+        weight: -44
         enabled: false
       quote:
-        weight: 41
+        weight: -43
         enabled: false
       section:
-        weight: 42
+        weight: -42
         enabled: false
       small_card_with_icon:
-        weight: 43
+        weight: -41
         enabled: false
       small_card_with_image:
-        weight: 44
+        weight: -40
         enabled: false
       small_card_with_solid_background:
-        weight: 45
+        weight: -39
         enabled: false
       table_of_contents:
-        weight: 46
+        weight: -38
         enabled: false
       text_block:
-        weight: 47
+        weight: -37
         enabled: false
       tout:
-        weight: 48
+        weight: -36
         enabled: false
       video_hero:
-        weight: 49
+        weight: -35
         enabled: false
       video_lightbox:
-        weight: 50
+        weight: -34
         enabled: false
       wide_card:
-        weight: 51
+        weight: -33
         enabled: false
       wysiwyg:
-        weight: 52
+        weight: -32
         enabled: false
 field_type: entity_reference_revisions

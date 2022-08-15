@@ -44,6 +44,11 @@
 1. Run `ddev pull pantheon` to connect to Pantheon and download the latest backup of the database and files for the `stage` environment
 1. Clear cache: `ddev drush cr`
 
+### Setup Drupal 7 Migration
+1. Create `secrets.json` file: `cp web/sites/default/example.secrets.json web/sites/default/secrets.json`
+2. Set the correct value for `migrate_source_db_url`. Get the source db url from the TL
+3. Test the db connection: `ddev drush sqlc --database=drupal7`
+
 ## Drush on Pantheon Sites
 To run drush commands on any of the Pantheon-hosted dev sites, you will
 need to use Terminus. After installing and setting up, you can run

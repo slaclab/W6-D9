@@ -11,10 +11,14 @@ bundle: embed_block
 mode: default
 content:
   field_block:
-    type: options_select
+    type: entity_reference_autocomplete
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

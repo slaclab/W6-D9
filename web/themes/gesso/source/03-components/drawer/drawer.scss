@@ -52,10 +52,10 @@
       rgba(gesso-grayscale(white), 0),
       rgba(gesso-grayscale(white), 1)
     );
-    bottom: calc(100% + 1px);
+    bottom: calc(100% + 5px);
     content: '';
     display: block;
-    height: rem(gesso-spacing(6));
+    height: rem(gesso-spacing(8));
     left: 0;
     position: absolute;
     width: 100%;

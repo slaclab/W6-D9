@@ -4,12 +4,12 @@
 ] %}
 
 {{ attach_library('gesso/video_hero') }}
+{{ attach_library('gesso/transparent_nav') }}
 
 <div {{ add_attributes({ class: classes }) }}>
   <div class="c-video-hero__media">
-    {{ fallback_image }}
     {% for video in hero_videos %}
-      <div data-src="{{ video.embed }}" class="c-video-hero__video">
+      <div data-src="{{ video.embed }}" class="c-video-hero__video" data-image-src="{{ video.fallback_image }}" data-image-alt="{{ video.fallback_image_alt }}">
         {{ video.caption }}
       </div>
     {% endfor %}

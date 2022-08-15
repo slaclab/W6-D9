@@ -29,6 +29,7 @@ class MobileMenu extends OverlayMenu {
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
       otherBlockClass = '',
+      imagePath = '',
     } = {}
   ) {
     super(null);
@@ -47,6 +48,7 @@ class MobileMenu extends OverlayMenu {
       toggleSubnav,
       mobileMenuBreakpoint,
       classPrefix,
+      imagePath,
     };
     this.toggleMenuDisplay = this.toggleMenuDisplay.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -108,7 +110,7 @@ class MobileMenu extends OverlayMenu {
     button.setAttribute('aria-expanded', 'false');
     button.innerHTML = `<svg class="c-icon c-mobile-menu__subnav-icon" role="img">
   <title>Toggle submenu</title>
-  <use xlink:href="images/sprite.artifact.svg#plus"></use>
+  <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
 </svg>`;
     return subnav.insertAdjacentElement('beforebegin', button);
   }
@@ -235,6 +237,9 @@ class MobileMenu extends OverlayMenu {
     const cards = menuClone.querySelectorAll('.c-card');
     cards.forEach(card => {
       card.classList.add('c-card--on-dark');
+      card.querySelectorAll('.c-arrow-link').forEach(arrow => {
+        arrow.classList.add('c-arrow-link--white');
+      });
     });
 
     // Prep sub-menus, if applicable.

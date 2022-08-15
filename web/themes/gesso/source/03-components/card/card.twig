@@ -1,6 +1,7 @@
 {% set classes = [
   'c-card',
   alignment ? 'c-card--align-' ~ alignment : '',
+  not url ? 'c-card--no-link' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
@@ -29,7 +30,7 @@
       {% apply spaceless %}
       <h3 class="c-card__title h5">
         {% if url %}
-          <a href="{{ url }}" class="c-card__link c-arrow-link{% if 'c-card--on-dark' in modifier_classes %} c-arrow-link{% endif %}">
+          <a href="{{ url }}" class="c-card__link c-arrow-link{% if 'c-card--on-dark' in modifier_classes %} c-arrow-link--white{% endif %}">
             {{- title -}}
           </a>
         {% else %}

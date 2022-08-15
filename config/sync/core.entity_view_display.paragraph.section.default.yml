@@ -34,33 +34,33 @@ content:
       rel: 0
       target: 0
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_link:
     type: link
-    label: above
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_long_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_num_of_cols:
     type: number_unformatted
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -69,7 +69,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_short_text:
     type: string

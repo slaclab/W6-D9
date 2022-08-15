@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
@@ -14,6 +15,7 @@ dependencies:
     - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
+    - duration_field
     - link
     - media
     - text
@@ -48,6 +50,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_duration:
+    type: duration_time_display
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_link:
     type: link

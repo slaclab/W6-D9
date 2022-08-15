@@ -16,13 +16,20 @@
   {{ "Video"|t }}
 {% endset %}
 
+{% set footer %}
+  {{ media.changed.value|format_date('custom', 'F j, Y') }}
+  {% if content.field_duration is not empty %}
+    &nbsp;·&nbsp;{{- content.field_duration|field_value -}}&nbsp;{{ "runtime"|t }}
+  {% endif %}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
   is_video: true,
   url: content.field_boolean|field_value|number_format == 0 ? url : content.field_media_oembed_video[0]['#attributes']['src'],
   title: content.field_long_text|field_value is not empty ? content.field_long_text|field_value : content.name|field_value,
   kicker: content.field_source_name|field_value,
   type: content_type,
-  footer: media.changed.value|format_date('custom', 'F j, Y'),
+  footer: footer,
   media: content.field_thumbnail|field_value,
   card_content: content.field_caption|field_value,
 } %}

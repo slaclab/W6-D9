@@ -13,7 +13,7 @@ image_style_mappings:
   -
     image_mapping_type: sizes
     image_mapping:
-      sizes: '(min-width: 80em) 1440px, 100vw'
+      sizes: '(min-width: 80em) 2880px, 100vw'
       sizes_image_styles:
         - hero
         - hero_0_25x

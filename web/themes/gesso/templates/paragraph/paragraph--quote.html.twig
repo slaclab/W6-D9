@@ -1,0 +1,7 @@
+{% include '@components/quote/quote.twig' with {
+  quote_image: content.field_image|field_value,
+  quote_author: content.field_text|field_value,
+  quote_author_desc: content.field_short_text|field_value,
+  quote_content: content|without('field_image', 'field_short_text', 'field_text'),
+  has_constrain: true,
+} %}

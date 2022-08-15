@@ -85,7 +85,13 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{% include '@templates/page/page.twig' with {
+{% if content.field_hero_paragraph is not empty %}
+  {{ content.field_hero_paragraph|field_value }}
+{% endif %}
+
+{{ drupal_block('system_breadcrumb_block') }}
+
+{% include '@components/article/article.twig' with {
   'title': label,
   'toc_links': toc_list,
   'show_admin_info': show_admin_info,

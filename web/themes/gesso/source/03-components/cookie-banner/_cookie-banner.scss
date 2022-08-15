@@ -3,18 +3,28 @@
 @use '00-config' as *;
 
 .c-cookie-banner {
-  background: rgba(gesso-grayscale(stanford-black), 0.9);
+  background: rgba(gesso-grayscale(stanford-black), 0.95);
   bottom: 0;
   color: gesso-grayscale(white);
   font-size: gesso-font-size(2);
   padding: gesso-spacing(3) 0 gesso-spacing(4);
   position: sticky;
+  width: 100%;
   z-index: 8;
 
   a,
   button {
+    appearance: none;
+    background: transparent;
+    border: 0;
     color: inherit;
+    cursor: pointer;
+    line-height: inherit;
+    padding: 0;
+    text-decoration: underline;
     text-decoration-color: currentColor;
+    text-underline-offset: 1px;
+    text-underline-position: under;
   }
 
   p {
@@ -37,4 +47,9 @@
   letter-spacing: 0.05em;
   text-decoration-line: underline;
   text-transform: uppercase;
+}
+
+// wrapper class comes from the module
+.sliding-popup-bottom {
+  width: 100%;
 }

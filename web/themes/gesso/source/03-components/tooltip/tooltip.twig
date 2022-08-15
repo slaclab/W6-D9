@@ -3,6 +3,8 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
+{{ attach_library('gesso/tooltip') }}
+
 {% if not tooltip_id %}
   {% set tooltip_id = 'tooltip'|unique_id %}
 {% endif %}

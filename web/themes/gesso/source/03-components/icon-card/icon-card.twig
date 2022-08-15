@@ -1,5 +1,6 @@
 {% set classes = [
   'c-icon-card',
+  not url ? 'c-icon-card--no-link' : '',
   modifier_classes ? modifier_classes : ''
 ] %}
 
@@ -17,6 +18,6 @@
       kicker_content: kicker
     } %}
   {% endif %}
-  <h3 class="c-icon-card__title"><a href="{{ url }}" class="c-icon-card__link c-arrow-link">{{ card_title }}</a></h3>
+  <h3 class="c-icon-card__title">{% if url %}<a href="{{ url }}" class="c-icon-card__link c-arrow-link">{% endif %}{{ card_title }}{% if url %}</a>{% endif %}</h3>
   <div class="c-icon-card__description">{{ card_description }}</div>
 </div>

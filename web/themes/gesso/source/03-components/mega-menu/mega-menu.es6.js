@@ -3,7 +3,7 @@ import MegaMenu from './modules/MegaMenu.es6';
 import MobileMenu from '../mobile-menu/modules/_MobileMenu.es6';
 
 Drupal.behaviors.megaMenu = {
-  attach(context) {
+  attach(context, settings) {
     const menus = context.querySelectorAll('.l-header');
     if (menus.length) {
       menus.forEach(menu => {
@@ -14,6 +14,7 @@ Drupal.behaviors.megaMenu = {
           classPrefix: 'c-mega-menu',
           utilityNavClass: false,
           searchBlockClass: '.c-search__form',
+          imagePath: settings.gesso.gessoImagePath,
         });
         mobileMenu.init();
       });

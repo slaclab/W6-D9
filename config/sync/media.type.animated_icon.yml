@@ -1,7 +1,12 @@
 uuid: 0ab6674b-1cb7-4e94-8a95-45ae765e0468
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: animated_icon
 label: 'Animated Icon'
 description: ''

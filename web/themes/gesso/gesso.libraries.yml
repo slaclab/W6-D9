@@ -84,6 +84,11 @@ dropdown_menu:
     - gesso/common
     - gesso/mobile_menu
 
+event_details:
+  css:
+    theme:
+      dist/css/event-details.css: {}
+
 hamburger_button:
   css:
     theme:
@@ -123,6 +128,8 @@ mega_menu:
   dependencies:
     - gesso/common
     - gesso/mobile_menu
+    - core/drupal
+    - core/drupalSettings
 
 mobile_menu:
   css:
@@ -168,6 +175,22 @@ toc:
     dist/js/toc.es6.js: {}
   dependencies:
     - gesso/common
+
+tooltip:
+  css:
+    theme:
+      dist/css/tooltip.css: {}
+  js:
+    dist/js/tooltip.es6.js: {}
+  dependencies:
+    - gesso/common
+
+transparent_nav:
+  css:
+    theme:
+      dist/css/transparent-nav.css: {}
+  dependencies:
+    - gesso/mega_menu
 
 video_hero:
   css:

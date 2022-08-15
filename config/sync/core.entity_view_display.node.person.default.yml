@@ -8,11 +8,12 @@ dependencies:
     - field.field.node.person.field_image
     - field.field.node.person.field_link
     - field.field.node.person.field_long_text
+    - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
     - node.type.person
   module:
-    - link
+    - gesso_helper
     - text
     - user
 id: node.person.default
@@ -22,14 +23,14 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_boolean:
     type: boolean
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -38,35 +39,46 @@ content:
     weight: 6
     region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: headshot
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
   field_link:
-    type: link
-    label: above
+    type: gesso_helper_gesso_button
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
     weight: 5
     region: content
   field_long_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -74,7 +86,7 @@ content:
     region: content
   field_text_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

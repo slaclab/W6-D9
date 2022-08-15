@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.tags.field_display_style
     - field.field.taxonomy_term.tags.field_image
     - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
@@ -35,4 +36,5 @@ content:
     weight: 3
     region: content
 hidden:
+  field_display_style: true
   field_image: true

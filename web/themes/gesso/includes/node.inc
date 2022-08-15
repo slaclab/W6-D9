@@ -5,6 +5,11 @@
  * Node-related hook implementations.
  */
 
+use Drupal\Core\Link;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -50,3 +55,106 @@ function _add_regions_to_template($allowed_regions, &$variables) {
     $variables['region_' . $region] = $build;
   }
 }
+
+/**
+ * Implements hook_preprocess_node__HOOK().
+ */
+function gesso_preprocess_node__event(&$vars) {
+  if ($vars['view_mode'] == 'full') {
+    $datetime_range = $vars['node']->get('field_datetime_range')->first()->getValue();
+    $start_date = strtotime($datetime_range['value'] . 'Z');
+    $end_date = strtotime($datetime_range['end_value'] . 'Z');
+    $vars['start_date'] = [
+      'month' => date('M', $start_date),
+      'day' => date('j', $start_date),
+    ];
+    if (date('F j, Y', $start_date) == date('F j, Y', $end_date)) {
+      $vars['end_date'] = NULL;
+      $vars['formatted_date_time'] = date('l, F j, Y', $start_date) . '<br>';
+      if (date('a', $start_date) == date('a', $end_date)) {
+        $vars['formatted_date_time'] .= date('g:i', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+      } else {
+        $vars['formatted_date_time'] .= date('g:i a', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+      }
+    } else {
+      $vars['end_date'] = [
+        'month' => date('M', $end_date),
+        'day' => date('j', $end_date),
+      ];
+      $vars['formatted_date_time'] = date('l, F j', $start_date) . ' &ndash; ' . date('l, F j, Y', $end_date);
+    }
+
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function gesso_preprocess_node__person(&$vars) {
+  if ($vars['view_mode'] == 'full') {
+    if (!empty($vars['content']['field_body'][0])) {
+      $body_field = $vars['elements']['#node']->get('field_body');
+      $vars['content']['field_body_trimmed'] = $body_field->view([
+        'type' => 'text_trimmed',
+        'label' => 'hidden',
+        'settings' => [
+          'trim_length' => 500
+        ],
+      ]);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function gesso_preprocess_node__news_article(&$vars) {
+  // Extract the node from the preprocessing variables.
+  $node = $vars['node'];
+
+  // Extract the set of paragraphs from the content field of the node.
+  $paragraphs = $node->get('field_paragraphs')->getValue();
+  if (count($paragraphs)) {
+    // Collector for list items to be created; this will be an ordered list.
+    $list_items = [];
+
+    // Load each paragraph in turn
+    foreach ($paragraphs as $item) {
+      $paragraph = Paragraph::load($item['target_id']);
+      if ($paragraph->getType() == 'table_of_contents') {
+        $list_items[] = $paragraph->field_short_text->value;
+      }
+    }
+
+    // TOC paragraphs were found, convert list into a toc_list render array.
+    if ($list_items) {
+      $vars['toc_list'] = _gesso_preprocess_node__news_article_toclist($list_items);
+    }
+  }
+}
+
+/**
+ * _gesso_preprocess_node__news_article_toclist
+ *
+ * Helper function that converts an array of strings into an ordered list
+ * of links. Each link is titled with a string.
+ */
+function _gesso_preprocess_node__news_article_toclist($items) {
+  // Create a URL from a route fragment on the <current> page for theming an anchor link.
+  // Store the link into container and return an array with keys aligned for theming using the
+  // "toc" component. Make explicit the array indexing for later use if needed.
+  // The URL fragment is created using the same function as used in the table_of_contents
+  // paragraph display, see includes/paragraph.inc.
+  $links = [];
+
+  foreach ($items as $ix => $item) {
+    $links[$ix] = [
+      'title' => $item,
+      'href' => Url::fromRoute('<current>', [], ['fragment' => Html::cleanCssIdentifier($item)])
+        ->toString(),
+    ];
+  }
+
+  return $links;
+}
+

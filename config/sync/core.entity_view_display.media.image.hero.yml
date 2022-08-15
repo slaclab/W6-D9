@@ -16,26 +16,11 @@ dependencies:
     - responsive_image.styles.hero
   module:
     - responsive_image
-    - text
 id: media.image.hero
 targetEntityType: media
 bundle: image
 mode: hero
 content:
-  field_caption:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_credit:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_media_image:
     type: responsive_image
     label: hidden
@@ -48,6 +33,8 @@ content:
 hidden:
   created: true
   field_boolean: true
+  field_caption: true
+  field_credit: true
   field_link: true
   field_long_text: true
   field_tags: true

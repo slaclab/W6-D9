@@ -12,36 +12,21 @@ dependencies:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_tags
     - field.field.media.image.field_type
-    - image.style.large
+    - image.style.wide_390
     - media.type.image
   module:
     - image
-    - text
 id: media.image.poster
 targetEntityType: media
 bundle: image
 mode: poster
 content:
-  field_caption:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_credit:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_media_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: wide_390
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -50,6 +35,8 @@ content:
 hidden:
   created: true
   field_boolean: true
+  field_caption: true
+  field_credit: true
   field_link: true
   field_long_text: true
   field_tags: true

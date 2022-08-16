@@ -121,6 +121,17 @@
 
 {#
 /**
+ * Display only the text of the field_link (location) field, but only if the datetime override
+ * is not being used.
+ */
+#}
+{% set location = null %}
+{% if datetime_location_override == FALSE and content.field_link|field_value is not empty %}
+  {% set location = content.field_link[0]['#title'] %}
+{% endif %}
+
+{#
+/**
  * If the "Is external event?" field (field_boolean) is set then use the URL of the external link
  * field as the title URL. Otherwise use the node URL. External events will not have detail pages.
  * The external link field is not required, however, so the card title link may have no href.
@@ -129,7 +140,7 @@
 {% include '@components/card/card.twig' with {
   is_event: true,
   title: label,
-  url: node.field_boolean.value|number_format == 0 ? url : content.field_external_link.0['#url'],
+  url: content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
   start_date: {
     'month': event_start_date|date('M'),
     'day': event_start_date|date('d')
@@ -142,7 +153,7 @@
   type: content.field_text|field_value,
   footer: datetime_location_override ? content.field_override_text|field_value : null,
   event_date: datetime_location_override ? null : datetime_composed,
-  event_location: datetime_location_override ? null : content.field_link|field_value,
+  event_location: location,
   media: content.field_image|field_value,
   card_content: content.field_teaser|field_value,
 } %}

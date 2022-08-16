@@ -6,11 +6,11 @@
   align-self: flex-end;
   bottom: 100%;
   position: absolute;
-  right: rem(gesso-site-margins(desktop));
+  right: 0;
   z-index: 1;
 
   .is-sticky & {
-    margin-left: rem(gesso-spacing(1.5));
+    margin-left: rem(gesso-spacing(2));
     position: static;
   }
 

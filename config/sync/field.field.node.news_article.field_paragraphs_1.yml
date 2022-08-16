@@ -1,9 +1,9 @@
-uuid: 8043c22e-e66b-4849-a5ed-6644f321b1e4
+uuid: bd3c974d-1729-4716-9a9b-6221eb043840
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
+    - field.storage.node.field_paragraphs_1
     - node.type.news_article
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
@@ -21,14 +21,14 @@ dependencies:
     - paragraphs.paragraphs_type.wide_card
   module:
     - entity_reference_revisions
-id: node.news_article.field_paragraphs
-field_name: field_paragraphs
+id: node.news_article.field_paragraphs_1
+field_name: field_paragraphs_1
 entity_type: node
 bundle: news_article
-label: Content
-description: ''
+label: 'Bottom paragraphs'
+description: 'Add content to the bottom of a news article, below the tags section.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -35,6 +36,7 @@ hidden:
   field_hero_paragraph: true
   field_news_source: true
   field_paragraphs: true
+  field_paragraphs_1: true
   field_source_link: true
   field_tags: true
   field_teaser: true

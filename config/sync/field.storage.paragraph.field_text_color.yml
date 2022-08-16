@@ -1,19 +1,22 @@
-uuid: 4b7eb820-ddf3-49fa-8b99-15808471c941
+uuid: f400956e-f2cd-4cfe-b8aa-efac45b0b70d
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_list
-field_name: field_list
+id: paragraph.field_text_color
+field_name: field_text_color
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: card
-      label: Card
+      value: 'white text'
+      label: 'White Text'
+    -
+      value: 'black text'
+      label: 'Black Text'
   allowed_values_function: ''
 module: options
 locked: false

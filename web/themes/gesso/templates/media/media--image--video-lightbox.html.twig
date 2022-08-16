@@ -31,4 +31,9 @@
  * @ingroup themeable
  */
 #}
-{% extends "media--image.html.twig" %}
+{% include '@components/figure/figure.twig' with {
+  'attributes': attributes.addClass('u-align-center'),
+  'media': content.field_media_image,
+  'caption': content|without('field_media_image'),
+  'is_video': true
+} %}

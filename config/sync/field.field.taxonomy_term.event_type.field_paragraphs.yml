@@ -1,10 +1,9 @@
-uuid: 2af58d3a-4698-43b5-b8ed-3e42327afd60
+uuid: 95f8d231-8f83-426a-9fca-c99700bdf853
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
-    - node.type.event
+    - field.storage.taxonomy_term.field_paragraphs
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
@@ -19,16 +18,17 @@ dependencies:
     - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
+    - taxonomy.vocabulary.event_type
   module:
     - entity_reference_revisions
-id: node.event.field_paragraphs
+id: taxonomy_term.event_type.field_paragraphs
 field_name: field_paragraphs
-entity_type: node
-bundle: event
+entity_type: taxonomy_term
+bundle: event_type
 label: Content
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

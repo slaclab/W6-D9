@@ -119,6 +119,8 @@ process:
     -
       plugin: get
       source: comment_body
+    -
+      plugin: media_wysiwyg_filter
 destination:
   plugin: 'entity:comment'
 migration_dependencies:

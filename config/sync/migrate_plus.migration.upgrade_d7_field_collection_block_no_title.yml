@@ -36,6 +36,8 @@ process:
     -
       plugin: get
       source: field_block_no_title_body
+    -
+      plugin: media_wysiwyg_filter
   field_block_no_title_title:
     -
       plugin: get
@@ -46,5 +48,7 @@ destination:
 migration_dependencies:
   required:
     - upgrade_d7_field_collection_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance

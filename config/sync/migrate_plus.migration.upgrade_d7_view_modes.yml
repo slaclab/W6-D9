@@ -13,6 +13,7 @@ migration_group: migrate_drupal_7
 label: 'View modes'
 source:
   plugin: d7_view_mode
+  mapMigrationProcessValueToMedia: true
 process:
   mode:
     -
@@ -38,6 +39,11 @@ process:
     -
       plugin: get
       source: entity_type
+    -
+      plugin: static_map
+      map:
+        file: media
+      bypass: true
     -
       plugin: static_map
       map:

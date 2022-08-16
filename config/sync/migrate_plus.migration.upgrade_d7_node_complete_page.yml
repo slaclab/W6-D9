@@ -80,16 +80,18 @@ process:
     -
       plugin: get
       source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
   field_image:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_image
+    -
+      plugin: sub_process
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
   field_page_keywords:
     -
       plugin: sub_process
@@ -108,6 +110,11 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_comment_field_instance

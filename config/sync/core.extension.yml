@@ -50,10 +50,13 @@ module:
   lottiefiles_field: 0
   media: 0
   media_library: 0
+  media_migration: 0
   menu_block: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  migmag: 0
+  migmag_process: 0
   migrate: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
@@ -80,6 +83,7 @@ module:
   slac_core: 0
   slac_migrate: 0
   slac_yaml_content: 0
+  smart_sql_idmap: 0
   style_options: 0
   svg_image_field: 0
   system: 0

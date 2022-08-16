@@ -30,5 +30,7 @@ destination:
 migration_dependencies:
   required:
     - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance

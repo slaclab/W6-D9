@@ -16,6 +16,7 @@ source:
   constants:
     form_mode: default
     third_party_settings: {  }
+  mapMigrationProcessValueToMedia: true
 process:
   field_type_exists:
     -
@@ -58,6 +59,11 @@ process:
     -
       plugin: static_map
       map:
+        file: media
+      bypass: true
+    -
+      plugin: static_map
+      map:
         field_collection_item: paragraph
         paragraphs_item: paragraph
       bypass: true
@@ -81,15 +87,15 @@ process:
         date_select: datetime_default
         date_text: datetime_default
         date_popup: datetime_default
-        media_generic: file_generic
+        media_generic: media_library_widget
         phone_textfield: telephone_default
         options_onoff: boolean_checkbox
         entityreference_autocomplete: entity_reference_autocomplete
         entityreference_autocomplete_tags: entity_reference_autocomplete_tags
         taxonomy_autocomplete: entity_reference_autocomplete
         d7_text: d7_text_default
-        image: image_default
-        image_miw: image_image
+        image_image: media_library_widget
+        media_image: media_image_default
         taxonomy_term_reference: taxonomy_term_reference_default
         entityreference: entityreference_default
         list: list_default
@@ -98,8 +104,8 @@ process:
         date: datetime_default
         datetime: datetime_default
         datestamp: datetime_timestamp
-        file_mfw: file_generic
-        filefield_widget: file_generic
+        file_generic: media_library_widget
+        file_entity: file_entity_default
         field_collection_embed: entity_reference_paragraphs
         field_collection: field_collection_default
   options/settings:

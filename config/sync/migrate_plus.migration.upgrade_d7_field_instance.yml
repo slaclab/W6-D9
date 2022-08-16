@@ -15,6 +15,7 @@ source:
   plugin: d7_field_instance
   constants:
     status: true
+  mapMigrationProcessValueToMedia: true
 process:
   type:
     -
@@ -25,6 +26,11 @@ process:
     -
       plugin: get
       source: entity_type
+    -
+      plugin: static_map
+      map:
+        file: media
+      bypass: true
     -
       plugin: static_map
       map:
@@ -87,8 +93,12 @@ process:
         - settings
         - widget
         - field_definition
+    media_image:
+      plugin: media_image_field_instance_settings
     paragraphs:
       plugin: paragraphs_field_instance_settings
+    file_entity:
+      plugin: file_entity_field_instance_settings
     field_collection:
       plugin: field_collection_field_instance_settings
   default_value_function:
@@ -123,5 +133,10 @@ migration_dependencies:
     - upgrade_d7_node_type
     - upgrade_d7_comment_type
     - upgrade_d7_taxonomy_vocabulary
+    - upgrade_d7_file_entity_type_image
+    - upgrade_d7_file_entity_type_document
+    - upgrade_d7_file_entity_type_remote_video
+    - upgrade_d7_file_entity_type_video
+    - upgrade_d7_file_entity_type_image_private
     - upgrade_d7_field_collection_type
     - upgrade_d7_paragraphs_type

@@ -34,6 +34,10 @@ process:
     -
       plugin: get
       source: field_content
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
   field_width:
     -
       plugin: get
@@ -62,4 +66,6 @@ migration_dependencies:
     - upgrade_d7_paragraphs_video
     - upgrade_d7_paragraphs_video_bootstrap
     - upgrade_d7_paragraphs_view
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional: {  }

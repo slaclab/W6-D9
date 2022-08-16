@@ -80,10 +80,16 @@ process:
     -
       plugin: get
       source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
   field_slac_on_tap_speaker_name:
     -
       plugin: get
       source: field_slac_on_tap_speaker_name
+    -
+      plugin: media_wysiwyg_filter
   field_slac_on_tap_event_date:
     -
       plugin: sub_process
@@ -103,32 +109,36 @@ process:
     -
       plugin: get
       source: field_slac_on_tap_speaker_bio
+    -
+      plugin: media_wysiwyg_filter
   field_slac_on_tap_location:
     -
       plugin: get
       source: field_slac_on_tap_location
+    -
+      plugin: media_wysiwyg_filter
   field_slac_on_tap_poster:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_slac_on_tap_poster
-      process:
-        target_id: fid
-        display: display
-        description: description
-  field_slac_on_tap_poster_thumb:
     -
       plugin: sub_process
-      source: field_slac_on_tap_poster_thumb
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
+  field_slac_on_tap_poster_thumb:
+    -
+      plugin: media_migration_delta_sort
+      source: field_slac_on_tap_poster_thumb
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
   field_slac_on_tap_google_map:
     -
       plugin: get
       source: field_slac_on_tap_google_map
+    -
+      plugin: media_wysiwyg_filter
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -137,6 +147,12 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_d7_file_entity_document_public
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_comment_field_instance

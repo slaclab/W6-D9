@@ -47,10 +47,14 @@ process:
           map:
             editor_caption: filter_caption
             editor_align: filter_align
+            media_filter: entity_embed
             filter_tokens: token_filter
         settings:
-          plugin: filter_settings
-          source: settings
+          -
+            plugin: filter_settings
+            source: settings
+          -
+            plugin: filter_settings_embed_media
         status:
           plugin: default_value
           default_value: true

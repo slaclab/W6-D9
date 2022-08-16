@@ -36,15 +36,21 @@ process:
     -
       plugin: get
       source: field_embed_code
+    -
+      plugin: media_wysiwyg_filter
   field_headline:
     -
       plugin: get
       source: field_headline
+    -
+      plugin: media_wysiwyg_filter
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: homepage_video
 migration_dependencies:
   required:
     - upgrade_d7_field_collection_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance

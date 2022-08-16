@@ -48,14 +48,12 @@ process:
       source: field_description
   field_image:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_image
+    -
+      plugin: sub_process
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
   field_title:
     -
       plugin: get
@@ -74,4 +72,9 @@ migration_dependencies:
     - upgrade_d7_field_collection_block_itl_content
     - upgrade_d7_field_collection_block_no_title
     - upgrade_d7_field_collection_homepage_video
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional: {  }

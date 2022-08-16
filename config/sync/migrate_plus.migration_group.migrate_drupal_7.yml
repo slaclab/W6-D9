@@ -10,11 +10,3 @@ module: null
 shared_configuration:
   source:
     key: drupal7
-    database:
-      driver: mysql
-      username: ''
-      password: ''
-      host: ''
-      port: ''
-      database: ''
-      prefix: null

@@ -16,11 +16,17 @@ source:
   constants:
     status: true
     langcode: und
+  mapMigrationProcessValueToMedia: true
 process:
   entity_type:
     -
       plugin: get
       source: entity_type
+    -
+      plugin: static_map
+      map:
+        file: media
+      bypass: true
     -
       plugin: static_map
       map:
@@ -47,8 +53,8 @@ process:
       map:
         d7_text:
           d7_text: d7_text
-        image:
-          image: image
+        media_image:
+          media_image: media_image
         taxonomy_term_reference:
           taxonomy_term_reference: taxonomy_term_reference
         entityreference:
@@ -59,8 +65,8 @@ process:
           list: list
         datetime:
           datetime: datetime
-        file:
-          file: file
+        file_entity:
+          file_entity: file_entity
   cardinality:
     -
       plugin: get
@@ -68,8 +74,12 @@ process:
   settings:
     0:
       plugin: d7_field_settings
+    media_image:
+      plugin: media_image_field_settings
     paragraphs:
       plugin: paragraphs_field_settings
+    file_entity:
+      plugin: file_entity_field_settings
     field_collection:
       plugin: field_collection_field_settings
 destination:

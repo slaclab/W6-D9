@@ -78,24 +78,20 @@ process:
       source: comment
   field_header_image:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_header_image
-      process:
-        target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
-  field_image_for_gallery:
     -
       plugin: sub_process
-      source: field_image_for_gallery
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
+  field_image_for_gallery:
+    -
+      plugin: media_migration_delta_sort
+      source: field_image_for_gallery
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
   field_structured_content:
     -
       plugin: sub_process
@@ -134,6 +130,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
     - upgrade_d7_paragraphs_blank
     - upgrade_d7_paragraphs_block
     - upgrade_d7_paragraphs_blockquote
@@ -170,6 +169,8 @@ migration_dependencies:
     - upgrade_d7_paragraphs_revisions_video
     - upgrade_d7_paragraphs_revisions_video_bootstrap
     - upgrade_d7_paragraphs_revisions_view
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_comment_field_instance

@@ -7,3 +7,14 @@
 #- upgrade_user_picture_entity_display
 #- upgrade_user_picture_entity_form_display
 - upgrade_d7_user
+
+# files and media
+- upgrade_d7_file
+- upgrade_d7_file_private
+#- upgrade_d7_file_audio
+#- upgrade_d7_file_document
+#- upgrade_d7_file_image
+#- upgrade_d7_media_audio
+#- upgrade_d7_media_document
+#- upgrade_d7_media_image
+#- upgrade_d7_media_remote_video

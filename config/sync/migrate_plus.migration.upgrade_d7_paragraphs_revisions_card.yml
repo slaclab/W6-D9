@@ -34,16 +34,16 @@ process:
     -
       plugin: get
       source: field_card_body
+    -
+      plugin: media_wysiwyg_filter
   field_card_image:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_card_image
+    -
+      plugin: sub_process
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
   field_card_subtitle:
     -
       plugin: get
@@ -54,14 +54,12 @@ process:
       source: field_card_title
   field_icon:
     -
-      plugin: sub_process
+      plugin: media_migration_delta_sort
       source: field_icon
+    -
+      plugin: sub_process
       process:
         target_id: fid
-        alt: alt
-        title: title
-        width: width
-        height: height
   field_paragraph_link:
     -
       plugin: field_link
@@ -90,4 +88,9 @@ migration_dependencies:
     - upgrade_d7_paragraphs_video
     - upgrade_d7_paragraphs_video_bootstrap
     - upgrade_d7_paragraphs_view
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional: {  }

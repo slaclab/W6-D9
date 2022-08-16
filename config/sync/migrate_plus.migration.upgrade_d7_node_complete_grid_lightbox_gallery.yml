@@ -115,6 +115,8 @@ migration_dependencies:
     - upgrade_d7_node_type
     - upgrade_d7_field_collection_media_collection
     - upgrade_d7_field_collection_revisions_media_collection
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_comment_field_instance

@@ -5,7 +5,11 @@ dependencies:
   config:
     - oembed_providers.bucket.art19
   module:
+    - crop
     - oembed_providers
+third_party_settings:
+  crop:
+    image_field: null
 id: remote_audio
 label: 'Remote Audio'
 description: ''

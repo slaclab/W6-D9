@@ -45,6 +45,7 @@ module:
   lottiefiles_field: 0
   media: 0
   media_library: 0
+  menu_block: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
@@ -61,9 +62,11 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  rabbit_hole: 0
   rdf: 0
   redis: 0
   responsive_image: 0
+  rh_media: 0
   search: 0
   selection_sharer: 0
   shortcut: 0
@@ -88,6 +91,8 @@ module:
   view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0
+  viewsreference: 0
+  viewsreference_filter: 0
   yaml_content: 0
   views: 10
   paragraphs: 11

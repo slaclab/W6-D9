@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
+    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
   module:
     - allowed_formats
@@ -60,6 +61,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_text_color:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

@@ -40,8 +40,8 @@
 #}
 
 {% set tooltip %}
-  {{- hero_caption|raw -}}
-  {{- hero_credit|raw -}}
+  {{- hero_caption -}}
+  {{- hero_credit -}}
 {% endset %}
 
 {% include '@components/article-hero/article-hero.twig' with {

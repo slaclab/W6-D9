@@ -1,0 +1,120 @@
+uuid: d6b22e2e-a39a-43e0-823f-b7373f6411b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.overlap_image
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.wysiwyg
+  module:
+    - entity_reference_revisions
+id: paragraph.overlap_image.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: overlap_image
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      quote: quote
+      wysiwyg: wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 31
+        enabled: false
+      accordion_item:
+        weight: 32
+        enabled: false
+      article_hero:
+        weight: 33
+        enabled: false
+      callout_box:
+        weight: 34
+        enabled: false
+      card:
+        weight: 35
+        enabled: false
+      content_embed:
+        weight: 36
+        enabled: false
+      embed_block:
+        weight: 37
+        enabled: false
+      embed_full_html_:
+        weight: 38
+        enabled: false
+      embed_view:
+        weight: 39
+        enabled: false
+      extra_large_card:
+        weight: 40
+        enabled: false
+      fifty_fifty:
+        weight: 41
+        enabled: false
+      image_carousel:
+        weight: 42
+        enabled: false
+      image_embed:
+        weight: 43
+        enabled: false
+      image_hero:
+        weight: 44
+        enabled: false
+      microsite_hero:
+        weight: 45
+        enabled: false
+      microsite_navigation_marker:
+        weight: 46
+        enabled: false
+      overlap_image:
+        weight: 47
+        enabled: false
+      promo_box:
+        weight: 48
+        enabled: false
+      quote:
+        weight: 49
+        enabled: true
+      section:
+        weight: 50
+        enabled: false
+      small_card_with_icon:
+        weight: 51
+        enabled: false
+      small_card_with_image:
+        weight: 52
+        enabled: false
+      small_card_with_solid_background:
+        weight: 53
+        enabled: false
+      table_of_contents:
+        weight: 54
+        enabled: false
+      text_block:
+        weight: 55
+        enabled: false
+      tout:
+        weight: 56
+        enabled: false
+      video_hero:
+        weight: 57
+        enabled: false
+      video_lightbox:
+        weight: 58
+        enabled: false
+      wide_card:
+        weight: 59
+        enabled: false
+      wysiwyg:
+        weight: 60
+        enabled: true
+field_type: entity_reference_revisions

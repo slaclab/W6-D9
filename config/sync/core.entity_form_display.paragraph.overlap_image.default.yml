@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.overlap_image.field_body
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_long_text
     - field.field.paragraph.overlap_image.field_lottiefile
+    - field.field.paragraph.overlap_image.field_paragraph
     - paragraphs.paragraphs_type.overlap_image
   module:
+    - layout_paragraphs
     - lottiefiles_field
     - media_library
     - text
@@ -17,14 +18,6 @@ targetEntityType: paragraph
 bundle: overlap_image
 mode: default
 content:
-  field_body:
-    type: text_textarea
-    weight: 0
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 1
@@ -56,6 +49,15 @@ content:
       width: 0
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_paragraph:
+    type: layout_paragraphs
+    weight: 0
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
     third_party_settings: {  }
 hidden:
   created: true

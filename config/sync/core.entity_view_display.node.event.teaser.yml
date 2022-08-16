@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
     - field.field.node.event.field_override_text
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_tags
@@ -57,6 +58,7 @@ hidden:
   field_long_text: true
   field_name: true
   field_override_text: true
+  field_paragraphs: true
   field_person_image: true
   field_site_setting: true
   field_tags: true

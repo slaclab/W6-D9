@@ -1,19 +1,19 @@
-uuid: d6b22e2e-a39a-43e0-823f-b7373f6411b4
+uuid: 2a8a0bcd-2bf8-4ea4-93c8-37f3f5d5b1d3
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph
-    - paragraphs.paragraphs_type.overlap_image
-    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
-id: paragraph.overlap_image.field_paragraph
+id: paragraph.two_column_hero.field_paragraph
 field_name: field_paragraph
 entity_type: paragraph
-bundle: overlap_image
-label: Content
+bundle: two_column_hero
+label: 'Right Column Content'
 description: ''
 required: false
 translatable: true
@@ -23,98 +23,101 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      quote: quote
+      image_embed: image_embed
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 31
-        enabled: false
-      accordion_item:
         weight: 32
         enabled: false
-      article_hero:
+      accordion_item:
         weight: 33
         enabled: false
-      callout_box:
+      article_hero:
         weight: 34
         enabled: false
-      card:
+      callout_box:
         weight: 35
         enabled: false
-      content_embed:
+      card:
         weight: 36
         enabled: false
-      embed_block:
+      content_embed:
         weight: 37
         enabled: false
-      embed_full_html_:
+      embed_block:
         weight: 38
         enabled: false
-      embed_view:
+      embed_full_html_:
         weight: 39
         enabled: false
-      extra_large_card:
+      embed_view:
         weight: 40
         enabled: false
-      fifty_fifty:
+      extra_large_card:
         weight: 41
         enabled: false
-      image_carousel:
+      fifty_fifty:
         weight: 42
         enabled: false
-      image_embed:
+      image_carousel:
         weight: 43
         enabled: false
-      image_hero:
+      image_embed:
         weight: 44
-        enabled: false
-      microsite_hero:
+        enabled: true
+      image_hero:
         weight: 45
         enabled: false
-      microsite_navigation_marker:
+      microsite_hero:
         weight: 46
         enabled: false
-      overlap_image:
+      microsite_navigation_marker:
         weight: 47
         enabled: false
-      promo_box:
+      overlap_image:
         weight: 48
         enabled: false
-      quote:
+      promo_box:
         weight: 49
-        enabled: true
-      section:
+        enabled: false
+      quote:
         weight: 50
         enabled: false
-      small_card_with_icon:
+      section:
         weight: 51
         enabled: false
-      small_card_with_image:
+      small_card_with_icon:
         weight: 52
         enabled: false
-      small_card_with_solid_background:
+      small_card_with_image:
         weight: 53
         enabled: false
-      table_of_contents:
+      small_card_with_solid_background:
         weight: 54
         enabled: false
-      text_block:
+      table_of_contents:
         weight: 55
         enabled: false
-      tout:
+      text_block:
         weight: 56
         enabled: false
-      video_hero:
+      tout:
         weight: 57
         enabled: false
-      video_lightbox:
+      two_column_hero:
         weight: 58
         enabled: false
-      wide_card:
+      video_hero:
         weight: 59
         enabled: false
-      wysiwyg:
+      video_lightbox:
         weight: 60
+        enabled: false
+      wide_card:
+        weight: 61
+        enabled: false
+      wysiwyg:
+        weight: 62
         enabled: true
 field_type: entity_reference_revisions

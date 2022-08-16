@@ -1,0 +1,19 @@
+uuid: dcda3307-cc12-4eb6-92ca-22b3fda2308b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lede
+    - paragraphs.paragraphs_type.two_column_hero
+id: paragraph.two_column_hero.field_lede
+field_name: field_lede
+entity_type: paragraph
+bundle: two_column_hero
+label: Lede
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

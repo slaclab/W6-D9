@@ -5,7 +5,6 @@
  * Node-related hook implementations.
  */
 
-use Drupal\Core\Link;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
@@ -21,6 +20,26 @@ function gesso_preprocess_node(&$variables) {
     // Array of regions to add to node template.
     $allowed_regions = ['status'];
     _add_regions_to_template($allowed_regions, $variables);
+  }
+
+  // Some content types that may display a table of contents. First check to make
+  // sure that the view_mode is full (and not card, etc.) indicating that the
+  // node's detail page is being displayed. If the node is a type that displays a
+  // table of contents, first find the TOC markers if any in the content
+  // paragraphs field and then create a themeable list of markers as an array
+  // that is assigned to a template variable.
+  if ($variables['view_mode'] == 'full') {
+    $toc_content_types = ['landing_page', 'page', 'news_article'];
+    $toc_container_field = 'field_paragraphs';
+
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $variables['node'];
+
+    if (in_array($node->getType(), $toc_content_types)) {
+      if ($items = gesso_preprocess_node_find_toc_markers($node, $toc_container_field)) {
+        $variables['toc_list'] = gesso_preprocess_node_generate_toc_list($items);
+      }
+    }
   }
 }
 
@@ -108,38 +127,34 @@ function gesso_preprocess_node__person(&$vars) {
 /**
  * Implements hook_preprocess_node().
  */
-function gesso_preprocess_node__news_article(&$vars) {
-  // Extract the node from the preprocessing variables.
-  $node = $vars['node'];
+function gesso_preprocess_node_find_toc_markers($node, $field) {
+  // Collector for list items to be created; this will be an ordered list.
+  $list_items = [];
 
   // Extract the set of paragraphs from the content field of the node.
-  $paragraphs = $node->get('field_paragraphs')->getValue();
-  if (count($paragraphs)) {
-    // Collector for list items to be created; this will be an ordered list.
-    $list_items = [];
+  $paragraphs = $node->get($field)->getValue();
 
-    // Load each paragraph in turn
+  // If we found paragraphs in the specified container field, loop
+  // through and find the TOC markers.
+  if (count($paragraphs)) {
     foreach ($paragraphs as $item) {
       $paragraph = Paragraph::load($item['target_id']);
       if ($paragraph->getType() == 'table_of_contents') {
         $list_items[] = $paragraph->field_short_text->value;
       }
     }
-
-    // TOC paragraphs were found, convert list into a toc_list render array.
-    if ($list_items) {
-      $vars['toc_list'] = _gesso_preprocess_node__news_article_toclist($list_items);
-    }
   }
+
+  return $list_items;
 }
 
 /**
- * _gesso_preprocess_node__news_article_toclist
+ * _gesso_preprocess_node_generate_toclist
  *
  * Helper function that converts an array of strings into an ordered list
  * of links. Each link is titled with a string.
  */
-function _gesso_preprocess_node__news_article_toclist($items) {
+function gesso_preprocess_node_generate_toc_list($items) {
   // Create a URL from a route fragment on the <current> page for theming an anchor link.
   // Store the link into container and return an array with keys aligned for theming using the
   // "toc" component. Make explicit the array indexing for later use if needed.

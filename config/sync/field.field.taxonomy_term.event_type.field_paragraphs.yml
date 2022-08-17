@@ -1,10 +1,9 @@
-uuid: 8043c22e-e66b-4849-a5ed-6644f321b1e4
+uuid: 95f8d231-8f83-426a-9fca-c99700bdf853
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
-    - node.type.news_article
+    - field.storage.taxonomy_term.field_paragraphs
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
@@ -16,19 +15,20 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
+    - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
-    - paragraphs.paragraphs_type.wide_card
+    - taxonomy.vocabulary.event_type
   module:
     - entity_reference_revisions
-id: node.news_article.field_paragraphs
+id: taxonomy_term.event_type.field_paragraphs
 field_name: field_paragraphs
-entity_type: node
-bundle: news_article
+entity_type: taxonomy_term
+bundle: event_type
 label: Content
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -46,99 +46,99 @@ settings:
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
+      table_of_contents: table_of_contents
       tout: tout
       video_hero: video_hero
-      wide_card: wide_card
     negate: 1
     target_bundles_drag_drop:
       accordion:
-        weight: -61
+        weight: 31
         enabled: false
       accordion_item:
-        weight: -60
+        weight: 32
         enabled: true
       article_hero:
-        weight: -59
+        weight: 33
         enabled: true
       callout_box:
-        weight: -58
+        weight: 34
         enabled: false
       card:
-        weight: -57
+        weight: 35
         enabled: true
       content_embed:
-        weight: -56
+        weight: 36
         enabled: false
       embed_block:
-        weight: -55
+        weight: 37
         enabled: false
       embed_full_html_:
-        weight: -54
+        weight: 38
         enabled: false
       embed_view:
-        weight: -53
+        weight: 39
         enabled: true
       extra_large_card:
-        weight: -52
+        weight: 40
         enabled: false
       fifty_fifty:
-        weight: -51
+        weight: 41
         enabled: false
       image_carousel:
-        weight: -50
+        weight: 42
         enabled: true
       image_embed:
-        weight: -49
+        weight: 43
         enabled: false
       image_hero:
-        weight: -48
+        weight: 44
         enabled: true
       microsite_hero:
-        weight: -47
+        weight: 45
         enabled: true
       microsite_navigation_marker:
-        weight: -46
+        weight: 46
         enabled: true
       overlap_image:
-        weight: -45
+        weight: 47
         enabled: false
       promo_box:
-        weight: -44
+        weight: 48
         enabled: false
       quote:
-        weight: -43
+        weight: 49
         enabled: false
       section:
-        weight: -42
+        weight: 50
         enabled: false
       small_card_with_icon:
-        weight: -41
+        weight: 51
         enabled: true
       small_card_with_image:
-        weight: -40
+        weight: 52
         enabled: true
       small_card_with_solid_background:
-        weight: -39
+        weight: 53
         enabled: true
       table_of_contents:
-        weight: -38
-        enabled: false
+        weight: 54
+        enabled: true
       text_block:
-        weight: -37
+        weight: 55
         enabled: false
       tout:
-        weight: -36
+        weight: 56
         enabled: true
       video_hero:
-        weight: -35
+        weight: 57
         enabled: true
       video_lightbox:
-        weight: -34
+        weight: 58
         enabled: false
       wide_card:
-        weight: -33
-        enabled: true
+        weight: 59
+        enabled: false
       wysiwyg:
-        weight: -32
+        weight: 60
         enabled: false
 field_type: entity_reference_revisions

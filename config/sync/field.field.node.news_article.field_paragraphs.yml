@@ -8,9 +8,11 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.microsite_navigation_marker
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
@@ -35,85 +37,108 @@ settings:
     target_bundles:
       accordion_item: accordion_item
       article_hero: article_hero
+      card: card
+      embed_view: embed_view
       image_carousel: image_carousel
       image_hero: image_hero
       microsite_hero: microsite_hero
-      card: card
-      video_hero: video_hero
-      tout: tout
+      microsite_navigation_marker: microsite_navigation_marker
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
+      tout: tout
+      video_hero: video_hero
       wide_card: wide_card
     negate: 1
     target_bundles_drag_drop:
       accordion:
-        weight: 17
+        weight: -61
         enabled: false
       accordion_item:
-        weight: 18
+        weight: -60
         enabled: true
       article_hero:
-        weight: 19
+        weight: -59
         enabled: true
+      callout_box:
+        weight: -58
+        enabled: false
       card:
-        weight: 27
+        weight: -57
+        enabled: true
+      content_embed:
+        weight: -56
+        enabled: false
+      embed_block:
+        weight: -55
+        enabled: false
+      embed_full_html_:
+        weight: -54
+        enabled: false
+      embed_view:
+        weight: -53
         enabled: true
       extra_large_card:
-        weight: 28
+        weight: -52
         enabled: false
       fifty_fifty:
-        weight: 20
+        weight: -51
         enabled: false
-      grid:
-        weight: 21
-        enabled: true
       image_carousel:
-        weight: 22
+        weight: -50
         enabled: true
       image_embed:
-        weight: 23
+        weight: -49
         enabled: false
       image_hero:
-        weight: 24
+        weight: -48
         enabled: true
       microsite_hero:
-        weight: 25
+        weight: -47
+        enabled: true
+      microsite_navigation_marker:
+        weight: -46
         enabled: true
       overlap_image:
-        weight: 26
+        weight: -45
         enabled: false
       promo_box:
-        weight: 27
+        weight: -44
         enabled: false
       quote:
-        weight: 28
+        weight: -43
         enabled: false
       section:
-        weight: 29
+        weight: -42
         enabled: false
       small_card_with_icon:
-        weight: 39
+        weight: -41
         enabled: true
       small_card_with_image:
-        weight: 40
+        weight: -40
         enabled: true
       small_card_with_solid_background:
-        weight: 41
+        weight: -39
         enabled: true
+      table_of_contents:
+        weight: -38
+        enabled: false
+      text_block:
+        weight: -37
+        enabled: false
       tout:
-        weight: 31
+        weight: -36
         enabled: true
       video_hero:
-        weight: 30
+        weight: -35
         enabled: true
       video_lightbox:
-        weight: 31
+        weight: -34
         enabled: false
       wide_card:
-        weight: 45
+        weight: -33
         enabled: true
       wysiwyg:
-        weight: 32
+        weight: -32
         enabled: false
 field_type: entity_reference_revisions

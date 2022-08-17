@@ -88,6 +88,9 @@ class MegaMenu {
     switch (event.key) {
       case 'ArrowUp':
       case 'ArrowLeft':
+        if (document.activeElement.matches('input')) {
+          return;
+        }
         event.preventDefault();
         if (currentIndex > -1) {
           const prevIndex = Math.max(0, currentIndex - 1);
@@ -96,6 +99,9 @@ class MegaMenu {
         break;
       case 'ArrowDown':
       case 'ArrowRight':
+        if (document.activeElement.matches('input')) {
+          return;
+        }
         event.preventDefault();
         if (currentIndex > -1) {
           const nextIndex = Math.min(menuLinks.length - 1, currentIndex + 1);

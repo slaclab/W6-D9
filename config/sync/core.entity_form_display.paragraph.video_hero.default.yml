@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.video_hero.field_video
+    - field.field.paragraph.video_hero.field_video_hero_videos
     - paragraphs.paragraphs_type.video_hero
   module:
     - media_library
@@ -12,9 +12,9 @@ targetEntityType: paragraph
 bundle: video_hero
 mode: default
 content:
-  field_video:
+  field_video_hero_videos:
     type: media_library_widget
-    weight: 0
+    weight: 1
     region: content
     settings:
       media_types: {  }

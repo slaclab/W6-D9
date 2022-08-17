@@ -26,15 +26,11 @@
 
 .l-section--no-padding {
   &:last-child {
-    padding-bottom: calc(
-      #{rem(gesso-spacing(5))} + var(--gesso-footer-overlap)
-    );
+    padding-bottom: calc(var(--gesso-footer-overlap));
   }
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     &:last-child {
-      padding-bottom: calc(
-        #{rem(gesso-spacing(10))} + var(--gesso-footer-overlap)
-      );
+      padding-bottom: calc(var(--gesso-footer-overlap));
     }
   }
 }
@@ -91,6 +87,10 @@
 
   .l-section__title .c-arrow-link {
     @include arrow-link(white);
+    color: inherit;
+  }
+
+  .l-section__intro a {
     color: inherit;
   }
 }

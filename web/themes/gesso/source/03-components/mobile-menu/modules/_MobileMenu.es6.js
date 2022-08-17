@@ -29,6 +29,7 @@ class MobileMenu extends OverlayMenu {
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
       otherBlockClass = '',
+      imagePath = '',
     } = {}
   ) {
     super(null);
@@ -47,6 +48,7 @@ class MobileMenu extends OverlayMenu {
       toggleSubnav,
       mobileMenuBreakpoint,
       classPrefix,
+      imagePath,
     };
     this.toggleMenuDisplay = this.toggleMenuDisplay.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -71,12 +73,28 @@ class MobileMenu extends OverlayMenu {
    */
   cloneBlock(block, blockClass = '') {
     const blockClone = block.cloneNode(true);
+    const idsToUpdate = blockClone.querySelectorAll('[id], [for], [name]');
     if (blockClass) {
       blockClone.classList.add(blockClass);
     }
     if (blockClone.id) {
       blockClone.id = `${blockClone.id}-mobile`;
     }
+
+    // Keeps forms working after cloning.
+    idsToUpdate.forEach(element => {
+      if (element.id) {
+        element.id += '-mobile';
+      }
+
+      if (element.hasAttribute('for')) {
+        element.setAttribute('for', `${element.getAttribute('for')}-mobile`);
+      }
+
+      if (element.hasAttribute('name')) {
+        element.setAttribute('name', `${element.getAttribute('name')}-mobile`);
+      }
+    })
     return blockClone;
   }
 
@@ -92,7 +110,7 @@ class MobileMenu extends OverlayMenu {
     button.setAttribute('aria-expanded', 'false');
     button.innerHTML = `<svg class="c-icon c-mobile-menu__subnav-icon" role="img">
   <title>Toggle submenu</title>
-  <use xlink:href="images/sprite.artifact.svg#plus"></use>
+  <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
 </svg>`;
     return subnav.insertAdjacentElement('beforebegin', button);
   }
@@ -219,6 +237,9 @@ class MobileMenu extends OverlayMenu {
     const cards = menuClone.querySelectorAll('.c-card');
     cards.forEach(card => {
       card.classList.add('c-card--on-dark');
+      card.querySelectorAll('.c-arrow-link').forEach(arrow => {
+        arrow.classList.add('c-arrow-link--white');
+      });
     });
 
     // Prep sub-menus, if applicable.

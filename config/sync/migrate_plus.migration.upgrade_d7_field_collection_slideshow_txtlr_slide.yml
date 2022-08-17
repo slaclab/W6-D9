@@ -1,0 +1,72 @@
+uuid: 181567ff-1d9f-4c23-a0d7-46327e2fbcda
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_slideshow_txtlr_slide
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Slideshow txtlr slide)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_slideshow_txtlr_slide
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_fcollection_bgcolor:
+    -
+      plugin: get
+      source: field_fcollection_bgcolor
+  field_fcollection_description:
+    -
+      plugin: get
+      source: field_fcollection_description
+  field_fcollection_image:
+    -
+      plugin: sub_process
+      source: field_fcollection_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_fcollection_link:
+    -
+      plugin: field_link
+      source: field_fcollection_link
+  field_fcollection_title:
+    -
+      plugin: get
+      source: field_fcollection_title
+  field_fcollection_txtposition:
+    -
+      plugin: get
+      source: field_fcollection_txtposition
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: slideshow_txtlr_slide
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+  optional:
+    - upgrade_d7_field_instance

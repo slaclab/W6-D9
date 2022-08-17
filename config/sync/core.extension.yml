@@ -8,6 +8,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_field: 0
   breakpoint: 0
   ckeditor: 0
   ckeditor5: 0
@@ -18,6 +19,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  crop: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
@@ -26,11 +28,14 @@ module:
   entity_reference_revisions: 0
   field: 0
   field_group: 0
+  field_group_migrate: 0
   field_ui: 0
   file: 0
   filter: 0
+  focal_point: 0
   gesso_helper: 0
   gin_toolbar: 0
+  google_tag: 0
   help: 0
   history: 0
   image: 0
@@ -40,9 +45,16 @@ module:
   lottiefiles_field: 0
   media: 0
   media_library: 0
+  menu_block: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_drupal_ui: 0
+  migrate_manifest: 0
+  migrate_plus: 0
+  migrate_upgrade: 0
   mysql: 0
   node: 0
   oembed_providers: 0
@@ -50,15 +62,21 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  rabbit_hole: 0
   rdf: 0
   redis: 0
+  responsive_image: 0
+  rh_media: 0
   search: 0
+  selection_sharer: 0
   shortcut: 0
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
+  slac_migrate: 0
   slac_yaml_content: 0
   style_options: 0
+  svg_image_field: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -70,8 +88,11 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0
+  viewsreference: 0
+  viewsreference_filter: 0
   yaml_content: 0
   views: 10
   paragraphs: 11

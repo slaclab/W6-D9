@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
-    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
 id: node.page.field_hero_paragraph
@@ -17,7 +16,7 @@ entity_type: node
 bundle: page
 label: Hero
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -28,76 +27,90 @@ settings:
       article_hero: article_hero
       image_hero: image_hero
       microsite_hero: microsite_hero
-      video_hero: video_hero
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 24
+        weight: -57
         enabled: false
       accordion_item:
-        weight: 25
+        weight: -56
         enabled: false
       article_hero:
-        weight: 26
+        weight: -55
         enabled: true
+      callout_box:
+        weight: -54
+        enabled: false
       card:
-        weight: 27
+        weight: -53
+        enabled: false
+      content_embed:
+        weight: -52
+        enabled: false
+      embed_block:
+        weight: -51
+        enabled: false
+      embed_full_html_:
+        weight: -50
         enabled: false
       extra_large_card:
-        weight: 28
+        weight: -49
         enabled: false
       fifty_fifty:
-        weight: 29
-        enabled: false
-      grid:
-        weight: 30
+        weight: -48
         enabled: false
       image_carousel:
-        weight: 31
+        weight: -47
         enabled: false
       image_embed:
-        weight: 32
+        weight: -46
         enabled: false
       image_hero:
-        weight: 33
+        weight: -45
         enabled: true
       microsite_hero:
-        weight: 34
+        weight: -44
         enabled: true
       overlap_image:
-        weight: 35
+        weight: -43
         enabled: false
       promo_box:
-        weight: 36
+        weight: -42
         enabled: false
       quote:
-        weight: 37
+        weight: -41
         enabled: false
       section:
-        weight: 38
+        weight: -40
         enabled: false
-      small_cad_with_icon:
-        weight: 39
+      small_card_with_icon:
+        weight: -39
         enabled: false
       small_card_with_image:
-        weight: 40
+        weight: -38
         enabled: false
       small_card_with_solid_background:
-        weight: 41
+        weight: -37
+        enabled: false
+      table_of_contents:
+        weight: -36
+        enabled: false
+      text_block:
+        weight: -35
         enabled: false
       tout:
-        weight: 42
+        weight: -34
         enabled: false
       video_hero:
-        weight: 43
-        enabled: true
+        weight: -33
+        enabled: false
       video_lightbox:
-        weight: 44
+        weight: -32
         enabled: false
       wide_card:
-        weight: 45
+        weight: -31
         enabled: false
       wysiwyg:
-        weight: 46
+        weight: -30
         enabled: false
 field_type: entity_reference_revisions

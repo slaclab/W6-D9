@@ -11,15 +11,17 @@
         {{ alert_content }}
       </div>
 
-      <button class="c-alert-bar__button" type="button">
-        {{- 'Dismiss'|t -}}
-        {% include '@components/icon/icon.twig' with {
+      {% if is_dismissible %}
+        <button class="c-alert-bar__button js-dismiss-button" type="button">
+          {{- 'Dismiss'|t -}}
+          {% include '@components/icon/icon.twig' with {
         'icon_name': 'close-inverted',
         'label': 'Close',
         'is_demo': false,
         'hidden': true
       } %}
-      </button>
+        </button>
+      {% endif %}
     </div>
   </div>
 </div>

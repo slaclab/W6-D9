@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -137,5 +136,4 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
-hidden:
-  field_paragraphs_1: true
+hidden: {  }

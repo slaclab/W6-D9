@@ -95,6 +95,9 @@ function gesso_preprocess_paragraph__table_of_contents(&$vars) {
   $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
 }
 
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__video_hero(&$vars) {
   $media_ids = \Drupal\Core\Render\Element::children($vars['content']['field_video_hero_videos']);
   $hero_videos = [];
@@ -108,4 +111,23 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     ];
   }
   $vars['hero_videos'] = $hero_videos;
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__article_hero(&$vars) {
+  /** @var \Drupal\media\Entity\Media $media */
+  $image = $vars['content']['field_image'][0]['#media'];
+
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+
+  // Assign either the paragraph's body field or the image's caption field
+  // into the template as the caption of the hero.
+  $paragraph_caption = $paragraph->field_body[0]->view();
+  $vars['hero_caption'] = $paragraph_caption ?: $image->field_caption[0]->view();
+
+  // Assign the credit, always using the image entity's field.
+  $vars['hero_credit'] = $image->field_credit[0]->view();
 }

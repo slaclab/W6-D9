@@ -5,6 +5,7 @@
 @include breakpoint(gesso-breakpoint(grid-2col)) {
   .c-fifty-fifty-staggered {
     grid-auto-flow: row dense;
+    padding-top: rem(gesso-spacing(12));
   }
 
   .c-fifty-fifty-staggered__col:nth-child(odd) {

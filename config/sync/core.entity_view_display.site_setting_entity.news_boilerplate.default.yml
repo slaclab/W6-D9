@@ -1,0 +1,46 @@
+uuid: 9a953013-e4f6-4458-ba78-9dd45f39fcdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.news_boilerplate.field_body
+    - site_settings.site_setting_entity_type.news_boilerplate
+  module:
+    - text
+    - user
+id: site_setting_entity.news_boilerplate.default
+targetEntityType: site_setting_entity
+bundle: news_boilerplate
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

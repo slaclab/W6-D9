@@ -59,6 +59,7 @@ third_party_settings:
         - field_datetime_range
         - field_lede
         - field_body
+        - field_paragraphs
         - field_image
         - field_boolean
         - field_external_link
@@ -109,7 +110,7 @@ third_party_settings:
       label: Metadata
       region: content
       parent_name: group_page_content
-      weight: 13
+      weight: 14
       format_type: tab
       format_settings:
         classes: ''
@@ -149,14 +150,14 @@ content:
     third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
-    weight: 13
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_boolean2:
     type: boolean_checkbox
-    weight: 21
+    weight: 22
     region: content
     settings:
       display_label: true
@@ -185,7 +186,7 @@ content:
     third_party_settings: {  }
   field_detail_text:
     type: text_textarea
-    weight: 19
+    weight: 20
     region: content
     settings:
       rows: 5
@@ -209,7 +210,7 @@ content:
             selector: ''
   field_external_link:
     type: link_default
-    weight: 14
+    weight: 15
     region: content
     settings:
       placeholder_url: ''
@@ -241,7 +242,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 12
+    weight: 13
     region: content
     settings:
       media_types: {  }
@@ -256,7 +257,7 @@ content:
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder_url: ''
@@ -281,7 +282,7 @@ content:
             selector: ''
   field_link2:
     type: link_default
-    weight: 20
+    weight: 21
     region: content
     settings:
       placeholder_url: ''
@@ -306,7 +307,7 @@ content:
             selector: ''
   field_links:
     type: link_default
-    weight: 18
+    weight: 19
     region: content
     settings:
       placeholder_url: ''
@@ -349,7 +350,7 @@ content:
       conditional_fields: {  }
   field_override_text:
     type: text_textarea
-    weight: 17
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -382,7 +383,7 @@ content:
       conditional_fields: {  }
   field_site_setting:
     type: options_select
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings:
@@ -441,7 +442,7 @@ content:
     third_party_settings: {  }
   field_video:
     type: media_library_widget
-    weight: 15
+    weight: 16
     region: content
     settings:
       media_types: {  }

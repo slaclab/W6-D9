@@ -11,7 +11,7 @@ _core:
   default_config_hash: KAZy34I5p9GBQBYyHlEqifF8VveQ5p30aHHsDs459as
 id: gesso_breadcrumbs
 theme: gesso
-region: breadcrumb
+region: disabled
 weight: 0
 provider: null
 plugin: system_breadcrumb_block

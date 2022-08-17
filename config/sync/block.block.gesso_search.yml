@@ -11,7 +11,7 @@ _core:
 id: gesso_search
 theme: gesso
 region: disabled
-weight: 0
+weight: -2
 provider: null
 plugin: search_form_block
 settings:

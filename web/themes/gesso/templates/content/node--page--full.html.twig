@@ -94,13 +94,12 @@
 {% include '@components/article/article.twig' with {
   'title': label,
   'toc_links': toc_list,
-  'lede': content.field_lede|field_value,
+  'author': null,
+  'author_name': null,
+  'date': null,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'show_footer': false,
-  'date': node.getCreatedTime|date("F j, Y"),
-  'author': content.field_bio|field_value,
-  'author_name': content.field_text|field_value,
   'rdf_metadata': metadata,
   'content': content.field_paragraphs,
 } %}

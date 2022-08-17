@@ -3,16 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.content_embed.field_list
     - field.field.paragraph.content_embed.field_node
-    - field.field.paragraph.content_embed.field_view_mode
     - paragraphs.paragraphs_type.content_embed
   module:
-    - view_mode_switch
+    - options
 id: paragraph.content_embed.default
 targetEntityType: paragraph
 bundle: content_embed
 mode: default
 content:
+  field_list:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_node:
     type: entity_reference_label
     label: above
@@ -20,12 +27,5 @@ content:
       link: true
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_view_mode:
-    type: view_mode_switch_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden: {  }

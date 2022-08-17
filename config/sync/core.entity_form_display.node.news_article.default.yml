@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
-    - field.field.node.news_article.field_site_setting
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -182,12 +181,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_site_setting:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_source_link:
     type: link_default

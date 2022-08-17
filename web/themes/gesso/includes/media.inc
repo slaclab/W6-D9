@@ -60,9 +60,26 @@ function gesso_preprocess_image(array &$variables) {
 function gesso_preprocess_media(array &$variables) {
   $variables['has_caption'] = isset($variables['attributes']['data-caption']);
   $variables['bundle'] = $variables['media']->bundle();
-  if ($variables['bundle'] == 'image') {
-    if (!empty($variables['elements']['#caption_override'])) {
-      $variables['content']['field_caption'] = $variables['elements']['#caption_override'];
+  if ($variables['view_mode'] == 'video_lightbox') {
+    if ($variables['bundle'] == 'remote_video') {
+      /** @var \Drupal\media\Entity\Media $video_media */
+      $video_media = $variables['media'];
+      $video_id = $video_media->id();
+      // Set the lightbox ID on both the video (used for the video lightbox)
+      // and the stillframe image that will trigger the lightbox.
+      $lightbox_id = Html::getUniqueId("lightbox-${video_id}");
+      $variables['lightbox_id'] = $lightbox_id;
+      $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+      // Set the URL to the detail page only if the editor hasn't hidden
+      // the detail page from the public.
+      if ($video_media->hasField('field_boolean') &&
+        !$video_media->field_boolean->value == '1'
+      ) {
+        $variables['detail_page_url'] = $video_media->toUrl()->toString();
+      }
+      $variables['created'] = $video_media->getCreatedTime();
+    } else if ($variables['bundle'] == 'image') {
+      $variables['lightbox_id'] = $variables['elements']['#media']->lightbox_id;
     }
   }
 }

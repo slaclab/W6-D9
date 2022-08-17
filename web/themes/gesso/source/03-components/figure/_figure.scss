@@ -118,6 +118,7 @@
 }
 
 .c-figure__button {
+  @include focus;
   appearance: none;
   background: transparent;
   border: 0;

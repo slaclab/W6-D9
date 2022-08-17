@@ -31,10 +31,17 @@
  * @ingroup themeable
  */
 #}
-{% include '@components/figure/figure.twig' with {
-  'attributes': attributes.addClass('u-align-center'),
-  'media': content.field_media_image,
-  'caption': content|without('field_media_image'),
-  'is_video': true,
-  'video_button_label': 'Play video'
-} %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ content.field_thumbnail }}
+  {{ title_suffix }}
+  {% include '@components/video-lightbox/video-lightbox.twig' with {
+    'video_title': content.field_long_text[0] ? content.field_long_text|render|striptags('<a><em>')|trim : name,
+    'video_date': created|date('F j, Y'),
+    'video_embed': content.field_media_oembed_video,
+    'video_description': content.field_caption,
+    'video_credit': content.field_credit,
+    'video_details_url': detail_page_url
+  } %}
+  {% set catch_cache = content|render %}
+</div>

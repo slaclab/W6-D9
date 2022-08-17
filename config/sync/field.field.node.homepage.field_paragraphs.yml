@@ -142,9 +142,6 @@ settings:
         weight: -39
         enabled: true
       tout:
-        weight: -41
-        enabled: true
-      tout:
         weight: -40
         enabled: true
       two_column_hero:

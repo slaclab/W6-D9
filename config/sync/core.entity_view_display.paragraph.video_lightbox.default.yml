@@ -11,10 +11,11 @@ bundle: video_lightbox
 mode: default
 content:
   field_video:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: video_lightbox
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

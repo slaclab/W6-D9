@@ -31,4 +31,17 @@
  * @ingroup themeable
  */
 #}
-{% extends "media--image.html.twig" %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ content.field_thumbnail }}
+  {{ title_suffix }}
+  {% include '@components/video-lightbox/video-lightbox.twig' with {
+    'video_title': content.field_long_text[0] ? content.field_long_text|render|striptags('<a><em>')|trim : name,
+    'video_date': created|date('F j, Y'),
+    'video_embed': content.field_media_oembed_video,
+    'video_description': content.field_caption,
+    'video_credit': content.field_credit,
+    'video_details_url': detail_page_url
+  } %}
+  {% set catch_cache = content|render %}
+</div>

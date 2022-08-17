@@ -42,12 +42,12 @@ settings:
       image_hero: image_hero
       image_carousel: image_carousel
       microsite_hero: microsite_hero
-      microsite_navigation_marker: microsite_navigation_marker
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
       tout: tout
       video_hero: video_hero
+      microsite_navigation_marker: microsite_navigation_marker
       wide_card: wide_card
     negate: 1
     target_bundles_drag_drop:

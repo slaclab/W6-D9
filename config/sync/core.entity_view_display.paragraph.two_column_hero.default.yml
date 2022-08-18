@@ -1,0 +1,56 @@
+uuid: ba0062d4-759e-4410-9593-ba31e1802958
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.two_column_hero.field_button_link
+    - field.field.paragraph.two_column_hero.field_lede
+    - field.field.paragraph.two_column_hero.field_paragraph
+    - field.field.paragraph.two_column_hero.field_text
+    - paragraphs.paragraphs_type.two_column_hero
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.two_column_hero.default
+targetEntityType: paragraph
+bundle: two_column_hero
+mode: default
+content:
+  field_button_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_lede:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

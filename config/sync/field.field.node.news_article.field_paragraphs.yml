@@ -44,6 +44,7 @@ settings:
       embed_view: embed_view
       image_hero: image_hero
       media_card: media_card
+      image_carousel: image_carousel
       microsite_hero: microsite_hero
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image

@@ -8,6 +8,8 @@ dependencies:
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_display_style
+    - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
@@ -35,6 +37,8 @@ hidden:
   field_caption: true
   field_credit: true
   field_duration: true
+  field_display_style: true
+  field_landing_display: true
   field_link: true
   field_long_text: true
   field_media_oembed_video: true

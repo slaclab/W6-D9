@@ -7,6 +7,8 @@ dependencies:
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_display_style
+    - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
@@ -19,6 +21,7 @@ dependencies:
     - duration_field
     - link
     - media
+    - options
     - text
 id: media.remote_video.default
 targetEntityType: media
@@ -61,10 +64,22 @@ content:
     region: content
   field_duration:
     type: duration_time_display
+  field_display_style:
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 10
+    region: content
+  field_landing_display:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_link:
     type: link

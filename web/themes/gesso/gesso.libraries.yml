@@ -119,6 +119,13 @@ icon_card:
     - gesso/common
     - core/drupal
 
+lightbox:
+  js:
+    dist/js/lightbox.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 mega_menu:
   css:
     theme:
@@ -205,11 +212,8 @@ video_lightbox:
   css:
     theme:
       dist/css/video-lightbox.css: {}
-  js:
-    dist/js/video-lightbox.es6.js: {}
   dependencies:
-    - gesso/common
-    - core/drupal
+    - gesso/lightbox
 
 views-toggle:
   css:

@@ -36,9 +36,6 @@
  * @see template_preprocess_field()
  */
 #}
-{% for item in items %}
-  {% include '@components/video/video.twig' with {
-    'iframe_src': item.content['#attributes'].src,
-    'iframe_title': item.content['#attributes'].title,
-  } %}
-{% endfor %}
+{%- for item in items -%}
+  <div class="c-fifty-fifty-staggered__col">{{- item.content -}}</div>
+{%- endfor -%}

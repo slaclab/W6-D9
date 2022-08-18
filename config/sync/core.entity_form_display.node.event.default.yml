@@ -21,8 +21,6 @@ dependencies:
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
     - field.field.node.event.field_site_setting
-    - field.field.node.event.field_site_setting_1
-    - field.field.node.event.field_site_setting_2
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
     - field.field.node.event.field_text
@@ -113,7 +111,7 @@ third_party_settings:
       label: Metadata
       region: content
       parent_name: group_page_content
-      weight: 14
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
@@ -160,7 +158,7 @@ content:
     third_party_settings: {  }
   field_boolean2:
     type: boolean_checkbox
-    weight: 22
+    weight: 21
     region: content
     settings:
       display_label: true
@@ -397,88 +395,6 @@ content:
           dependee: field_boolean
           settings:
             state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
-  field_site_setting_1:
-    type: options_select
-    weight: 21
-    region: content
-    settings: {  }
-    third_party_settings:
-      conditional_fields:
-        f4814419-f055-4b5e-93b0-5d71695af539:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
-        52a48a96-10e3-41ab-b17c-3e55e33b34c5:
-          entity_type: node
-          bundle: event
-          dependee: field_link2
-          settings:
-            state: visible
-            condition: '!empty'
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              -
-                uri: ''
-                title: ''
-                options:
-                  attributes: {  }
-            effect: show
-            effect_options: {  }
-            selector: ''
-  field_site_setting_2:
-    type: options_select
-    weight: 23
-    region: content
-    settings: {  }
-    third_party_settings:
-      conditional_fields:
-        1a7aa8c5-68fd-43a0-a7fd-7129b23dd18e:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
-        da7d5f8b-64ab-4ad6-87f4-98b0ea06a95b:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean2
-          settings:
-            state: visible
             condition: checked
             grouping: AND
             values_set: 1

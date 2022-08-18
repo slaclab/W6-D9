@@ -9,7 +9,7 @@ dependencies:
 id: footer_signup
 theme: gesso
 region: disabled
-weight: 0
+weight: -8
 provider: null
 plugin: single_rendered_site_settings_block
 settings:

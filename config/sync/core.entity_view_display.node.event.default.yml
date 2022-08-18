@@ -21,8 +21,6 @@ dependencies:
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
     - field.field.node.event.field_site_setting
-    - field.field.node.event.field_site_setting_1
-    - field.field.node.event.field_site_setting_2
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
     - field.field.node.event.field_text
@@ -285,22 +283,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 18
-    region: content
-  field_site_setting_1:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  field_site_setting_2:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 22
     region: content
   field_tags:
     type: entity_reference_label

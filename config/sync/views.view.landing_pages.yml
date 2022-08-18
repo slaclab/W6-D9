@@ -749,7 +749,7 @@ display:
             operator: field_datetime_range_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: event_year
+            identifier: event_archive_year
             required: false
             remember: false
             multiple: false
@@ -796,7 +796,7 @@ display:
             operator: field_type_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: event_type
+            identifier: event_archive_type
             required: false
             remember: false
             multiple: false

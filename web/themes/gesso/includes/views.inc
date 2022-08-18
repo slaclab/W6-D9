@@ -101,7 +101,7 @@ function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_st
     }
 
     if ($node_type == 'event') {
-      $form['year'] = [
+      $form['event_archive_year'] = [
         '#type' => 'select',
         '#options' => $options,
       ];

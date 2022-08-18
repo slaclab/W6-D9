@@ -9,15 +9,16 @@ dependencies:
     - node.type.news_article
     - node.type.page
     - node.type.person
+    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
     - node
     - taxonomy
     - user
 id: teaser_list
-label: 'Teaser List (Configurable)'
+label: 'Teaser List w/ View More (Configurable)'
 module: views
-description: 'Embed this view in content and configure the filters that should be appled to show up to 6 cards in a "Show More" grid.'
+description: 'Embed this view in content and configure the filters that should be appled to show up to 10 teaser cards in a "Show More" list.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -78,26 +79,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: full
+        type: some
         options:
           offset: 0
           items_per_page: 10
-          total_pages: null
-          id: 0
-          tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -287,6 +272,57 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+        field_research_area_target_id:
+          id: field_research_area_target_id
+          table: node__field_research_area
+          field: field_research_area_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_research_area_target_id_op
+            label: 'Research Area (field_research_area)'
+            description: ''
+            use_operator: false
+            operator: field_research_area_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_research_area_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: research_area
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       style:
         type: default
       row:
@@ -312,14 +348,13 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   teaser_list_embed:
     id: teaser_list_embed
-    display_title: 'Teaser List (10 Items with Pagination)'
+    display_title: 'Teaser List (10 Items with Show More)'
     display_plugin: embed
     position: 1
     display_options:
@@ -331,7 +366,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions

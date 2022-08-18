@@ -1,15 +1,15 @@
-uuid: d3899e97-0098-4f97-88ae-52eaf2034a8f
+uuid: 84638f8e-ce0c-41ce-b512-dca696cee0d5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.site_setting_entity.map.field_body
-    - site_settings.site_setting_entity_type.map
+    - field.field.site_setting_entity.event_maps.field_body
+    - site_settings.site_setting_entity_type.event_maps
   module:
     - text
-id: site_setting_entity.map.default
+id: site_setting_entity.event_maps.default
 targetEntityType: site_setting_entity
-bundle: map
+bundle: event_maps
 mode: default
 content:
   field_body:

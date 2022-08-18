@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_viewsreference
     - paragraphs.paragraphs_type.embed_view
-    - views.view.3_cards_with_show_more
   module:
     - viewsreference
 id: paragraph.embed_view.field_viewsreference
@@ -16,18 +15,7 @@ label: View
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    options:
-      pager: ''
-      limit: ''
-      exposed_filters:
-        vr_exposed_filters_visible: 0
-        type: {  }
-        tags: null
-    display_id: embed_1
-    data: 'a:6:{s:6:"offset";N;s:5:"pager";s:0:"";s:5:"title";N;s:5:"limit";s:0:"";s:8:"argument";N;s:15:"exposed_filters";a:3:{s:26:"vr_exposed_filters_visible";i:0;s:4:"type";a:0:{}s:4:"tags";N;}}'
-    target_uuid: ad56bc93-3a3e-4094-93ef-f9ccc5ee459e
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:view'
@@ -36,12 +24,14 @@ settings:
     auto_create: 0
   plugin_types:
     embed: embed
+    block: block
     default: 0
     page: 0
-    block: 0
     feed: 0
   preselect_views:
     3_cards_with_show_more: 3_cards_with_show_more
+    landing_pages: landing_pages
+    landing_pages_media: landing_pages_media
     block_content: 0
     comment: 0
     comments_recent: 0
@@ -53,6 +43,7 @@ settings:
     media_library: 0
     related_content_for_detail_pages: 0
     taxonomy_term: 0
+    teaser_list: 0
     user_admin_people: 0
     watchdog: 0
     who_s_new: 0

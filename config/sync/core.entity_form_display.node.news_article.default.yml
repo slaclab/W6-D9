@@ -53,7 +53,9 @@ third_party_settings:
     group_metadata:
       children:
         - field_teaser
+        - field_featured
         - field_tags
+        - field_research_area
         - field_source_link
         - field_source_name
         - field_news_source
@@ -108,7 +110,7 @@ content:
     third_party_settings: {  }
   field_bio_related_content:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -158,7 +160,7 @@ content:
     third_party_settings: {  }
   field_news_source:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -202,9 +204,15 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_research_area:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_source_link:
     type: link_default
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder_url: ''
@@ -220,7 +228,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS

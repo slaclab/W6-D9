@@ -9,8 +9,6 @@ dependencies:
     - field.field.paragraph.image_embed.field_long_text
     - field.field.paragraph.image_embed.field_view_mode
     - paragraphs.paragraphs_type.image_embed
-  module:
-    - text
 id: paragraph.image_embed.carousel
 targetEntityType: paragraph
 bundle: image_embed
@@ -25,13 +23,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_long_text:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   field_boolean: true
+  field_long_text: true
   field_view_mode: true

@@ -1,9 +1,9 @@
-uuid: 1816ed54-ceda-4749-8bef-7ceaae5b8bcf
+uuid: e7483701-484f-4b37-b48d-7a3655e31d97
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.event_type.field_paragraphs
+    - field.field.taxonomy_term.event_type.field_content
     - taxonomy.vocabulary.event_type
   module:
     - paragraphs
@@ -16,15 +16,15 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 0
+    weight: 1
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_paragraphs:
+  field_content:
     type: paragraphs
-    weight: 101
+    weight: 2
     region: content
     settings:
       title: Paragraph
@@ -42,7 +42,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -50,13 +50,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 4
     region: content
     settings:
       display_label: true

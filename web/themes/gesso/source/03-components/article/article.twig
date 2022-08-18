@@ -48,11 +48,7 @@
       {% endset %}
     {% endif %}
     {% if not author and author_name %}
-      {% set author %}
-        {% include '@components/author/author.twig' with {
-          'author': author_name,
-        } %}
-      {% endset %}
+      {% set author = author_name %}
     {% endif %}
     {% block title %}
       {% include '@components/page-title/page-title.twig' with {

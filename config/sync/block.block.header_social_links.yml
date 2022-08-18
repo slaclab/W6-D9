@@ -11,7 +11,7 @@ dependencies:
 id: header_social_links
 theme: gesso
 region: disabled
-weight: 0
+weight: -5
 provider: null
 plugin: 'system_menu_block:social-links'
 settings:

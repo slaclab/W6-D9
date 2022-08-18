@@ -1,8 +1,0 @@
-uuid: b71990dd-d41f-4618-abdc-b8f591866c55
-langcode: en
-status: true
-dependencies: {  }
-id: map
-label: Map
-fieldset: Map
-multiple: true

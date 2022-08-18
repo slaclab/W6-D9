@@ -458,7 +458,7 @@ display:
           admin_label: ''
           plugin_id: boolean
           operator: '='
-          value: ''
+          value: All
           group: 1
           exposed: true
           expose:
@@ -470,7 +470,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: field_featured_value
-            required: true
+            required: false
             remember: false
             multiple: false
             remember_roles:

@@ -1,10 +1,10 @@
-uuid: 80e52c9b-19d9-468c-9ca5-9c6f42b157ad
+uuid: ba0062d4-759e-4410-9593-ba31e1802958
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.two_column_hero.field_button_link
     - field.field.paragraph.two_column_hero.field_lede
-    - field.field.paragraph.two_column_hero.field_link
     - field.field.paragraph.two_column_hero.field_paragraph
     - field.field.paragraph.two_column_hero.field_text
     - paragraphs.paragraphs_type.two_column_hero
@@ -16,15 +16,7 @@ targetEntityType: paragraph
 bundle: two_column_hero
 mode: default
 content:
-  field_lede:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_link:
+  field_button_link:
     type: link
     label: above
     settings:
@@ -35,6 +27,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_lede:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_paragraph:
     type: entity_reference_revisions_entity_view

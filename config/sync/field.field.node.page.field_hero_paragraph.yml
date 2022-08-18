@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
+    - paragraphs.paragraphs_type.two_column_hero
   module:
     - entity_reference_revisions
 id: node.page.field_hero_paragraph
@@ -27,90 +28,112 @@ settings:
       article_hero: article_hero
       image_hero: image_hero
       microsite_hero: microsite_hero
+      two_column_hero: two_column_hero
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -57
+        weight: -71
         enabled: false
       accordion_item:
-        weight: -56
+        weight: -70
         enabled: false
       article_hero:
-        weight: -55
+        weight: -69
         enabled: true
       callout_box:
-        weight: -54
+        weight: -68
         enabled: false
       card:
-        weight: -53
+        weight: -67
+        enabled: false
+      cards_with_show_more:
+        weight: -66
+        enabled: false
+      content_card:
+        weight: -65
         enabled: false
       content_embed:
-        weight: -52
+        weight: -64
         enabled: false
       embed_block:
-        weight: -51
+        weight: -59
         enabled: false
       embed_full_html_:
-        weight: -50
+        weight: -58
+        enabled: false
+      embed_view:
+        weight: -57
         enabled: false
       extra_large_card:
-        weight: -49
+        weight: -56
         enabled: false
       fifty_fifty:
-        weight: -48
+        weight: -55
+        enabled: false
+      fifty_fifty_staggered:
+        weight: -54
         enabled: false
       image_carousel:
-        weight: -47
+        weight: -63
         enabled: false
       image_embed:
-        weight: -46
+        weight: -62
         enabled: false
       image_hero:
-        weight: -45
+        weight: -61
         enabled: true
+      media_card:
+        weight: -53
+        enabled: false
       microsite_hero:
-        weight: -44
+        weight: -60
         enabled: true
+      microsite_navigation_marker:
+        weight: -52
+        enabled: false
       overlap_image:
-        weight: -43
+        weight: -51
         enabled: false
       promo_box:
-        weight: -42
+        weight: -50
         enabled: false
       quote:
-        weight: -41
+        weight: -49
         enabled: false
       section:
-        weight: -40
+        weight: -48
         enabled: false
       small_card_with_icon:
-        weight: -39
+        weight: -47
         enabled: false
       small_card_with_image:
-        weight: -38
+        weight: -46
         enabled: false
       small_card_with_solid_background:
-        weight: -37
+        weight: -45
         enabled: false
       table_of_contents:
-        weight: -36
+        weight: -44
         enabled: false
       text_block:
-        weight: -35
+        weight: -43
         enabled: false
       tout:
-        weight: -34
+        weight: -42
         enabled: false
+      two_column_hero:
+        weight: -41
+        enabled: true
       video_hero:
-        weight: -33
+        weight: -40
         enabled: false
       video_lightbox:
-        weight: -32
+        weight: -39
         enabled: false
       wide_card:
-        weight: -31
+        weight: -38
         enabled: false
       wysiwyg:
-        weight: -30
+        weight: -37
         enabled: false
 field_type: entity_reference_revisions

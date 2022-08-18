@@ -1,0 +1,18 @@
+@use '00-config' as *;
+
+.l-header__logo {
+  filter: brightness(0) invert(1);
+}
+
+.c-mega-menu {
+  > .c-mega-menu__item {
+    > .c-mega-menu__link {
+      color: gesso-color(text, on-dark);
+
+      .has-open-menu &,
+      .is-sticky & {
+        color: gesso-color(text, link);
+      }
+    }
+  }
+}

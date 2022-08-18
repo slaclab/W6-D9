@@ -124,3 +124,14 @@ function gesso_preprocess_paragraph__article_hero(&$vars) {
   // Assign the credit, always using the image entity's field.
   $vars['hero_credit'] = $image->field_credit[0]->view();
 }
+
+function gesso_preprocess_paragraph__image_hero(&$vars) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  if ($paragraph->hasField('field_text_color')) {
+    $text_color = $paragraph->field_text_color->value;
+    if ($text_color == 'white') {
+      $vars['#attached']['library'][] = 'gesso/inverse_nav';
+    }
+  }
+}

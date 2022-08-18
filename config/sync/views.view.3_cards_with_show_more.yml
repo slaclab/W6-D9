@@ -15,7 +15,7 @@ dependencies:
     - taxonomy
     - user
 id: 3_cards_with_show_more
-label: '3 Cards with Show More'
+label: '3 Cards with Show More (Configurable)'
 module: views
 description: 'Embed this view in content and configure the filters that should be appled to show up to 6 cards in a "Show More" grid.'
 tag: ''

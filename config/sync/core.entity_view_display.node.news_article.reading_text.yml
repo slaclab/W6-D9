@@ -49,6 +49,7 @@ hidden:
   field_boolean: true
   field_estimated_read_time: true
   field_hero_paragraph: true
+  field_lede: true
   field_news_source: true
   field_source_link: true
   field_source_name: true

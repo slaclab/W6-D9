@@ -79,6 +79,7 @@ hidden:
   field_bio: true
   field_bio_related_content: true
   field_boolean: true
+  field_lede: true
   field_paragraphs: true
   field_source_link: true
   field_tags: true

@@ -79,6 +79,10 @@
   {% set show_admin_info = true %}
 {% endif %}
 
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+</div>
+
 {% include '@templates/people-profile/people-profile.twig' with {
   'bio_name': label,
   'bio_kicker': content.field_text|field_value,
@@ -90,6 +94,7 @@
   'bio_page_buttons': content.field_link,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
+  'related_content': node.field_boolean.value != '1' ? drupal_view('related_content_for_detail_pages', 'block_1') : false
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

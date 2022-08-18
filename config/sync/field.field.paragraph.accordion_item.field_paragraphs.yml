@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -22,6 +23,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      fifty_fifty: fifty_fifty
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -63,6 +65,9 @@ settings:
         enabled: false
       fifty_fifty:
         weight: -55
+        enabled: true
+      fifty_fifty_staggered:
+        weight: 48
         enabled: false
       image_carousel:
         weight: -54

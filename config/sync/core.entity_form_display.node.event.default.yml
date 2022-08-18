@@ -59,7 +59,6 @@ third_party_settings:
         - field_datetime_range
         - field_lede
         - field_body
-        - field_paragraphs
         - field_image
         - field_boolean
         - field_external_link
@@ -69,7 +68,9 @@ third_party_settings:
         - field_links
         - field_detail_text
         - field_link2
+        - field_site_setting_1
         - field_boolean2
+        - field_site_setting_2
         - field_site_setting
       label: 'Event Details'
       region: content
@@ -91,7 +92,7 @@ third_party_settings:
       label: 'Speaker Details'
       region: content
       parent_name: group_page_content
-      weight: 12
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
@@ -110,7 +111,7 @@ third_party_settings:
       label: Metadata
       region: content
       parent_name: group_page_content
-      weight: 14
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
@@ -132,7 +133,7 @@ content:
     third_party_settings: {  }
   field_bio_related_content:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -150,14 +151,14 @@ content:
     third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
-    weight: 14
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_boolean2:
     type: boolean_checkbox
-    weight: 22
+    weight: 21
     region: content
     settings:
       display_label: true
@@ -186,7 +187,7 @@ content:
     third_party_settings: {  }
   field_detail_text:
     type: text_textarea
-    weight: 20
+    weight: 19
     region: content
     settings:
       rows: 5
@@ -210,7 +211,7 @@ content:
             selector: ''
   field_external_link:
     type: link_default
-    weight: 15
+    weight: 14
     region: content
     settings:
       placeholder_url: ''
@@ -235,14 +236,14 @@ content:
             selector: ''
   field_featured:
     type: boolean_checkbox
-    weight: 7
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 13
+    weight: 12
     region: content
     settings:
       media_types: {  }
@@ -257,7 +258,7 @@ content:
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 17
+    weight: 16
     region: content
     settings:
       placeholder_url: ''
@@ -282,14 +283,14 @@ content:
             selector: ''
   field_link2:
     type: link_default
-    weight: 21
+    weight: 20
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings:
       conditional_fields:
-        dfddbee8-4568-41ea-8870-c47b48f176e9:
+        a197e55e-88eb-4905-b091-1acd0d3d8fb6:
           entity_type: node
           bundle: event
           dependee: field_boolean
@@ -307,7 +308,7 @@ content:
             selector: ''
   field_links:
     type: link_default
-    weight: 19
+    weight: 18
     region: content
     settings:
       placeholder_url: ''
@@ -332,7 +333,7 @@ content:
             selector: ''
   field_long_text:
     type: text_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -350,7 +351,7 @@ content:
       conditional_fields: {  }
   field_override_text:
     type: text_textarea
-    weight: 18
+    weight: 17
     region: content
     settings:
       rows: 5
@@ -375,7 +376,7 @@ content:
             selector: ''
   field_person_image:
     type: media_library_widget
-    weight: 22
+    weight: 23
     region: content
     settings:
       media_types: {  }
@@ -383,7 +384,7 @@ content:
       conditional_fields: {  }
   field_site_setting:
     type: options_select
-    weight: 23
+    weight: 24
     region: content
     settings: {  }
     third_party_settings:
@@ -406,7 +407,7 @@ content:
             selector: ''
   field_tags:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -416,7 +417,7 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
-    weight: 6
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -432,7 +433,7 @@ content:
     third_party_settings: {  }
   field_type:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 13
     region: content
     settings:
       match_operator: CONTAINS
@@ -442,7 +443,7 @@ content:
     third_party_settings: {  }
   field_video:
     type: media_library_widget
-    weight: 16
+    weight: 15
     region: content
     settings:
       media_types: {  }

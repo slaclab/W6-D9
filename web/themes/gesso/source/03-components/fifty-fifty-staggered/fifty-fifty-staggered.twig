@@ -4,9 +4,11 @@
 ]|join(' ')|trim %}
 
 
-{% set content %}
-  {% for col in cols %}<div class="c-fifty-fifty-staggered__col">{{ col }}</div>{% endfor %}
-{% endset %}
+{% if not content %}
+  {% set content %}
+    {% for col in cols %}<div class="c-fifty-fifty-staggered__col">{{ col }}</div>{% endfor %}
+  {% endset %}
+{% endif %}
 
 {% include '@layouts/grid/grid.twig' with {
   grid_content: content,

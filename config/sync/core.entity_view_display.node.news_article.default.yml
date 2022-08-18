@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -142,15 +141,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_paragraphs_1:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_source_link:
     type: link

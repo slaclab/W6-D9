@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.overlap_image.field_body
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_long_text
     - field.field.paragraph.overlap_image.field_lottiefile
-    - field.field.paragraph.overlap_image.field_paragraph
     - paragraphs.paragraphs_type.overlap_image
   module:
-    - entity_reference_revisions
     - lottiefiles_field
     - text
 id: paragraph.overlap_image.default
@@ -17,6 +16,13 @@ targetEntityType: paragraph
 bundle: overlap_image
 mode: default
 content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_image:
     type: entity_reference_label
     label: above
@@ -38,14 +44,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_paragraph:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 4
     region: content
 hidden: {  }

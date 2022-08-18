@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.media.video_hero
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
@@ -49,6 +50,7 @@ content:
 hidden:
   created: true
   field_boolean: true
+  field_credit: true
   field_link: true
   field_long_text: true
   field_tags: true

@@ -9,12 +9,14 @@ dependencies:
     - field.field.node.news_article.field_boolean
     - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
     - field.field.node.news_article.field_text
     - field.field.node.news_article.field_type
     - node.type.news_article
@@ -34,7 +36,7 @@ content:
     settings:
       tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -51,14 +53,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_source_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_teaser:
     type: text_default
@@ -66,6 +68,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_type:
     type: entity_reference_label
@@ -79,6 +90,7 @@ hidden:
   field_bio: true
   field_bio_related_content: true
   field_boolean: true
+  field_lede: true
   field_paragraphs: true
   field_source_link: true
   field_tags: true

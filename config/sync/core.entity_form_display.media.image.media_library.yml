@@ -7,6 +7,8 @@ dependencies:
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
+    - field.field.media.image.field_display_style
+    - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
@@ -59,6 +61,8 @@ content:
 hidden:
   created: true
   field_boolean: true
+  field_display_style: true
+  field_landing_display: true
   field_link: true
   field_long_text: true
   field_tags: true

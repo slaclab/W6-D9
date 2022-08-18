@@ -4,7 +4,7 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-{{ attach_library('gesso/lightbox') }}
+{{ attach_library('gesso/video_lightbox') }}
 
 <div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
   <div class="l-constrain c-video-lightbox__inner" role="document">
@@ -37,7 +37,7 @@
       </div>
     {% endif %}
     {% if video_details_url %}
-      <a class="c-video-lightbox__button c-button c-button--chevron c-button--outline-secondary" href="{{ video_details_url }}" target="_blank">
+      <a class="c-video-lightbox__button c-button c-button--chevron c-button--outline-secondary" href="{{ video_details_url }}">
         {{ 'Video details'|t }}
       </a>
     {% endif %}

@@ -7,11 +7,9 @@ dependencies:
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
-    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
   module:
     - lottiefiles_field
-    - options
     - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
@@ -47,12 +45,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_text_color:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
     region: content
 hidden: {  }

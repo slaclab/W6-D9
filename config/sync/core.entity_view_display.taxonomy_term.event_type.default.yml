@@ -1,9 +1,9 @@
-uuid: 33573258-59b7-4557-8bdf-9ae610b92ef3
+uuid: adf3e7bc-4ad5-4ae0-bff6-1bdbc4947df9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.event_type.field_paragraphs
+    - field.field.taxonomy_term.event_type.field_content
     - taxonomy.vocabulary.event_type
   module:
     - entity_reference_revisions
@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_paragraphs:
+  field_content:
     type: entity_reference_revisions_entity_view
     label: above
     settings:

@@ -7,9 +7,9 @@ dependencies:
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -117,6 +117,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_lede:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_news_source:
     type: entity_reference_label
     label: above
@@ -133,15 +141,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_paragraphs_1:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_source_link:
     type: link

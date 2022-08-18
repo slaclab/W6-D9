@@ -134,9 +134,7 @@ $card-padding: rem(gesso-spacing(4));
   order: -1;
 
   img {
-    max-width: none;
     min-width: 100%;
-    object-fit: cover;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -238,6 +236,7 @@ $card-padding: rem(gesso-spacing(4));
 
       img {
         height: 100%;
+        max-width: none;
         object-position: center;
         width: auto;
       }
@@ -256,6 +255,12 @@ $card-padding: rem(gesso-spacing(4));
 .c-card--xlarge {
   + * {
     margin-top: rem(gesso-get-map(gutter-width));
+  }
+
+  .c-card__media {
+    img {
+      height: 100%;
+    }
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {

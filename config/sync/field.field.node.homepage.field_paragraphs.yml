@@ -8,9 +8,11 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.media_card
     - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
@@ -38,9 +40,11 @@ settings:
       accordion_item: accordion_item
       article_hero: article_hero
       card: card
+      content_card: content_card
       embed_view: embed_view
       image_carousel: image_carousel
       image_hero: image_hero
+      media_card: media_card
       microsite_hero: microsite_hero
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
@@ -52,90 +56,102 @@ settings:
     negate: 1
     target_bundles_drag_drop:
       accordion:
-        weight: -59
+        weight: -67
         enabled: false
       accordion_item:
-        weight: -58
+        weight: -66
         enabled: true
       article_hero:
-        weight: -57
+        weight: -65
         enabled: true
       callout_box:
-        weight: -55
+        weight: -63
         enabled: false
       card:
-        weight: -56
+        weight: -64
+        enabled: true
+      cards_with_show_more:
+        weight: -62
+        enabled: false
+      content_card:
+        weight: -61
         enabled: true
       content_embed:
-        weight: -54
+        weight: -60
         enabled: false
       embed_block:
-        weight: -52
+        weight: -58
         enabled: false
       embed_full_html_:
-        weight: -51
+        weight: -57
         enabled: false
       embed_view:
-        weight: -50
+        weight: -56
         enabled: true
       extra_large_card:
-        weight: -53
+        weight: -59
         enabled: false
       fifty_fifty:
-        weight: -49
+        weight: -55
         enabled: false
       image_carousel:
-        weight: -48
+        weight: -54
         enabled: true
       image_embed:
-        weight: -47
+        weight: -53
         enabled: false
       image_hero:
-        weight: -46
+        weight: -52
+        enabled: true
+      media_card:
+        weight: -51
         enabled: true
       microsite_hero:
-        weight: -45
+        weight: -50
         enabled: true
+      microsite_navigation_marker:
+        weight: -49
+        enabled: false
       overlap_image:
-        weight: -44
+        weight: -48
         enabled: false
       promo_box:
-        weight: -43
+        weight: -47
         enabled: false
       quote:
-        weight: -42
+        weight: -46
         enabled: false
       section:
-        weight: -41
+        weight: -45
         enabled: false
       small_card_with_icon:
-        weight: -40
+        weight: -44
         enabled: true
       small_card_with_image:
-        weight: -39
+        weight: -43
         enabled: true
       small_card_with_solid_background:
-        weight: -38
+        weight: -42
         enabled: true
       table_of_contents:
-        weight: -36
+        weight: -40
         enabled: true
       text_block:
-        weight: -35
+        weight: -39
         enabled: true
       tout:
-        weight: -37
+        weight: -41
         enabled: true
       video_hero:
-        weight: -34
+        weight: -38
         enabled: true
       video_lightbox:
-        weight: -33
+        weight: -37
         enabled: false
       wide_card:
-        weight: -32
+        weight: -36
         enabled: false
       wysiwyg:
-        weight: -31
+        weight: -35
         enabled: false
 field_type: entity_reference_revisions

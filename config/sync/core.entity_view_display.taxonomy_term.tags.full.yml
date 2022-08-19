@@ -38,3 +38,5 @@ content:
 hidden:
   field_display_style: true
   field_image: true
+  langcode: true
+  search_api_excerpt: true

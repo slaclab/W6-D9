@@ -17,7 +17,6 @@
 }
 
 .c-hero-bg-image {
-  color: gesso-color(text, on-dark);
   overflow: hidden;
   padding: 0;
   position: relative;
@@ -61,6 +60,14 @@
   }
 }
 
+.c-hero-bg-image--white {
+  color: gesso-color(text, on-dark);
+}
+
+.c-hero-bg-image--black {
+  color: gesso-color(text, on-light);
+}
+
 .c-hero-bg-image__content {
   bottom: rem(gesso-spacing(5));
   left: 50%;
@@ -76,7 +83,7 @@
 
 .c-hero-bg-image__title {
   @include display-text-style(display);
-  color: gesso-color(text, on-dark);
+  color: inherit;
 
   @media (max-height: 767px) {
     font-size: rem(gesso-font-size(8));
@@ -85,10 +92,21 @@
 
 .c-hero-bg-image__summary {
   @include display-text-style(body-large);
-  color: gesso-color(text, on-dark);
+  color: inherit;
 
   @media (max-height: 767px) {
     font-size: rem(gesso-font-size(3));
+  }
+
+  a {
+    color: inherit;
+    text-decoration-color: currentColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
   }
 }
 

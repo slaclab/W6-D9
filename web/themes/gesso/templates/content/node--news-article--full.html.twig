@@ -109,13 +109,13 @@
 {% endset %}
 
 {% include '@components/article/article.twig' with {
-  'title': label,
+  'title': hero_type == 'image_hero' ? null : label,
   'toc_links': toc_list,
   'lede': content.field_lede|field_value,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'show_footer': false,
-  'date': node.getCreatedTime|date("F j, Y"),
+  'date': hero_type == 'image_hero' ? null : node.getCreatedTime|date("F j, Y"),
   'author': content.field_bio|field_value,
   'author_name': content.field_text|field_value,
   'rdf_metadata': metadata,

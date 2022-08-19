@@ -3,18 +3,23 @@
 @use '00-config' as *;
 
 .c-callout-box {
+  margin: 1em auto;
+  max-width: gesso-constrain(sm);
+}
+
+.c-callout-box__inner {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
-  &.u-align-right {
-    @include breakpoint(gesso-breakpoint(tablet)) {
-      margin-left: rem(gesso-spacing(4));
-      max-width: rem(280px);
-    }
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    float: right;
+    margin-left: rem(gesso-spacing(4));
+    max-width: rem(280px);
+  }
 
-    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-      margin-right: calc(-50% - #{rem(gesso-spacing(4))});
-    }
+  @include breakpoint(gesso-breakpoint(desktop-lg)) {
+    margin-right: -50%;
   }
 }
 

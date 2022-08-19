@@ -92,7 +92,7 @@
 {{ drupal_block('system_breadcrumb_block') }}
 
 {% include '@components/article/article.twig' with {
-  'title': label,
+  'title': hero_type == 'image_hero' ? null : label,
   'toc_links': toc_list,
   'author': null,
   'author_name': null,

@@ -20,6 +20,7 @@ dependencies:
     - node.type.news_article
   module:
     - entity_reference_revisions
+    - gesso_helper
     - layout_paragraphs
     - user
 id: node.news_article.full
@@ -81,8 +82,8 @@ content:
     weight: 8
     region: content
   field_tags:
-    type: entity_reference_label
-    label: hidden
+    type: gesso_tag
+    label: above
     settings:
       link: true
     third_party_settings: {  }

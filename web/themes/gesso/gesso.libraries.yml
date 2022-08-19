@@ -24,6 +24,11 @@ accordion:
     - gesso/common
     - core/drupal
 
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+
 animated_icon:
   css:
     theme:

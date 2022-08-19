@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
@@ -34,6 +36,7 @@ third_party_settings:
         - field_text
         - field_boolean
         - field_paragraphs
+        - field_paragraphs
         - field_paragraphs_1
       label: 'Main Content'
       region: content
@@ -50,7 +53,9 @@ third_party_settings:
     group_metadata:
       children:
         - field_teaser
+        - field_featured
         - field_tags
+        - field_research_area
         - field_source_link
         - field_news_source
         - field_bio_related_content
@@ -104,7 +109,7 @@ content:
     third_party_settings: {  }
   field_bio_related_content:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -115,6 +120,13 @@ content:
   field_boolean:
     type: boolean_checkbox
     weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -147,7 +159,7 @@ content:
     third_party_settings: {  }
   field_news_source:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -191,9 +203,15 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_research_area:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_source_link:
     type: link_default
-    weight: 8
+    weight: 9
     region: content
     settings:
       placeholder_url: ''
@@ -201,7 +219,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS

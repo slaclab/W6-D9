@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -109,6 +111,16 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_featured:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
     label: above
@@ -149,6 +161,14 @@ content:
     settings:
       view_mode: default
       link: ''
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
     weight: 12
     region: content

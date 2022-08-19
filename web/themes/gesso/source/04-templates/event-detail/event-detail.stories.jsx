@@ -11,6 +11,7 @@ import { FiftyFifty } from '../../03-components/fifty-fifty/fifty-fifty.stories'
 import { Default as Figure } from '../../03-components/figure/figure.stories';
 import { Primary } from '../../03-components/button/button.stories';
 import sectionTwigTemplate from '../../02-layouts/section/section.twig';
+import { TagList } from '../../03-components/tag-list/tag-list.stories';
 
 const visitingText = `
   <p class="c-kicker">Attending a public event</p>
@@ -85,6 +86,7 @@ EventDetail.args = {
       FiftyFifty(FiftyFiftyargs)
     ),
   }),
+  tags: ReactDOMServer.renderToStaticMarkup(TagList(TagList.args)),
 };
 
 export default settings;

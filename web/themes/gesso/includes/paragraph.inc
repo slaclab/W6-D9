@@ -120,13 +120,15 @@ function _gesso_set_hero_caption(&$vars) {
   // into the template as the caption of the hero.
   if ($paragraph->bundle() == 'article_hero') {
     $paragraph_caption = $paragraph->field_body[0]->view();
-    $vars['hero_caption'] = $paragraph_caption ?: $image->field_caption[0]->view();
+    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL);
   } else {
     $vars['hero_caption'] = $image->field_caption[0]->view();
   }
 
   // Assign the credit, always using the image entity's field.
-  $vars['hero_credit'] = $image->field_credit[0]->view();
+  if (!empty($image->field_credit[0])) {
+    $vars['hero_credit'] = $image->field_credit[0]->view();
+  }
 }
 
 /**

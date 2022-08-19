@@ -96,7 +96,6 @@
     {{ drupal_entity('block', 'boilerplate', check_access=false) }}
   {% endif %}
   {{ content.field_tags }}
-  {{ content.field_paragraphs_1 }}
 {% endset %}
 
 {% set article_content %}
@@ -106,6 +105,7 @@
     'has_constrain': true,
     'modifier_classes': 'l-section--white',
   } %}
+  {{ content.field_paragraphs_1 }}
 {% endset %}
 
 {% include '@components/article/article.twig' with {

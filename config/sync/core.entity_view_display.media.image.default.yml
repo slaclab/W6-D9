@@ -6,6 +6,8 @@ dependencies:
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
+    - field.field.media.image.field_display_style
+    - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
@@ -15,6 +17,7 @@ dependencies:
     - media.type.image
   module:
     - image
+    - options
     - text
 id: media.image.default
 targetEntityType: media
@@ -34,6 +37,23 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_display_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_landing_display:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_media_image:
     type: image

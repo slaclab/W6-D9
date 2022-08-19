@@ -40,6 +40,18 @@ function gesso_preprocess_node(&$variables) {
         $variables['toc_list'] = gesso_preprocess_node_generate_toc_list($items);
       }
     }
+
+    if ($node->hasField('field_hero_paragraph')) {
+      if($node->get('field_hero_paragraph')->first()) {
+        $hero_field = $node->get('field_hero_paragraph')->first()->getValue();
+        /** @var Paragraph $hero_paragraph */
+        $hero_paragraph = Paragraph::load($hero_field['target_id']);
+        $variables['hero_type'] = $hero_paragraph->getType();
+      }
+      else {
+        $variables['hero_type'] = 'none';
+      }
+    }
   }
 }
 
@@ -172,4 +184,3 @@ function gesso_preprocess_node_generate_toc_list($items) {
 
   return $links;
 }
-

@@ -39,6 +39,15 @@
  */
 #}
 
-{% include '@components/wysiwyg/wysiwyg.twig' with {
-  content: content,
-} %}
+{% set wysiwyg %}
+  {% include '@components/wysiwyg/wysiwyg.twig' with {
+    content: content,
+  } %}
+{% endset %}
+
+{% if is_nested %}{{ wysiwyg }}{% else %}
+  {% include '@layouts/section/section.twig' with {
+    section_content: wysiwyg,
+    modifier_classes: 'l-section--no-padding'
+  } %}
+{% endif %}

@@ -91,18 +91,35 @@
 
 {{ drupal_block('system_breadcrumb_block') }}
 
+{% set post_content_content %}
+  {% if node.field_boolean.value == '1' %}
+    {{ drupal_entity('block', 'boilerplate', check_access=false) }}
+  {% endif %}
+  {{ content.field_tags }}
+{% endset %}
+
+{% set article_content %}
+  {{ content.field_paragraphs }}
+  {% include '@layouts/section/section.twig' with {
+    'section_content': post_content_content,
+    'has_constrain': true,
+    'modifier_classes': 'l-section--white',
+  } %}
+  {{ content.field_paragraphs_1 }}
+{% endset %}
+
 {% include '@components/article/article.twig' with {
-  'title': label,
+  'title': hero_type == 'image_hero' ? null : label,
   'toc_links': toc_list,
   'lede': content.field_lede|field_value,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'show_footer': false,
-  'date': node.getCreatedTime|date("F j, Y"),
+  'date': hero_type == 'image_hero' ? null : node.getCreatedTime|date("F j, Y"),
   'author': content.field_bio|field_value,
   'author_name': content.field_text|field_value,
   'rdf_metadata': metadata,
-  'content': content.field_paragraphs,
+  'content': article_content,
 } %}
 
 {% set catch_cache = content|render %}

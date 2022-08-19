@@ -5,7 +5,6 @@ import { BREAKPOINTS } from '../../00-config/_GESSO.es6';
 Drupal.behaviors.header = {
   attach(context) {
     const header = context.querySelector('.l-header');
-    const alert = context.querySelector('.c-alert-bar');
     if (header) {
       const updateHeaderInitialHeight = () => {
         const isAlreadySticky = header.classList.contains('is-sticky');
@@ -30,6 +29,7 @@ Drupal.behaviors.header = {
       };
       const updateHeaderCurrentHeight = () => {
         let headerHeight = header.getBoundingClientRect().height;
+        const alert = document.querySelector('.c-alert-bar');
         if (alert && !header.classList.contains('is-sticky')) {
           headerHeight += alert.getBoundingClientRect().height;
         }

@@ -94,7 +94,7 @@ class MobileMenu extends OverlayMenu {
       if (element.hasAttribute('name')) {
         element.setAttribute('name', `${element.getAttribute('name')}-mobile`);
       }
-    })
+    });
     return blockClone;
   }
 
@@ -205,6 +205,7 @@ class MobileMenu extends OverlayMenu {
       menuSections.forEach(section => {
         section.classList.remove(`${this.options.classPrefix}__section`);
         section.classList.add('c-mobile-menu__section');
+        section.id = `${section.id}-mobile`;
 
         const sectionInner = section.querySelector(
           `.${this.options.classPrefix}__section-inner`

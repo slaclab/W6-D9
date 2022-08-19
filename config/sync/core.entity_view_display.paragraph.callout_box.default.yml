@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.callout_box.field_body
     - field.field.paragraph.callout_box.field_image
     - field.field.paragraph.callout_box.field_short_text
+    - image.style.scale_large
     - paragraphs.paragraphs_type.callout_box
   module:
     - media
@@ -27,7 +28,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: scale_large
       image_loading:
         attribute: lazy
     third_party_settings: {  }

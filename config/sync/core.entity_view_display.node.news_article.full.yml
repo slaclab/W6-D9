@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
@@ -105,7 +106,9 @@ content:
     region: content
 hidden:
   field_bio_related_content: true
+  field_featured: true
   field_news_source: true
+  field_research_area: true
   field_source_link: true
   field_teaser: true
   field_type: true

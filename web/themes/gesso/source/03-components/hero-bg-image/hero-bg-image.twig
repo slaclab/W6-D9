@@ -3,7 +3,8 @@
 {% set classes = [
   'c-hero-bg-image',
   'c-hero-bg-image--left',
-  has_overlay ? 'has-overlay' : '',
+  text_color ? 'c-hero-bg-image--' ~ text_color : '',
+  text_color == 'white' ? 'has-overlay' : '',
   modifier_classes ? modifier_classes : ''
 ]|join(' ')|trim %}
 

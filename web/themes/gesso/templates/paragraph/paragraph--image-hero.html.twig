@@ -44,7 +44,7 @@
   'hero_image': content.field_image|field_value,
   'hero_title': drupal_token('current-page:title'),
   'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
-  'has_overlay': true
+  'text_color': paragraph.field_text_color.value|default('white')
 } %}
   {% block animated_icon %}{{ content.field_lottiefile }}{% endblock %}
 {% endembed %}

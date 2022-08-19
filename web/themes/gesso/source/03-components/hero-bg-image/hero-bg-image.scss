@@ -97,6 +97,17 @@
   @media (max-height: 767px) {
     font-size: rem(gesso-font-size(3));
   }
+
+  a {
+    color: inherit;
+    text-decoration-color: currentColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+  }
 }
 
 .c-hero-bg-image--left {

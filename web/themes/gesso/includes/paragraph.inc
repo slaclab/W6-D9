@@ -107,9 +107,9 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
 }
 
 /**
- * Implements hook_preprocess_paragraph__HOOK().
+ * Set the hero caption and/or credit.
  */
-function gesso_preprocess_paragraph__article_hero(&$vars) {
+function _gesso_set_hero_caption(&$vars) {
   /** @var \Drupal\media\Entity\Media $media */
   $image = $vars['content']['field_image'][0]['#media'];
 
@@ -118,14 +118,26 @@ function gesso_preprocess_paragraph__article_hero(&$vars) {
 
   // Assign either the paragraph's body field or the image's caption field
   // into the template as the caption of the hero.
-  $paragraph_caption = $paragraph->field_body[0]->view();
-  $vars['hero_caption'] = $paragraph_caption ?: $image->field_caption[0]->view();
+  if ($paragraph->bundle() == 'article_hero') {
+    $paragraph_caption = $paragraph->field_body[0]->view();
+    $vars['hero_caption'] = $paragraph_caption ?: $image->field_caption[0]->view();
+  } else {
+    $vars['hero_caption'] = $image->field_caption[0]->view();
+  }
 
   // Assign the credit, always using the image entity's field.
   $vars['hero_credit'] = $image->field_credit[0]->view();
 }
 
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__article_hero(&$vars) {
+  _gesso_set_hero_caption($vars);
+}
+
 function gesso_preprocess_paragraph__image_hero(&$vars) {
+  _gesso_set_hero_caption($vars);
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $vars['paragraph'];
   if ($paragraph->hasField('field_text_color')) {

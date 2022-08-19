@@ -119,7 +119,7 @@ function _gesso_set_hero_caption(&$vars) {
   // Assign either the paragraph's body field or the image's caption field
   // into the template as the caption of the hero.
   if ($paragraph->bundle() == 'article_hero') {
-    $paragraph_caption = $paragraph->field_body[0]->view();
+    $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
     $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL);
   } else {
     $vars['hero_caption'] = $image->field_caption[0]->view();

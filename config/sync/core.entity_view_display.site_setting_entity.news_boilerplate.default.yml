@@ -23,3 +23,4 @@ hidden:
   fieldset: true
   name: true
   user_id: true
+  search_api_excerpt: true

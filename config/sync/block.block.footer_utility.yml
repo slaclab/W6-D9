@@ -11,7 +11,7 @@ dependencies:
 id: footer_utility
 theme: gesso
 region: disabled
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer-utility'
 settings:

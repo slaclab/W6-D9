@@ -214,6 +214,30 @@
       }
     }
   }
+
+  &.c-button--outline-secondary {
+    &::after {
+      filter: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::after {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &.external-link {
+    &::after {
+      display: none;
+    }
+  }
+
+  .c-icon {
+    margin-left: rem(8px);
+    transform: none;
+  }
 }
 
 .c-button--download {

@@ -9,34 +9,47 @@
 {% set slac_web_id = 'search_type_slac_web'|unique_id %}
 {% set people_id = 'search_type_people'|unique_id %}
 
-<div {{ add_attributes({ class: classes }) }}>
-  <button class="c-search__button" aria-expanded="true" aria-controls="{{ search_form_id }}">Search {% include '@components/icon/icon.twig' with {
+<div {{ add_attributes({ class: classes } ) }}>
+  <button class="c-search__button" aria-expanded="true" aria-controls="{{ search_form_id }}">
+    Search
+    {% include '@components/icon/icon.twig' with {
       'icon_name': 'search',
       'is_hidden': true
-    } %}</button>
+    } %}
+  </button>
   <form class="c-search__form c-mega-menu__section" id="{{ search_form_id }}" hidden>
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
-        <label for="{{ search_id }}" class="u-visually-hidden">{{ 'Search'|t }}</label>
+        <label for="{{ search_id }}" class="u-visually-hidden">
+          {{ 'Search'|t }}
+        </label>
         <input type="search" placeholder="{{ 'Search'|t }}" id="{{ search_id }}" class="c-search__input"/>
         <fieldset class="c-search__fieldset">
           <div>
-            <input type="radio" name="search_type" value="site" id="{{ site_search_id }}" />
-            <label for="{{ site_search_id }}">{{ 'Search Site'|t }}</label>
+            <input type="radio" name="search_type" value="site" id="{{ site_search_id }}" checked/>
+            <label for="{{ site_search_id }}">
+              {{ 'Search Site'|t }}
+            </label>
           </div>
           <div>
-            <input type="radio" name="search_type" value="slac_web" id="{{ slac_web_id }}" />
-            <label for="{{ slac_web_id }}">{{ 'SLAC Web'|t }}{% include '@components/icon/icon.twig' with {
+            <input type="radio" name="search_type" value="slac_web" id="{{ slac_web_id }}"/>
+            <label for="{{ slac_web_id }}">
+              {{ 'SLAC Web'|t }}
+              {% include '@components/icon/icon.twig' with {
                 'icon_name': 'diagonal-arrow',
                 'is_hidden': true
-              } %}</label>
+              } %}
+            </label>
           </div>
           <div>
-            <input type="radio" name="search_type" value="people" id="{{ people_id }}" />
-            <label for="{{ people_id }}">{{ 'Search People'|t }}{% include '@components/icon/icon.twig' with {
+            <input type="radio" name="search_type" value="people" id="{{ people_id }}"/>
+            <label for="{{ people_id }}">
+              {{ 'Search People'|t }}
+              {% include '@components/icon/icon.twig' with {
                 'icon_name': 'diagonal-arrow',
                 'is_hidden': true
-              } %}</label>
+              } %}
+            </label>
           </div>
         </fieldset>
         <button type="submit" class="c-search__submit">

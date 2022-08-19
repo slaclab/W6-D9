@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
+    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
   module:
     - lottiefiles_field
@@ -21,7 +22,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -30,14 +31,14 @@ content:
       view_mode: image_hero
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_lottiefile:
     type: lottiefiles_field
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_text:
     type: string
@@ -47,4 +48,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_text_color: true

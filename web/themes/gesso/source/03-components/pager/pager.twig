@@ -11,7 +11,7 @@
       {% if pager_items.previous %}
         {% set link_label = 'Go to previous page'|t %}
         <li class="c-pager__item c-pager__item--previous">
-          {% if pager_items.previous.active %}
+          {% if pager_items.previous.href %}
             <a class="c-pager__link c-pager__link--previous" href="{{ pager_items.previous.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" rel="prev" {{ pager_items.previous.attributes|without('aria-label', 'href', 'rel', 'title') }}>
               {%- spaceless %}
                 {% include '@components/icon/icon.twig' with {
@@ -69,7 +69,7 @@
 
       {# Now generate the actual pager piece. #}
       {% for key, item in pager_items.pages %}
-        {% if key != pager_items.first.key and key != pager_items.last.key %}
+        {% if item.href != pager_items.first.href and item.href != pager_items.last.href %}
 
           <li class="c-pager__item{{ current == key ? ' c-pager__item--current' : '' }}">
             {% if current == key %}

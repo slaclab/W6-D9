@@ -6,8 +6,10 @@ dependencies:
     - field.field.paragraph.callout_box.field_body
     - field.field.paragraph.callout_box.field_image
     - field.field.paragraph.callout_box.field_short_text
+    - image.style.scale_large
     - paragraphs.paragraphs_type.callout_box
   module:
+    - media
     - text
 id: paragraph.callout_box.default
 targetEntityType: paragraph
@@ -16,22 +18,25 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: media_thumbnail
+    label: hidden
     settings:
-      link: true
+      image_link: ''
+      image_style: scale_large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
   field_short_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

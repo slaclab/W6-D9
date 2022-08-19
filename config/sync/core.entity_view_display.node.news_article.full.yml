@@ -106,9 +106,9 @@ content:
     region: content
 hidden:
   field_bio_related_content: true
+  field_featured: true
   field_news_source: true
+  field_research_area: true
   field_source_link: true
   field_teaser: true
   field_type: true
-  field_featured: true
-  field_research_area: true

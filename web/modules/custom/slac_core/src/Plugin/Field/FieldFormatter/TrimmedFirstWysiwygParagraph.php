@@ -2,6 +2,7 @@
 
 namespace Drupal\slac_core\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Field\FieldItemList;
 use Drupal\smart_trim\Plugin\Field\FieldFormatter\SmartTrimFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\smart_trim\Truncate\TruncateHTML;
@@ -35,73 +36,29 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
    * {@inheritdoc}
    */
   public static function defaultSettings() {
-    return [
-      'trim_length' => '40',
-      'trim_type' => 'words',
-      'trim_suffix' => '...',
-      'wrap_output' => 0,
-      'wrap_class' => 'trimmed',
-      'trim_options' => [],
-    ];
+    return parent::defaultSettings();
   }
 
   /**
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
-    $element['trim_length'] = [
-      '#title' => $this->t('Trim length'),
-      '#type' => 'textfield',
-      '#size' => 10,
-      '#default_value' => $this->getSetting('trim_length'),
-      '#min' => 0,
-      '#required' => TRUE,
-    ];
+    // Adjust the settings provided by SmartTrimFormatter, subtracting several that
+    // do not apply to this situation and adding some trim options.
+    $element = parent::settingsForm($form, $form_state);
 
-    $element['trim_type'] = [
-      '#title' => $this->t('Trim units'),
-      '#type' => 'select',
-      '#options' => [
-        'chars' => $this->t("Characters"),
-        'words' => $this->t("Words"),
-      ],
-      '#default_value' => $this->getSetting('trim_type'),
-    ];
+    $retained = ['trim_length', 'trim_type', 'trim_suffix', 'trim_options'];
+    $element = array_intersect_key($element, array_flip($retained));
 
-    $element['trim_suffix'] = [
-      '#title' => $this->t('Suffix'),
-      '#type' => 'textfield',
-      '#size' => 10,
-      '#default_value' => $this->getSetting('trim_suffix'),
-    ];
-
-    $element['wrap_output'] = [
-      '#title' => $this->t('Wrap trimmed content?'),
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('wrap_output'),
-      '#description' => $this->t('Adds a wrapper div to trimmed content.'),
-    ];
-
-    $element['wrap_class'] = [
-      '#title' => $this->t('Wrapped content class.'),
-      '#type' => 'textfield',
-      '#size' => 20,
-      '#default_value' => $this->getSetting('wrap_class'),
-      '#description' => $this->t('If wrapping, define the class name here.'),
-      '#states' => [
-        'visible' => [
-          ':input[name="fields[body][settings_edit_form][settings][wrap_output]"]' => ['checked' => TRUE],
-        ],
-      ],
-    ];
-
+    // Change the trim options that are available, replacing the default options provided
+    // by SmartTrimFormatter with the specific options for this formatter, see viewElements
+    // for descriptions.
     $trim_options_value = $this->getSetting('trim_options');
     $element['trim_options'] = [
       '#title' => $this->t('Additional options'),
       '#type' => 'checkboxes',
       '#options' => [
-        'text' => $this->t('Strip HTML'),
-        'trim_zero' => $this->t('Honor a zero trim length'),
+        'heading_remove' => $this->t('Remove heading tags (h1-h6)'),
       ],
       '#default_value' => empty($trim_options_value) ? [] : array_keys(array_filter($trim_options_value)),
     ];
@@ -113,77 +70,74 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode = NULL) {
-    $element = [];
+    $text = '';
 
-    $setting_trim_options = $this->getSetting('trim_options');
-    $entity = $items->getEntity();
+    // Iterate through the entity reference revision list items, which are
+    // assumed to be paragraphs.
+    foreach ($items as $delta => $item) {
+      $item_array = $item->toArray();
 
-    // Search for a wysiwyg paragraph.
-    foreach ($entity->field_paragraphs->getValue() as $paragraph) {
-      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-      $paragraph = \Drupal::service('entity_type.manager')
+      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph_object */
+      $paragraph_object = \Drupal::service('entity_type.manager')
         ->getStorage('paragraph')
-        ->load($paragraph['target_id']);
+        ->load($item_array['target_id']);
 
-      if ($paragraph != NULL && $paragraph->getType() == 'wysiwyg' && $paragraph->field_body->value != '') {
-        // Update field_summary in the entity.
-        $entity->field_summary->value = html_entity_decode(strip_tags($paragraph->field_body->value));
+      // If the paragraph is a WYSIWYG paragraph and the field_body field has a value,
+      // assign as our working text -- we have found what we're looking for.
+      if ($paragraph_object->getType() == 'wysiwyg' && $paragraph_object->field_body->value) {
+        $text = $paragraph_object->field_body->value;
         break;
       }
     }
 
-    // Iterate through the field_summary value(s).
-    foreach ($items as $delta => $item) {
-      $output = $item->value;
+    // Retrieve the setting trim options.
+    $setting_trim_options = $this->getSetting('trim_options');
 
-      // Process additional options (currently only HTML on/off).
-      if (!empty($setting_trim_options)) {
-        // Allow a zero length trim.
-        if (!empty($setting_trim_options['trim_zero']) && $this->getSetting('trim_length') == 0) {
-          $output = '';
-        }
-
-        if (!empty($setting_trim_options['text'])) {
-          // Strip caption.
-          $output = preg_replace('/<figcaption[^>]*>.*?<\/figcaption>/i', ' ', $output);
-
-          // Strip tags.
-          $output = strip_tags($output);
-
-          // Strip out line breaks.
-          $output = preg_replace('/\n|\r|\t/m', ' ', $output);
-
-          // Strip out non-breaking spaces.
-          $output = str_replace('&nbsp;', ' ', $output);
-          $output = str_replace("\xc2\xa0", ' ', $output);
-
-          // Strip out extra spaces.
-          $output = trim(preg_replace('/\s\s+/', ' ', $output));
-        }
-      }
-
-      $truncate = new TruncateHTML();
-      $length = $this->getSetting('trim_length');
-      $ellipse = $this->getSetting('trim_suffix');
-      if ($this->getSetting('trim_type') == 'words') {
-        $output = $truncate->truncateWords($output, $length, $ellipse);
-      }
-      else {
-        $output = $truncate->truncateChars($output, $length, $ellipse);
-      }
-      $element[$delta] = [
-        '#type' => 'processed_text',
-        '#text' => $output,
-      ];
-
-      // Wrap content in container div.
-      if ($this->getSetting('wrap_output')) {
-        $element[$delta]['#prefix'] = '<div class="' . $this->getSetting('wrap_class') . '">';
-        $element[$delta]['#suffix'] = '</div>';
-      }
+    // Either remove heading tags or add a space after each.
+    if ($setting_trim_options['heading_remove']) {
+      $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/',' ', $text);
+    }
+    else {
+      $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/','$0 ', $text);
     }
 
-    return $element;
+    // Strip and decode remaining text.
+    $text = html_entity_decode(strip_tags($text));
+
+    // Replace newlines with spaces.
+    $text = trim(str_replace('\n', ' ', (str_replace('\r', ' ', $text))));
+
+    // Ensure spacing after sentence ending punctuation at formerly paragraph tag boundaries.
+    // Convert non-breaking spaces.
+    // Replace multiple spaces with a single space.
+    $patterns = [
+      "/(?<=[A-Za-z0-9])\.(?=[A-Za-z]{2})|(?<=[A-Za-z]{2})([\.\!\?])(?=[A-Za-z0-9])/",
+      '/\xc2\xa0/',
+      '!\s+!',
+    ];
+
+    $replacements = [
+      '$0 ', ' ', ' '
+    ];
+
+    $text = preg_replace($patterns, $replacements, $text);
+
+    // Use SmartTrimFormatter truncation facility to trim to a specific length of words or characters and
+    // to place an ellipsis at the end of the string if indicated by settings.
+    $truncate = new TruncateHTML();
+    $length = $this->getSetting('trim_length');
+    $ellipse = $this->getSetting('trim_suffix');
+
+    $text = ($this->getSetting('trim_type') == 'words')
+      ? $truncate->truncateWords($text, $length, $ellipse)
+      : $truncate->truncateChars($text, $length, $ellipse);
+
+    // Assign to render array.
+    return [
+      '#type' => 'processed_text',
+      '#format' => 'plain_text',
+      '#text' => $text,
+    ];
   }
 
 }

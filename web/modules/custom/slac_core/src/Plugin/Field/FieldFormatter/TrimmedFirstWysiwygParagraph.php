@@ -43,10 +43,10 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
-    // Adjust the settings provided by SmartTrimFormatter, subtracting several that
-    // do not apply to this situation and adding some trim options.
     $element = parent::settingsForm($form, $form_state);
 
+    // Adjust the settings provided by SmartTrimFormatter, only keeping the ones that
+    // apply to this situation.
     $retained = ['trim_length', 'trim_type', 'trim_suffix', 'trim_options'];
     $element = array_intersect_key($element, array_flip($retained));
 
@@ -111,15 +111,15 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
     // Convert non-breaking spaces.
     // Replace multiple spaces with a single space.
     $patterns = [
-      "/(?<=[A-Za-z0-9])\.(?=[A-Za-z]{2})|(?<=[A-Za-z]{2})([\.\!\?])(?=[A-Za-z0-9])/",
+      "/(?<=[A-Za-z0-9])\.(?=[A-Za-z]{2})|(?<=[A-Za-z]{2})([.!?])(?=[A-Za-z0-9])/",
       '/\xc2\xa0/',
       '!\s+!',
     ];
-
     $replacements = [
-      '$0 ', ' ', ' '
+      '$0 ',
+      ' ',
+      ' '
     ];
-
     $text = preg_replace($patterns, $replacements, $text);
 
     // Use SmartTrimFormatter truncation facility to trim to a specific length of words or characters and

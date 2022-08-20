@@ -83,6 +83,14 @@
   {% endif %}
 {% endset %}
 
+{% set card_content %}
+  {% if content.field_teaser|field_value is not null %}
+    {{ content.field_teaser|field_value }}
+  {% else %}
+    {{ content.field_paragraphs|render }}
+  {% endif %}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
   title: label,
   url: url,
@@ -90,7 +98,7 @@
   type: content.field_type|field_value,
   footer: footer,
   media: content.field_teaser_image|field_value,
-  card_content: content.field_teaser|field_value,
+  card_content: card_content,
 } %}
 
 {% set catch_cache = content|render %}

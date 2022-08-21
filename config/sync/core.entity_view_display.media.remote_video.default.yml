@@ -3,21 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.remote_video.field_body
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
+    - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
-    - duration_field
     - link
     - media
     - options
@@ -36,6 +38,13 @@ content:
       timezone: ''
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
     region: content
   field_boolean:
     type: boolean
@@ -121,6 +130,13 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_thumbnail:
     type: entity_reference_entity_view
     label: above
@@ -138,6 +154,7 @@ content:
     weight: 4
     region: content
 hidden:
+  field_duration: true
   name: true
   thumbnail: true
   uid: true

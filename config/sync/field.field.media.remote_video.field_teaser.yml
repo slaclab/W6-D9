@@ -1,0 +1,26 @@
+uuid: eb3cc39e-af97-4f61-8675-b2a7eacaa62f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_teaser
+    - media.type.remote_video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.remote_video.field_teaser
+field_name: field_teaser
+entity_type: media
+bundle: remote_video
+label: Teaser
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

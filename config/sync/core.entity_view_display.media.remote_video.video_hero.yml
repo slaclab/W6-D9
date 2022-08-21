@@ -4,17 +4,20 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.video_hero
+    - field.field.media.remote_video.field_body
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_display_style
+    - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
     - media.type.remote_video
@@ -53,6 +56,7 @@ content:
     region: content
 hidden:
   created: true
+  field_body: true
   field_boolean: true
   field_credit: true
   field_display_style: true
@@ -62,6 +66,7 @@ hidden:
   field_long_text: true
   field_source_name: true
   field_tags: true
+  field_teaser: true
   field_transcript: true
   langcode: true
   name: true

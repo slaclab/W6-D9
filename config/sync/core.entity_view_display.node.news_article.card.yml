@@ -109,7 +109,10 @@ hidden:
   field_bio: true
   field_bio_related_content: true
   field_boolean: true
+  field_featured: true
   field_lede: true
+  field_paragraphs_1: true
+  field_research_area: true
   field_source_link: true
   field_tags: true
   field_text: true

@@ -27,3 +27,4 @@ hidden:
   field_body: true
   field_lottiefile: true
   field_text: true
+  field_text_color: true

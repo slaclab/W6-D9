@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
     - field.field.node.news_article.field_text
     - field.field.node.news_article.field_type
     - node.type.news_article
@@ -24,6 +25,7 @@ dependencies:
     - estimated_read_time
     - field_group
     - link
+    - media_library
     - paragraphs
     - path
     - text
@@ -127,12 +129,12 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_estimated_read_time:
-    type: estimated_read_time_default
-    weight: 26
+  field_featured:
+    type: boolean_checkbox
+    weight: 6
     region: content
     settings:
-      sidebar: true
+      display_label: true
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs
@@ -222,7 +224,7 @@ content:
     third_party_settings: {  }
   field_source_name:
     type: text_textarea
-    weight: 8
+    weight: 9
     region: content
     settings:
       rows: 5
@@ -246,6 +248,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_teaser_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_text:
     type: string_textfield
     weight: 6
@@ -258,7 +267,11 @@ content:
     type: entity_reference_autocomplete
     weight: 4
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

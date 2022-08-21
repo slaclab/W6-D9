@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
     - field.field.node.news_article.field_text
     - field.field.node.news_article.field_type
     - node.type.news_article
@@ -37,7 +38,7 @@ hidden:
   field_bio: true
   field_bio_related_content: true
   field_boolean: true
-  field_estimated_read_time: true
+  field_featured: true
   field_hero_paragraph: true
   field_lede: true
   field_news_source: true
@@ -48,6 +49,7 @@ hidden:
   field_source_name: true
   field_tags: true
   field_teaser: true
+  field_teaser_image: true
   field_text: true
   field_type: true
   langcode: true

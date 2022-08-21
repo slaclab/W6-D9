@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.mosaic_card_view_mode
     - field.field.taxonomy_term.tags.field_display_style
     - field.field.taxonomy_term.tags.field_image
+    - field.field.taxonomy_term.tags.field_research_area
     - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
@@ -52,4 +53,5 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden: {  }
+hidden:
+  field_research_area: true

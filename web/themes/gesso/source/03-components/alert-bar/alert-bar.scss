@@ -2,10 +2,15 @@
 // Component: c-alert-bar
 @use '00-config' as *;
 
+:root {
+  --gesso-alert-bar-height: 2.125rem;
+}
+
 .c-alert-bar {
   background-color: gesso-brand(cardinal, dark);
   color: gesso-grayscale(white);
-  font-size: 13px;
+  font-size: rem(13px);
+  height: var(--gesso-alert-bar-height);
   padding: gesso-spacing(1) 0;
   width: 100%;
 

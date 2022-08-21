@@ -24,6 +24,11 @@ accordion:
     - gesso/common
     - core/drupal
 
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+
 animated_icon:
   css:
     theme:
@@ -103,6 +108,7 @@ hero_bg_image:
   dependencies:
     - gesso/common
     - core/drupal
+    - gesso/transparent_nav
 
 hero_inline_image:
   css:
@@ -118,6 +124,13 @@ icon_card:
   dependencies:
     - gesso/common
     - core/drupal
+
+inverse_nav:
+  css:
+    theme:
+      dist/css/inverse-nav.css: {}
+  dependencies:
+    - gesso/transparent_nav
 
 lightbox:
   js:

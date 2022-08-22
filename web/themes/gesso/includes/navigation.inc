@@ -53,3 +53,23 @@ function gesso_preprocess_menu__extras__main(&$vars) {
     }
   }
 }
+
+/**
+ * hook_preprocess_pager().
+ */
+function gesso_preprocess_pager(array &$vars) {
+  $element = $vars['pager']['#element'];
+  $pager_manager = \Drupal::service('pager.manager');
+  /** @var \Drupal\Core\Pager\Pager $pager */
+  $pager = $pager_manager
+    ->getPager($element);
+  if ($pager) {
+    $pager_max = $pager->getTotalPages();
+    if (!empty($vars['items']['first'])) {
+      $vars['items']['first']['text'] = '1';
+    }
+    if (!empty($vars['items']['last'])) {
+      $vars['items']['last']['text'] = "${pager_max}";
+    }
+  }
+}

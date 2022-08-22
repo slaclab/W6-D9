@@ -23,6 +23,14 @@
   {% endif %}
 {% endset %}
 
+{% set card_content %}
+  {% if content.field_teaser|field_value is not null %}
+    {{ content.field_teaser|field_value }}
+  {% else %}
+    {{ content.field_body|render }}
+  {% endif %}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
   is_video: true,
   url: content.field_boolean['#items'].value == 0 ? url : null,
@@ -31,7 +39,7 @@
   type: content_type,
   footer: footer,
   media: content.field_thumbnail|field_value,
-  card_content: content.field_caption|field_value,
+  card_content: card_content,
 } %}
 
 {% set catch_cache = content|render %}

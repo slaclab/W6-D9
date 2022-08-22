@@ -34,7 +34,7 @@ content:
     third_party_settings: {  }
   field_paragraph:
     type: paragraphs
-    weight: 2
+    weight: 4
     region: content
     settings:
       title: Paragraph

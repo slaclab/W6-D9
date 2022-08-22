@@ -31,6 +31,17 @@
  * @ingroup themeable
  */
 #}
+
+{% set admin_info %}
+  {{ region_status }}
+{% endset %}
+
+{% set show_admin_info = false %}
+
+{% if admin_info|striptags('<drupal-render-placeholder>')|trim %}
+  {% set show_admin_info = true %}
+{% endif %}
+
 {% include '@templates/media-detail/media-detail.twig' with {
   'media_type': content.field_type|field_value,
   'page_title': content.field_long_text|field_value ? content.field_long_text|render|striptags('<a><em>')|trim : content.name,
@@ -42,4 +53,5 @@
   'media_about': drupal_entity('block', 'media_about_slac', check_access=false)
 } %}
 {{ content.field_paragraphs }}
+{{ related_content }}
 {% set catch_cache = content|render %}

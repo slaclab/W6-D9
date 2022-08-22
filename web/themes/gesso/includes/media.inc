@@ -82,4 +82,20 @@ function gesso_preprocess_media(array &$variables) {
       $variables['lightbox_id'] = $variables['elements']['#media']->lightbox_id;
     }
   }
+  if ($variables['view_mode'] == 'full') {
+    // Array of regions to add to node template.
+    $allowed_regions = ['status'];
+    _add_regions_to_template($allowed_regions, $variables);
+    $media = $variables['media'];
+    if ($media->hasField('field_tags')) {
+      $tags = $media->get('field_tags')->getValue();
+      $tids = implode(',', array_map(function($item) { return $item['target_id']; }, $tags));
+      $related_content_view = \Drupal\views\Views::getView('related_content_for_media_pages');
+      $related_content_view->setArguments([$tids, $media->id()]);
+      $related_content_view->setDisplay('related_images_videos');
+      $related_content_view->preExecute();
+      $related_content_view->execute();
+      $variables['related_content'] = $related_content_view->buildRenderable();
+    }
+  }
 }

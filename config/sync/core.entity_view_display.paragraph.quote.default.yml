@@ -19,23 +19,23 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_image:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
-      view_mode: thumbnail
+      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 0
     region: content
   field_link:
     type: link
-    label: hidden
+    label: above
     settings:
       trim_length: 80
       url_only: false
@@ -43,22 +43,22 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_short_text:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_text:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden: {  }

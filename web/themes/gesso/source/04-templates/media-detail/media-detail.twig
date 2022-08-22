@@ -40,21 +40,24 @@
       {% endblock %}
     {% endif %}
     {{ title_prefix }}
+    {% include '@components/kicker/kicker.twig' with {
+      kicker_content: media_type
+    } %}
+    {% include '@components/page-title/page-title.twig' %}
+    {{ title_suffix }}
     {% embed '@layouts/grid/grid.twig' with { num_of_cols: 2 } %}
       {% block content %}
-        <div class="event-detail__col">
-          {% include '@components/kicker/kicker.twig' with {
-            kicker_content: media_type
-          } %}
-          {% include '@components/page-title/page-title.twig' %}
-          {{ details }}
+        <div class="media-detail__col">
+          <div class="media-detail__media">
+            {{ media }}
+          </div>
+          {{ media_cta }}
         </div>
-        <div class="event-detail__col">
+        <div class="media-detail__col">
           {% include '@components/wysiwyg/wysiwyg.twig' with {
             'content': media_caption,
-            'modifier_classes': 'c-wysiwyg--no-constrain',
+            'modifier_classes': 'c-wysiwyg--no-constrain media-detail__content',
           } %}
-          {{ tags }}
           {% if media_credit or media_use or media_about %}
             {% set accordion_items %}
               {% if media_credit %}
@@ -80,10 +83,10 @@
               'accordion_items': accordion_items
             } %}
           {% endif %}
+          {{ tags }}
         </div>
 
       {% endblock %}
     {% endembed %}
-    {{ title_suffix }}
   </div>
 </div>

@@ -1,0 +1,9 @@
+@use '00-config' as *;
+
+.media-detail__media {
+  margin-bottom: rem(gesso-spacing(8));
+}
+
+.media-detail__content {
+  margin-bottom: rem(gesso-spacing(8));
+}

@@ -4,11 +4,15 @@
 
 :where(.external-link .c-icon) {
   color: gesso-color(ui, generic, accent);
+}
+
+.external-link .c-icon {
   transition: transform gesso-duration(shortest) ease-out;
 }
 
-:where(.external-link:hover .c-icon, .external-link:focus
-    .c-icon, .external-link:active .c-icon) {
+.external-link:hover .c-icon,
+.external-link:focus .c-icon,
+.external-link:active .c-icon {
   @media (prefers-reduced-motion: no-preference) {
     transform: translate(rem(3px), rem(-3px));
   }

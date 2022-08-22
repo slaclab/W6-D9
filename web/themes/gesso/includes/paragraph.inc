@@ -7,6 +7,13 @@
 
 use Drupal\Component\Utility\Html;
 
+function gesso_preprocess_paragraph(&$vars) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+  $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
+}
+
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
@@ -41,31 +48,27 @@ function gesso_preprocess_paragraph__section(&$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__image_embed(&$vars) {
+  // Retrieve the paragraph and the image entity from the paragraph.
+  // Image field is a required field.
   $paragraph = $vars['elements']['#paragraph'];
+
   // If a caption override is selected and the override text field is populated,
   // write the override caption into the media entity for templating by the
   // image template.
-  if ($paragraph->field_boolean->value && !empty($vars['content']['field_image'][0]['#media'])) {
-    // Extract the media entity from the image field. Note that if the view mode
-    // being used to render the field is not Rendered Entity then ['#media'] will not
-    // be set and the code will error. Only overwrite the media item's caption with
-    // the override *if* the field is displayed as a Rendered entity.
-    if ($media = $vars['content']['field_image'][0]['#media']) {
-      // If there's an override string specified in the paragraph, assign it into
-      // the caption field on the image, otherwise empty the image's caption field,
-      // presumably because the editor did not want the image's caption to display.
-      if ($paragraph->field_long_text->value) {
-        $media->field_caption->value = $paragraph->field_long_text->value;
-      }
-      else {
-        $media->field_caption->value = NULL;
-      }
+  if ($paragraph->field_boolean->value) {
+    $image_field = $paragraph->get('field_image')->first()->getValue();
+    /** @var \Drupal\media\Entity\Media $media */
+    $media = Drupal\media\Entity\Media::load($image_field['target_id']);
+
+    // Assign the paragraph's caption field into the caption field.
+    // If there's no override caption, empty out the media's caption field.
+    if ($paragraph->field_long_text->value) {
+      $media->field_caption = $paragraph->field_long_text;
+    }
+    else {
+      $media->field_caption = NULL;
     }
   }
-
-  // Regardless of whether an override was selected, the override text is not
-  // needed for theming, so unset as a theming variable.
-  unset($vars['content']['field_long_text']);
 }
 
 /**
@@ -78,16 +81,6 @@ function gesso_preprocess_paragraph__image_carousel(&$vars) {
 /**
  * Implements hook_preprocess_paragraph__HOOK().
  */
-function gesso_preprocess_paragraph__accordion(&$vars) {
-  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-  $paragraph = $vars['paragraph'];
-  $parent = $paragraph->getParentEntity();
-  $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
-}
-
-/**
- * Implements hook_preprocess_paragraph__HOOK().
- */
 function gesso_preprocess_paragraph__table_of_contents(&$vars) {
   $paragraph = $vars['paragraph'];
 
@@ -95,6 +88,9 @@ function gesso_preprocess_paragraph__table_of_contents(&$vars) {
   $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
 }
 
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__video_hero(&$vars) {
   $media_ids = \Drupal\Core\Render\Element::children($vars['content']['field_video_hero_videos']);
   $hero_videos = [];
@@ -108,4 +104,48 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     ];
   }
   $vars['hero_videos'] = $hero_videos;
+}
+
+/**
+ * Set the hero caption and/or credit.
+ */
+function _gesso_set_hero_caption(&$vars) {
+  /** @var \Drupal\media\Entity\Media $media */
+  $image = $vars['content']['field_image'][0]['#media'];
+
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+
+  // Assign either the paragraph's body field or the image's caption field
+  // into the template as the caption of the hero.
+  if ($paragraph->bundle() == 'article_hero') {
+    $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
+    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL);
+  } else {
+    $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL;
+  }
+
+  // Assign the credit, always using the image entity's field.
+  if (!empty($image->field_credit[0])) {
+    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->field_credit[0]->view() : NULL;
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__article_hero(&$vars) {
+  _gesso_set_hero_caption($vars);
+}
+
+function gesso_preprocess_paragraph__image_hero(&$vars) {
+  _gesso_set_hero_caption($vars);
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  if ($paragraph->hasField('field_text_color')) {
+    $text_color = $paragraph->field_text_color->value;
+    if ($text_color == 'white') {
+      $vars['#attached']['library'][] = 'gesso/inverse_nav';
+    }
+  }
 }

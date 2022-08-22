@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.tags.field_display_style
     - field.field.taxonomy_term.tags.field_image
+    - field.field.taxonomy_term.tags.field_research_area
     - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
@@ -38,6 +39,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_rss:
     type: link

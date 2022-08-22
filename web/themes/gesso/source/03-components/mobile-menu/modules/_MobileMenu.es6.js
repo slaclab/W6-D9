@@ -73,12 +73,28 @@ class MobileMenu extends OverlayMenu {
    */
   cloneBlock(block, blockClass = '') {
     const blockClone = block.cloneNode(true);
+    const idsToUpdate = blockClone.querySelectorAll('[id], [for], [name]');
     if (blockClass) {
       blockClone.classList.add(blockClass);
     }
     if (blockClone.id) {
       blockClone.id = `${blockClone.id}-mobile`;
     }
+
+    // Keeps forms working after cloning.
+    idsToUpdate.forEach(element => {
+      if (element.id) {
+        element.id += '-mobile';
+      }
+
+      if (element.hasAttribute('for')) {
+        element.setAttribute('for', `${element.getAttribute('for')}-mobile`);
+      }
+
+      if (element.hasAttribute('name')) {
+        element.setAttribute('name', `${element.getAttribute('name')}-mobile`);
+      }
+    });
     return blockClone;
   }
 
@@ -189,6 +205,7 @@ class MobileMenu extends OverlayMenu {
       menuSections.forEach(section => {
         section.classList.remove(`${this.options.classPrefix}__section`);
         section.classList.add('c-mobile-menu__section');
+        section.id = `${section.id}-mobile`;
 
         const sectionInner = section.querySelector(
           `.${this.options.classPrefix}__section-inner`

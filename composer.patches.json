@@ -1,7 +1,8 @@
 {
   "patches": {
     "drupal/core": {
-      "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch"
+      "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch",
+      "Upgrade path from CKEditor 4's StylesCombo to CKEditor 5's Style": "https://www.drupal.org/files/issues/2022-08-04/3222797-style--94x_0.patch"
      },
     "drupal/components": {
       "Template is not defined error on node edit / admin pages": "https://www.drupal.org/files/issues/2021-06-24/DRUP86-template_not_defined.patch"

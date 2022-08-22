@@ -1,10 +1,9 @@
-uuid: 00c4a042-bb5b-4f8e-8743-28f6d6bfc308
+uuid: 136d5bd6-a64b-4f55-902b-a11bd94f3d73
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraph
-    - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.wysiwyg
   module:
@@ -13,7 +12,7 @@ id: paragraph.two_column_hero.field_paragraph
 field_name: field_paragraph
 entity_type: paragraph
 bundle: two_column_hero
-label: 'Right Column Content'
+label: 'Two Column Hero'
 description: ''
 required: false
 translatable: true
@@ -23,7 +22,6 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      image_embed: image_embed
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -74,7 +72,7 @@ settings:
         enabled: false
       image_embed:
         weight: 51
-        enabled: true
+        enabled: false
       image_hero:
         weight: 52
         enabled: false

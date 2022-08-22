@@ -66,6 +66,7 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       '#type' => 'checkboxes',
       '#options' => [
         'heading_remove' => $this->t('Remove heading tags (h1-h6)'),
+        'retain_formatting' => $this->t('Retain text formatting (bold, italics, super/subscript, strikethrough)')
       ],
       '#default_value' => empty($trim_options_value) ? [] : array_keys(array_filter($trim_options_value)),
     ];
@@ -79,6 +80,10 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
   public function viewElements(FieldItemListInterface $items, $langcode = NULL) {
     $text = '';
 
+    // Will assume plain_text is being returned as the format. If we later
+    // do not strip out tags, will set to the item's format.
+    $format = '';
+
     // Iterate through the entity reference revision list items, which are
     // assumed to be paragraphs or strings. Only one text string will be
     // harvested from multivalued fields or multiple paragraphs.
@@ -91,6 +96,7 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       // paragraph
       if (isset($item_array['value']) && is_string($item_array['value'])) {
         $text = $item_array['value'];
+        $format = $item_array['format'];
         break;
       } elseif ($item->entity instanceof ParagraphInterface) {
         /** @var Paragraph $paragraph_object */
@@ -102,6 +108,7 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
         // assign as our working text -- we have found what we're looking for.
         if ($paragraph_object->getType() == 'wysiwyg' && $paragraph_object->field_body->value) {
           $text = $paragraph_object->field_body->value;
+          $format = $paragraph_object->field_body->format;
           break;
         }
       }
@@ -123,8 +130,10 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/','$0 ', $text);
     }
 
-    // Strip and decode remaining text.
-    $text = html_entity_decode(strip_tags($text));
+    // Strip and decode remaining text, retaining font format tags if requested.
+    $retained_tags = $setting_trim_options['retain_formatting'] ? ['strong', 's', 'em', 'sub', 'sup'] : [];
+    $text = html_entity_decode(strip_tags($text, $retained_tags));
+    $format = $setting_trim_options['retain_formatting'] ? $format : 'plain_text';
 
     // Replace newlines with spaces.
     $text = trim(str_replace('\n', ' ', (str_replace('\r', ' ', $text))));
@@ -157,7 +166,7 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
     // Assign to render array.
     return [
       '#type' => 'processed_text',
-      '#format' => 'plain_text',
+      '#format' => $format,
       '#text' => $text,
     ];
   }

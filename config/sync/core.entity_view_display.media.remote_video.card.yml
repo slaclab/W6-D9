@@ -39,6 +39,7 @@ content:
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
+        retain_formatting: retain_formatting
       wrap_output: 0
       wrap_class: trimmed
       more_link: 0

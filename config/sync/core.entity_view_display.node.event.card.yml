@@ -31,6 +31,7 @@ dependencies:
   module:
     - datetime_range
     - link
+    - slac_core
     - text
     - user
 id: node.event.card
@@ -38,6 +39,25 @@ targetEntityType: node
 bundle: event
 mode: card
 content:
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_boolean:
     type: boolean
     label: hidden
@@ -123,7 +143,6 @@ content:
     region: content
 hidden:
   field_bio_related_content: true
-  field_body: true
   field_boolean2: true
   field_detail_text: true
   field_featured: true

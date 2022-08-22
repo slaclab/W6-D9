@@ -17,16 +17,17 @@ bundle: microsite_hero
 mode: default
 content:
   field_image:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: image_hero
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
   field_link:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -38,14 +39,14 @@ content:
     region: content
   field_lottiefile:
     type: lottiefiles_field
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

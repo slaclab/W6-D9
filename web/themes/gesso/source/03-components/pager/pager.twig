@@ -43,27 +43,17 @@
       {% endif %}
 
       {# First page. #}
-      {% if pager_items.first empty %}
-        {% for key, item in pager_items.pages %}
-          {% if pager_items.first.href is not empty and item.href == pager_items.first.href %}
-            <li class="c-pager__item{{ current == key ? ' c-pager__item--current' : '' }}">
-              {% if current == key %}
-                <span class="u-visually-hidden">
-                  {{ 'Currently on page'|t }}
-                </span>
-                {{- key -}}
-              {% else %}
-                {% set link_label = 'Go to page ' ~ key %}
-                <a class="c-pager__link" href="{{ item.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ item.attributes|without('aria-label', 'href', 'title') }}>
-                  <span class="u-visually-hidden">
-                    {{ 'Page'|t }}
-                  </span>
-                  {{- key -}}
-                </a>
-              {% endif %}
-            </li>
-          {% endif %}
-        {% endfor %}
+      {% if pager_items.first %}
+        {% set key = pager_items.first.text %}
+        <li class="c-pager__item">
+          {% set link_label = 'Go to page ' ~ key %}
+          <a class="c-pager__link" href="{{ pager_items.first.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ pager_items.first.attributes|without('aria-label', 'href', 'title') }}>
+            <span class="u-visually-hidden">
+              {{ 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
+        </li>
       {% endif %}
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
@@ -102,27 +92,17 @@
       {% endif %}
 
       {# Last page. #}
-      {% if pager_items.last is not empty %}
-        {% for key, item in pager_items.pages %}
-          {% if pager_items.last.href is not empty and item.href == pager_items.last.href %}
-            <li class="c-pager__item{{ current == key ? ' c-pager__item--current' : '' }}">
-              {% if current == key %}
-                <span class="u-visually-hidden">
-                  {{ 'Currently on page'|t }}
-                </span>
-                {{- key -}}
-              {% else %}
-                {% set link_label = 'Go to page ' ~ key %}
-                <a class="c-pager__link" href="{{ item.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ item.attributes|without('aria-label', 'href', 'title') }}>
-                  <span class="u-visually-hidden">
-                    {{ 'Page'|t }}
-                  </span>
-                  {{- key -}}
-                </a>
-              {% endif %}
-            </li>
-          {% endif %}
-        {% endfor %}
+      {% if pager_items.last %}
+        {% set key = pager_items.last.text %}
+          <li class="c-pager__item">
+          {% set link_label = 'Go to page ' ~ key %}
+          <a class="c-pager__link" href="{{ pager_items.last.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ pager_items.first.attributes|without('aria-label', 'href', 'title') }}>
+            <span class="u-visually-hidden">
+              {{ 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
+          </li>
       {% endif %}
 
       {# Print next arrow if we are not on the last page. #}

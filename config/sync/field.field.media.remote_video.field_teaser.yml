@@ -1,4 +1,4 @@
-uuid: eb3cc39e-af97-4f61-8675-b2a7eacaa62f
+uuid: 2fe9d30b-151f-4f73-9650-abdf02e49721
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ field_name: field_teaser
 entity_type: media
 bundle: remote_video
 label: Teaser
-description: ''
+description: 'Leave blank to use trimmed value of full text as the teaser.'
 required: false
 translatable: false
 default_value: {  }

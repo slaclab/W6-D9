@@ -2,25 +2,32 @@
 
 namespace Drupal\slac_core\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\FieldItemList;
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\smart_trim\Plugin\Field\FieldFormatter\SmartTrimFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\smart_trim\Truncate\TruncateHTML;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\paragraphs\ParagraphInterface;
 
 /**
  * Plugin implementation of the 'trimmed_first_paragraph_wysiwyg' formatter. Finds the
  * first instance of the WYSIWYG "wysiwyg" paragraph in the field and returns a trimmed,
- * plain text version of the paragraph content. Field formatter only applies to
- * entity_reference_revisions field. Extends contributed module drupal/smart_trim.
- * Makes the assumption that the content field in the WYSIWYG paragraph has a
+ * plain text version of the paragraph content. Can also be used with formatted text
+ * fields and strings. Extends the contributed module drupal/smart_trim but reduces/changes
+ * the options available and performs different string manipulations to arrive at a
+ * "best guess" for the intended teaser content. For paragraph reference fields,
+ * makes the key assumption that the content field in the WYSIWYG paragraph has a
  * machine name of "field_body."
  *
  * @FieldFormatter(
  *   id = "trimmed_first_wysiwyg_paragraph",
  *   label = @Translation("Trimmed first WYSIWYG paragraph"),
  *   field_types = {
- *     "entity_reference_revisions"
+ *     "entity_reference_revisions",
+ *     "text",
+ *     "string",
+ *     "text_long",
+ *     "string_long"
  *   },
  *   settings = {
  *     "trim_length" = "40",
@@ -73,21 +80,36 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
     $text = '';
 
     // Iterate through the entity reference revision list items, which are
-    // assumed to be paragraphs.
+    // assumed to be paragraphs or strings. Only one text string will be
+    // harvested from multivalued fields or multiple paragraphs.
     foreach ($items as $delta => $item) {
       $item_array = $item->toArray();
 
-      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph_object */
-      $paragraph_object = \Drupal::service('entity_type.manager')
-        ->getStorage('paragraph')
-        ->load($item_array['target_id']);
-
-      // If the paragraph is a WYSIWYG paragraph and the field_body field has a value,
-      // assign as our working text -- we have found what we're looking for.
-      if ($paragraph_object->getType() == 'wysiwyg' && $paragraph_object->field_body->value) {
-        $text = $paragraph_object->field_body->value;
+      // For direct (non referenced) textual fields, the value is directly available
+      // in the item array, use the first item encountered.
+      // For paragraph references, load the paragraph and search each referenced
+      // paragraph
+      if (isset($item_array['value']) && is_string($item_array['value'])) {
+        $text = $item_array['value'];
         break;
+      } elseif ($item->entity instanceof ParagraphInterface) {
+        /** @var Paragraph $paragraph_object */
+        $paragraph_object = \Drupal::service('entity_type.manager')
+          ->getStorage('paragraph')
+          ->load($item_array['target_id']);
+
+        // If the paragraph is a WYSIWYG paragraph and the field_body field has a value,
+        // assign as our working text -- we have found what we're looking for.
+        if ($paragraph_object->getType() == 'wysiwyg' && $paragraph_object->field_body->value) {
+          $text = $paragraph_object->field_body->value;
+          break;
+        }
       }
+    }
+
+    // No text was found, return.
+    if (empty($text)) {
+      return [];
     }
 
     // Retrieve the setting trim options.

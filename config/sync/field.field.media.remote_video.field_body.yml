@@ -1,4 +1,4 @@
-uuid: 313590af-0592-42ff-9fcf-de3cd86445ba
+uuid: ff35c480-8ef0-43a6-bc48-cd31a6b92051
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
+      - basic_html
 id: media.remote_video.field_body
 field_name: field_body
 entity_type: media

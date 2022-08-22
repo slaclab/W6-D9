@@ -45,7 +45,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 11
     region: content
   field_boolean:
     type: boolean
@@ -136,7 +136,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_thumbnail:
     type: entity_reference_entity_view

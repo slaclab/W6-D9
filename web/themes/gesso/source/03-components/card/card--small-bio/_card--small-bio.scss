@@ -61,3 +61,38 @@
     }
   }
 }
+
+/* stylelint-disable selector-class-pattern */
+.c-card--small-bio__link {
+  span {
+    white-space: nowrap;
+
+    &::after {
+      @include svg-background(chevron-white);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 0.75em;
+      margin-left: 0.5em;
+      margin-top: em(-3px, gesso-base-font-size());
+      transition: transform gesso-duration(shortest) ease-out;
+      vertical-align: middle;
+      width: 1em;
+    }
+  }
+
+  .c-icon {
+    display: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @media (prefers-reduced-motion: no-preference) {
+      span::after {
+        transform: translateX(em(3px, 16px));
+      }
+    }
+  }
+}

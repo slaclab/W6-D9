@@ -10,15 +10,11 @@
     {% spaceless %}
       <h3 class="c-card__title">
         {% if title_url %}
-          <a href="{{- title_url -}}">
-          {% endif %}
-          {{- title -}}
-          {% if title_url %}
-            {% include '@components/icon/icon.twig' with {
-          'icon_name': 'angle-right',
-          'hidden': true
-        } %}
+          <a href="{{- title_url -}}" class="c-card--small-bio__link">
+            {{- title -}}
           </a>
+        {% else %}
+          {{- title -}}
         {% endif %}
       </h3>
     {% endspaceless %}

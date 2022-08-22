@@ -43,7 +43,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_text:
     type: string

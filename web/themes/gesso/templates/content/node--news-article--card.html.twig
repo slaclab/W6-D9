@@ -87,7 +87,7 @@
   {% if content.field_teaser|field_value is not null %}
     {{ content.field_teaser|field_value }}
   {% else %}
-    {{ content.field_paragraphs|render }}
+    {{ content.field_paragraphs }}
   {% endif %}
 {% endset %}
 

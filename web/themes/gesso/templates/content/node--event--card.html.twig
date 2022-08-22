@@ -130,6 +130,14 @@
   {% set location = content.field_link[0]['#title'] %}
 {% endif %}
 
+{% set card_content %}
+  {% if content.field_teaser|field_value is not null %}
+    {{ content.field_teaser|field_value }}
+  {% else %}
+    {{ content.field_body }}
+  {% endif %}
+{% endset %}
+
 {#
 /**
  * If the "Is external event?" field (field_boolean) is set then use the URL of the external link
@@ -155,7 +163,7 @@
   event_date: datetime_location_override ? null : datetime_composed,
   event_location: location,
   media: content.field_image|field_value,
-  card_content: content.field_teaser|field_value,
+  card_content: card_content,
 } %}
 
 {% set catch_cache = content|render %}

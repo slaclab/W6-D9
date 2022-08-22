@@ -8,6 +8,9 @@ libraries:
   - gesso/global
 libraries-override:
   core/drupal.dropbutton: gesso/dropbutton
+libraries-extend:
+  sitewide_alert/init:
+    - gesso/alert_bar
 ckeditor_stylesheets:
   - //fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap
   - dist/css/editor-styles.css

@@ -60,6 +60,12 @@
           } %}
           {% if media_credit or media_use or media_about %}
             {% set accordion_items %}
+              {% if media_transcript %}
+                {% include '@components/accordion/accordion-item.twig' with {
+                  'accordion_title': 'Transcript'|t,
+                  'accordion_content': media_transcript
+                } %}
+              {% endif %}
               {% if media_credit %}
                 {% include '@components/accordion/accordion-item.twig' with {
                   'accordion_title': 'Credit'|t,

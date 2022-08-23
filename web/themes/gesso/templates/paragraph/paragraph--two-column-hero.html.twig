@@ -1,0 +1,28 @@
+{# {% set tooltip %}
+  {{- hero_caption -}}
+  {{- hero_credit -}}
+{% endset %} #}
+{#
+{% embed '@components/hero-bg-image/hero-bg-image.twig' with {
+  'hero_caption': tooltip,
+  'hero_kicker': content.field_text|field_value,
+  'hero_image': content.field_image|field_value,
+  'hero_title': drupal_token('current-page:title'),
+  'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
+  'text_color': paragraph.field_text_color.value|default('white')
+} %}
+  {% block animated_icon %}{{ content.field_lottiefile }}{% endblock %}
+{% endembed %} #}
+
+{# {{ dd(content)}} #}
+
+{% include '@components/page-title/page-title.twig' with {
+  page_title: drupal_token('current-page:title'),
+  lede: content.field_lede|field_value,
+  kicker: content.field_text|field_value,
+  rss_url: content.field_button_link|field_value,
+  sidebar_content: content.field_paragraph|field_value,
+  has_constrain: true,
+} %}
+
+{% set catch_cache = content|render %}

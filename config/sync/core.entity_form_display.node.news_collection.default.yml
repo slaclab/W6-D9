@@ -1,27 +1,18 @@
-uuid: 332100d5-3232-4f01-a9ba-276ea5dadffe
+uuid: 006c1ba6-3755-4541-a0ff-95f37a5868ae
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_body
-    - field.field.media.image.field_boolean
-    - field.field.media.image.field_caption
-    - field.field.media.image.field_credit
-    - field.field.media.image.field_display_style
-    - field.field.media.image.field_landing_display
-    - field.field.media.image.field_link
-    - field.field.media.image.field_long_text
-    - field.field.media.image.field_media_image
-    - field.field.media.image.field_paragraphs
-    - field.field.media.image.field_tags
-    - field.field.media.image.field_teaser
-    - field.field.media.image.field_type
-    - image.style.media_library
-    - media.type.image
+    - field.field.node.news_collection.field_boolean
+    - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_paragraphs
+    - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_tags
+    - field.field.node.news_collection.field_teaser
+    - field.field.node.news_collection.field_text
+    - node.type.news_collection
   module:
     - field_group
-    - focal_point
-    - link
     - paragraphs
     - path
     - text
@@ -29,12 +20,12 @@ third_party_settings:
   field_group:
     group_page_content:
       children:
-        - group_main_content
+        - group_ma
         - group_metadata
       label: 'Page Content'
       region: content
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -42,18 +33,16 @@ third_party_settings:
         id: ''
         direction: horizontal
         width_breakpoint: 640
-    group_main_content:
+    group_ma:
       children:
-        - field_media_image
-        - field_body
-        - field_caption
-        - field_credit
-        - field_link
+        - field_hero_paragraph
         - field_paragraphs
+        - field_boolean
+        - field_paragraphs_1
       label: 'Main Content'
       region: content
       parent_name: group_page_content
-      weight: 19
+      weight: 2
       format_type: tab
       format_settings:
         classes: ''
@@ -64,16 +53,13 @@ third_party_settings:
         required_fields: true
     group_metadata:
       children:
+        - field_text
         - field_teaser
-        - field_display_style
-        - field_boolean
-        - field_landing_display
-        - field_type
         - field_tags
       label: Metadata
       region: content
       parent_name: group_page_content
-      weight: 20
+      weight: 3
       format_type: tab
       format_settings:
         classes: ''
@@ -82,88 +68,61 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-id: media.image.default
-targetEntityType: media
-bundle: image
+id: node.news_collection.default
+targetEntityType: node
+bundle: news_collection
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 6
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_body:
-    type: text_textarea
-    weight: 4
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
     third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
-    weight: 20
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_caption:
-    type: text_textarea
-    weight: 5
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_credit:
-    type: text_textarea
-    weight: 6
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_display_style:
-    type: options_select
-    weight: 19
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_landing_display:
-    type: boolean_checkbox
-    weight: 21
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_link:
-    type: link_default
     weight: 7
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      display_label: true
     third_party_settings: {  }
-  field_long_text:
-    type: text_textarea
-    weight: 1
+  field_hero_paragraph:
+    type: paragraphs
+    weight: 5
     region: content
     settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_media_image:
-    type: image_focal_point
-    weight: 3
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: media_library
-      preview_link: true
-      offsets: '50,50'
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_paragraphs:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_paragraphs_1:
     type: paragraphs
     weight: 8
     region: content
@@ -183,7 +142,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 23
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -193,25 +152,15 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
-    weight: 18
+    weight: 3
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_type:
-    type: entity_reference_autocomplete
-    weight: 22
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  name:
+  field_text:
     type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60
@@ -219,20 +168,42 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  status:
+  promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

@@ -13,6 +13,7 @@ dependencies:
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_paragraphs
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_teaser
@@ -20,6 +21,7 @@ dependencies:
     - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
+    - entity_reference_revisions
     - link
     - media
     - options
@@ -114,6 +116,15 @@ content:
       max_height: 0
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_source_name:
     type: text_default

@@ -1,16 +1,16 @@
-uuid: ce3df077-21a1-4f00-b4d5-3ec05cdda349
+uuid: 36da6508-19f0-4f08-b113-0008391231ae
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_thumbnail
+    - field.storage.node.field_teaser_image
     - media.type.image
-    - media.type.remote_video
-id: media.remote_video.field_thumbnail
-field_name: field_thumbnail
-entity_type: media
-bundle: remote_video
-label: 'Stillframe Image'
+    - node.type.news_article
+id: node.news_article.field_teaser_image
+field_name: field_teaser_image
+entity_type: node
+bundle: news_article
+label: 'Teaser Image'
 description: ''
 required: true
 translatable: false

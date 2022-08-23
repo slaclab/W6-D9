@@ -1,12 +1,13 @@
-uuid: b12de817-d89d-4281-be55-3086f80e7425
+uuid: 95209f66-2705-4ef9-a45f-ba27df73b8b6
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.card
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
@@ -24,96 +25,99 @@ dependencies:
     - node.type.news_article
   module:
     - entity_reference_revisions
-    - gesso_helper
-    - layout_paragraphs
+    - estimated_read_time
+    - slac_core
+    - text
     - user
-id: node.news_article.full
+id: node.news_article.card
 targetEntityType: node
 bundle: news_article
-mode: full
+mode: card
 content:
-  field_bio:
-    type: entity_reference_label
+  field_estimated_read_time:
+    type: estimated_read_time_text
     label: hidden
     settings:
-      link: true
+      tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_boolean:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: card_image
       link: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_lede:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_paragraphs:
-    type: layout_paragraphs
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_paragraphs_1:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_tags:
-    type: gesso_tag
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_text:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  links:
-    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
+  field_news_source:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: above
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_source_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_teaser:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
+  field_bio: true
   field_bio_related_content: true
-  field_estimated_read_time: true
+  field_boolean: true
   field_featured: true
-  field_news_source: true
+  field_lede: true
+  field_paragraphs_1: true
   field_research_area: true
   field_source_link: true
-  field_source_name: true
-  field_teaser: true
-  field_teaser_image: true
-  field_type: true
+  field_tags: true
+  field_text: true
+  links: true

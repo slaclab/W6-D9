@@ -1,10 +1,10 @@
-uuid: 84465ab8-4510-4d9e-aa18-ac8eacab5798
+uuid: ff35c480-8ef0-43a6-bc48-cd31a6b92051
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body
-    - node.type.event
+    - field.storage.media.field_body
+    - media.type.remote_video
   module:
     - allowed_formats
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-id: node.event.field_body
+id: media.remote_video.field_body
 field_name: field_body
-entity_type: node
-bundle: event
+entity_type: media
+bundle: remote_video
 label: Description
 description: ''
 required: false

@@ -1,19 +1,17 @@
-uuid: e7cb0bcd-bcc8-4ab4-8292-16d85e19da09
+uuid: 6746da9a-1d7c-4640-b349-101eb9916aa0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.reading_text
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_featured
+    - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
-    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -23,19 +21,32 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - layout_paragraphs
     - user
-id: node.news_article.teaser
+id: node.news_article.reading_text
 targetEntityType: node
 bundle: news_article
-mode: teaser
+mode: reading_text
 content:
-  links:
-    settings: {  }
+  field_bio:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 100
+    weight: 0
+    region: content
+  field_paragraphs:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
-  field_bio: true
   field_bio_related_content: true
   field_boolean: true
   field_estimated_read_time: true
@@ -43,7 +54,6 @@ hidden:
   field_hero_paragraph: true
   field_lede: true
   field_news_source: true
-  field_paragraphs: true
   field_paragraphs_1: true
   field_research_area: true
   field_source_link: true
@@ -53,3 +63,4 @@ hidden:
   field_teaser_image: true
   field_text: true
   field_type: true
+  links: true

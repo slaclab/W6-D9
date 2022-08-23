@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.promo_box.field_button_link
     - field.field.paragraph.promo_box.field_image
     - field.field.paragraph.promo_box.field_link
+    - field.field.paragraph.promo_box.field_links
     - field.field.paragraph.promo_box.field_text
     - paragraphs.paragraphs_type.promo_box
   module:
@@ -34,6 +35,14 @@ content:
   field_link:
     type: link_default
     weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 4
     region: content
     settings:
       placeholder_url: ''

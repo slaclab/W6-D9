@@ -58,6 +58,11 @@ function gesso_preprocess_image(array &$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function gesso_preprocess_media(array &$variables) {
+  // Media items do not pass the aliased URL to the item by default. Retrieve and assign to
+  // a template variable consistent with usage in node and taxonomy_term preprocessing.
+  $variables['url'] = $variables['media']
+    ->toUrl('canonical')
+    ->toString();
   $variables['has_caption'] = isset($variables['attributes']['data-caption']);
   $variables['bundle'] = $variables['media']->bundle();
   if ($variables['view_mode'] == 'video_lightbox') {
@@ -80,6 +85,22 @@ function gesso_preprocess_media(array &$variables) {
       $variables['created'] = $video_media->getCreatedTime();
     } else if ($variables['bundle'] == 'image') {
       $variables['lightbox_id'] = $variables['elements']['#media']->lightbox_id;
+    }
+  }
+  if ($variables['view_mode'] == 'full') {
+    // Array of regions to add to node template.
+    $allowed_regions = ['status'];
+    _add_regions_to_template($allowed_regions, $variables);
+    $media = $variables['media'];
+    if ($media->hasField('field_tags')) {
+      $tags = $media->get('field_tags')->getValue();
+      $tids = implode(',', array_map(function($item) { return $item['target_id']; }, $tags));
+      $related_content_view = \Drupal\views\Views::getView('related_content_for_media_pages');
+      $related_content_view->setArguments([$tids, $media->id()]);
+      $related_content_view->setDisplay('related_images_videos');
+      $related_content_view->preExecute();
+      $related_content_view->execute();
+      $variables['related_content'] = $related_content_view->buildRenderable();
     }
   }
 }

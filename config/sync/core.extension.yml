@@ -24,9 +24,11 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  duration_field: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  estimated_read_time: 0
   field: 0
   field_group: 0
   field_group_migrate: 0
@@ -80,6 +82,7 @@ module:
   slac_core: 0
   slac_migrate: 0
   slac_yaml_content: 0
+  smart_trim: 0
   style_options: 0
   svg_image_field: 0
   system: 0

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_node
     - node.type.event
+    - node.type.landing_page
     - node.type.news_article
     - node.type.page
     - paragraphs.paragraphs_type.content_card
@@ -24,6 +25,7 @@ settings:
     target_bundles:
       page: page
       event: event
+      landing_page: landing_page
       news_article: news_article
     sort:
       field: _none

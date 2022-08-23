@@ -49,14 +49,10 @@
   <main id="main" class="c-main" role="main" tabindex="-1">
     {% block main_content %}
       {% embed '@layouts/section/section.twig' with {
-        has_constrain: true
+        has_constrain: false
       } %}
         {% block content %}
           {{ page.preface }}
-          {% include '@components/page-title/page-title.twig' with {
-            'attributes': '',
-            'page_title': page['#title'],
-          } %}
           {{ page.status }}
           {{ page.content }}
           {{ page.postscript }}

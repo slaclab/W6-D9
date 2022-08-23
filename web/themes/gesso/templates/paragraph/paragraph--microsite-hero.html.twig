@@ -38,12 +38,21 @@
  * @ingroup themeable
  */
 #}
+{% set tooltip %}
+  {{- hero_caption -}}
+  {{- hero_credit -}}
+{% endset %}
 
 {% include '@components/microsite-hero/microsite-hero.twig' with {
   'microsite_hero_title': node_title,
   'microsite_hero_button': content.field_link|field_value,
+  'microsite_hero_links': microsite_markerlist,
   'microsite_hero_image': content.field_image|field_value,
-  'microsite_hero_caption': content.field_kicker|field_value,
+  'microsite_hero_caption': tooltip,
+  'microsite_hero_kicker': content.field_text|field_value,
+  'microsite_title_overlay': content.field_short_text|field_value is empty ? node_title : content.field_short_text|field_value,
+  'microsite_lottiefile': content.field_lottiefile|field_value,
+  'text_color': content.field_text_color|field_value|default('white'),
 } %}
 
 {% set catch_cache = content|render %}

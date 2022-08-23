@@ -1,4 +1,4 @@
 services:
   slac_core.microsite_utilities:
     class: Drupal\slac_core\Services\MicrositeUtilities
-    arguments: ['@entity_type.manager', '@menu.active_trail', '@entity.repository']
+    arguments: ['@current_route_match']

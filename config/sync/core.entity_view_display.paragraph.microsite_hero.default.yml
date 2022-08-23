@@ -6,11 +6,14 @@ dependencies:
     - field.field.paragraph.microsite_hero.field_image
     - field.field.paragraph.microsite_hero.field_link
     - field.field.paragraph.microsite_hero.field_lottiefile
+    - field.field.paragraph.microsite_hero.field_short_text
     - field.field.paragraph.microsite_hero.field_text
+    - field.field.paragraph.microsite_hero.field_text_color
     - paragraphs.paragraphs_type.microsite_hero
   module:
-    - link
+    - gesso_helper
     - lottiefiles_field
+    - options
 id: paragraph.microsite_hero.default
 targetEntityType: paragraph
 bundle: microsite_hero
@@ -26,14 +29,17 @@ content:
     weight: 1
     region: content
   field_link:
-    type: link_separate
+    type: gesso_helper_gesso_button
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
     weight: 2
     region: content
@@ -44,6 +50,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_short_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_text:
     type: string
     label: hidden
@@ -51,5 +65,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_text_color:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
 hidden: {  }

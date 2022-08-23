@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\slac_core\Services\MicrositeUtilities;
 
 function gesso_preprocess_paragraph(&$vars) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
@@ -167,10 +168,23 @@ function gesso_preprocess_paragraph__microsite_navigation_marker(&$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__microsite_hero(&$vars) {
+  // Retrieve that paragraph and its parent entity, check that the parent is a node,
+  // and set the node title.
   $paragraph = $vars['paragraph'];
   $parent = $paragraph->getParentEntity();
 
   if ($parent && $parent->getEntityType()->id() == 'node') {
     $vars['node_title'] = $parent->title->value;
   }
+
+  /** @var MicrositeUtilities $microsite_utilities */
+  $microsite_utilities = \Drupal::service('slac_core.microsite_utilities');
+  $vars['microsite_markerlist'] = $microsite_utilities->FindMicrositeMarkers(
+    'field_paragraphs',
+    'microsite_navigation_marker',
+    'field_short_text'
+  );
+
+  // Set the caption and credit fields from field_image.
+  _gesso_set_hero_caption($vars);
 }

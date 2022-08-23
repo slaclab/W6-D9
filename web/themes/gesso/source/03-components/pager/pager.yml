@@ -1,28 +1,24 @@
 ---
 heading: 'Pagination'
-current: 1
+current: 4
 ellipses:
-  previous: false
+  previous: true
   next: true
 pager_items:
   pages:
-    1:
-      href: '#'
-    2:
-      href: '#'
     3:
-      href: '#'
-    20:
-      href: '#'
+      href: '#3'
+    4:
+      href: '#4'
+    5:
+      href: '#5'
   first:
     href: '#'
-    key: 1
+    text: '1'
   previous:
-    active: false
-    href: '#'
+    href: '#prev'
   next:
-    href: '#'
-    active: true
+    href: '#next'
   last:
     href: '#'
-    key: 20
+    text: '20'

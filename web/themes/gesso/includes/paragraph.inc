@@ -138,6 +138,9 @@ function gesso_preprocess_paragraph__article_hero(&$vars) {
   _gesso_set_hero_caption($vars);
 }
 
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
 function gesso_preprocess_paragraph__image_hero(&$vars) {
   _gesso_set_hero_caption($vars);
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
@@ -147,5 +150,27 @@ function gesso_preprocess_paragraph__image_hero(&$vars) {
     if ($text_color == 'white') {
       $vars['#attached']['library'][] = 'gesso/inverse_nav';
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__microsite_navigation_marker(&$vars) {
+  $paragraph = $vars['paragraph'];
+
+  // Create a slug as a cleanCSSIdentifier based on the field_short_text value.
+  $vars['slug'] = Html::cleanCssIdentifier($paragraph->field_short_text->value);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__microsite_hero(&$vars) {
+  $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+
+  if ($parent && $parent->getEntityType()->id() == 'node') {
+    $vars['node_title'] = $parent->title->value;
   }
 }

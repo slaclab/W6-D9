@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 name: card
-label: 'Card (800x500)'
+label: 'Card (800x509)'
 effects:
   a4b9a0d2-2a9e-4566-95d5-3f028571e183:
     uuid: a4b9a0d2-2a9e-4566-95d5-3f028571e183
@@ -13,5 +13,5 @@ effects:
     weight: 2
     data:
       width: 800
-      height: 500
+      height: 509
       crop_type: focal_point

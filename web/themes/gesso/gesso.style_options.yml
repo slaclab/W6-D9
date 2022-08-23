@@ -80,7 +80,7 @@ options:
     label: 'Transition style'
     options:
       -
-        label: 'Static'
+        label: 'None'
       -
         label: 'Slide in'
         class: 'u-slide-left'

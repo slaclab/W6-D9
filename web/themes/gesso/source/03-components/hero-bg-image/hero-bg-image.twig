@@ -1,5 +1,9 @@
 {{ attach_library('gesso/hero_bg_image') }}
 
+{% if modifier_classes == 'transparent_nav' %}
+  {{ attach_library('gesso/hero_bg_image') }}
+{% endif %}
+
 {% set classes = [
   'c-hero-bg-image',
   'c-hero-bg-image--left',

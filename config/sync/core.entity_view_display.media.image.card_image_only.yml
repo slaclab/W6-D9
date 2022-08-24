@@ -1,9 +1,9 @@
-uuid: c1c265d5-f5e6-4922-a9ac-ad6c523abadd
+uuid: 665b4e21-eea0-4178-888f-ef3f7090aad7
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.hero
+    - core.entity_view_mode.media.card_image_only
     - field.field.media.image.field_body
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
@@ -17,21 +17,23 @@ dependencies:
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
+    - image.style.card
     - media.type.image
-    - responsive_image.styles.hero
   module:
-    - responsive_image
-id: media.image.hero
+    - image
+id: media.image.card_image_only
 targetEntityType: media
 bundle: image
-mode: hero
+mode: card_image_only
 content:
   field_media_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: hero
       image_link: ''
+      image_style: card
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

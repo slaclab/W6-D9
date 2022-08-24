@@ -75,6 +75,15 @@ options:
       -
         label: 'Palo Alto'
         class: 'c-card--palo-alto'
+  promo_box_transition:
+    plugin: css_class
+    label: 'Transition style'
+    options:
+      -
+        label: 'None'
+      -
+        label: 'Slide in'
+        class: 'u-slide-left'
 
 contexts:
   paragraphs:
@@ -89,3 +98,6 @@ contexts:
     small_card_with_solid_background:
       options:
         small_card_with_solid_background_bg: true
+    promo_box:
+      options:
+        promo_box_transition: true

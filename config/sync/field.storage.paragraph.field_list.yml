@@ -14,6 +14,12 @@ settings:
     -
       value: card
       label: Card
+    -
+      value: teaser
+      label: Teaser
+    -
+      value: large_card
+      label: 'Large Card (Person Only)'
   allowed_values_function: ''
 module: options
 locked: false

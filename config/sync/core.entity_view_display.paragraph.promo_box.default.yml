@@ -21,14 +21,14 @@ content:
     type: gesso_helper_gesso_button
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Outline
+      button_icon: None
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-      button_size: Standard
-      button_style: Primary
-      button_icon: None
+      rel: 0
+      target: 0
     third_party_settings: {  }
     weight: 4
     region: content

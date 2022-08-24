@@ -52,7 +52,7 @@
   'microsite_hero_kicker': content.field_text|field_value,
   'microsite_title_overlay': content.field_short_text|field_value is empty ? node_title : content.field_short_text|field_value,
   'microsite_lottiefile': content.field_lottiefile|field_value,
-  'text_color': content.field_text_color|field_value|default('white'),
+  'text_color': paragraph.field_text_color.value|default('white'),
 } %}
 
 {% set catch_cache = content|render %}

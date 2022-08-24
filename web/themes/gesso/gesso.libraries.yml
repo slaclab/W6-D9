@@ -158,9 +158,9 @@ media_detail:
 microsite_hero:
   css:
     theme:
-      dist/css/microsite.css: {}
+      dist/css/microsite-hero.css: {}
   js:
-    dist/js/microsite.es6.js: {}
+    dist/js/microsite-hero.es6.js: {}
   dependencies:
     - gesso/common
     - core/drupal

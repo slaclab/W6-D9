@@ -85,11 +85,17 @@
   {% set show_admin_info = true %}
 {% endif %}
 
+{% if hero_type == 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endif %}
+
 {% if content.field_hero_paragraph is not empty %}
   {{ content.field_hero_paragraph|field_value }}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+{% if hero_type != 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endif %}
 
 {% include '@components/article/article.twig' with {
   'title': hero_type == 'image_hero' ? null : label,

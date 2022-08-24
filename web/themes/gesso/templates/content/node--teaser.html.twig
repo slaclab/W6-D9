@@ -75,6 +75,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set card_content %}
+  {{ title_prefix }}{{ title_suffix }}
   {% if content.field_teaser|field_value is not null %}
     {{ content.field_teaser|field_value }}
   {% else %}

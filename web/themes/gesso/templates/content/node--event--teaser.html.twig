@@ -111,7 +111,7 @@
   {% set datetime_composed %}
     {% if multiday_event == false %}
       {{ event_start_date|date("l, F j, Y") }}
-      <br>
+      &nbsp;·&nbsp;
       {{- event_start_date|date("g:i a") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("g:i a") }}&nbsp;&nbsp;{{ event_start_date|date("T") -}}
     {% else %}
       {{- event_start_date|date("l, F j, Y") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("l, F j, Y") }}

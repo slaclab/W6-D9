@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a node.
+ * News article card display.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -66,13 +66,22 @@
  * @see template_preprocess_node()
  */
 #}
-{% set classes = [
-  node.isPromoted() ? 'is-promoted',
-  node.isSticky() ? 'is-sticky',
-  not node.isPublished() ? 'is-unpublished',
-] %}
 
-{% set attributes = attributes.addClass(classes) %}
+{% set footer %}
+  {{ node.getCreatedTime|format_date('custom', 'F j, Y') }}
+  {% if content.field_estimated_read_time|field_value is not empty %}
+    &nbsp;·&nbsp;
+    {{ content.field_estimated_read_time|field_value }}
+  {% endif %}
+{% endset %}
+
+{% set kicker %}
+  {% if content.field_source_name|field_value is not empty %}
+    {{ content.field_source_name|field_value }}
+  {% elseif content.field_news_source|field_value is not empty %}
+    {% trans %}VIA{% endtrans %}&nbsp;{{- content.field_news_source|field_value -}}
+  {% endif %}
+{% endset %}
 
 {% set card_content %}
   {% if content.field_teaser|field_value is not null %}
@@ -85,13 +94,12 @@
 {% include '@components/card/card.twig' with {
   'title': label,
   'url': url,
-  'kicker': content.field_text|field_value,
-  'type': content.field_type|field_value is not empty ? content.field_type|field_value : node.bundle|replace({'_': ' '}),
-  'footer': false,
+  'kicker': kicker,
+  'type': content.field_type|field_value,
+  'footer': footer,
   'media': content.field_teaser_image|field_value,
   'card_content': card_content,
-  'modifier_classes': 'c-card--teaser'
+  'modifier_classes': 'c-card--teaser',
 } %}
 
-{# Uncomment the following if you don’t render the content variable. #}
 {% set catch_cache = content|render %}

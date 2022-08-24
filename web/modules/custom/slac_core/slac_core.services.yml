@@ -1,0 +1,4 @@
+services:
+  slac_core.microsite_utilities:
+    class: Drupal\slac_core\Services\MicrositeUtilities
+    arguments: ['@current_route_match']

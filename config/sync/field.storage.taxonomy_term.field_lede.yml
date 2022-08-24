@@ -1,0 +1,19 @@
+uuid: 8841e693-cca0-45ad-8c07-bd6bcffbe22d
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_lede
+field_name: field_lede
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

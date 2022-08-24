@@ -86,7 +86,7 @@
   'title': label,
   'url': url,
   'kicker': content.field_text|field_value,
-  'type': content.field_type|field_value is not empty ? content.field_type|field_value : node.bundle,
+  'type': content.field_type|field_value is not empty ? content.field_type|field_value : node.bundle|replace({'_': ' '}),
   'footer': false,
   'media': content.field_teaser_image|field_value,
   'card_content': card_content,

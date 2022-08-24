@@ -1,25 +1,22 @@
-uuid: 3eb3b438-1e41-431a-b475-b358dbb768b1
+uuid: 952cc5ec-d1c1-4482-b1e3-f60605db55ad
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.page.field_hero_paragraph
-    - field.field.node.page.field_paragraphs
-    - field.field.node.page.field_tags
-    - field.field.node.page.field_teaser
-    - field.field.node.page.field_teaser_image
-    - field.field.node.page.field_text
-    - node.type.page
+    - field.field.node.landing_page.field_long_text
+    - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_teaser
+    - field.field.node.landing_page.field_teaser_image
+    - field.field.node.landing_page.field_text
+    - node.type.landing_page
   module:
     - slac_core
     - text
     - user
-_core:
-  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
-id: node.page.card
+id: node.landing_page.card
 targetEntityType: node
-bundle: page
+bundle: landing_page
 mode: card
 content:
   field_paragraphs:
@@ -31,7 +28,7 @@ content:
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
-        retain_formatting: retain_formatting
+        retain_formatting: 0
       wrap_output: 0
       wrap_class: trimmed
       more_link: 0
@@ -39,14 +36,14 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   field_teaser:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -55,7 +52,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_text:
     type: string
@@ -71,5 +68,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_hero_paragraph: true
-  field_tags: true
+  field_long_text: true

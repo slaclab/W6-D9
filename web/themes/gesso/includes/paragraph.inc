@@ -48,25 +48,28 @@ function gesso_preprocess_paragraph__section(&$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__image_embed(&$vars) {
-  // Retrieve the paragraph and the image entity from the paragraph.
-  // Image field is a required field.
-  $paragraph = $vars['elements']['#paragraph'];
+  if ($vars['view_mode'] == 'two_column_hero') {
+    _gesso_set_hero_caption($vars);
+  } else {
+    // Retrieve the paragraph and the image entity from the paragraph.
+    // Image field is a required field.
+    $paragraph = $vars['elements']['#paragraph'];
 
-  // If a caption override is selected and the override text field is populated,
-  // write the override caption into the media entity for templating by the
-  // image template.
-  if ($paragraph->field_boolean->value) {
-    $image_field = $paragraph->get('field_image')->first()->getValue();
-    /** @var \Drupal\media\Entity\Media $media */
-    $media = Drupal\media\Entity\Media::load($image_field['target_id']);
+    // If a caption override is selected and the override text field is populated,
+    // write the override caption into the media entity for templating by the
+    // image template.
+    if ($paragraph->field_boolean->value) {
+      $image_field = $paragraph->get('field_image')->first()->getValue();
+      /** @var \Drupal\media\Entity\Media $media */
+      $media = Drupal\media\Entity\Media::load($image_field['target_id']);
 
-    // Assign the paragraph's caption field into the caption field.
-    // If there's no override caption, empty out the media's caption field.
-    if ($paragraph->field_long_text->value) {
-      $media->field_caption = $paragraph->field_long_text;
-    }
-    else {
-      $media->field_caption = NULL;
+      // Assign the paragraph's caption field into the caption field.
+      // If there's no override caption, empty out the media's caption field.
+      if ($paragraph->field_long_text->value) {
+        $media->field_caption = $paragraph->field_long_text;
+      } else {
+        $media->field_caption = NULL;
+      }
     }
   }
 }
@@ -120,14 +123,17 @@ function _gesso_set_hero_caption(&$vars) {
   // into the template as the caption of the hero.
   if ($paragraph->bundle() == 'article_hero') {
     $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
-    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL);
+    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+  } else if ($paragraph->bundle() == 'image_embed') {
+    $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text[0]->view('two_column_hero') : NULL;
+    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('two_column_hero') : NULL);
   } else {
-    $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption[0]->view() : NULL;
+    $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view() : NULL;
   }
 
   // Assign the credit, always using the image entity's field.
   if (!empty($image->field_credit[0])) {
-    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->field_credit[0]->view() : NULL;
+    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view() : NULL;
   }
 }
 

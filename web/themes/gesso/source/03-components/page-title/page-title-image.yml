@@ -1,6 +1,4 @@
 ---
-sidebar_content: |-
-  <img src="https://picsum.photos/493/300" alt="Placeholder image" />
 lede: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique placerat arcu. </p>
 kicker: 'Kicker'

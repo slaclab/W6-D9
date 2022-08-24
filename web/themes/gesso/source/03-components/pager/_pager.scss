@@ -9,7 +9,7 @@ $pager-link-color: gesso-grayscale(black);
 $pager-link-color-hover: gesso-grayscale(white);
 $pager-link-color-active: gesso-color(text, on-dark) !default;
 $pager-link-focus-outline-color: gesso-color(ui, generic, border-dark) !default;
-$pager-bp: 350px !default;
+$pager-bp: 540px;
 
 .c-pager {
   margin: 70px auto;
@@ -69,10 +69,6 @@ $pager-bp: 350px !default;
   text-align: center;
   transition: color gesso-duration(short) gesso-easing(ease-out),
     background-color gesso-duration(standard) gesso-easing(ease-out);
-
-  &:focus {
-    outline: 1px dotted $pager-link-focus-outline-color;
-  }
 }
 
 .c-pager__item--ellipsis {
@@ -125,10 +121,6 @@ span.c-pager__link {
   border: 0;
   color: gesso-color(text, link);
   font-size: 1.3em;
-  height: 24px;
-  line-height: 22px;
-  margin: 0;
-  width: 24px;
 
   &:visited {
     color: gesso-color(text, link);
@@ -145,5 +137,17 @@ span.c-pager__link {
     background-color: transparent;
     color: gesso-color(text, link-active);
     text-decoration: underline;
+  }
+}
+
+.c-pager__link--next {
+  .c-icon--pager {
+    left: 2px;
+  }
+}
+
+.c-pager__link--last {
+  .c-icon--pager {
+    right: 2px;
   }
 }

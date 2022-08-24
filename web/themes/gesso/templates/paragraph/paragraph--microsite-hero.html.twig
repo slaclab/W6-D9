@@ -43,14 +43,16 @@
   {{- hero_credit -}}
 {% endset %}
 
-{% embed '@components/hero-bg-image/hero-bg-image.twig' with {
-  'modifier_classes': 'transparent_nav',
-  'hero_caption': tooltip,
-  'hero_kicker': content.field_text|field_value,
-  'hero_image': content.field_image|field_value,
-  'hero_title': drupal_token('current-page:title'),
-  'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
-  'text_color': paragraph.field_text_color.value|default('white')
+{% include '@components/microsite-hero/microsite-hero.twig' with {
+  'microsite_hero_title': node_title,
+  'microsite_hero_button': content.field_link|field_value,
+  'microsite_hero_links': microsite_markerlist,
+  'microsite_hero_image': content.field_image|field_value,
+  'microsite_hero_caption': tooltip,
+  'microsite_hero_kicker': content.field_text|field_value,
+  'microsite_title_overlay': content.field_short_text|field_value is empty ? node_title : content.field_short_text|field_value,
+  'microsite_lottiefile': content.field_lottiefile|field_value,
+  'text_color': paragraph.field_text_color.value|default('white'),
 } %}
-  {% block animated_icon %}{{ content.field_lottiefile }}{% endblock %}
-{% endembed %}
+
+{% set catch_cache = content|render %}

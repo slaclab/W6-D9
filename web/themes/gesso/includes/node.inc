@@ -41,12 +41,20 @@ function gesso_preprocess_node(&$variables) {
       }
     }
 
+    // Determine hte type of the hero paragraph if the field exists.
     if ($node->hasField('field_hero_paragraph')) {
       if($node->get('field_hero_paragraph')->first()) {
         $hero_field = $node->get('field_hero_paragraph')->first()->getValue();
+
         /** @var Paragraph $hero_paragraph */
         $hero_paragraph = Paragraph::load($hero_field['target_id']);
         $variables['hero_type'] = $hero_paragraph->getType();
+
+        // In the special case that the hero type indicates the page is
+        // being used as a microsite, indicate as such to the template.
+        if ($variables['hero_type'] == 'microsite_hero') {
+          $variables['is_microsite'] = TRUE;
+        }
       }
       else {
         $variables['hero_type'] = 'none';

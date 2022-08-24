@@ -24,7 +24,6 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
-    - entity_reference_revisions
     - estimated_read_time
     - slac_core
     - text
@@ -40,16 +39,7 @@ content:
     settings:
       tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 7
-    region: content
-  field_hero_paragraph:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: card_image
-      link: ''
-    third_party_settings: {  }
-    weight: 0
+    weight: 6
     region: content
   field_news_source:
     type: entity_reference_label
@@ -57,7 +47,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -76,21 +66,21 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_source_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_teaser:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -99,7 +89,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_type:
     type: entity_reference_label
@@ -107,13 +97,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   field_bio: true
   field_bio_related_content: true
   field_boolean: true
   field_featured: true
+  field_hero_paragraph: true
   field_lede: true
   field_paragraphs_1: true
   field_research_area: true

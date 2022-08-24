@@ -75,7 +75,6 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set card_content %}
-  {{ title_prefix }}{{ title_suffix }}
   {% if content.field_teaser|field_value is not null %}
     {{ content.field_teaser|field_value }}
   {% else %}
@@ -91,7 +90,6 @@
   'footer': false,
   'media': content.field_teaser_image|field_value,
   'card_content': card_content,
-  'modifier_classes': 'c-card--teaser'
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

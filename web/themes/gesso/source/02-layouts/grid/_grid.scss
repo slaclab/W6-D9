@@ -9,6 +9,7 @@ $grid-gutter: gesso-get-map(gutter-width);
 
   @supports (display: grid) {
     @include css-fixed-grid(1);
+    align-items: flex-start;
   }
 }
 

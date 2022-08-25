@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tout.field_body
-    - field.field.paragraph.tout.field_button_links
     - field.field.paragraph.tout.field_image
     - field.field.paragraph.tout.field_link
     - field.field.paragraph.tout.field_text
@@ -19,46 +18,35 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
-  field_button_links:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: tout
+      link: false
     third_party_settings: {  }
     weight: 3
     region: content
   field_link:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 1
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

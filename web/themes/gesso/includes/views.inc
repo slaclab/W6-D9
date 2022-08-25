@@ -5,6 +5,11 @@
  * Views-related hook implementations.
  */
 
+use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -30,4 +35,83 @@ function gesso_theme_suggestions_views_view_unformatted_alter(array &$suggestion
   $suggestions[] = 'views_view_unformatted__' . $view->id();
   $suggestions[] = 'views_view_unformatted__' . $view->current_display;
   $suggestions[] = 'views_view_unformatted__' . $view->id() . '__' . $view->current_display;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Borrowed from: https://www.codimth.com/blog/web/drupal/how-filter-content-year-views-drupal-8
+  if (isset($form['#id']) && in_array($form['#id'], [
+    'views-exposed-form-landing-pages-events-archive',
+    'views-exposed-form-landing-pages-news-archive',
+  ]
+  )) {
+
+    $node_type = '';
+    switch ($form['#id']) {
+      case 'views-exposed-form-landing-pages-events-archive':
+        $node_type = 'event';
+        break;
+      case 'views-exposed-form-landing-pages-news-archive':
+        $node_type = 'news_article';
+        break;
+    }
+
+    $options = [];
+    if (empty($options) && $node_type !== '') {
+      $cid = "node:{$node_type}:year";
+      $data = \Drupal::cache()->get($cid);
+      if (!$data) {
+        $options = [];
+        $options[''] = t('Show All');
+        $query = \Drupal::entityQuery('node');
+        $query->condition('type', $node_type)
+          ->condition('status', 1)
+          ->sort('created', 'ASC');
+        $result = $query->execute();
+        if ($result) {
+          $nodes = Node::loadMultiple($result);
+          foreach ($nodes as $node) {
+            if ($node_type == 'event') {
+              $date = $node->field_datetime_range->value;
+              $date = date('Y-m-d H:i:s', strtotime($date));
+            }
+            else {
+              $date = $node->getCreatedTime();
+              $date = date('Y-m-d H:i:s', $date);
+            }
+
+            if ($date) {
+              $date = new DrupalDateTime($date, new DateTimeZone('UTC'));
+              $year = $date->format('Y');
+              if (!isset($options[$year])) {
+                $options[$year] = $year;
+              }
+            }
+          }
+        }
+
+        $cache_tags = ["node:{$node_type}:year", "node_list:{$node_type}"];
+        \Drupal::cache()->set($cid, $options, CacheBackendInterface::CACHE_PERMANENT, $cache_tags);
+      }
+      else {
+        $options = $data->data;
+      }
+    }
+
+    if ($node_type == 'event') {
+      $form['event_archive_year'] = [
+        '#type' => 'select',
+        '#options' => $options,
+      ];
+    }
+    else {
+      $form['created'] = [
+        '#type' => 'select',
+        '#options' => $options,
+      ];
+    }
+
+  }
 }

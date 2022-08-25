@@ -24,6 +24,11 @@ accordion:
     - gesso/common
     - core/drupal
 
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+
 animated_icon:
   css:
     theme:
@@ -119,6 +124,13 @@ icon_card:
     - gesso/common
     - core/drupal
 
+inverse_nav:
+  css:
+    theme:
+      dist/css/inverse-nav.css: {}
+  dependencies:
+    - gesso/transparent_nav
+
 lightbox:
   js:
     dist/js/lightbox.es6.js: {}
@@ -137,6 +149,21 @@ mega_menu:
     - gesso/mobile_menu
     - core/drupal
     - core/drupalSettings
+
+media_detail:
+  css:
+    theme:
+      dist/css/media-detail.css: {}
+
+microsite_hero:
+  css:
+    theme:
+      dist/css/microsite-hero.css: {}
+  js:
+    dist/js/microsite-hero.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 mobile_menu:
   css:

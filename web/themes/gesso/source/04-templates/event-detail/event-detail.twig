@@ -63,7 +63,7 @@
           'content': author_content,
           'modifier_classes': 'c-wysiwyg--no-constrain',
         } %}
-          {% include '@components/tag-list/tag-list.twig' with { 'items': related_topics } %}
+          {{ tags }}
         </div>
         <div class="event-detail__col">
           <div class="u-mobile-only">

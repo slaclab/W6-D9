@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tout.field_body
-    - field.field.paragraph.tout.field_button_links
     - field.field.paragraph.tout.field_image
     - field.field.paragraph.tout.field_link
     - field.field.paragraph.tout.field_text
@@ -25,14 +24,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_button_links:
-    type: link_default
-    weight: 4
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_image:
     type: media_library_widget

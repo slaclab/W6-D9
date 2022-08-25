@@ -168,10 +168,10 @@ content:
     weight: 18
     region: content
   field_tags:
-    type: entity_reference_label
+    type: gesso_tag
     label: hidden
     settings:
-      link: true
+      link: '1'
     third_party_settings: {  }
     weight: 9
     region: content

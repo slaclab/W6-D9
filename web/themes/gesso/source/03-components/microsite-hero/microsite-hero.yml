@@ -20,3 +20,4 @@ microsite_hero_caption: |-
   <p><em>Firstname Lastname/SLAC National Accelerator Laboratory</em></p>
   <p><a href="#0">More about lorem ipsum</a></p>
 icon: 'xray'
+microsite_hero_kicker: 'Lorem Ipsum'

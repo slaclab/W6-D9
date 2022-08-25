@@ -85,23 +85,39 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{% if content.field_hero_paragraph is not empty %}
-  {{ content.field_hero_paragraph|field_value }}
+{% if hero_type == 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+{% if content.field_hero_paragraph is not empty %}
+  {{ content.field_hero_paragraph }}
+{% endif %}
 
-{% include '@components/article/article.twig' with {
-  'title': label,
-  'toc_links': toc_list,
-  'author': null,
-  'author_name': null,
-  'date': null,
-  'show_admin_info': show_admin_info,
-  'admin_info': admin_info,
-  'show_footer': false,
-  'rdf_metadata': metadata,
-  'content': content.field_paragraphs,
-} %}
+{% if hero_type != 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endif %}
 
-{% set catch_cache = content|render %}
+{% if is_microsite %}
+  {% include '@components/article/article.twig' with {
+    'title': null,
+    'show_admin_info': show_admin_info,
+    'admin_info': admin_info,
+    'show_footer': false,
+    'rdf_metadata': metadata,
+    'content': content|without('field_hero_paragraph'),
+  } %}
+{% else %}
+  {% include '@components/article/article.twig' with {
+    'title': hero_type == 'image_hero' or hero_type == 'two_column_hero' ? null : label,
+    'toc_links': toc_list,
+    'author': null,
+    'author_name': null,
+    'date': null,
+    'show_admin_info': show_admin_info,
+    'admin_info': admin_info,
+    'show_footer': false,
+    'rdf_metadata': metadata,
+    'content': content.field_paragraphs,
+  } %}
+{% endif %}
+

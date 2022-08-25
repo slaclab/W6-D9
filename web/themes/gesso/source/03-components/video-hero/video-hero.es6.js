@@ -20,7 +20,7 @@ Drupal.behaviors.videoHero = {
         if (event.matches) {
           selectedVideo.insertAdjacentHTML(
             'beforebegin',
-            `<iframe allowfullscreen src="${selectedVideo.dataset.src}"></iframe>`
+            `<iframe allowfullscreen src="${selectedVideo.dataset.src}" title="Ambient video"></iframe>`
           );
           selectedVideo.parentElement.classList.add('has-video');
           const captionText = selectedVideo.innerHTML.trim();

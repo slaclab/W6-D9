@@ -833,8 +833,22 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         exposed_form: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_description: ''

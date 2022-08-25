@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   gap: rem(gesso-spacing(5));
+  margin-bottom: 60px;
+  margin-top: 60px;
   max-width: 100%;
   padding: rem(gesso-spacing(3)) rem(gesso-spacing(8)) rem(gesso-spacing(3))
     rem(gesso-spacing(8));
@@ -24,6 +26,8 @@
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     clip-path: polygon(0% 0%, 100% 0%, calc(100% - 156px) 100%, 0% 100%);
     flex-direction: row;
+    margin-bottom: 90px;
+    margin-top: 90px;
     padding-right: rem(gesso-spacing(4) + 156px);
   }
 
@@ -50,7 +54,10 @@
 }
 
 .c-promo-box__content {
-  a {
+  a,
+  span {
+    display: table;
+    margin-bottom: 1rem;
     text-decoration-color: currentColor;
   }
 }

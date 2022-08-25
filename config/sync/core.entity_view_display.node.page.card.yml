@@ -1,6 +1,6 @@
 uuid: 3eb3b438-1e41-431a-b475-b358dbb768b1
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
@@ -8,10 +8,11 @@ dependencies:
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
+    - field.field.node.page.field_teaser_image
     - field.field.node.page.field_text
     - node.type.page
   module:
-    - entity_reference_revisions
+    - slac_core
     - text
     - user
 _core:
@@ -21,48 +22,54 @@ targetEntityType: node
 bundle: page
 mode: card
 content:
-  field_hero_paragraph:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 102
-    region: content
   field_paragraphs:
-    type: entity_reference_revisions_entity_view
-    label: above
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
     settings:
-      view_mode: default
-      link: ''
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 103
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 106
+    weight: 4
     region: content
   field_teaser:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_hero_paragraph: true
+  field_tags: true

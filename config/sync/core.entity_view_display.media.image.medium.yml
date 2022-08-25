@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.medium
+    - field.field.media.image.field_body
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
@@ -12,7 +13,9 @@ dependencies:
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_paragraphs
     - field.field.media.image.field_tags
+    - field.field.media.image.field_teaser
     - field.field.media.image.field_type
     - image.style.medium
     - media.type.image
@@ -36,6 +39,7 @@ content:
     region: content
 hidden:
   created: true
+  field_body: true
   field_boolean: true
   field_caption: true
   field_credit: true
@@ -43,7 +47,9 @@ hidden:
   field_landing_display: true
   field_link: true
   field_long_text: true
+  field_paragraphs: true
   field_tags: true
+  field_teaser: true
   field_type: true
   name: true
   thumbnail: true

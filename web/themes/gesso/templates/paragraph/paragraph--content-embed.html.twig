@@ -38,15 +38,4 @@
  * @ingroup themeable
  */
 #}
-{% set classes = [
-  'c-paragraph',
-  'c-paragraph--type-' ~ paragraph.bundle|clean_class,
-  view_mode ? 'c-paragraph--view-mode-' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'is-unpublished',
-] %}
-
-{% block paragraph_content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ content }}
-  </div>
-{% endblock %}
+{{ content }}

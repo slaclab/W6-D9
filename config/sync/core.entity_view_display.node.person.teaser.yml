@@ -75,3 +75,4 @@ hidden:
   field_link: true
   field_long_text: true
   field_text: true
+  langcode: true

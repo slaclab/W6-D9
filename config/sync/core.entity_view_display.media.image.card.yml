@@ -107,5 +107,6 @@ hidden:
   field_link: true
   field_paragraphs: true
   field_tags: true
+  langcode: true
   thumbnail: true
   uid: true

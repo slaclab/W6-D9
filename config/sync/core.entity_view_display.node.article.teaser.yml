@@ -43,4 +43,3 @@ hidden:
   field_image: true
   field_tags: true
   langcode: true
-  search_api_excerpt: true

@@ -69,3 +69,4 @@ content:
     region: content
 hidden:
   field_long_text: true
+  langcode: true

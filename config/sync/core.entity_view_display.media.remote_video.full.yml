@@ -118,5 +118,6 @@ hidden:
   field_source_name: true
   field_teaser: true
   field_thumbnail: true
+  langcode: true
   thumbnail: true
   uid: true

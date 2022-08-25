@@ -106,6 +106,7 @@
     'modifier_classes': 'l-section--white',
   } %}
   {{ content.field_paragraphs_1 }}
+  {{ drupal_view('related_content_for_detail_pages', 'news_article_related_stories') }}
 {% endset %}
 
 {% include '@components/article/article.twig' with {

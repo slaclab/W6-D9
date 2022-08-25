@@ -1,9 +1,9 @@
 {% include '@components/overlay-link/overlay-link.twig' with {
-  media: content.field_media_image,
-  content: content
-} %} 
+  image: content.field_media_image|field_value,
+  link: content.field_boolean['#items'].value == 0 ? url : null,
+  title: content.field_long_text|field_value is not empty ? content.field_long_text|field_value : content.name|field_value,
+  kicker: false,
+  label: false,
+} %}
 
-{# {% set catch_cache = content|render %}  #}
-
-
-{# {{content}} #}
+{% set catch_cache = content|render %}

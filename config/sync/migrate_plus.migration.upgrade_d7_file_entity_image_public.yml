@@ -56,7 +56,7 @@ process:
     -
       plugin: get
       source: status
-  field_description:
+  field_caption:
     -
       plugin: get
       source: field_description
@@ -152,9 +152,9 @@ destination:
   plugin: 'entity:media'
 migration_dependencies:
   required:
+  optional:
     - upgrade_d7_file_entity_type_image
     - upgrade_d7_file_entity_source_field_config_image
     - upgrade_d7_field_instance
     - upgrade_d7_file
-  optional:
     - upgrade_d7_user

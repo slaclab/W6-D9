@@ -48,6 +48,7 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
   field_display_name:
     type: string_textfield
     weight: 2

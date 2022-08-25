@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
+    - field.field.node.page.field_teaser_image
     - field.field.node.page.field_text
     - node.type.page
   module:
@@ -49,4 +50,5 @@ content:
 hidden:
   field_tags: true
   field_teaser: true
+  field_teaser_image: true
   links: true

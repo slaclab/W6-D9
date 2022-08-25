@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.event_type.field_content
+    - field.field.taxonomy_term.event_type.field_display_name
+    - field.field.taxonomy_term.event_type.field_lede
     - taxonomy.vocabulary.event_type
   module:
     - paragraphs
@@ -24,7 +26,7 @@ content:
     third_party_settings: {  }
   field_content:
     type: paragraphs
-    weight: 2
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -40,6 +42,22 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_display_name:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_lede:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -50,13 +68,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true

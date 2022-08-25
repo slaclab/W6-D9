@@ -60,6 +60,7 @@ module:
   migmag: 0
   migmag_process: 0
   migrate: 0
+  migrate_devel: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_manifest: 0
@@ -100,6 +101,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0

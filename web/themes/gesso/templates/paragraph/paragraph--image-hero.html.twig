@@ -42,7 +42,9 @@
   {{- hero_caption -}}
   {{- hero_credit -}}
 {% endset %}
+
 {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
+  'modifier_classes': 'transparent_nav',
   'hero_caption': tooltip,
   'hero_kicker': content.field_text|field_value,
   'hero_image': content.field_image|field_value,

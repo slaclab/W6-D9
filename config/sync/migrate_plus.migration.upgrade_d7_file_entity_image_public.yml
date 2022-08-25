@@ -21,8 +21,6 @@ source:
   schemes: public
   destination_media_type_id: image
   source_field_name: field_media_image
-  source_field_migration_id: 'd7_file_entity_source_field_config:image'
-  media_migration_original_id: 'd7_file_entity:image:public'
 process:
   uuid:
     -
@@ -151,7 +149,7 @@ process:
 destination:
   plugin: 'entity:media'
 migration_dependencies:
-  required:
+  required: {  }
   optional:
     - upgrade_d7_file_entity_type_image
     - upgrade_d7_file_entity_source_field_config_image

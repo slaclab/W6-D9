@@ -7,25 +7,20 @@ dependencies:
     - field.field.paragraph.content_embed.field_node
     - paragraphs.paragraphs_type.content_embed
   module:
-    - options
+    - view_mode_select_by_token
 id: paragraph.content_embed.default
 targetEntityType: paragraph
 bundle: content_embed
 mode: default
 content:
-  field_list:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_node:
-    type: entity_reference_label
-    label: above
+    type: view_mode_select_by_token_rendered_with_select
+    label: hidden
     settings:
-      link: true
+      view_mode: '[paragraph:field_list:value]'
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_list: true

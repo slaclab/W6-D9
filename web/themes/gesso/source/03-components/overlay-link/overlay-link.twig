@@ -4,7 +4,7 @@
 ] %}
 
 <a {{ add_attributes({ class: classes, href: link } ) }}>
-  <img src="{{ image.src }}" alt="" loading="lazy" {{ image.height? ' height=' ~ image.height : '' }} {{ image.width ? ' width=' ~ image.width }}>
+  {{ image }}
   {% if label %}
     {% include '@components/kicker/kicker.twig' with {
       kicker_content: label,

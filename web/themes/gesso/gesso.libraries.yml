@@ -24,6 +24,11 @@ accordion:
     - gesso/common
     - core/drupal
 
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+
 animated_icon:
   css:
     theme:
@@ -145,6 +150,11 @@ mega_menu:
     - gesso/mobile_menu
     - core/drupal
     - core/drupalSettings
+
+media_detail:
+  css:
+    theme:
+      dist/css/media-detail.css: {}
 
 mobile_menu:
   css:

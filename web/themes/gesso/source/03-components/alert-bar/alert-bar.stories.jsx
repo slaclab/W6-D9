@@ -4,6 +4,7 @@ import twigTemplate from './alert-bar.twig';
 import data from './alert-bar.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 import './alert-bar.es6';
+import './alert-bar.scss';
 
 const settings = {
   title: 'Components/Alert Bar',

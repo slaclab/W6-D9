@@ -1648,6 +1648,373 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  news_event_landing_page:
+    id: news_event_landing_page
+    display_title: 'News and event landing page (Card)'
+    display_plugin: embed
+    position: 5
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 9
+      cache:
+        type: time
+        options:
+          results_lifespan: 3600
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            news_article: news_article
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        pager: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+      display_description: ''
+      header: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  news_event_landing_page_fn:
+    id: news_event_landing_page_fn
+    display_title: 'News and event landing page (Featured News)'
+    display_plugin: attachment
+    position: 11
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            news_article: news_article
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_featured_value:
+          id: field_featured_value
+          table: node__field_featured
+          field: field_featured_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      displays:
+        news_event_landing_page: news_event_landing_page
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  news_event_landing_page_ne:
+    id: news_event_landing_page_ne
+    display_title: 'News and event landing page (Next Event)'
+    display_plugin: attachment
+    position: 12
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
+      cache:
+        type: time
+        options:
+          results_lifespan: 3600
+          results_lifespan_custom: 0
+          output_lifespan: 3600
+          output_lifespan_custom: 0
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_datetime_range_end_value:
+          id: field_datetime_range_end_value
+          table: node__field_datetime_range
+          field: field_datetime_range_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '[current-date:html_date]'
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_datetime_range_end_value_op
+            label: 'Event Date (field_datetime_range:end_value)'
+            description: ''
+            use_operator: false
+            operator: field_datetime_range_end_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_datetime_range_end_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      displays:
+        news_event_landing_page: news_event_landing_page
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   resource_landing_page:
     id: resource_landing_page
     display_title: 'Resource landing page (Card)'

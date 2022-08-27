@@ -87,6 +87,11 @@
 
   a:not(.c-button) {
     color: inherit;
+    text-decoration-color: currentColor;
+  }
+
+  .c-icon {
+    color: inherit;
   }
 
   .l-section__title .c-arrow-link {

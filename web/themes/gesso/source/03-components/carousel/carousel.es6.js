@@ -21,6 +21,20 @@ Drupal.behaviors.carousel = {
         navContainer: carousel.parentNode.querySelector('.c-carousel__pager'),
         navPosition: 'bottom',
         nextButton: carousel.parentNode.querySelector('.c-carousel__next'),
+        // Adjust the tabindex of the TinySlider next/prev buttons
+        onInit(info) {
+          if (info.controlsContainer) {
+            info.controlsContainer.setAttribute('tabindex', '-1');
+          }
+          info.nextButton.setAttribute('tabindex', '0');
+          info.prevButton.setAttribute('tabindex', '0');
+          Array.from(info.slideItems).forEach((slide, index) => {
+            const links = slide.querySelectorAll('a');
+            links.forEach(link => {
+              link.setAttribute('tabindex', index === info.index ? '0' : '-1');
+            });
+          });
+        },
         prevButton: carousel.parentNode.querySelector('.c-carousel__prev'),
         responsive: {
           1200: {
@@ -33,6 +47,15 @@ Drupal.behaviors.carousel = {
       });
       slider.events.on('newBreakpointEnd', () => {
         slider.refresh();
+      });
+      slider.events.on('indexChanged', () => {
+        const info = slider.getInfo();
+        Array.from(info.slideItems).forEach((slide, index) => {
+          const links = slide.querySelectorAll('a');
+          links.forEach(link => {
+            link.setAttribute('tabindex', index === info.index ? '0' : '-1');
+          });
+        });
       });
       const handleResize = debounce(() => {
         if (slider && slider.refresh) {

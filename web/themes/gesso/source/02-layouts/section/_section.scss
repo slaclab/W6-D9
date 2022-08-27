@@ -85,6 +85,10 @@
 .l-section--dark {
   color: gesso-color(text, on-dark);
 
+  a:not(.c-button) {
+    color: inherit;
+  }
+
   .l-section__title .c-arrow-link {
     @include arrow-link(white);
     color: inherit;

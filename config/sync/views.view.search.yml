@@ -11,6 +11,7 @@ dependencies:
   module:
     - search_api
     - text
+    - views_display_switch
 id: search
 label: Search
 module: views
@@ -923,7 +924,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
@@ -1068,7 +1069,33 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        display_switch:
+          id: display_switch
+          table: views
+          field: display_switch
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_switch
+          empty: false
+          displays:
+            search_grid:
+              enabled: 1
+              label: Grid
+            search_list:
+              enabled: 1
+              label: List
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: true
+          content: '<div class=”result-summary”><a id=”search-filter-link” href=”#”>Filter (@total results)</a></div>'
       footer: {  }
       display_comment: 'Debugging display only. '
       display_extenders: {  }
@@ -1092,27 +1119,6 @@ display:
     display_plugin: page
     position: 2
     display_options:
-      pager:
-        type: full
-        options:
-          offset: 0
-          items_per_page: 12
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
       style:
         type: default
         options:
@@ -1131,7 +1137,7 @@ display:
               news_article: card
               person: card
       defaults:
-        pager: false
+        pager: true
         style: false
         row: false
       display_description: 'Displays search results as a grid of cards.'

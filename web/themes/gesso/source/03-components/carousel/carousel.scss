@@ -11,6 +11,7 @@
 }
 
 .c-carousel__slide {
+  @include focus;
   width: 80vw;
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
@@ -61,6 +62,7 @@
   color: inherit;
   cursor: pointer;
   height: rem(12px);
+  padding: 0;
   width: rem(12px);
 
   &.tns-nav-active {

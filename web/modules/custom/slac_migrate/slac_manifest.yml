@@ -11,13 +11,19 @@
 # files and media
 - upgrade_d7_file
 - upgrade_d7_file_private
-# media image
+# media images
 - upgrade_d7_file_entity_image_public
 #- upgrade_d7_file_entity_image_private
+
+# media: videos
 #- upgrade_d7_file_entity_video_public
 #- upgrade_d7_file_entity_video_vimeo
 #- upgrade_d7_file_entity_video_youtube
+
+# media documents
 #- upgrade_d7_file_entity_document_public
+
+# other media dependencies
 #- upgrade_d7_file_entity_formatter_document
 #- upgrade_d7_file_entity_formatter_image
 #- upgrade_d7_file_entity_formatter_image_private

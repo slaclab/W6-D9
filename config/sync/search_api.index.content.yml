@@ -90,7 +90,7 @@ field_settings:
         - 'entity:media/mid'
         - 'entity:node/nid'
   entity_type:
-    label: 'Entity Type'
+    label: 'Entity type'
     property_path: aggregated_field
     type: string
     configuration:
@@ -99,7 +99,7 @@ field_settings:
         - 'entity:media/bundle'
         - 'entity:node/type'
   field_long_text:
-    label: 'Speaker Bio'
+    label: 'Speaker bio'
     datasource_id: 'entity:node'
     property_path: field_long_text
     type: text
@@ -124,7 +124,7 @@ field_settings:
       module:
         - media
   rendered_item:
-    label: 'Rendered HTML output'
+    label: 'Rendered item'
     property_path: rendered_item
     type: text
     configuration:
@@ -137,8 +137,18 @@ field_settings:
           event: ''
           news_article: search_index
           person: ''
+  sort_date:
+    label: 'Sort date'
+    property_path: aggregated_field
+    type: date
+    configuration:
+      type: last
+      fields:
+        - 'entity:media/created'
+        - 'entity:node/created'
+        - 'entity:node/field_datetime_range'
   speaker_name:
-    label: 'Speaker Name'
+    label: 'Speaker name'
     datasource_id: 'entity:node'
     property_path: field_name
     type: text

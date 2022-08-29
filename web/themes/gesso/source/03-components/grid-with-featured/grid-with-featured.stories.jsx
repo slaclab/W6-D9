@@ -4,6 +4,8 @@ import twigTemplate from './grid-with-featured.twig';
 import data from './grid-with-featured.yml';
 import { PageTitle } from '../page-title/page-title.stories';
 import { EventCard, LargeEventCard } from '../card/card.stories';
+import './grid-with-featured.scss';
+import './grid-with-featured.es6';
 
 const settings = {
   title: 'Components/Grid With Featured',

@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Event card display, for both single day and multi-day card styles.
+ * News article card display.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -67,103 +67,38 @@
  */
 #}
 
-{#
-/**
- * Format of date field as defined in the view_mode is standard HTMl format,
- * for example "2022-08-05T13:59:47-0700". Extract event start and end dates.
- * Assumes that the event field contains both a start_date and end_date, note
- * that both are required in the editing of an event and date order is
- * enforced.
- */
-#}
-{% set event_start_date = content.field_datetime_range.0.start_date["#attributes"]["datetime"] %}
-{% set event_end_date = content.field_datetime_range.0.end_date["#attributes"]["datetime"] %}
+{% set footer %}
+  {{ node.getCreatedTime|format_date('custom', 'F j, Y') }}
+  {% if content.field_estimated_read_time|field_value is not empty %}
+    &nbsp;·&nbsp;
+    {{ content.field_estimated_read_time|field_value }}
+  {% endif %}
+{% endset %}
 
-{#
-/**
- * Calculate the event start and end dates "day of the years" and compare to determine
- * if the event is a single day or multiday event. To account for the edge case of an
- * event spanning a year boundary (Dec. 31 - Jan. 1), check the year first.
- * Multiday event is signalled to the theming layer by passing null for end_date value.
- */
-#}
-{% set multiyear_event = event_start_date|date('y')|number_format != event_end_date|date('y')|number_format  %}
-{% set multiday_event = multiyear_event or event_start_date|date('z')|number_format < event_end_date|date('z')|number_format %}
-
-{#
-/**
- * The Date/Time and Location field (field_override_text) overrides both the composed date line
- * the location line, in which case the 'footer' theme parameter is used, to avoid prefacing
- * the override text with either a calendar or location pin icon.
- */
-#}
-{% set datetime_location_override = content.field_override_text|field_value is not empty %}
-{% set datetime_composed = null %}
-
-{#
-/**
- * If no override, compose the date string using different formats for single- and multiday
- * events. Display the "am" and "pm" for each time in case of event spanning across noon or
- * midnight. Timezone value is passed to template from view mode integral to date range value.
- */
-#}
-{% if datetime_location_override == false %}
-  {% set datetime_composed %}
-    {% if multiday_event == false %}
-      {{ event_start_date|date("l, F j, Y") }}
-      <br>
-      {{- event_start_date|date("g:i a") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("g:i a") }}&nbsp;&nbsp;{{ event_start_date|date("T") -}}
-    {% else %}
-      {{- event_start_date|date("l, F j, Y") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("l, F j, Y") }}
-    {% endif %}
-  {% endset %}
-{% endif %}
-
-{#
-/**
- * Display only the text of the field_link (location) field, but only if the datetime override
- * is not being used.
- */
-#}
-{% set location = null %}
-{% if datetime_location_override == FALSE and content.field_link|field_value is not empty %}
-  {% set location = content.field_link[0]['#title'] %}
-{% endif %}
+{% set kicker %}
+  {% if content.field_source_name|field_value is not empty %}
+    {{ content.field_source_name|field_value }}
+  {% elseif content.field_news_source|field_value is not empty %}
+    {% trans %}VIA{% endtrans %}&nbsp;{{- content.field_news_source|field_value -}}
+  {% endif %}
+{% endset %}
 
 {% set card_content %}
   {% if content.field_teaser|field_value is not null %}
     {{ content.field_teaser|field_value }}
   {% else %}
-    {{ content.field_body }}
+    {{ content.field_paragraphs }}
   {% endif %}
 {% endset %}
 
-{#
-/**
- * If the "Is external event?" field (field_boolean) is set then use the URL of the external link
- * field as the title URL. Otherwise use the node URL. External events will not have detail pages.
- * The external link field is not required, however, so the card title link may have no href.
- */
-#}
 {% include '@components/card/card.twig' with {
-  'is_event': true,
-  'modifier_classes': 'c-card--large',
   'title': label,
-  'url': content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
-  'start_date': {
-    'month': event_start_date|date('M'),
-    'day': event_start_date|date('d')
-  },
-  'end_date': multiday_event == false ? null : {
-    'month': event_end_date|date('M'),
-    'day': event_end_date|date('d')
-  },
-  'event_type': content.field_type|field_value,
-  'kicker': content.field_text|field_value,
-  'footer': datetime_location_override ? content.field_override_text|field_value : null,
-  'event_date': datetime_location_override ? null : datetime_composed,
-  'event_location': location,
-  'media': content.field_image|field_value,
+  'modifier_classes': 'c-card--large',
+  'url': url,
+  'kicker':kicker,
+  'type': content.field_type|field_value,
+  'footer': footer,
+  'media': content.field_teaser_image|field_value,
   'card_content': card_content,
 } %}
 

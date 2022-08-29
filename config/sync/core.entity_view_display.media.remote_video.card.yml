@@ -125,5 +125,6 @@ hidden:
   field_tags: true
   field_teaser: true
   field_transcript: true
+  langcode: true
   thumbnail: true
   uid: true

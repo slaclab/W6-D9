@@ -22,10 +22,11 @@
 
 <div {{ add_attributes({ class: classes }) }}>
   {% include '@layouts/grid/grid.twig' with {
-    num_of_cols: 2,
-    grid_content: top_grid_content
+    'num_of_cols': 2,
+    'grid_content': top_grid_content,
+    'modifier_classes': 'c-grid-with-featured__grid'
   } %}
   {% include '@components/expandable-grid/expandable-grid.twig' with {
-    grid_items: remaining_rows
+    'grid_items': remaining_rows
   } %}
 </div>

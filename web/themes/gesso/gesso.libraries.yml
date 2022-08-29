@@ -94,6 +94,16 @@ event_details:
     theme:
       dist/css/event-details.css: {}
 
+grid_with_featured:
+  css:
+    theme:
+      dist/css/grid-with-featured.css: {}
+  js:
+    dist/js/grid-with-featured.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 hamburger_button:
   css:
     theme:

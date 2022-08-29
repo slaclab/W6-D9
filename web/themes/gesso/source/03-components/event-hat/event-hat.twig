@@ -1,7 +1,7 @@
 {# The event type taxonomy maps to different color styles #}
 {% set type_color = null %}
 {% if event_type is not empty %}
-  {% set type_label = event_type|lower %}
+  {% set type_label = event_type|render|striptags|trim|lower %}
 
   {# Teal/lagunitas (default) #}
   {% if type_label in ['lecture', 'slac on tap'] %}
@@ -28,5 +28,5 @@
 ] %}
 
 <div {{ add_attributes({ class: classes } ) }}>
-  {{ event_type|raw }}
+  {{ event_type }}
 </div>

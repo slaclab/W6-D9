@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.media.field_caption
     - field.storage.media.field_long_text
     - field.storage.node.field_lede
     - field.storage.node.field_long_text
@@ -71,12 +72,20 @@ field_settings:
       fields:
         - 'entity:media/field_body'
         - 'entity:node/field_body'
+  caption:
+    label: Caption
+    datasource_id: 'entity:media'
+    property_path: field_caption
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_caption
   display_name:
     label: 'Media display name'
     datasource_id: 'entity:media'
     property_path: field_long_text
     type: text
-    boost: !!float 2
+    boost: 1.5
     dependencies:
       config:
         - field.storage.media.field_long_text
@@ -119,7 +128,6 @@ field_settings:
     datasource_id: 'entity:media'
     property_path: name
     type: text
-    boost: 1.3
     dependencies:
       module:
         - media
@@ -137,6 +145,14 @@ field_settings:
           event: ''
           news_article: search_index
           person: ''
+  research_area:
+    label: 'Research area'
+    property_path: aggregated_field
+    type: string
+    configuration:
+      type: first
+      fields:
+        - 'entity:node/field_research_area'
   sort_date:
     label: 'Sort date'
     property_path: aggregated_field
@@ -178,6 +194,7 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - image
         - remote_video
     languages:
       default: true

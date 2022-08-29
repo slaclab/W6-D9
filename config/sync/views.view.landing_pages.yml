@@ -1500,8 +1500,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>Stay up to date on our latest scientific advances and research tools.</p>\r\n\r\n<p><a href=\"#\">Research areas</a></p>\r\n<p><a href=\"#\">Media center</a></p>"
-            format: basic_html
+            value: "<div class=\"c-page-title\">\r\n  <h1>News Center</h1>\r\n  <p class=\"c-lede\">Stay up to date on our latest scientific advances and research tools.</p>\r\n  <div class=\"c-form-item c-form-item--select\">\r\n    <label for=\"research-areas\">Research areas</label>\r\n    <select class=\"c-form-item__select\" id=\"research-areas\">\r\n      <option value=\"\">Select</option>\r\n      <option value=\"/news-and-events/news-center/archive\">X-ray & Ultrafast Science</option>\r\n      <option value=\"/news-and-events/news-center/archive\">Physics of the Universe</option>\r\n      <option value=\"/news-and-events/news-center/archive\">Advanced Accelerators</option>\r\n      <option value=\"/news-and-events/news-center/archive\">Science of Life</option>\r\n      <option value=\"/news-and-events/news-center/archive\">Emerging Technologies</option>\r\n      <option value=\"/news-and-events/news-center/archive\">Energy Science</option>\r\n    </select>\r\n  </div>\r\n  <p><a href=\"#\" class=\"c-button c-button--outline c-button--chevron\">Media resources</a></p>\r\n</div>"
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
@@ -1645,9 +1645,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
         cache: false
         pager: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false

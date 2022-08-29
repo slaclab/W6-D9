@@ -11,3 +11,15 @@
     }
   }
 }
+
+.c-grid-with-featured__controls {
+  @include breakpoint-min(760px) {
+    align-items: flex-end;
+    display: flex;
+    gap: rem(gesso-spacing(2));
+
+    > * {
+      margin-bottom: 0;
+    }
+  }
+}

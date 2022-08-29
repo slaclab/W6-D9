@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.large_card
     - core.entity_view_mode.node.teaser
     - node.type.event
     - node.type.media_mention
@@ -421,8 +422,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"#\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"#\">Events archive</a></p>"
-            format: basic_html
+            value: "<div class=\"c-page-title\">\r\n  <h1>Events</h1>\r\n<p class=\"c-lede\">SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Events archive</a></p>\r\n</div>"
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
@@ -609,9 +610,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
         cache: false
         pager: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false

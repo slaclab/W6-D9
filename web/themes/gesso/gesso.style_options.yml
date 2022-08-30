@@ -91,6 +91,15 @@ options:
       - label: 'Transparent'
       - label: 'White'
         class: 'c-wysiwyg--with-background'
+  fifty_fifty_slide:
+    plugin: css_class
+    label: 'Slide in'
+    options:
+      - label: 'None'
+      - label: 'Left Column'
+        class: 'c-fifty-fifty--left'
+      - label: 'Right Column'
+        class: 'c-fifty-fifty--right'
 
 contexts:
   paragraphs:
@@ -111,3 +120,6 @@ contexts:
     wysiwyg:
       options:
         wysiwyg_bg: true
+    fifty_fifty:
+      options:
+        fifty_fifty_slide: true

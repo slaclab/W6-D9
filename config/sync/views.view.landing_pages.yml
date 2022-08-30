@@ -1500,8 +1500,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>Stay up to date on our latest scientific advances and research tools.</p>\r\n\r\n<p><a href=\"#\">Research areas</a></p>\r\n<p><a href=\"#\">Media center</a></p>"
-            format: basic_html
+            value: "<div class=\"c-page-title\">\r\n  <h1>News Center</h1>\r\n  <p class=\"c-lede\">Stay up to date on our latest scientific advances and research tools.</p>\r\n  <div class=\"c-grid-with-featured__controls\">\r\n  <div class=\"c-form-item c-form-item--select is-inline\">\r\n    <label for=\"research-areas\" class=\"c-form-item__label\">Research areas</label>\r\n    <select class=\"c-form-item__select c-form-item__select--small js-jump-menu\" id=\"research-areas\">\r\n      <option value=\"\">Select</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=4&news_type=All\">X-ray & Ultrafast Science</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=5&news_type=All\">Physics of the Universe</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=6&news_type=All\">Advanced Accelerators</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=7&news_type=All\">Science of Life</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=8&news_type=All\">Emerging Technologies</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=9&news_type=All\">Energy Science</option>\r\n    </select>\r\n  </div>\r\n  <a href=\"#\" class=\"c-button c-button--outline c-button--chevron\">Media resources</a>\r\n</div>\r\n</div>"
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
@@ -1645,9 +1645,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
         cache: false
         pager: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false

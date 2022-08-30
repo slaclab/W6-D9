@@ -15,6 +15,7 @@ use Drupal\node\Entity\Node;
  */
 function gesso_preprocess_views_view(array &$variables) {
   $variables['path'] = $variables['view']->getRequest()->getPathInfo();
+  $variables['is_dark'] = !empty($variables['view_array']['#is_dark']);
 }
 
 /**

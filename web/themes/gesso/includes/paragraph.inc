@@ -13,6 +13,7 @@ function gesso_preprocess_paragraph(&$vars) {
   $paragraph = $vars['paragraph'];
   $parent = $paragraph->getParentEntity();
   $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
+  $vars['is_dark'] = !empty($vars['elements']['#is_dark']);
 }
 
 /**
@@ -21,23 +22,34 @@ function gesso_preprocess_paragraph(&$vars) {
 function gesso_preprocess_paragraph__section(&$vars) {
   $paragraph = $vars['paragraph'];
   $content = $vars['content'];
-  // For sections with dark backgrounds, override the default field settings
-  // and use the secondary style for buttons.
-  if (!empty($content['field_button_links']) &&
-    !empty($content['field_button_links'][0]) &&
-    !empty($vars['attributes']['class'])
-  ) {
-    foreach($vars['attributes']['class'] as $class) {
+  if (!empty($vars['attributes']['class'])) {
+    foreach ($vars['attributes']['class'] as $class) {
       if (str_contains($class, 'l-section--dark')) {
-        $linkIndexes = \Drupal\Core\Render\Element::children($content['field_button_links']);
-        foreach ($linkIndexes as $i) {
-          $link_classes = $content['field_button_links'][$i]['#options']['attributes']['class'];
-          foreach ($link_classes as $key => $link_class) {
-            if ($link_class == 'c-button--primary') {
-              $link_classes[$key] = 'c-button--secondary';
+        // For sections with dark backgrounds, override the default field settings
+        // and use the secondary style for buttons.
+        if (!empty($content['field_button_links']) &&
+          !empty($content['field_button_links'][0])
+        ) {
+          $linkIndexes = \Drupal\Core\Render\Element::children($content['field_button_links']);
+          foreach ($linkIndexes as $i) {
+            $link_classes = $content['field_button_links'][$i]['#options']['attributes']['class'];
+            foreach ($link_classes as $key => $link_class) {
+              if ($link_class == 'c-button--primary') {
+                $link_classes[$key] = 'c-button--secondary';
+              }
             }
+            $content['field_button_links'][$i]['#options']['attributes']['class'] = $link_classes;
           }
-          $content['field_button_links'][$i]['#options']['attributes']['class'] = $link_classes;
+        }
+        // Set a variable noting this is a dark section, so we can make other theming
+        // adjustments as needed.
+        if (!empty($content['field_paragraphs']) &&
+          !empty($content['field_paragraphs'][0])
+        ) {
+          $paragraphIndexes = \Drupal\Core\Render\Element::children($content['field_paragraphs']);
+          foreach ($paragraphIndexes as $p) {
+            $content['field_paragraphs'][$p]['#is_dark'] = TRUE;
+          }
         }
       }
     }
@@ -193,4 +205,8 @@ function gesso_preprocess_paragraph__microsite_hero(&$vars) {
 
   // Set the caption and credit fields from field_image.
   _gesso_set_hero_caption($vars);
+}
+
+function gesso_preprocess_paragraph__embed_view(&$vars) {
+  $vars['content']['field_viewsreference'][0]['contents']['#is_dark'] = $vars['is_dark'];
 }

@@ -207,6 +207,28 @@ function gesso_preprocess_paragraph__microsite_hero(&$vars) {
   _gesso_set_hero_caption($vars);
 }
 
-function gesso_preprocess_paragraph__embed_view(&$vars) {
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__embed_view(array &$vars) {
   $vars['content']['field_viewsreference'][0]['contents']['#is_dark'] = $vars['is_dark'];
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__fifty_fifty(array &$vars) {
+  if (!empty($vars['attributes']) && !empty($vars['attributes']['class'])) {
+    foreach ($vars['attributes']['class'] as $class) {
+      if ($class == 'c-fifty-fifty--left') {
+        $vars['fade'] = 'left';
+        break;
+      } else if ($class == 'c-fifty-fifty--right') {
+        $vars['fade'] = 'right';
+        break;
+      }
+    }
+  } else {
+    $vars['fade'] = 'none';
+  }
 }

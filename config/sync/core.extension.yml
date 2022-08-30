@@ -4,6 +4,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
+  animated_gif: 0
   automated_cron: 0
   better_exposed_filters: 0
   big_pipe: 0
@@ -65,6 +66,7 @@ module:
   migrate_drupal_ui: 0
   migrate_manifest: 0
   migrate_plus: 0
+  migrate_tools: 0
   migrate_upgrade: 0
   mysql: 0
   node: 0

@@ -1764,7 +1764,20 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-page-title\">\r\n  <h1>News & Events</h1>\r\n  <p class=\"c-lede\">Stay up to date on the latest scientific achievements and happenings at the laboratory.</p>\r\n  <p><a href=\"#\" class=\"c-button c-button--chevron\">News Center</a><a href=\"#\" class=\"c-button c-button--chevron\">Events</a></p>\r\n</div>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1883,7 +1896,21 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -1916,6 +1943,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"#0\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"https://picsum.photos/id/1015/800/500\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            format: full_html
+          tokenize: false
       filters:
         status:
           id: status
@@ -1980,11 +2021,11 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: '='
+          operator: '>='
           value:
             min: ''
             max: ''
-            value: '[current-date:html_date]'
+            value: now
             type: date
           group: 1
           exposed: true
@@ -2028,6 +2069,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         cache: false
         filters: false
         filter_groups: false
@@ -2035,6 +2077,7 @@ display:
       display_extenders: {  }
       displays:
         news_event_landing_page: news_event_landing_page
+      attachment_position: after
     cache_metadata:
       max-age: -1
       contexts:

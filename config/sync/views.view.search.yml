@@ -1058,7 +1058,7 @@ display:
           expose:
             label: Relevance
             field_identifier: relevance
-          exposed: false
+          exposed: true
         sort_date:
           id: sort_date
           table: search_api_index_content
@@ -1072,6 +1072,19 @@ display:
             label: 'Sort date'
             field_identifier: date
           exposed: true
+        sort_date_1:
+          id: sort_date_1
+          table: search_api_index_content
+          field: sort_date
+          relationship: none
+          group_type: group
+          admin_label: 'Sort date (DESC) - Default sort'
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         search_api_fulltext:
@@ -1144,7 +1157,7 @@ display:
         options:
           bypass_access: false
           skip_access: true
-          preserve_facet_query_args: false
+          preserve_facet_query_args: true
           query_tags: {  }
       relationships: {  }
       header:

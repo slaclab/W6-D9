@@ -1,9 +1,9 @@
-uuid: 74c54b42-694a-4ca8-a384-1e215e549793
+uuid: 9e25c4c8-7788-4603-9ee5-610f54ac5fdc
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.url_only
+    - core.entity_view_mode.media.search_index
     - field.field.media.image.field_body
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
@@ -18,20 +18,20 @@ dependencies:
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
-    - image.style.video_hero
     - media.type.image
   module:
-    - image
-id: media.image.url_only
+    - entity_reference_revisions
+id: media.image.search_index
 targetEntityType: media
 bundle: image
-mode: url_only
+mode: search_index
 content:
-  field_media_image:
-    type: image_url
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      image_style: video_hero
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 0
     region: content
@@ -45,7 +45,7 @@ hidden:
   field_landing_display: true
   field_link: true
   field_long_text: true
-  field_paragraphs: true
+  field_media_image: true
   field_research_area: true
   field_tags: true
   field_teaser: true

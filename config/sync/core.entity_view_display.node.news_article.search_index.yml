@@ -25,7 +25,6 @@ dependencies:
     - node.type.news_article
   module:
     - entity_reference_revisions
-    - text
     - user
 id: node.news_article.search_index
 targetEntityType: node
@@ -38,7 +37,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   field_bio_related_content:
     type: entity_reference_label
@@ -46,15 +45,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_news_source:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -65,20 +56,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_source_name:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_text:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
 hidden:
   field_boolean: true
@@ -86,9 +70,11 @@ hidden:
   field_featured: true
   field_hero_paragraph: true
   field_lede: true
+  field_news_source: true
   field_paragraphs_1: true
   field_research_area: true
   field_source_link: true
+  field_source_name: true
   field_tags: true
   field_teaser: true
   field_teaser_image: true

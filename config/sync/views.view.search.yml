@@ -1212,6 +1212,7 @@ display:
         options:
           view_modes:
             'entity:media':
+              image: card
               remote_video: card
             'entity:node':
               event: card
@@ -1223,86 +1224,6 @@ display:
         row: false
         header: false
       display_description: 'Displays search results as a grid of cards.'
-      header:
-        display_switch:
-          id: display_switch
-          table: views
-          field: display_switch
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: display_switch
-          empty: false
-          displays:
-            search_grid:
-              enabled: 1
-              label: Grid
-            search_list:
-              enabled: 1
-              label: List
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: true
-          content: '<div class=”result-summary”><a id=”search-filter-link” href=”#”>Filter (@total results)</a></div>'
-      exposed_block: true
-      display_extenders: {  }
-      path: search-grid
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
-        - 'user.node_grants:view'
-      tags:
-        - 'config:facets.facet.entity_type_grid'
-        - 'config:field.storage.media.field_caption'
-        - 'config:field.storage.media.field_long_text'
-        - 'config:field.storage.node.field_lede'
-        - 'config:field.storage.node.field_long_text'
-        - 'config:field.storage.node.field_name'
-        - 'config:search_api.index.content'
-  search_list:
-    id: search_list
-    display_title: 'Search List'
-    display_plugin: page
-    position: 1
-    display_options:
-      access:
-        type: none
-        options: {  }
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: search_api
-        options:
-          view_modes:
-            'entity:media':
-              remote_video: teaser
-            'entity:node':
-              event: teaser
-              news_article: teaser
-              person: teaser
-      defaults:
-        access: false
-        style: false
-        row: false
-        header: false
-      display_description: 'Displays search results as a list of teaser cards.'
       header:
         display_switch:
           id: display_switch
@@ -1344,8 +1265,89 @@ display:
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.entity_type_list'
+        - 'config:facets.facet.entity_type_grid'
         - 'config:facets.facet.research_area_grid'
+        - 'config:field.storage.media.field_caption'
+        - 'config:field.storage.media.field_long_text'
+        - 'config:field.storage.node.field_lede'
+        - 'config:field.storage.node.field_long_text'
+        - 'config:field.storage.node.field_name'
+        - 'config:search_api.index.content'
+  search_list:
+    id: search_list
+    display_title: 'Search List'
+    display_plugin: page
+    position: 1
+    display_options:
+      access:
+        type: none
+        options: {  }
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:media':
+              image: teaser
+              remote_video: teaser
+            'entity:node':
+              event: teaser
+              news_article: teaser
+              person: teaser
+      defaults:
+        access: false
+        style: false
+        row: false
+        header: false
+      display_description: 'Displays search results as a list of teaser cards.'
+      header:
+        display_switch:
+          id: display_switch
+          table: views
+          field: display_switch
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_switch
+          empty: false
+          displays:
+            search_grid:
+              enabled: 1
+              label: Grid
+            search_list:
+              enabled: 1
+              label: List
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: true
+          content: '<div class=”result-summary”><a id=”search-filter-link” href=”#”>Filter (@total results)</a></div>'
+      exposed_block: true
+      display_extenders: {  }
+      path: search-list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:facets.facet.entity_type_list'
         - 'config:facets.facet.research_area_list'
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'

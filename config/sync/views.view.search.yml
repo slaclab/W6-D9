@@ -1264,7 +1264,7 @@ display:
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.entity_type_grid'
+        - 'config:facets.facet.research_area_grid'
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'
         - 'config:field.storage.node.field_lede'
@@ -1344,8 +1344,6 @@ display:
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.entity_type_list'
-        - 'config:facets.facet.research_area_grid'
         - 'config:facets.facet.research_area_list'
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'

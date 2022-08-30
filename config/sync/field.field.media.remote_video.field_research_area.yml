@@ -1,26 +1,26 @@
-uuid: 74cdc23a-f2c5-4851-8e39-b4ffd453f89d
+uuid: c2d20003-4c36-4b49-9d2d-85b03db435f8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_tags
+    - field.storage.media.field_research_area
     - media.type.remote_video
-    - taxonomy.vocabulary.tags
-id: media.remote_video.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.research_area
+id: media.remote_video.field_research_area
+field_name: field_research_area
 entity_type: media
 bundle: remote_video
-label: Tags
+label: 'Research Area'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      research_area: research_area
     sort:
       field: name
       direction: asc

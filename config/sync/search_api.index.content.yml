@@ -154,6 +154,7 @@ field_settings:
     configuration:
       type: first
       fields:
+        - 'entity:media/field_research_area'
         - 'entity:node/field_research_area'
   sort_date:
     label: 'Sort date'

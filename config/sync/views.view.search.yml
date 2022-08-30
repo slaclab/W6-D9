@@ -11,6 +11,7 @@ dependencies:
     - search_api.index.content
   module:
     - search_api
+    - slac_core
     - text
     - views_display_switch
 id: search
@@ -1264,6 +1265,16 @@ display:
           plugin_id: result
           empty: true
           content: '<div class=”result-summary”><a id=”search-filter-link” href=”#”>Filter (@total results)</a></div>'
+        area_facet_list:
+          id: area_facet_list
+          table: views
+          field: area_facet_list
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: area_facet_list
+          empty: false
+          reset_link: 1
       exposed_block: true
       display_extenders: {  }
       path: search
@@ -1346,6 +1357,17 @@ display:
           plugin_id: result
           empty: true
           content: '<div class=”result-summary”><a id=”search-filter-link” href=”#”>Filter (@total results)</a></div>'
+        area_facet_list:
+          id: area_facet_list
+          table: views
+          field: area_facet_list
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: area_facet_list
+          empty: false
+          reset_link: 1
+          facet_display: facet_form
       exposed_block: true
       display_extenders: {  }
       path: search-list

@@ -1,0 +1,121 @@
+<?php
+
+namespace Drupal\slac_core\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\slac_core\Services\SlacSearch;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+
+/**
+ * Defines a form to be used for search term input with redirection to a search page.
+ */
+class FacetSummaryChecklist extends FormBase {
+
+  /**
+   * The Slac Search service.
+   *
+   * @var \Drupal\slac_core\SlacSearch
+   */
+  protected $slacSearchService;
+
+  /**
+   * Constructs a new slac search service.
+   *
+   * @param SlacSearch $slac_search_service
+   *   Search services.
+   */
+  public function __construct(SlacSearch $slac_search_service) {
+    $this->slacSearchService = $slac_search_service;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('slac_core.slac_search'),
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'facet_summary_checklist';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state, array $configuration = NULL) {
+    // Retrieve the configuration settings passed in from the block creator.
+    $form_state->set('configuration', $configuration);
+
+    $form['facet_list'] = [
+      '#type' => 'container',
+      '#attributes' => [ 'class' => [ 'facet-checkbox-list', 'container-inline' ] ],
+    ];
+
+    foreach ($configuration['facets'] as $facet_str) {
+      // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
+      // content labels.
+      $facet_components = explode(':', $facet_str);
+
+      switch ($facet_components[0]) {
+        // Entity type.
+        case 'type':
+          $facet_label = $this->slacSearchService->convertEntityTypeFacetLabel($facet_components[1]);
+          break;
+        // Research area (or other taxonomy, facet is vocabulary neutral).
+        case 'topic':
+          // If a number, then we know this is a taxonomy ID.
+          if (is_numeric($facet_components[1])) {
+            $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);
+          }
+          else {
+            $facet_label = $facet_components[1];
+          }
+          break;
+        // Unknown, just output the raw string.
+        default:
+          $facet_label = $facet_components[1];
+      }
+
+      // Create an inline checkbox.
+      $form['facet_list'][$facet_components[1]] = [
+        '#type' => 'checkbox',
+        '#title' => $facet_label,
+        '#default_value' => TRUE,
+        '#attributes' => [
+          'class' => [ 'facet-summary-checkbox', 'inline' ],
+          'facet-query-key' => 'f',
+          'facet-key' => $facet_components[0],
+          'facet-value' => $facet_components[1],
+          'aria-label' => 'Facets',
+        ],
+      ];
+    }
+
+    // Add a reset link if more than 1 facet was included in the list.
+    if (!empty($configuration['facets']) && count($configuration['facets']) >= 1 && $configuration['reset_link']) {
+      $form['reset'] = [
+        '#type'  => 'markup',
+        '#markup' => '<a href="JavaScript:void(0)" class="button button--small button--secondary" id="facet-list-reset-link">' . $this->t('Clear All Filters') . '</a>',
+      ];
+    }
+
+    // Attach the JS to make this work.
+    $form['#attached']['library'][] = 'slac_core/slac_search';
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+
+  }
+
+}

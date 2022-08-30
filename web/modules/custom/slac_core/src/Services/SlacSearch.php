@@ -66,6 +66,9 @@ class SlacSearch {
     if ($term = $this->termStorage->load($tid)) {
       return $term->label();
     }
+    else {
+      return '';
+    }
   }
 
 }

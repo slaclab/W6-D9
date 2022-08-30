@@ -91,7 +91,7 @@
   'bio_page_content': content.field_body|field_value,
   'bio_page_content_collapsed': content.field_body_trimmed|field_value,
   'bio_page_quote': content.field_long_text|field_value,
-  'bio_page_buttons': content.field_link,
+  'bio_page_buttons': content.field_links,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'related_content': node.field_boolean.value != '1' ? drupal_view('related_content_for_detail_pages', 'person_related_stories_card') : false

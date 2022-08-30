@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - slac_migrate
-_core:
-  default_config_hash: SRlfusokEiOOJEm8key9yoqE8-RbsbbRIkomSuyHsUs
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null

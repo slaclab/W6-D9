@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - slac_migrate
-_core:
-  default_config_hash: 61dzDkJtn-diD6PrzdP22Evk2HOdmGcZJFUwMuBkFCc
 id: migrate_drupal_7
 label: 'Import from Drupal 7'
 description: 'Migrations originally generated from drush migrate-upgrade --configure-only'

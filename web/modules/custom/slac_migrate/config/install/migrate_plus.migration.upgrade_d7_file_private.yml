@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - slac_migrate
-_core:
-  default_config_hash: dzWztXsLSLpoqs5c3fyJALlNt_bk07xiSQs51CrMa14
 id: upgrade_d7_file_private
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

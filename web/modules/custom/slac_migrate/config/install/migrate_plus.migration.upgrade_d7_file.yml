@@ -1,13 +1,11 @@
-uuid: 1e3f5b67-6411-4aa5-ace9-5371d43cce4b
+uuid: db56308a-2e9e-45d9-915c-d46335ce20a4
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - slac_migrate
-_core:
-  default_config_hash: dzWztXsLSLpoqs5c3fyJALlNt_bk07xiSQs51CrMa14
-id: upgrade_d7_file_private
+id: upgrade_d7_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
 cck_plugin_method: null
@@ -15,12 +13,12 @@ migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: migrate_drupal_7
-label: 'Private files'
+label: 'Public files'
 source:
   plugin: d7_file
-  scheme: private
+  scheme: public
   constants:
-    source_base_path: 'https://www6.slac.stanford.edu/'
+    source_base_path: 'https://www6.slac.stanford.edu'
 process:
   fid:
     -
@@ -37,6 +35,12 @@ process:
       source:
         - constants/source_base_path
         - filepath
+    -
+      plugin: str_replace
+      search: '/sites/www6.slac.stanford.edu/'
+      replace: '/sites/default/'
+    -
+      plugin: urlencode
   uri:
     -
       plugin: file_copy

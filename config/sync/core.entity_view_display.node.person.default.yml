@@ -92,4 +92,3 @@ content:
     region: content
 hidden:
   field_teaser: true
-  langcode: true

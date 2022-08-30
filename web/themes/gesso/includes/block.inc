@@ -24,3 +24,38 @@ function gesso_theme_suggestions_block_alter(array &$suggestions, array $variabl
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function gesso_preprocess_block__facet_block(&$variables) {
+  $facets = [];
+  $total = 0;
+
+  if (!in_array($variables['derivative_plugin_id'], [
+    'entity_type_list',
+    'entity_type_grid',
+    'research_area_list',
+    'research_area_grid',
+  ])) {
+    return;
+  }
+
+  if ($facet_list = current($variables['content'][0])) {
+    foreach($facet_list as $facet_record) {
+      $facets[] = [
+        'id' => $facet_record['raw_value'],
+        'label' => $facet_record['values']['value'],
+        'count' => $facet_record['values']['count'],
+        'active' => $facet_record['values']['active'],
+      ];
+      $total += $facet_record['values']['count'];
+    }
+  }
+
+  $variables['facets'] = $facets;
+  if ($variables['derivative_plugin_id'] == 'entity_type_list') {
+    $variables['facet_total'] = $total;
+  }
+
+}

@@ -58,9 +58,9 @@ class FacetSummaryChecklist extends FormBase {
       '#attributes' => [ 'class' => [ 'facet-checkbox-list', 'container-inline' ] ],
     ];
 
-    foreach ($configuration['facets'] as $facet_str) {
-      // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
-      // content labels.
+    // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
+    // content labels.
+    foreach ($configuration['facets'] as $ix => $facet_str) {
       $facet_components = explode(':', $facet_str);
 
       switch ($facet_components[0]) {
@@ -83,19 +83,27 @@ class FacetSummaryChecklist extends FormBase {
           $facet_label = $facet_components[1];
       }
 
-      // Create an inline checkbox.
-      $form['facet_list'][$facet_components[1]] = [
-        '#type' => 'checkbox',
-        '#title' => $facet_label,
-        '#default_value' => TRUE,
-        '#attributes' => [
-          'class' => [ 'facet-summary-checkbox', 'inline' ],
-          'facet-query-key' => 'f',
-          'facet-key' => $facet_components[0],
-          'facet-value' => $facet_components[1],
-          'aria-label' => 'Facets',
-        ],
-      ];
+      if ($facet_label) {
+        // Create an inline checkbox unless we looked up a facet label through either type or taxonomy
+        // and no associated type or term was found.
+        $form['facet_list'][$facet_components[1]] = [
+          '#type' => 'checkbox',
+          '#title' => $facet_label,
+          '#default_value' => TRUE,
+          '#attributes' => [
+            'class' => [ 'facet-summary-checkbox', 'inline' ],
+            'facet-query-key' => 'f',
+            'facet-key' => $facet_components[0],
+            'facet-value' => $facet_components[1],
+            'aria-label' => 'Facets',
+          ],
+        ];
+      }
+      else {
+        // Strip out the invalid facet from the list. This will prevent presentation of the reset link when
+        // there are only invalid facets remaining.
+        unset($configuration['facets'][$ix]);
+      }
     }
 
     // Add a reset link if more than 1 facet was included in the list.

@@ -17,6 +17,11 @@
   padding: rem(gesso-spacing(3)) rem(gesso-spacing(8)) rem(gesso-spacing(3))
     rem(gesso-spacing(8));
 
+  .l-section & {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
     clip-path: polygon(0% 0%, 100% 0%, calc(100% - 98px) 100%, 0% 100%);
     padding-right: rem(gesso-spacing(4) + 98px);
@@ -29,6 +34,11 @@
     margin-bottom: 90px;
     margin-top: 90px;
     padding-right: rem(gesso-spacing(4) + 156px);
+
+    .l-section & {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {

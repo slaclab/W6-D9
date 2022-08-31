@@ -158,6 +158,10 @@
     }
   }
 
+  .c-overlap-image--purple.c-overlap-image--dual &:first-of-type {
+    background: gesso-brand(purple, dark);
+  }
+
   .c-overlap-image--red & {
     background: gesso-brand(cardinal, base);
     color: gesso-color(text, on-dark);
@@ -167,6 +171,10 @@
     }
   }
 
+  .c-overlap-image--red.c-overlap-image--dual &:first-of-type {
+    background: gesso-brand(cardinal, base);
+  }
+
   .c-overlap-image--teal & {
     background: gesso-brand(stormy, dark);
     color: gesso-color(text, on-dark);
@@ -174,6 +182,10 @@
     h2 a {
       color: inherit;
     }
+  }
+
+  .c-overlap-image--teal.c-overlap-image--dual &:first-of-type {
+    background: gesso-brand(stormy, dark);
   }
 }
 

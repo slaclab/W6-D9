@@ -232,3 +232,35 @@ function gesso_preprocess_paragraph__fifty_fifty(array &$vars) {
     $vars['fade'] = 'none';
   }
 }
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__overlap_image(array &$vars) {
+  $paragraph = $vars['paragraph'];
+  // Get the media item.
+  $media_id = $paragraph->field_image->target_id;
+  if ($media_id) {
+    $media = \Drupal\media\Entity\Media::load($media_id);
+    // Get the image.
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $image */
+    $image_field = $media->field_media_image->first();
+    // Extract the URL and the alt text. We do this rather than rendering
+    // the image normally because it needs to be a background image when
+    // the parallax effect is used.
+    $vars['image_alt'] = $image_field->alt;
+    $image = \Drupal\file\Entity\File::load($image_field->target_id);
+    if ($image) {
+      $image_style = \Drupal\image\Entity\ImageStyle::load('scale_extra_large');
+      $vars['image_url'] = $image_style->buildUrl($image->getFileUri());
+    }
+  }
+  if (!empty($vars['attributes']['class'])) {
+    foreach($vars['attributes']['class'] as $class) {
+      if (in_array($class, ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'center-left', 'center-right'])) {
+        $vars['position'] = $class;
+        break;
+      }
+    }
+  }
+}

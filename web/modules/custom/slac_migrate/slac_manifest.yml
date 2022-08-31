@@ -1,6 +1,6 @@
 # users
-- upgrade_d7_user_flood
-- upgrade_d7_user_mail
+# - upgrade_d7_user_flood
+# - upgrade_d7_user_mail
 - upgrade_d7_user_role
 #- upgrade_user_picture_field
 #- upgrade_user_picture_field_instance
@@ -17,11 +17,11 @@
 
 # media: videos
 #- upgrade_d7_file_entity_video_public
-#- upgrade_d7_file_entity_video_vimeo
-#- upgrade_d7_file_entity_video_youtube
+- upgrade_d7_file_entity_video_vimeo
+- upgrade_d7_file_entity_video_youtube
 
 # media documents
-#- upgrade_d7_file_entity_document_public
+- upgrade_d7_file_entity_document_public
 
 # other media dependencies
 #- upgrade_d7_file_entity_formatter_document

@@ -7,12 +7,14 @@ dependencies:
     - node.type.news_collection
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout_box
-    - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.embed_block
     - paragraphs.paragraphs_type.embed_full_html_
+    - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.extra_large_card
     - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.fifty_fifty_staggered
     - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.microsite_navigation_marker
     - paragraphs.paragraphs_type.overlap_image
     - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
@@ -39,12 +41,14 @@ settings:
     target_bundles:
       accordion: accordion
       callout_box: callout_box
-      content_embed: content_embed
       embed_block: embed_block
       embed_full_html_: embed_full_html_
+      embed_view: embed_view
       extra_large_card: extra_large_card
       fifty_fifty: fifty_fifty
+      fifty_fifty_staggered: fifty_fifty_staggered
       image_embed: image_embed
+      microsite_navigation_marker: microsite_navigation_marker
       overlap_image: overlap_image
       promo_box: promo_box
       quote: quote
@@ -78,7 +82,7 @@ settings:
         enabled: false
       content_embed:
         weight: 43
-        enabled: true
+        enabled: false
       embed_block:
         weight: 44
         enabled: true
@@ -87,7 +91,7 @@ settings:
         enabled: true
       embed_view:
         weight: 46
-        enabled: false
+        enabled: true
       extra_large_card:
         weight: 47
         enabled: true
@@ -96,7 +100,7 @@ settings:
         enabled: true
       fifty_fifty_staggered:
         weight: 49
-        enabled: false
+        enabled: true
       image_carousel:
         weight: 50
         enabled: false
@@ -114,7 +118,7 @@ settings:
         enabled: false
       microsite_navigation_marker:
         weight: 55
-        enabled: false
+        enabled: true
       overlap_image:
         weight: 56
         enabled: true

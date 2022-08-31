@@ -1,6 +1,7 @@
 @use '00-config' as *;
 
-.c-wysiwyg {
+.c-wysiwyg,
+.ck-content {
   @include display-text-style(body);
   @include layout-constrain(gesso-constrain(sm));
 
@@ -16,7 +17,8 @@
   }
 }
 
-.c-wysiwyg--no-constrain {
+.c-wysiwyg--no-constrain,
+.ck-content {
   margin-left: 0;
   margin-right: 0;
   max-width: none;

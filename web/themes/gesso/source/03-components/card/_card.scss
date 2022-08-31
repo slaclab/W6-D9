@@ -225,9 +225,15 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card--teaser {
+  @include layout-constrain(rem(gesso-constrain(teaser)), 0, 0);
+
   @include breakpoint(gesso-breakpoint(tablet)) {
     flex-direction: row;
     flex-wrap: nowrap;
+
+    + .c-card--teaser {
+      margin-top: rem(gesso-get-map(gutter-width));
+    }
 
     .c-card__media {
       aspect-ratio: 1;

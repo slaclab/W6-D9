@@ -6,9 +6,11 @@ dependencies:
     - field.field.paragraph.promo_box.field_button_link
     - field.field.paragraph.promo_box.field_image
     - field.field.paragraph.promo_box.field_link
+    - field.field.paragraph.promo_box.field_links
     - field.field.paragraph.promo_box.field_text
     - paragraphs.paragraphs_type.promo_box
   module:
+    - gesso_helper
     - link
 id: paragraph.promo_box.default
 targetEntityType: paragraph
@@ -16,28 +18,32 @@ bundle: promo_box
 mode: default
 content:
   field_button_link:
-    type: link
-    label: above
+    type: gesso_helper_gesso_button
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Outline
+      button_icon: None
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: medium
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
   field_link:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -47,9 +53,21 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

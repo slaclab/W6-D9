@@ -1,0 +1,54 @@
+uuid: cf380b98-7652-4097-a4c1-b1d0282639c0
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_block_no_title
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Content'
+migration_group: migrate_drupal_7
+label: 'Field Collections (Block no title)'
+source:
+  plugin: d7_field_collection_item
+  field_name: field_block_no_title
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_block_no_title_body:
+    -
+      plugin: get
+      source: field_block_no_title_body
+    -
+      plugin: media_wysiwyg_filter
+  field_block_no_title_title:
+    -
+      plugin: get
+      source: field_block_no_title_title
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: block_no_title
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

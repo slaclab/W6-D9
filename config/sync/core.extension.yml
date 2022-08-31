@@ -4,6 +4,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
+  animated_gif: 0
   automated_cron: 0
   better_exposed_filters: 0
   big_pipe: 0
@@ -24,9 +25,11 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  duration_field: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  estimated_read_time: 0
   field: 0
   field_group: 0
   field_group_migrate: 0
@@ -50,15 +53,20 @@ module:
   lottiefiles_field: 0
   media: 0
   media_library: 0
+  media_migration: 0
   menu_block: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  migmag: 0
+  migmag_process: 0
   migrate: 0
+  migrate_devel: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_manifest: 0
   migrate_plus: 0
+  migrate_tools: 0
   migrate_upgrade: 0
   mysql: 0
   node: 0
@@ -80,6 +88,8 @@ module:
   slac_core: 0
   slac_migrate: 0
   slac_yaml_content: 0
+  smart_sql_idmap: 0
+  smart_trim: 0
   style_options: 0
   svg_image_field: 0
   system: 0
@@ -93,6 +103,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
   views_ui: 0

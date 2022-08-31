@@ -1,0 +1,10 @@
+{% include '@components/page-title/page-title.twig' with {
+  page_title: drupal_token('current-page:title'),
+  lede: content.field_body|field_value,
+  kicker: content.field_text|field_value,
+  rss_url: content.field_button_link|field_value,
+  sidebar_content: content.field_paragraph|field_value,
+  has_constrain: true,
+} %}
+
+{% set catch_cache = content|render %}

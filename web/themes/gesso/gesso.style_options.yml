@@ -59,6 +59,38 @@ options:
       -
         label: 'Large'
         class: 'c-accordion--large'
+  small_card_with_solid_background_bg:
+    plugin: css_class
+    label: 'Card Background Color'
+    options:
+      -
+        label: 'Cardinal'
+        class: 'c-card--cardinal'
+      -
+        label: 'Stormy'
+        class: 'c-card--stormy'
+      -
+        label: 'Sky'
+        class: 'c-card--sky'
+      -
+        label: 'Palo Alto'
+        class: 'c-card--palo-alto'
+  promo_box_transition:
+    plugin: css_class
+    label: 'Transition style'
+    options:
+      -
+        label: 'None'
+      -
+        label: 'Slide in'
+        class: 'u-slide-left'
+  wysiwyg_bg:
+    plugin: css_class
+    label: 'Background color'
+    options:
+      - label: 'Transparent'
+      - label: 'White'
+        class: 'c-wysiwyg--with-background'
 
 contexts:
   paragraphs:
@@ -70,3 +102,12 @@ contexts:
     accordion:
       options:
         accordion_size: true
+    small_card_with_solid_background:
+      options:
+        small_card_with_solid_background_bg: true
+    promo_box:
+      options:
+        promo_box_transition: true
+    wysiwyg:
+      options:
+        wysiwyg_bg: true

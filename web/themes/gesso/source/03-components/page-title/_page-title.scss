@@ -8,6 +8,10 @@
   h1 {
     margin: 0;
   }
+
+  h1 + p {
+    margin-top: 1rem;
+  }
 }
 
 .c-page-title--sidebar .l-constrain {

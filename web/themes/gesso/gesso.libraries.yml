@@ -24,6 +24,11 @@ accordion:
     - gesso/common
     - core/drupal
 
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+
 animated_icon:
   css:
     theme:
@@ -103,7 +108,6 @@ hero_bg_image:
   dependencies:
     - gesso/common
     - core/drupal
-    - gesso/transparent_nav
 
 hero_inline_image:
   css:
@@ -145,6 +149,21 @@ mega_menu:
     - gesso/mobile_menu
     - core/drupal
     - core/drupalSettings
+
+media_detail:
+  css:
+    theme:
+      dist/css/media-detail.css: {}
+
+microsite_hero:
+  css:
+    theme:
+      dist/css/microsite-hero.css: {}
+  js:
+    dist/js/microsite-hero.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 mobile_menu:
   css:

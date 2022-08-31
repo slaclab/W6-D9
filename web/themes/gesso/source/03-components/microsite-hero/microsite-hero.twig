@@ -3,6 +3,9 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
+{{ attach_library('gesso/microsite_hero') }}
+{{ attach_library('gesso/mobile_menu') }}
+
 {% embed '@layouts/header/header.twig' with {
     modifier_classes: 'c-microsite-hero__header',
     has_constrain: true
@@ -38,12 +41,14 @@
 {% endembed %}
 
 <div {{ add_attributes({ class: classes } ) }}>
-  {% include '@components/hero-bg-image/hero-bg-image.twig' with {
-    hero_image: microsite_hero_image,
-    hero_caption: microsite_hero_caption,
-    hero_title: 'Take a tour of SLAC lab',
-    hero_kicker: 'Lorem ipsum',
-    has_overlay: true,
-    icon: icon
+  {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
+    'hero_caption': microsite_hero_caption,
+    'hero_kicker': microsite_hero_kicker,
+    'hero_image': microsite_hero_image,
+    'hero_title': microsite_title_overlay,
+    'has_overlay': true,
+    'icon': icon
   } %}
+    {% block animated_icon %}{{ microsite_lottiefile }}{% endblock %}
+  {% endembed %}
 </div>

@@ -20,7 +20,20 @@
 .c-search__button {
   color: gesso-color(text, on-dark);
 
-  .has-open-menu & {
+  .has-open-menu &,
+  .is-sticky & {
     color: gesso-color(text, link);
+  }
+}
+
+.c-hamburger-button {
+  color: inherit;
+}
+
+.c-hamburger-button__icon {
+  filter: brightness(0) invert(1);
+
+  .is-sticky & {
+    filter: initial;
   }
 }

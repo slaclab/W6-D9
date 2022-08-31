@@ -7,6 +7,7 @@ dependencies:
     - node.type.event
     - node.type.news_article
     - node.type.page
+    - node.type.person
     - paragraphs.paragraphs_type.content_embed
 id: paragraph.content_embed.field_node
 field_name: field_node
@@ -25,6 +26,7 @@ settings:
       page: page
       event: event
       news_article: news_article
+      person: person
     sort:
       field: _none
       direction: ASC

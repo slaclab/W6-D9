@@ -1,5 +1,4 @@
 @use '00-cms-styles/toolbar-menu/toolbar-menu';
-@use 'alert-bar/alert-bar';
 @use 'arrow-link/arrow-link';
 @use 'article/article';
 @use 'article-hero/article-hero';
@@ -61,6 +60,7 @@
 @use 'site-name/site-name';
 @use 'site-slogan/site-slogan';
 @use 'skiplinks/skiplinks';
+@use 'small-captioned-image/small-captioned-image';
 @use 'small-paragraph/small-paragraph';
 @use 'tag/tag';
 @use 'tagline/tagline';

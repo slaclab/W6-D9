@@ -1,7 +1,12 @@
 uuid: db56308a-2e9e-45d9-915c-d46335ce20a4
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: eW71P-SPstSF59UlJmLig5U00HLjIXfXPHroNCFaq9w
 id: upgrade_d7_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -15,7 +20,7 @@ source:
   plugin: d7_file
   scheme: public
   constants:
-    source_base_path: 'https://www6.slac.stanford.edu/'
+    source_base_path: 'https://www6.slac.stanford.edu'
 process:
   fid:
     -
@@ -32,6 +37,10 @@ process:
       source:
         - constants/source_base_path
         - filepath
+    -
+      plugin: str_replace
+      search: /sites/www6.slac.stanford.edu/
+      replace: /sites/default/
     -
       plugin: urlencode
   uri:

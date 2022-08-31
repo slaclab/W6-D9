@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "349591f60122d9c41eed8c2d7c6e46eb",
+    "content-hash": "0e5d12d4078a4c1008eb63a10f8e5465",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2038,6 +2038,54 @@
             }
         },
         {
+            "name": "drupal/animated_gif",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/animated_gif.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/animated_gif-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "0681db53ca550072ba9cd3adc8a340e6b2f608e7"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1660560314",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "StijnStroobants",
+                    "homepage": "https://www.drupal.org/user/1787140"
+                }
+            ],
+            "description": "Allows you to render animated GIFs without image style.",
+            "homepage": "https://www.drupal.org/project/animated_gif",
+            "support": {
+                "source": "https://git.drupalcode.org/project/animated_gif"
+            }
+        },
+        {
             "name": "drupal/better_exposed_filters",
             "version": "5.2.0",
             "source": {
@@ -3085,6 +3133,67 @@
             }
         },
         {
+            "name": "drupal/duration_field",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/duration_field.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/duration_field-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "90d719d57c881fee797acdd0398353ad18716212"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1607303973",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jay Friendly (jaypan)",
+                    "homepage": "https://www.drupal.org/u/jaypan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                }
+            ],
+            "description": "Creates a duration Field API field, that collects a period of time, whether that be hours, minutes, seconds, days, months, years, or any combination of those.",
+            "homepage": "https://drupal.org/project/duration_field",
+            "keywords": [
+                "Drupal",
+                "Duration",
+                "Field",
+                "Field API"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/duration_field",
+                "issues": "https://www.drupal.org/project/issues/duration_field"
+            }
+        },
+        {
             "name": "drupal/entity_reference_revisions",
             "version": "1.9.0",
             "source": {
@@ -3141,6 +3250,52 @@
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_revisions"
+            }
+        },
+        {
+            "name": "drupal/estimated_read_time",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/estimated_read_time.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/estimated_read_time-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "8f2aa443cffbc3b27dd1ea9f9917f753aac1066e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10",
+                "mtownsend/read-time": "^2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1658713241",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Taltavull",
+                    "homepage": "https://www.drupal.org/u/mtalt"
+                }
+            ],
+            "description": "Creates a field that estimates the read time of an entity.",
+            "homepage": "https://drupal.org/project/estimated_read_time",
+            "support": {
+                "source": "https://git.drupalcode.org/project/estimated_read_time",
+                "issues": "https://www.drupal.org/project/issues/estimated_read_time"
             }
         },
         {
@@ -3858,7 +4013,7 @@
             "extra": {
                 "drupal": {
                     "version": "1.0.0",
-                    "datestamp": "1621524309",
+                    "datestamp": "1660594254",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4073,6 +4228,80 @@
             }
         },
         {
+            "name": "drupal/media_migration",
+            "version": "1.0.0-alpha14",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_migration.git",
+                "reference": "8.x-1.0-alpha14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_migration-8.x-1.0-alpha14.zip",
+                "reference": "8.x-1.0-alpha14",
+                "shasum": "d0c3617d4198b915a2eec116a5d8ca0873e03067"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9",
+                "drupal/migmag": "^1.5",
+                "drupal/migmag_process": "*",
+                "drupal/migrate_plus": "^4.2 || ^5",
+                "drupal/smart_sql_idmap": "^1.0-beta1"
+            },
+            "require-dev": {
+                "drupal/entity_embed": "^1",
+                "drupal/linkit": "^5.0.0-beta11 || ^6.0.0-beta2",
+                "drupal/migrate_tools": "^4.1 || ^5",
+                "drupal/migrate_upgrade": "^3",
+                "drush/drush": "^9 || ^10"
+            },
+            "suggest": {
+                "drupal/entity_embed": "Allows entities to be embedded using a text editor.",
+                "drupal/file_entity": "Extends Drupal file entities to be fieldable and viewable.",
+                "drupal/linkit": "Provides an easy interface for internal and external linking with wysiwyg editors.",
+                "drupal/linkit_media_library": "Create links from media library.",
+                "drupal/media_migration_tools": "Media Migration supporting module for Migrate Tools"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha14",
+                    "datestamp": "1652782889",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "huzooka",
+                    "homepage": "https://www.drupal.org/user/281301"
+                },
+                {
+                    "name": "juampynr",
+                    "homepage": "https://www.drupal.org/user/682736"
+                },
+                {
+                    "name": "slv_",
+                    "homepage": "https://www.drupal.org/user/826088"
+                }
+            ],
+            "description": "Provides a Drupal 7 to 8 media migration.",
+            "homepage": "https://www.drupal.org/project/media_migration",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_migration",
+                "issues": "https://www.drupal.org/project/issues/media_migration"
+            }
+        },
+        {
             "name": "drupal/menu_block",
             "version": "1.8.0",
             "source": {
@@ -4273,6 +4502,67 @@
             }
         },
         {
+            "name": "drupal/migmag",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migmag.git",
+                "reference": "1.8.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migmag-1.8.1.zip",
+                "reference": "1.8.1",
+                "shasum": "d944bb896ff84d3df5d5177febacd5b3559955b1"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9 || ^10"
+            },
+            "replace": {
+                "drupal/migmag_callback_upgrade": "self.version",
+                "drupal/migmag_menu_link_migrate": "self.version",
+                "drupal/migmag_process": "self.version",
+                "drupal/migmag_process_lookup_replace": "self.version",
+                "drupal/migmag_rollbackable": "self.version",
+                "drupal/migmag_rollbackable_replace": "self.version"
+            },
+            "require-dev": {
+                "drupal/eme": "^1@alpha",
+                "drupal/migmag_process": "*",
+                "drupal/migmag_rollbackable": "*",
+                "drupal/smart_sql_idmap": "^1.1@beta",
+                "drupal/tecla": "^1@RC",
+                "drush/drush": "^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.8.1",
+                    "datestamp": "1659090450",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "huzooka",
+                    "homepage": "https://www.drupal.org/user/281301"
+                }
+            ],
+            "description": "Toolset and utilities for Drupal migrations.",
+            "homepage": "https://www.drupal.org/project/migmag",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migmag",
+                "issues": "https://www.drupal.org/project/issues/migmag"
+            }
+        },
+        {
             "name": "drupal/migrate_manifest",
             "version": "3.0.2",
             "source": {
@@ -4334,21 +4624,20 @@
         },
         {
             "name": "drupal/migrate_plus",
-            "version": "6.0.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_plus.git",
-                "reference": "6.0.0"
+                "reference": "8.x-5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_plus-6.0.0.zip",
-                "reference": "6.0.0",
-                "shasum": "cbdda92ef6c4d096a673ff391bc061e012433ecf"
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-5.3.zip",
+                "reference": "8.x-5.3",
+                "shasum": "3cf6dde235d7604ee49be2986812c0ee5e2982f6"
             },
             "require": {
-                "drupal/core": ">=9.1",
-                "php": ">=7.4"
+                "drupal/core": "^9.1"
             },
             "require-dev": {
                 "drupal/migrate_example_advanced_setup": "*",
@@ -4361,8 +4650,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.0",
-                    "datestamp": "1650983140",
+                    "version": "8.x-5.3",
+                    "datestamp": "1650658156",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4394,6 +4683,77 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/migrate_plus",
                 "issues": "https://www.drupal.org/project/issues/migrate_plus",
+                "slack": "#migrate"
+            }
+        },
+        {
+            "name": "drupal/migrate_tools",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_tools.git",
+                "reference": "6.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-6.0.0.zip",
+                "reference": "6.0.0",
+                "shasum": "bec5a0e4fbb6ec0face6780c2ab98ffe6096188b"
+            },
+            "require": {
+                "drupal/core": ">=9.1",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "drupal/migrate_plus": ">=5",
+                "drupal/migrate_source_csv": ">=3",
+                "drush/drush": ">=11"
+            },
+            "suggest": {
+                "drupal/migrate_plus": ">=5",
+                "drush/drush": ">=11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "6.0.0",
+                    "datestamp": "1651240616",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Ryan",
+                    "homepage": "https://www.drupal.org/u/mikeryan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Lucas Hedding",
+                    "homepage": "https://www.drupal.org/u/heddn",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Tools to assist in developing and running migrations.",
+            "homepage": "http://drupal.org/project/migrate_tools",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_tools",
+                "issues": "https://www.drupal.org/project/issues/migrate_tools",
                 "slack": "#migrate"
             }
         },
@@ -4647,10 +5007,6 @@
                     "homepage": "https://www.drupal.org/user/514222"
                 },
                 {
-                    "name": "Primsi",
-                    "homepage": "https://www.drupal.org/user/282629"
-                },
-                {
                     "name": "jeroen.b",
                     "homepage": "https://www.drupal.org/user/1853532"
                 },
@@ -4661,6 +5017,10 @@
                 {
                     "name": "miro_dietiker",
                     "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "Primsi",
+                    "homepage": "https://www.drupal.org/user/282629"
                 }
             ],
             "description": "Enables the creation of Paragraphs entities.",
@@ -5259,6 +5619,113 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/sitewide_alert",
                 "issues": "https://www.drupal.org/project/issues/sitewide_alert"
+            }
+        },
+        {
+            "name": "drupal/smart_sql_idmap",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/smart_sql_idmap.git",
+                "reference": "1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/smart_sql_idmap-1.1.0.zip",
+                "reference": "1.1.0",
+                "shasum": "f5e0602fca9a49a2ed3e2901046dc58fbe678926"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.0",
+                    "datestamp": "1658916952",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "huzooka",
+                    "homepage": "https://www.drupal.org/user/281301"
+                }
+            ],
+            "description": "A SQL id map for migrations with long plugin IDs",
+            "homepage": "https://www.drupal.org/project/smart_sql_idmap",
+            "keywords": [
+                "Drupal",
+                "Migration"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/smart_sql_idmap",
+                "issues": "https://www.drupal.org/project/issues/smart_sql_idmap"
+            }
+        },
+        {
+            "name": "drupal/smart_trim",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/smart_trim.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/smart_trim-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "5894aa067fba19a3452ed8ce749f33bd9ae91907"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1589766531",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Casias (markie)",
+                    "homepage": "https://www.drupal.org/u/markie",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "newsignature",
+                    "homepage": "https://www.drupal.org/user/765518"
+                },
+                {
+                    "name": "ultimike",
+                    "homepage": "https://www.drupal.org/user/51132"
+                },
+                {
+                    "name": "volkswagenchick",
+                    "homepage": "https://www.drupal.org/user/3332522"
+                }
+            ],
+            "description": "Provides a more robust alternative to 'summary or trimmed' textfield format.",
+            "homepage": "https://drupal.org/project/smart_trim",
+            "support": {
+                "source": "https://cgit.drupalcode.org/smart_trim",
+                "issues": "https://drupal.org/project/issues/smart_trim"
             }
         },
         {
@@ -7243,6 +7710,71 @@
                 "source": "https://github.com/mkalkbrenner/php-htmldiff/tree/master"
             },
             "time": "2016-07-25T17:07:32+00:00"
+        },
+        {
+            "name": "mtownsend/read-time",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mtownsend5512/read-time.git",
+                "reference": "b43f178095383bda3cdf606c8a288bf8cacf537e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mtownsend5512/read-time/zipball/b43f178095383bda3cdf606c8a288bf8cacf537e",
+                "reference": "b43f178095383bda3cdf606c8a288bf8cacf537e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mtownsend\\ReadTime\\Providers\\ReadTimeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Mtownsend\\ReadTime\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Townsend",
+                    "email": "mtownsend5512@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP package to show users how long it takes to read content.",
+            "keywords": [
+                "Minutes",
+                "article",
+                "blog",
+                "content",
+                "medium",
+                "min",
+                "read",
+                "reading",
+                "time"
+            ],
+            "support": {
+                "issues": "https://github.com/mtownsend5512/read-time/issues",
+                "source": "https://github.com/mtownsend5512/read-time/tree/2.0.0"
+            },
+            "time": "2021-01-11T13:46:58+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -10752,16 +11284,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.15.1",
+            "version": "v2.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4"
+                "reference": "3e43405a9a8b578809426339cc3780e16fba0c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4",
-                "reference": "3b7cedb2f736899a7dbd0ba3d6da335a015f5cc4",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3e43405a9a8b578809426339cc3780e16fba0c52",
+                "reference": "3e43405a9a8b578809426339cc3780e16fba0c52",
                 "shasum": ""
             },
             "require": {
@@ -10816,7 +11348,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v2.15.1"
+                "source": "https://github.com/twigphp/Twig/tree/v2.15.2"
             },
             "funding": [
                 {
@@ -10828,7 +11360,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-17T05:46:24+00:00"
+            "time": "2022-08-12T06:43:37+00:00"
         },
         {
             "name": "typo3/phar-stream-wrapper",
@@ -12423,6 +12955,67 @@
                 "source": "https://github.com/drupal/core-dev/tree/9.4.5"
             },
             "time": "2022-04-14T00:37:13+00:00"
+        },
+        {
+            "name": "drupal/migrate_devel",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_devel.git",
+                "reference": "8.x-2.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_devel-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "8ea8a10d8238c0a52abc7b12d688414e024999c8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "conflict": {
+                "drush/drush": "<9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1593367363",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Derimagia",
+                    "homepage": "https://www.drupal.org/user/819640"
+                },
+                {
+                    "name": "aczietlow",
+                    "homepage": "https://www.drupal.org/user/1616656"
+                },
+                {
+                    "name": "andrewmacpherson",
+                    "homepage": "https://www.drupal.org/user/265648"
+                }
+            ],
+            "description": "Migrate Development Tools",
+            "homepage": "https://www.drupal.org/project/migrate_devel",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_devel",
+                "issues": "https://www.drupal.org/project/issues/migrate_devel"
+            }
         },
         {
             "name": "easyrdf/easyrdf",
@@ -15761,12 +16354,14 @@
         "drupal/inline_entity_form": 5,
         "drupal/libraries": 10,
         "drupal/maxlength": 5,
+        "drupal/media_migration": 15,
         "drupal/rabbit_hole": 10,
         "drupal/rh_media": 10,
         "drupal/style_options": 15,
         "drupal/viewsreference": 10,
         "drupal/yaml_content": 15,
-        "pantheon-upstreams/upstream-configuration": 20
+        "pantheon-upstreams/upstream-configuration": 20,
+        "drupal/migrate_devel": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

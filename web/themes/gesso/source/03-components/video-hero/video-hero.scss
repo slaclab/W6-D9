@@ -46,7 +46,7 @@
   z-index: 5;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
-    left: calc(50% + #{rem(gesso-site-margins(desktop))});
+    left: 50%;
   }
 }
 

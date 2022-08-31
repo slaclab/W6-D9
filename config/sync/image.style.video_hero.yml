@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 name: video_hero
-label: 'Video Hero (600x338)'
+label: 'Video Hero (600x337)'
 effects:
   ba64d003-9765-4034-9583-900d035a046d:
     uuid: ba64d003-9765-4034-9583-900d035a046d
@@ -13,5 +13,5 @@ effects:
     weight: 1
     data:
       width: 600
-      height: 338
+      height: 337
       crop_type: focal_point

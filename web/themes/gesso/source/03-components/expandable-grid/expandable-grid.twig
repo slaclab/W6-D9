@@ -11,23 +11,35 @@
   {% endfor %}
 {% endif %}
 
-{% set grid_content = grid_items[:3]|join('') %}
+{% set grid_content = grid_items[:3] %}
 {% if grid_items|length > 3 %}
-  {% set additional_content = grid_items[3:]|join('') %}
+  {% set additional_content = grid_items[3:] %}
 {% endif %}
+
+{% set collapsed_grid %}
+  {% for content in grid_content %}{{ content|render|raw }}{% endfor %}
+{% endset %}
 
 {% set collapsed_content %}
   {% include '@layouts/grid/grid.twig' with {
-    grid_content: grid_content,
+    grid_content: collapsed_grid,
     num_of_cols: 3
   } %}
 {% endset %}
 
 {% set expanded_content %}
-  {% include '@layouts/grid/grid.twig' with {
-    grid_content: grid_content ~ additional_content,
-    num_of_cols: 3
-  } %}
+  {% if additional_content %}
+    {% set expanded_grid_array =  grid_content|merge(additional_content) %}
+    {% set expanded_grid %}
+      {% for content in expanded_grid_array %}{{ content|render|raw }}{% endfor %}
+    {% endset %}
+    {% include '@layouts/grid/grid.twig' with {
+      grid_content: expanded_grid,
+      num_of_cols: 3
+    } %}
+  {% else %}
+    {{ collapsed_content }}
+  {% endif %}
 {% endset %}
 
 <div {{ add_attributes({ class: classes }) }}>

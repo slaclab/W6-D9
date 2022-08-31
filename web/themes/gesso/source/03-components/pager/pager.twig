@@ -7,11 +7,12 @@
   <nav {{ add_attributes({ 'class': classes, 'aria-label': heading|default('Pagination'), 'role': 'navigation' } )}}>
     <ul
       class="c-pager__items js-pager__items">
-      {# Print previous item if we are not on the first page. #}
+
+      {# Print previous arrow if we are not on the first page. #}
       {% if pager_items.previous %}
         {% set link_label = 'Go to previous page'|t %}
         <li class="c-pager__item c-pager__item--previous">
-          {% if pager_items.previous.active %}
+          {% if pager_items.previous.href %}
             <a class="c-pager__link c-pager__link--previous" href="{{ pager_items.previous.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" rel="prev" {{ pager_items.previous.attributes|without('aria-label', 'href', 'rel', 'title') }}>
               {%- spaceless %}
                 {% include '@components/icon/icon.twig' with {
@@ -41,25 +42,19 @@
         </li>
       {% endif %}
 
+      {# First page. #}
       {% if pager_items.first %}
-        <li class="c-pager__item{{ current == pager_items.first.key ? ' c-pager__item--current' : '' }}">
-          {% if current == pager_items.first.key %}
+        {% set key = pager_items.first.text %}
+        <li class="c-pager__item">
+          {% set link_label = 'Go to page ' ~ key %}
+          <a class="c-pager__link" href="{{ pager_items.first.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ pager_items.first.attributes|without('aria-label', 'href', 'title') }}>
             <span class="u-visually-hidden">
-              {{ 'Currently on page ' ~ current }}
+              {{ 'Page'|t }}
             </span>
-            {{- pager_items.first.key -}}
-          {% else %}
-            {% set link_label = 'Go to page @key'|t({'@key': pager_items.first.key}) %}
-            <a class="c-pager__link" href="{{ item.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ item.attributes|without('aria-label', 'href', 'title') }}>
-              <span class="u-visually-hidden">
-                {{ 'Page'|t }}
-              </span>
-              {{- pager_items.first.key -}}
-            </a>
-          {% endif %}
+            {{- key -}}
+          </a>
         </li>
       {% endif %}
-
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
         <li class="c-pager__item c-pager__item--ellipsis" role="presentation">
@@ -69,8 +64,7 @@
 
       {# Now generate the actual pager piece. #}
       {% for key, item in pager_items.pages %}
-        {% if key != pager_items.first.key and key != pager_items.last.key %}
-
+        {% if item.href != pager_items.first.href and item.href != pager_items.last.href %}
           <li class="c-pager__item{{ current == key ? ' c-pager__item--current' : '' }}">
             {% if current == key %}
               <span class="u-visually-hidden">
@@ -97,30 +91,25 @@
         </li>
       {% endif %}
 
+      {# Last page. #}
       {% if pager_items.last %}
-        <li class="c-pager__item{{ current == pager_items.last.key ? ' c-pager__item--current' : '' }}">
-          {% if current == pager_items.last.key %}
+        {% set key = pager_items.last.text %}
+          <li class="c-pager__item">
+          {% set link_label = 'Go to page ' ~ key %}
+          <a class="c-pager__link" href="{{ pager_items.last.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ pager_items.first.attributes|without('aria-label', 'href', 'title') }}>
             <span class="u-visually-hidden">
-              {{ 'Currently on page'|t }}
+              {{ 'Page'|t }}
             </span>
-            {{- pager_items.last.key -}}
-          {% else %}
-            {% set link_label = 'Go to page ' ~ pager_items.last.key %}
-            <a class="c-pager__link" href="{{ item.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" {{ item.attributes|without('aria-label', 'href', 'title') }}>
-              <span class="u-visually-hidden">
-                {{ 'Page'|t }}
-              </span>
-              {{- pager_items.last.key -}}
-            </a>
-          {% endif %}
-        </li>
+            {{- key -}}
+          </a>
+          </li>
       {% endif %}
 
-      {# Print next item if we are not on the last page. #}
+      {# Print next arrow if we are not on the last page. #}
       {% if pager_items.next %}
         {% set link_label = 'Go to next page'|t %}
         <li class="c-pager__item c-pager__item--next">
-          {% if pager_items.next.active %}
+          {% if pager_items.next.href %}
             <a class="c-pager__link c-pager__link--next" href="{{ pager_items.next.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" rel="next" {{ pager_items.next.attributes|without('aria-label', 'href', 'rel', 'title') }}>
               {%- spaceless %}
                 <span class="u-visually-hidden">

@@ -1,0 +1,91 @@
+uuid: 133e2259-806e-4211-b9f5-562a8be64dc2
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field
+class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
+field_plugin_method: alterFieldMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Field configuration'
+source:
+  plugin: d7_field
+  constants:
+    status: true
+    langcode: und
+  mapMigrationProcessValueToMedia: true
+process:
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+    -
+      plugin: static_map
+      map:
+        file: media
+      bypass: true
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  status:
+    -
+      plugin: get
+      source: constants/status
+  langcode:
+    -
+      plugin: get
+      source: constants/langcode
+  field_name:
+    -
+      plugin: get
+      source: field_name
+  type:
+    -
+      plugin: process_field
+      source: type
+      method: getFieldType
+      map:
+        d7_text:
+          d7_text: d7_text
+        media_image:
+          media_image: media_image
+        taxonomy_term_reference:
+          taxonomy_term_reference: taxonomy_term_reference
+        entityreference:
+          entityreference: entityreference
+        link_field:
+          link_field: link_field
+        list:
+          list: list
+        datetime:
+          datetime: datetime
+        file_entity:
+          file_entity: file_entity
+  cardinality:
+    -
+      plugin: get
+      source: cardinality
+  settings:
+    0:
+      plugin: d7_field_settings
+    media_image:
+      plugin: media_image_field_settings
+    paragraphs:
+      plugin: paragraphs_field_settings
+    file_entity:
+      plugin: file_entity_field_settings
+    field_collection:
+      plugin: field_collection_field_settings
+destination:
+  plugin: 'entity:field_storage_config'
+migration_dependencies:
+  required: {  }
+  optional:
+    - upgrade_d7_field_collection_type
+    - upgrade_d7_paragraphs_type

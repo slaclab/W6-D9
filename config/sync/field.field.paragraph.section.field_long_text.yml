@@ -11,6 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
+      - basic_html
       - restricted_html
 id: paragraph.section.field_long_text
 field_name: field_long_text

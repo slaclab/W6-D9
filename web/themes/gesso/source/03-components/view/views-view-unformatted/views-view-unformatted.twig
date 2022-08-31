@@ -19,7 +19,7 @@
   <{{ title_element ?: 'h3' }} {{ add_attributes({ 'class': title_classes }, 'title_attributes') }}>{{ title }}</{{ title_element ?: 'h3' }}>
 {% endif %}
 
-<div{{ add_attributes({class: classes}) }}>
+<div {{ add_attributes({class: classes}) }}>
   {% for row in rows %}
     {% if hide_row_wrapper %}
       {{ row.content }}

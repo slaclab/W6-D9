@@ -125,7 +125,7 @@ options:
       - label: 'Center Right'
         class: 'center-right'
       - label: 'Bottom Left'
-        class: 'center-left'
+        class: 'bottom-left'
       - label: 'Bottom Right'
         class: 'bottom-right'
   overlap_image_effect:

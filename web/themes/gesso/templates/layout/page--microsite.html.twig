@@ -48,16 +48,10 @@
 {% block site_content %}
   <main id="main" class="c-main" role="main" tabindex="-1">
     {% block main_content %}
-      {% embed '@layouts/section/section.twig' with {
-        has_constrain: false
-      } %}
-        {% block content %}
-          {{ page.preface }}
-          {{ page.status }}
-          {{ page.content }}
-          {{ page.postscript }}
-        {% endblock %}
-      {% endembed %}
+      {{ page.preface }}
+      {{ page.status }}
+      {{ page.content }}
+      {{ page.postscript }}
     {% endblock %}
   </main>
 

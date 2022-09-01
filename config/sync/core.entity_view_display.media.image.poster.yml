@@ -45,14 +45,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  name:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   created: true
   field_body: true
@@ -66,5 +58,6 @@ hidden:
   field_tags: true
   field_teaser: true
   field_type: true
+  name: true
   thumbnail: true
   uid: true

@@ -34,4 +34,12 @@ $form-select-arrow-size: 24px !default;
       display: none;
     }
   }
+
+  .c-form-item__select--small {
+    font-size: rem(gesso-font-size(2));
+    height: auto;
+    line-height: 1.4;
+    padding: rem(gesso-spacing(1)) 3rem rem(gesso-spacing(1))
+      rem(gesso-spacing(1.5));
+  }
 }

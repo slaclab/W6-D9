@@ -51,7 +51,7 @@
       'drawer_trigger_label_expanded': 'Show Less'|t,
       'drawer_trigger_label_collapsed': 'Show More'|t,
       'modifier_classes': 'c-drawer--grid',
-      'trigger_modifier_classes': 'c-button--outline-secondary'
+      'trigger_modifier_classes': is_dark ? 'c-button--outline-secondary' : 'c-button--outline'
     } %}
   {% else %}
     {{ collapsed_content }}

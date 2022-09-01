@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.large_card
     - core.entity_view_mode.node.teaser
     - node.type.event
     - node.type.media_mention
@@ -421,8 +422,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"#\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"#\">Events archive</a></p>"
-            format: basic_html
+            value: "<div class=\"c-page-title\">\r\n  <h1>Events</h1>\r\n<p class=\"c-lede\">SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Events archive</a></p>\r\n</div>"
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
@@ -609,9 +610,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
         cache: false
         pager: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false
@@ -882,6 +897,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            format: full_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -1003,6 +1032,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         cache: false
         pager: false
         sorts: false
@@ -1485,8 +1515,8 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>Stay up to date on our latest scientific advances and research tools.</p>\r\n\r\n<p><a href=\"#\">Research areas</a></p>\r\n<p><a href=\"#\">Media center</a></p>"
-            format: basic_html
+            value: "<div class=\"c-page-title\">\r\n  <h1>News Center</h1>\r\n  <p class=\"c-lede\">Stay up to date on our latest scientific advances and research tools.</p>\r\n  <div class=\"c-grid-with-featured__controls\">\r\n  <div class=\"c-form-item c-form-item--select is-inline\">\r\n    <label for=\"research-areas\" class=\"c-form-item__label\">Research areas</label>\r\n    <select class=\"c-form-item__select c-form-item__select--small js-jump-menu\" id=\"research-areas\">\r\n      <option value=\"\">Select</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=4&news_type=All\">X-ray & Ultrafast Science</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=5&news_type=All\">Physics of the Universe</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=6&news_type=All\">Advanced Accelerators</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=7&news_type=All\">Science of Life</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=8&news_type=All\">Emerging Technologies</option>\r\n      <option value=\"/news-and-events/news-center/archive?created=&news_research_area=9&news_type=All\">Energy Science</option>\r\n    </select>\r\n  </div>\r\n  <a href=\"#\" class=\"c-button c-button--outline c-button--chevron\">Media resources</a>\r\n</div>\r\n</div>"
+            format: full_html
           tokenize: false
       display_extenders: {  }
     cache_metadata:
@@ -1630,9 +1660,23 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
         cache: false
         pager: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false
@@ -1735,7 +1779,20 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-page-title\">\r\n  <h1>News & Events</h1>\r\n  <p class=\"c-lede\">Stay up to date on the latest scientific achievements and happenings at the laboratory.</p>\r\n  <p><a href=\"#\" class=\"c-button c-button--chevron\">News Center</a><a href=\"#\" class=\"c-button c-button--chevron\">Events</a></p>\r\n</div>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1854,7 +1911,21 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_card
       defaults:
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -1887,6 +1958,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            format: full_html
+          tokenize: false
       filters:
         status:
           id: status
@@ -1951,11 +2036,11 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: '='
+          operator: '>='
           value:
             min: ''
             max: ''
-            value: '[current-date:html_date]'
+            value: now
             type: date
           group: 1
           exposed: true
@@ -1999,6 +2084,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         cache: false
         filters: false
         filter_groups: false
@@ -2006,6 +2092,7 @@ display:
       display_extenders: {  }
       displays:
         news_event_landing_page: news_event_landing_page
+      attachment_position: after
     cache_metadata:
       max-age: -1
       contexts:

@@ -91,6 +91,50 @@ options:
       - label: 'Transparent'
       - label: 'White'
         class: 'c-wysiwyg--with-background'
+  fifty_fifty_slide:
+    plugin: css_class
+    label: 'Slide in'
+    options:
+      - label: 'None'
+      - label: 'Left Column'
+        class: 'c-fifty-fifty--left'
+      - label: 'Right Column'
+        class: 'c-fifty-fifty--right'
+  overlap_image_bg:
+    plugin: css_class
+    label: 'Text box color'
+    options:
+      - label: 'White'
+        class: 'c-overlap-image--white'
+      - label: 'Red'
+        class: 'c-overlap-image--red'
+      - label: 'Purple'
+        class: 'c-overlap-image--purple'
+      - label: 'Teal'
+        class: 'c-overlap-image--teal'
+  overlap_image_position:
+    plugin: css_class
+    label: 'Text box position'
+    options:
+      - label: 'Top Left'
+        class: 'top-left'
+      - label: 'Top Right'
+        class: 'top-right'
+      - label: 'Center Left'
+        class: 'center-left'
+      - label: 'Center Right'
+        class: 'center-right'
+      - label: 'Bottom Left'
+        class: 'bottom-left'
+      - label: 'Bottom Right'
+        class: 'bottom-right'
+  overlap_image_effect:
+    plugin: css_class
+    label: 'Effect'
+    options:
+      - label: 'None'
+      - label: 'Parallax'
+        class: 'c-overlap-image--parallax'
 
 contexts:
   paragraphs:
@@ -111,3 +155,11 @@ contexts:
     wysiwyg:
       options:
         wysiwyg_bg: true
+    fifty_fifty:
+      options:
+        fifty_fifty_slide: true
+    overlap_image:
+      options:
+        overlap_image_bg: true
+        overlap_image_position: true
+        overlap_image_effect: true

@@ -1,0 +1,98 @@
+uuid: d76b2db3-5209-4e7e-8a07-bd3c0dd483a1
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_columns
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Columns)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: columns
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_align_columns:
+    -
+      plugin: get
+      source: field_align_columns
+  field_animation:
+    -
+      plugin: get
+      source: field_animation
+  field_animation_setting:
+    -
+      plugin: get
+      source: field_animation_setting
+  field_background:
+    -
+      plugin: get
+      source: field_background
+  field_column_contentp:
+    -
+      plugin: sub_process
+      source: field_column_contentp
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_column_style:
+    -
+      plugin: get
+      source: field_column_style
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+  field_paragraph_width:
+    -
+      plugin: get
+      source: field_paragraph_width
+  field_reverse_order_on_mobile:
+    -
+      plugin: get
+      source: field_reverse_order_on_mobile
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: columns
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

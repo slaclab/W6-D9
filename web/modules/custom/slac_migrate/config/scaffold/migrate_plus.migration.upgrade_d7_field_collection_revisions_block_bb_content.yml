@@ -1,0 +1,95 @@
+uuid: ed2c7e36-f941-4934-b9ea-fd6d4b58ade4
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_revisions_block_bb_content
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Field Collection Revisions (Block bb content)'
+source:
+  plugin: d7_field_collection_item_revision
+  field_name: field_block_bb_content
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Field Collection Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_block_bb_brochures:
+    -
+      plugin: sub_process
+      source: field_block_bb_brochures
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Field Collection Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Field Collection Revisions Content'
+              - 'Field Collection Content'
+            tag_ids:
+              'Field Collection Revisions Content':
+                - revision_id
+              'Field Collection Content':
+                - value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_block_bb_title:
+    -
+      plugin: get
+      source: field_block_bb_title
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: block_bb_content
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_media_collection
+    - upgrade_d7_field_collection_slideshow_btmtxt_slide
+    - upgrade_d7_field_collection_slideshow_txtlr_slide
+    - upgrade_d7_field_collection_block_bb_brochures
+    - upgrade_d7_field_collection_block_bb_content
+    - upgrade_d7_field_collection_block_itl_content
+    - upgrade_d7_field_collection_block_no_title
+    - upgrade_d7_field_collection_homepage_video
+    - upgrade_d7_field_collection_block_bb_brochures
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional: {  }

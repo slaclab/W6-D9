@@ -19,14 +19,19 @@
   <{{ title_element ?: 'h3' }} {{ add_attributes({ 'class': title_classes }, 'title_attributes') }}>{{ title }}</{{ title_element ?: 'h3' }}>
 {% endif %}
 
-<div {{ add_attributes({class: classes}) }}>
+{% set grid_content %}
   {% for row in rows %}
-    {% if hide_row_wrapper %}
-      {{ row.content }}
-    {% else %}
-      <{{ element ?: 'div' }} {{ add_attributes({ 'class': row_classes }, 'row.attributes') }}>
-        {{- row.content -}}
-      </{{ element ?: 'div' }}>
-    {% endif %}
+  {% if hide_row_wrapper %}
+  {{ row.content }}
+  {% else %}
+  <{{ element ?: 'div' }} {{ add_attributes({ 'class': row_classes }, 'row.attributes') }}>
+  {{- row.content -}}
+</{{ element ?: 'div' }}>
+  {% endif %}
   {% endfor %}
-</div>
+{% endset %}
+
+{% include '@layouts/grid/grid.twig' with {
+  'grid_content': grid_content,
+  'num_of_cols': 2
+} %}

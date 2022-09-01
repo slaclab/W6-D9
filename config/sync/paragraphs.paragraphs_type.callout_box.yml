@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: callout_box
-label: 'Callout Box'
+label: 'Call Out Box'
 icon_uuid: null
 icon_default: null
 description: ''

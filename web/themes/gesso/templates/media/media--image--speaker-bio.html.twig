@@ -32,4 +32,5 @@
  */
 #}
 {% extends "media--figure.html.twig" %}
+{% set caption = content|without('field-image') %}
 {% set attributes = attributes.addClass('u-align-right') %}

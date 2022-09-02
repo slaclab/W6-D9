@@ -1,7 +1,12 @@
 uuid: b8a71520-bdc6-4687-88aa-f861cb96d784
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: SRlfusokEiOOJEm8key9yoqE8-RbsbbRIkomSuyHsUs
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null

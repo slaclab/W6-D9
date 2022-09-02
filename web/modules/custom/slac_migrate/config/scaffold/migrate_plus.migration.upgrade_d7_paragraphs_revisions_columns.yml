@@ -1,0 +1,125 @@
+uuid: 13b8a45e-d177-4de8-8679-e0ff2135144e
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_revisions_columns
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs Revisions (Columns)'
+source:
+  plugin: d7_paragraphs_item_revision
+  bundle: columns
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Paragraphs Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_align_columns:
+    -
+      plugin: get
+      source: field_align_columns
+  field_animation:
+    -
+      plugin: get
+      source: field_animation
+  field_animation_setting:
+    -
+      plugin: get
+      source: field_animation_setting
+  field_background:
+    -
+      plugin: get
+      source: field_background
+  field_column_contentp:
+    -
+      plugin: sub_process
+      source: field_column_contentp
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: value
+          -
+            plugin: extract
+            index:
+              - id
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: value
+          -
+            plugin: extract
+            index:
+              - revision_id
+  field_column_style:
+    -
+      plugin: get
+      source: field_column_style
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+  field_paragraph_width:
+    -
+      plugin: get
+      source: field_paragraph_width
+  field_reverse_order_on_mobile:
+    -
+      plugin: get
+      source: field_reverse_order_on_mobile
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: columns
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_blank
+    - upgrade_d7_paragraphs_block
+    - upgrade_d7_paragraphs_blockquote
+    - upgrade_d7_paragraphs_block_cards
+    - upgrade_d7_paragraphs_card
+    - upgrade_d7_paragraphs_card_wrapper
+    - upgrade_d7_paragraphs_columns
+    - upgrade_d7_paragraphs_column_wrapper
+    - upgrade_d7_paragraphs_hero
+    - upgrade_d7_paragraphs_image
+    - upgrade_d7_paragraphs_image_bootstrap
+    - upgrade_d7_paragraphs_simple
+    - upgrade_d7_paragraphs_simple_bootstrap
+    - upgrade_d7_paragraphs_timeline
+    - upgrade_d7_paragraphs_timeline_bundler
+    - upgrade_d7_paragraphs_video
+    - upgrade_d7_paragraphs_video_bootstrap
+    - upgrade_d7_paragraphs_view
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional: {  }

@@ -1,0 +1,44 @@
+uuid: 9e0b5a01-cf19-4bd8-8b2c-eb8b367fe436
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_block
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Block)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: block
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_content:
+    -
+      plugin: get
+      source: field_content
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  field_width:
+    -
+      plugin: get
+      source: field_width
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: block
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

@@ -1,0 +1,79 @@
+uuid: 95453ab9-d774-4e96-90fb-6e0eed544d31
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_file_entity_video_vimeo
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Media Migration'
+  - 'Media Entity'
+migration_group: migrate_drupal_7
+label: 'File Entity migration (Remote video)'
+source:
+  plugin: d7_file_entity_item
+  type: video
+  scheme: vimeo
+  types: video
+  schemes: 'youtube::vimeo'
+  destination_media_type_id: remote_video
+  source_field_name: field_media_oembed_video
+  source_field_migration_id: 'd7_file_entity_source_field_config:remote_video'
+  media_migration_original_id: 'd7_file_entity:video:vimeo'
+process:
+  uuid:
+    -
+      plugin: media_migrate_uuid
+      source: fid
+  mid:
+    -
+      plugin: get
+      source: fid
+  uid:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_user
+      source: uid
+    -
+      plugin: default_value
+      default_value: 1
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  name:
+    -
+      plugin: get
+      source: filename
+  created:
+    -
+      plugin: get
+      source: timestamp
+  status:
+    -
+      plugin: get
+      source: status
+  field_title:
+    -
+      plugin: get
+      source: field_title
+  field_video_description:
+    -
+      plugin: get
+      source: field_video_description
+  field_media_oembed_video/value:
+    -
+      plugin: media_internet_field_value
+      source: uri
+destination:
+  plugin: 'entity:media'
+migration_dependencies:
+  required:
+    - upgrade_d7_file_entity_type_remote_video
+    - upgrade_d7_file_entity_source_field_config_remote_video
+    - upgrade_d7_field_instance
+  optional:
+    - upgrade_d7_user

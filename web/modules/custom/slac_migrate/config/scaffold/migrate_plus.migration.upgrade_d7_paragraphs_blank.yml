@@ -1,0 +1,54 @@
+uuid: f7adb3fe-bc7f-4620-b5cb-41b690ff0828
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_blank
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Blank)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: blank
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_background:
+    -
+      plugin: get
+      source: field_background
+  field_content_blank:
+    -
+      plugin: get
+      source: field_content_blank
+    -
+      plugin: media_wysiwyg_filter
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+  field_paragraph_width:
+    -
+      plugin: get
+      source: field_paragraph_width
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: blank
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

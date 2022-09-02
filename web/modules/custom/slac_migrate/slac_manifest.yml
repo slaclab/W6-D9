@@ -1,9 +1,64 @@
 # users
-- upgrade_d7_user_flood
-- upgrade_d7_user_mail
+# - upgrade_d7_user_flood
+# - upgrade_d7_user_mail
 - upgrade_d7_user_role
 #- upgrade_user_picture_field
 #- upgrade_user_picture_field_instance
 #- upgrade_user_picture_entity_display
 #- upgrade_user_picture_entity_form_display
 - upgrade_d7_user
+
+# files and media
+- upgrade_d7_file
+- upgrade_d7_file_private
+# media images
+- upgrade_d7_file_entity_image_public
+#- upgrade_d7_file_entity_image_private
+
+# media: videos
+#- upgrade_d7_file_entity_video_public
+- upgrade_d7_file_entity_video_vimeo
+- upgrade_d7_file_entity_video_youtube
+
+# media documents
+- upgrade_d7_file_entity_document_public
+
+# other media dependencies
+#- upgrade_d7_file_entity_formatter_document
+#- upgrade_d7_file_entity_formatter_image
+#- upgrade_d7_file_entity_formatter_image_private
+#- upgrade_d7_file_entity_formatter_remote_video
+#- upgrade_d7_file_entity_formatter_video
+#- upgrade_d7_file_entity_source_field_config_document
+#- upgrade_d7_file_entity_source_field_config_image
+#- upgrade_d7_file_entity_source_field_config_image_private
+#- upgrade_d7_file_entity_source_field_config_remote_video
+#- upgrade_d7_file_entity_source_field_config_video
+#- upgrade_d7_file_entity_source_field_document
+#- upgrade_d7_file_entity_source_field_image
+#- upgrade_d7_file_entity_source_field_image_private
+#- upgrade_d7_file_entity_source_field_remote_video
+#- upgrade_d7_file_entity_source_field_video
+#- upgrade_d7_file_entity_type_document
+#- upgrade_d7_file_entity_type_image
+#- upgrade_d7_file_entity_type_image_private
+#- upgrade_d7_file_entity_type_remote_video
+#- upgrade_d7_file_entity_type_video
+#- upgrade_d7_file_entity_widget_document
+#- upgrade_d7_file_entity_widget_image
+#- upgrade_d7_file_entity_widget_image_private
+#- upgrade_d7_file_entity_widget_remote_video
+#- upgrade_d7_file_entity_widget_video
+#- upgrade_d7_file_plain_application_public
+#- upgrade_d7_file_plain_formatter_document
+#- upgrade_d7_file_plain_formatter_image
+#- upgrade_d7_file_plain_image_public
+#- upgrade_d7_file_plain_source_field_config_document
+#- upgrade_d7_file_plain_source_field_config_image
+#- upgrade_d7_file_plain_source_field_document
+#- upgrade_d7_file_plain_source_field_image
+#- upgrade_d7_file_plain_text_public
+#- upgrade_d7_file_plain_type_document
+#- upgrade_d7_file_plain_type_image
+#- upgrade_d7_file_plain_widget_document
+#- upgrade_d7_file_plain_widget_image

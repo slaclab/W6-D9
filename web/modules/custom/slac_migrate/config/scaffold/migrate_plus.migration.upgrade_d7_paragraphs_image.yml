@@ -1,0 +1,47 @@
+uuid: c441451f-a94f-4dab-9963-626bc29fd43b
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Image)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: image
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_pimage:
+    -
+      plugin: media_migration_delta_sort
+      source: field_pimage
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_width:
+    -
+      plugin: get
+      source: field_width
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: image
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

@@ -74,6 +74,8 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
+{% set is_past_event = node.isPastEvent() %}
+
 {% set admin_info %}
   {{ region_status }}
 {% endset %}
@@ -92,11 +94,13 @@
 {% set details %}
   {% embed '@components/event-details/event-details.twig' with {
     'image': content.field_image|field_value,
+    'video': content.field_video|field_value,
     'event_type': content.field_type|render|striptags|trim,
-    'zoom_details': content.field_detail_text|field_value,
+    'zoom_details': is_past_event ? false : content.field_detail_text|field_value,
     'additional_links': additional_links,
-    'calendar_link_text': formatted_date_time,
-    'map_link_text': content.field_link|field_value
+    'calendar_link_text': content.field_override_text|field_value is not empty ? content.field_override_text : (is_past_event ? false : formatted_date_time),
+    'map_link_text': not is_past_event ? content.field_link|field_value : FALSE,
+    'is_past_event': is_past_event
   } %}
     {% block event_ctas %}{{ content.field_links }}{% endblock %}
   {% endembed %}
@@ -120,7 +124,7 @@
   'admin_info': admin_info,
   'event_content': content.field_body,
   'details': details,
-  'map_iframe': content.field_site_setting,
+  'map_iframe': node.field_boolean2.value == '1' ? content.field_site_setting : false,
   'tags': content.field_tags,
   'visiting': node.field_boolean2.value == '1' ? drupal_entity('block', 'event_visitor_details', check_access=false)
 } %}

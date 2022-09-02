@@ -90,6 +90,13 @@
 {% if content.field_link2|field_value %}
   {% set additional_links = additional_links|merge([content.field_link2|field_value]) %}
 {% endif %}
+{% if site_settings['event:_links'] %}
+  {% for event_link in site_settings['event:_links'].event_links %}
+    {% if event_link.title %}
+      {% set additional_links = additional_links|merge([link(event_link.title, event_link.uri, {'class': ['c-event-details__link']})])%}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% set details %}
   {% embed '@components/event-details/event-details.twig' with {

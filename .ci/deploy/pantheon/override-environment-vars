@@ -36,6 +36,9 @@ elif [[ ${CI_BRANCH} == "main" ]] ; then
 elif [[ ${CI_BRANCH} == "uat" ]] ; then
   # Use the stage environment for the main branch.
   DEFAULT_ENV=uat
+elif [[ ${CI_BRANCH} == "migration" ]] ; then
+  # Use the stage environment for the main branch.
+  DEFAULT_ENV=migration
 fi
 
 TERMINUS_ENV=$DEFAULT_ENV

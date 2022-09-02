@@ -1,0 +1,46 @@
+uuid: de6993bc-cea9-481d-aa74-f45cf99ff748
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_blockquote
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Blockquote)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: blockquote
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_quote:
+    -
+      plugin: get
+      source: field_quote
+    -
+      plugin: media_wysiwyg_filter
+  field_quote_width:
+    -
+      plugin: get
+      source: field_quote_width
+  field_quotee:
+    -
+      plugin: get
+      source: field_quotee
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: blockquote
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

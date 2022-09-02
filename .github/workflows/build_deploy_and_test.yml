@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - integration
+      - migration
       - main
       - live
       - uat

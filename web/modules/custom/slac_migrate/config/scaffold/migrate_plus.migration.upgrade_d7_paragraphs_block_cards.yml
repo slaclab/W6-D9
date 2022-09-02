@@ -1,0 +1,36 @@
+uuid: d75b9c8c-8c11-4011-944d-cf4165bae0f3
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_block_cards
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Block Cards)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: block_cards
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_block:
+    -
+      plugin: get
+      source: field_block
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: block_cards
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

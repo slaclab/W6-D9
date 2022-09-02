@@ -6,6 +6,9 @@
      },
     "drupal/components": {
       "Template is not defined error on node edit / admin pages": "https://www.drupal.org/files/issues/2021-06-24/DRUP86-template_not_defined.patch"
+    },
+    "drupal/media_migration": {
+      "Support Migrate Plus >=4.2": "https://www.drupal.org/files/issues/2022-08-12/media_migration-3269743-18.patch"
     }
   }
 }

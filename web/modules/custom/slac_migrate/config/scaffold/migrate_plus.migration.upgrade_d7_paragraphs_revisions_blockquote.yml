@@ -1,0 +1,73 @@
+uuid: 16b7b750-7144-4f42-8670-2d1600eb2e81
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_revisions_blockquote
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs Revisions (Blockquote)'
+source:
+  plugin: d7_paragraphs_item_revision
+  bundle: blockquote
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Paragraphs Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_quote:
+    -
+      plugin: get
+      source: field_quote
+    -
+      plugin: media_wysiwyg_filter
+  field_quote_width:
+    -
+      plugin: get
+      source: field_quote_width
+  field_quotee:
+    -
+      plugin: get
+      source: field_quotee
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: blockquote
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_blank
+    - upgrade_d7_paragraphs_block
+    - upgrade_d7_paragraphs_blockquote
+    - upgrade_d7_paragraphs_block_cards
+    - upgrade_d7_paragraphs_card
+    - upgrade_d7_paragraphs_card_wrapper
+    - upgrade_d7_paragraphs_columns
+    - upgrade_d7_paragraphs_column_wrapper
+    - upgrade_d7_paragraphs_hero
+    - upgrade_d7_paragraphs_image
+    - upgrade_d7_paragraphs_image_bootstrap
+    - upgrade_d7_paragraphs_simple
+    - upgrade_d7_paragraphs_simple_bootstrap
+    - upgrade_d7_paragraphs_timeline
+    - upgrade_d7_paragraphs_timeline_bundler
+    - upgrade_d7_paragraphs_video
+    - upgrade_d7_paragraphs_video_bootstrap
+    - upgrade_d7_paragraphs_view
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional: {  }

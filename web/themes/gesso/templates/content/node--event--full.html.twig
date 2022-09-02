@@ -108,16 +108,21 @@
   {{ content.field_long_text|field_value }}
 {% endset %}
 
+{% set kicker %}
+{{- node.getEventTense() }} Event · {{ content.field_text|field_value -}}
+{% endset %}
+
 {% include '@templates/event-detail/event-detail.twig' with {
   'page_title': label,
-  'kicker': content.field_text|field_value,
+  'kicker': kicker,
   'lede': content.field_lede|field_value,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'event_content': content.field_body,
   'details': details,
   'map_iframe': content.field_site_setting,
-  'tags': content.field_tags
+  'tags': content.field_tags,
+  'visiting': node.field_boolean2.value == '1' ? drupal_entity('block', 'event_visitor_details', check_access=false)
 } %}
 
 {% set catch_cache = content|render %}

@@ -138,6 +138,8 @@
   {% endif %}
 {% endset %}
 
+{% set is_past_event = node.isPastEvent() %}
+
 {#
 /**
  * If the "Is external event?" field (field_boolean) is set then use the URL of the external link
@@ -149,16 +151,16 @@
   'is_event': true,
   'title': label,
   'url': content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
-  'start_date': {
+  'start_date': is_past_event ? null : {
     'month': event_start_date|date('M'),
     'day': event_start_date|date('d')
   },
-  'end_date': multiday_event == false ? null : {
+  'end_date': multiday_event == false or is_past_event ? null : {
     'month': event_end_date|date('M'),
     'day': event_end_date|date('d')
   },
-  'kicker': content.field_type|field_value,
-  'type': 'Event'|t,
+  'kicker': content.field_text|field_value,
+  'type': node.getEventTense() ~ ' Event',
   'footer': datetime_location_override ? content.field_override_text|field_value : null,
   'event_date': datetime_location_override ? null : datetime_composed,
   'event_location': location,

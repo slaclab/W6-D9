@@ -15,6 +15,7 @@ dependencies:
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_paragraphs
+    - field.field.media.remote_video.field_research_area
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_teaser
@@ -53,10 +54,13 @@ hidden:
   field_long_text: true
   field_media_oembed_video: true
   field_paragraphs: true
+  field_research_area: true
   field_source_name: true
   field_tags: true
   field_teaser: true
   field_thumbnail: true
   field_transcript: true
+  langcode: true
   name: true
+  search_api_excerpt: true
   uid: true

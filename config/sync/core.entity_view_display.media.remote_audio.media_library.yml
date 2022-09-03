@@ -38,5 +38,6 @@ hidden:
   field_media_oembed_art19: true
   field_tags: true
   field_transcript: true
+  langcode: true
   name: true
   uid: true

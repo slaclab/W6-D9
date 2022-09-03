@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
@@ -53,6 +54,13 @@ content:
       preview_link: true
       offsets: '50,50'
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -70,6 +78,7 @@ hidden:
   field_link: true
   field_long_text: true
   field_paragraphs: true
+  field_research_area: true
   field_tags: true
   field_teaser: true
   field_type: true

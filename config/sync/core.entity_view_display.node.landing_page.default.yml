@@ -61,3 +61,4 @@ content:
 hidden:
   field_teaser: true
   field_teaser_image: true
+  langcode: true

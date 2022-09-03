@@ -10,7 +10,6 @@ dependencies:
     - system.menu.main
   module:
     - link
-    - menu_item_extras
     - svg_image_field
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
@@ -46,6 +45,13 @@ content:
     weight: 1
     region: content
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   title:
     type: string_textfield

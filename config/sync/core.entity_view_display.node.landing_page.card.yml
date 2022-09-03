@@ -71,3 +71,4 @@ content:
 hidden:
   field_boolean: true
   field_long_text: true
+  langcode: true

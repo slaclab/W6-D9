@@ -160,3 +160,4 @@ hidden:
   field_site_setting: true
   field_tags: true
   field_video: true
+  langcode: true

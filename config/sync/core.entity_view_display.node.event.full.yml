@@ -211,3 +211,4 @@ hidden:
   field_external_link: true
   field_featured: true
   field_teaser: true
+  langcode: true

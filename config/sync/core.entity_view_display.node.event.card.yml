@@ -157,3 +157,4 @@ hidden:
   field_video: true
   langcode: true
   links: true
+  search_api_excerpt: true

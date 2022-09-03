@@ -74,3 +74,4 @@ hidden:
   field_hero_paragraph: true
   field_tags: true
   langcode: true
+  search_api_excerpt: true

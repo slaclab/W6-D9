@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.image_hero.field_image
     - field.field.paragraph.image_hero.field_lottiefile
     - field.field.paragraph.image_hero.field_text
+    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
 id: paragraph.image_hero.card_image
 targetEntityType: paragraph

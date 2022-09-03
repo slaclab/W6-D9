@@ -116,3 +116,4 @@ hidden:
   field_source_link: true
   field_tags: true
   field_text: true
+  langcode: true

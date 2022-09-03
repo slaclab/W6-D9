@@ -32,5 +32,6 @@ hidden:
   field_caption: true
   field_media_file: true
   field_tags: true
+  langcode: true
   name: true
   uid: true

@@ -46,3 +46,4 @@ hidden:
   field_lede: true
   field_paragraphs: true
   field_research_area: true
+  langcode: true

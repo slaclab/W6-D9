@@ -51,4 +51,5 @@ hidden:
   field_tags: true
   field_teaser: true
   field_teaser_image: true
+  langcode: true
   links: true

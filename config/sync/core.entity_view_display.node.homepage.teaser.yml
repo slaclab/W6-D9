@@ -23,3 +23,4 @@ hidden:
   field_hero_paragraph: true
   field_paragraphs: true
   langcode: true
+  search_api_excerpt: true

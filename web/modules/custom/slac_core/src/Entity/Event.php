@@ -2,7 +2,6 @@
 
 namespace Drupal\slac_core\Entity;
 
-use DateTime;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;

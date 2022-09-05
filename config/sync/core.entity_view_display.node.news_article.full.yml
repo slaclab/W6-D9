@@ -119,3 +119,4 @@ hidden:
   field_teaser_image: true
   field_type: true
   langcode: true
+  search_api_excerpt: true

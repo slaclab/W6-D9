@@ -48,9 +48,11 @@ hidden:
   field_link: true
   field_long_text: true
   field_paragraphs: true
+  field_research_area: true
   field_tags: true
   field_teaser: true
   field_type: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

@@ -61,5 +61,6 @@ hidden:
   field_teaser: true
   field_type: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

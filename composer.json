@@ -52,7 +52,7 @@
     "drupal/migrate_tools": "^6.0",
     "drupal/migrate_upgrade": "^4",
     "drupal/oembed_providers": "^2.0",
-    "drupal/pantheon_advanced_page_cache": "^1.2",
+    "drupal/pantheon_advanced_page_cache": "^2.0",
     "drupal/paragraphs": "^1.14",
     "drupal/pathauto": "^1.8",
     "drupal/rabbit_hole": "^1.0@beta",

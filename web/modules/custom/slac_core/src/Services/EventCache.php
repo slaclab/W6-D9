@@ -16,6 +16,13 @@ class EventCache implements ContainerInjectionInterface {
   use StringTranslationTrait;
 
   /**
+   * The path for the Drupal root.
+   *
+   * @var string
+   */
+  private $event_cache_tag = 'event_date_change';
+
+  /**
    * A logger instance.
    *
    * @var LoggerInterface
@@ -48,24 +55,33 @@ class EventCache implements ContainerInjectionInterface {
    * @throws \Exception
    */
   public function eventCacheProcess(CronJob $job) {
-    $cache_tag = 'slac_core:event_datetime';
-
-    // Invalidate the events currently marked with the event_datetime cache tag. These events were marked during a
-    // past cron run.
-    Cache::invalidateTags([$cache_tag]);
-
-    // Get the set of events that will start or end in the next 75 minutes.
-    if ($changing = $this->getChangingEvents(4500)) {
+    // Get the set of events that started or ended since the last cron run.
+    // Because Pantheon only runs cron once an hour, and the Ultimate cron job is set to
+    // run once an hour, lookback is buffered to more than 60 minutes.
+    if ($changing = $this->getChangingEvents(-4500, FALSE)) {
       // Create storage and load the selected nodes.
       $storage = \Drupal::entityTypeManager()->getStorage('node');
       $nodes = $storage->loadMultiple($changing);
 
+      // The list of tags to invalidate, defaulting to the custom tag.
+      $tags = [ $this->event_cache_tag ];
+
       /** @var Node $event */
       foreach ($nodes as $event) {
-        $this->logger->info('Event caching: node @id processed', [
-          '@id' => $event->id(),
-        ]);
+        $tags = Cache::mergeTags($tags, $event->getCacheTags());
       }
+
+      $this->logger->info('Event caching: @noun @nids processed, invalidating @tags', [
+        '@noun' => $this->formatPlural(count($changing), 'Node', 'Nodes'),
+        '@nids' => implode(', ', array_values($changing)),
+        '@tags' => implode(', ', $tags),
+      ]);
+    }
+
+    // If there were any changes to events, invalidate all the tags associated with those nodes
+    // and the custom tag for lists, etc.
+    if (count($tags)) {
+      Cache::invalidateTags($tags);
     }
   }
 
@@ -74,15 +90,15 @@ class EventCache implements ContainerInjectionInterface {
    *
    * A "changing" event is one that is either starting or ending in the period from now until
    * now +/- some number of seconds. The lookahead could be a lookbehind, as the value of
-   * $seconds_lookahead could be negative.
+   * $lookahead could be negative.
    *
-   * @param int $seconds_lookahead
+   * @param int $lookahead
    *  Default is one hour (3600 seconds)
    * @param bool $logging
    * @return array
    *
    */
-  public function getChangingEvents(int $seconds_lookahead = 3600, bool $logging = TRUE): array {
+  public function getChangingEvents(int $lookahead = 3600, bool $logging = TRUE): array {
     $storage_tz = new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE);
 
     // Get the current datetime the storage timezone.
@@ -90,7 +106,8 @@ class EventCache implements ContainerInjectionInterface {
     $now_formatted = $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
 
     // Get the target date in the storage timezone.
-    $target_datetime = new DrupalDateTime("now + $seconds_lookahead seconds", $storage_tz);
+    $offset_string = 'now' . ($lookahead > 0 ? "+" : '-') . abs($lookahead) . " second";
+    $target_datetime = new DrupalDateTime($offset_string, $storage_tz);
     $target_formatted = $target_datetime->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
 
     $query = \Drupal::entityQuery('node');
@@ -132,11 +149,11 @@ class EventCache implements ContainerInjectionInterface {
 
       $this->logger->info('Event cache cronjob: @count @noun @nids changing between @leftedge and @rightedge (@direction).', [
         '@count' => count($nids),
-        '@noun' => $this->formatPlural(count($nids), 'event', 'events'),
+        '@noun' => $this->formatPlural(count($nids), 'node', 'nodes'),
         '@leftedge' => min($now_formatted, $target_formatted),
         '@rightedge' => max($now_formatted, $target_formatted),
         '@nids' => count($nids) ? '(' . implode(', ', array_values($nids)) . ')' : '',
-        '@direction' => $seconds_lookahead < 0 ? 'lookback' : 'lookahead',
+        '@direction' => $lookahead < 0 ? 'lookback' : 'lookahead',
       ]);
     }
 

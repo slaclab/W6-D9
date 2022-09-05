@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.field_boolean
     - field.field.node.landing_page.field_long_text
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
@@ -35,6 +36,7 @@ third_party_settings:
     group_main_content:
       children:
         - field_long_text
+        - field_boolean
         - field_paragraphs
       label: 'Main Content'
       region: content
@@ -76,6 +78,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_boolean:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_long_text:
     type: text_textarea
     weight: 6
@@ -86,7 +95,7 @@ content:
     third_party_settings: {  }
   field_paragraphs:
     type: paragraphs
-    weight: 7
+    weight: 8
     region: content
     settings:
       title: Paragraph
@@ -124,6 +133,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

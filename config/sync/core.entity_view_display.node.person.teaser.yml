@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
     - field.field.node.person.field_image
-    - field.field.node.person.field_link
+    - field.field.node.person.field_links
     - field.field.node.person.field_long_text
     - field.field.node.person.field_teaser
     - field.field.node.person.field_text
@@ -72,6 +72,8 @@ content:
     region: content
 hidden:
   field_boolean: true
-  field_link: true
+  field_links: true
   field_long_text: true
   field_text: true
+  langcode: true
+  search_api_excerpt: true

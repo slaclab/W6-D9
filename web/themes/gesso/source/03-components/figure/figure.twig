@@ -26,7 +26,7 @@
       {% endif %}
     {% endif %}
   </div>
-  {% if caption %}
+  {% if caption|render|striptags|trim %}
     <figcaption class="c-figure__caption">
       {{ caption }}
     </figcaption>

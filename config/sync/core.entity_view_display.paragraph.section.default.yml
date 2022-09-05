@@ -28,7 +28,7 @@ content:
       trim_length: '80'
       button_size: Standard
       button_style: Primary
-      button_icon: None
+      button_icon: Chevron
       url_only: false
       url_plain: false
       rel: 0
@@ -87,4 +87,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

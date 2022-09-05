@@ -94,6 +94,16 @@ event_details:
     theme:
       dist/css/event-details.css: {}
 
+grid_with_featured:
+  css:
+    theme:
+      dist/css/grid-with-featured.css: {}
+  js:
+    dist/js/grid-with-featured.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 hamburger_button:
   css:
     theme:
@@ -200,6 +210,16 @@ side_menu:
   dependencies:
     - gesso/common
     - gesso/hamburger_button
+
+tagline_long:
+  css:
+    theme:
+      dist/css/tagline--long.css: {}
+  js:
+    dist/js/tagline--long.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 toc:
   css:

@@ -15,7 +15,6 @@ dependencies:
     - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
   module:
     - text
-    - user
 id: site_setting_entity.colorful_tagline_for_our_story.default
 targetEntityType: site_setting_entity
 bundle: colorful_tagline_for_our_story
@@ -23,97 +22,78 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_body_2:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_body_3:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_heading:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_image:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_image_2:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_image_3:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_line_2:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_line_3:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  fieldset:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -4
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -4
-    region: content
-  user_id:
-    type: author
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_body_2:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_body_3:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_vertical
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_2:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_vertical
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image_3:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_vertical
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_line_2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_line_3:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -15,6 +15,26 @@ use Drupal\node\Entity\Node;
  */
 function gesso_preprocess_views_view(array &$variables) {
   $variables['path'] = $variables['view']->getRequest()->getPathInfo();
+  $variables['is_dark'] = !empty($variables['view_array']['#is_dark'])
+    ? is_array($variables['view_array']['#is_dark'])
+      ? $variables['view_array']['#is_dark']['content']
+      : $variables['view_array']['#is_dark']
+    : FALSE;
+  if (!empty($variables['rows']) && !empty($variables['rows'][0])) {
+    $variables['rows'][0]['#rows']['#is_dark'] = $variables['is_dark'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function gesso_preprocess_views_view_unformatted(array &$variables) {
+  if (!empty($variables['rows']['#is_dark'])) {
+    $variables['is_dark'] = is_array($variables['rows']['#is_dark'])
+      ? $variables['rows']['#is_dark']['content']
+      : $variables['rows']['#is_dark'];
+    unset($variables['rows']['#is_dark']);
+  }
 }
 
 /**

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
@@ -249,4 +250,6 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-hidden: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

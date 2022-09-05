@@ -13,6 +13,7 @@ function gesso_preprocess_paragraph(&$vars) {
   $paragraph = $vars['paragraph'];
   $parent = $paragraph->getParentEntity();
   $vars['is_nested'] = $parent && $parent->getEntityTypeId() == 'paragraph';
+  $vars['is_dark'] = !empty($vars['elements']['#is_dark']);
 }
 
 /**
@@ -21,23 +22,34 @@ function gesso_preprocess_paragraph(&$vars) {
 function gesso_preprocess_paragraph__section(&$vars) {
   $paragraph = $vars['paragraph'];
   $content = $vars['content'];
-  // For sections with dark backgrounds, override the default field settings
-  // and use the secondary style for buttons.
-  if (!empty($content['field_button_links']) &&
-    !empty($content['field_button_links'][0]) &&
-    !empty($vars['attributes']['class'])
-  ) {
-    foreach($vars['attributes']['class'] as $class) {
+  if (!empty($vars['attributes']['class'])) {
+    foreach ($vars['attributes']['class'] as $class) {
       if (str_contains($class, 'l-section--dark')) {
-        $linkIndexes = \Drupal\Core\Render\Element::children($content['field_button_links']);
-        foreach ($linkIndexes as $i) {
-          $link_classes = $content['field_button_links'][$i]['#options']['attributes']['class'];
-          foreach ($link_classes as $key => $link_class) {
-            if ($link_class == 'c-button--primary') {
-              $link_classes[$key] = 'c-button--secondary';
+        // For sections with dark backgrounds, override the default field settings
+        // and use the secondary style for buttons.
+        if (!empty($content['field_button_links']) &&
+          !empty($content['field_button_links'][0])
+        ) {
+          $linkIndexes = \Drupal\Core\Render\Element::children($content['field_button_links']);
+          foreach ($linkIndexes as $i) {
+            $link_classes = $content['field_button_links'][$i]['#options']['attributes']['class'];
+            foreach ($link_classes as $key => $link_class) {
+              if ($link_class == 'c-button--primary') {
+                $link_classes[$key] = 'c-button--secondary';
+              }
             }
+            $content['field_button_links'][$i]['#options']['attributes']['class'] = $link_classes;
           }
-          $content['field_button_links'][$i]['#options']['attributes']['class'] = $link_classes;
+        }
+        // Set a variable noting this is a dark section, so we can make other theming
+        // adjustments as needed.
+        if (!empty($content['field_paragraphs']) &&
+          !empty($content['field_paragraphs'][0])
+        ) {
+          $paragraphIndexes = \Drupal\Core\Render\Element::children($content['field_paragraphs']);
+          foreach ($paragraphIndexes as $p) {
+            $content['field_paragraphs'][$p]['#is_dark'] = TRUE;
+          }
         }
       }
     }
@@ -193,4 +205,62 @@ function gesso_preprocess_paragraph__microsite_hero(&$vars) {
 
   // Set the caption and credit fields from field_image.
   _gesso_set_hero_caption($vars);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__embed_view(array &$vars) {
+  $vars['content']['field_viewsreference'][0]['contents']['#is_dark'] = $vars['is_dark'];
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__fifty_fifty(array &$vars) {
+  if (!empty($vars['attributes']) && !empty($vars['attributes']['class'])) {
+    foreach ($vars['attributes']['class'] as $class) {
+      if ($class == 'c-fifty-fifty--left') {
+        $vars['fade'] = 'left';
+        break;
+      } else if ($class == 'c-fifty-fifty--right') {
+        $vars['fade'] = 'right';
+        break;
+      }
+    }
+  } else {
+    $vars['fade'] = 'none';
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__overlap_image(array &$vars) {
+  $paragraph = $vars['paragraph'];
+  // Get the media item.
+  $media_id = $paragraph->field_image->target_id;
+  if ($media_id) {
+    $media = \Drupal\media\Entity\Media::load($media_id);
+    // Get the image.
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem $image */
+    $image_field = $media->field_media_image->first();
+    // Extract the URL and the alt text. We do this rather than rendering
+    // the image normally because it needs to be a background image when
+    // the parallax effect is used.
+    $vars['image_alt'] = $image_field->alt;
+    $image = \Drupal\file\Entity\File::load($image_field->target_id);
+    if ($image) {
+      $image_style = \Drupal\image\Entity\ImageStyle::load('scale_extra_large');
+      $vars['image_url'] = $image_style->buildUrl($image->getFileUri());
+    }
+  }
+  if (!empty($vars['attributes']['class'])) {
+    foreach($vars['attributes']['class'] as $class) {
+      if (in_array($class, ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'center-left', 'center-right'])) {
+        $vars['position'] = $class;
+        break;
+      }
+    }
+  }
 }

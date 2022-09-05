@@ -1,7 +1,6 @@
 // @file
 // Component: c-event-details
 @use '00-config' as *;
-@use '../event-hat/event-hat' as *;
 
 .c-event-details {
   max-width: 600px;
@@ -11,12 +10,23 @@
   }
 }
 
-.c-event-details__image {
-  background: gesso-grayscale(stanford-black);
+.c-event-details__image,
+.c-event-details__video {
   position: relative;
 
   img {
     object-fit: cover;
+  }
+}
+
+.c-event-details__image {
+  background: gesso-grayscale(stanford-black);
+}
+
+.c-event-details__video {
+  .c-figure.u-align-center {
+    margin: 0;
+    max-width: 100%;
   }
 }
 
@@ -54,6 +64,10 @@
   span {
     font-size: gesso-font-size(4);
     font-weight: gesso-font-weight(bold);
+
+    .c-event-details--past & {
+      font-weight: gesso-font-weight(regular);
+    }
   }
 
   .c-icon {

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
+    - field.field.node.landing_page.field_boolean
     - field.field.node.landing_page.field_long_text
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
@@ -68,4 +69,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_boolean: true
   field_long_text: true
+  langcode: true
+  search_api_excerpt: true

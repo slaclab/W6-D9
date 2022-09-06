@@ -39,8 +39,8 @@
  */
 #}
 {% set tooltip %}
-  {{- hero_caption -}}
-  {{- hero_credit -}}
+{{- hero_caption -}}
+{{- hero_credit -}}
 {% endset %}
 
 {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
@@ -52,5 +52,7 @@
   'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
   'text_color': paragraph.field_text_color.value|default('white')
 } %}
-  {% block animated_icon %}{{ content.field_lottiefile }}{% endblock %}
+  {% block animated_icon %}
+    {{ content.field_lottiefile|field_value }}
+  {% endblock %}
 {% endembed %}

@@ -17,7 +17,7 @@
 {% endset %}
 
 {% set footer %}
-  {{ media.changed.value|format_date('custom', 'F j, Y') }}
+  {{ media.created.value|format_date('custom', 'F j, Y') }}
   {% if content.field_duration|field_value is not empty %}
     &nbsp;·&nbsp;{{- content.field_duration|field_value -}}&nbsp;{{ "runtime"|t }}
   {% endif %}

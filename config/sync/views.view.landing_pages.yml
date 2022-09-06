@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.large_card
+    - core.entity_view_mode.node.large_link_list
     - core.entity_view_mode.node.teaser
     - node.type.event
     - node.type.media_mention
@@ -22,7 +22,7 @@ dependencies:
 id: landing_pages
 label: 'Landing Page Content View Embeds'
 module: views
-description: ''
+description: 'View with multiple separate displays for embedding lists and grids of content in sections.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -137,6 +137,15 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          expose:
+            field_identifier: title
       arguments: {  }
       filters:
         status:
@@ -205,7 +214,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: large_link_list
       query:
         type: views_query
         options:
@@ -1054,6 +1063,40 @@ display:
     display_plugin: embed
     position: 1
     display_options:
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      defaults:
+        sorts: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

@@ -12,7 +12,10 @@ libraries-extend:
   sitewide_alert/init:
     - gesso/alert_bar
 ckeditor_stylesheets:
-  - //fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap
+  - //fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap
+  - dist/css/editor-styles.css
+ckeditor5-stylesheets:
+  - //fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap
   - dist/css/editor-styles.css
 dependencies:
   - components

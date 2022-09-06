@@ -1,0 +1,84 @@
+uuid: 621f2ff7-fac4-4b1e-9b17-e567a27e538e
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_field_collection_revisions_slideshow_btmtxt_slide
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Field Collection Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Field Collection Revisions (Slideshow btmtxt slide)'
+source:
+  plugin: d7_field_collection_item_revision
+  field_name: field_slideshow_btmtxt_slide
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Field Collection Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  parent_id:
+    -
+      plugin: get
+      source: parent_id
+  parent_type:
+    -
+      plugin: get
+      source: parent_type
+  parent_field_name:
+    -
+      plugin: get
+      source: field_name
+  field_fcollection_description:
+    -
+      plugin: get
+      source: field_fcollection_description
+  field_fcollection_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_fcollection_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_fcollection_link:
+    -
+      plugin: field_link
+      source: field_fcollection_link
+  field_fcollection_title:
+    -
+      plugin: get
+      source: field_fcollection_title
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: slideshow_btmtxt_slide
+migration_dependencies:
+  required:
+    - upgrade_d7_field_collection_media_collection
+    - upgrade_d7_field_collection_slideshow_btmtxt_slide
+    - upgrade_d7_field_collection_slideshow_txtlr_slide
+    - upgrade_d7_field_collection_block_bb_brochures
+    - upgrade_d7_field_collection_block_bb_content
+    - upgrade_d7_field_collection_block_itl_content
+    - upgrade_d7_field_collection_block_no_title
+    - upgrade_d7_field_collection_homepage_video
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+    - upgrade_d7_file_entity_image_private
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional: {  }

@@ -1,0 +1,52 @@
+uuid: 944eaf91-69fc-4389-b8e2-041ba164d494
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_view
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (View)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: view
+process:
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_background:
+    -
+      plugin: get
+      source: field_background
+  field_padding_bottom:
+    -
+      plugin: get
+      source: field_padding_bottom
+  field_padding_top:
+    -
+      plugin: get
+      source: field_padding_top
+  field_paragraph_width:
+    -
+      plugin: get
+      source: field_paragraph_width
+  field_view:
+    -
+      plugin: get
+      source: field_view
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: view
+migration_dependencies:
+  required:
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_image_public
+    - upgrade_d7_file_entity_image_public
+  optional:
+    - upgrade_d7_field_instance

@@ -8,3 +8,29 @@
  * This file is no longer required in Drupal 8.
  * @see https://www.drupal.org/node/2217931
  */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\slac_core\Entity\Event;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the search_block_form form.
+ *
+ */
+function slac_core_form_slac_search_form_alter(&$form, FormStateInterface $form_state) {
+  // Since the exposed search form is a GET form, do not send the form tokens.
+  // However, this cannot be accomplished in the form builder function
+  // itself, because the tokens are added to the form after the builder function
+  // is called. It has to be done in a form_alter, see \Drupal\search\Form\SearchBlockForm
+  $form['form_build_id']['#access'] = FALSE;
+  $form['form_token']['#access'] = FALSE;
+  $form['form_id']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function slac_core_entity_bundle_info_alter(array &$bundles) {
+  if (isset($bundles['node']['event'])) {
+    $bundles['node']['event']['class'] = Event::class;
+  }
+}

@@ -61,6 +61,28 @@ if (file_exists($secrets_file)) {
   }
 }
 
+// Configure Redis
+
+if (defined('PANTHEON_ENVIRONMENT')) {
+  // Include the Redis services.yml file. Adjust the path if you installed to a contrib or other subdirectory.
+  $settings['container_yamls'][] = 'modules/redis/example.services.yml';
+
+  //phpredis is built into the Pantheon application container.
+  $settings['redis.connection']['interface'] = 'PhpRedis';
+  // These are dynamic variables handled by Pantheon.
+  $settings['redis.connection']['host']      = $_ENV['CACHE_HOST'];
+  $settings['redis.connection']['port']      = $_ENV['CACHE_PORT'];
+  $settings['redis.connection']['password']  = $_ENV['CACHE_PASSWORD'];
+
+  $settings['redis_compress_length'] = 100;
+  $settings['redis_compress_level'] = 1;
+
+  $settings['cache']['default'] = 'cache.backend.redis'; // Use Redis as the default cache.
+  $settings['cache_prefix']['default'] = 'pantheon-redis';
+
+  $settings['cache']['bins']['form'] = 'cache.backend.database'; // Use the database for forms
+}
+
 /**
  * If there is a local settings file, then include it
  */
@@ -76,4 +98,9 @@ $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
 $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
+}
+
+// Include settings required for Redis cache.
+if ((file_exists(__DIR__ . '/settings.ddev.redis.php') && getenv('IS_DDEV_PROJECT') == 'true')) {
+  include __DIR__ . '/settings.ddev.redis.php';
 }

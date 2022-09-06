@@ -1,5 +1,6 @@
 {% set classes = [
   'c-event-details',
+  is_past_event ? 'c-event-details--past' : '',
   modifier_classes ? modifier_classes : ''
 ] %}
 
@@ -10,12 +11,14 @@
     {% include '@components/event-hat/event-hat.twig' %}
   {% endif %}
 
-  <div class="c-event-details__image">
-    {% if image %}
+  <div class="{% if video %}c-event-details__video{% else %}c-event-details__image{% endif %}">
+    {% if video %}
+      {{ video }}
+    {% elseif image %}
       {{ image }}
-      <div class="c-card__gradient"></div>
+      {% if not is_past_event %}<div class="c-card__gradient"></div>{% endif %}
     {% endif %}
-    {% if start_date %}
+    {% if start_date and not is_past_event and not video %}
       {% include '@components/event-date/event-date.twig' %}
     {% endif %}
   </div>
@@ -23,11 +26,13 @@
   <div class="c-event-details__section">
     {% if calendar_link_text %}
       <div class="c-event-details__when">
-        {% include '@components/icon/icon.twig' with {
-          hidden: true,
-          label: 'Date',
-          icon_name: 'calendar',
-        } %}
+        {% if not is_past_event %}
+          {% include '@components/icon/icon.twig' with {
+            hidden: true,
+            label: 'Date',
+            icon_name: 'calendar',
+          } %}
+        {% endif %}
         <span>
           {% if calendar_link_url %}
             <a class="href="{{ calendar_link_url }}" title="{{ 'Add to calendar'|t }}">

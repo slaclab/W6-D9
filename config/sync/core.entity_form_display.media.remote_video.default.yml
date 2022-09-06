@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_paragraphs
+    - field.field.media.remote_video.field_research_area
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_teaser
@@ -78,6 +79,7 @@ third_party_settings:
         - field_landing_display
         - field_duration
         - field_tags
+        - field_research_area
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -97,7 +99,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -175,7 +177,10 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_media_oembed_video:
     type: oembed_textfield
     weight: 3
@@ -202,6 +207,16 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_research_area:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_source_name:
     type: text_textarea
@@ -253,6 +268,13 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -263,20 +285,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

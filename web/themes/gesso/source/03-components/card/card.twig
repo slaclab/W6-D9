@@ -83,7 +83,7 @@
     <div class="c-card__media">
       {{ media }}
 
-      {% if is_event %}
+      {% if is_event and start_date %}
         <div class="c-card__gradient"></div>
         {% include '@components/event-date/event-date.twig' %}
       {% endif %}

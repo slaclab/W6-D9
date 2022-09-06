@@ -1,0 +1,79 @@
+uuid: af08a6a0-0767-42e1-8a06-1ec0ac0b2295
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_file_plain_source_field_config_document
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+  - 'Media Migration'
+  - 'Media Configuration'
+migration_group: migrate_drupal_7
+label: 'Plain file source field instance configuration (Document)'
+source:
+  plugin: d7_file_plain_source_field_instance
+  constants:
+    entity_type_id: media
+    required: true
+  mimes: 'text::application'
+  schemes: public
+  destination_media_type_id: document
+  source_field_name: field_media_document
+  media_migration_original_id: 'd7_file_plain_source_field_config:document'
+process:
+  field_name:
+    -
+      plugin: migration_lookup
+      source:
+        - mimes
+        - schemes
+      migration: upgrade_d7_file_plain_source_field_document
+      no_stub: true
+    -
+      plugin: default_value
+      default_value:
+        - null
+        - null
+    -
+      plugin: extract
+      index:
+        - 1
+  entity_type:
+    -
+      plugin: get
+      source: constants/entity_type_id
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  required:
+    -
+      plugin: get
+      source: constants/required
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  label:
+    -
+      plugin: get
+      source: source_field_label
+  settings:
+    -
+      plugin: get
+      source: settings
+destination:
+  plugin: 'entity:field_config'
+migration_dependencies:
+  required:
+    - upgrade_d7_file_plain_source_field_document
+    - upgrade_d7_file_plain_type_document
+  optional:
+    - upgrade_d7_field_collection_type
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_plain_source_field_document

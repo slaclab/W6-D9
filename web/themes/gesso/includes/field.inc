@@ -20,5 +20,17 @@ function gesso_preprocess_field(&$vars) {
     foreach ($vars['items'] as $index => $item) {
       $vars['items'][$index]['content']['#attributes']['class'][] = 'c-arrow-link';
     }
+  } else if ($vars['field_name'] == 'field_title' &&
+    $vars['element']['#entity_type'] == 'site_setting_entity' &&
+    $vars['element']['#bundle'] == 'event_visitor_details'
+  ) {
+    /** @var \Drupal\site_settings\SiteSettingEntityInterface $entity */
+    $entity = $vars['element']['#object'];
+    if ($entity->hasField('field_link')) {
+      $uri = $entity->field_link->uri;
+      if ($uri) {
+        $vars['link_url'] = \Drupal\Core\Url::fromUri($uri)->toString();
+      }
+    }
   }
 }

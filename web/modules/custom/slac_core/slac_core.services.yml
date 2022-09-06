@@ -2,3 +2,6 @@ services:
   slac_core.microsite_utilities:
     class: Drupal\slac_core\Services\MicrositeUtilities
     arguments: ['@current_route_match']
+  slac_core.slac_search:
+    class: Drupal\slac_core\Services\SlacSearch
+    arguments: [ '@entity_type.manager' ]

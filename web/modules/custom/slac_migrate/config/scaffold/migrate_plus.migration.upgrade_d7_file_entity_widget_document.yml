@@ -1,0 +1,74 @@
+uuid: db1f09fd-8532-4a80-9fa0-0a7e610d5167
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_file_entity_widget_document
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+  - 'Media Migration'
+  - 'Media Configuration'
+migration_group: migrate_drupal_7
+label: 'File Entity media source field widget (Document)'
+source:
+  plugin: d7_file_entity_field_widget
+  constants:
+    entity_type_id: media
+    form_mode: default
+  schemes: public
+  types: document
+  destination_media_type_id: document
+  source_field_name: field_media_document
+  media_migration_original_id: 'd7_file_entity_widget:document'
+process:
+  entity_type:
+    -
+      plugin: get
+      source: constants/entity_type_id
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  form_mode:
+    -
+      plugin: get
+      source: constants/form_mode
+  field_name:
+    -
+      plugin: migration_lookup
+      source:
+        - types
+        - schemes
+      migration: upgrade_d7_file_entity_source_field_document
+      no_stub: true
+    -
+      plugin: default_value
+      default_value:
+        - null
+        - null
+    -
+      plugin: extract
+      index:
+        - 1
+  options:
+    -
+      plugin: get
+      source: options
+destination:
+  plugin: component_entity_form_display
+migration_dependencies:
+  required:
+    - upgrade_d7_file_entity_source_field_config_document
+  optional:
+    - upgrade_d7_field_collection_type
+    - upgrade_d7_paragraphs_type
+    - upgrade_d7_file_entity_source_field_document

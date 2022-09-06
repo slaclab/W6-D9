@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.large_card
+    - core.entity_view_mode.node.large_link_list
     - core.entity_view_mode.node.teaser
     - node.type.event
     - node.type.media_mention
@@ -22,7 +22,7 @@ dependencies:
 id: landing_pages
 label: 'Landing Page Content View Embeds'
 module: views
-description: ''
+description: 'View with multiple separate displays for embedding lists and grids of content in sections.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -205,7 +205,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: large_link_list
       query:
         type: views_query
         options:

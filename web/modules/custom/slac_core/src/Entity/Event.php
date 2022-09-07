@@ -16,7 +16,6 @@ use Drupal\node\NodeInterface;
  *   label = @Translation("Event bundle class"),
  * )
  */
-
 interface EventInterface extends NodeInterface {
   public function getEventTense() : string;
   public function isPastEvent(): bool;

@@ -1,0 +1,51 @@
+uuid: 9b5f2425-ade7-4a6a-85ec-a05b18fb866e
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_revisions_block
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Revisions Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs Revisions (Block)'
+source:
+  plugin: d7_paragraphs_item_revision
+  bundle: block
+process:
+  id:
+    -
+      plugin: paragraphs_lookup
+      tags:
+        - 'Paragraphs Content'
+      source: item_id
+    -
+      plugin: extract
+      index:
+        - id
+  type:
+    -
+      plugin: get
+      source: bundle
+  field_content:
+    -
+      plugin: get
+      source: field_content
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  field_width:
+    -
+      plugin: get
+      source: field_width
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  new_revisions: true
+  default_bundle: block
+migration_dependencies:
+  required: []
+  optional: []

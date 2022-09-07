@@ -12,15 +12,15 @@ use Drupal\ultimate_cron\Entity\CronJob;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Defines a class for Event cache invalidation called by cron jobs.
+ *
+ * Though a service, containerInjection is needed due to cron calling eventCacheProcess
+ * and constructing the class through that process, with no arguments.
+ *
+ */
 class EventCache implements ContainerInjectionInterface {
   use StringTranslationTrait;
-
-  /**
-   * The path for the Drupal root.
-   *
-   * @var string
-   */
-  private $event_cache_tag = 'event_date_change';
 
   /**
    * A logger instance.
@@ -30,7 +30,7 @@ class EventCache implements ContainerInjectionInterface {
   protected LoggerInterface $logger;
 
   /**
-   * Constructs an EventCache object.
+   * Constructs a logger object.
    *
    * @param LoggerInterface $logger
    *   A logger instance.
@@ -57,14 +57,14 @@ class EventCache implements ContainerInjectionInterface {
   public function eventCacheProcess(CronJob $job) {
     // Get the set of events that started or ended since the last cron run.
     // Because Pantheon only runs cron once an hour, and the Ultimate cron job is set to
-    // run once an hour, lookback is buffered to more than 60 minutes.
+    // run once an hour, lookback is buffered to more than 60 minutes (75 minutes).
     if ($changing = $this->getChangingEvents(-4500, FALSE)) {
       // Create storage and load the selected nodes.
       $storage = \Drupal::entityTypeManager()->getStorage('node');
       $nodes = $storage->loadMultiple($changing);
 
       // The list of tags to invalidate, defaulting to the custom tag.
-      $tags = [ $this->event_cache_tag ];
+      $tags = [];
 
       /** @var Node $event */
       foreach ($nodes as $event) {

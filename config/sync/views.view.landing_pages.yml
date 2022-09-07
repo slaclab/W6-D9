@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.large_card
-    - core.entity_view_mode.node.large_link_list
     - core.entity_view_mode.node.teaser
     - node.type.event
     - node.type.media_mention
     - node.type.news_article
     - node.type.resource
     - taxonomy.vocabulary.article_type
+    - taxonomy.vocabulary.audience
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.research_area
   module:
@@ -214,7 +215,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: large_link_list
+          view_mode: card
       query:
         type: views_query
         options:
@@ -2172,6 +2173,46 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_research_area_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_audience_terms_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
       cache:
         type: time
         options:
@@ -2236,10 +2277,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_research_area_target_id:
-          id: field_research_area_target_id
-          table: node__field_research_area
-          field: field_research_area_target_id
+        field_audience_terms_target_id:
+          id: field_audience_terms_target_id
+          table: node__field_audience_terms
+          field: field_audience_terms_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -2249,14 +2290,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_research_area_target_id_op
-            label: 'Research Area'
+            operator_id: field_audience_terms_target_id_op
+            label: 'Filter by Audience'
             description: ''
             use_operator: false
-            operator: field_research_area_target_id_op
+            operator: field_audience_terms_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_research_area_target_id
+            identifier: audience
             required: false
             remember: false
             multiple: false
@@ -2282,11 +2323,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: research_area
+          vid: audience
           type: select
           hierarchy: false
           limit: true
-          error_message: true
+          error_message: false
       filter_groups:
         operator: AND
         groups:
@@ -2294,6 +2335,7 @@ display:
       defaults:
         cache: false
         pager: false
+        exposed_form: false
         sorts: false
         filters: false
         filter_groups: false

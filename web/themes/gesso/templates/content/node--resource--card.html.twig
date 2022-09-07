@@ -76,7 +76,7 @@
 
 {% include '@components/card/card.twig' with {
   'title': label,
-  'url': content.field_link[0]['#title'],
+  'url': content.field_link[0]['#url']|render,
   'kicker': null,
   'type': null,
   'footer': false,

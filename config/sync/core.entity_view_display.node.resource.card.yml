@@ -25,7 +25,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_link:
     type: link_separate
@@ -37,13 +37,13 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_teaser:
     type: smart_trim
     label: hidden
     settings:
-      trim_length: 32
+      trim_length: 24
       trim_type: words
       trim_suffix: ...
       wrap_output: false
@@ -56,14 +56,10 @@ content:
         text: true
         trim_zero: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_audience_terms: true
   langcode: true
+  links: true
   search_api_excerpt: true

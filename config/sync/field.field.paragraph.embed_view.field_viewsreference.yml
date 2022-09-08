@@ -33,7 +33,7 @@ settings:
     3_cards_with_show_more: 3_cards_with_show_more
     landing_pages: landing_pages
     landing_pages_media: landing_pages_media
-    media_mention_list_configurable_: media_mention_list_configurable_
+    related_content_for_detail_pages: related_content_for_detail_pages
     teaser_list: teaser_list
     block_content: 0
     comment: 0
@@ -45,7 +45,6 @@ settings:
     landing_pages_taxonomy_term: 0
     media: 0
     media_library: 0
-    related_content_for_detail_pages: 0
     related_content_for_media_pages: 0
     search: 0
     taxonomy_term: 0

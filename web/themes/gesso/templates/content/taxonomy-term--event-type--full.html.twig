@@ -37,10 +37,16 @@
   {% set show_admin_info = true %}
 {% endif %}
 
+{% set title_content %}
+  {{ content.field_lede|field_value }}
+  {{ drupal_view('event_type_taxonomy_term', 'second_next_event_card', term.tid.value) }}
+{% endset %}
+
 {% include '@components/page-title/page-title.twig' with {
   page_title: content.field_display_name|field_value is not empty ? content.field_display_name|field_value : name,
-  lede: content.field_lede|field_value,
-  sidebar_content: "SIDEBAR CONTENT",
+  lede: title_content,
+  sidebar_content: drupal_view('event_type_taxonomy_term', 'next_event_large_card', term.tid.value),
+  modifier_classes: 'l-section--gray-gradient',
   has_constrain: true,
 } %}
 

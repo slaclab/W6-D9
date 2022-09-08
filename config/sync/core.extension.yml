@@ -122,6 +122,9 @@ module:
   views_year_filter: 0
   viewsreference: 0
   viewsreference_filter: 0
+  webform: 0
+  webform_templates: 0
+  webform_ui: 0
   yaml_content: 0
   views: 10
   paragraphs: 11

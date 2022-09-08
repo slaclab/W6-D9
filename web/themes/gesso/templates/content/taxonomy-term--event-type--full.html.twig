@@ -32,48 +32,34 @@
 {% set admin_info %}
   {{ region_status }}
 {% endset %}
-
 {% set show_admin_info = false %}
-
 {% if admin_info|striptags('<drupal-render-placeholder>')|trim %}
   {% set show_admin_info = true %}
 {% endif %}
 
-{% set description %}
-  {% include '@components/wysiwyg/wysiwyg.twig' with {
-    content: content.description|field_value,
-  } %}
-{% endset %}
+{% include '@components/page-title/page-title.twig' with {
+  page_title: content.field_display_name|field_value is not empty ? content.field_display_name|field_value : name,
+  lede: content.field_lede|field_value,
+  sidebar_content: "SIDEBAR CONTENT",
+  has_constrain: true,
+} %}
 
 {% set term_content %}
   {% include '@layouts/section/section.twig' with {
-    'section_content': description,
-    'has_constrain': true,
-    'modifier_classes': 'l-section--white l-section--no-padding',
-  } %}
-  {% include '@layouts/section/section.twig' with {
-    'section_content': content|without("description", "field_lede", "field_display_name"),
-    'has_constrain': true,
-    'modifier_classes': 'l-section--white',
-  } %}
-  {% include '@layouts/section/section.twig' with {
-    'section_title': 'Related Content'|t,
-    'section_content': drupal_view('taxonomy_term', 'default', term.tid.value),
+    'section_content': content.field_content,
     'has_constrain': true,
     'modifier_classes': 'l-section--white',
   } %}
 {% endset %}
 
 {% include '@components/article/article.twig' with {
-  'title': term.hasField('field_display_name') ? content.field_display_name|field_value : name,
+  'title': null,
+  'lede': null,
   'show_admin_info': show_admin_info,
-  'lede': term.hasField('field_lede') ? content.field_lede|field_value : null,
   'admin_info': admin_info,
   'show_footer': false,
-  'date': term.getCreatedTime|date("F j, Y"),
   'rdf_metadata': metadata,
   'content': term_content,
 } %}
 
-{# Uncomment the following if you don’t render the content variable. #}
-{# {% set catch_cache = content|render %} #}
+{% set catch_cache = content|render %}

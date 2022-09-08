@@ -116,7 +116,8 @@
       "drupal/console-extend-plugin": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "rvtraveller/qs-composer-installer": true,
-      "joachim-n/composer-manifest": true
+      "joachim-n/composer-manifest": true,
+      "simplesamlphp/composer-module-installer": true
     }
   },
   "autoload": {

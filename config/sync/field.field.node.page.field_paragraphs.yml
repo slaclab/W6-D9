@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.content_card
-    - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.media_card
@@ -40,7 +39,6 @@ settings:
       article_hero: article_hero
       card: card
       content_card: content_card
-      embed_view: embed_view
       image_carousel: image_carousel
       image_hero: image_hero
       media_card: media_card
@@ -85,7 +83,7 @@ settings:
         enabled: false
       embed_view:
         weight: -60
-        enabled: true
+        enabled: false
       extra_large_card:
         weight: -61
         enabled: false

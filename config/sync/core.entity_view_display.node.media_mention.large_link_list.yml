@@ -1,21 +1,21 @@
-uuid: c16dac1f-3489-4c4e-a355-a055ecbdf713
+uuid: 26cac3ad-18c2-47ec-bd18-7389b006da22
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.large_link_list
     - field.field.node.media_mention.field_link
     - node.type.media_mention
   module:
     - link
     - user
-id: node.media_mention.teaser
+id: node.media_mention.large_link_list
 targetEntityType: node
 bundle: media_mention
-mode: teaser
+mode: large_link_list
 content:
   field_link:
-    type: link
+    type: link_separate
     label: hidden
     settings:
       trim_length: null

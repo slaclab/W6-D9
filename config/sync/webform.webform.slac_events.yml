@@ -1,4 +1,4 @@
-uuid: cc28e3cb-cb16-438a-8f5b-d71c6429eb66
+uuid: 82673652-b62b-4005-965c-88be45198098
 langcode: en
 status: open
 dependencies:
@@ -10,45 +10,61 @@ _core:
 weight: 0
 open: null
 close: null
-uid: null
+uid: 1
 template: false
 archive: false
-id: contact
-title: 'Contact Us'
-description: ''
+id: slac_events
+title: 'SLAC Events'
+description: '<p>SLAC Events</p>'
 category: ''
 elements: |-
   name:
     '#type': textfield
-    '#title': 'Your Name:'
+    '#title': 'First Name:'
     '#required': true
     '#default_value': '[current-user:display-name]'
   email:
     '#type': email
-    '#title': 'Your Email:'
+    '#title': 'Last Name:'
     '#required': true
     '#default_value': '[current-user:mail]'
-  topic_of_your_questions_comments_or_inquiries_:
-    '#type': select
-    '#title': 'Topic of Your Questions, Comments or Inquiries:'
-    '#options':
-      'Career Opportunities/ Employment': 'Career Opportunities/ EmploymentCareer Opportunities/ Employment'
-      'Research Collaboration': 'Research Collaboration'
-      'Doing Business with SLAC': 'Doing Business with SLAC'
-      'Teachers and Students': 'Teachers and Students'
-      'Media Inquiries/Questions': 'Media Inquiries/Questions'
-      Other: Other
-    '#empty_option': 'Please make a selection'
+  your_organization_affiliation_:
+    '#type': email
+    '#title': 'Organization:'
+    '#default_value': '[current-user:mail]'
+  title_:
+    '#type': email
+    '#title': 'Title:'
+    '#default_value': '[current-user:mail]'
+  address:
+    '#type': webform_address
+    '#title': 'Address:'
     '#required': true
-  message:
-    '#type': textarea
-    '#title': 'Your Questions, Comments or Inquiries:'
+    '#address__title': 'Address:'
+    '#address__required': true
+    '#address_2__title': 'Address 2:'
+    '#city__title': 'City:'
+    '#city__required': true
+    '#state_province__title': 'State:'
+    '#state_province__required': true
+    '#postal_code__title': 'ZIP:'
+    '#postal_code__required': true
+    '#country__title': 'Country:'
+    '#country__placeholder': 'United States'
+    '#country__required': true
+  phone_:
+    '#type': tel
+    '#title': 'Phone:'
+    '#autocomplete': ''
     '#required': true
-    '#test': 'Please ignore this email.'
+  email_:
+    '#type': email
+    '#title': 'Email:'
+    '#required': true
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
-    '#submit__label': 'send comments or questions'
+    '#submit__label': Submit
 css: ''
 javascript: ''
 settings:

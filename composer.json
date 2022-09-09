@@ -21,7 +21,6 @@
     "drupal/animated_gif": "^2.0",
     "drupal/better_exposed_filters": "^5.2",
     "drupal/block_field": "^1.0@RC",
-    "drupal/ckeditor_div_manager": "^2.0",
     "drupal/components": "^2.4",
     "drupal/conditional_fields": "^4.0@alpha",
     "drupal/config_split": "^1.7",

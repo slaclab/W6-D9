@@ -4,4 +4,10 @@ services:
     arguments: ['@current_route_match']
   slac_core.slac_search:
     class: Drupal\slac_core\Services\SlacSearch
-    arguments: [ '@entity_type.manager' ]
+    arguments: ['@entity_type.manager']
+  slac_core.event_cache:
+    class: Drupal\slac_core\Services\EventCache
+    arguments: []
+  logger.channel.slac_core:
+    parent: logger.channel_base
+    arguments: ['slac_core']

@@ -112,7 +112,7 @@
     {% if multiday_event == false %}
       {{ event_start_date|date("l, F j, Y") }}
       &nbsp;·&nbsp;
-      {{- event_start_date|date("g:i a") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("g:i a") }}&nbsp;&nbsp;{{ event_start_date|date("T") -}}
+      {{- event_start_date|date("g:i a")|replace({"am":"a.m.", "pm":"p.m."}) }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("g:i a")|replace({"am":"a.m.", "pm":"p.m."}) }}&nbsp;&nbsp;{{ event_start_date|date("T")|replace({"PST":"PT","PDT":"PT"}) -}}
     {% else %}
       {{- event_start_date|date("l, F j, Y") }}&nbsp;&nbsp;–&nbsp;&nbsp;{{ event_end_date|date("l, F j, Y") }}
     {% endif %}

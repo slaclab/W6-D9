@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a956066921eff486740b1ad5d52d4649",
+    "content-hash": "5eb2d1f40e9b16840052ff7f4e1e56ad",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3436,6 +3436,7 @@
                 "drupal/search_api": "^1.25||1.x-dev"
             },
             "suggest": {
+                "drupal/better_exposed_filters": "Required for AJAX support for facets rendered as views exposed filters",
                 "drupal/jquery_ui_slider": "Required for the 'Facets Range Widget' module to work",
                 "drupal/jquery_ui_touch_punch": "Required for the 'Facets Range Widget' module to work"
             },
@@ -3446,7 +3447,7 @@
                 },
                 "drupal": {
                     "version": "3.0.x-dev",
-                    "datestamp": "1661283991",
+                    "datestamp": "1662721761",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3528,16 +3529,16 @@
                     "homepage": "https://www.drupal.org/user/647364"
                 },
                 {
-                    "name": "Stalski",
-                    "homepage": "https://www.drupal.org/user/322618"
-                },
-                {
                     "name": "jyve",
                     "homepage": "https://www.drupal.org/user/591438"
                 },
                 {
                     "name": "nils.destoop",
                     "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
                 },
                 {
                     "name": "swentel",
@@ -4098,6 +4099,10 @@
                     "name": "Naveen Valecha",
                     "homepage": "https://drupal.org/u/naveenvalecha",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
                 }
             ],
             "description": "Provides jQuery UI Touch Punch library.",
@@ -4501,6 +4506,9 @@
             },
             "require": {
                 "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "*"
             },
             "type": "drupal-module",
             "extra": {

@@ -5,12 +5,14 @@ namespace Drupal\slac_core\Services;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\node\Entity\Node;
 use Drupal\ultimate_cron\Entity\CronJob;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Defines a class for Event cache invalidation called by cron jobs.
@@ -30,13 +32,24 @@ class EventCache implements ContainerInjectionInterface {
   protected LoggerInterface $logger;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs a logger object.
    *
    * @param LoggerInterface $logger
    *   A logger instance.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager service.
+   *
    */
-  public function __construct(LoggerInterface $logger) {
+  public function __construct(LoggerInterface $logger, EntityTypeManagerInterface $entity_type_manager) {
     $this->logger = $logger;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -45,6 +58,7 @@ class EventCache implements ContainerInjectionInterface {
   public static function create(ContainerInterface $container) {
     return new static (
       $container->get('logger.channel.slac_core'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -55,12 +69,11 @@ class EventCache implements ContainerInjectionInterface {
    * @throws \Exception
    */
   public function eventCacheProcess(CronJob $job) {
-    // Get the set of events that started or ended since the last cron run.
-    // Because Pantheon only runs cron once an hour, and the Ultimate cron job is set to
-    // run once an hour, lookback is buffered to more than 60 minutes (75 minutes).
-    if ($changing = $this->getChangingEvents(-4500, FALSE)) {
+    // Get the set of events that started or ended since the last cron run
+    // (in the past 15 minutes).
+    if ($changing = $this->getChangingEvents(-900, FALSE)) {
       // Create storage and load the selected nodes.
-      $storage = \Drupal::entityTypeManager()->getStorage('node');
+      $storage = $this->entityTypeManager->getStorage('node');
       $nodes = $storage->loadMultiple($changing);
 
       // The list of tags to invalidate, defaulting to the custom tag.
@@ -71,18 +84,19 @@ class EventCache implements ContainerInjectionInterface {
         $tags = Cache::mergeTags($tags, $event->getCacheTags());
       }
 
-      $this->logger->info('Event caching: @noun @nids processed, invalidating @tags', [
-        '@noun' => $this->formatPlural(count($changing), 'Node', 'Nodes'),
-        '@nids' => implode(', ', array_values($changing)),
-        '@tags' => implode(', ', $tags),
-      ]);
+      // If there were any changes to events, invalidate all the tags associated with those nodes
+      // and the custom tag for lists, etc.
+      if (count($tags)) {
+        Cache::invalidateTags($tags);
+
+        $this->logger->info('Event caching: @count @noun cache-invalidated (@nids)', [
+          '@count' => count($changing),
+          '@noun' => $this->formatPlural(count($changing), 'event', 'events'),
+          '@nids' => implode(', ', array_values($changing)),
+        ]);
+      }
     }
 
-    // If there were any changes to events, invalidate all the tags associated with those nodes
-    // and the custom tag for lists, etc.
-    if (count($tags)) {
-      Cache::invalidateTags($tags);
-    }
   }
 
   /**
@@ -110,7 +124,7 @@ class EventCache implements ContainerInjectionInterface {
     $target_datetime = new DrupalDateTime($offset_string, $storage_tz);
     $target_formatted = $target_datetime->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
 
-    $query = \Drupal::entityQuery('node');
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
     // Start time is in between left and right time boundaries.
     $start_group = $query
       ->andConditionGroup()
@@ -130,7 +144,7 @@ class EventCache implements ContainerInjectionInterface {
 
     // Execute query for matching entities. Note that this is neutral as to node status, as a node may
     // change status (e.g., be published or unpublished) during the interval
-    $nids = \Drupal::entityQuery('node')
+    $nids = $query
       ->condition('type', 'event')
       ->condition($or_group)
       ->execute();

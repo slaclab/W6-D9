@@ -66,7 +66,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_long_text:
     type: text_default
@@ -84,19 +84,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_source_name:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_teaser:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_thumbnail:
     type: entity_reference_entity_view
@@ -105,7 +98,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   name:
     type: string
@@ -113,7 +106,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
 hidden:
   created: true
@@ -124,6 +117,7 @@ hidden:
   field_link: true
   field_paragraphs: true
   field_research_area: true
+  field_source_name: true
   field_tags: true
   field_teaser: true
   field_transcript: true

@@ -2,22 +2,20 @@
 
 namespace Drupal\slac_core\Entity;
 
-use DateTime;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 
 /**
- * Defines the base field override entity.
- *
- * Allows base fields to be overridden on the bundle level.
+ * Defines a bundle class for Event type nodes.
  *
  * @ConfigEntityType(
  *   id = "event",
  *   label = @Translation("Event bundle class"),
  * )
  */
-
 interface EventInterface extends NodeInterface {
   public function getEventTense() : string;
   public function isPastEvent(): bool;
@@ -46,19 +44,19 @@ class Event extends Node implements EventInterface {
 
     // Get the current default timezone.
     $default_timezone = new \DateTimeZone(date_default_timezone_get());
-    $utc_timezone = new \DateTimeZone('UTC');
+    $storage_timezone = new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE);
 
     // Get the current date and time as a DateTime object and set the current timezone.
-    $now = date_create();
-    $now->setTimezone($default_timezone);
+    $now = new DrupalDateTime('now', $default_timezone);
 
     // Retrieve the start and end dates of this event and make sure the
     // correct timezone is set. Values retrieved from the field are not guaranteed
     // to be translated into the correct timezone, so assume they are in UTC zone and
     // convert to the system default (likely to be Los Angeles).
-    $event_date_start = new DateTime($this->get('field_datetime_range')->value, $utc_timezone);
+    $event_date_start = new DrupalDateTime($this->get('field_datetime_range')->value, $storage_timezone);
     $event_date_start->setTimezone($default_timezone);
-    $event_date_end = new DateTime($this->get('field_datetime_range')->end_value, $utc_timezone);
+
+    $event_date_end = new DrupalDateTime($this->get('field_datetime_range')->end_value, $storage_timezone);
     $event_date_end->setTimezone($default_timezone);
 
     // Use date comparison to determine order.
@@ -84,16 +82,16 @@ class Event extends Node implements EventInterface {
    * @throws \Exception
    */
   public function isPastEvent(): bool {
-    // Get the current date and time as a DateTime object.
-    $now = date_create();
-
     // Get the current default timezone and the UTC timezone.
     $default_timezone = new \DateTimeZone(date_default_timezone_get());
-    $utc_timezone = new \DateTimeZone('UTC');
+
+    // Get the current date and time as a DateTime object.
+    $now = new DrupalDateTime('now', $default_timezone);
 
     // Retrieve the end date of this event. An event is only in the past if the end date occurs
-    // before the current day. Field values are retrieved in UTC time, convert to default tz.
-    $event_date_end = new DateTime($this->get('field_datetime_range')->end_value, $utc_timezone);
+    // before the current day. Field values are retrieved in storage tz (UTC), convert to default tz (Los Angeles).
+    $event_date_end = new DrupalDateTime($this->get('field_datetime_range')->end_value,
+      new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE));
     $event_date_end->setTimezone($default_timezone);
 
     return $event_date_end < $now;

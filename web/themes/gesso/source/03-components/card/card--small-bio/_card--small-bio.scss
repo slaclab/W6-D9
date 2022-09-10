@@ -34,6 +34,10 @@
 
   .c-card__body {
     font-weight: gesso-font-weight(bold);
+
+    a:not(.external-link) {
+      @include arrow-link(red);
+    }
   }
 
   &,

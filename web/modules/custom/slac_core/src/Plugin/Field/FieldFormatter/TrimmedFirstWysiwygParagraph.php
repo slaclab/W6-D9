@@ -130,6 +130,9 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/','$0 ', $text);
     }
 
+    // Add a space in front of individual list items (li, dd, and dt).
+    $text = preg_replace('/(?<!\s)<(li|dd|dt)/', ' <\1', $text);
+
     // Strip and decode remaining text, retaining font format tags if requested.
     $retained_tags = $setting_trim_options['retain_formatting'] ? ['strong', 's', 'em', 'sub', 'sup'] : [];
     $text = html_entity_decode(strip_tags($text, $retained_tags));

@@ -85,6 +85,7 @@ settings:
         - '<h5 id>'
         - '<h6 id>'
         - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+        - '<div class name id>'
     ckeditor5_list:
       reversed: false
       startIndex: true

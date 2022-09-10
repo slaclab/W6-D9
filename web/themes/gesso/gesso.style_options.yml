@@ -135,6 +135,15 @@ options:
       - label: 'None'
       - label: 'Parallax'
         class: 'c-overlap-image--parallax'
+  embed_width:
+    plugin: css_class
+    label: 'Width'
+    options:
+      - label: 'Content'
+      - label: 'Wide'
+        class: 'c-embed--wide'
+      - label: 'Full'
+        class: 'c-embed--full'
 
 contexts:
   paragraphs:
@@ -163,3 +172,6 @@ contexts:
         overlap_image_bg: true
         overlap_image_position: true
         overlap_image_effect: true
+    embed_full_html_:
+      options:
+        embed_width: true

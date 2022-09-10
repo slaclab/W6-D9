@@ -25,15 +25,21 @@ process:
   field_image:
     -
       plugin: media_migration_delta_sort
-      source: field_image
+      source: field_header_image
     -
       plugin: sub_process
       process:
         target_id: fid
+    -
+      plugin: skip_on_empty
+      method: row
   _skip_row:
     -
+      plugin: skip_on_empty
+      source: field_do_not_display_hero_image/0/value
+      method: process
+    -
       plugin: skip_on_value
-      source: field_do_not_display_hero_image
       value: 1
       method: row
 destination:

@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - slac_migrate
+_core:
+  default_config_hash: gv-6k1F0-GXF5qFIjiLS-J2NbQkTWhN2cPn9IYoAbc8
 id: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null

@@ -1,11 +1,13 @@
-uuid: 8b59c1c0-de8d-4fbe-b53d-5f2ea1b7aac4
+uuid: 3db9988c-54a8-411f-9a75-356a398fd854
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - slac_migrate
-id: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
+_core:
+  default_config_hash: eSgCJOm5NjYWwhZo1qkxSHLSk3ifWHTUhejI2pjQ1TY
+id: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
 cck_plugin_method: null
@@ -13,7 +15,7 @@ migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: migrate_drupal_7
-label: 'Node complete (News-article) Image to Paragraph'
+label: 'Node complete (News-article) Body to Paragraph'
 source:
   plugin: d7_node
   node_type: news_article
@@ -21,23 +23,23 @@ process:
   type:
     -
       plugin: default_value
-      default_value: image_embed
-  field_image:
+      default_value: wysiwyg
+  field_body:
     -
-      plugin: media_migration_delta_sort
-      source: field_image
+      plugin: get
+      source: body
     -
-      plugin: sub_process
-      process:
-        target_id: fid
-  field_view_mode:
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  field_body/0/format:
     -
       plugin: default_value
-      default_value: centered
+      default_value: basic_html
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   translations: true
-  default_bundle: image_embed
+  default_bundle: wysiwyg
 migration_dependencies:
   required: {  }
   optional: {  }

@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - slac_migrate
+_core:
+  default_config_hash: 0Bu2NY7GL8JEMzdkqG07Rj9WNTovQ_z3oq6bENIttDE
 id: upgrade_d7_paragraphs_video
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

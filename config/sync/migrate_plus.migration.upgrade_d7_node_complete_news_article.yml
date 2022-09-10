@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - slac_migrate
+_core:
+  default_config_hash: v6ZfUEhlloHCWPytC8GQBozct6YGyWKRQScCnl0fWaw
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null

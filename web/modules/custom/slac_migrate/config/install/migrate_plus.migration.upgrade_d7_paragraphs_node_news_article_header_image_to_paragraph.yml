@@ -1,3 +1,4 @@
+uuid: 9622c9b7-5e13-427b-bd24-380736fcb391
 langcode: en
 status: true
 dependencies:
@@ -40,5 +41,5 @@ destination:
   translations: true
   default_bundle: article_hero
 migration_dependencies:
-  required: []
-  optional: []
+  required: {  }
+  optional: {  }

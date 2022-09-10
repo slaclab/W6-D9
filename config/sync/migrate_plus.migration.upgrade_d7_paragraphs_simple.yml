@@ -1,11 +1,13 @@
-uuid: 2630d0d9-af45-4607-b0fc-0671c0c0f56c
+uuid: e313fb3c-96af-4947-a488-a5454405d6d5
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - slac_migrate
-id: upgrade_d7_paragraphs_video
+_core:
+  default_config_hash: wnSr8BfNB2IfYQBclAJFSaJPYphEfoGAUDsLFCriSdg
+id: upgrade_d7_paragraphs_simple
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
 cck_plugin_method: null
@@ -14,22 +16,26 @@ migration_tags:
   - Content
   - 'Paragraphs Content'
 migration_group: migrate_drupal_7
-label: 'Paragraphs (Video)'
+label: 'Paragraphs (Simple)'
 source:
   plugin: d7_paragraphs_item
-  bundle: video
+  bundle: simple
 process:
   type:
     -
       plugin: default_value
-      default_value: video_lightbox
-  field_video:
+      default_value: wysiwyg
+  field_body:
     -
       plugin: get
-      source: field_pvideo
+      source: field_content
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
 destination:
   plugin: 'entity_reference_revisions:paragraph'
-  default_bundle: video_lightbox
+  default_bundle: wysiwyg
 migration_dependencies:
   required: {  }
   optional: {  }

@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - slac_migrate
+_core:
+  default_config_hash: 7So0BIAMpy9k0UCoZOaMqV0stQb5rQYg5ovpZPi438U
 id: upgrade_d7_paragraphs_blockquote
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

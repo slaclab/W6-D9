@@ -1,3 +1,4 @@
+uuid: 2ae17095-52ec-4f37-9905-3d9e5d2d1f7c
 langcode: en
 status: true
 dependencies:
@@ -30,5 +31,5 @@ destination:
   translations: true
   default_bundle: video_lightbox
 migration_dependencies:
-  required: []
-  optional: []
+  required: {  }
+  optional: {  }

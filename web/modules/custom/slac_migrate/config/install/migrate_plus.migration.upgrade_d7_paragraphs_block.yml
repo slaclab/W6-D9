@@ -39,5 +39,5 @@ destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: block
 migration_dependencies:
-  required: []
-  optional: []
+  required: {  }
+  optional: {  }

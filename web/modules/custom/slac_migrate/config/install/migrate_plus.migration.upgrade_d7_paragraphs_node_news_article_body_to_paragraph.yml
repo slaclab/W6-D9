@@ -1,23 +1,21 @@
-uuid: e313fb3c-96af-4947-a488-a5454405d6d5
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - slac_migrate
-id: upgrade_d7_paragraphs_simple
-class: Drupal\migrate\Plugin\Migration
+id: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
   - Content
-  - 'Paragraphs Content'
 migration_group: migrate_drupal_7
-label: 'Paragraphs (Simple)'
+label: 'Node complete (News-article) Body to Paragraph'
 source:
-  plugin: d7_paragraphs_item
-  bundle: simple
+  plugin: d7_node
+  node_type: news_article
 process:
   type:
     -
@@ -26,13 +24,14 @@ process:
   field_body:
     -
       plugin: get
-      source: field_content
+      source: body
     -
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
 destination:
   plugin: 'entity_reference_revisions:paragraph'
+  translations: true
   default_bundle: wysiwyg
 migration_dependencies:
   required: []

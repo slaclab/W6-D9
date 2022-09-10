@@ -1,23 +1,21 @@
-uuid: c441451f-a94f-4dab-9963-626bc29fd43b
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - slac_migrate
-id: upgrade_d7_paragraphs_image
-class: Drupal\migrate\Plugin\Migration
+id: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
   - Content
-  - 'Paragraphs Content'
 migration_group: migrate_drupal_7
-label: 'Paragraphs (Image)'
+label: 'Node complete (News-article) Image to Paragraph'
 source:
-  plugin: d7_paragraphs_item
-  bundle: image
+  plugin: d7_node
+  node_type: news_article
 process:
   type:
     -
@@ -26,29 +24,18 @@ process:
   field_image:
     -
       plugin: media_migration_delta_sort
-      source: field_pimage
+      source: field_image
     -
       plugin: sub_process
       process:
         target_id: fid
   field_view_mode:
     -
-      plugin: static_map
-      source: field_width
-      map:
-        large: centered_wide
-        full: two_column_hero
-        'pull-left pull-left-portrait': centered
-        'pull-right pull-right-portrait': centered
-        'pull-left pull-left-narrow': centered
-        'pull-right pull-right-narrow': centered
-        'pull-left pull-left-wide': centered_wide
-        'pull-right pull-right-wide': centered_wide
-    -
       plugin: default_value
       default_value: centered
 destination:
   plugin: 'entity_reference_revisions:paragraph'
+  translations: true
   default_bundle: image_embed
 migration_dependencies:
   required: []

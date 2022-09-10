@@ -79,88 +79,27 @@ process:
     -
       plugin: get
       source: comment
-  body:
+  _field_body_paragraph_ids:
     -
-      plugin: get
-      source: body
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
+      source: nid
+  _field_image_paragraph_ids:
     -
-      plugin: media_wysiwyg_filter
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
+      source: nid
+  _field_video_paragraph_ids:
     -
-      plugin: img_tag_to_embed
-  field_article_type:
-    -
-      plugin: sub_process
-      source: field_article_type
-      process:
-        target_id: tid
-  field_image:
-    -
-      plugin: media_migration_delta_sort
-      source: field_image
-    -
-      plugin: sub_process
-      process:
-        target_id: fid
-  field_page_author:
-    -
-      plugin: get
-      source: field_page_author
-  field_tags:
-    -
-      plugin: sub_process
-      source: field_tags
-      process:
-        target_id: tid
-  field_news_video:
-    -
-      plugin: get
-      source: field_news_video
-  field_news_link:
-    -
-      plugin: field_link
-      source: field_news_link
-  field_subheadline:
-    -
-      plugin: get
-      source: field_subheadline
-  field_teaser:
-    -
-      plugin: get
-      source: field_teaser
-  field_do_not_display_hero_image:
-    -
-      plugin: get
-      source: field_do_not_display_hero_image
-  field_do_not_limit_header_image_:
-    -
-      plugin: get
-      source: field_do_not_limit_header_image_
-  field_header_image:
-    -
-      plugin: media_migration_delta_sort
-      source: field_header_image
-    -
-      plugin: sub_process
-      process:
-        target_id: fid
-  field_header_image_width:
-    -
-      plugin: get
-      source: field_header_image_width
-  field_header_video:
-    -
-      plugin: get
-      source: field_header_video
-  field_news_source:
-    -
-      plugin: get
-      source: field_news_source
-  field_structured_content:
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_video_to_paragraph
+      source: nid
+  _field_structured_content_ids:
     -
       plugin: sub_process
       source: field_structured_content
       process:
-        target_id:
+        0:
           -
             plugin: paragraphs_lookup
             tags: 'Paragraphs Content'
@@ -169,7 +108,7 @@ process:
             plugin: extract
             index:
               - id
-        target_revision_id:
+        1:
           -
             plugin: paragraphs_lookup
             tags:
@@ -185,6 +124,118 @@ process:
             plugin: extract
             index:
               - revision_id
+  field_paragraphs:
+    -
+      plugin: sub_process
+      source:
+        - '@_field_body_paragraph_ids'
+        - '@_field_structured_content_ids'
+        - '@_field_image_paragraph_ids'
+        - '@_field_video_paragraph_ids'
+      process:
+        target_id:
+          -
+            plugin: paragraphs_lookup
+            tags: 'Paragraphs Content'
+            source: 0
+        target_revision_id:
+          -
+            plugin: paragraphs_lookup
+            tags:
+              - 'Paragraphs Revisions Content'
+              - 'Paragraphs Content'
+            tag_ids:
+              'Paragraphs Revisions Content':
+                - revision_id
+              'Paragraphs Content':
+                - value
+            source: 1
+  field_paragraphs/25/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_body_paragraph_ids/0'
+  field_paragraphs/25/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_body_paragraph_ids/1'
+  field_paragraphs/26/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_image_paragraph_ids/0'
+  field_paragraphs/26/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_image_paragraph_ids/1'
+
+  field_paragraphs/27/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_video_paragraph_ids/0'
+  field_paragraphs/27/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_video_paragraph_ids/1'
+  field_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id: tid
+  field_bio:
+    -
+      plugin: get
+      source: field_page_author
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      process:
+        target_id: tid
+  field_source_link:
+    -
+      plugin: field_link
+      source: field_news_link
+  field_lede:
+    -
+      plugin: get
+      source: field_subheadline
+  field_teaser:
+    -
+      plugin: get
+      source: field_teaser
+  _field_header_image_paragraph_ids:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
+      source: nid
+  field_hero_paragraph/0/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_header_image_paragraph_ids/0'
+  field_hero_paragraphs/0/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_header_image_paragraph_ids/1'
+  field_teaser_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_header_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_news_source:
+    -
+      plugin: get
+      source: field_news_source
 destination:
   plugin: 'entity:node'
   translations: true

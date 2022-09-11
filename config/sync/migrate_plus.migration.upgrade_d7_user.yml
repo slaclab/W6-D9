@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: SRlfusokEiOOJEm8key9yoqE8-RbsbbRIkomSuyHsUs
+  default_config_hash: FPmM0Pc4r_wjqLx0tfUn90y4Tsa2IVXgcczHc9sVj90
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null
@@ -103,10 +103,4 @@ destination:
 migration_dependencies:
   required:
     - upgrade_d7_user_role
-  optional:
-    - upgrade_d7_field_instance
-    - upgrade_d7_file
-    - upgrade_user_picture_field_instance
-    - upgrade_user_picture_entity_display
-    - upgrade_user_picture_entity_form_display
-    - upgrade_d7_user_role
+  optional: {  }

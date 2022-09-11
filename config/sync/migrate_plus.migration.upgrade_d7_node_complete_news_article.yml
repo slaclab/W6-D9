@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: QU8s-q-_KNc8f1KfvNzUsPwJY5_w-ymIW8_L3d-wzns
+  default_config_hash: 6G81WlRWpZVr2dLJt_5DGPfDRbnbZYmWfsxv3OoXFWU
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -139,11 +139,12 @@ process:
               - upgrade_d7_paragraphs_simple
               - upgrade_d7_paragraphs_video
             no_stub: true
-            source: target_id
+            source: value
           -
-            plugin: extract
-            index:
-              - id
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_shift
         target_revision_id:
           -
             plugin: migration_lookup
@@ -152,11 +153,12 @@ process:
               - upgrade_d7_paragraphs_simple
               - upgrade_d7_paragraphs_video
             no_stub: true
-            source: target_id
+            source: value
           -
-            plugin: extract
-            index:
-              - revision_id
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_pop
   field_paragraphs:
     -
       plugin: merge
@@ -180,7 +182,11 @@ process:
       plugin: sub_process
       source: field_article_type
       process:
-        target_id: tid
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_article_type
+          source: tid
+          no_stub: true
   field_bio:
     -
       plugin: get
@@ -190,7 +196,11 @@ process:
       plugin: sub_process
       source: field_tags
       process:
-        target_id: tid
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_tags
+          source: tid
+          no_stub: true
   field_source_link:
     -
       plugin: field_link

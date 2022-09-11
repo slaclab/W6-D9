@@ -54,6 +54,10 @@ elements: |-
   group_tours_are_admitted_on_tuesdays_and_thursdays_9_a_m_12_p_m_:
     '#type': webform_section
     '#title': 'Group tours are admitted on Tuesdays and Thursdays, 9 a.m. – 12 p.m. Pacific Time (PT). Please select up to three possible dates/times for your group tour.'
+    '#title_tag': div
+    '#title_attributes':
+      class:
+        - h5
     first_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
       '#title': 'First Choice of Tour Date (Tuesdays or Thursdays)'

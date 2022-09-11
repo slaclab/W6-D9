@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: eSgCJOm5NjYWwhZo1qkxSHLSk3ifWHTUhejI2pjQ1TY
+  default_config_hash: bZYXhBuWGV2wi-8xKvT5XWiih_TlHC1LxNPfvXypBqY
 id: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -32,6 +32,9 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
+    -
+      plugin: skip_on_empty
+      method: row
   field_body/0/format:
     -
       plugin: default_value

@@ -31,6 +31,10 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
+  field_body/0/format:
+    -
+      plugin: default_value
+      default_value: basic_html
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: wysiwyg

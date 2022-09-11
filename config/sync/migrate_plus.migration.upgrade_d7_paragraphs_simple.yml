@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: wnSr8BfNB2IfYQBclAJFSaJPYphEfoGAUDsLFCriSdg
+  default_config_hash: sd8pZrNvo_8FrN_aW7OrkAxZYAOU5Sy2XVEVMUbzG6A
 id: upgrade_d7_paragraphs_simple
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -33,6 +33,10 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
+  field_body/0/format:
+    -
+      plugin: default_value
+      default_value: basic_html
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: wysiwyg

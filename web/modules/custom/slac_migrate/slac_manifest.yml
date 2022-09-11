@@ -1,22 +1,14 @@
 # users
-# - upgrade_d7_user_flood
-# - upgrade_d7_user_mail
 - upgrade_d7_user_role
-#- upgrade_user_picture_field
-#- upgrade_user_picture_field_instance
-#- upgrade_user_picture_entity_display
-#- upgrade_user_picture_entity_form_display
 - upgrade_d7_user
 
 # files and media
 - upgrade_d7_file
-#- upgrade_d7_file_private
+
 # media images
 - upgrade_d7_file_entity_image_public
-#- upgrade_d7_file_entity_image_private
 
 # media: videos
-#- upgrade_d7_file_entity_video_public
 - upgrade_d7_file_entity_video_vimeo
 - upgrade_d7_file_entity_video_youtube
 
@@ -24,8 +16,6 @@
 - upgrade_d7_file_entity_document_public
 
 # paragraphs
-#- upgrade_d7_paragraphs_block
-#- upgrade_d7_paragraphs_blockquote
 - upgrade_d7_paragraphs_image
 - upgrade_d7_paragraphs_simple
 - upgrade_d7_paragraphs_video
@@ -33,10 +23,6 @@
 - upgrade_d7_paragraphs_node_news_article_image_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_video_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
-#- upgrade_d7_paragraphs_revisions_block
-#- upgrade_d7_paragraphs_revisions_blockquote
-#- upgrade_d7_paragraphs_revisions_image
-#- upgrade_d7_paragraphs_revisions_simple
-#- upgrade_d7_paragraphs_revisions_video
+
 #news
 - upgrade_d7_node_complete_news_article

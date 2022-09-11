@@ -137,11 +137,12 @@ process:
               - upgrade_d7_paragraphs_simple
               - upgrade_d7_paragraphs_video
             no_stub: true
-            source: target_id
+            source: value
           -
-            plugin: extract
-            index:
-              - id
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_shift
         target_revision_id:
           -
             plugin: migration_lookup
@@ -150,11 +151,12 @@ process:
               - upgrade_d7_paragraphs_simple
               - upgrade_d7_paragraphs_video
             no_stub: true
-            source: target_id
+            source: value
           -
-            plugin: extract
-            index:
-              - revision_id
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_pop
   field_paragraphs:
     -
       plugin: merge

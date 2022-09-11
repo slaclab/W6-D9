@@ -131,25 +131,26 @@ process:
       process:
         target_id:
           -
-            plugin: paragraphs_lookup
-            tags: 'Paragraphs Content'
-            source: value
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: target_id
           -
             plugin: extract
             index:
               - id
         target_revision_id:
           -
-            plugin: paragraphs_lookup
-            tags:
-              - 'Paragraphs Revisions Content'
-              - 'Paragraphs Content'
-            tag_ids:
-              'Paragraphs Revisions Content':
-                - revision_id
-              'Paragraphs Content':
-                - value
-            source: value
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: target_id
           -
             plugin: extract
             index:

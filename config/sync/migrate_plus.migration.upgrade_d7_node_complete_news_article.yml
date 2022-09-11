@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: v6ZfUEhlloHCWPytC8GQBozct6YGyWKRQScCnl0fWaw
+  default_config_hash: QU8s-q-_KNc8f1KfvNzUsPwJY5_w-ymIW8_L3d-wzns
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -133,25 +133,26 @@ process:
       process:
         target_id:
           -
-            plugin: paragraphs_lookup
-            tags: 'Paragraphs Content'
-            source: value
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: target_id
           -
             plugin: extract
             index:
               - id
         target_revision_id:
           -
-            plugin: paragraphs_lookup
-            tags:
-              - 'Paragraphs Revisions Content'
-              - 'Paragraphs Content'
-            tag_ids:
-              'Paragraphs Revisions Content':
-                - revision_id
-              'Paragraphs Content':
-                - value
-            source: value
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: target_id
           -
             plugin: extract
             index:

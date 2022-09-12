@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: Mvm1iqB2VI6OEAf_T2jXlxDBguyDeNZu2nYUb_-6ocs
+  default_config_hash: zAuThV19DRbRo9Hox2U8PEuxa4sCeXJtVxcUo6VVWW4
 id: upgrade_d7_paragraphs_video
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -27,10 +27,8 @@ process:
       default_value: video_lightbox
   field_video:
     -
-      plugin: media_migration_delta_sort
-      source: field_pvideo
-    -
       plugin: sub_process
+      source: field_pvideo
       process:
         target_id: fid
 destination:

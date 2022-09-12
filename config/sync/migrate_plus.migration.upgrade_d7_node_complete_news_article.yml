@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: 6G81WlRWpZVr2dLJt_5DGPfDRbnbZYmWfsxv3OoXFWU
+  default_config_hash: O8-aHeVwImVxPQKsYmwX-ZtHmkXtRmwA8opT8rj_i5Q
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -161,11 +161,15 @@ process:
             plugin: array_pop
   field_paragraphs:
     -
-      plugin: merge
+      plugin: slac_migrate_merge
+      skip_non_array: true
       source:
         - '@_field_paragraphs_prefix'
         - '@_field_structured_content_ids'
         - '@_field_paragraphs_suffix'
+    -
+      plugin: skip_on_empty
+      method: process
     -
       plugin: sub_process
       process:

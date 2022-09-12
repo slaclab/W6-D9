@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: gv-6k1F0-GXF5qFIjiLS-J2NbQkTWhN2cPn9IYoAbc8
+  default_config_hash: Uz-lXtiWpGBgfPXD05InyioTPvhThJimXSbQQfJrntI
 id: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -25,6 +25,10 @@ process:
       plugin: default_value
       default_value: image_embed
   field_image:
+    -
+      plugin: skip_on_empty
+      source: field_image/0/fid
+      method: row
     -
       plugin: media_migration_delta_sort
       source: field_image

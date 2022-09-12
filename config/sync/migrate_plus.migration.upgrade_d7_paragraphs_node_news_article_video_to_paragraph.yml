@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: SI4qpBk3FHvOwFysxtqhfgn-PKhsOtUKvoE2uOYLtWU
+  default_config_hash: unquKLwN3gJeKshhd8U48w2Tl-Yrvako6cktvd8SqEg
 id: upgrade_d7_paragraphs_node_news_article_video_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -26,8 +26,14 @@ process:
       default_value: video_lightbox
   field_video:
     -
-      plugin: get
+      plugin: skip_on_empty
+      source: field_news_video/0/fid
+      method: row
+    -
+      plugin: sub_process
       source: field_news_video
+      process:
+        target_id: fid
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   translations: true

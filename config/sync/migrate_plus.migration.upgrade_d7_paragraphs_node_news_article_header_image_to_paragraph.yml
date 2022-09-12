@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: FtFPEMFbe3KOpKG8vXtCKHdPGwLcUrxpKm5wKKokysk
+  default_config_hash: RWVyFkJuAyNCeCuQrN_yzgowHHOWse9_KOhjuny26Lw
 id: upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -26,15 +26,16 @@ process:
       default_value: article_hero
   field_image:
     -
+      plugin: skip_on_empty
+      source: field_header_image/0/fid
+      method: row
+    -
       plugin: media_migration_delta_sort
       source: field_header_image
     -
       plugin: sub_process
       process:
         target_id: fid
-    -
-      plugin: skip_on_empty
-      method: row
   _skip_row:
     -
       plugin: skip_on_empty

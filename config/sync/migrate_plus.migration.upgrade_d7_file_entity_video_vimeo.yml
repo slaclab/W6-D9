@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: e_xRczuQ5fg8QIfB_JjJoR8Vdn7i0wr2l3xrPAAFspM
+  default_config_hash: 7CyiqOSxE5HS1afKdl5Y-7hfXx7HdfAy80w2J9TTTY8
 id: upgrade_d7_file_entity_video_vimeo
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -67,6 +67,10 @@ process:
     -
       plugin: media_internet_field_value
       source: uri
+  field_thumbnail/0/target_id:
+    -
+      plugin: default_value
+      default_value: 10835
 destination:
   plugin: 'entity:media'
 migration_dependencies:

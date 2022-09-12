@@ -159,11 +159,15 @@ process:
             plugin: array_pop
   field_paragraphs:
     -
-      plugin: merge
+      plugin: slac_migrate_merge
+      skip_non_array: true
       source:
         - '@_field_paragraphs_prefix'
         - '@_field_structured_content_ids'
         - '@_field_paragraphs_suffix'
+    -
+      plugin: skip_on_empty
+      method: process
     -
       plugin: sub_process
       process:

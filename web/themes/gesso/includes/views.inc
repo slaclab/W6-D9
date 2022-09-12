@@ -26,6 +26,22 @@ function gesso_preprocess_views_view(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_views_view__HOOK().
+ */
+function gesso_preprocess_views_view__topics_landing_page_mosaic(array &$variables) {
+  $research_area_terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadTree('research_area', 0, 1, TRUE);
+  $variables['research_areas'] = [];
+  $renderer = \Drupal::service('renderer');
+  foreach ($research_area_terms as $term) {
+    $variables['research_areas'][] = [
+      'id' => $term->id(),
+      'label' => $term->name->value
+    ];
+    $renderer->addCacheableDependency($variables, $term);
+  }
+}
+
+/**
  * Implements hook_preprocess_views_view_unformatted().
  */
 function gesso_preprocess_views_view_unformatted(array &$variables) {

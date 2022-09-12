@@ -24,9 +24,9 @@
  */
 #}
 {% set size_key = content.field_display_style|render|striptags|trim %}
-{% if size_key == 'square' or size_key == 'one_col_tall' %}
+{% if size_key == 'square' or size_key == 'one_col_tall' or size_key == 'short' %}
   {% set size_val = '1' %}
-{% elseif size_key == 'wide' %}
+{% elseif size_key == 'wide' or size_key == 'wide_short' %}
   {% set size_val = '2' %}
 {% endif %}
 

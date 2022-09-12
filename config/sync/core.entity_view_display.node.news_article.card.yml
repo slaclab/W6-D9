@@ -51,9 +51,9 @@ content:
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
-    label: above
+    label: hidden
     settings:
-      trim_length: '40'
+      trim_length: '24'
       trim_type: words
       trim_suffix: ...
       trim_options:

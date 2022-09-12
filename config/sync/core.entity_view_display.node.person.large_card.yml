@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.person.field_text_title
     - node.type.person
   module:
+    - slac_core
     - text
     - user
 id: node.person.large_card
@@ -22,10 +23,21 @@ bundle: person
 mode: large_card
 content:
   field_body:
-    type: text_trimmed
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
     weight: 3
     region: content

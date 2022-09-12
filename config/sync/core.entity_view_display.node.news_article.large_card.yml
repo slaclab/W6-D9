@@ -39,7 +39,7 @@ content:
     settings:
       tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_news_source:
     type: entity_reference_label
@@ -89,7 +89,7 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_type:
     type: entity_reference_label
@@ -98,11 +98,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
     region: content
 hidden:
   field_bio: true
@@ -117,4 +112,5 @@ hidden:
   field_tags: true
   field_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

@@ -34,102 +34,111 @@ settings:
     negate: 1
     target_bundles_drag_drop:
       accordion:
-        weight: -67
+        weight: -73
         enabled: false
       accordion_item:
-        weight: -66
+        weight: -72
         enabled: true
       article_hero:
-        weight: -65
+        weight: -71
         enabled: true
       callout_box:
-        weight: -63
+        weight: -69
         enabled: false
       card:
-        weight: -64
+        weight: -70
         enabled: false
       cards_with_show_more:
-        weight: -62
+        weight: -68
         enabled: false
       content_card:
-        weight: -61
+        weight: -67
         enabled: false
       content_embed:
-        weight: -60
+        weight: -66
         enabled: false
       embed_block:
-        weight: -59
+        weight: -65
         enabled: false
       embed_full_html_:
-        weight: -58
+        weight: -64
         enabled: false
       embed_view:
-        weight: -57
+        weight: -63
+        enabled: false
+      embed_webform:
+        weight: -62
         enabled: false
       extra_large_card:
-        weight: -56
+        weight: -61
         enabled: false
       fifty_fifty:
-        weight: -55
+        weight: -60
+        enabled: false
+      fifty_fifty_staggered:
+        weight: -59
         enabled: false
       image_carousel:
-        weight: -54
+        weight: -58
         enabled: false
       image_embed:
-        weight: -53
+        weight: -57
         enabled: false
       image_hero:
-        weight: -52
+        weight: -56
         enabled: true
       media_card:
-        weight: -51
+        weight: -55
         enabled: false
       microsite_hero:
-        weight: -50
+        weight: -54
         enabled: true
       microsite_navigation_marker:
-        weight: -49
+        weight: -53
         enabled: false
       overlap_image:
-        weight: -48
+        weight: -52
         enabled: false
       promo_box:
-        weight: -47
+        weight: -51
         enabled: false
       quote:
-        weight: -46
+        weight: -50
         enabled: false
       section:
-        weight: -45
+        weight: -49
         enabled: false
       small_card_with_icon:
-        weight: -44
+        weight: -48
         enabled: false
       small_card_with_image:
-        weight: -43
+        weight: -47
         enabled: false
       small_card_with_solid_background:
-        weight: -42
+        weight: -46
         enabled: false
       table_of_contents:
-        weight: -41
+        weight: -45
         enabled: false
       text_block:
-        weight: -40
+        weight: -44
         enabled: false
       tout:
-        weight: -39
+        weight: -43
+        enabled: false
+      two_column_hero:
+        weight: -42
         enabled: false
       video_hero:
-        weight: -38
+        weight: -41
         enabled: true
       video_lightbox:
-        weight: -37
+        weight: -40
         enabled: false
       wide_card:
-        weight: -36
+        weight: -39
         enabled: false
       wysiwyg:
-        weight: -35
+        weight: -38
         enabled: false
 field_type: entity_reference_revisions

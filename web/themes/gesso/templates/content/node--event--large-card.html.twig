@@ -130,14 +130,6 @@
   {% set location = content.field_link[0]['#title'] %}
 {% endif %}
 
-{% set card_content %}
-  {% if content.field_teaser|field_value is not null %}
-    {{ content.field_teaser|field_value }}
-  {% else %}
-    {{ content.field_body }}
-  {% endif %}
-{% endset %}
-
 {#
 /**
  * If the "Is external event?" field (field_boolean) is set then use the URL of the external link
@@ -146,8 +138,8 @@
  */
 #}
 {% include '@components/card/card.twig' with {
-  'is_event': true,
   'modifier_classes': 'c-card--large',
+  'is_event': true,
   'title': label,
   'url': content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
   'start_date': {
@@ -164,7 +156,7 @@
   'event_date': datetime_location_override ? null : datetime_composed,
   'event_location': location,
   'media': content.field_image|field_value,
-  'card_content': card_content,
+  'card_content': content.field_teaser|field_value is not null ? content.field_teaser : content.field_body,
 } %}
 
 {% set catch_cache = content|render %}

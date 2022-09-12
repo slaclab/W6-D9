@@ -89,6 +89,8 @@ settings:
     ckeditor5_list:
       reversed: false
       startIndex: true
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

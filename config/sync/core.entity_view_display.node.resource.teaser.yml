@@ -10,19 +10,63 @@ dependencies:
     - field.field.node.resource.field_teaser
     - node.type.resource
   module:
+    - link
+    - smart_trim
     - user
 id: node.resource.teaser
 targetEntityType: node
 bundle: resource
 mode: teaser
 content:
-  links:
-    settings: {  }
+  field_audience_terms:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
     third_party_settings: {  }
-    weight: 100
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 32
+      trim_type: words
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
-  field_audience_terms: true
-  field_image: true
-  field_link: true
-  field_teaser: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

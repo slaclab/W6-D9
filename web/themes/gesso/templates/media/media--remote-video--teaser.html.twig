@@ -35,7 +35,7 @@
   'is_video': true,
   'url': content.field_boolean['#items'].value == 0 ? url : null,
   'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : content.name|field_value,
-  'kicker': content.field_source_name|field_value,
+  'kicker': null,
   'type': content_type,
   'footer': footer,
   'media': content.field_thumbnail|field_value,

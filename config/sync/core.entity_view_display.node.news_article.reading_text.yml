@@ -8,10 +8,13 @@ dependencies:
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
     - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -63,4 +66,6 @@ hidden:
   field_teaser_image: true
   field_text: true
   field_type: true
+  langcode: true
   links: true
+  search_api_excerpt: true

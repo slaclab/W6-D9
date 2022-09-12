@@ -47,6 +47,8 @@ content:
     weight: 1
     region: content
 hidden:
+  field_link: true
   fieldset: true
   name: true
+  search_api_excerpt: true
   user_id: true

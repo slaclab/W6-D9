@@ -68,6 +68,11 @@ process:
     -
       plugin: media_internet_field_value
       source: uri
+  field_thumbnail/0/target_id:
+    -
+      plugin: default_value
+      # TODO: Find a better solution for providing a default thumbnail for remote_video.
+      default_value: 10835
 destination:
   plugin: 'entity:media'
 migration_dependencies:

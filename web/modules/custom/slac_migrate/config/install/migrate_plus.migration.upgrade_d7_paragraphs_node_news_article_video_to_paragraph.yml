@@ -24,8 +24,14 @@ process:
       default_value: video_lightbox
   field_video:
     -
-      plugin: get
+      plugin: skip_on_empty
+      source: field_news_video/0/fid
+      method: row
+    -
+      plugin: sub_process
       source: field_news_video
+      process:
+        target_id: fid
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   translations: true

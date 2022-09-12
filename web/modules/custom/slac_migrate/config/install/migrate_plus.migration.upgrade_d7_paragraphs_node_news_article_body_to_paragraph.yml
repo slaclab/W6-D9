@@ -24,15 +24,16 @@ process:
       default_value: wysiwyg
   field_body:
     -
+      plugin: skip_on_empty
+      source: body/0/value
+      method: row
+    -
       plugin: get
       source: body
     -
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-    -
-      plugin: skip_on_empty
-      method: row
   field_body/0/format:
     -
       plugin: default_value

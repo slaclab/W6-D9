@@ -1,9 +1,9 @@
-uuid: 48545d66-0a38-4ace-9661-dbbedf821865
+uuid: 3d802448-fe71-4d58-8dce-4af6dd9d6da8
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.large_vertical
+    - core.entity_view_mode.media.wide_short
     - field.field.media.image.field_body
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
@@ -14,24 +14,25 @@ dependencies:
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
-    - image.style.large_vertical
+    - image.style.wide_and_short
     - media.type.image
   module:
     - image
-id: media.image.large_vertical
+id: media.image.wide_short
 targetEntityType: media
 bundle: image
-mode: large_vertical
+mode: wide_short
 content:
   field_media_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: large_vertical
+      image_style: wide_and_short
       image_loading:
         attribute: lazy
     third_party_settings: {  }

@@ -1,9 +1,9 @@
-uuid: 48545d66-0a38-4ace-9661-dbbedf821865
+uuid: b898e2ee-3af2-4872-983d-e47299c08bf4
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.large_vertical
+    - core.entity_view_mode.media.wide
     - field.field.media.image.field_body
     - field.field.media.image.field_boolean
     - field.field.media.image.field_caption
@@ -17,21 +17,21 @@ dependencies:
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
-    - image.style.large_vertical
+    - image.style.mosaic_wide_800x400_
     - media.type.image
   module:
     - image
-id: media.image.large_vertical
+id: media.image.wide
 targetEntityType: media
 bundle: image
-mode: large_vertical
+mode: wide
 content:
   field_media_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: large_vertical
+      image_style: mosaic_wide_800x400_
       image_loading:
         attribute: lazy
     third_party_settings: {  }

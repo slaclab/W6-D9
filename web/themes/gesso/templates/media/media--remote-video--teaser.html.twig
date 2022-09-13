@@ -34,7 +34,7 @@
 {% include '@components/card/card.twig' with {
   'is_video': true,
   'url': content.field_boolean['#items'].value == 0 ? url : null,
-  'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value|render|striptags : content.name|field_value,
+  'title': content.field_long_text|field_value ? content.field_long_text : content.name,
   'kicker': null,
   'type': content_type,
   'footer': footer,

@@ -28,7 +28,7 @@
   'modifier_classes': 'c-card--teaser',
   'is_video': false,
   'url': content.field_boolean['#items'].value == 0 ? url : null,
-  'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value|render|striptags : content.name|field_value,
+  'title': content.field_long_text|field_value ? content.field_long_text : content.name,
   'kicker': content.field_source_name|field_value,
   'type': content.field_type|field_value,
   'footer': footer,

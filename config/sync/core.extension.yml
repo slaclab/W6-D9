@@ -77,6 +77,7 @@ module:
   oembed_providers: 0
   options: 0
   page_cache: 0
+  pantheon_advanced_page_cache: 0
   path: 0
   path_alias: 0
   rabbit_hole: 0
@@ -109,6 +110,7 @@ module:
   tour: 0
   twig_field_value: 0
   twig_tweak: 0
+  ultimate_cron: 0
   update: 0
   user: 0
   view_mode_select_by_token: 0
@@ -119,6 +121,11 @@ module:
   views_year_filter: 0
   viewsreference: 0
   viewsreference_filter: 0
+  webform: 0
+  webform_access: 0
+  webform_node: 0
+  webform_templates: 0
+  webform_ui: 0
   yaml_content: 0
   views: 10
   paragraphs: 11

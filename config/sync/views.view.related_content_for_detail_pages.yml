@@ -3,14 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.large_link_list
     - core.entity_view_mode.node.teaser
     - node.type.event
+    - node.type.media_mention
     - node.type.news_article
+    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
     - datetime
     - node
+    - taxonomy
     - user
 id: related_content_for_detail_pages
 label: 'Related Content for Detail Pages'
@@ -191,7 +194,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: large_link_list
       query:
         type: views_query
         options:

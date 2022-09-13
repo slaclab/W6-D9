@@ -8,7 +8,9 @@
 {% set is_teaser = 'c-card--teaser' in modifier_classes %}
 {% if is_teaser %}
   {% if kicker and type %}
-    {% set kicker = type|render|raw ~ ' · ' ~ kicker|render|striptags('<em><i>') %}
+    {% set kicker %}
+      {{ type }} · {{ kicker }}
+    {% endset %}
   {% elseif type and not kicker %}
     {% set kicker = type %}
   {% endif %}

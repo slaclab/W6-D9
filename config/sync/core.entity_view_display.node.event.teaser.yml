@@ -56,7 +56,7 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_boolean:
     type: boolean
@@ -66,7 +66,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_datetime_range:
     type: daterange_default
@@ -76,7 +76,7 @@ content:
       format_type: html_datetime
       separator: '-'
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_external_link:
     type: link
@@ -88,7 +88,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -97,7 +97,7 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_link:
     type: link
@@ -109,21 +109,33 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_override_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_text:
     type: string
@@ -131,7 +143,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_type:
     type: entity_reference_label
@@ -139,12 +151,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   field_bio_related_content: true
@@ -161,4 +168,5 @@ hidden:
   field_tags: true
   field_video: true
   langcode: true
+  links: true
   search_api_excerpt: true

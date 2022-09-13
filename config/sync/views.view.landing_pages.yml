@@ -1096,7 +1096,21 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_link_list
       defaults:
+        style: false
+        row: false
         sorts: false
       display_description: ''
       display_extenders: {  }

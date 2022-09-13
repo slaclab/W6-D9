@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: ZqGmrGb7g35su-M1YnR4tdlp0CKJOg636vV-HRlW1w8
+  default_config_hash: iRKZoKZxI0GtKNAWXm1GozO7V-ieRygQ-G-AWX8Neac
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -17,7 +17,7 @@ migration_tags:
 migration_group: migrate_drupal_7
 label: 'Node complete (Lecture)'
 source:
-  plugin: d7_node_complete
+  plugin: d7_node
   node_type: lecture
 process:
   nid:
@@ -114,9 +114,7 @@ process:
           to_format: 'Y-m-d\TH:i:s'
           source: value
         end_value:
-          plugin: format_date
-          from_format: 'Y-m-d\TH:i:s'
-          to_format: 'Y-m-d\TH:i:s'
+          plugin: add_one_hour
           source: value
   field_link:
     -
@@ -142,9 +140,12 @@ process:
       plugin: sub_process
       process:
         target_id: fid
+  field_boolean2:
+    -
+      plugin: default_value
+      default_value: true
 destination:
-  plugin: 'entity_complete:node'
-  translations: false
+  plugin: 'entity:node'
   default_bundle: event
 migration_dependencies:
   required: {  }

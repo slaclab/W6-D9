@@ -15,7 +15,7 @@ migration_tags:
 migration_group: migrate_drupal_7
 label: 'Node complete (Lecture)'
 source:
-  plugin: d7_node_complete
+  plugin: d7_node
   node_type: lecture
 process:
   nid:
@@ -116,9 +116,7 @@ process:
           to_format: 'Y-m-d\TH:i:s'
           source: value
         end_value:
-          plugin: format_date
-          from_format: 'Y-m-d\TH:i:s'
-          to_format: 'Y-m-d\TH:i:s'
+          plugin: add_one_hour
           source: value
   field_link:
     -
@@ -144,9 +142,12 @@ process:
       plugin: sub_process
       process:
         target_id: fid
+  field_boolean2:
+    -
+      plugin: default_value
+      default_value: TRUE
 destination:
-  plugin: 'entity_complete:node'
-  translations: false
+  plugin: 'entity:node'
   default_bundle: event
 migration_dependencies:
   required: []

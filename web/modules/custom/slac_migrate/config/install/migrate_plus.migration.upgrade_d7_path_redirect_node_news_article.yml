@@ -1,3 +1,4 @@
+uuid: e298891d-777e-4111-8a3c-0965dd054bc1
 langcode: en
 status: true
 dependencies:
@@ -8,15 +9,16 @@ id: upgrade_d7_path_redirect_node_news_article
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
 cck_plugin_method: null
-label: Path Redirect (News-article)
 migration_tags:
-  - Drupal 7
+  - 'Drupal 7'
   - Content
+migration_group: migrate_drupal_7
+label: 'Path Redirect (News-article)'
 source:
   plugin: d7_url_alias
   constants:
-    - slash: /
-    - source_prefix: 'entity:'
+    slash: /
+    source_prefix: 'entity:'
 process:
   _skip_non_nodes:
     -
@@ -51,6 +53,16 @@ process:
     -
       plugin: skip_on_empty
       method: row
+  rid:
+    -
+      plugin: entity_lookup
+      source: alias
+      value_key: redirect_source__path
+      entity_type: redirect
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
   uid:
     plugin: default_value
     default_value: 1
@@ -69,4 +81,7 @@ process:
         - constants/source_prefix
         - source
 destination:
-  plugin: entity:redirect
+  plugin: 'entity:redirect'
+migration_dependencies:
+  required: {  }
+  optional: {  }

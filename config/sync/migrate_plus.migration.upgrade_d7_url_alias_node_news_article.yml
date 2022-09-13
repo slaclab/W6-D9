@@ -5,6 +5,8 @@ dependencies:
   enforced:
     module:
       - slac_migrate
+_core:
+  default_config_hash: h8xIpO_MfICmHCIRZOTVU-V3ixWQmbS3b6rgJea2MQI
 id: upgrade_d7_url_alias_node_news_article
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

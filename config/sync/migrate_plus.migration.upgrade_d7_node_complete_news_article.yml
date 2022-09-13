@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: O8-aHeVwImVxPQKsYmwX-ZtHmkXtRmwA8opT8rj_i5Q
+  default_config_hash: kweNj2uicK3PmeYiEhPYTTXLUjp83ypalnbN98i4XHA
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -191,7 +191,7 @@ process:
           migration: upgrade_d7_taxonomy_term_article_type
           source: tid
           no_stub: true
-  field_bio:
+  field_text:
     -
       plugin: get
       source: field_page_author

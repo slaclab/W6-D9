@@ -29,6 +29,8 @@ settings:
       - redo
       - removeFormat
       - '|'
+      - drupalMedia
+      - '|'
       - sourceEditing
       - '-'
   plugins:

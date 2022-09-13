@@ -189,7 +189,7 @@ process:
           migration: upgrade_d7_taxonomy_term_article_type
           source: tid
           no_stub: true
-  field_bio:
+  field_text:
     -
       plugin: get
       source: field_page_author

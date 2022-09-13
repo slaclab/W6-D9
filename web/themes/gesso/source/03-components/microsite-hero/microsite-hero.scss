@@ -85,6 +85,17 @@ $microsite-logo-small: 102px;
       font-size: rem(gesso-font-size(5));
     }
   }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(mobile-menu) + 1px,
+    gesso-breakpoint(desktop-lg)
+  ) {
+    font-size: rem(gesso-font-size(6));
+
+    .is-sticky & {
+      font-size: rem(gesso-font-size(5));
+    }
+  }
 }
 
 .c-microsite-hero__brand {
@@ -107,4 +118,8 @@ $microsite-logo-small: 102px;
       }
     }
   }
+}
+
+.js-microsite-section {
+  scroll-margin-block-start: var(--gesso-header-current-height);
 }

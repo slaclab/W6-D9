@@ -28,5 +28,11 @@
 - upgrade_d7_paragraphs_node_news_article_video_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
 
-#news
+# news
 - upgrade_d7_node_complete_news_article
+
+# url aliases
+- upgrade_d7_url_alias_node_news_article
+
+# url redirects
+- upgrade_d7_path_redirect_node_news_article

@@ -84,8 +84,8 @@
 {% endset %}
 
 {% set card_content %}
-  {% if content.field_teaser|field_value is not null %}
-    {{ content.field_teaser|field_value }}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
   {% else %}
     {{ content.field_paragraphs }}
   {% endif %}

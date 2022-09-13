@@ -10,7 +10,7 @@ field_name: field_lede
 entity_type: node
 bundle: news_article
 label: Lede
-description: ''
+description: 'Plain text field summarizing the most important aspects of the news article.'
 required: false
 translatable: true
 default_value: {  }

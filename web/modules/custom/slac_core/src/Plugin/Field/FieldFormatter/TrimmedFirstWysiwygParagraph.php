@@ -127,7 +127,16 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       }
 
       // Add a space in front of individual list items (li, dd, and dt).
-      $text = preg_replace('/(?<!\s)<(li|dd|dt)/', ' <\1', $text);
+      // Ensure spacing after paragraph tag boundaries.
+      $patterns = [
+        '/(?<!\s)<(li|dd|dt)/',
+        '/(<\/p>)(?<!\s)/',
+      ];
+      $replacements = [
+        ' <\1',
+        '\0 ',
+      ];
+      $text = preg_replace($patterns, $replacements, $text);
 
       // Strip and decode remaining text, retaining font format tags if requested.
       $retained_tags = $setting_trim_options['retain_formatting'] ? ['strong', 's', 'em', 'sub', 'sup'] : [];
@@ -137,18 +146,15 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       // Replace newlines with spaces.
       $text = trim(str_replace('\n', ' ', (str_replace('\r', ' ', $text))));
 
-      // Ensure spacing after sentence ending punctuation at formerly paragraph tag boundaries.
       // Convert non-breaking spaces.
       // Replace multiple spaces with a single space.
       $patterns = [
-        "/(?<=[A-Za-z0-9])\.(?=[A-Za-z]{2})|(?<=[A-Za-z]{2})([.!?])(?=[A-Za-z0-9])/",
         '/\xc2\xa0/',
         '!\s+!',
       ];
       $replacements = [
         '$0 ',
         ' ',
-        ' '
       ];
       $text = preg_replace($patterns, $replacements, $text);
 

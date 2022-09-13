@@ -34,7 +34,7 @@ content:
     label: hidden
     settings:
       trim_length: '40'
-      trim_type: chars
+      trim_type: words
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove

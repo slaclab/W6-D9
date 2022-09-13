@@ -74,15 +74,15 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% set card_content = content.field_teaser|field_value is not empty ? content.field_teaser : content.field_body %}
-
 {% include '@components/card/card.twig' with {
-  'modifier_classes': 'c-card--bio c-card--teaser',
+  'modifier_classes': 'c-card--teaser',
   'title': label,
-  'url': url,
-  'card_metadata': content.field_text_title|field_value,
+  'url': content.field_link[0]['#url']|render,
+  'kicker': null,
+  'type': null,
+  'footer': false,
   'media': content.field_image|field_value,
-  'card_content': card_content|field_value,
+  'card_content': content.field_teaser|field_value,
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

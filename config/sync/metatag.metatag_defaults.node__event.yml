@@ -5,7 +5,7 @@ dependencies: {  }
 id: node__event
 label: 'Content: Event'
 tags:
-  twitter_cards_description: '[current-page:summary]'
+  twitter_cards_description: '[node:field_teaser:value]'
   twitter_cards_image: '[current-page:field_image]'
   twitter_cards_image_alt: '[current-pge:field_image:alt]'
   twitter_cards_page_url: '[current-page:url]'

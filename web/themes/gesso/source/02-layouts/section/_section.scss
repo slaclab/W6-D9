@@ -92,12 +92,12 @@
 }
 
 .l-section--dark {
-  color: gesso-color(text, on-dark);
-
-  a:not(.c-button) {
-    color: inherit;
-    text-decoration-color: currentColor;
-  }
+  --gesso-text-color: #{gesso-color(text, on-dark)};
+  --gesso-link-color: #{gesso-color(text, on-dark)};
+  --gesso-link-visited-color: #{gesso-color(text, on-dark)};
+  --gesso-link-hover-color: #{gesso-color(text, on-dark)};
+  --gesso-link-active-color: #{gesso-color(text, on-dark)};
+  --gesso-link-underline-color: #{gesso-color(text, on-dark)};
 
   .c-icon {
     color: inherit;
@@ -105,11 +105,6 @@
 
   .l-section__title .c-arrow-link {
     @include arrow-link(white);
-    color: inherit;
-  }
-
-  .l-section__intro a {
-    color: inherit;
   }
 }
 

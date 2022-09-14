@@ -6,6 +6,7 @@
 //   transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
 //   transition-timing-function: gesso-easing(ease-in);
 // }
+@use '00-config' as *;
 
 *,
 *::before,
@@ -29,4 +30,11 @@
   --gesso-header-initial-height: 1px;
   --gesso-header-current-height: 1px;
   --gesso-footer-overlap: 82px;
+  --gesso-text-color: #{gesso-color(text, primary)};
+  --gesso-link-color: #{gesso-color(text, link)};
+  --gesso-link-visited-color: #{gesso-color(text, link-visited)};
+  --gesso-link-hover-color: #{gesso-color(text, link-hover)};
+  --gesso-link-active-color: #{gesso-color(text, link-active)};
+  --gesso-link-underline-color: #{gesso-color(text, link-underline)};
+  --gesso-accent-color: #{gesso-color(ui, generic, accent)};
 }

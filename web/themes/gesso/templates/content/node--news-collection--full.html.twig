@@ -92,6 +92,7 @@
 {% include '@components/article/article.twig' with {
   'title': hero_type == 'image_hero' or hero_type == 'microsite_hero' ? null : label,
   'toc_links': null,
+  'lede': content.field_long_text|field_value,
   'author': null,
   'author_name': null,
   'date': null,
@@ -99,7 +100,7 @@
   'admin_info': admin_info,
   'show_footer': false,
   'rdf_metadata': metadata,
-  'content':  content|without('field_hero_paragraph'),
+  'content':  content|without('field_hero_paragraph', 'field_long_text'),
 } %}
 
 

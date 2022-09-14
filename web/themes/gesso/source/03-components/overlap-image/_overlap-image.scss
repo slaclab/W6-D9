@@ -201,7 +201,8 @@
 
     .c-overlap-image--top-left &,
     .c-overlap-image--center-left &,
-    .c-overlap-image--bottom-left & {
+    .c-overlap-image--bottom-left &,
+    .c-overlap-image--dual & {
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
       text-align: right;
     }

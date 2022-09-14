@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: 5b9_RCdJwOojApux9fZhbCy_AiI_-G9-UFT-Nk4shXI
+  default_config_hash: '-nu4sj_Lg85gsYrOXWC6vWz-DLlPFj8ppzJlgWinrTY'
 id: upgrade_d7_file_entity_image_public
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -59,7 +59,7 @@ process:
     -
       plugin: get
       source: status
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_description

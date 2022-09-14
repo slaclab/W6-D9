@@ -57,7 +57,7 @@ process:
     -
       plugin: get
       source: status
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_description

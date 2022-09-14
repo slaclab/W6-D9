@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: GOMqJIu32a-Df_sQ-FuXE3okD7kIZ1YVNmwuL6PAn4U
+  default_config_hash: jl907jsXSggLTyhclS3fzXowgUbMpq07HMIGrJXW5LA
 id: upgrade_d7_file_entity_video_youtube
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -62,7 +62,7 @@ process:
     -
       plugin: get
       source: field_title
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_video_description

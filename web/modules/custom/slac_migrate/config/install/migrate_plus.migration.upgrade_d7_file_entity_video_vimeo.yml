@@ -57,7 +57,7 @@ process:
     -
       plugin: get
       source: field_title
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_video_description

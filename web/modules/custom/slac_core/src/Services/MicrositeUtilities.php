@@ -33,21 +33,21 @@ class MicrositeUtilities {
     /**
      * Determine whether the current node is a microsite page.
      *
-     * @param {string} target_bundle - The node bundle (e.g., page) that can host a microsite.
+     * @param {array} target_bundles - An array of node bundles (e.g., ['page']) that can host a microsite.
      * @param {string} target_field - The field to search for the signal paragraph.
      * @param {string} target_paragraph - The paragraph bundle that signals this is a microsite page.
      *
      * @return bool
      *   Whether the current route match is a node with the signifier paragraph type in the specified field.
      */
-    public function IsMicrositePage($target_bundle, $target_field, $target_paragraph) {
+    public function IsMicrositePage($target_bundles, $target_field, $target_paragraph) {
       $found = FALSE;
 
       // Retrieve the current route match if the node was not passed in.
       $node = $this->currentRouteMatch->getParameter('node');
 
       // The node object must support NodeInterface, be the correct bundle, and have the correct field.
-      if ($node instanceof NodeInterface && $node->bundle() == $target_bundle && $node->hasField($target_field)) {
+      if ($node instanceof NodeInterface && in_array($node->bundle(), $target_bundles) && $node->hasField($target_field)) {
         // Retrieve the paragraphs from the field and search for the target_paragraph bundle.
         /** @var EntityReferenceRevisionsFieldItemList $paragraphs */
         $paragraphs = $node->get($target_field);

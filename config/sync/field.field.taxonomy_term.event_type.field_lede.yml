@@ -17,7 +17,7 @@ field_name: field_lede
 entity_type: taxonomy_term
 bundle: event_type
 label: Lede
-description: ''
+description: 'Introductory text summarizing the most important aspects of the event series.'
 required: false
 translatable: false
 default_value: {  }

@@ -34,6 +34,10 @@
     }
   }
 
+  &.c-microsite-hero__header {
+    --gesso-header-initial-height: 112px;
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     padding: rem(gesso-spacing(5)) 0 rem(gesso-spacing(2.5));
     transition: padding gesso-duration(short) gesso-easing(ease-out),
@@ -47,6 +51,10 @@
     &.is-sticky {
       height: auto;
       padding: 1rem 0 1.25rem;
+    }
+
+    &.c-microsite-hero__header {
+      --gesso-header-initial-height: 172px;
     }
   }
 }
@@ -93,7 +101,7 @@
 
 .l-header__logo {
   display: block;
-  height: calc(var(--gesso-header-initial-height) - 48px);
+  height: min(calc(var(--gesso-header-initial-height) - 48px), 40px);
   width: auto;
 
   .has-inverse-nav & {

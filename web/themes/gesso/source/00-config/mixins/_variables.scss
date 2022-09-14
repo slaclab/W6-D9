@@ -1,0 +1,11 @@
+@use '../functions/gesso' as *;
+
+@mixin on-dark-variables {
+  --gesso-text-color: #{gesso-color(text, on-dark)};
+  --gesso-link-color: #{gesso-color(text, on-dark)};
+  --gesso-link-visited-color: #{gesso-color(text, on-dark)};
+  --gesso-link-hover-color: #{gesso-color(text, on-dark)};
+  --gesso-link-active-color: #{gesso-color(text, on-dark)};
+  --gesso-link-underline-color: #{gesso-color(text, on-dark)};
+  --gesso-accent-color: #{gesso-color(text, on-dark)};
+}

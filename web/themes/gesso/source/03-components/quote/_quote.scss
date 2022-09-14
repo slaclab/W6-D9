@@ -36,11 +36,13 @@
 
 .c-quote__author {
   @include responsive-font-size(5);
+  color: var(--gesso-text-color);
   display: block;
   font-weight: gesso-font-weight(bold);
 }
 
 .c-quote__desc {
+  color: var(--gesso-text-color);
   display: block;
 }
 

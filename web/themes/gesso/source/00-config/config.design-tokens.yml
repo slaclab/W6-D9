@@ -353,7 +353,6 @@ gesso:
         line-height: base
         responsive-font-size: 2
       blockquote:
-        color: text.primary
         font-family: secondary.stack
         font-feature-settings: "'pnum' on, 'lnum' on"
         font-weight: bold
@@ -378,7 +377,6 @@ gesso:
         line-height: loose
         responsive-font-size: 2
       cite:
-        color: text.primary
         font-family: primary.stack
         font-feature-settings: "'liga' off"
         font-size: 3

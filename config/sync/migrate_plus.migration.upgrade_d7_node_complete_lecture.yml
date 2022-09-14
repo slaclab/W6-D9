@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: iRKZoKZxI0GtKNAWXm1GozO7V-ieRygQ-G-AWX8Neac
+  default_config_hash: hfUySRt_LhFELgWfFepWBbeAhxWTkf3MjS9rnp_-qDU
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -81,7 +81,7 @@ process:
     -
       plugin: get
       source: comment
-  body:
+  field_body:
     -
       plugin: get
       source: body
@@ -116,7 +116,7 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link:
+  field_link/title:
     -
       plugin: get
       source: field_location

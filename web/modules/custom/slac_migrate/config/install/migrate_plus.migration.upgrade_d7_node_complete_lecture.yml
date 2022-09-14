@@ -79,7 +79,7 @@ process:
     -
       plugin: get
       source: comment
-  body:
+  field_body:
     -
       plugin: get
       source: body
@@ -118,7 +118,7 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link:
+  field_link/title:
     -
       plugin: get
       source: field_location

@@ -19,11 +19,8 @@ source:
 process:
   uid:
     -
-      plugin: entity_lookup
-      source: name
-      value_key: name
-      entity_type: user
-      ignore_case: true
+      plugin: get
+      source: uid
   name:
     -
       plugin: get
@@ -76,6 +73,9 @@ process:
       plugin: get
       source: init
   roles:
+    -
+      plugin: skip_on_empty
+      method: row
     -
       plugin: migration_lookup
       migration: upgrade_d7_user_role

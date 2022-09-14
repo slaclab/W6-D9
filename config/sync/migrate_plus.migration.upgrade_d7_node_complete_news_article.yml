@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: kweNj2uicK3PmeYiEhPYTTXLUjp83ypalnbN98i4XHA
+  default_config_hash: GoiiAn8w1BNVqfyi3aQMeNWs_NmPECWDr5F8UHN9OXQ
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -45,6 +45,12 @@ process:
     -
       plugin: get
       source: status
+    -
+      plugin: skip_on_value
+      method: row
+      not_equals: true
+      value:
+        - 1
   created:
     -
       plugin: get

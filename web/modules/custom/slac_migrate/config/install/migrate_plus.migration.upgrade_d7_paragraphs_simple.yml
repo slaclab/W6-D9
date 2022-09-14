@@ -1,0 +1,43 @@
+uuid: e313fb3c-96af-4947-a488-a5454405d6d5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+id: upgrade_d7_paragraphs_simple
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Simple)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: simple
+process:
+  type:
+    -
+      plugin: default_value
+      default_value: wysiwyg
+  field_body:
+    -
+      plugin: get
+      source: field_content
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  field_body/0/format:
+    -
+      plugin: default_value
+      default_value: basic_html
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: wysiwyg
+migration_dependencies:
+  required: {  }
+  optional: {  }

@@ -26,7 +26,7 @@
 .c-callout-box__body {
   @include font-family-primary;
   @include responsive-font-size(2);
-  --gesso-text-color: #{gesso-color(text, primary)};
+  @include on-light-variables;
   background: gesso-color(ui, generic, background-light);
   padding: rem(gesso-spacing(2.5));
 

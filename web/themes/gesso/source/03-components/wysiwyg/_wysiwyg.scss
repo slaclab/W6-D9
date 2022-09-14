@@ -28,7 +28,7 @@
 }
 
 .c-wysiwyg--with-background {
-  --gesso-text-color: gesso-color(text, primary);
+  @include default-variables;
   background: gesso-grayscale(white);
   padding: rem(gesso-spacing(2.5));
 }

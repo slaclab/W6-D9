@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
@@ -117,6 +118,7 @@ hidden:
   field_boolean: true
   field_featured: true
   field_hero_paragraph: true
+  field_internal_tags: true
   field_lede: true
   field_paragraphs_1: true
   field_research_area: true

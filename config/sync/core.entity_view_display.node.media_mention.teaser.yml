@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.media_mention.field_internal_tags
     - field.field.node.media_mention.field_link
     - field.field.node.media_mention.field_research_area
     - field.field.node.media_mention.field_tags
@@ -31,6 +32,7 @@ content:
 hidden:
   field_research_area: true
   field_tags: true
+  field_internal_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

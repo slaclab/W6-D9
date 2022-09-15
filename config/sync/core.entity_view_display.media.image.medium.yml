@@ -9,6 +9,7 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
@@ -45,6 +46,7 @@ hidden:
   field_caption: true
   field_credit: true
   field_display_style: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_long_text: true

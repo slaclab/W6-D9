@@ -28,11 +28,14 @@
 - upgrade_d7_paragraphs_node_news_article_video_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
 
-# news
+# nodes
 - upgrade_d7_node_complete_news_article
+- upgrade_d7_node_complete_lecture
+- upgrade_d7_node_complete_in_the_news
 
 # url aliases
 - upgrade_d7_url_alias_node_news_article
 
 # url redirects
+- d7_path_redirect_migrated_nodes
 - upgrade_d7_path_redirect_node_news_article

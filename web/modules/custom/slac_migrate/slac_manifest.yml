@@ -37,5 +37,5 @@
 - upgrade_d7_url_alias_node_news_article
 
 # url redirects
-- d7_path_redirect_migrated_nodes
+- upgrade_d7_path_redirect_migrated_nodes
 - upgrade_d7_path_redirect_node_news_article

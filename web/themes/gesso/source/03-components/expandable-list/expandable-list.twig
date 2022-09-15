@@ -13,9 +13,9 @@
 
 {% set show_more_length = show_more_length|default(5) %}
 
-{% set list_content = list_items[:show_more_length] %}
+{% set list_content = list_items[:5] %}
 {% if list_items|length > show_more_length %}
-  {% set additional_content = list_items[show_more_length:] %}
+  {% set additional_content = list_items[5:] %}
 {% endif %}
 
 {% set collapsed_content %}

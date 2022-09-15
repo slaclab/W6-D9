@@ -18,7 +18,6 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.table_of_contents
-    - paragraphs.paragraphs_type.text_block
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
   module:
@@ -51,7 +50,6 @@ settings:
       small_card_with_solid_background: small_card_with_solid_background
       tout: tout
       table_of_contents: table_of_contents
-      text_block: text_block
       video_hero: video_hero
     negate: 1
     target_bundles_drag_drop:

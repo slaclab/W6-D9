@@ -1,9 +1,9 @@
-uuid: 4e23463e-ad7e-4f10-bf48-c3ba9a2651b1
+uuid: 05c0af90-076e-49bb-8dae-6ae533bdfa00
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.full
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
     - field.field.node.person.field_image
@@ -14,57 +14,59 @@ dependencies:
     - field.field.node.person.field_text_title
     - node.type.person
   module:
-    - slac_core
+    - gesso_helper
+    - text
     - user
-id: node.person.teaser
+id: node.person.full
 targetEntityType: node
 bundle: person
-mode: teaser
+mode: full
 content:
   field_body:
-    type: trimmed_first_wysiwyg_paragraph
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_boolean:
+    type: boolean
     label: hidden
     settings:
-      trim_length: '40'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: large
+      view_mode: headshot
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_teaser:
-    type: trimmed_first_wysiwyg_paragraph
+  field_links:
+    type: gesso_helper_gesso_button
     label: hidden
     settings:
-      trim_length: '40'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
+      trim_length: '80'
+      button_size: Standard
+      button_style: Outline
+      button_icon: Chevron
+      url_only: false
+      url_plain: false
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
@@ -74,7 +76,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_text_title:
     type: string
@@ -82,12 +84,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
-  field_boolean: true
-  field_links: true
-  field_long_text: true
+  field_teaser: true
   langcode: true
-  links: true
   search_api_excerpt: true

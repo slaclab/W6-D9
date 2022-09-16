@@ -11,6 +11,7 @@ dependencies:
     - filter
     - media
     - search
+    - site_settings
     - sitewide_alert
     - system
 _core:
@@ -27,4 +28,5 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
+  - 'view published site setting entities'
   - 'view published sitewide alert entities'

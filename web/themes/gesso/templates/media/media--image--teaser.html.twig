@@ -13,27 +13,27 @@
 #}
 
 {% set footer %}
-  {{ media.changed.value|format_date('custom', 'F j, Y') }}
+  {{ media.created.value|format_date('custom', 'F j, Y') }}
 {% endset %}
 
 {% set card_content %}
   {% if content.field_teaser|field_value is not empty %}
-    {{ content.field_teaser|field_value }}
+    {{ content.field_teaser }}
   {% else %}
     {{ content.field_body }}
   {% endif %}
 {% endset %}
 
 {% include '@components/card/card.twig' with {
+  'modifier_classes': 'c-card--teaser',
   'is_video': false,
   'url': content.field_boolean['#items'].value == 0 ? url : null,
-  'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : content.name|field_value,
+  'title': content.field_long_text|field_value ? content.field_long_text : content.name,
   'kicker': content.field_source_name|field_value,
   'type': content.field_type|field_value,
   'footer': footer,
   'media': content.field_media_image|field_value,
   'card_content': card_content,
-  'modifier_classes': 'c-card--teaser'
 } %}
 
 {% set catch_cache = content|render %}

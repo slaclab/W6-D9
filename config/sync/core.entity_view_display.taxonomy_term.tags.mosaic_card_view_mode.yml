@@ -13,53 +13,35 @@ dependencies:
     - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
-    - link
     - options
-    - text
+    - view_mode_select_by_token
 id: taxonomy_term.tags.mosaic_card_view_mode
 targetEntityType: taxonomy_term
 bundle: tags
 mode: mosaic_card_view_mode
 content:
-  description:
-    type: text_default
+  field_display_style:
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_display_style:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_image:
-    type: entity_reference_entity_view
-    label: above
+    type: view_mode_select_by_token_rendered_with_select
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: '[term:field_display_style:value]'
       link: false
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_rss:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
 hidden:
+  description: true
   field_kicker: true
   field_lede: true
   field_paragraphs: true
   field_research_area: true
+  field_rss: true
   langcode: true
   search_api_excerpt: true

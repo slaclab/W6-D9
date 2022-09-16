@@ -46,7 +46,7 @@
 
 .l-section__title {
   @include responsive-font-size(11);
-  color: inherit;
+  color: var(--gesso-text-color);
 
   + .l-section__content {
     margin-top: rem(gesso-spacing(9));

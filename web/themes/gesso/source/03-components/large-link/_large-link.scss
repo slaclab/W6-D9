@@ -21,14 +21,22 @@
 }
 
 .c-large-link__source {
-  display: inline-block;
+  display: block;
   font-style: italic;
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
+  }
 }
 
 .c-large-link__date {
-  display: inline-block;
+  display: block;
 
-  .c-large-link__source + & {
-    margin-left: rem(gesso-spacing(3));
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
+
+    .c-large-link__source + & {
+      margin-left: rem(gesso-spacing(3));
+    }
   }
 }

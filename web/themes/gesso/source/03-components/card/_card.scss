@@ -13,6 +13,7 @@ $card-meta-color: inherit;
 $card-padding: rem(gesso-spacing(4));
 
 .c-card {
+  @include default-variables;
   display: flex;
   flex-direction: column;
   line-height: gesso-line-height(loose);

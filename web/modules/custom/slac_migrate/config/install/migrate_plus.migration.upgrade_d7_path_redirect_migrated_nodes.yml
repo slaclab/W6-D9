@@ -53,7 +53,14 @@ process:
       plugin: skip_on_empty
       method: row
   rid: rid
-  uid: uid
+  uid:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_user
+      source: uid
+    -
+      plugin: default_value
+      default_value: 1
   redirect_source/path: source
   redirect_source/query:
     plugin: d7_redirect_source_query

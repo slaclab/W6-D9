@@ -37,8 +37,12 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_user
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get

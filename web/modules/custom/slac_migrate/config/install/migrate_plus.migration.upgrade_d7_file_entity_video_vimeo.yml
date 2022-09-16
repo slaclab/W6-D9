@@ -69,7 +69,7 @@ process:
     -
       plugin: default_value
       # TODO: Find a better solution for providing a default thumbnail for remote_video.
-      default_value: 10835
+      default_value: 1210
 destination:
   plugin: 'entity:media'
 migration_dependencies:

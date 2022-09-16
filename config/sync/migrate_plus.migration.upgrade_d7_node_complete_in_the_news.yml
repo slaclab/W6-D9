@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: NTD3Nexv80acgtGDqhm2fl7dKn-wulOPph59Jx4e8ok
+  default_config_hash: lJeQvO0x7U1RR9nwD0oOdYLM2DZ0xpPVebMk_hjUBfw
 id: upgrade_d7_node_complete_in_the_news
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -39,8 +39,12 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_user
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get

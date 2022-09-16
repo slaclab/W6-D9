@@ -65,8 +65,12 @@ process:
       source: timestamp
   uid:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_user
       source: uid
+    -
+      plugin: default_value
+      default_value: 1
 destination:
   plugin: 'entity:file'
 migration_dependencies:

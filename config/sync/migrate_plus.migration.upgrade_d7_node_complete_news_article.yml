@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: GoiiAn8w1BNVqfyi3aQMeNWs_NmPECWDr5F8UHN9OXQ
+  default_config_hash: U2u63iWp7GXbwnSoCTXhiiEzJ8wLi3r4IDWoNGh1D64
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -39,8 +39,12 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_user
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get
@@ -233,7 +237,7 @@ process:
       plugin: skip_on_empty
       method: process
       source: '@_field_header_image_paragraph_ids/0'
-  field_hero_paragraphs/0/target_revision_id:
+  field_hero_paragraph/0/target_revision_id:
     -
       plugin: skip_on_empty
       method: process

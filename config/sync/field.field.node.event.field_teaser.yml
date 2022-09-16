@@ -17,7 +17,7 @@ field_name: field_teaser
 entity_type: node
 bundle: event
 label: Teaser
-description: 'Leave blank to use trimmed value of full text as the teaser.'
+description: 'Leave blank to use the trimmed value of the Description field as the teaser.'
 required: false
 translatable: false
 default_value: {  }

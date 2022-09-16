@@ -432,6 +432,8 @@ display:
           1: AND
       defaults:
         cache: false
+        style: true
+        row: true
         arguments: false
         filters: false
         filter_groups: false

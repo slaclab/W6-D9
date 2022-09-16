@@ -130,14 +130,6 @@
   {% set location = content.field_link[0]['#title'] %}
 {% endif %}
 
-{% set card_content %}
-  {% if content.field_teaser|field_value is not null %}
-    {{ content.field_teaser|field_value }}
-  {% else %}
-    {{ content.field_body }}
-  {% endif %}
-{% endset %}
-
 {% set is_past_event = node.isPastEvent() %}
 
 {#
@@ -148,24 +140,24 @@
  */
 #}
 {% include '@components/card/card.twig' with {
-  is_event: true,
-  title: label,
-  url: content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
-  start_date: is_past_event ? null : {
+  'is_event': true,
+  'title': label,
+  'url': content.field_boolean['#items'].value == 0 ? url : content.field_external_link.0['#url'],
+  'start_date': is_past_event ? null : {
     'month': event_start_date|date('M'),
     'day': event_start_date|date('d')
   },
-  end_date: multiday_event == false or is_past_event ? null : {
+  'end_date': multiday_event == false or is_past_event ? null : {
     'month': event_end_date|date('M'),
     'day': event_end_date|date('d')
   },
-  kicker: content.field_text|field_value,
-  type: node.getEventTense() ~ ' Event',
-  footer: datetime_location_override ? content.field_override_text|field_value : null,
-  event_date: datetime_location_override ? null : datetime_composed,
-  event_location: location,
-  media: content.field_image|field_value,
-  card_content: card_content,
+  'kicker': content.field_text|field_value,
+  'type': node.getEventTense() ~ ' Event',
+  'footer': datetime_location_override ? content.field_override_text|field_value : null,
+  'event_date': datetime_location_override ? null : datetime_composed,
+  'event_location': location,
+  'media': content.field_image|field_value,
+  'card_content': content.field_teaser|field_value is not null ? content.field_teaser : content.field_body,
 } %}
 
 {% set catch_cache = content|render %}

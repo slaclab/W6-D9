@@ -7,23 +7,23 @@
     @include focus();
     @include underline();
     background-color: transparent;
-    color: gesso-color(text, link);
-    text-decoration-color: gesso-color(text, link-underline);
+    color: var(--gesso-link-color);
+    text-decoration-color: var(--gesso-link-underline-color);
     transition-duration: gesso-duration(shortest);
     transition-property: background-color, border-color, color, outline-color;
     transition-timing-function: gesso-easing(ease-in);
 
     &:visited {
-      color: gesso-color(text, link-visited);
+      color: var(--gesso-link-visited-color);
     }
 
     &:hover,
     &:focus {
-      color: gesso-color(text, link-hover);
+      color: var(--gesso-link-hover-color);
     }
 
     &:active {
-      color: gesso-color(text, link-active);
+      color: var(--gesso-link-active-color);
     }
 
     @media print {

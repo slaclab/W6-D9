@@ -51,6 +51,7 @@
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     display: block;
+    flex-shrink: 0;
 
     img {
       max-width: 240px;

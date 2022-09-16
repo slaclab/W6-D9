@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_internal_tags
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -75,6 +76,7 @@ hidden:
   field_boolean: true
   field_display_style: true
   field_duration: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_paragraphs: true

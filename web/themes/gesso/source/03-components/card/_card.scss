@@ -13,6 +13,7 @@ $card-meta-color: inherit;
 $card-padding: rem(gesso-spacing(4));
 
 .c-card {
+  @include default-variables;
   display: flex;
   flex-direction: column;
   line-height: gesso-line-height(loose);
@@ -81,8 +82,8 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card__body {
+  --gesso-text-color: #{gesso-color(text, primary)};
   background: gesso-color(background, site);
-  color: gesso-color(text, primary);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -90,8 +91,8 @@ $card-padding: rem(gesso-spacing(4));
   z-index: 1;
 
   .c-card--on-dark & {
+    --gesso-text-color: #{gesso-color(text, on-dark)};
     background: transparent;
-    color: inherit;
   }
 }
 

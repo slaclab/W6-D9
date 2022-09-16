@@ -4,6 +4,7 @@
 $gutter: clamp(10px, 2%, gesso-get-map(gutter-width));
 
 .c-topic-grid {
+  margin-bottom: gesso-spacing(5);
   &::after {
     clear: both;
     content: '';

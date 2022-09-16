@@ -67,8 +67,11 @@
 .c-overlap-image__text {
   @include display-text-style(body);
   background: gesso-grayscale(white);
+  color: var(--gesso-text-color);
   padding: rem(gesso-spacing(5));
+  position: relative;
   width: 85%;
+  z-index: 1;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     background: linear-gradient(
@@ -189,8 +192,7 @@
 
     .c-overlap-image--top-left &,
     .c-overlap-image--center-left &,
-    .c-overlap-image--bottom-left &,
-    .c-overlap-image--dual & {
+    .c-overlap-image--bottom-left {
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
       text-align: right;
     }

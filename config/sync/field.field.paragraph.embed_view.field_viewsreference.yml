@@ -33,8 +33,8 @@ settings:
     3_cards_with_show_more: 3_cards_with_show_more
     landing_pages: landing_pages
     landing_pages_media: landing_pages_media
-    landing_pages_taxonomy_term: landing_pages_taxonomy_term
     news_collection_views: news_collection_views
+    landing_pages_taxonomy_term: landing_pages_taxonomy_term
     teaser_list: teaser_list
     block_content: 0
     comment: 0

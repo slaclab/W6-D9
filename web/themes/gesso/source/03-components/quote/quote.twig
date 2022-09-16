@@ -9,6 +9,11 @@
 ]|join(' ')|trim %}
 {% if has_constrain %}<div class="{{ constrain_classes }}">{% endif %}
   <blockquote {{ add_attributes({ class: classes }) }}>
+    {% include '@components/icon/icon.twig' with {
+      'icon_name': 'quote-left',
+      'is_hidden': true,
+      'modifier_classes': 'c-quote__icon'
+    } %}
     {{ quote_content }}
     {% if quote_author or quote_author_desc %}
       <cite class="c-quote__cite">

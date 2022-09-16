@@ -1,0 +1,6 @@
+- entity: "taxonomy_term"
+  vid: "internal_tags"
+  name: "SLAC Science"
+- entity: "taxonomy_term"
+  vid: "internal_tags"
+  name: "Lab News"

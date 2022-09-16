@@ -49,7 +49,7 @@
 
 {% include '@templates/media-detail/media-detail.twig' with {
   'media_type': 'Video'|t,
-  'page_title': content.field_long_text|field_value ? content.field_long_text|render|striptags('<a><em>')|trim : content.name,
+  'page_title': content.field_long_text|field_value ? content.field_long_text : content.name,
   'media': content.field_media_oembed_video|field_value,
   'media_cta': content.field_link|field_value,
   'media_caption': content.field_body|field_value,

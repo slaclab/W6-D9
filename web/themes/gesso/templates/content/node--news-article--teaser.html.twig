@@ -77,15 +77,15 @@
 
 {% set kicker %}
   {% if content.field_source_name|field_value is not empty %}
-    {{ content.field_source_name|field_value }}
+    {{ content.field_source_name|render|striptags('<em><i><strong>')|trim|raw }}
   {% elseif content.field_news_source|field_value is not empty %}
-    {% trans %}VIA{% endtrans %}&nbsp;{{- content.field_news_source|field_value -}}
+    {% trans %}VIA{% endtrans %}{{- content.field_news_source|render|striptags|raw -}}
   {% endif %}
 {% endset %}
 
 {% set card_content %}
-  {% if content.field_teaser|field_value is not null %}
-    {{ content.field_teaser|field_value }}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
   {% else %}
     {{ content.field_paragraphs }}
   {% endif %}

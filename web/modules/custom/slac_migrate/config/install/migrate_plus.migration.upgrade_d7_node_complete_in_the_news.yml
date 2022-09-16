@@ -37,8 +37,9 @@ process:
       source: title
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: node_uid
     -
       plugin: default_value
@@ -92,5 +93,6 @@ destination:
   translations: true
   default_bundle: media_mention
 migration_dependencies:
-  required: []
+  required:
+    - upgrade_d7_user
   optional: []

@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: LBM8d8PV7envRJN8-mQOz7NuYAO6KTIAOKF1Ty9cEnU
+  default_config_hash: V73JFREZxb3PQLeKdGU2r4USnW5oWsUyatAU6HelLVY
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -39,8 +39,9 @@ process:
       source: title
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: node_uid
     -
       plugin: default_value
@@ -152,5 +153,6 @@ destination:
   plugin: 'entity:node'
   default_bundle: event
 migration_dependencies:
-  required: {  }
+  required:
+    - upgrade_d7_user
   optional: {  }

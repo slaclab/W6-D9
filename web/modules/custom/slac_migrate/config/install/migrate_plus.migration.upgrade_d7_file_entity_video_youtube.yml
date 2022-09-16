@@ -34,8 +34,9 @@ process:
       source: fid
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value
@@ -72,9 +73,10 @@ process:
     -
       plugin: default_value
       # TODO: Find a better solution for providing a default thumbnail for remote_video.
-      default_value: 1210
+      default_value: 10835
 destination:
   plugin: 'entity:media'
 migration_dependencies:
-  required: []
+  required:
+    - upgrade_d7_user
   optional: []

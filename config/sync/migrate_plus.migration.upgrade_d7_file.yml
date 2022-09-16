@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: 2YNwD2DFoc_GzuOeyzQU_GMASTVVXI0kMiFxrg0qU5E
+  default_config_hash: IvvldrdUyf7E-p322xSoF08G-shG7XQNJK64QduWSAo
 id: upgrade_d7_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -67,8 +67,9 @@ process:
       source: timestamp
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value

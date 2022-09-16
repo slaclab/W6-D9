@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: '-G5tLSP_JNRa3m7Zjb9RnMBFqLX_R17TXvHx1es0_W8'
+  default_config_hash: jaJp3RDddXHcV7biX-NXYE-PPe0zaht9bA9IBgBlWOE
 id: upgrade_d7_path_redirect_migrated_nodes
 class: null
 field_plugin_method: null
@@ -57,8 +57,9 @@ process:
   rid: rid
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value
@@ -80,5 +81,6 @@ process:
 destination:
   plugin: 'entity:redirect'
 migration_dependencies:
-  required: {  }
+  required:
+    - upgrade_d7_user
   optional: {  }

@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: '-nu4sj_Lg85gsYrOXWC6vWz-DLlPFj8ppzJlgWinrTY'
+  default_config_hash: F25Skhia9HC_oD-Iini8GX_usofhH3NHOZLI-3hT1ig
 id: upgrade_d7_file_entity_image_public
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -37,8 +37,9 @@ process:
       source: fid
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value
@@ -126,5 +127,6 @@ process:
 destination:
   plugin: 'entity:media'
 migration_dependencies:
-  required: {  }
+  required:
+    - upgrade_d7_user
   optional: {  }

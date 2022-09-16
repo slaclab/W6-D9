@@ -3,7 +3,7 @@
 @use '00-config' as *;
 
 :where(.external-link .c-icon) {
-  color: gesso-color(ui, generic, accent);
+  color: var(--gesso-accent-color);
 }
 
 .external-link .c-icon {

@@ -34,7 +34,7 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
   position: absolute;
   right: 0;
   text-align: left;
-  width: min(#{rem(280px)}, 100%);
+  width: rem(280px);
 
   a {
     color: inherit;

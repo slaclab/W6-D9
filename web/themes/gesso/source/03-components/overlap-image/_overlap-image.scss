@@ -67,8 +67,11 @@
 .c-overlap-image__text {
   @include display-text-style(body);
   background: gesso-grayscale(white);
+  color: var(--gesso-text-color);
   padding: rem(gesso-spacing(5));
+  position: relative;
   width: 85%;
+  z-index: 1;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     background: linear-gradient(
@@ -150,12 +153,8 @@
   }
 
   .c-overlap-image--purple & {
+    @include on-dark-variables;
     background: gesso-brand(purple, dark);
-    color: gesso-color(text, on-dark);
-
-    h2 a {
-      color: inherit;
-    }
   }
 
   .c-overlap-image--purple.c-overlap-image--dual &:first-of-type {
@@ -163,12 +162,8 @@
   }
 
   .c-overlap-image--red & {
+    @include on-dark-variables;
     background: gesso-brand(cardinal, base);
-    color: gesso-color(text, on-dark);
-
-    h2 a {
-      color: inherit;
-    }
   }
 
   .c-overlap-image--red.c-overlap-image--dual &:first-of-type {
@@ -176,12 +171,8 @@
   }
 
   .c-overlap-image--teal & {
+    @include on-dark-variables;
     background: gesso-brand(stormy, dark);
-    color: gesso-color(text, on-dark);
-
-    h2 a {
-      color: inherit;
-    }
   }
 
   .c-overlap-image--teal.c-overlap-image--dual &:first-of-type {
@@ -201,7 +192,7 @@
 
     .c-overlap-image--top-left &,
     .c-overlap-image--center-left &,
-    .c-overlap-image--bottom-left & {
+    .c-overlap-image--bottom-left {
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
       text-align: right;
     }

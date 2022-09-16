@@ -255,6 +255,7 @@ function gesso_preprocess_paragraph__overlap_image(array &$vars) {
       $vars['image_url'] = $image_style->buildUrl($image->getFileUri());
     }
   }
+  $vars['position'] = 'top-left';
   if (!empty($vars['attributes']['class'])) {
     foreach($vars['attributes']['class'] as $class) {
       if (in_array($class, ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'center-left', 'center-right'])) {

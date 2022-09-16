@@ -7,7 +7,7 @@
 @if not $wysiwyg {
   body {
     background-color: gesso-color(background, site);
-    color: gesso-color(text, primary);
+    color: var(--gesso-text-color);
     margin: 0;
     overflow-x: hidden;
     padding: 0;

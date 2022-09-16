@@ -9,6 +9,7 @@ dependencies:
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_internal_tags
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -79,6 +80,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 10
+    region: content
+  field_internal_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_landing_display:
     type: boolean

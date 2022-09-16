@@ -29,7 +29,7 @@
         {% include '@components/tooltip/tooltip.twig' with {
           tooltip_content: image_caption,
           tooltip_id: caption_id,
-          modifier_classes: position == 'top-right' or position == 'center-right' or position == 'bottom-right' ? 'c-tooltip--align-left' : ''
+          modifier_classes: position == 'top-right' or position == 'center-right' or position == 'bottom-right' or overlap_image_content_2 ? 'c-tooltip--align-left' : ''
         } %}
       </div>
     {% endif %}

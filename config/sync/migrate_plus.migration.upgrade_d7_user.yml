@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: GYuK5bZukGx8gH8ogIQWWW09k1qGyA_RrIF4IL4HP1U
+  default_config_hash: 0mHo1StbsWW3w9nzCok_l3luqQKuVkHuZFmKyfwpVHo
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null
@@ -77,6 +77,7 @@ process:
   roles:
     -
       plugin: skip_on_empty
+      source: roles/0
       method: row
     -
       plugin: migration_lookup

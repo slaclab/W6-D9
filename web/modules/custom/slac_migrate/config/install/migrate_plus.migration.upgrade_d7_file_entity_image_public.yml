@@ -64,8 +64,12 @@ process:
       source: field_description
   field_media_image/target_id:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_file
       source: fid
+    -
+      plugin: skip_on_empty
+      method: row
   field_media_image/display:
     -
       plugin: get

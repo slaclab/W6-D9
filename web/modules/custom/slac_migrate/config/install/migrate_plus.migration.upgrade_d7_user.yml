@@ -75,6 +75,7 @@ process:
   roles:
     -
       plugin: skip_on_empty
+      source: roles/0
       method: row
     -
       plugin: migration_lookup

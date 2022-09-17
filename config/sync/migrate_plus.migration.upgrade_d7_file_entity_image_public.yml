@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: F25Skhia9HC_oD-Iini8GX_usofhH3NHOZLI-3hT1ig
+  default_config_hash: 3OQnobqFanisdMwxmZhRfG9eL3vaYFHpT1ezEvK5qQg
 id: upgrade_d7_file_entity_image_public
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -66,8 +66,12 @@ process:
       source: field_description
   field_media_image/target_id:
     -
-      plugin: get
+      plugin: migration_lookup
+      migration: upgrade_d7_file
       source: fid
+    -
+      plugin: skip_on_empty
+      method: row
   field_media_image/display:
     -
       plugin: get

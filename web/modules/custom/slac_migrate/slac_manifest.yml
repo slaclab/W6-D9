@@ -17,6 +17,7 @@
 
 # taxonomy terms
 - upgrade_d7_taxonomy_term_tags
+- upgrade_d7_taxonomy_term_internal_tags
 - upgrade_d7_taxonomy_term_article_type
 
 # paragraphs

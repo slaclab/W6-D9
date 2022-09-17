@@ -37,8 +37,13 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get
@@ -79,7 +84,7 @@ process:
     -
       plugin: get
       source: comment
-  body:
+  field_body:
     -
       plugin: get
       source: body
@@ -118,7 +123,7 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link:
+  field_link/title:
     -
       plugin: get
       source: field_location
@@ -150,5 +155,6 @@ destination:
   plugin: 'entity:node'
   default_bundle: event
 migration_dependencies:
-  required: []
+  required:
+    - upgrade_d7_user
   optional: []

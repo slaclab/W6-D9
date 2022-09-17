@@ -37,8 +37,13 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get
@@ -203,10 +208,22 @@ process:
     -
       plugin: sub_process
       source: field_tags
+      key: "@target_id"
       process:
         target_id:
           plugin: migration_lookup
           migration: upgrade_d7_taxonomy_term_tags
+          source: tid
+          no_stub: true
+  field_internal_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      key: "@target_id"
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_internal_tags
           source: tid
           no_stub: true
   field_source_link:
@@ -231,7 +248,7 @@ process:
       plugin: skip_on_empty
       method: process
       source: '@_field_header_image_paragraph_ids/0'
-  field_hero_paragraphs/0/target_revision_id:
+  field_hero_paragraph/0/target_revision_id:
     -
       plugin: skip_on_empty
       method: process
@@ -253,5 +270,6 @@ destination:
   translations: true
   default_bundle: news_article
 migration_dependencies:
-  required: {  }
+  required:
+    - upgrade_d7_user
   optional: {  }

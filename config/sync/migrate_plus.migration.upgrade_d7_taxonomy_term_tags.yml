@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: zbhpn4ZTycPUHMAwPY9JvjYWpn32sIe_wvErguXNJ6M
+  default_config_hash: s4Pdxn60hY48wR-ojQs2xSyZsoMwupkZBgnVvhJAop0
 id: upgrade_d7_taxonomy_term_tags
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -22,8 +22,33 @@ source:
 process:
   tid:
     -
-      plugin: entity_lookup
+      plugin: static_map
       source: name
+      bypass: true
+      map:
+        'Accelerator Directorate': Accelerators
+        'Advanced Instrumentation Research Division': 'Sensors, Integrated Circuits and Electronics'
+        'Astrophysics & Cosmology': 'Astrophysics and Cosmology'
+        'Biosciences Division': 'Biological Sciences'
+        'Chemical Science Division': 'Chemistry and Catalysis'
+        'Chemistry & Catalysis': 'Chemistry and Catalysis'
+        'Cherenkov Telescope Array (CTA)': 'Fundamental Physics'
+        'Computer Science Division': 'Computer Science'
+        'Elementary Particle Physics (EPP)': 'Fundamental Physics'
+        'Energy Sciences Directorate': 'Energy Sciences'
+        'Fundamental Physics Directorate': 'Fundamental Physics'
+        'Future Lightsources': 'Future Light Sources'
+        Lightsources: 'X-ray Light Sources and Electron Imaging'
+        NuSTAR: 'Fundamental Physics'
+        'Particle Physics & Astrophysics': 'Fundamental Physics'
+        'RF Advanced Research Division': 'RF and Accelerator Research'
+        'Scientific Topics': 'Science News'
+        SLAC+Stanford: 'SLAC and Stanford'
+        'SUSB Project': 'Lab Administration'
+        'Technology Innovation Directorate (TID)': 'Technology Innovation'
+        'Word of the Week': Communications
+    -
+      plugin: entity_lookup
       value_key: name
       entity_type: taxonomy_term
       bundle_key: vid

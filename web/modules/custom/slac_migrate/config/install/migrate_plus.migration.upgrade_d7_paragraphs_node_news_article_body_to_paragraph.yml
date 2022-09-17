@@ -22,11 +22,29 @@ process:
     -
       plugin: default_value
       default_value: wysiwyg
+  _paragraphs_populated:
+    -
+      plugin: get
+      source: field_structured_content/0/value
+    -
+      plugin: str_replace
+      regex: true
+      search: /^[1-9][0-9]*$/
+      replace: 1
+    -
+      plugin: default_value
+      default_value: 0
   field_body:
     -
       plugin: skip_on_empty
       source: body/0/value
       method: row
+    -
+      plugin: skip_on_value
+      source: '@_paragraphs_populated'
+      method: row
+      value:
+        - 1
     -
       plugin: get
       source: body

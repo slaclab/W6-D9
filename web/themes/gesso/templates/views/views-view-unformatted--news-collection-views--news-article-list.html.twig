@@ -15,13 +15,21 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+{% set row_classes = [
+  default_row_class ? 'c-view__row' : '',
+]|join(' ')|trim %}
+
 {% set list_items = [] %}
 
 {% for row in rows %}
-  {% set list_items = list_items|merge([row.content]) %}
+  {% set row_content %}
+    <div {{ row_classes ? add_attributes({ 'class': row_classes }, 'row.attributes') : '' }}>{{- row.content -}}</div>
+  {% endset %}
+  {% set list_items = list_items|merge([row_content]) %}
 {% endfor %}
 
 {% include '@components/expandable-list/expandable-list.twig' with {
+  'modifier_classes': 'c-views-view-unformatted',
   'list_items': list_items,
   'show_more_length': 5,
 } %}

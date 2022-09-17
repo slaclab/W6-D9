@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.media_mention.field_internal_tags
     - field.field.node.media_mention.field_link
     - field.field.node.media_mention.field_research_area
     - field.field.node.media_mention.field_tags
@@ -16,7 +17,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_internal_tags:
+    type: options_select
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -50,7 +57,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -65,7 +72,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS

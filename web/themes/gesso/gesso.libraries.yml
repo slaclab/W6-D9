@@ -231,6 +231,16 @@ toc:
   dependencies:
     - gesso/common
 
+topic_grid:
+  css:
+    theme:
+      dist/css/topic-grid.css: {}
+  js:
+    dist/js/topic-grid.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 tooltip:
   css:
     theme:

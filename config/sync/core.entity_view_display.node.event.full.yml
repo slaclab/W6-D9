@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
+    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -76,7 +77,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: large
+      view_mode: large_image_only
       link: false
     third_party_settings: {  }
     weight: 10
@@ -210,6 +211,7 @@ hidden:
   field_boolean: true
   field_external_link: true
   field_featured: true
+  field_internal_tags: true
   field_teaser: true
   langcode: true
   search_api_excerpt: true

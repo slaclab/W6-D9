@@ -24,9 +24,10 @@ process:
       source: name
       bypass: true
       map:
-        'Accelerator Directorate': Accelerators
-        'Astrophysics & Cosmology': Astrophysics and Cosmology
-        'Biosciences Division': Biological Sciences
+        Accelerator Directorate: Accelerators
+        Advanced Instrumentation Research Division: Sensors, Integrated Circuits and Electronics
+        Astrophysics & Cosmology: Astrophysics and Cosmology
+        Biosciences Division: Biological Sciences
         Chemical Science Division: Chemistry and Catalysis
         Chemistry & Catalysis: Chemistry and Catalysis
         Cherenkov Telescope Array (CTA): Fundamental Physics

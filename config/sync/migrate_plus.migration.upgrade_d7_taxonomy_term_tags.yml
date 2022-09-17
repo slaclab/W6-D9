@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: SOzjZYAt0U7gw0Qcdpo-4OR9_y2At0YiOttHX1EbRFo
+  default_config_hash: s4Pdxn60hY48wR-ojQs2xSyZsoMwupkZBgnVvhJAop0
 id: upgrade_d7_taxonomy_term_tags
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -27,6 +27,7 @@ process:
       bypass: true
       map:
         'Accelerator Directorate': Accelerators
+        'Advanced Instrumentation Research Division': 'Sensors, Integrated Circuits and Electronics'
         'Astrophysics & Cosmology': 'Astrophysics and Cosmology'
         'Biosciences Division': 'Biological Sciences'
         'Chemical Science Division': 'Chemistry and Catalysis'

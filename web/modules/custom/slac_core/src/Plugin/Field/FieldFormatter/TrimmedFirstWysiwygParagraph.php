@@ -131,9 +131,11 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       $patterns = [
         '/(?<!\s)<(li|dd|dt)/',
         '/(<\/p>)(?<!\s)/',
+        '/(<br>|<br \/>)/',
       ];
       $replacements = [
         ' <\1',
+        '\0 ',
         '\0 ',
       ];
       $text = preg_replace($patterns, $replacements, $text);

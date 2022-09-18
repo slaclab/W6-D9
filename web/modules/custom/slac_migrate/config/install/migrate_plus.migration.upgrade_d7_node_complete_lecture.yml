@@ -105,7 +105,7 @@ process:
   field_long_text/0/format:
     -
       plugin: default_value
-      default_value: basic_html
+      default_value: restricted_html
   # field_affiliations:
   #   -
   #     plugin: get
@@ -131,14 +131,19 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link/0/title:
+  field_link:
     -
-      plugin: get
+      plugin: skip_on_empty
       source: field_location/0/value
-  field_link/0/uri:
+      method: process
     -
-      plugin: default_value
-      default_value: <nolink>
+      plugin: sub_process
+      source: field_location
+      process:
+        title: value
+        uri:
+          plugin: default_value
+          default_value: <nolink>
   field_name:
     -
       plugin: get

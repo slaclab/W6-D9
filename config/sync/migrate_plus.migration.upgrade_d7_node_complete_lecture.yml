@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: TTcBD-_8BB4JQXq3xQD_QeSOSktXmgJD_ctntesQ1eg
+  default_config_hash: jfrurepHIn2Bicv3g5YGXqOwF5xCw5BJu0tczRo4toU
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -107,7 +107,7 @@ process:
   field_long_text/0/format:
     -
       plugin: default_value
-      default_value: basic_html
+      default_value: restricted_html
   field_image:
     -
       plugin: media_migration_delta_sort
@@ -129,14 +129,19 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link/0/title:
+  field_link:
     -
-      plugin: get
+      plugin: skip_on_empty
       source: field_location/0/value
-  field_link/0/uri:
+      method: process
     -
-      plugin: default_value
-      default_value: '<nolink>'
+      plugin: sub_process
+      source: field_location
+      process:
+        title: value
+        uri:
+          plugin: default_value
+          default_value: '<nolink>'
   field_name:
     -
       plugin: get

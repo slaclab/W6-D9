@@ -36,6 +36,7 @@
 
 # url aliases
 - upgrade_d7_url_alias_node_news_article
+- upgrade_d7_url_alias_node_lecture
 
 # url redirects
 - upgrade_d7_path_redirect_migrated_nodes

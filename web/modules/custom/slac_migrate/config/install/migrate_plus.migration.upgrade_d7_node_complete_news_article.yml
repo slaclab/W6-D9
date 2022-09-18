@@ -230,14 +230,26 @@ process:
     -
       plugin: field_link
       source: field_news_link
-  field_lede:
+  field_lede/0/value:
     -
-      plugin: get
-      source: field_subheadline
+      plugin: null_coalesce
+      source:
+        - field_subheadline/0/value
+        - field_teaser/0/value
+  field_lede/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   field_teaser:
     -
-      plugin: get
-      source: field_teaser
+      plugin: null_coalesce
+      source:
+        - field_teaser
+        - field_subheadline
+  field_teaser/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   _field_header_image_paragraph_ids:
     -
       plugin: migration_lookup

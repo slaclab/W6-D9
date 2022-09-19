@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: 3NWQHqopomuzGDEHEdOV397LyyF8_vx6wmBGdIkQlbA
+  default_config_hash: cKfDN31hnb95KPMdPVSqYfNXj9HMHnb03lyQykId6lA
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -99,9 +99,8 @@ process:
       source: nid
   _field_image_paragraph_ids:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_paragraphs_node_news_article_image_to_paragraph
-      source: nid
+      plugin: image_embed_paragraphs
+      source: field_image
   _field_video_paragraph_ids:
     -
       plugin: migration_lookup
@@ -121,18 +120,8 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: '@_field_image_paragraph_ids/0'
-  _field_paragraphs_suffix/0/target_revision_id:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: '@_field_image_paragraph_ids/1'
-  _field_paragraphs_suffix/1/target_id:
-    -
-      plugin: skip_on_empty
-      method: process
       source: '@_field_video_paragraph_ids/0'
-  _field_paragraphs_suffix/1/target_revision_id:
+  _field_paragraphs_suffix/0/target_revision_id:
     -
       plugin: skip_on_empty
       method: process
@@ -177,6 +166,7 @@ process:
       source:
         - '@_field_paragraphs_prefix'
         - '@_field_structured_content_ids'
+        - '@_field_image_paragraph_ids'
         - '@_field_paragraphs_suffix'
     -
       plugin: skip_on_empty

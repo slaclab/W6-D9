@@ -25,7 +25,6 @@
 - upgrade_d7_paragraphs_simple
 - upgrade_d7_paragraphs_video
 - upgrade_d7_paragraphs_node_news_article_body_to_paragraph
-- upgrade_d7_paragraphs_node_news_article_image_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_video_to_paragraph
 - upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
 

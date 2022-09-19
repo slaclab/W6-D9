@@ -46,7 +46,7 @@
 
 .l-section__title {
   @include responsive-font-size(11);
-  color: inherit;
+  color: var(--gesso-text-color);
 
   + .l-section__content {
     margin-top: rem(gesso-spacing(9));
@@ -92,24 +92,10 @@
 }
 
 .l-section--dark {
-  color: gesso-color(text, on-dark);
-
-  a:not(.c-button) {
-    color: inherit;
-    text-decoration-color: currentColor;
-  }
-
-  .c-icon {
-    color: inherit;
-  }
+  @include on-dark-variables;
 
   .l-section__title .c-arrow-link {
     @include arrow-link(white);
-    color: inherit;
-  }
-
-  .l-section__intro a {
-    color: inherit;
   }
 }
 

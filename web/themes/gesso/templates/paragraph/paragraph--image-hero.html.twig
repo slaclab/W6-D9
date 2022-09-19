@@ -39,8 +39,12 @@
  */
 #}
 {% set tooltip %}
-{{- hero_caption -}}
-{{- hero_credit -}}
+  {{- hero_caption -}}
+  {{- hero_credit -}}
+{% endset %}
+
+{% set title %}
+  {% autoescape false %}{{ drupal_token('current-page:title') }}{% endautoescape %}
 {% endset %}
 
 {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
@@ -48,7 +52,7 @@
   'hero_caption': tooltip,
   'hero_kicker': content.field_text|field_value,
   'hero_image': content.field_image|field_value,
-  'hero_title': drupal_token('current-page:title'),
+  'hero_title': title,
   'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
   'text_color': paragraph.field_text_color.value|default('white')
 } %}

@@ -74,12 +74,13 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% set card_content = content.field_teaser[0] is not empty ? content.field_teaser : content.field_body %}
+{% set card_content = content.field_teaser|field_value is not empty ? content.field_teaser : content.field_body %}
 
 {% include '@components/card/card.twig' with {
   'modifier_classes': 'c-card--bio c-card--teaser',
   'title': label,
   'url': url,
+  'kicker': content.field_text|field_value,
   'card_metadata': content.field_text_title|field_value,
   'media': content.field_image|field_value,
   'card_content': card_content|field_value,

@@ -56,7 +56,7 @@ Drupal.behaviors.externalLinks = {
     );
 
     externalLinks.forEach(el => {
-      if (el.hasAttribute('href')) {
+      if (el.hasAttribute('href') && !el.querySelector('img')) {
         if (linkIsLocked(el)) {
           el.insertAdjacentHTML(
             'beforeend',

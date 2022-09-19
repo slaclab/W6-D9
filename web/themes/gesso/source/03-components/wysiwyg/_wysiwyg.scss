@@ -4,6 +4,7 @@
 .ck-content {
   @include display-text-style(body);
   @include layout-constrain(gesso-constrain(sm));
+  color: var(--gesso-text-color);
 
   .l-constrain & {
     &:not(.c-wysiwyg--with-background) {
@@ -27,6 +28,7 @@
 }
 
 .c-wysiwyg--with-background {
+  @include default-variables;
   background: gesso-grayscale(white);
   padding: rem(gesso-spacing(2.5));
 }

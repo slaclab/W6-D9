@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: cKfDN31hnb95KPMdPVSqYfNXj9HMHnb03lyQykId6lA
+  default_config_hash: LxTjjzUyr9BjsUFfMRJiZSG_bAk4Z_jgeBnOBod8XRs
 id: upgrade_d7_node_complete_news_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -267,8 +267,14 @@ process:
         target_id: fid
   field_news_source:
     -
-      plugin: get
+      plugin: sub_process
       source: field_news_source
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_news_article_source
+          source: target_id
+          no_stub: true
 destination:
   plugin: 'entity:node'
   translations: true

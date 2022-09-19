@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: ysZeJHWvLYtSY2wXU_ED-oGy2NgZeTjBVaqwgpN3WB4
+  default_config_hash: _-Gzef3DghlMwpXltr63HY9J8O-KwNjkQeBNoFnDKg4
 id: upgrade_d7_url_alias_node_lecture
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

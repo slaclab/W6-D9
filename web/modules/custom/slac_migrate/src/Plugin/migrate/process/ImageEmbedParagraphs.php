@@ -2,13 +2,12 @@
 
 namespace Drupal\slac_migrate\Plugin\migrate\process;
 
-use Drupal\Component\Transliteration\TransliterationInterface;
-use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Provides an image_embed_paragraphs plugin.
@@ -19,11 +18,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * process:
  *   bar:
  *     plugin: image_embed_paragraphs
- *     source: foo
+ *     source: source_field_name
  * @endcode
  *
  * @MigrateProcessPlugin(
- *   id = "image_embed_paragraphs"
+ *   id = "image_embed_paragraphs",
+ *   handle_multiples = TRUE
  * )
  *
  * @DCG
@@ -34,13 +34,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ImageEmbedParagraphs extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The transliteration service.
-   *
-   * @var \Drupal\Component\Transliteration\TransliterationInterface
-   */
-  protected $transliteration;
-
-  /**
    * Constructs an ImageEmbedParagraphs plugin.
    *
    * @param array $configuration
@@ -49,12 +42,9 @@ class ImageEmbedParagraphs extends ProcessPluginBase implements ContainerFactory
    *   The plugin ID.
    * @param mixed $plugin_definition
    *   The plugin definition.
-   * @param \Drupal\Component\Transliteration\TransliterationInterface $transliteration
-   *   The transliteration service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, TransliterationInterface $transliteration) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->transliteration = $transliteration;
   }
 
   /**
@@ -65,7 +55,6 @@ class ImageEmbedParagraphs extends ProcessPluginBase implements ContainerFactory
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('transliteration')
     );
   }
 
@@ -73,7 +62,44 @@ class ImageEmbedParagraphs extends ProcessPluginBase implements ContainerFactory
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    return $this->transliteration->transliterate($value, LanguageInterface::LANGCODE_DEFAULT);
+
+    $paragraphs = [];
+
+    if (isset($value)) {
+      foreach ($value as $image_item) {
+        $paragraphs[] = $this->createImageEmbedParagraphsItem($image_item);
+      }
+    }
+
+    return $paragraphs;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function multiple(): bool {
+    return TRUE;
+  }
+
+  protected function createImageEmbedParagraphsItem(array $item): array {
+
+    $paragraph = Paragraph::create([
+
+      'type' => 'image_embed',
+      'field_image' => [
+        'target_id' => $item['fid'],
+      ],
+      'field_view_mode' => [
+        'value' => 'centered',
+      ],
+    ]);
+
+    $paragraph->save();
+
+    return [
+      'target_id' => $paragraph->id(),
+      'target_revision_id' => $paragraph->getRevisionId(),
+    ];
   }
 
 }

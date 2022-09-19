@@ -64,6 +64,10 @@
 
 .c-search__inner {
   position: relative;
+
+  .c-form-item {
+    margin-bottom: 0;
+  }
 }
 
 .c-search__input {

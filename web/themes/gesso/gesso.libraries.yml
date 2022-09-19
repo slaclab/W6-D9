@@ -193,6 +193,11 @@ overlay_menu:
     - gesso/common
     - gesso/hamburger_button
 
+search:
+  css:
+    theme:
+      dist/css/views-view-search.css: {}
+
 social_share:
   css:
     theme:

@@ -19,6 +19,7 @@
 - upgrade_d7_taxonomy_term_tags
 - upgrade_d7_taxonomy_term_internal_tags
 - upgrade_d7_taxonomy_term_article_type
+- upgrade_d7_taxonomy_term_news_article_source
 
 # paragraphs
 - upgrade_d7_paragraphs_image

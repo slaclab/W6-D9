@@ -23,10 +23,33 @@ process:
     -
       plugin: default_value
       default_value: wysiwyg
-  field_body:
+  field_body/0/value:
     -
-      plugin: get
-      source: field_content
+      plugin: skip_on_empty
+      method: process
+      source: field_content/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//img'
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/files'
+      replace: '/sites/default/files'
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//a'
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: '/'
+    -
+      plugin: dom
+      method: export
     -
       plugin: media_wysiwyg_filter
     -

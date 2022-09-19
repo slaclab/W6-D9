@@ -265,8 +265,14 @@ process:
         target_id: fid
   field_news_source:
     -
-      plugin: get
+      plugin: sub_process
       source: field_news_source
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_news_article_source
+          source: target_id
+          no_stub: true
 destination:
   plugin: 'entity:node'
   translations: true

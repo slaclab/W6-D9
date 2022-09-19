@@ -1,0 +1,10 @@
+{% set lightbox_id = 'filter-modal'|unique_id %}
+
+{% embed '@components/filter-modal/filter-modal.twig' with {
+  'lightbox_id': lightbox_id,
+  'results': results
+} %}
+  {% block modal_content %}
+    Still have to figure this bit out.
+  {% endblock %}
+{% endembed %}

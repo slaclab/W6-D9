@@ -197,6 +197,8 @@ search:
   css:
     theme:
       dist/css/views-view-search.css: {}
+  dependencies:
+    - gesso/lightbox
 
 social_share:
   css:

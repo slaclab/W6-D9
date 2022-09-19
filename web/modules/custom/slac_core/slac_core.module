@@ -34,3 +34,17 @@ function slac_core_entity_bundle_info_alter(array &$bundles) {
     $bundles['node']['event']['class'] = Event::class;
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function slac_core_theme($existing, $type, $theme, $path) {
+  return [
+    'filter_modal' => [
+      'variables' => [
+        'results' => NULL,
+        'modal_content' => NULL,
+      ]
+    ]
+  ];
+}

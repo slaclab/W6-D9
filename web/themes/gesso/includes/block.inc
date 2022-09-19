@@ -50,10 +50,10 @@ function gesso_preprocess_block__facet_block(&$variables) {
   if ($facet_list = current($variables['content'][0])) {
     foreach($facet_list as $facet_record) {
       $facets[] = [
-        'id' => $facet_record['raw_value'],
-        'label' => $facet_record['values']['value'],
-        'count' => $facet_record['values']['count'],
-        'active' => $facet_record['values']['active'],
+        'id' => !empty($facet_record['raw_value']) ? $facet_record['raw_value'] : NULL,
+        'label' => !empty($facet_record['values']['value']) ? $facet_record['values']['value'] : NULL,
+        'count' => !empty($facet_record['values']['count']) ? $facet_record['values']['count'] : 0,
+        'active' => !empty($facet_record['values']['active']) ? $facet_record['values']['active'] : NULL,
       ];
       // Combine to get total records, but only report if certain that the facet is
       // a proper covering of the results, such as with "type" facet.

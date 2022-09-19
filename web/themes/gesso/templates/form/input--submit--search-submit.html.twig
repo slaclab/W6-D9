@@ -20,12 +20,14 @@
   'form-' ~ type|clean_class,
   'required',
 ] %}
+{% set textValue = attributes.value %}
+{% set attributes =  attributes.removeClass(remove_classes).addClass(classes).removeAttribute('value').removeAttribute('name') %}
 
-{% if attributes.name == 'search-submit' %}
-  {% include 'input--submit--search-submit.html.twig' %}
-{% else %}
-{% include '@components/form-item/_input.twig' with {
-  modifier_classes: attributes.removeClass(remove_classes).addClass(classes).class|join(' ')|trim,
-} %}
+<button type="submit"{{ attributes }}>
+  {% include '@components/icon/icon.twig' with {
+    'icon_name': 'search',
+    'label': textValue,
+    'attributes': null
+  } %}
+</button>
 {{- children }}
-{% endif %}

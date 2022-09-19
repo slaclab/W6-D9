@@ -169,7 +169,7 @@ class SlacSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
     if (!empty($this->configuration['block_class'])) {
       $block_classes += explode(" ", $this->configuration['block_class']);
     }
-    $block_classes = array_merge($block_classes, [ 'slac-search-block' ]);
+    $block_classes = array_merge($block_classes, [ 'slac-search-block', 'c-search__form' ]);
 
     $build['container'] = [
       '#type' => 'container',
@@ -179,6 +179,10 @@ class SlacSearchBlock extends BlockBase implements ContainerFactoryPluginInterfa
 
     // Build the form and assign into the render container.
     $build['container']['search_form'] = $this->formBuilder->getForm('Drupal\slac_core\Form\SlacSearchForm', $this->configuration);
+
+    // Add the outer block classes.
+    $build['#attributes']['class'][] = 'c-search';
+    $build['#attributes']['class'][] = 'c-search--in-page';
     return $build;
   }
 

@@ -262,11 +262,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_lede:
-    type: string_textfield
+    type: text_textarea
     weight: 10
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   field_link:

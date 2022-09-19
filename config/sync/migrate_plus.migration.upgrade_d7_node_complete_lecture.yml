@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: V73JFREZxb3PQLeKdGU2r4USnW5oWsUyatAU6HelLVY
+  default_config_hash: jfrurepHIn2Bicv3g5YGXqOwF5xCw5BJu0tczRo4toU
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -94,12 +94,20 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
+  field_body/0/format:
+    -
+      plugin: default_value
+      default_value: basic_html
   field_long_text:
     -
       plugin: get
       source: field_about_the_speaker
     -
       plugin: media_wysiwyg_filter
+  field_long_text/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   field_image:
     -
       plugin: media_migration_delta_sort
@@ -121,14 +129,27 @@ process:
         end_value:
           plugin: add_one_hour
           source: value
-  field_link/title:
+  field_link:
     -
-      plugin: get
+      plugin: skip_on_empty
+      source: field_location/0/value
+      method: process
+    -
+      plugin: sub_process
       source: field_location
-  field_speaker_name:
+      process:
+        title: value
+        uri:
+          plugin: default_value
+          default_value: '<nolink>'
+  field_name:
     -
       plugin: get
-      source: field_name
+      source: field_speaker_name
+  field_name/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   field_video:
     -
       plugin: media_migration_delta_sort
@@ -137,6 +158,17 @@ process:
       plugin: sub_process
       process:
         target_id: fid
+  field_type/0/target_id:
+    -
+      plugin: default_value
+      default_value: Lecture
+    -
+      plugin: entity_lookup
+      value_key: name
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: event_type
+      ignore_case: true
   field_person_image:
     -
       plugin: media_migration_delta_sort

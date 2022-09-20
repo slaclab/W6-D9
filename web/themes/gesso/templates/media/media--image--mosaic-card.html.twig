@@ -27,10 +27,11 @@
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}
+{% set view_mode = content.field_media_image.0['#view_mode'] %}
 
 <div{{ attributes }}>
   {% include "@components/overlay-link/overlay-link.twig" with {
-    'image': content.field_thumbnail,
+    'image': media.field_media_image|view(view_mode),
     'label': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,
     'kicker': 'Image'|t,
     'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,

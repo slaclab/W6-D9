@@ -295,6 +295,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            image: image
             remote_video: remote_video
           group: 1
           exposed: false
@@ -382,7 +383,7 @@ display:
           field: field_landing_display_value
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Display on landing page'
           plugin_id: boolean
           operator: '='
           value: '1'

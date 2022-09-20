@@ -32,6 +32,16 @@ targetEntityType: media
 bundle: remote_video
 mode: mosaic_card
 content:
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_display_style:
     type: list_key
     label: hidden
@@ -65,7 +75,6 @@ content:
 hidden:
   created: true
   field_body: true
-  field_boolean: true
   field_caption: true
   field_credit: true
   field_duration: true

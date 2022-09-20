@@ -1,9 +1,15 @@
 uuid: 7b70afe3-be76-4aac-a342-e541aeffcaf3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - system
+    - toolbar
 id: reviewer
 label: Reviewer
 weight: -7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'view the administration theme'

@@ -43,6 +43,7 @@
     "drupal/layout_paragraphs": "^1.0",
     "drupal/libraries": "^3.0@beta",
     "drupal/lottiefiles_field": "^1.0",
+    "drupal/masquerade": "^2.0@RC",
     "drupal/maxlength": "^2.0@RC",
     "drupal/media_migration": "^1.0@alpha",
     "drupal/menu_block": "^1.8",

@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: KuUv-iH_UipB5Gv64ddu5NMAyjDo8Zrnju0dwruvAqc
+  default_config_hash: K6UBQcEFcPNyKt0mfnk02c11zeElQ4zVfrTT79Aprh0
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -50,6 +50,13 @@ process:
     -
       plugin: get
       source: status
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      - draft
+      - published
   created:
     -
       plugin: get

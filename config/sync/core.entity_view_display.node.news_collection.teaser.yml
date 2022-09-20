@@ -19,7 +19,12 @@ id: node.news_collection.teaser
 targetEntityType: node
 bundle: news_collection
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
 hidden:
   field_boolean: true
   field_hero_paragraph: true

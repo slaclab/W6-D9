@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.fifty_fifty_staggered
     - paragraphs.paragraphs_type.image_embed
-    - paragraphs.paragraphs_type.text_block
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -29,7 +28,6 @@ settings:
       card: card
       content_embed: content_embed
       image_embed: image_embed
-      text_block: text_block
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:

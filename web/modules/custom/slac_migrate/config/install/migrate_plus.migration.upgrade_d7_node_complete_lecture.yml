@@ -48,6 +48,13 @@ process:
     -
       plugin: get
       source: status
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      '0': draft
+      '1': published
   created:
     -
       plugin: get

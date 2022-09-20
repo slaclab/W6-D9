@@ -54,6 +54,13 @@ process:
       not_equals: true
       value:
         - 1
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      '0': draft
+      '1': published
   created:
     -
       plugin: get

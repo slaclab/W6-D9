@@ -5,6 +5,9 @@
   'results': results
 } %}
   {% block modal_content %}
-    Still have to figure this bit out.
+    {{ drupal_block('facet_block:entity_type_grid') }}
+    {{ drupal_block('facet_block:entity_type_list') }}
+    {{ drupal_block('facet_block:research_area_grid') }}
+    {{ drupal_block('facet_block:research_area_list') }}
   {% endblock %}
 {% endembed %}

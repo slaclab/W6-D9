@@ -44,6 +44,11 @@ process:
       search: 'https://www6.slac.stanford.edu/'
       replace: '/'
     -
+      plugin: dom_remove
+      mode: attribute
+      selector: //span[@style] | //a[@style] | //em[@style] | //strong[@style]
+      attribute: style
+    -
       plugin: dom
       method: export
     -

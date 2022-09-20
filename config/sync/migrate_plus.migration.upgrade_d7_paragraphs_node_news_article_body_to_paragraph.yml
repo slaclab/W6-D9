@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: VkfFZQCceR9qbHTBHlP0mnVHs_VxoXsn2W-s1YrFN0M
+  default_config_hash: 0jIes3tr5ANVzyys2sZAjcrmvC9fBECbIB6jBkgDegw
 id: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -63,6 +63,11 @@ process:
         name: href
       search: 'https://www6.slac.stanford.edu/'
       replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
     -
       plugin: dom
       method: export

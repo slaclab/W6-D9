@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: wJdKtErSXKqq0gv5KYkCXnTwe3s4JQ9mUo80BmTtqhs
+  default_config_hash: aHDp0bgJJP65JA7iKd-2C9GBQZk1GuWniNDO5D8xHz4
 id: upgrade_d7_paragraphs_simple
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -45,6 +45,11 @@ process:
         name: href
       search: 'https://www6.slac.stanford.edu/'
       replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
     -
       plugin: dom
       method: export

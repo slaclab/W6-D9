@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: K6UBQcEFcPNyKt0mfnk02c11zeElQ4zVfrTT79Aprh0
+  default_config_hash: CknWh8sjP13fJsZFDKAsrFj_Uy1lsauJU0t4YBXNc8Q
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -115,6 +115,11 @@ process:
       search: 'https://www6.slac.stanford.edu/'
       replace: /
     -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
+    -
       plugin: dom
       method: export
     -
@@ -175,6 +180,11 @@ process:
         name: href
       search: 'https://www6.slac.stanford.edu/'
       replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
     -
       plugin: dom
       method: export

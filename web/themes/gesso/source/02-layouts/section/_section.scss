@@ -46,7 +46,7 @@
 
 .l-section__title {
   @include responsive-font-size(11);
-  color: inherit;
+  color: var(--gesso-text-color);
 
   + .l-section__content {
     margin-top: rem(gesso-spacing(9));
@@ -92,16 +92,7 @@
 }
 
 .l-section--dark {
-  --gesso-text-color: #{gesso-color(text, on-dark)};
-  --gesso-link-color: #{gesso-color(text, on-dark)};
-  --gesso-link-visited-color: #{gesso-color(text, on-dark)};
-  --gesso-link-hover-color: #{gesso-color(text, on-dark)};
-  --gesso-link-active-color: #{gesso-color(text, on-dark)};
-  --gesso-link-underline-color: #{gesso-color(text, on-dark)};
-
-  .c-icon {
-    color: inherit;
-  }
+  @include on-dark-variables;
 
   .l-section__title .c-arrow-link {
     @include arrow-link(white);

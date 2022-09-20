@@ -14,8 +14,7 @@ dependencies:
     - field.field.node.person.field_text_title
     - node.type.person
   module:
-    - smart_trim
-    - text
+    - slac_core
     - user
 id: node.person.teaser
 targetEntityType: node
@@ -23,21 +22,21 @@ bundle: person
 mode: teaser
 content:
   field_body:
-    type: smart_trim
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: 40
+      trim_length: '40'
       trim_type: words
       trim_suffix: ...
-      wrap_output: false
-      wrap_class: trimmed
-      more_link: false
-      more_class: more-link
-      more_text: More
-      summary_handler: full
       trim_options:
         heading_remove: heading_remove
         retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
     weight: 4
     region: content
@@ -45,15 +44,35 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: headshot
+      view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
@@ -63,17 +82,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_boolean: true
   field_links: true
   field_long_text: true
-  field_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

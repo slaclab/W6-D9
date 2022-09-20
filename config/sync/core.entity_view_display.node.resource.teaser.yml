@@ -11,7 +11,7 @@ dependencies:
     - node.type.resource
   module:
     - link
-    - smart_trim
+    - slac_core
     - user
 id: node.resource.teaser
 targetEntityType: node
@@ -48,21 +48,21 @@ content:
     weight: 2
     region: content
   field_teaser:
-    type: smart_trim
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: 32
+      trim_length: '40'
       trim_type: words
       trim_suffix: ...
-      wrap_output: false
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
       wrap_class: trimmed
-      more_link: false
+      more_link: 0
       more_class: more-link
       more_text: More
       summary_handler: full
-      trim_options:
-        text: true
-        trim_zero: false
     third_party_settings: {  }
     weight: 0
     region: content

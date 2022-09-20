@@ -19,7 +19,6 @@ dependencies:
     - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.text_block
     - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wide_card
     - paragraphs.paragraphs_type.wysiwyg
@@ -53,7 +52,6 @@ settings:
       promo_box: promo_box
       quote: quote
       section: section
-      text_block: text_block
       video_lightbox: video_lightbox
       wide_card: wide_card
       wysiwyg: wysiwyg

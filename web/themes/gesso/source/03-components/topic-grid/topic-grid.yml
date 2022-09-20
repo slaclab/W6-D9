@@ -14,82 +14,112 @@ research_areas:
     label: 'New Technologies'
 items:
   - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 1
   - title: 'Wide'
-    image:
-      src: 'https://picsum.photos/800/400'
-      height: 400
-      width: 800
+    image: '<img src="https://picsum.photos/800/400" height="400" width="800" alt="" />'
     link: '#'
     width: 2
     filter: 3
   - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/190?image=666'
-      height: 100
-      width: 400
+    image: '<img src="https://picsum.photos/400/190?image=666" height="190" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 2
   - title: 'Large Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 5
   - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/190?image=666'
-      height: 100
-      width: 400
+    image: '<img src="https://picsum.photos/400/190?image=666" height="190" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 1
   - title: 'One column tall'
-    image:
-      src: 'https://picsum.photos/400/580?image=237'
-      height: 580
-      width: 400
+    image: '<img src="https://picsum.photos/400/580?image=237" height="580" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 3
   - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 2
   - title: 'Wide'
-    image:
-      src: 'https://picsum.photos/800/400'
-      height: 400
-      width: 800
+    image: '<img src="https://picsum.photos/800/400" height="400" width="800" alt="" />'
     link: '#'
     width: 2
     filter: 4
   - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 5
   - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/180?image=237'
-      height: 100
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Wide and short'
+    image: '<img src="https://picsum.photos/800/200" height="200" width="800" alt="" />'
+    link: '#'
+    width: 2
+    filter: 3
+  - title: 'Short'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 4
+  - title: 'Square'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 1
+  - title: 'Wide'
+    image: '<img src="https://picsum.photos/800/400" height="400" width="800" alt="" />'
+    link: '#'
+    width: 2
+    filter: 3
+  - title: 'Short'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Large Square'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 5
+  - title: 'Short'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 1
+  - title: 'One column tall'
+    image: '<img src="https://picsum.photos/400/580?image=237" height="580" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 3
+  - title: 'Square'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 2
+  - title: 'Wide'
+    image: '<img src="https://picsum.photos/800/400" height="400" width="800" alt="" />'
+    link: '#'
+    width: 2
+    filter: 4
+  - title: 'Square'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
+    link: '#'
+    width: 1
+    filter: 5
+  - title: 'Short'
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 2
@@ -102,106 +132,7 @@ items:
     width: 2
     filter: 3
   - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/180'
-      height: 180
-      width: 400
-    link: '#'
-    width: 1
-    filter: 4
-  - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
-    link: '#'
-    width: 1
-    filter: 1
-  - title: 'Wide'
-    image:
-      src: 'https://picsum.photos/800/400'
-      height: 400
-      width: 800
-    link: '#'
-    width: 2
-    filter: 3
-  - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/190?image=666'
-      height: 190
-      width: 400
-    link: '#'
-    width: 1
-    filter: 2
-  - title: 'Large Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
-    link: '#'
-    width: 1
-    filter: 5
-  - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/190'
-      height: 190
-      width: 400
-    link: '#'
-    width: 1
-    filter: 1
-  - title: 'One column tall'
-    image:
-      src: 'https://picsum.photos/400/580?image=237'
-      height: 580
-      width: 400
-    link: '#'
-    width: 1
-    filter: 3
-  - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
-    link: '#'
-    width: 1
-    filter: 2
-  - title: 'Wide'
-    image:
-      src: 'https://picsum.photos/800/400'
-      height: 400
-      width: 800
-    link: '#'
-    width: 2
-    filter: 4
-  - title: 'Square'
-    image:
-      src: 'https://picsum.photos/400/400'
-      height: 400
-      width: 400
-    link: '#'
-    width: 1
-    filter: 5
-  - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/180?image=237'
-      height: 180
-      width: 400
-    link: '#'
-    width: 1
-    filter: 2
-  - title: 'Wide and short'
-    image:
-      src: 'https://picsum.photos/800/200'
-      height: 200
-      width: 800
-    link: '#'
-    width: 2
-    filter: 3
-  - title: 'Short'
-    image:
-      src: 'https://picsum.photos/400/180'
-      height: 100
-      width: 400
+    image: '<img src="https://picsum.photos/400/400" height="400" width="400" alt="" />'
     link: '#'
     width: 1
     filter: 4

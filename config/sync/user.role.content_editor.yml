@@ -21,8 +21,10 @@ dependencies:
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
+    - workflows.workflow.content
   module:
     - comment
+    - content_moderation
     - contextual
     - eu_cookie_compliance
     - file
@@ -142,9 +144,13 @@ permissions:
   - 'revert webform revisions'
   - 'update any media'
   - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
   - 'use text format full_html'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view latest version'
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view the administration theme'

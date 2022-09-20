@@ -32,8 +32,10 @@ dependencies:
     - user.role.content_editor
     - user.role.manager
     - user.role.reviewer
+    - workflows.workflow.content
   module:
     - conditional_fields
+    - content_moderation
     - file
     - filter
     - google_tag
@@ -205,12 +207,16 @@ permissions:
   - 'revert webform revisions'
   - 'update any media'
   - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
   - 'use text format full_html'
   - 'view all revisions'
   - 'view all sitewide alert revisions'
+  - 'view any unpublished content'
   - 'view any webform submission'
   - 'view conditional fields'
   - 'view cron jobs'
+  - 'view latest version'
   - 'view own webform submission'
   - 'view the administration theme'
   - 'view update notifications'

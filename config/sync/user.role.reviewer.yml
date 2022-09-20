@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - content_moderation
     - system
     - toolbar
 id: reviewer
@@ -12,4 +13,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access toolbar'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view the administration theme'

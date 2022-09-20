@@ -17,7 +17,6 @@ dependencies:
     - node.type.page
     - node.type.person
     - node.type.resource
-    - node.type.webform
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
@@ -76,7 +75,6 @@ permissions:
   - 'create terms in tags'
   - 'create url aliases'
   - 'create webform'
-  - 'create webform content'
   - 'delete any event content'
   - 'delete any landing_page content'
   - 'delete any media'
@@ -86,7 +84,6 @@ permissions:
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any resource content'
-  - 'delete any webform content'
   - 'delete event revisions'
   - 'delete homepage revisions'
   - 'delete landing_page revisions'
@@ -104,12 +101,10 @@ permissions:
   - 'delete own person content'
   - 'delete own resource content'
   - 'delete own webform'
-  - 'delete own webform content'
   - 'delete own webform submission'
   - 'delete page revisions'
   - 'delete person revisions'
   - 'delete resource revisions'
-  - 'delete webform revisions'
   - 'display eu cookie compliance popup'
   - 'edit any event content'
   - 'edit any homepage content'
@@ -121,7 +116,6 @@ permissions:
   - 'edit any person content'
   - 'edit any resource content'
   - 'edit any webform'
-  - 'edit any webform content'
   - 'edit own comments'
   - 'edit own page content'
   - 'edit own webform'
@@ -141,7 +135,6 @@ permissions:
   - 'revert page revisions'
   - 'revert person revisions'
   - 'revert resource revisions'
-  - 'revert webform revisions'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'

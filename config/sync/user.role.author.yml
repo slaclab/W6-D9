@@ -16,7 +16,6 @@ dependencies:
     - node.type.page
     - node.type.person
     - node.type.resource
-    - node.type.webform
     - workflows.workflow.content
   module:
     - content_moderation
@@ -55,7 +54,6 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own resource content'
-  - 'delete own webform content'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'

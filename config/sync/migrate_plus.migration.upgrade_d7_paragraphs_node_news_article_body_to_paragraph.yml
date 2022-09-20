@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: ZbiYG0LLnHuIsdqiXM0v93MhHsXnmB3Gj2rsgcAFd5Q
+  default_config_hash: VkfFZQCceR9qbHTBHlP0mnVHs_VxoXsn2W-s1YrFN0M
 id: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -20,10 +20,6 @@ source:
   plugin: d7_node
   node_type: news_article
 process:
-  type:
-    -
-      plugin: default_value
-      default_value: wysiwyg
   _paragraphs_populated:
     -
       plugin: get
@@ -74,10 +70,44 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-  field_body/0/format:
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: '//iframe | //embed | //a[@data-flickr-embed]'
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
     -
       plugin: default_value
       default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  type:
+    -
+      plugin: static_map
+      source: '@field_body/0/format'
+      map:
+        basic_html: wysiwyg
+        full_html: embed_full_html_
+      default_value: wysiwyg
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   translations: true

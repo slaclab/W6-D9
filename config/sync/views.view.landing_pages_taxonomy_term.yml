@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.mosaic_card_view_mode
+    - core.entity_view_mode.taxonomy_term.mosaic_card
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
@@ -14,7 +14,7 @@ dependencies:
 id: landing_pages_taxonomy_term
 label: 'Landing Page Taxonomy Term View Embeds'
 module: views
-description: ''
+description: 'View with separate displays for embedding lists of taxonomy terms such as Tags in sections.'
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
@@ -343,7 +343,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: mosaic_card_view_mode
+          view_mode: mosaic_card
       query:
         type: views_query
         options:

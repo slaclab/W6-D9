@@ -11,11 +11,13 @@ id: media.remote_video.field_display_style
 field_name: field_display_style
 entity_type: media
 bundle: remote_video
-label: 'Landing page display style'
+label: 'Display Style'
 description: 'The Images & Video landing page uses a masonry layout. Choose the display style that should be used for the media item on the landing page.'
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: square
 default_value_callback: ''
 settings: {  }
 field_type: list_string

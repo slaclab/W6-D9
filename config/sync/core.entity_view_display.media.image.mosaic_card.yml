@@ -52,6 +52,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_research_area:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   created: true
   field_body: true
@@ -62,7 +69,6 @@ hidden:
   field_landing_display: true
   field_link: true
   field_paragraphs: true
-  field_research_area: true
   field_tags: true
   field_teaser: true
   field_type: true

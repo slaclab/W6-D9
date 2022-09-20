@@ -62,6 +62,9 @@ settings:
       embed_view:
         weight: 46
         enabled: false
+      embed_webform:
+        weight: 47
+        enabled: false
       extra_large_card:
         weight: 47
         enabled: false
@@ -112,9 +115,6 @@ settings:
         enabled: false
       table_of_contents:
         weight: 63
-        enabled: false
-      text_block:
-        weight: 64
         enabled: false
       tout:
         weight: 65

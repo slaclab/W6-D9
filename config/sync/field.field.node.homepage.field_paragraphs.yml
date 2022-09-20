@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.cards_with_show_more
     - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.embed_view
@@ -40,6 +41,7 @@ settings:
       accordion_item: accordion_item
       article_hero: article_hero
       card: card
+      cards_with_show_more: cards_with_show_more
       content_card: content_card
       content_embed: content_embed
       embed_view: embed_view
@@ -72,7 +74,7 @@ settings:
         enabled: true
       cards_with_show_more:
         weight: -62
-        enabled: false
+        enabled: true
       content_card:
         weight: -61
         enabled: true
@@ -141,9 +143,6 @@ settings:
         enabled: true
       table_of_contents:
         weight: -40
-        enabled: true
-      text_block:
-        weight: -39
         enabled: true
       tout:
         weight: -41

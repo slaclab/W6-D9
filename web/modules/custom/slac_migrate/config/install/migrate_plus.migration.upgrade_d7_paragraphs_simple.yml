@@ -19,10 +19,6 @@ source:
   plugin: d7_paragraphs_item
   bundle: simple
 process:
-  type:
-    -
-      plugin: default_value
-      default_value: wysiwyg
   field_body/0/value:
     -
       plugin: skip_on_empty
@@ -54,10 +50,44 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-  field_body/0/format:
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_content/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: //iframe | //embed | //a[@data-flickr-embed]
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
     -
       plugin: default_value
       default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  type:
+    -
+      plugin: static_map
+      source: '@field_body/0/format'
+      map:
+        basic_html: wysiwyg
+        full_html: embed_full_html_
+      default_value: wysiwyg
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: wysiwyg

@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: 5LNrDyA3qcD2Hs76_e_KTSZADQ1DsOyFychHMyg0vyE
+  default_config_hash: KuUv-iH_UipB5Gv64ddu5NMAyjDo8Zrnju0dwruvAqc
 id: upgrade_d7_node_complete_lecture
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -114,10 +114,36 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-  field_body/0/format:
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: '//iframe | //embed | //a[@data-flickr-embed]'
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
     -
       plugin: default_value
       default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
   field_long_text/0/value:
     -
       plugin: skip_on_empty

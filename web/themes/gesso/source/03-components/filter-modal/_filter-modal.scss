@@ -94,6 +94,10 @@
   border-bottom: 1px solid currentColor;
 }
 
+.c-filter-modal__list {
+  @include list-clean;
+}
+
 @include breakpoint(gesso-breakpoint(tablet-lg)) {
   .c-filter-modal {
     align-items: center;

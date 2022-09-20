@@ -59,6 +59,15 @@ carousel:
     - gesso/common
     - core/drupal
 
+checkbox_widget:
+  js:
+    dist/js/checkbox-widget.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+    - facets/widget
+    - core/once
+
 drawer:
   css:
     theme:

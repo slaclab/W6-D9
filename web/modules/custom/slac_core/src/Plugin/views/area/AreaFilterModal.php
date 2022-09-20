@@ -22,8 +22,9 @@ class AreaFilterModal extends Result {
     }
     return [
       '#theme' => 'filter_modal',
-      '#results' => $render,
+      '#results_text' => $render,
       '#modal_content' => NULL,
+      '#num_results' => $this->view->total_rows ?? count($this->view->result)
     ];
   }
 }

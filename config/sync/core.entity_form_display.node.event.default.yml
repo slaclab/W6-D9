@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -38,6 +37,7 @@ dependencies:
     - link
     - media_library
     - path
+    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -257,12 +257,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_internal_tags:
-    type: options_select
-    weight: 15
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_lede:
     type: text_textarea
     weight: 10
@@ -424,10 +418,15 @@ content:
             effect_options: {  }
             selector: ''
   field_tags:
-    type: options_buttons
+    type: term_reference_tree
     weight: 14
     region: content
-    settings: {  }
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
@@ -449,14 +448,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_type:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 13
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_video:
     type: media_library_widget

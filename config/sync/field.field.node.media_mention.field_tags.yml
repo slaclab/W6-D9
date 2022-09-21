@@ -1,16 +1,16 @@
-uuid: 680c73ad-78ad-49e0-9766-01f6d107567a
+uuid: d2d4c3bd-201e-4d75-8f1c-f193ee72c29c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_internal_tags
+    - field.storage.node.field_tags
     - node.type.media_mention
-    - taxonomy.vocabulary.internal_tags
-id: node.media_mention.field_internal_tags
-field_name: field_internal_tags
+    - taxonomy.vocabulary.tags
+id: node.media_mention.field_tags
+field_name: field_tags
 entity_type: node
 bundle: media_mention
-label: 'Internal Tags'
+label: Tags
 description: ''
 required: false
 translatable: true
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      internal_tags: internal_tags
+      tags: tags
     sort:
       field: name
       direction: asc

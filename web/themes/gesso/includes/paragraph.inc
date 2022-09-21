@@ -134,14 +134,23 @@ function _gesso_set_hero_caption(&$vars) {
 
   // Assign either the paragraph's body field or the image's caption field
   // into the template as the caption of the hero.
-  if ($paragraph->bundle() == 'article_hero') {
-    $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
-    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
-  } else if ($paragraph->bundle() == 'image_embed') {
-    $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text[0]->view('two_column_hero') : NULL;
-    $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('two_column_hero') : NULL);
-  } else {
-    $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view() : NULL;
+  switch ($paragraph->bundle()) {
+    case 'article_hero':
+      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+      break;
+    // See template field--paragraph--field-long-text--image-embed.html.twig for caption processing.
+    case 'image_embed':
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text[0]->view('two_column_hero') : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('two_column_hero') : NULL);
+      break;
+    // See template field--paragraph--field-long-text--overlap-image.html.twig for caption processing.
+    case 'overlap_image':
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text->view() : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+      break;
+    default:
+      $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view() : NULL;
   }
 
   // Assign the credit, always using the image entity's field.
@@ -237,9 +246,14 @@ function gesso_preprocess_paragraph__fifty_fifty(array &$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__overlap_image(array &$vars) {
+  // Pull the image's credit forward into the paragraph template, and the image's caption if
+  // the caption field on the paragraph is not populated.
+  _gesso_set_hero_caption($vars);
+
   $paragraph = $vars['paragraph'];
   // Get the media item.
   $media_id = $paragraph->field_image->target_id;
+
   if ($media_id) {
     $media = \Drupal\media\Entity\Media::load($media_id);
     // Get the image.

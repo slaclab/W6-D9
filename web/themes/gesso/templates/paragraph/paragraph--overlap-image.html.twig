@@ -39,14 +39,19 @@
  */
 #}
 
+{% set tooltip %}
+  {{- hero_caption -}}
+  {{- hero_credit -}}
+{% endset %}
+
 {% set overlap_image %}
-{% include '@components/overlap-image/overlap-image.twig' with {
-  'image_caption': content.field_long_text|field_value,
-  'overlap_image_content': content.field_paragraph|field_value,
-  'icon_content': content.field_lottiefile|field_value,
-  'overlap_image_content_2': content.field_paragraph_2|field_value,
-  'has_parallax': attributes.hasClass('c-overlap-image--parallax')
-} %}
+  {% include '@components/overlap-image/overlap-image.twig' with {
+    'image_caption': tooltip,
+    'overlap_image_content': content.field_paragraph|field_value,
+    'icon_content': content.field_lottiefile|field_value,
+    'overlap_image_content_2': content.field_paragraph_2|field_value,
+    'has_parallax': attributes.hasClass('c-overlap-image--parallax')
+  } %}
 {% endset %}
 
 {% if is_nested %}{{ overlap_image }}{% else %}

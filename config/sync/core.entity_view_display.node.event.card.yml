@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -164,7 +163,6 @@ hidden:
   field_boolean2: true
   field_detail_text: true
   field_featured: true
-  field_internal_tags: true
   field_lede: true
   field_link2: true
   field_links: true

@@ -10,3 +10,4 @@ dependencies:
   - migrate_upgrade
   - migrate_plus
   - migrate_manifest
+  - redirect

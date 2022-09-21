@@ -84,6 +84,7 @@ module:
   path_alias: 0
   rabbit_hole: 0
   rdf: 0
+  redirect: 0
   redis: 0
   responsive_image: 0
   rh_media: 0
@@ -105,6 +106,7 @@ module:
   svg_image_field: 0
   system: 0
   taxonomy: 0
+  term_reference_tree: 0
   text: 0
   token: 0
   token_filter: 0

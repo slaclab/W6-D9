@@ -3,17 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.mosaic_card
     - core.entity_view_mode.media.poster
     - media.type.image
+    - media.type.remote_video
     - taxonomy.vocabulary.media_type
+    - taxonomy.vocabulary.research_area
   module:
     - media
+    - options
     - taxonomy
     - user
 id: landing_pages_media
 label: 'Landing Page Media View Embeds'
 module: views
-description: ''
+description: 'View with multiple separate displays for embedding lists and grids of media such as images and videos in sections.'
 tag: ''
 base_table: media_field_data
 base_field: mid
@@ -131,14 +135,45 @@ display:
           id: bundle
           table: media_field_data
           field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
+          operator: in
           value:
             image: image
+            remote_video: remote_video
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         field_type_target_id:
           id: field_type_target_id
           table: media__field_type
@@ -213,6 +248,236 @@ display:
       relationships: {  }
       header: {  }
       footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - user.permissions
+      tags: {  }
+  images_video_landing_page_mosaic:
+    id: images_video_landing_page_mosaic
+    display_title: 'Images and Videos Landing Page (Mosaic)'
+    display_plugin: embed
+    position: 1
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 30
+      filters:
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+          operator: in
+          value:
+            image: image
+            remote_video: remote_video
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_research_area_target_id:
+          id: field_research_area_target_id
+          table: media__field_research_area
+          field: field_research_area_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_research_area_target_id_op
+            label: 'Research Area'
+            description: ''
+            use_operator: false
+            operator: field_research_area_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: research_area
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: research_area
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_landing_display_value:
+          id: field_landing_display_value
+          table: media__field_landing_display
+          field: field_landing_display_value
+          relationship: none
+          group_type: group
+          admin_label: 'Display on landing page'
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_display_style_value:
+          id: field_display_style_value
+          table: media__field_display_style
+          field: field_display_style_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: 'not empty'
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:media'
+        options:
+          relationship: none
+          view_mode: mosaic_card
+      defaults:
+        pager: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1

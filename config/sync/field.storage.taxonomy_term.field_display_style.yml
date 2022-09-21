@@ -15,9 +15,6 @@ settings:
       value: square
       label: Square
     -
-      value: large_square
-      label: 'Large Square'
-    -
       value: short
       label: Short
     -

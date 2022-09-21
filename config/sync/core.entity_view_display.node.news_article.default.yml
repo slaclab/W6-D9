@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
@@ -91,6 +92,11 @@ targetEntityType: node
 bundle: news_article
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_bio:
     type: entity_reference_label
     label: above
@@ -144,11 +150,18 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_lede:
-    type: string
+  field_internal_tags:
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_lede:
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 11
     region: content

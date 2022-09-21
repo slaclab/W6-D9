@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
+    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -102,6 +103,7 @@ third_party_settings:
         - field_featured
         - field_type
         - field_tags
+        - field_internal_tags
         - field_bio_related_content
       label: Metadata
       parent_name: group_page_content
@@ -119,6 +121,11 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_bio_related_content:
     type: entity_reference_label
     label: above
@@ -202,11 +209,18 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
-  field_lede:
-    type: string
+  field_internal_tags:
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_lede:
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 20
     region: content
@@ -290,7 +304,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_teaser:
     type: text_default

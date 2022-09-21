@@ -31,8 +31,9 @@ process:
       source: fid
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value
@@ -57,7 +58,7 @@ process:
     -
       plugin: get
       source: field_title
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_video_description
@@ -73,5 +74,6 @@ process:
 destination:
   plugin: 'entity:media'
 migration_dependencies:
-  required: []
+  required:
+    - upgrade_d7_user
   optional: []

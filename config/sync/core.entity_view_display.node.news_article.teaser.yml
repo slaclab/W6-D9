@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
@@ -33,13 +34,18 @@ targetEntityType: node
 bundle: news_article
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_estimated_read_time:
     type: estimated_read_time_text
     label: hidden
     settings:
       tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_news_source:
     type: entity_reference_label
@@ -47,7 +53,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -66,21 +72,33 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_source_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -89,18 +107,13 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_type:
     type: entity_reference_label
     label: hidden
     settings:
       link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
-    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
@@ -110,6 +123,7 @@ hidden:
   field_boolean: true
   field_featured: true
   field_hero_paragraph: true
+  field_internal_tags: true
   field_lede: true
   field_paragraphs_1: true
   field_research_area: true
@@ -117,4 +131,5 @@ hidden:
   field_tags: true
   field_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

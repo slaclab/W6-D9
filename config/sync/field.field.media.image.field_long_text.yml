@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
+      - plain_text
 id: media.image.field_long_text
 field_name: field_long_text
 entity_type: media

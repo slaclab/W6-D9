@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
+    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -27,9 +28,11 @@ dependencies:
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
+    - workflows.workflow.content
   module:
     - allowed_formats
     - conditional_fields
+    - content_moderation
     - datetime_range
     - field_group
     - link
@@ -46,7 +49,7 @@ third_party_settings:
       label: 'Page Content'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: tabs
       format_settings:
         classes: ''
@@ -106,6 +109,7 @@ third_party_settings:
         - field_featured
         - field_type
         - field_tags
+        - field_internal_tags
         - field_bio_related_content
       label: Metadata
       region: content
@@ -126,13 +130,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_bio_related_content:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -253,12 +257,18 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_internal_tags:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_lede:
-    type: string_textfield
+    type: text_textarea
     weight: 10
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   field_link:
@@ -414,14 +424,10 @@ content:
             effect_options: {  }
             selector: ''
   field_tags:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 14
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
@@ -495,29 +501,35 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -539,5 +551,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

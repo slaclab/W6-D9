@@ -18,26 +18,99 @@ source:
   plugin: d7_node
   node_type: news_article
 process:
-  type:
+  _paragraphs_populated:
+    -
+      plugin: get
+      source: field_structured_content/0/value
+    -
+      plugin: str_replace
+      regex: true
+      search: /^[1-9][0-9]*$/
+      replace: 1
     -
       plugin: default_value
-      default_value: wysiwyg
-  field_body:
+      default_value: 0
+  field_body/0/value:
     -
       plugin: skip_on_empty
       source: body/0/value
       method: row
     -
-      plugin: get
-      source: body
+      plugin: skip_on_value
+      source: '@_paragraphs_populated'
+      method: row
+      value:
+        - 1
+    -
+      plugin: dom
+      method: import
+      source: body/0/value
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//img'
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/files'
+      replace: '/sites/default/files'
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//a'
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: '/'
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: //span[@style] | //a[@style] | //em[@style] | //strong[@style]
+      attribute: style
+    -
+      plugin: dom
+      method: export
     -
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-  field_body/0/format:
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: //iframe | //embed | //a[@data-flickr-embed]
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
     -
       plugin: default_value
       default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  type:
+    -
+      plugin: static_map
+      source: '@field_body/0/format'
+      map:
+        basic_html: wysiwyg
+        full_html: embed_full_html_
+      default_value: wysiwyg
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   translations: true

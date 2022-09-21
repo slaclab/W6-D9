@@ -13,7 +13,6 @@ dependencies:
     - node.type.page
   module:
     - slac_core
-    - text
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -22,7 +21,31 @@ targetEntityType: node
 bundle: page
 mode: card
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
@@ -39,14 +62,7 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_teaser:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -55,7 +71,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_text:
     type: string
@@ -63,15 +79,11 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   field_hero_paragraph: true
   field_tags: true
   langcode: true
+  links: true
   search_api_excerpt: true

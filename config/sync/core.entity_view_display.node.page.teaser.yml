@@ -13,7 +13,6 @@ dependencies:
     - node.type.page
   module:
     - slac_core
-    - text
     - user
 _core:
   default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
@@ -22,6 +21,11 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
@@ -39,14 +43,26 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -55,7 +71,7 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_text:
     type: string
@@ -63,12 +79,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 4
     region: content
 hidden:
   field_hero_paragraph: true

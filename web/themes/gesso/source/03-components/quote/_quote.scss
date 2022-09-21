@@ -4,7 +4,6 @@
 
 .c-quote {
   --quote-size: 80px;
-  border-top: 1px solid;
   margin-bottom: rem(gesso-spacing(5));
   margin-top: calc(var(--quote-size) / 2 + #{rem(gesso-spacing(5))});
   padding-top: rem(gesso-spacing(5));
@@ -14,17 +13,23 @@
     margin-top: 0;
   }
 
-  &::before {
-    @include svg-background(quote-left);
-    background-color: gesso-grayscale(white);
+  &::before,
+  &::after {
+    background-color: currentColor;
     content: '';
     display: block;
-    height: var(--quote-size);
-    left: 50%;
+    height: 1px;
     position: absolute;
-    top: calc(var(--quote-size) / -2);
-    transform: translateX(-50%);
-    width: var(--quote-size);
+    top: 0;
+    width: calc((100% - var(--quote-size)) / 2);
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -36,11 +41,13 @@
 
 .c-quote__author {
   @include responsive-font-size(5);
+  color: var(--gesso-text-color);
   display: block;
   font-weight: gesso-font-weight(bold);
 }
 
 .c-quote__desc {
+  color: var(--gesso-text-color);
   display: block;
 }
 
@@ -61,4 +68,15 @@
     height: 120px;
     width: 120px;
   }
+}
+
+.c-quote__icon {
+  color: var(--gesso-accent-color);
+  display: block;
+  height: var(--quote-size);
+  left: 50%;
+  position: absolute;
+  top: calc(var(--quote-size) / -2);
+  transform: translateX(-50%);
+  width: var(--quote-size);
 }

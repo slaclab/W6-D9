@@ -37,12 +37,24 @@ process:
       source: title
   uid:
     -
-      plugin: get
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
   status:
     -
       plugin: get
       source: status
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      '0': draft
+      '1': published
   created:
     -
       plugin: get
@@ -79,20 +91,107 @@ process:
     -
       plugin: get
       source: comment
-  body:
+  field_body/0/value:
     -
-      plugin: get
-      source: body
+      plugin: dom
+      method: import
+      source: body/0/value
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//img'
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/files'
+      replace: '/sites/default/files'
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//a'
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: '/'
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: //span[@style] | //a[@style] | //em[@style] | //strong[@style]
+      attribute: style
+    -
+      plugin: dom
+      method: export
     -
       plugin: media_wysiwyg_filter
     -
       plugin: img_tag_to_embed
-  field_long_text:
+  _embed_based_format:
     -
-      plugin: get
-      source: field_about_the_speaker
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: //iframe | //embed | //a[@data-flickr-embed]
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
+    -
+      plugin: default_value
+      default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  field_long_text/0/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_about_the_speaker/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//img'
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/'
+      replace: '/'
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: '//a'
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: '/'
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: //span[@style] | //a[@style] | //em[@style] | //strong[@style]
+      attribute: style
+    -
+      plugin: dom
+      method: export
     -
       plugin: media_wysiwyg_filter
+  field_long_text/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   # field_affiliations:
   #   -
   #     plugin: get
@@ -120,12 +219,25 @@ process:
           source: value
   field_link:
     -
-      plugin: get
+      plugin: skip_on_empty
+      source: field_location/0/value
+      method: process
+    -
+      plugin: sub_process
       source: field_location
-  field_speaker_name:
+      process:
+        title: value
+        uri:
+          plugin: default_value
+          default_value: <nolink>
+  field_name:
     -
       plugin: get
-      source: field_name
+      source: field_speaker_name
+  field_name/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
   field_video:
     -
       plugin: media_migration_delta_sort
@@ -134,6 +246,17 @@ process:
       plugin: sub_process
       process:
         target_id: fid
+  field_type/0/target_id:
+    -
+      plugin: default_value
+      default_value: Lecture
+    -
+      plugin: entity_lookup
+      value_key: name
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: event_type
+      ignore_case: true
   field_person_image:
     -
       plugin: media_migration_delta_sort
@@ -150,5 +273,6 @@ destination:
   plugin: 'entity:node'
   default_bundle: event
 migration_dependencies:
-  required: []
+  required:
+    - upgrade_d7_user
   optional: []

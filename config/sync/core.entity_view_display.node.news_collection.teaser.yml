@@ -1,6 +1,6 @@
 uuid: 77c96393-d3b3-4826-9f74-7c9dbb60e2ae
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -19,10 +19,10 @@ targetEntityType: node
 bundle: news_collection
 mode: teaser
 content:
-  links:
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: -20
     region: content
 hidden:
   field_boolean: true
@@ -33,4 +33,5 @@ hidden:
   field_teaser: true
   field_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

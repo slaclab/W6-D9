@@ -1,11 +1,5 @@
 - entity: "taxonomy_term"
   vid: "tags"
-  name: "SLAC Science"
-- entity: "taxonomy_term"
-  vid: "tags"
-  name: "Lab News"
-- entity: "taxonomy_term"
-  vid: "tags"
   name: "Partnerships"
 - entity: "taxonomy_term"
   vid: "tags"
@@ -666,7 +660,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'Energy Sciences'    
+          name: 'Energy Sciences'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "GISMo"
@@ -966,7 +960,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'X-ray Light Sources and Electron Imaging' 
+          name: 'X-ray Light Sources and Electron Imaging'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "LCLS Atomic, Molecular & Optical Science (AMO)"
@@ -1029,6 +1023,16 @@
           name: 'X-ray Light Sources and Electron Imaging'
 - entity: "taxonomy_term"
   vid: "tags"
+  name: "LCLS Matter in Extreme Conditions Upgrade (MEC-U)"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'X-ray Light Sources and Electron Imaging'
+- entity: "taxonomy_term"
+  vid: "tags"
   name: "LCLS Ultrafast Science Instruments (LUSI)"
   parent:
   - '#process':
@@ -1056,7 +1060,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'X-ray Light Sources and Electron Imaging' 
+          name: 'X-ray Light Sources and Electron Imaging'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "MeV-UED"
@@ -1116,7 +1120,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'Technology Innovation' 
+          name: 'Technology Innovation'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "Sensors, Integrated Circuits and Electronics"
@@ -1126,7 +1130,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'Technology Innovation' 
+          name: 'Technology Innovation'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "RF and Accelerator Research"
@@ -1136,7 +1140,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'Technology Innovation' 
+          name: 'Technology Innovation'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "Device Microfabrication Facility (DMF)"
@@ -1146,7 +1150,7 @@
       args:
         - 'taxonomy_term'
         - vid: 'tags'
-          name: 'Technology Innovation' 
+          name: 'Technology Innovation'
 - entity: "taxonomy_term"
   vid: "tags"
   name: "Environment, Safety & Health (ES&H)"

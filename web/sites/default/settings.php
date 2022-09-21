@@ -59,6 +59,8 @@ if (file_exists($secrets_file)) {
   if (!empty($secrets['migration_status']) && $secrets['migration_status'] == 'active') {
     $config['mailsystem.settings']['defaults']['sender'] = 'test_mail_collector';
   }
+  // Set media migration embed token to media_embed and not entity_embed
+  $settings['media_migration_embed_token_transform_destination_filter_plugin'] = 'media_embed';
 }
 
 // Configure Redis

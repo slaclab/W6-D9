@@ -258,11 +258,11 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_lede:
-    type: string_textfield
+    type: text_textarea
     weight: 10
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   field_link:
@@ -546,5 +546,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

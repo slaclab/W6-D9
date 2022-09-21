@@ -209,10 +209,9 @@ content:
     weight: 8
     region: content
   field_lede:
-    type: string
+    type: text_default
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 20
     region: content

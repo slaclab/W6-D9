@@ -136,7 +136,7 @@ display:
           hide_alter_empty: true
           view_mode: media_library
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 24
@@ -145,6 +145,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -153,6 +155,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -484,7 +487,52 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.animated_icon.default'
+        - 'config:core.entity_view_display.media.animated_icon.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.card_image_only'
+        - 'config:core.entity_view_display.media.image.carousel'
+        - 'config:core.entity_view_display.media.image.centered'
+        - 'config:core.entity_view_display.media.image.centered_wide'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.extra_large_card'
+        - 'config:core.entity_view_display.media.image.headshot'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.image_hero'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.large_image_only'
+        - 'config:core.entity_view_display.media.image.large_square'
+        - 'config:core.entity_view_display.media.image.large_vertical'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.mosaic_card'
+        - 'config:core.entity_view_display.media.image.one_col_tall'
+        - 'config:core.entity_view_display.media.image.poster'
+        - 'config:core.entity_view_display.media.image.search_index'
+        - 'config:core.entity_view_display.media.image.short'
+        - 'config:core.entity_view_display.media.image.speaker_bio'
+        - 'config:core.entity_view_display.media.image.square'
+        - 'config:core.entity_view_display.media.image.teaser'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.image.tout'
+        - 'config:core.entity_view_display.media.image.two_column_hero'
+        - 'config:core.entity_view_display.media.image.url_only'
+        - 'config:core.entity_view_display.media.image.video_lightbox'
+        - 'config:core.entity_view_display.media.image.wide'
+        - 'config:core.entity_view_display.media.image.wide_short'
+        - 'config:core.entity_view_display.media.remote_audio.default'
+        - 'config:core.entity_view_display.media.remote_audio.media_library'
+        - 'config:core.entity_view_display.media.remote_video.card'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.remote_video.mosaic_card'
+        - 'config:core.entity_view_display.media.remote_video.teaser'
+        - 'config:core.entity_view_display.media.remote_video.video_hero'
+        - 'config:core.entity_view_display.media.remote_video.video_lightbox'
   page:
     id: page
     display_title: Page
@@ -781,7 +829,52 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.animated_icon.default'
+        - 'config:core.entity_view_display.media.animated_icon.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.card_image_only'
+        - 'config:core.entity_view_display.media.image.carousel'
+        - 'config:core.entity_view_display.media.image.centered'
+        - 'config:core.entity_view_display.media.image.centered_wide'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.extra_large_card'
+        - 'config:core.entity_view_display.media.image.headshot'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.image_hero'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.large_image_only'
+        - 'config:core.entity_view_display.media.image.large_square'
+        - 'config:core.entity_view_display.media.image.large_vertical'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.mosaic_card'
+        - 'config:core.entity_view_display.media.image.one_col_tall'
+        - 'config:core.entity_view_display.media.image.poster'
+        - 'config:core.entity_view_display.media.image.search_index'
+        - 'config:core.entity_view_display.media.image.short'
+        - 'config:core.entity_view_display.media.image.speaker_bio'
+        - 'config:core.entity_view_display.media.image.square'
+        - 'config:core.entity_view_display.media.image.teaser'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.image.tout'
+        - 'config:core.entity_view_display.media.image.two_column_hero'
+        - 'config:core.entity_view_display.media.image.url_only'
+        - 'config:core.entity_view_display.media.image.video_lightbox'
+        - 'config:core.entity_view_display.media.image.wide'
+        - 'config:core.entity_view_display.media.image.wide_short'
+        - 'config:core.entity_view_display.media.remote_audio.default'
+        - 'config:core.entity_view_display.media.remote_audio.media_library'
+        - 'config:core.entity_view_display.media.remote_video.card'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.remote_video.mosaic_card'
+        - 'config:core.entity_view_display.media.remote_video.teaser'
+        - 'config:core.entity_view_display.media.remote_video.video_hero'
+        - 'config:core.entity_view_display.media.remote_video.video_lightbox'
   widget:
     id: widget
     display_title: Widget
@@ -1101,7 +1194,52 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.animated_icon.default'
+        - 'config:core.entity_view_display.media.animated_icon.media_library'
+        - 'config:core.entity_view_display.media.document.default'
+        - 'config:core.entity_view_display.media.document.media_library'
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.card_image_only'
+        - 'config:core.entity_view_display.media.image.carousel'
+        - 'config:core.entity_view_display.media.image.centered'
+        - 'config:core.entity_view_display.media.image.centered_wide'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.extra_large_card'
+        - 'config:core.entity_view_display.media.image.headshot'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.image_hero'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.large_image_only'
+        - 'config:core.entity_view_display.media.image.large_square'
+        - 'config:core.entity_view_display.media.image.large_vertical'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.mosaic_card'
+        - 'config:core.entity_view_display.media.image.one_col_tall'
+        - 'config:core.entity_view_display.media.image.poster'
+        - 'config:core.entity_view_display.media.image.search_index'
+        - 'config:core.entity_view_display.media.image.short'
+        - 'config:core.entity_view_display.media.image.speaker_bio'
+        - 'config:core.entity_view_display.media.image.square'
+        - 'config:core.entity_view_display.media.image.teaser'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.image.tout'
+        - 'config:core.entity_view_display.media.image.two_column_hero'
+        - 'config:core.entity_view_display.media.image.url_only'
+        - 'config:core.entity_view_display.media.image.video_lightbox'
+        - 'config:core.entity_view_display.media.image.wide'
+        - 'config:core.entity_view_display.media.image.wide_short'
+        - 'config:core.entity_view_display.media.remote_audio.default'
+        - 'config:core.entity_view_display.media.remote_audio.media_library'
+        - 'config:core.entity_view_display.media.remote_video.card'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.full'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.remote_video.mosaic_card'
+        - 'config:core.entity_view_display.media.remote_video.teaser'
+        - 'config:core.entity_view_display.media.remote_video.video_hero'
+        - 'config:core.entity_view_display.media.remote_video.video_lightbox'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'

@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -30,6 +31,7 @@ settings:
       article_hero: article_hero
       image_hero: image_hero
       microsite_hero: microsite_hero
+      two_column_hero: two_column_hero
       video_hero: video_hero
     negate: 1
     target_bundles_drag_drop:
@@ -120,15 +122,12 @@ settings:
       table_of_contents:
         weight: -45
         enabled: false
-      text_block:
-        weight: -44
-        enabled: false
       tout:
         weight: -43
         enabled: false
       two_column_hero:
         weight: -42
-        enabled: false
+        enabled: true
       video_hero:
         weight: -41
         enabled: true

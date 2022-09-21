@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fac9cf3b63943f568fe350af61baa59",
+    "content-hash": "81eacaf3196350344e328746b0eba38a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4897,6 +4897,67 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/migmag",
                 "issues": "https://www.drupal.org/project/issues/migmag"
+            }
+        },
+        {
+            "name": "drupal/migrate_devel",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_devel.git",
+                "reference": "8.x-2.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_devel-8.x-2.0-alpha2.zip",
+                "reference": "8.x-2.0-alpha2",
+                "shasum": "8ea8a10d8238c0a52abc7b12d688414e024999c8"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "conflict": {
+                "drush/drush": "<9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-alpha2",
+                    "datestamp": "1593367363",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Derimagia",
+                    "homepage": "https://www.drupal.org/user/819640"
+                },
+                {
+                    "name": "aczietlow",
+                    "homepage": "https://www.drupal.org/user/1616656"
+                },
+                {
+                    "name": "andrewmacpherson",
+                    "homepage": "https://www.drupal.org/user/265648"
+                }
+            ],
+            "description": "Migrate Development Tools",
+            "homepage": "https://www.drupal.org/project/migrate_devel",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_devel",
+                "issues": "https://www.drupal.org/project/issues/migrate_devel"
             }
         },
         {
@@ -14363,67 +14424,6 @@
             "time": "2022-04-14T00:37:13+00:00"
         },
         {
-            "name": "drupal/migrate_devel",
-            "version": "2.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/migrate_devel.git",
-                "reference": "8.x-2.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_devel-8.x-2.0-alpha2.zip",
-                "reference": "8.x-2.0-alpha2",
-                "shasum": "8ea8a10d8238c0a52abc7b12d688414e024999c8"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "conflict": {
-                "drush/drush": "<9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.0-alpha2",
-                    "datestamp": "1593367363",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Derimagia",
-                    "homepage": "https://www.drupal.org/user/819640"
-                },
-                {
-                    "name": "aczietlow",
-                    "homepage": "https://www.drupal.org/user/1616656"
-                },
-                {
-                    "name": "andrewmacpherson",
-                    "homepage": "https://www.drupal.org/user/265648"
-                }
-            ],
-            "description": "Migrate Development Tools",
-            "homepage": "https://www.drupal.org/project/migrate_devel",
-            "support": {
-                "source": "https://git.drupalcode.org/project/migrate_devel",
-                "issues": "https://www.drupal.org/project/issues/migrate_devel"
-            }
-        },
-        {
             "name": "easyrdf/easyrdf",
             "version": "1.1.1",
             "source": {
@@ -18074,14 +18074,14 @@
         "drupal/masquerade": 5,
         "drupal/maxlength": 5,
         "drupal/media_migration": 15,
+        "drupal/migrate_devel": 15,
         "drupal/rabbit_hole": 10,
         "drupal/rh_media": 10,
         "drupal/style_options": 15,
         "drupal/ultimate_cron": 15,
         "drupal/viewsreference": 10,
         "drupal/yaml_content": 15,
-        "pantheon-upstreams/upstream-configuration": 20,
-        "drupal/migrate_devel": 15
+        "pantheon-upstreams/upstream-configuration": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

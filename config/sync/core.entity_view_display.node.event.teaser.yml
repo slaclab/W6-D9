@@ -40,6 +40,11 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_body:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden

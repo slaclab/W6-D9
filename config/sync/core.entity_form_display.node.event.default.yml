@@ -28,9 +28,11 @@ dependencies:
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
+    - workflows.workflow.content
   module:
     - allowed_formats
     - conditional_fields
+    - content_moderation
     - datetime_range
     - field_group
     - link
@@ -262,11 +264,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_lede:
-    type: string_textfield
+    type: text_textarea
     weight: 10
     region: content
     settings:
-      size: 60
+      rows: 1
       placeholder: ''
     third_party_settings: {  }
   field_link:
@@ -422,14 +424,10 @@ content:
             effect_options: {  }
             selector: ''
   field_tags:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 14
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
@@ -503,6 +501,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 8
@@ -547,5 +551,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

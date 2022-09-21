@@ -92,6 +92,11 @@ targetEntityType: node
 bundle: news_article
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_bio:
     type: entity_reference_label
     label: above
@@ -154,10 +159,9 @@ content:
     weight: 14
     region: content
   field_lede:
-    type: string
+    type: text_default
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 11
     region: content

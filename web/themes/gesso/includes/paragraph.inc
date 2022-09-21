@@ -146,7 +146,7 @@ function _gesso_set_hero_caption(&$vars) {
       break;
     // See template field--paragraph--field-long-text--overlap-image.html.twig for caption processing.
     case 'overlap_image':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text[0]->view() : NULL;
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text->view() : NULL;
       $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
       break;
     default:

@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: I_Ri2LRqv5XVPHSIS9latbUiorKFnUywOb1YWUmtE1o
+  default_config_hash: Dz3aa_68u3IwFZv3EqaM-ZGeXfbI5-hra1AvxUYu8cE
 id: upgrade_d7_file_entity_video_youtube
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -36,8 +36,9 @@ process:
       source: fid
   uid:
     -
-      plugin: migration_lookup
-      migration: upgrade_d7_user
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
     -
       plugin: default_value
@@ -62,7 +63,7 @@ process:
     -
       plugin: get
       source: field_title
-  field_body:
+  field_caption:
     -
       plugin: get
       source: field_video_description
@@ -70,8 +71,13 @@ process:
     -
       plugin: media_internet_field_value
       source: uri
+  field_thumbnail/0/target_id:
+    -
+      plugin: default_value
+      default_value: 10835
 destination:
   plugin: 'entity:media'
 migration_dependencies:
-  required: {  }
+  required:
+    - upgrade_d7_user
   optional: {  }

@@ -227,7 +227,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  langcode: true
-  promote: true
-  sticky: true
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

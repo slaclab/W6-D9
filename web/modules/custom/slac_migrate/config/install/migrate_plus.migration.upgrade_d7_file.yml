@@ -65,8 +65,13 @@ process:
       source: timestamp
   uid:
     -
-      plugin: get
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
       source: uid
+    -
+      plugin: default_value
+      default_value: 1
 destination:
   plugin: 'entity:file'
 migration_dependencies:

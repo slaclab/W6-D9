@@ -21,7 +21,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "view_mode_select_by_token_rendered_with_select",
  *   label = @Translation("View Mode Select by Token"),
  *   field_types = {
- *     "entity_reference"
+ *     "entity_reference",
+ *     "image"
  *   }
  * )
  */

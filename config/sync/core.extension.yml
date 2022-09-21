@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  addtocal: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
@@ -64,6 +65,8 @@ module:
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  metatag_twitter_cards: 0
   migmag: 0
   migmag_process: 0
   migrate: 0
@@ -95,6 +98,7 @@ module:
   search_api_solr: 0
   selection_sharer: 0
   shortcut: 0
+  simple_sitemap: 0
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0

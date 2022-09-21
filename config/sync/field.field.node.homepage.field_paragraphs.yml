@@ -21,6 +21,7 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
+    - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
@@ -53,6 +54,7 @@ settings:
       small_card_with_image: small_card_with_image
       small_card_with_solid_background: small_card_with_solid_background
       tout: tout
+      two_column_hero: two_column_hero
       table_of_contents: table_of_contents
       video_hero: video_hero
     negate: 1
@@ -145,7 +147,10 @@ settings:
         weight: -40
         enabled: true
       tout:
-        weight: -41
+        weight: -40
+        enabled: true
+      two_column_hero:
+        weight: -39
         enabled: true
       two_column_hero:
         weight: 68

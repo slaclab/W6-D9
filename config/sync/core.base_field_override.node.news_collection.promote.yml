@@ -1,15 +1,13 @@
-uuid: b34dec8c-9c7d-477f-9bbb-82479f4f5a7f
+uuid: 3207dc4c-e13b-4eba-a1d1-5481a2259a00
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.webform
-_core:
-  default_config_hash: FvXJkxryo6J_0TQRlb5Z77Ge-sim5GHzCI1Ft3kZu-4
-id: node.webform.promote
+    - node.type.news_collection
+id: node.news_collection.promote
 field_name: promote
 entity_type: node
-bundle: webform
+bundle: news_collection
 label: 'Promoted to front page'
 description: ''
 required: false

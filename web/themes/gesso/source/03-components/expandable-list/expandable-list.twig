@@ -11,9 +11,11 @@
   {% endfor %}
 {% endif %}
 
-{% set list_content = list_items[:5] %}
-{% if list_items|length > 5 %}
-  {% set additional_content = list_items[5:] %}
+{% set show_more_length = show_more_length|default(5) %}
+
+{% set list_content = list_items|slice(0, show_more_length) %}
+{% if list_items|length > show_more_length %}
+  {% set additional_content = list_items|slice(show_more_length, list_items|length) %}
 {% endif %}
 
 {% set collapsed_content %}

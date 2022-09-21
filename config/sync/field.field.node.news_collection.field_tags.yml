@@ -10,8 +10,8 @@ id: node.news_collection.field_tags
 field_name: field_tags
 entity_type: node
 bundle: news_collection
-label: Tags
-description: ''
+label: 'Related Topics'
+description: 'Topics from the Tags vocabulary that are related to this News Collection.'
 required: false
 translatable: true
 default_value: {  }

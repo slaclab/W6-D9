@@ -14,7 +14,7 @@ function gesso_theme_suggestions_page_alter(array &$suggestions, array $variable
   /** @var MicrositeUtilities $microsite_utilities */
   $microsite_utilities = \Drupal::service('slac_core.microsite_utilities');
 
-  if ($microsite_utilities->IsMicrositePage('page', 'field_hero_paragraph', 'microsite_hero')) {
+  if ($microsite_utilities->IsMicrositePage(['page', 'news_collection'], 'field_hero_paragraph', 'microsite_hero')) {
     $suggestions[] = 'page__microsite';
   }
 }

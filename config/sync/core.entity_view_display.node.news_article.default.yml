@@ -180,7 +180,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_paragraphs_1:
     type: entity_reference_revisions_entity_view

@@ -91,10 +91,18 @@
   {% endif %}
 {% endset %}
 
+{% set card_link %}
+  {% if content.field_source_name|field_value is not empty and content.field_source_link|field_value is not empty %}
+    {{ content.field_source_link.0['#url'] }}
+  {% else %}
+    {{ url }}
+  {% endif %}
+{% endset %}
+
 {% include '@components/card/card.twig' with {
   'title': label,
   'modifier_classes': 'c-card--large',
-  'url': url,
+  'url': card_link,
   'kicker':kicker,
   'type': content.field_type|field_value,
   'footer': footer,

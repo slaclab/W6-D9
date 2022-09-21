@@ -26,6 +26,7 @@ dependencies:
     - node.type.news_article
   module:
     - estimated_read_time
+    - link
     - slac_core
     - text
     - user
@@ -37,7 +38,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_estimated_read_time:
     type: estimated_read_time_text
@@ -45,7 +46,7 @@ content:
     settings:
       tokenized_string: '@minutes min read'
     third_party_settings: {  }
-    weight: 6
+    weight: 8
     region: content
   field_news_source:
     type: entity_reference_label
@@ -53,7 +54,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -72,6 +73,18 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
+    weight: 7
+    region: content
+  field_source_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
     weight: 5
     region: content
   field_source_name:
@@ -79,7 +92,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -98,7 +111,7 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -107,7 +120,7 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_type:
     type: entity_reference_label
@@ -115,7 +128,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_bio: true
@@ -127,7 +140,6 @@ hidden:
   field_lede: true
   field_paragraphs_1: true
   field_research_area: true
-  field_source_link: true
   field_tags: true
   field_text: true
   langcode: true

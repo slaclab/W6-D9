@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.large_link_list
-    - field.field.node.media_mention.field_internal_tags
     - field.field.node.media_mention.field_link
     - field.field.node.media_mention.field_research_area
     - field.field.node.media_mention.field_tags
@@ -30,7 +29,7 @@ content:
     weight: 0
     region: content
 hidden:
-  field_internal_tags: true
+  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

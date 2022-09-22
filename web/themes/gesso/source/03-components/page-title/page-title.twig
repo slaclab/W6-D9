@@ -19,7 +19,7 @@
         } %}
       {% endif %}
       <h1 class="c-page-title__title">{{ page_title }}{% if rss_url %}
-          <a href="{{ rss_url }}" aria-label="{{ 'RSS feed'|t }}">{% include '@components/icon/icon.twig' with {
+          <a class="c-rss-feed" href="{{ rss_url }}" aria-label="{{ 'RSS feed'|t }}">{% include '@components/icon/icon.twig' with {
               'icon_name': 'rss',
               'label': 'RSS feed'|t,
               'modifier_classes': 'c-page-title__icon'

@@ -6,6 +6,7 @@
   background: rgba(0, 0, 0, 0.5);
   inset: 0;
   position: fixed;
+  z-index: gesso-z-index(modal);
 }
 
 .c-filter-modal__inner {
@@ -89,11 +90,12 @@
 }
 
 .c-filter-modal__trigger {
-  appearance: none;
-  background: transparent;
-  border: 0;
+  @include text-button;
   border-bottom: 1px solid currentColor;
-  padding: 0;
+}
+
+.c-filter-modal__list {
+  @include list-clean;
 }
 
 @include breakpoint(gesso-breakpoint(tablet-lg)) {

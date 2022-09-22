@@ -8,12 +8,13 @@ import { Radio } from '../form-item/form-item--radio/form-item--radio.stories';
 
 import '../lightbox/lightbox.es6';
 import './filter-modal.es6';
+import './filter-modal.scss';
 
 import data from './filter-modal.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
 const settings = {
-  title: 'Components/Filter Modal'
+  title: 'Components/Filter Modal',
 };
 
 const filterByType = ReactDOMServer.renderToStaticMarkup(
@@ -104,7 +105,7 @@ const sortBy = ReactDOMServer.renderToStaticMarkup(
   </>
 );
 
-const FilterModal = args => (
+const FilterModal = args =>
   parse(
     twigTemplate({
       ...args,
@@ -112,9 +113,7 @@ const FilterModal = args => (
       filter_by_type: filterByType,
       sort_by: sortBy,
     })
-  )
-);
-
+  );
 
 FilterModal.args = { ...globalData, ...data };
 

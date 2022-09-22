@@ -104,6 +104,15 @@ event_details:
     theme:
       dist/css/event-details.css: {}
 
+filter_modal:
+  css:
+    theme:
+      dist/css/filter-modal.css: {}
+  js:
+    dist/js/filter-modal.es6.js: {}
+  dependencies:
+    - gesso/lightbox
+
 grid_with_featured:
   css:
     theme:

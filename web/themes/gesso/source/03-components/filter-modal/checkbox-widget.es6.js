@@ -34,7 +34,9 @@ Drupal.facets.makeCheckboxes = context => {
       widget.classList.add('js-facets-widget', 'c-filter-modal__list');
 
       // Transform links to checkboxes.
-      widgetLinks.forEach(link => Drupal.facets.makeCheckbox(link));
+      widgetLinks.forEach(link =>
+        Drupal.facets.makeCheckbox(link, widget.dataset.drupalFacetAlias)
+      );
 
       // We have to trigger attaching of behaviours, so that Facets JS API can
       // register handlers on checkbox widgets.
@@ -54,7 +56,7 @@ Drupal.facets.makeCheckboxes = context => {
 /**
  * Replace a link with a checked checkbox.
  */
-Drupal.facets.makeCheckbox = link => {
+Drupal.facets.makeCheckbox = (link, facetAlias) => {
   const active = link.classList.contains('is-active');
   const description = link.innerHTML;
   const href = link.getAttribute('href');
@@ -69,6 +71,7 @@ Drupal.facets.makeCheckbox = link => {
     checkbox.dataset[key] = value;
   });
   checkbox.dataset.facetsredir = href;
+  checkbox.dataset.drupalFacetAlias = facetAlias;
 
   const label = document.createElement('label');
   label.classList.add('c-form-item__label');
@@ -83,13 +86,6 @@ Drupal.facets.makeCheckbox = link => {
   );
   wrapper.appendChild(checkbox);
   wrapper.appendChild(label);
-
-  checkbox.addEventListener('change', e => {
-    e.preventDefault();
-    const widget = checkbox.closest('.js-facets-widget');
-    Drupal.facets.disableFacet(widget);
-    jQuery(widget).trigger('facets_filter', [href]);
-  });
 
   if (active) {
     checkbox.checked = true;

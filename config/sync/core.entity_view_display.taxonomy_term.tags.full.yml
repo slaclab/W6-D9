@@ -1,6 +1,6 @@
 uuid: 964d71cc-d437-4bab-9b5e-1cd5e113c83e
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
@@ -13,6 +13,7 @@ dependencies:
     - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
+    - entity_reference_revisions
     - link
     - text
 id: taxonomy_term.tags.full
@@ -20,16 +21,42 @@ targetEntityType: taxonomy_term
 bundle: tags
 mode: full
 content:
-  description:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: two_column_hero
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_kicker:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_lede:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 3
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_rss:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -37,14 +64,11 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
+  description: true
   field_display_style: true
-  field_image: true
-  field_kicker: true
-  field_lede: true
-  field_paragraphs: true
   field_research_area: true
   langcode: true
   search_api_excerpt: true

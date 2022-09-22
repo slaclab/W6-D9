@@ -1,6 +1,5 @@
 import Drupal from 'drupal';
 import once from 'once';
-import jQuery from 'jquery';
 
 /**
  * @file
@@ -103,7 +102,7 @@ Drupal.facets.makeCheckbox = (link, facetAlias) => {
  * Disable all facet checkboxes in the facet and apply a 'disabled' class.
  *
  * @param {HTMLElement} facet
- *   jQuery object of the facet.
+ *   The facet.
  */
 Drupal.facets.disableFacet = facet => {
   facet.classList.add('facets-disabled');

@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: research_area_list
-name: 'Research area (List)'
+name: 'Filter by Research Area'
 weight: 0
 min_count: 1
 missing: false
@@ -41,7 +41,7 @@ empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: true
 show_only_one_result: false
-show_title: false
+show_title: true
 processor_configs:
   count_widget_order:
     processor_id: count_widget_order

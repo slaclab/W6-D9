@@ -33,9 +33,9 @@ Drupal.behaviors.filterModal = {
       modalApply.addEventListener('click', () => {
         const currentUrl = new URL(window.location.href);
         const urlParams = new URLSearchParams(currentUrl.search);
-        // Clear out the existing facet parameters
+        // Clear out the existing facet and sort by parameters
         const filteredParams = Array.from(urlParams.entries()).filter(
-          param => param[0].indexOf('f[') !== 0
+          param => param[0].indexOf('f[') !== 0 && param[0] !== 'sort_by'
         );
         // Add params for currently selected facets.
         const checked = modalInner.querySelectorAll(
@@ -47,9 +47,13 @@ Drupal.behaviors.filterModal = {
             `${checkbox.dataset.drupalFacetAlias}:${checkbox.dataset.drupalFacetItemValue}`
           );
         });
+        const sortBy = modalInner.querySelector(
+          'input[name="sort_by"]:checked'
+        );
         const newParams = new URLSearchParams([
           ...filteredParams,
           ...f.map((v, i) => [`f[${i}]`, v]),
+          sortBy ? ['sort_by', sortBy.value] : null,
         ]).toString();
         const redirectUrl = new URL(
           `${currentUrl.origin}${currentUrl.pathname}?${newParams}${currentUrl.hash}`

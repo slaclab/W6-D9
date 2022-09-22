@@ -52,3 +52,29 @@
     }
   }
 }
+
+.c-view__display {
+  display: inline-flex;
+  gap: rem(gesso-spacing(1));
+  justify-content: flex-end;
+}
+
+.c-view__toggle {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: gesso-color(button, disabled, text);
+  cursor: pointer;
+  display: none;
+  font-size: rem(gesso-font-size(6));
+  padding: 0;
+
+  &[aria-expanded='true'],
+  &.views-display-switch__link--active {
+    color: gesso-color(text, primary);
+  }
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    display: inline-block;
+  }
+}

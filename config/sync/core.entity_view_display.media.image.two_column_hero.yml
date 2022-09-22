@@ -23,11 +23,26 @@ dependencies:
     - media.type.image
   module:
     - image
+    - text
 id: media.image.two_column_hero
 targetEntityType: media
 bundle: image
 mode: two_column_hero
 content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_credit:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_media_image:
     type: image
     label: hidden
@@ -43,8 +58,6 @@ hidden:
   created: true
   field_body: true
   field_boolean: true
-  field_caption: true
-  field_credit: true
   field_display_style: true
   field_internal_tags: true
   field_landing_display: true

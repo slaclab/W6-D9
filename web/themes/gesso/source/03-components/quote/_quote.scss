@@ -42,7 +42,6 @@
 .c-quote__author {
   @include responsive-font-size(4);
   color: var(--gesso-text-color);
-  display: table;
   font-weight: gesso-font-weight(bold);
 }
 

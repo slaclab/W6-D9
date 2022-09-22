@@ -101,7 +101,7 @@
 
 .l-header__logo {
   display: block;
-  height: min(calc(var(--gesso-header-initial-height) - 48px), 40px);
+  height: 34px;
   width: auto;
 
   .has-inverse-nav & {

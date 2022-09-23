@@ -9,6 +9,7 @@ global:
     dist/js/header.es6.js: {}
     dist/js/transitions.es6.js: {}
     dist/js/embed.es6.js: {}
+    dist/js/search.es6.js: {}
   dependencies:
     - gesso/common
     - core/drupal

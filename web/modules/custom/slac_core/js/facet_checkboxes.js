@@ -3,7 +3,7 @@
  * Facet checkboxes.
  */
 
-(function ($, Drupal) {
+(function (Drupal) {
   "use strict";
 
   Drupal.behaviors.facetCheckboxes = {
@@ -28,9 +28,10 @@
           const matchedKeys = [];
           const keys = urlParams.keys();
           let current = keys.next();
+          const pattern = new RegExp(`^${facetQueryKey}\\[\\d+]$`);
           do {
             const key = current.value;
-            if (key.match(/^f\[\d+\]$/)) {
+            if (pattern.test(key)) {
               matchedKeys.push(key);
             }
 
@@ -121,12 +122,11 @@
             urlParams.delete(key);
           }
 
-          window.location.search = urlParams;
+          window.location.search = urlParams.toString();
         }
       }
 
-      $(checklist).off("click");
-      $(checklist).click(clickHandler);
+      checklist.addEventListener("click", clickHandler);
     },
   };
-})(jQuery, Drupal);
+})(Drupal);

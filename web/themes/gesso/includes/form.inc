@@ -47,6 +47,9 @@ function gesso_preprocess_form_element(array &$variables) {
   if (!empty($variables['description']['content']) && !empty($variables['element']['#id'])) {
     $variables['description']['attributes']['id'] = $variables['element']['#id'] . '-description';
   }
+  if (!empty($variables['name']) && $variables['name'] == 'current_facets') {
+    $variables['label']['#theme'] = 'facet_label';
+  }
 }
 
 /**
@@ -114,11 +117,16 @@ function gesso_theme_suggestions_form_alter(array &$suggestions, array $variable
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function gesso_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
-  $id = isset($variables['element']['#id']) ? $variables['element']['#id'] : NULL;
-  $type = isset($variables['element']['#type']) ? $variables['element']['#type'] : NULL;
+  $id = $variables['element']['#id'] ?? NULL;
+  $name = $variables['element']['#name'] ?? NULL;
+  $type = $variables['element']['#type'] ?? NULL;
 
   if (isset($type)) {
     $suggestions[] = 'form_element__' . $type;
+  }
+
+  if (isset($name)) {
+    $suggestions[] = 'form_element__' . $name;
   }
 
   if (isset($id)) {

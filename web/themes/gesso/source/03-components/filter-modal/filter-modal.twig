@@ -51,7 +51,7 @@ modifier_classes ? modifier_classes : ''
     <div class="c-filter-modal__footer">
       <div class="c-filter-modal__actions">
         <span class="c-filter-modal__count">
-          {{ total_results ~ ' results'|t }}
+          {{ total_results ~ ' ' ~ (total_results == 1 ? 'result' : 'results')|t }}
         </span>
         <button class="c-filter-modal__clear" type="button">
           {{ 'Clear all'|t }}

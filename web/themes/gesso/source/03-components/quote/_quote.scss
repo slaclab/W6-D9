@@ -40,15 +40,24 @@
 }
 
 .c-quote__author {
-  @include responsive-font-size(5);
+  @include responsive-font-size(4);
   color: var(--gesso-text-color);
-  display: block;
   font-weight: gesso-font-weight(bold);
 }
 
+.c-quote__link {
+  &,
+  &:hover,
+  &:focus {
+    text-decoration-color: var(--gesso-text-color) !important;
+  }
+}
+
 .c-quote__desc {
+  @include responsive-font-size(3);
   color: var(--gesso-text-color);
-  display: block;
+  display: table;
+  margin-top: 6px;
 }
 
 .c-quote__image {

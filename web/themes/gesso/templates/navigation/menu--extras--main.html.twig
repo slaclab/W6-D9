@@ -27,7 +27,11 @@
   {% endblock %}
 {% endembed %}
 
-{% include '@components/search/search.twig' %}
+{% set search_links %}{{- drupal_entity('block', 'search_cta_links') -}}{% endset %}
+
+{% include '@components/search/search.twig' with {
+  'search_links': search_links
+} %}
 
 {# Overlay Menu #}
 {#{% include '@components/overlay-menu/overlay-menu.twig' %}#}

@@ -71,6 +71,7 @@ class FacetSummaryChecklist extends FormBase {
             break;
           // Research area (or other taxonomy, facet is vocabulary neutral).
           case 'topic':
+          case 'research_area':
             // If a number, then we know this is a taxonomy ID.
             if (is_numeric($facet_components[1])) {
               $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);

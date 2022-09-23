@@ -40,7 +40,7 @@ class SlacSearch {
     $display_strings = [
       'page' => $this->t('Page'),
       'event' => $this->t('Event'),
-      'video' => $this->t('Video'),
+      'remote_video' => $this->t('Video'),
       'image' => $this->t('Image'),
       'podcast' => $this->t('Podcast'),
       'news_article' => $this->t('News'),

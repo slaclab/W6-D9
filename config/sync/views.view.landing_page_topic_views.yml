@@ -12,6 +12,7 @@ dependencies:
   module:
     - search_api
     - text
+    - user
 id: landing_page_topic_views
 label: 'Landing Page Topic Views'
 module: views
@@ -1021,8 +1022,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: search_api_tag
         options: {  }
@@ -1243,6 +1245,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'
@@ -1291,6 +1294,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'
@@ -1304,9 +1308,27 @@ display:
     display_plugin: attachment
     position: 1
     display_options:
-      access:
-        type: none
-        options: {  }
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
         type: default
         options:
@@ -1326,7 +1348,7 @@ display:
               news_article: teaser
               person: teaser
       defaults:
-        access: false
+        access: true
         style: false
         row: false
         header: false
@@ -1337,13 +1359,16 @@ display:
       displays:
         topic_content_media_card: topic_content_media_card
       inherit_exposed_filters: true
+      inherit_pager: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:field.storage.media.field_caption'
         - 'config:field.storage.media.field_long_text'

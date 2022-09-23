@@ -60,49 +60,49 @@ class FacetSummaryChecklist extends FormBase {
 
     // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
     // content labels.
-    foreach ($configuration['facets'] as $ix => $facet_str) {
-      $facet_components = explode(':', $facet_str);
+    if (!empty($configuration['facets'])) {
+      foreach ($configuration['facets'] as $ix => $facet_str) {
+        $facet_components = explode(':', $facet_str);
 
-      switch ($facet_components[0]) {
-        // Entity type.
-        case 'type':
-          $facet_label = $this->slacSearchService->convertEntityTypeFacetLabel($facet_components[1]);
-          break;
-        // Research area (or other taxonomy, facet is vocabulary neutral).
-        case 'topic':
-          // If a number, then we know this is a taxonomy ID.
-          if (is_numeric($facet_components[1])) {
-            $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);
-          }
-          else {
+        switch ($facet_components[0]) {
+          // Entity type.
+          case 'type':
+            $facet_label = $this->slacSearchService->convertEntityTypeFacetLabel($facet_components[1]);
+            break;
+          // Research area (or other taxonomy, facet is vocabulary neutral).
+          case 'topic':
+            // If a number, then we know this is a taxonomy ID.
+            if (is_numeric($facet_components[1])) {
+              $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);
+            } else {
+              $facet_label = $facet_components[1];
+            }
+            break;
+          // Unknown, just output the raw string.
+          default:
             $facet_label = $facet_components[1];
-          }
-          break;
-        // Unknown, just output the raw string.
-        default:
-          $facet_label = $facet_components[1];
-      }
+        }
 
-      if ($facet_label) {
-        // Create an inline checkbox unless we looked up a facet label through either type or taxonomy
-        // and no associated type or term was found.
-        $form['facet_list'][$facet_components[1]] = [
-          '#type' => 'checkbox',
-          '#title' => $facet_label,
-          '#default_value' => TRUE,
-          '#attributes' => [
-            'class' => [ 'facet-summary-checkbox', 'inline' ],
-            'facet-query-key' => 'f',
-            'facet-key' => $facet_components[0],
-            'facet-value' => $facet_components[1],
-            'aria-label' => 'Facets',
-          ],
-        ];
-      }
-      else {
-        // Strip out the invalid facet from the list. This will prevent presentation of the reset link when
-        // there are only invalid facets remaining.
-        unset($configuration['facets'][$ix]);
+        if ($facet_label) {
+          // Create an inline checkbox unless we looked up a facet label through either type or taxonomy
+          // and no associated type or term was found.
+          $form['facet_list'][$facet_components[1]] = [
+            '#type' => 'checkbox',
+            '#title' => $facet_label,
+            '#default_value' => TRUE,
+            '#attributes' => [
+              'class' => ['facet-summary-checkbox', 'inline'],
+              'facet-query-key' => 'f',
+              'facet-key' => $facet_components[0],
+              'facet-value' => $facet_components[1],
+              'aria-label' => 'Facets',
+            ],
+          ];
+        } else {
+          // Strip out the invalid facet from the list. This will prevent presentation of the reset link when
+          // there are only invalid facets remaining.
+          unset($configuration['facets'][$ix]);
+        }
       }
     }
 

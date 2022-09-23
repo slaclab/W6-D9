@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_internal_tags
     - field.field.node.event.field_lede
     - field.field.node.event.field_link
     - field.field.node.event.field_link2
@@ -208,14 +207,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 8
-    region: content
-  field_internal_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
     region: content
   field_lede:
     type: text_default

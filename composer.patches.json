@@ -2,7 +2,6 @@
   "patches": {
     "drupal/core": {
       "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch",
-      "Upgrade path from CKEditor 4's StylesCombo to CKEditor 5's Style": "https://www.drupal.org/files/issues/2022-08-04/3222797-style--94x_0.patch",
       "Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch"
      },
     "drupal/components": {

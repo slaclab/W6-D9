@@ -12,7 +12,7 @@ field_name: field_source_link
 entity_type: node
 bundle: news_article
 label: 'Source Link'
-description: ''
+description: 'An internal or external link to the source of this News Article if it is not a News Source taxonomy term. If Source Name and Source Link are both specified, cards will redirect to the Source Link instead of the News Article detail page.'
 required: false
 translatable: false
 default_value: {  }

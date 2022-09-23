@@ -30,6 +30,7 @@ module:
   dblog: 0
   duration_field: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   entity_reference_revisions: 0
   estimated_read_time: 0
@@ -106,6 +107,7 @@ module:
   svg_image_field: 0
   system: 0
   taxonomy: 0
+  term_reference_tree: 0
   text: 0
   token: 0
   token_filter: 0
@@ -125,12 +127,11 @@ module:
   viewsreference: 0
   viewsreference_filter: 0
   webform: 0
-  webform_access: 0
-  webform_node: 0
   webform_templates: 0
   webform_ui: 0
   workflows: 0
   yaml_content: 0
+  pathauto: 1
   views: 10
   paragraphs: 11
   minimal: 1000

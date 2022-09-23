@@ -18,6 +18,7 @@ dependencies:
     - field_group
     - paragraphs
     - path
+    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -145,17 +146,15 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_tags:
-    type: cshs
+    type: term_reference_tree
     weight: 4
     region: content
     settings:
-      save_lineage: false
-      force_deepest: false
-      parent: null
-      level_labels: ''
-      hierarchy_depth: 0
-      required_depth: 0
-      none_label: '- Please select -'
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_teaser:
     type: text_textarea

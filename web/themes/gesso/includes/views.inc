@@ -29,6 +29,17 @@ function gesso_preprocess_views_view(array &$variables) {
  * Implements hook_preprocess_views_view__HOOK().
  */
 function gesso_preprocess_views_view__topics_landing_page_mosaic(array &$variables) {
+  gesso_generate_research_area_list($variables);
+}
+
+/**
+ * Implements hook_preprocess_views_view__HOOK().
+ */
+function gesso_preprocess_views_view__images_video_landing_page_mosaic(array &$variables) {
+  gesso_generate_research_area_list($variables);
+}
+
+function gesso_generate_research_area_list(array &$variables) {
   $research_area_terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadTree('research_area', 0, 1, TRUE);
   $variables['research_areas'] = [];
   $renderer = \Drupal::service('renderer');

@@ -1280,7 +1280,7 @@ display:
           admin_label: ''
           plugin_id: area_filter_modal
           empty: true
-          content: 'Filter (@total results)'
+          content: 'Filter (@total @results)'
         display_switch:
           id: display_switch
           table: views
@@ -1313,6 +1313,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'facets_filter:f'
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
@@ -1414,7 +1415,7 @@ display:
           admin_label: ''
           plugin_id: area_filter_modal
           empty: true
-          content: 'Filter (@total results)'
+          content: 'Filter (@total @results)'
         display_switch:
           id: display_switch
           table: views
@@ -1448,6 +1449,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'facets_filter:f'
         - 'languages:language_content'
         - 'languages:language_interface'
         - url

@@ -40,6 +40,7 @@
 #}
 {% set attributes = attributes.addClass('c-card--xlarge') %}
 
+{% set card %}
 {% include '@components/card/card.twig' with {
   title: content.field_short_text|field_value,
   url: content.field_link|render|striptags|trim,
@@ -48,3 +49,12 @@
   media: content.field_image|field_value,
   alignment: content.field_alignment|render|striptags|trim
 } %}
+{% endset %}
+
+{% if is_nested %}{{ card }}{% else %}
+  {% include '@layouts/section/section.twig' with {
+    section_content: card,
+    modifier_classes: 'l-section--no-padding',
+    has_constrain: true
+  } %}
+{% endif %}

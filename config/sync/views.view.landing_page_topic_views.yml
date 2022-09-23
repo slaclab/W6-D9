@@ -1201,13 +1201,6 @@ display:
                   max: ''
                   value: news_article
               4:
-                title: Person
-                operator: '='
-                value:
-                  min: ''
-                  max: ''
-                  value: person
-              5:
                 title: Video
                 operator: '='
                 value:

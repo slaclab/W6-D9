@@ -46,6 +46,6 @@ function slac_core_theme($existing, $type, $theme, $path) {
         'modal_content' => NULL,
         'num_results' => NULL,
       ]
-    ]
+    ],
   ];
 }

@@ -55,7 +55,7 @@ class FacetSummaryChecklist extends FormBase {
 
     $form['facet_list'] = [
       '#type' => 'container',
-      '#attributes' => [ 'class' => [ 'facet-checkbox-list', 'container-inline' ] ],
+      '#attributes' => [ 'class' => [ 'c-facet-list' ] ],
     ];
 
     // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
@@ -90,13 +90,13 @@ class FacetSummaryChecklist extends FormBase {
           $form['facet_list'][$facet_components[1]] = [
             '#type' => 'checkbox',
             '#title' => $facet_label,
+            '#name' => 'current_facets',
             '#default_value' => TRUE,
             '#attributes' => [
-              'class' => ['facet-summary-checkbox', 'inline'],
+              'class' => ['c-facet__input'],
               'facet-query-key' => 'f',
               'facet-key' => $facet_components[0],
               'facet-value' => $facet_components[1],
-              'aria-label' => 'Facets',
             ],
           ];
         } else {
@@ -109,9 +109,9 @@ class FacetSummaryChecklist extends FormBase {
 
     // Add a reset link if more than 1 facet was included in the list.
     if (!empty($configuration['facets']) && count($configuration['facets']) >= 1 && $configuration['reset_link']) {
-      $form['reset'] = [
+      $form['facet_list']['reset'] = [
         '#type'  => 'markup',
-        '#markup' => '<a href="JavaScript:void(0)" class="button button--small button--secondary" id="facet-list-reset-link">' . $this->t('Clear All Filters') . '</a>',
+        '#markup' => '<a href="JavaScript:void(0)" class="c-facet-list__clear-all" id="facet-list-reset-link">' . $this->t('Clear all') . '</a>',
       ];
     }
 

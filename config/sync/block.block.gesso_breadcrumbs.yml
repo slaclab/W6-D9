@@ -27,7 +27,6 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      article: article
       event: event
       media_mention: media_mention
       news_article: news_article

@@ -18,5 +18,13 @@ function slac_core_views_data() {
     ],
   ];
 
+  $data['views']['area_filter_modal'] = [
+    'title' => t('Filter modal'),
+    'help' => t('Displays a result count that opens into a modal displaying filters. Use only on search views with the Gesso theme.'),
+    'area' => [
+      'id' => 'area_filter_modal'
+    ],
+  ];
+
   return $data;
 }

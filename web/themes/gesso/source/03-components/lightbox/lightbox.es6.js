@@ -8,7 +8,10 @@ Drupal.behaviors.lightbox = {
       const lightbox = document.getElementById(
         trigger.getAttribute('aria-controls')
       );
+      const closeButton = lightbox.querySelector('.js-lightbox__close');
+
       if (!lightbox) return;
+
       function handleKeydown(event) {
         const { key, shiftKey } = event;
         if (key === 'Escape') {
@@ -37,6 +40,7 @@ Drupal.behaviors.lightbox = {
           }
         }
       }
+
       function closeLightbox(event) {
         event.preventDefault();
         const videoIFrame = lightbox.querySelector('iframe');
@@ -51,9 +55,8 @@ Drupal.behaviors.lightbox = {
         }
         window.removeEventListener('keydown', handleKeydown);
       }
-      const closeButton = lightbox.querySelector('.js-lightbox__close');
-      closeButton.addEventListener('click', closeLightbox);
-      trigger.addEventListener('click', event => {
+
+      function openLightbox(event) {
         const videoIFrame = lightbox.querySelector('iframe');
         if (videoIFrame && videoIFrame.hasAttribute('data-src')) {
           videoIFrame.setAttribute('src', videoIFrame.getAttribute('data-src'));
@@ -62,7 +65,11 @@ Drupal.behaviors.lightbox = {
         closeButton.focus();
         triggerUsed = event.target;
         window.addEventListener('keydown', handleKeydown);
-      });
+        lightbox.dispatchEvent(new Event('lightbox-open'));
+      }
+
+      closeButton.addEventListener('click', closeLightbox);
+      trigger.addEventListener('click', openLightbox);
     });
   },
 };

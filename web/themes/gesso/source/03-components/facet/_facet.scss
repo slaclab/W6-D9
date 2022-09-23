@@ -4,7 +4,6 @@
 
 .c-facet {
   @include focus();
-  cursor: pointer;
   position: relative;
 
   &:hover {
@@ -13,6 +12,10 @@
 
   &:focus-within {
     outline-color: gesso-color(ui, generic, focus);
+  }
+
+  label {
+    cursor: pointer;
   }
 }
 

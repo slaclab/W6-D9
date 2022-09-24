@@ -41,12 +41,26 @@
 
 {{ drupal_block('system_breadcrumb_block') }}
 
+{% if content.field_image|field_value is not empty %}
+  {% set image_with_caption %}
+    {% set tooltip %}
+      {{- term.field_image.0.entity.field_caption|view -}}
+      {{- term.field_image.0.entity.field_credit|view -}}
+    {% endset %}
+
+    {% include '@components/small-captioned-image/small-captioned-image.twig' with {
+      image: content.field_image|field_value,
+      caption: tooltip
+    } %}
+  {% endset %}
+{% endif %}
+
 {% include '@components/page-title/page-title.twig' with {
   page_title: name,
   lede: content.field_lede|field_value,
   kicker: content.field_kicker|field_value,
   rss_url: content.field_rss.0['#url'],
-  sidebar_content: content.field_image|field_value ?: null ,
+  sidebar_content: image_with_caption ?: null ,
   has_constrain: true,
 } %}
 

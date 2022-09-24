@@ -1312,7 +1312,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
@@ -1360,6 +1360,7 @@ display:
         topic_content_media_card: topic_content_media_card
       inherit_exposed_filters: true
       inherit_pager: true
+      render_pager: false
     cache_metadata:
       max-age: -1
       contexts:

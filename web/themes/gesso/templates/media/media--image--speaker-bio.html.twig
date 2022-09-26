@@ -33,5 +33,5 @@
 #}
 {% extends "media--figure.html.twig" %}
 {% set attributes = attributes.addClass('u-align-right') %}
-{% set caption = content|without('field_image') %}
-{% set content = content.field_image %}
+{% set caption = content|without('field_media_image') %}
+{% set content = content.field_media_image %}

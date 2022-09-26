@@ -4,6 +4,7 @@
 
 .c-card.c-card--small-bio {
   .c-card__media {
+    aspect-ratio: 1;
     color: gesso-color(text, on-dark);
     display: flex;
     flex-direction: column;
@@ -37,6 +38,15 @@
 
     a:not(.external-link) {
       @include arrow-link(red);
+    }
+
+    a {
+      text-decoration-line: none;
+
+      &:hover,
+      &:focus {
+        text-decoration-line: underline;
+      }
     }
   }
 

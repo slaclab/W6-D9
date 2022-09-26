@@ -6,7 +6,11 @@
 .c-views-view--toggle {
   .c-view__exposed {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+
+    .views-exposed-form {
+      flex-grow: 1;
+    }
   }
 
   .c-view__list {

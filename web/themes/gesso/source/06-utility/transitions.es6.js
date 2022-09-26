@@ -20,7 +20,7 @@ Drupal.behaviors.gessoTransitions = {
           x: item.classList.contains('u-fade-left') ? -100 : 100,
         });
 
-        ScrollTrigger.create({
+        const scrollTrigger = ScrollTrigger.create({
           trigger: item,
           start: 'top 50%',
           once: true,
@@ -28,6 +28,7 @@ Drupal.behaviors.gessoTransitions = {
             gsap.to(item, {
               autoAlpha: 1,
               x: 0,
+              clearProps: 'transform',
             });
           },
         });

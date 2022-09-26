@@ -52,6 +52,9 @@ function gesso_preprocess_paragraph__section(&$vars) {
           }
         }
       }
+      if (str_contains($class, 'l-section--rss')) {
+        $vars['is_rss'] = TRUE;
+      }
     }
   }
   $vars['content'] = $content;

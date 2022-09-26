@@ -1,8 +1,9 @@
-uuid: 75777c94-ab91-46ff-a14f-306cace1388f
+uuid: 37bc558a-79d3-49e9-a344-82eb9e593207
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.news_collection.field_boolean
     - field.field.node.news_collection.field_hero_paragraph
     - field.field.node.news_collection.field_long_text
@@ -14,85 +15,76 @@ dependencies:
     - node.type.news_collection
   module:
     - entity_reference_revisions
+    - gesso_helper
     - text
     - user
-id: node.news_collection.default
+id: node.news_collection.full
 targetEntityType: node
 bundle: news_collection
-mode: default
+mode: full
 content:
   field_boolean:
     type: boolean
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 6
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_long_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 2
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_paragraphs_1:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_tags:
-    type: entity_reference_label
+    type: gesso_tag
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
-    region: content
-  field_teaser:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  field_teaser: true
   langcode: true
+  links: true
   search_api_excerpt: true

@@ -3,7 +3,24 @@
 @use '00-config' as *;
 
 .c-facet {
-  text-decoration: none;
+  @include focus();
+  position: relative;
+
+  &:hover {
+    color: var(--gesso-link-hover-color);
+  }
+
+  &:focus-within {
+    outline-color: gesso-color(ui, generic, focus);
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.c-facet__input {
+  @include visually-hidden(true);
 }
 
 .c-facet__icon {

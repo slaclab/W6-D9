@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.large_link_list
+    - core.entity_view_mode.node.teaser
     - node.type.media_mention
+    - node.type.news_article
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
@@ -11,7 +14,7 @@ dependencies:
     - taxonomy
     - user
 id: news_collection_views
-label: 'News Collection Views'
+label: 'News Collection View Embeds'
 module: views
 description: 'Views that can be embedded on the News Collection content type.'
 tag: ''
@@ -256,13 +259,13 @@ display:
           exposed: true
           expose:
             operator_id: field_research_area_target_id_op
-            label: 'Research Area (field_research_area)'
-            description: ''
+            label: 'Research Area'
+            description: 'Filter results using one or more Research Areas. If no Research Areas are selected, all results are shown.'
             use_operator: false
             operator: field_research_area_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_research_area_target_id
+            identifier: research_area
             required: false
             remember: false
             multiple: true
@@ -290,7 +293,7 @@ display:
           reduce_duplicates: true
           vid: research_area
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
         field_tags_target_id:
@@ -307,13 +310,13 @@ display:
           exposed: true
           expose:
             operator_id: field_tags_target_id_op
-            label: 'Tags (field_tags)'
-            description: ''
+            label: Tags
+            description: 'Filter results using one or more Tags. If no Tags are selected, are shown.'
             use_operator: false
             operator: field_tags_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_tags_target_id
+            identifier: tags
             required: false
             remember: false
             multiple: false
@@ -340,7 +343,7 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: tags
-          type: textfield
+          type: select
           hierarchy: false
           limit: true
           error_message: true
@@ -348,8 +351,225 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: large_link_list
       defaults:
         pager: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  news_article_list:
+    id: news_article_list
+    display_title: 'News Article List (10 Items with Show More)'
+    display_plugin: embed
+    position: 6
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 10
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            news_article: news_article
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_research_area_target_id:
+          id: field_research_area_target_id
+          table: node__field_research_area
+          field: field_research_area_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_research_area_target_id_op
+            label: 'Research Area'
+            description: 'Filter results using one or more Research Areas. If no Research Areas are selected, all results are shown.'
+            use_operator: false
+            operator: field_research_area_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: research_area
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: research_area
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tags_target_id_op
+            label: Tags
+            description: 'Filter results using one or more Tags. If no Tags are selected, are shown.'
+            use_operator: false
+            operator: field_tags_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: tags
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: tags
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        pager: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
       display_description: ''

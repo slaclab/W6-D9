@@ -20,7 +20,7 @@ Drupal.behaviors.gessoTransitions = {
           x: item.classList.contains('u-fade-left') ? -100 : 100,
         });
 
-        const scrollTrigger = ScrollTrigger.create({
+        ScrollTrigger.create({
           trigger: item,
           start: 'top 50%',
           once: true,

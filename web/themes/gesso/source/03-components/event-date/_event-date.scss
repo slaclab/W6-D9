@@ -7,7 +7,7 @@
   align-items: flex-end;
   color: gesso-grayscale(white);
   display: flex;
-  font-size: 60px;
+  font-size: rem(60px);
   font-weight: gesso-font-weight(black);
   inset: 30px auto auto 30px;
   line-height: 0.9;
@@ -19,5 +19,13 @@
     display: table;
     font-size: em(26px, 60px);
     text-transform: uppercase;
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(mobile-lg),
+    gesso-breakpoint(desktop),
+    true
+  ) {
+    font-size: rem(40px);
   }
 }

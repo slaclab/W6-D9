@@ -48,7 +48,9 @@
   .c-overlap-image--purple &,
   .c-overlap-image--red &,
   .c-overlap-image--teal & {
-    width: min(1167px, 81vw);
+    @include breakpoint-min(gesso-breakpoint(tablet)) {
+      width: min(1167px, 81vw);
+    }
   }
 
   .c-overlap-image--top-left &,

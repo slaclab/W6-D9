@@ -23,9 +23,15 @@
 
   {% if section_title %}
     <{{ section_title_element ?: 'h2' }} class="l-section__title">
-      {% if section_title_url %}<a href="{{ section_title_url }}" class="c-arrow-link">{% endif %}
+      {% if section_title_url %}<a href="{{ section_title_url }}" class="{% if is_rss %}rss-link{% else %}c-arrow-link{% endif %}">{% endif %}
         {{ section_title }}
       {% if section_title_url %}</a>{% endif %}
+      {% if is_rss %}
+        {% include "@components/icon/icon.twig" with {
+          'icon_name': 'rss',
+          'is_hidden': true
+        } %}
+      {% endif %}
     </{{ section_title_element ?: 'h2' }}>
   {% endif %}
 

@@ -5,6 +5,8 @@
  * Taxonomy-related hook implementations.
  */
 
+use Drupal\taxonomy\TermInterface;
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -18,6 +20,32 @@ function gesso_preprocess_taxonomy_term(array &$variables) {
     // Array of regions to add to taxonomy term template.
     $allowed_regions = ['status'];
     _add_regions_to_template($allowed_regions, $variables);
+  }
+
+  if ($variables['view_mode'] == 'mosaic_card') {
+    $term = $variables['term'];
+    if ($term->hasField('field_research_area')) {
+      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $research_area_list */
+      $research_area_list = $term->field_research_area;
+      $research_areas = $research_area_list->referencedEntities();
+      foreach ($research_areas as $research_area) {
+        gesso_add_mosaic_filter_classes($variables, $research_area);
+      }
+    }
+  }
+}
+
+/**
+ * @param array $variables
+ * @param TermInterface $term
+ * @return void
+ */
+function gesso_add_mosaic_filter_classes(array &$variables, TermInterface $term): void
+{
+  $variables['attributes']['class'][] = 'js-filter-' . $term->id();
+  if ($term->parent->target_id) {
+    $parent = \Drupal\taxonomy\Entity\Term::load($term->parent->target_id);
+    gesso_add_mosaic_filter_classes($variables, $parent);
   }
 }
 

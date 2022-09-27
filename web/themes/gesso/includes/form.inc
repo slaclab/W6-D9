@@ -107,7 +107,7 @@ function gesso_theme_suggestions_form_alter(array &$suggestions, array $variable
   if (isset($variables['element']['#form_id'])) {
     $suggestions[] = 'form__' . $variables['element']['#form_id'];
 
-    if ($variables['element']['#form_id'] == 'views_exposed_form') {
+    if ($variables['element']['#form_id'] == 'views_exposed_form' && !empty($variables['element']['#view_id'])) {
       $suggestions[] = 'form__' . $variables['element']['#form_id'] . '__' . $variables['element']['#view_id'];
     }
   }

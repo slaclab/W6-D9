@@ -107,7 +107,7 @@
     'event_type': content.field_type|render|striptags|trim,
     'zoom_details': is_past_event ? false : content.field_detail_text|field_value,
     'additional_links': additional_links,
-    'calendar_link_text': content.field_override_text|field_value is not empty ? content.field_override_text : (is_past_event ? false : formatted_date_time),
+    'calendar_link_text': is_past_event ? false : content.field_datetime_range,
     'map_link_text': not is_past_event ? content.field_link|field_value : FALSE,
     'is_past_event': is_past_event
   } %}

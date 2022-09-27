@@ -28,7 +28,7 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - datetime_range
+    - addtocal
     - field_group
     - link
     - text
@@ -161,12 +161,19 @@ content:
     weight: 17
     region: content
   field_datetime_range:
-    type: daterange_default
+    type: addtocal_view
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      date_format: 'Y-m-d\TH:i:s'
       separator: '-'
+      location:
+        value: '0'
+        tokenized: ''
+      description:
+        value: '0'
+        tokenized: ''
+      past_events: 0
     third_party_settings: {  }
     weight: 4
     region: content

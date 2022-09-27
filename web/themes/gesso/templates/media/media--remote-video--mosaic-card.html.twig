@@ -29,7 +29,7 @@
 <div{{ attributes }}>
   {% include "@components/overlay-link/overlay-link.twig" with {
     'image': content.field_thumbnail,
-    'label': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,
+    'label': 'Video'|t,
     'kicker': 'Video'|t,
     'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,
     'link': content.field_boolean['#items'].value == 0 ? url : null,

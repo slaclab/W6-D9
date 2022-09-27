@@ -29,7 +29,7 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - addtocal
+    - datetime_range
     - link
     - slac_core
     - text
@@ -74,19 +74,12 @@ content:
     weight: 5
     region: content
   field_datetime_range:
-    type: addtocal_view
+    type: daterange_default
     label: hidden
     settings:
       timezone_override: ''
+      format_type: medium
       separator: '-'
-      location:
-        value: false
-        tokenized: ''
-      description:
-        value: false
-        tokenized: ''
-      past_events: false
-      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
     weight: 2
     region: content
@@ -178,7 +171,6 @@ hidden:
   field_person_image: true
   field_site_setting: true
   field_tags: true
-  field_type: true
   field_video: true
   langcode: true
   links: true

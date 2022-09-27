@@ -4,10 +4,11 @@
 ] %}
 
 {{ attach_library('gesso/topic_grid') }}
+{% set filter_id = 'filter-by-research-area'|unique_id %}
 
 <div class="c-form-item--select">
-  <label class="u-visually-hidden">{{ 'Filter by Research Area'|t }}</label>
-  <select class="c-topic-grid__select c-form-item__select">
+  <label class="u-visually-hidden" for="{{ filter_id }}">{{ 'Filter by Research Area'|t }}</label>
+  <select class="c-topic-grid__select c-form-item__select" id="{{ filter_id }}">
     <option value="*">
       Filter by Research Area
     </option>

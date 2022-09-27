@@ -122,7 +122,15 @@ function gesso_preprocess_node__event(&$vars) {
       ];
       $vars['formatted_date_time'] = date('l, F j', $start_date) . ' &ndash; ' . date('l, F j, Y', $end_date);
     }
-
+    if (!empty($vars['content']['field_override_text'][0])) {
+      $vars['content']['field_datetime_range'][0]['start_date'] = $vars['content']['field_override_text'][0];
+    } else {
+      $vars['content']['field_datetime_range'][0]['start_date'] = [
+        '#markup' => $vars['formatted_date_time'],
+      ];
+    }
+    $vars['content']['field_datetime_range'][0]['separator'] = NULL;
+    $vars['content']['field_datetime_range'][0]['end_date'] = NULL;
   }
 }
 

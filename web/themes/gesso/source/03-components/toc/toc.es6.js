@@ -23,7 +23,7 @@ Drupal.behaviors.toc = {
           tocButton.setAttribute('role', 'button');
           tocButton.insertAdjacentHTML(
             'beforeend',
-            `<svg class="c-icon c-toc__icon" aria-hidden="true"><use xlink:href="../images/sprite.artifact.svg#angle-down"></use></use> </svg>`
+            `<svg class="c-icon c-toc__icon" aria-hidden="true"><use xlink:href="/themes/gesso/dist/images/sprite.artifact.svg#angle-down"></use></svg>`
           );
           tocLinks.hidden = true;
           tocLinks.setAttribute('aria-expanded', 'false');

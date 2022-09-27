@@ -85,8 +85,8 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-
 {{ drupal_block('system_breadcrumb_block') }}
+{{ drupal_block('share_this_page_block') }}
 
 {% if not node.field_boolean.value == '1' %}
   {% include '@components/page-title/page-title.twig' with {

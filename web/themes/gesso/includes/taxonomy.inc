@@ -5,7 +5,7 @@
  * Taxonomy-related hook implementations.
  */
 
-use Drupal\taxonomy\TermInterface;
+require_once 'shared.inc';
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -35,19 +35,6 @@ function gesso_preprocess_taxonomy_term(array &$variables) {
   }
 }
 
-/**
- * @param array $variables
- * @param TermInterface $term
- * @return void
- */
-function gesso_add_mosaic_filter_classes(array &$variables, TermInterface $term): void
-{
-  $variables['attributes']['class'][] = 'js-filter-' . $term->id();
-  if ($term->parent->target_id) {
-    $parent = \Drupal\taxonomy\Entity\Term::load($term->parent->target_id);
-    gesso_add_mosaic_filter_classes($variables, $parent);
-  }
-}
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().

@@ -8,6 +8,8 @@
 use Drupal\Component\Utility\Html;
 use Drupal\filter\Render\FilteredMarkup;
 
+require_once 'shared.inc';
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -101,6 +103,18 @@ function gesso_preprocess_media(array &$variables) {
       $related_content_view->preExecute();
       $related_content_view->execute();
       $variables['related_content'] = $related_content_view->buildRenderable();
+    }
+  }
+  if ($variables['view_mode'] == 'mosaic_card') {
+    /** @var \Drupal\media\MediaInterface $media */
+    $media = $variables['media'];
+    if ($media->hasField('field_research_area')) {
+      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $research_area_list */
+      $research_area_list = $media->field_research_area;
+      $research_areas = $research_area_list->referencedEntities();
+      foreach ($research_areas as $research_area) {
+        gesso_add_mosaic_filter_classes($variables, $research_area);
+      }
     }
   }
 }

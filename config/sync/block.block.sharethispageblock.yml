@@ -1,0 +1,22 @@
+uuid: 941e42e6-f276-4fc7-b466-a52a76fa3a11
+langcode: en
+status: true
+dependencies:
+  module:
+    - slac_core
+  theme:
+    - gesso
+id: sharethispageblock
+theme: gesso
+region: disabled
+weight: 0
+provider: null
+plugin: share_this_page_block
+settings:
+  id: share_this_page_block
+  label: 'Share this Page'
+  label_display: visible
+  provider: slac_core
+  block_title: 'Share this Page'
+  use_wrapper: true
+visibility: {  }

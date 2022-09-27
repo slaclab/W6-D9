@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\nrdc_core\Plugin\Block;
+namespace Drupal\slac_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Block(
  *  id = "share_this_page_block",
  *  admin_label = @Translation("Share this page block"),
- *  category = @Translation("NRDC")
+ *  category = @Translation("SLAC")
  * )
  */
 class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -100,7 +100,7 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
 
     if ($share_this_page_settings) {
       foreach ($share_this_page_settings as $setting) {
-        if (is_array($setting) && isset($setting['field_url']) && isset($setting['field_text_list'])) {
+        if (is_array($setting) && isset($setting['field_link']) && isset($setting['field_text_list'])) {
           $page_url = Url::fromRoute('<current>', [], [
             'absolute' => 'true',
           ])->toString();

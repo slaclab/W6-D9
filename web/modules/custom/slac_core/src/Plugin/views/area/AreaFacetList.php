@@ -82,7 +82,7 @@ class AreaFacetList extends AreaPluginBase {
   protected function defineOptions() {
     $options = parent::defineOptions();
 
-    $options['reset_link'] = TRUE;
+    $options['reset_link'] = ['default' => TRUE];
 
     return $options;
   }

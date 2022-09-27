@@ -1,4 +1,5 @@
 slac_search:
   js:
-    js/url-search-params-polyfill.js: {}
     js/facet_checkboxes.js: {}
+  dependencies:
+    - core/drupal

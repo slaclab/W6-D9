@@ -9,6 +9,7 @@ global:
     dist/js/header.es6.js: {}
     dist/js/transitions.es6.js: {}
     dist/js/embed.es6.js: {}
+    dist/js/search.es6.js: {}
   dependencies:
     - gesso/common
     - core/drupal
@@ -59,6 +60,15 @@ carousel:
     - gesso/common
     - core/drupal
 
+checkbox_widget:
+  js:
+    dist/js/checkbox-widget.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+    - facets/widget
+    - core/once
+
 drawer:
   css:
     theme:
@@ -94,6 +104,15 @@ event_details:
   css:
     theme:
       dist/css/event-details.css: {}
+
+filter_modal:
+  css:
+    theme:
+      dist/css/filter-modal.css: {}
+  js:
+    dist/js/filter-modal.es6.js: {}
+  dependencies:
+    - gesso/lightbox
 
 grid_with_featured:
   css:
@@ -192,6 +211,13 @@ overlay_menu:
   dependencies:
     - gesso/common
     - gesso/hamburger_button
+
+search:
+  css:
+    theme:
+      dist/css/views-view-search.css: {}
+  dependencies:
+    - gesso/lightbox
 
 social_share:
   css:

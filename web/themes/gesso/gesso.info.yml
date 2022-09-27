@@ -8,6 +8,7 @@ libraries:
   - gesso/global
 libraries-override:
   core/drupal.dropbutton: gesso/dropbutton
+  facets/drupal.facets.checkbox-widget: gesso/checkbox_widget
 libraries-extend:
   sitewide_alert/init:
     - gesso/alert_bar

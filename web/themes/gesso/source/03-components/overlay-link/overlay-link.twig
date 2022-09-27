@@ -16,7 +16,7 @@
     {% if kicker %}
       {% include '@components/kicker/kicker.twig' with { kicker_content: kicker } %}
     {% endif %}
-    <span class="c-arrow-link--white c-overlay-link__title">
+    <span class="c-overlay-link__title{% if link %} c-arrow-link--white{% endif %}">
       {{ title }}
     </span>
   </div>

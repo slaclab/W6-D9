@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news_collection.field_boolean
     - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_long_text
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
     - field.field.node.news_collection.field_tags
@@ -38,6 +39,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_long_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view

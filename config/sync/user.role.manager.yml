@@ -18,7 +18,6 @@ dependencies:
     - node.type.page
     - node.type.person
     - node.type.resource
-    - node.type.webform
     - taxonomy.vocabulary.article_type
     - taxonomy.vocabulary.audience
     - taxonomy.vocabulary.event_type
@@ -30,7 +29,6 @@ dependencies:
     - taxonomy.vocabulary.tags
     - user.role.author
     - user.role.content_editor
-    - user.role.manager
     - user.role.reviewer
     - workflows.workflow.content
   module:
@@ -110,7 +108,6 @@ permissions:
   - 'create terms in tags'
   - 'create url aliases'
   - 'create webform'
-  - 'create webform content'
   - 'delete all sitewide alert revisions'
   - 'delete any event content'
   - 'delete any homepage content'
@@ -123,7 +120,6 @@ permissions:
   - 'delete any person content'
   - 'delete any resource content'
   - 'delete any webform'
-  - 'delete any webform content'
   - 'delete event revisions'
   - 'delete homepage revisions'
   - 'delete landing_page revisions'
@@ -141,7 +137,6 @@ permissions:
   - 'delete own person content'
   - 'delete own resource content'
   - 'delete own webform'
-  - 'delete own webform content'
   - 'delete own webform submission'
   - 'delete page revisions'
   - 'delete person revisions'
@@ -157,7 +152,6 @@ permissions:
   - 'delete terms in news_source'
   - 'delete terms in research_area'
   - 'delete terms in tags'
-  - 'delete webform revisions'
   - 'edit any event content'
   - 'edit any homepage content'
   - 'edit any landing_page content'
@@ -168,7 +162,6 @@ permissions:
   - 'edit any person content'
   - 'edit any resource content'
   - 'edit any webform'
-  - 'edit any webform content'
   - 'edit any webform submission'
   - 'edit own webform'
   - 'edit own webform submission'
@@ -190,7 +183,6 @@ permissions:
   - 'execute pantheon_solr admin task'
   - 'masquerade as author'
   - 'masquerade as content_editor'
-  - 'masquerade as manager'
   - 'masquerade as reviewer'
   - 'rabbit hole bypass media'
   - 'revert all revisions'
@@ -204,7 +196,6 @@ permissions:
   - 'revert page revisions'
   - 'revert person revisions'
   - 'revert resource revisions'
-  - 'revert webform revisions'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'

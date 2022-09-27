@@ -4,6 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import twigTemplate from './section.twig';
 import gridTemplate from '../grid/grid.twig';
+import globalData from '../../00-config/storybook.global-data.yml';
 import data from './section.yml';
 import { Default as Card } from '../../03-components/card/card.stories';
 import { WYSIWYG } from '../../03-components/wysiwyg/wysiwyg.stories';
@@ -130,6 +131,14 @@ SectionHorizontal.args = {
   }),
 };
 
+const SectionWithRSS = Template.bind({});
+SectionWithRSS.args = {
+  ...globalData,
+  ...data,
+  modifier_classes: 'l-section--white l-section--rss',
+  is_rss: true,
+};
+
 export default settings;
 export {
   Section,
@@ -143,4 +152,5 @@ export {
   SectionWithPurpleBackground,
   SectionWithBlueBackground,
   SectionHorizontal,
+  SectionWithRSS,
 };

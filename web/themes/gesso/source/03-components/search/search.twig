@@ -20,10 +20,7 @@
   <form class="c-search__form c-mega-menu__section" id="{{ search_form_id }}" hidden>
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
-        <label for="{{ search_id }}" class="u-visually-hidden">
-          {{ 'Search'|t }}
-        </label>
-        <input type="search" placeholder="{{ 'Search'|t }}" id="{{ search_id }}" class="c-search__input"/>
+       {% include '@components/search/_search-input.twig' %}
         <fieldset class="c-search__fieldset">
           <div>
             <input type="radio" name="search_type" value="site" id="{{ site_search_id }}" checked/>
@@ -35,20 +32,12 @@
             <input type="radio" name="search_type" value="slac_web" id="{{ slac_web_id }}"/>
             <label for="{{ slac_web_id }}">
               {{ 'SLAC Web'|t }}
-              {% include '@components/icon/icon.twig' with {
-                'icon_name': 'diagonal-arrow',
-                'is_hidden': true
-              } %}
             </label>
           </div>
           <div>
             <input type="radio" name="search_type" value="people" id="{{ people_id }}"/>
             <label for="{{ people_id }}">
               {{ 'Search People'|t }}
-              {% include '@components/icon/icon.twig' with {
-                'icon_name': 'diagonal-arrow',
-                'is_hidden': true
-              } %}
             </label>
           </div>
         </fieldset>
@@ -59,9 +48,11 @@
           } %}
         </button>
       </div>
+      {% if search_links %}
       <div class="c-search__links">
         {{ search_links }}
       </div>
+      {% endif %}
     </div>
     <button aria-label="{{ 'Close menu'|t }}" class="c-mega-menu__section-close c-menu__section-close">
       {% include '@components/icon/icon.twig' with {

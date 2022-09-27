@@ -50,6 +50,15 @@ options:
       -
         label: 'Horizontal'
         class: 'l-section--horizontal'
+  section_title_style:
+    plugin: css_class
+    label: 'Section Title'
+    options:
+      -
+        label: 'Default'
+      -
+        label: 'RSS'
+        class: 'l-section--rss'
   accordion_size:
     plugin: css_class
     label: 'Accordion Size'
@@ -152,6 +161,7 @@ contexts:
         section_bg: true
         section_padding: true
         section_layout: true
+        section_title_style: true
     accordion:
       options:
         accordion_size: true

@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.extra_large_card
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.fifty_fifty_staggered
+    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.microsite_navigation_marker
     - paragraphs.paragraphs_type.overlap_image
@@ -46,6 +47,7 @@ settings:
       extra_large_card: extra_large_card
       fifty_fifty: fifty_fifty
       fifty_fifty_staggered: fifty_fifty_staggered
+      image_carousel: image_carousel
       image_embed: image_embed
       microsite_navigation_marker: microsite_navigation_marker
       overlap_image: overlap_image
@@ -90,6 +92,9 @@ settings:
       embed_view:
         weight: 46
         enabled: true
+      embed_webform:
+        weight: 48
+        enabled: false
       extra_large_card:
         weight: 47
         enabled: true
@@ -101,7 +106,7 @@ settings:
         enabled: true
       image_carousel:
         weight: 50
-        enabled: false
+        enabled: true
       image_embed:
         weight: 51
         enabled: true

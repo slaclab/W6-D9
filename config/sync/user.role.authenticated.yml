@@ -27,7 +27,6 @@ dependencies:
     - site_settings
     - sitewide_alert
     - system
-    - taxonomy
     - toolbar
     - view_modes_display
 _core:
@@ -41,7 +40,6 @@ permissions:
   - 'access content'
   - 'access contextual links'
   - 'access shortcuts'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'display eu cookie compliance popup'
   - 'edit own event content'

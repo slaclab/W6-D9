@@ -66,6 +66,7 @@ permissions:
   - 'access own webform configuration'
   - 'access site reports'
   - 'access site settings overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access webform help'
   - 'access webform overview'

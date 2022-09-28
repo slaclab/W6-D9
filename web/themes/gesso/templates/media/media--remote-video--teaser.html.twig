@@ -38,7 +38,7 @@
   'kicker': null,
   'type': content_type,
   'footer': footer,
-  'media': content.field_thumbnail|field_value,
+  'media': content.field_thumbnail|field_value ? content.field_thumbnail|field_value : content.thumbnail|field_value,
   'card_content': card_content,
   'modifier_classes': 'c-card--teaser'
 } %}

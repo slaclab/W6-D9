@@ -2,6 +2,7 @@
 
 namespace Drupal\slac_core\Plugin\Block;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
@@ -121,7 +122,13 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
       }
     }
 
-    $build = ['links' => $links];
+    $build = [
+      'links' => $links,
+    ];
+
+    if ($this->configuration['hero_type']) {
+      $build['hero_type'] = Html::cleanCssIdentifier($this->configuration['hero_type']);
+    }
 
     return $build;
   }

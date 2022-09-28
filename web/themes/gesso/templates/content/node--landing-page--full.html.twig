@@ -71,6 +71,7 @@
   node.isPromoted() ? 'is-promoted',
   node.isSticky() ? 'is-sticky',
   not node.isPublished() ? 'is-unpublished',
+  "image-hero",
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}
@@ -86,7 +87,7 @@
 {% endif %}
 
 {{ drupal_block('system_breadcrumb_block') }}
-{{ drupal_block('share_this_page_block') }}
+{{ drupal_block('share_this_page_block')}}
 
 {% if not node.field_boolean.value == '1' %}
   {% include '@components/page-title/page-title.twig' with {

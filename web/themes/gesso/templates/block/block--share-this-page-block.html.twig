@@ -25,12 +25,17 @@
  * @see template_preprocess_block()
  */
 #}
+{% set classes = [
+  'c-block',
+  'c-block--social-share',
+  content['hero_type'] ? 'c-hero-type--' ~ content['hero_type'] : '',
+] %}
+{% set attributes = attributes.addClass(classes) %}
 
 {% embed '@components/block/block.twig' with {
   'has_constrain': false,
   'hide_content_wrapper': true
 } %}
-
   {% block content %}
     {% include '@components/social-share/social-share.twig' with {
       'facebook': content['links']['#facebook'] ? content['links']['#facebook']['url'] : null,
@@ -38,5 +43,4 @@
       'linkedin': content['links']['#linkedin'] ? content['links']['#linkedin']['url'] : null,
     } %}
   {% endblock %}
-
 {% endembed %}

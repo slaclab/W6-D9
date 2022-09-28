@@ -90,7 +90,7 @@
 {% endif %}
 
 {{ drupal_block('system_breadcrumb_block') }}
-{{ drupal_block('share_this_page_block') }}
+{{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
 
 {% set post_content_content %}
   {% if node.field_boolean.value == '1' %}

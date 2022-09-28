@@ -26,6 +26,10 @@ accordion:
     - gesso/common
     - core/drupal
 
+addtocal_a11y:
+  js:
+    dist/js/addtocal-a11y.es6.js: {}
+
 alert_bar:
   css:
     theme:

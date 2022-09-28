@@ -167,3 +167,12 @@ function gesso_preprocess_form(array &$variables) {
     $variables['children'] = $variables['element']['#children'];
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gesso_form_addtocal_event_field_datetime_range_19_alter(array &$form, \Drupal\Core\Form\FormState $formState) {
+  if (!empty($form['addtocal_container']) && !empty($form['addtocal_container']['type'])) {
+    unset($form['addtocal_container']['type']['#attributes']['onclick']);
+  }
+}

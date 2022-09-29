@@ -23,6 +23,11 @@ targetEntityType: node
 bundle: news_collection
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_boolean:
     type: boolean
     label: hidden

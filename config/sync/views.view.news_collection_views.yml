@@ -319,7 +319,7 @@ display:
             identifier: tags
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -344,9 +344,16 @@ display:
           reduce_duplicates: false
           vid: tags
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
+          save_lineage: false
+          force_deepest: false
+          parent: null
+          level_labels: ''
+          hierarchy_depth: 0
+          required_depth: 0
+          none_label: '- Please select -'
       filter_groups:
         operator: AND
         groups:
@@ -522,7 +529,7 @@ display:
             identifier: tags
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -547,9 +554,16 @@ display:
           reduce_duplicates: false
           vid: tags
           type: select
-          hierarchy: false
+          hierarchy: true
           limit: true
           error_message: true
+          save_lineage: false
+          force_deepest: false
+          parent: null
+          level_labels: ''
+          hierarchy_depth: 0
+          required_depth: 0
+          none_label: '- Please select -'
       filter_groups:
         operator: AND
         groups:

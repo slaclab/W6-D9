@@ -86,7 +86,9 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+</div>
 {{ drupal_block('share_this_page_block') }}
 
 {% set additional_links = [] %}

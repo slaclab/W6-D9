@@ -89,7 +89,9 @@
   {{ content.field_hero_paragraph|field_value }}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+</div>
 {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
 
 {% set post_content_content %}

@@ -87,8 +87,8 @@
 
 {% if hero_type == 'two_column_hero' %}
   {{ drupal_block('system_breadcrumb_block') }}
-  {{ drupal_block('share_this_page_block') }}
 {% endif %}
+{{ drupal_block('share_this_page_block') }}
 
 {% if content.field_hero_paragraph is not empty %}
   {{ content.field_hero_paragraph }}

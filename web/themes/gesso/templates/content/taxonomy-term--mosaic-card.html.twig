@@ -33,7 +33,6 @@
 {% set classes = [
   'c-topic-grid__item',
   'c-topic-grid__item--width' ~ size_val,
-  content.field_research_area|field_value ? 'js-filter-' ~ content.field_research_area|render|striptags|trim : ''
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}

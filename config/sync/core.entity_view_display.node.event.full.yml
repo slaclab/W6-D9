@@ -29,7 +29,7 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - datetime_range
+    - addtocal
     - gesso_helper
     - link
     - text
@@ -62,11 +62,19 @@ content:
     weight: 17
     region: content
   field_datetime_range:
-    type: daterange_plain
+    type: addtocal_view
     label: hidden
     settings:
       timezone_override: ''
       separator: '-'
+      location:
+        value: false
+        tokenized: ''
+      description:
+        value: false
+        tokenized: ''
+      past_events: false
+      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
     weight: 6
     region: content

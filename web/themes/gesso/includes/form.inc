@@ -107,7 +107,7 @@ function gesso_theme_suggestions_form_alter(array &$suggestions, array $variable
   if (isset($variables['element']['#form_id'])) {
     $suggestions[] = 'form__' . $variables['element']['#form_id'];
 
-    if ($variables['element']['#form_id'] == 'views_exposed_form') {
+    if ($variables['element']['#form_id'] == 'views_exposed_form' && !empty($variables['element']['#view_id'])) {
       $suggestions[] = 'form__' . $variables['element']['#form_id'] . '__' . $variables['element']['#view_id'];
     }
   }
@@ -165,5 +165,14 @@ function gesso_preprocess_form(array &$variables) {
     }
     $variables['element']['#children'] = Markup::create($output);
     $variables['children'] = $variables['element']['#children'];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gesso_form_addtocal_event_field_datetime_range_19_alter(array &$form, \Drupal\Core\Form\FormState $formState) {
+  if (!empty($form['addtocal_container']) && !empty($form['addtocal_container']['type'])) {
+    unset($form['addtocal_container']['type']['#attributes']['onclick']);
   }
 }

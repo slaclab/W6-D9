@@ -78,7 +78,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_datetime
       separator: '-'
     third_party_settings: {  }
     weight: 2
@@ -171,7 +171,6 @@ hidden:
   field_person_image: true
   field_site_setting: true
   field_tags: true
-  field_type: true
   field_video: true
   langcode: true
   links: true

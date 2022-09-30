@@ -28,7 +28,7 @@
 
 <div{{ attributes }}>
   {% include "@components/overlay-link/overlay-link.twig" with {
-    'image': content.field_thumbnail,
+    'image': content.field_thumbnail|field_value ? content.field_thumbnail : content.thumbnail,
     'label': 'Video'|t,
     'kicker': 'Video'|t,
     'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,

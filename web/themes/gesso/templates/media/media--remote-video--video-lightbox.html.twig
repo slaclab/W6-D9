@@ -33,7 +33,11 @@
 #}
 <div{{ attributes }}>
   {{ title_prefix }}
+  {% if content.field_thumbnail|field_value is not empty %}
   {{ content.field_thumbnail }}
+  {% else %}
+    {{ content.thumbnail }}
+  {% endif %}
   {{ title_suffix }}
   {% include '@components/video-lightbox/video-lightbox.twig' with {
     'video_title': content.field_long_text|field_value ? content.field_long_text : name,

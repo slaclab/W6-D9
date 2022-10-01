@@ -83,9 +83,9 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       // Assign the paragraph's caption field into the caption field.
       // If there's no override caption, empty out the media's caption field.
       if ($paragraph->field_long_text->value) {
-        $media->field_caption = $paragraph->field_long_text;
+        $media->field_caption->value = $paragraph->field_long_text->value;
       } else {
-        $media->field_caption = NULL;
+        $media->field_caption->value = NULL;
       }
 
       $tags = ['file:' . $image_field['target_id']];

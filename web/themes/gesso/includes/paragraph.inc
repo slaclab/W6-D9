@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Cache\Cache;
 use Drupal\slac_core\Services\MicrositeUtilities;
 
 function gesso_preprocess_paragraph(&$vars) {
@@ -86,6 +87,9 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       } else {
         $media->field_caption = NULL;
       }
+
+      $tags = ['file:' . $image_field['target_id']];
+      Cache::invalidateTags($tags);
     }
   }
 }

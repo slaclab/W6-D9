@@ -122,6 +122,14 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
       }
     }
 
+    // Always include the email link. We assume the 'mailto:' protocol won't
+    // be changing or need any configuration.
+    $links['#email'] = [
+      'url' => 'mailto:' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
+      'title' => $this->t('Email'),
+      'icon_name' => 'email',
+    ];
+
     $build = [
       'links' => $links,
     ];

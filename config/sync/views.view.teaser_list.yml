@@ -7,8 +7,10 @@ dependencies:
     - node.type.event
     - node.type.landing_page
     - node.type.news_article
+    - node.type.news_collection
     - node.type.page
     - node.type.person
+    - node.type.resource
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
@@ -16,7 +18,7 @@ dependencies:
     - taxonomy
     - user
 id: teaser_list
-label: 'Teaser List w/ View More (Configurable)'
+label: 'Teaser List w/ Show More (Configurable)'
 module: views
 description: 'Embed this view in content and configure the filters that should be appled to show up to 10 teaser cards in a "Show More" list.'
 tag: ''
@@ -185,7 +187,9 @@ display:
             event: event
             landing_page: landing_page
             news_article: news_article
+            news_collection: news_collection
             person: person
+            resource: resource
           group: 1
           exposed: true
           expose:

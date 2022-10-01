@@ -11,16 +11,17 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\slac_core\Entity\Event;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Implements hook_form_FORM_ID_alter() for the search_block_form form.
- *
  */
 function slac_core_form_slac_search_form_alter(&$form, FormStateInterface $form_state) {
   // Since the exposed search form is a GET form, do not send the form tokens.
   // However, this cannot be accomplished in the form builder function
   // itself, because the tokens are added to the form after the builder function
-  // is called. It has to be done in a form_alter, see \Drupal\search\Form\SearchBlockForm
+  // is called. It has to be done in a form_alter,
+  // see \Drupal\search\Form\SearchBlockForm.
   $form['form_build_id']['#access'] = FALSE;
   $form['form_token']['#access'] = FALSE;
   $form['form_id']['#access'] = FALSE;
@@ -45,7 +46,54 @@ function slac_core_theme($existing, $type, $theme, $path) {
         'results_text' => NULL,
         'modal_content' => NULL,
         'num_results' => NULL,
-      ]
+      ],
     ],
   ];
+}
+
+/**
+ * Implements hook_oembed_resource_data_alter().
+ */
+function slac_core_oembed_resource_data_alter(array &$data, $url) {
+  $client = \Drupal::httpClient();
+  if (strpos($url, 'youtube.com/oembed') !== FALSE) {
+    $default = 'hqdefault';
+    $res = [
+      'maxresdefault',
+      'hqdefault',
+      'sddefault',
+    ];
+    foreach ($res as $r) {
+      $thumbnailUrl = str_replace($default, $r, $data['thumbnail_url']);
+      try {
+        $client->get($thumbnailUrl);
+      }
+      catch (RequestException $e) {
+        continue;
+      }
+      $data['thumbnail_url'] = $thumbnailUrl;
+      break;
+    }
+  }
+  elseif (strpos($url, 'vimeo.com/api/oembed') !== FALSE) {
+    $default = '295x166';
+    $res = [
+      ['width' => 1280, 'height' => 720],
+      ['width' => 960, 'height' => 540],
+      ['width' => 295, 'height' => 166],
+    ];
+    foreach ($res as $r) {
+      $thumbnailUrl = str_replace($default, $r['width'], $data['thumbnail_url']);
+      try {
+        $client->get($thumbnailUrl);
+      }
+      catch (RequestException $e) {
+        continue;
+      }
+      $data['thumbnail_width'] = $r['width'];
+      $data['thumbnail_height'] = $r['height'];
+      $data['thumbnail_url'] = $thumbnailUrl;
+      break;
+    }
+  }
 }

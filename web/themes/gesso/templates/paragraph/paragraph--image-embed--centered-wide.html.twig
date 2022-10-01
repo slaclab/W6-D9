@@ -38,10 +38,17 @@
  * @ingroup themeable
  */
 #}
+
+{% set caption %}
+  {{ paragraph.field_image.0.entity.field_caption|view }}
+  {{ paragraph.field_image.0.entity.field_credit|view }}
+{% endset %}
+
 {% set image_embed %}
   {% include '@components/figure/figure.twig' with {
     modifier_classes: 'u-align-center u-align-wide',
     media: content.field_image|field_value,
+    caption: caption,
   } %}
 {% endset %}
 

@@ -87,9 +87,6 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       } else {
         $media->field_caption->value = NULL;
       }
-
-      $tags = ['file:' . $image_field['target_id']];
-      Cache::invalidateTags($tags);
     }
   }
 }

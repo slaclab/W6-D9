@@ -44,14 +44,6 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 102
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }

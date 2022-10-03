@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news_collection.field_paragraphs_1
     - field.field.node.news_collection.field_tags
     - field.field.node.news_collection.field_teaser
+    - field.field.node.news_collection.field_teaser_image
     - field.field.node.news_collection.field_text
     - node.type.news_collection
   module:
@@ -83,5 +84,6 @@ hidden:
   field_long_text: true
   field_paragraphs_1: true
   field_tags: true
+  field_teaser_image: true
   langcode: true
   search_api_excerpt: true

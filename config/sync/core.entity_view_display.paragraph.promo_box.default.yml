@@ -21,7 +21,7 @@ content:
     type: gesso_helper_gesso_button
     label: hidden
     settings:
-      trim_length: '31'
+      trim_length: '28'
       button_size: Standard
       button_style: Outline
       button_icon: None

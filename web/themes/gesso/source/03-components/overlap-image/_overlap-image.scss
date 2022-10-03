@@ -131,8 +131,6 @@
   }
 
   .c-overlap-image--bottom-right & {
-    left: 15%;
-    right: 0;
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       left: 50%;
       right: auto;

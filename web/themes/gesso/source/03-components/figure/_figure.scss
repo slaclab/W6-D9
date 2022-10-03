@@ -100,6 +100,7 @@
   }
 
   .u-align-wide & {
+    max-width: none;
     padding: 0 rem(gesso-spacing(2.5));
 
     @include breakpoint(1280px) {

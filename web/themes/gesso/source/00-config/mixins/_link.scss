@@ -31,7 +31,7 @@
   }
 
   &:not(.external-link) {
-    span {
+    .c-arrow-link__word {
       white-space: nowrap;
 
       &::after {
@@ -53,7 +53,7 @@
     &:focus,
     &:active {
       @media (prefers-reduced-motion: no-preference) {
-        span::after {
+        .c-arrow-link__word::after {
           transform: translateX(em(6px, 16px));
         }
       }

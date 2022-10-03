@@ -55,62 +55,63 @@ class FacetSummaryChecklist extends FormBase {
 
     $form['facet_list'] = [
       '#type' => 'container',
-      '#attributes' => [ 'class' => [ 'facet-checkbox-list', 'container-inline' ] ],
+      '#attributes' => [ 'class' => [ 'c-facet-list' ] ],
     ];
 
     // Process the facet_label (in form "facet:id") to find content ids/labels and convert them to their underlying
     // content labels.
-    foreach ($configuration['facets'] as $ix => $facet_str) {
-      $facet_components = explode(':', $facet_str);
+    if (!empty($configuration['facets'])) {
+      foreach ($configuration['facets'] as $ix => $facet_str) {
+        $facet_components = explode(':', $facet_str);
 
-      switch ($facet_components[0]) {
-        // Entity type.
-        case 'type':
-          $facet_label = $this->slacSearchService->convertEntityTypeFacetLabel($facet_components[1]);
-          break;
-        // Research area (or other taxonomy, facet is vocabulary neutral).
-        case 'topic':
-          // If a number, then we know this is a taxonomy ID.
-          if (is_numeric($facet_components[1])) {
-            $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);
-          }
-          else {
+        switch ($facet_components[0]) {
+          // Entity type.
+          case 'type':
+            $facet_label = $this->slacSearchService->convertEntityTypeFacetLabel($facet_components[1]);
+            break;
+          // Research area (or other taxonomy, facet is vocabulary neutral).
+          case 'topic':
+          case 'research_area':
+            // If a number, then we know this is a taxonomy ID.
+            if (is_numeric($facet_components[1])) {
+              $facet_label = $this->slacSearchService->convertTermFacetLabel($facet_components[1]);
+            } else {
+              $facet_label = $facet_components[1];
+            }
+            break;
+          // Unknown, just output the raw string.
+          default:
             $facet_label = $facet_components[1];
-          }
-          break;
-        // Unknown, just output the raw string.
-        default:
-          $facet_label = $facet_components[1];
-      }
+        }
 
-      if ($facet_label) {
-        // Create an inline checkbox unless we looked up a facet label through either type or taxonomy
-        // and no associated type or term was found.
-        $form['facet_list'][$facet_components[1]] = [
-          '#type' => 'checkbox',
-          '#title' => $facet_label,
-          '#default_value' => TRUE,
-          '#attributes' => [
-            'class' => [ 'facet-summary-checkbox', 'inline' ],
-            'facet-query-key' => 'f',
-            'facet-key' => $facet_components[0],
-            'facet-value' => $facet_components[1],
-            'aria-label' => 'Facets',
-          ],
-        ];
-      }
-      else {
-        // Strip out the invalid facet from the list. This will prevent presentation of the reset link when
-        // there are only invalid facets remaining.
-        unset($configuration['facets'][$ix]);
+        if ($facet_label) {
+          // Create an inline checkbox unless we looked up a facet label through either type or taxonomy
+          // and no associated type or term was found.
+          $form['facet_list'][$facet_components[1]] = [
+            '#type' => 'checkbox',
+            '#title' => $facet_label,
+            '#name' => 'current_facets',
+            '#default_value' => TRUE,
+            '#attributes' => [
+              'class' => ['c-facet__input'],
+              'facet-query-key' => 'f',
+              'facet-key' => $facet_components[0],
+              'facet-value' => $facet_components[1],
+            ],
+          ];
+        } else {
+          // Strip out the invalid facet from the list. This will prevent presentation of the reset link when
+          // there are only invalid facets remaining.
+          unset($configuration['facets'][$ix]);
+        }
       }
     }
 
     // Add a reset link if more than 1 facet was included in the list.
     if (!empty($configuration['facets']) && count($configuration['facets']) >= 1 && $configuration['reset_link']) {
-      $form['reset'] = [
+      $form['facet_list']['reset'] = [
         '#type'  => 'markup',
-        '#markup' => '<a href="JavaScript:void(0)" class="button button--small button--secondary" id="facet-list-reset-link">' . $this->t('Clear All Filters') . '</a>',
+        '#markup' => '<a href="JavaScript:void(0)" class="c-facet-list__clear-all" id="facet-list-reset-link">' . $this->t('Clear all') . '</a>',
       ];
     }
 

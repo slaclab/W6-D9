@@ -7,7 +7,6 @@ dependencies:
     - site_settings.site_setting_entity_type.global_search_cta_links
   module:
     - link
-    - user
 id: site_setting_entity.global_search_cta_links.default
 targetEntityType: site_setting_entity
 bundle: global_search_cta_links
@@ -15,38 +14,18 @@ mode: default
 content:
   field_links:
     type: link
-    label: above
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  fieldset:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -4
-    region: content
-  name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: -4
-    region: content
-  user_id:
-    type: author
-    label: hidden
-    settings: {  }
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  fieldset: true
+  name: true
   search_api_excerpt: true
+  user_id: true

@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_internal_tags
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -21,10 +22,11 @@ dependencies:
     - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
+    - image.style.card
     - media.type.remote_video
   module:
     - duration_field
-    - media
+    - image
     - slac_core
     - text
 id: media.remote_video.card
@@ -32,11 +34,21 @@ targetEntityType: media
 bundle: remote_video
 mode: card
 content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_body:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: '40'
+      trim_length: '24'
       trim_type: words
       trim_suffix: ...
       trim_options:
@@ -49,7 +61,7 @@ content:
       more_text: More
       summary_handler: full
     third_party_settings: {  }
-    weight: 1
+    weight: 6
     region: content
   field_boolean:
     type: boolean
@@ -66,30 +78,33 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 8
     region: content
   field_long_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_media_oembed_video:
-    type: oembed
-    label: hidden
-    settings:
-      max_width: 0
-      max_height: 0
-    third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_thumbnail:
     type: entity_reference_entity_view
@@ -98,7 +113,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   name:
     type: string
@@ -106,15 +121,27 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 0
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
-  created: true
   field_caption: true
   field_credit: true
   field_display_style: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
+  field_media_oembed_video: true
   field_paragraphs: true
   field_research_area: true
   field_source_name: true
@@ -122,5 +149,4 @@ hidden:
   field_transcript: true
   langcode: true
   search_api_excerpt: true
-  thumbnail: true
   uid: true

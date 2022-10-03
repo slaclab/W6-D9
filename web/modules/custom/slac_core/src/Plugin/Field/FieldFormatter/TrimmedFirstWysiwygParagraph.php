@@ -78,6 +78,7 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode = NULL) {
+    $element = [];
     $text = '';
 
     // Will assume plain_text is being returned as the format. If we later
@@ -97,7 +98,6 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       if (isset($item_array['value']) && is_string($item_array['value'])) {
         $text = $item_array['value'];
         $format = $item_array['format'];
-        break;
       } elseif ($item->entity instanceof ParagraphInterface) {
         /** @var Paragraph $paragraph_object */
         $paragraph_object = \Drupal::service('entity_type.manager')
@@ -109,69 +109,81 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
         if ($paragraph_object->getType() == 'wysiwyg' && $paragraph_object->field_body->value) {
           $text = $paragraph_object->field_body->value;
           $format = $paragraph_object->field_body->format;
-          break;
         }
+      }
+      // No text was found, return.
+      if (empty($text)) {
+        continue;
+      }
+
+      // Retrieve the setting trim options.
+      $setting_trim_options = $this->getSetting('trim_options');
+
+      // Either remove heading tags or add a space after each.
+      if ($setting_trim_options['heading_remove']) {
+        $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/', ' ', $text);
+      } else {
+        $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/', '$0 ', $text);
+      }
+
+      // Add a space in front of individual list items (li, dd, and dt).
+      // Ensure spacing after paragraph tag boundaries.
+      $patterns = [
+        '/(?<!\s)<(li|dd|dt)/',
+        '/(<\/p>)(?<!\s)/',
+        '/(<br>|<br \/>)/',
+      ];
+      $replacements = [
+        ' <\1',
+        '\0 ',
+        '\0 ',
+      ];
+      $text = preg_replace($patterns, $replacements, $text);
+
+      // Strip and decode remaining text, retaining font format tags if requested.
+      $retained_tags = $setting_trim_options['retain_formatting'] ? ['strong', 's', 'em', 'sub', 'sup'] : [];
+      $text = html_entity_decode(strip_tags($text, $retained_tags));
+      $format = $setting_trim_options['retain_formatting'] ? $format : 'plain_text';
+
+      // Replace newlines with spaces.
+      $text = trim(str_replace('\n', ' ', (str_replace('\r', ' ', $text))));
+
+      // Convert non-breaking spaces.
+      // Replace multiple spaces with a single space.
+      $patterns = [
+        '/\xc2\xa0/',
+        '!\s+!',
+      ];
+      $replacements = [
+        '$0 ',
+        ' ',
+      ];
+      $text = preg_replace($patterns, $replacements, $text);
+
+      // Use SmartTrimFormatter truncation facility to trim to a specific length of words or characters and
+      // to place an ellipsis at the end of the string if indicated by settings.
+      $truncate = new TruncateHTML();
+      $length = $this->getSetting('trim_length');
+      $ellipse = $this->getSetting('trim_suffix');
+
+      $text = ($this->getSetting('trim_type') == 'words')
+        ? $truncate->truncateWords($text, $length, $ellipse)
+        : $truncate->truncateChars($text, $length, $ellipse);
+
+      if ($text) {
+        // Assign to render array.
+        $element[$delta] = [
+          '#type' => 'processed_text',
+          '#format' => $format,
+          '#text' => $text,
+        ];
+
+        // If we found and processed text, break.
+        break;
       }
     }
 
-    // No text was found, return.
-    if (empty($text)) {
-      return [];
-    }
-
-    // Retrieve the setting trim options.
-    $setting_trim_options = $this->getSetting('trim_options');
-
-    // Either remove heading tags or add a space after each.
-    if ($setting_trim_options['heading_remove']) {
-      $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/',' ', $text);
-    }
-    else {
-      $text = preg_replace('/<h[1-6]>.*<\/h[1-6]>/','$0 ', $text);
-    }
-
-    // Add a space in front of individual list items (li, dd, and dt).
-    $text = preg_replace('/(?<!\s)<(li|dd|dt)/', ' <\1', $text);
-
-    // Strip and decode remaining text, retaining font format tags if requested.
-    $retained_tags = $setting_trim_options['retain_formatting'] ? ['strong', 's', 'em', 'sub', 'sup'] : [];
-    $text = html_entity_decode(strip_tags($text, $retained_tags));
-    $format = $setting_trim_options['retain_formatting'] ? $format : 'plain_text';
-
-    // Replace newlines with spaces.
-    $text = trim(str_replace('\n', ' ', (str_replace('\r', ' ', $text))));
-
-    // Ensure spacing after sentence ending punctuation at formerly paragraph tag boundaries.
-    // Convert non-breaking spaces.
-    // Replace multiple spaces with a single space.
-    $patterns = [
-      "/(?<=[A-Za-z0-9])\.(?=[A-Za-z]{2})|(?<=[A-Za-z]{2})([.!?])(?=[A-Za-z0-9])/",
-      '/\xc2\xa0/',
-      '!\s+!',
-    ];
-    $replacements = [
-      '$0 ',
-      ' ',
-      ' '
-    ];
-    $text = preg_replace($patterns, $replacements, $text);
-
-    // Use SmartTrimFormatter truncation facility to trim to a specific length of words or characters and
-    // to place an ellipsis at the end of the string if indicated by settings.
-    $truncate = new TruncateHTML();
-    $length = $this->getSetting('trim_length');
-    $ellipse = $this->getSetting('trim_suffix');
-
-    $text = ($this->getSetting('trim_type') == 'words')
-      ? $truncate->truncateWords($text, $length, $ellipse)
-      : $truncate->truncateChars($text, $length, $ellipse);
-
-    // Assign to render array.
-    return [
-      '#type' => 'processed_text',
-      '#format' => $format,
-      '#text' => $text,
-    ];
+    return $element;
   }
 
 }

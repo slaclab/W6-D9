@@ -52,11 +52,11 @@ Drupal.behaviors.externalLinks = {
     }
 
     const externalLinks = context.querySelectorAll(
-      "a:not([href=''], [href^='#'], [href^='?'], [href^='/'], [href^='.'], [href^='javascript:'], [href^='mailto:'], [href^='tel:'], .c-logo, .c-social-links__link)"
+      "a:not([href=''], [href^='#'], [href^='?'], [href^='/'], [href^='.'], [href^='javascript:'], [href^='mailto:'], [href^='tel:'], .c-logo, .c-social-links__link, .rss-link)"
     );
 
     externalLinks.forEach(el => {
-      if (el.hasAttribute('href')) {
+      if (el.hasAttribute('href') && !el.querySelector('img')) {
         if (linkIsLocked(el)) {
           el.insertAdjacentHTML(
             'beforeend',

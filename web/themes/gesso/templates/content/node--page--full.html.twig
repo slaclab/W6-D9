@@ -117,7 +117,7 @@
     'admin_info': admin_info,
     'show_footer': false,
     'rdf_metadata': metadata,
-    'content': content.field_paragraphs,
+    'content': content|without('field_hero_paragraph', 'field_text'),
   } %}
 {% endif %}
 

@@ -33,10 +33,14 @@
 #}
 <div{{ attributes }}>
   {{ title_prefix }}
+  {% if content.field_thumbnail|field_value is not empty %}
   {{ content.field_thumbnail }}
+  {% else %}
+    {{ content.thumbnail }}
+  {% endif %}
   {{ title_suffix }}
   {% include '@components/video-lightbox/video-lightbox.twig' with {
-    'video_title': content.field_long_text[0] ? content.field_long_text|render|striptags('<a><em>')|trim : name,
+    'video_title': content.field_long_text|field_value ? content.field_long_text : name,
     'video_date': created|date('F j, Y'),
     'video_embed': content.field_media_oembed_video,
     'video_description': content.field_caption|field_value,

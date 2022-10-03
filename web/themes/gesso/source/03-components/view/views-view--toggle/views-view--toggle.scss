@@ -6,30 +6,10 @@
 .c-views-view--toggle {
   .c-view__exposed {
     display: flex;
-    justify-content: flex-end;
-  }
+    flex-direction: row;
 
-  .c-view__display {
-    display: inline-flex;
-    gap: rem(gesso-spacing(1));
-  }
-
-  .c-view__toggle {
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    color: gesso-color(button, disabled, text);
-    cursor: pointer;
-    display: none;
-    font-size: rem(gesso-font-size(6));
-    padding: 0;
-
-    &[aria-expanded='true'] {
-      color: gesso-color(text, primary);
-    }
-
-    @include breakpoint-min(gesso-breakpoint(tablet)) {
-      display: inline-block;
+    .views-exposed-form {
+      flex-grow: 1;
     }
   }
 

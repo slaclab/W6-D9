@@ -66,7 +66,7 @@ class SlacSearchForm extends FormBase {
     if (!empty($configuration['form_class'])) {
       $form_classes += explode(" ", $configuration['form_class']);
     }
-    $form_classes = array_merge($form_classes, [ 'slac-search-form' ]);
+    $form_classes = array_merge($form_classes, [ 'slac-search-form', 'c-search__inner' ]);
     $form['#attributes'] = ['class' => $form_classes];
 
     // Setting the method to get requires handling of URL additions, see below submit and submitForm
@@ -80,9 +80,9 @@ class SlacSearchForm extends FormBase {
       '#size' => false,
       '#maxlength' => 128,
       '#attributes' => [
-        'class' => [ 'slac-search-block__text-field' ],
+        'class' => [ 'slac-search-block__text-field', 'c-search__input' ],
         'id' => 'edit-keywords-' . $search_view_id,
-        'aria-label' => 'SearchX',
+        'aria-label' => 'Search',
       ]
     ];
 
@@ -96,9 +96,8 @@ class SlacSearchForm extends FormBase {
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t($configuration['submit_label']) ?: $this->t('Search'),
-      // Prevent op from showing up in the query string.
-      '#name' => '',
-      '#attributes' => [ 'class' => [ 'slac-search-block__submit-button' ]]
+      '#name' => 'search-submit',
+      '#attributes' => [ 'class' => [ 'slac-search-block__submit-button', 'c-search__submit' ]]
     ];
 
     return $form;

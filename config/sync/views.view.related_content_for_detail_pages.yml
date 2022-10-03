@@ -3,17 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.large_link_list
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.teaser
     - node.type.event
-    - node.type.media_mention
     - node.type.news_article
-    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
     - datetime
     - node
-    - taxonomy
     - user
 id: related_content_for_detail_pages
 label: 'Related Content for Detail Pages'
@@ -194,7 +191,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: large_link_list
+          view_mode: card
       query:
         type: views_query
         options:
@@ -435,6 +432,8 @@ display:
           1: AND
       defaults:
         cache: false
+        style: true
+        row: true
         arguments: false
         filters: false
         filter_groups: false
@@ -855,6 +854,27 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 6
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 1
       arguments:
         field_bio_related_content_target_id:
           id: field_bio_related_content_target_id
@@ -891,6 +911,7 @@ display:
           break_phrase: false
           not: false
       defaults:
+        pager: false
         arguments: false
       display_description: ''
       display_extenders: {  }

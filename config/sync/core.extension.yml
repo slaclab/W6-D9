@@ -1,7 +1,9 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  addtocal: 0
   admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
   animated_gif: 0
@@ -20,13 +22,16 @@ module:
   conditional_fields: 0
   config: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   crop: 0
+  cshs: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
   duration_field: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   entity_reference_revisions: 0
   estimated_read_time: 0
@@ -53,6 +58,7 @@ module:
   layout_paragraphs: 0
   link: 0
   lottiefiles_field: 0
+  masquerade: 0
   media: 0
   media_library: 0
   media_migration: 0
@@ -82,6 +88,7 @@ module:
   path_alias: 0
   rabbit_hole: 0
   rdf: 0
+  redirect: 0
   redis: 0
   responsive_image: 0
   rh_media: 0
@@ -103,6 +110,7 @@ module:
   svg_image_field: 0
   system: 0
   taxonomy: 0
+  term_reference_tree: 0
   text: 0
   token: 0
   token_filter: 0
@@ -122,11 +130,11 @@ module:
   viewsreference: 0
   viewsreference_filter: 0
   webform: 0
-  webform_access: 0
-  webform_node: 0
   webform_templates: 0
   webform_ui: 0
+  workflows: 0
   yaml_content: 0
+  pathauto: 1
   views: 10
   paragraphs: 11
   minimal: 1000

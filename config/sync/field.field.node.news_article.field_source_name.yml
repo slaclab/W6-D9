@@ -17,7 +17,7 @@ field_name: field_source_name
 entity_type: node
 bundle: news_article
 label: 'Source Name'
-description: 'Uses the Restricted HTML format.'
+description: 'The name of the source of this News Article. If specified, the Source Name is displayed as the "kicker" instead of the News Source field on cards. Uses the Restricted HTML format.'
 required: false
 translatable: false
 default_value: {  }

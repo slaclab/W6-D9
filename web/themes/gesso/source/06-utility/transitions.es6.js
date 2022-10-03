@@ -28,6 +28,7 @@ Drupal.behaviors.gessoTransitions = {
             gsap.to(item, {
               autoAlpha: 1,
               x: 0,
+              clearProps: 'transform',
             });
           },
         });

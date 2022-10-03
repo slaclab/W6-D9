@@ -8,6 +8,8 @@
 use Drupal\Component\Utility\Html;
 use Drupal\filter\Render\FilteredMarkup;
 
+require_once 'shared.inc';
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -74,7 +76,11 @@ function gesso_preprocess_media(array &$variables) {
       // and the stillframe image that will trigger the lightbox.
       $lightbox_id = Html::getUniqueId("lightbox-${video_id}");
       $variables['lightbox_id'] = $lightbox_id;
-      $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+      if (isset($variables['content']['field_thumbnail'][0])) {
+        $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+      } elseif (isset($variables['content']['thumbnail'][0])) {
+        $variables['content']['thumbnail'][0]['#lightbox_id'] = $lightbox_id;
+      }
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.
       if ($video_media->hasField('field_boolean') &&
@@ -101,6 +107,18 @@ function gesso_preprocess_media(array &$variables) {
       $related_content_view->preExecute();
       $related_content_view->execute();
       $variables['related_content'] = $related_content_view->buildRenderable();
+    }
+  }
+  if ($variables['view_mode'] == 'mosaic_card') {
+    /** @var \Drupal\media\MediaInterface $media */
+    $media = $variables['media'];
+    if ($media->hasField('field_research_area')) {
+      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $research_area_list */
+      $research_area_list = $media->field_research_area;
+      $research_areas = $research_area_list->referencedEntities();
+      foreach ($research_areas as $research_area) {
+        gesso_add_mosaic_filter_classes($variables, $research_area);
+      }
     }
   }
 }

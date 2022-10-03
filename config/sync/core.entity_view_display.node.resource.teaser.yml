@@ -11,7 +11,7 @@ dependencies:
     - node.type.resource
   module:
     - link
-    - smart_trim
+    - text
     - user
 id: node.resource.teaser
 targetEntityType: node
@@ -48,21 +48,9 @@ content:
     weight: 2
     region: content
   field_teaser:
-    type: smart_trim
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 32
-      trim_type: words
-      trim_suffix: ...
-      wrap_output: false
-      wrap_class: trimmed
-      more_link: false
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-      trim_options:
-        text: true
-        trim_zero: false
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content

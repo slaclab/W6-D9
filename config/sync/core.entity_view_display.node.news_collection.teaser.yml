@@ -1,11 +1,12 @@
 uuid: 77c96393-d3b3-4826-9f74-7c9dbb60e2ae
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news_collection.field_boolean
     - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_long_text
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
     - field.field.node.news_collection.field_tags
@@ -19,18 +20,20 @@ targetEntityType: node
 bundle: news_collection
 mode: teaser
 content:
-  links:
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: -20
     region: content
 hidden:
   field_boolean: true
   field_hero_paragraph: true
+  field_long_text: true
   field_paragraphs: true
   field_paragraphs_1: true
   field_tags: true
   field_teaser: true
   field_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

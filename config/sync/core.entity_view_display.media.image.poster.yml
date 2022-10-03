@@ -9,6 +9,7 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
@@ -28,6 +29,16 @@ targetEntityType: media
 bundle: image
 mode: poster
 content:
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_long_text:
     type: text_default
     label: hidden
@@ -49,10 +60,10 @@ content:
 hidden:
   created: true
   field_body: true
-  field_boolean: true
   field_caption: true
   field_credit: true
   field_display_style: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_paragraphs: true
@@ -60,6 +71,7 @@ hidden:
   field_tags: true
   field_teaser: true
   field_type: true
+  langcode: true
   name: true
   search_api_excerpt: true
   thumbnail: true

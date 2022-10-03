@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_internal_tags
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -21,8 +22,10 @@ dependencies:
     - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
+    - image.style.video_hero
     - media.type.remote_video
   module:
+    - image
     - slac_core
     - text
 id: media.remote_video.video_hero
@@ -35,7 +38,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_media_oembed_video:
     type: iframe_url
@@ -55,6 +58,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  thumbnail:
+    type: image_url
+    label: hidden
+    settings:
+      image_style: video_hero
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   created: true
   field_body: true
@@ -62,6 +73,7 @@ hidden:
   field_credit: true
   field_display_style: true
   field_duration: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_long_text: true
@@ -74,5 +86,4 @@ hidden:
   langcode: true
   name: true
   search_api_excerpt: true
-  thumbnail: true
   uid: true

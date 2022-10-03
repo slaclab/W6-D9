@@ -3,17 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.mosaic_card_view_mode
+    - core.entity_view_mode.taxonomy_term.mosaic_card
     - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
   module:
     - better_exposed_filters
+    - options
     - taxonomy
     - user
 id: landing_pages_taxonomy_term
 label: 'Landing Page Taxonomy Term View Embeds'
 module: views
-description: ''
+description: 'View with separate displays for embedding lists of taxonomy terms such as Tags in sections.'
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
@@ -119,20 +120,21 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
-          table: taxonomy_index
-          field: created
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: date
-          order: DESC
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments: {  }
       filters:
         status:
@@ -247,6 +249,90 @@ display:
           hierarchy: true
           limit: true
           error_message: true
+        field_image_target_id:
+          id: field_image_target_id
+          table: taxonomy_term__field_image
+          field: field_image_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_display_style_value:
+          id: field_display_style_value
+          table: taxonomy_term__field_display_style
+          field: field_display_style_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: 'not empty'
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
       style:
         type: default
         options:
@@ -258,17 +344,17 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: mosaic_card_view_mode
+          view_mode: mosaic_card
       query:
         type: views_query
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_tags: {  }
       relationships: {  }
-      group_by: true
+      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }

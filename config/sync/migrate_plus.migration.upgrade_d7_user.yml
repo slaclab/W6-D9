@@ -6,7 +6,7 @@ dependencies:
     module:
       - slac_migrate
 _core:
-  default_config_hash: SRlfusokEiOOJEm8key9yoqE8-RbsbbRIkomSuyHsUs
+  default_config_hash: 0mHo1StbsWW3w9nzCok_l3luqQKuVkHuZFmKyfwpVHo
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null
@@ -21,11 +21,8 @@ source:
 process:
   uid:
     -
-      plugin: entity_lookup
-      source: name
-      value_key: name
-      entity_type: user
-      ignore_case: true
+      plugin: get
+      source: uid
   name:
     -
       plugin: get
@@ -79,6 +76,10 @@ process:
       source: init
   roles:
     -
+      plugin: skip_on_empty
+      source: roles/0
+      method: row
+    -
       plugin: migration_lookup
       migration: upgrade_d7_user_role
       source: roles
@@ -103,10 +104,4 @@ destination:
 migration_dependencies:
   required:
     - upgrade_d7_user_role
-  optional:
-    - upgrade_d7_field_instance
-    - upgrade_d7_file
-    - upgrade_user_picture_field_instance
-    - upgrade_user_picture_entity_display
-    - upgrade_user_picture_entity_form_display
-    - upgrade_d7_user_role
+  optional: {  }

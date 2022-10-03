@@ -9,6 +9,7 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
@@ -34,7 +35,7 @@ content:
     label: hidden
     settings:
       trim_length: '40'
-      trim_type: chars
+      trim_type: words
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
@@ -47,6 +48,16 @@ content:
       summary_handler: full
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_boolean:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_long_text:
     type: text_default
@@ -67,11 +78,23 @@ content:
     weight: 0
     region: content
   field_teaser:
-    type: text_default
+    type: trimmed_first_wysiwyg_paragraph
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_type:
     type: entity_reference_label
@@ -79,7 +102,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   name:
     type: string
@@ -91,10 +114,10 @@ content:
     region: content
 hidden:
   created: true
-  field_boolean: true
   field_caption: true
   field_credit: true
   field_display_style: true
+  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_paragraphs: true

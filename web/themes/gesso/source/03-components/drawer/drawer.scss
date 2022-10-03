@@ -16,6 +16,10 @@
   overflow: hidden;
   scroll-margin-top: var(--gesso-header-current-height);
   transition: height gesso-duration(short) gesso-easing(ease-in-out);
+
+  .c-drawer--grid & {
+    overflow: initial;
+  }
 }
 
 .c-drawer__content-expanded,

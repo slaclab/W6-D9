@@ -28,6 +28,10 @@ elements: |-
     '#title': 'Your Email:'
     '#required': true
     '#default_value': '[current-user:mail]'
+  your_organization_affiliation:
+    '#type': textfield
+    '#title': 'Your Organization / Affiliation:'
+    '#required': true
   topic_of_your_questions_comments_or_inquiries_:
     '#type': select
     '#title': 'Topic of Your Questions, Comments or Inquiries:'

@@ -6,11 +6,11 @@ dependencies:
     - filter.format.restricted_html
   module:
     - comment
-    - contact
     - eu_cookie_compliance
     - filter
     - media
     - search
+    - site_settings
     - sitewide_alert
     - system
 _core:
@@ -22,9 +22,9 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access site-wide contact form'
   - 'display eu cookie compliance popup'
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
+  - 'view published site setting entities'
   - 'view published sitewide alert entities'

@@ -17,6 +17,7 @@ dependencies:
   module:
     - comment
     - contextual
+    - environment_indicator
     - eu_cookie_compliance
     - filter
     - media
@@ -39,6 +40,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access contextual links'
+  - 'access environment indicator'
   - 'access shortcuts'
   - 'access toolbar'
   - 'display eu cookie compliance popup'

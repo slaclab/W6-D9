@@ -151,7 +151,7 @@
     'month': event_end_date|date('M'),
     'day': event_end_date|date('d')
   },
-  'kicker': content.field_text|field_value,
+  'kicker': content.field_text|field_value is not empty ? content.field_text|field_value : content.field_type|field_value,
   'type': node.getEventTense() ~ ' Event',
   'footer': datetime_location_override ? content.field_override_text|field_value : null,
   'event_date': datetime_location_override ? null : datetime_composed,

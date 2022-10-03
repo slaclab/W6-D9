@@ -34,6 +34,10 @@
 .c-search__form {
   --gesso-search-font-size: #{rem(gesso-font-size(3))};
 
+  .c-search--in-page & {
+    padding-block: 0 rem(gesso-spacing(5));
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     @include layout-full-bleed;
     --gesso-search-font-size: #{rem(gesso-font-size(9))};
@@ -77,9 +81,14 @@
   box-shadow: none;
   font-size: var(--gesso-search-font-size);
   font-weight: gesso-font-weight(light);
+  height: auto;
   line-height: gesso-line-height(base);
-  padding: rem(gesso-spacing(0.5)) rem(gesso-spacing(1.5));
+  padding: rem(gesso-spacing(1)) rem(gesso-spacing(1.5));
   width: 100%;
+
+  @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
+    padding-block: rem(gesso-spacing(0.5));
+  }
 }
 
 .c-search__button,
@@ -109,7 +118,7 @@
   margin-bottom: 0;
   position: absolute;
   right: calc(#{rem(gesso-spacing(1.5))} + 1px);
-  top: calc(#{rem(gesso-spacing(0.5))} + 1px);
+  top: calc(#{rem(gesso-spacing(1))} + 1px);
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     font-size: calc(var(--gesso-search-font-size) - 0.5rem);

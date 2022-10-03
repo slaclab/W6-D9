@@ -7,6 +7,10 @@
   inset: 0;
   position: fixed;
   z-index: gesso-z-index(modal);
+
+  .c-kicker {
+    margin-bottom: rem(gesso-spacing(2));
+  }
 }
 
 .c-filter-modal__inner {

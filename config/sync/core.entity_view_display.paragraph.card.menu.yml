@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_links
+    - field.field.paragraph.card.field_list
     - field.field.paragraph.card.field_short_text
     - field.field.paragraph.card.field_text
     - paragraphs.paragraphs_type.card
@@ -76,4 +77,5 @@ content:
     weight: 1
     region: content
 hidden:
+  field_list: true
   search_api_excerpt: true

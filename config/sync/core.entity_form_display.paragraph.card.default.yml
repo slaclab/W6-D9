@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_links
+    - field.field.paragraph.card.field_list
     - field.field.paragraph.card.field_short_text
     - field.field.paragraph.card.field_text
     - paragraphs.paragraphs_type.card
@@ -49,6 +50,12 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_list:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_short_text:
     type: string_textfield

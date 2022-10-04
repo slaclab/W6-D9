@@ -86,7 +86,10 @@
 {% endif %}
 
 {% if hero_type == 'two_column_hero' %}
-  {{ drupal_block('system_breadcrumb_block') }}
+  <div class="c-main__meta">
+    {{ drupal_block('system_breadcrumb_block') }}
+    {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
+  </div>
 {% endif %}
 
 {% if content.field_hero_paragraph is not empty %}
@@ -94,12 +97,11 @@
 {% endif %}
 
 {% if hero_type != 'two_column_hero' %}
-  {{ drupal_block('system_breadcrumb_block') }}
+  <div class="c-main__meta">
+    {{ drupal_block('system_breadcrumb_block') }}
+    {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
+  </div>
 {% endif %}
-
-<div style="position: relative;">
-  {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
-</div>
 
 {% if is_microsite %}
   {% include '@components/article/article.twig' with {

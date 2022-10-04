@@ -118,9 +118,6 @@ settings:
       table_of_contents:
         weight: -41
         enabled: false
-      text_block:
-        weight: -40
-        enabled: false
       tout:
         weight: -39
         enabled: false

@@ -43,7 +43,6 @@
 {% if is_nested %}{{ lightbox }}{% else %}
   {% include '@layouts/section/section.twig' with {
     section_content: lightbox,
-    modifier_classes: 'l-section--no-padding',
     has_constrain: true
   } %}
 {% endif %}

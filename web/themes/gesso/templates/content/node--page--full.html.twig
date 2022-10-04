@@ -76,7 +76,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -87,7 +87,6 @@
 
 {% if hero_type == 'two_column_hero' %}
   {{ drupal_block('system_breadcrumb_block') }}
-  {{ drupal_block('share_this_page_block') }}
 {% endif %}
 
 {% if content.field_hero_paragraph is not empty %}
@@ -96,8 +95,11 @@
 
 {% if hero_type != 'two_column_hero' %}
   {{ drupal_block('system_breadcrumb_block') }}
-  {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
 {% endif %}
+
+<div style="position: relative;">
+  {{ drupal_block('share_this_page_block', {hero_type: hero_type}) }}
+</div>
 
 {% if is_microsite %}
   {% include '@components/article/article.twig' with {
@@ -122,4 +124,3 @@
     'content': content.field_paragraphs,
   } %}
 {% endif %}
-

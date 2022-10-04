@@ -31,15 +31,22 @@ Drupal.behaviors.socialShare = {
             trigger: socialLink,
             start: () => {
               const headerHeight = parseInt(
-                document.documentElement.style.getPropertyValue(
-                  '--gesso-header-current-height'
-                ),
+                getComputedStyle(
+                  document.documentElement
+                  ).getPropertyValue(
+                    '--gesso-header-current-height'
+                    ),
                 10
-              );
+              ) + parseInt(
+                getComputedStyle(
+                  document.documentElement
+                ).getPropertyValue('--ginToolbarHeight'),
+                10
+              ) ;
               return `top ${headerHeight + 60}px`;
             },
             pin: true,
-            end: () => `top ${socialLink.getBoundingClientRect().bottom + 40}px`,
+            end: () => `top 450px`,
             endTrigger: '.l-footer',
             anticipatePin: 1,
           });
@@ -48,7 +55,7 @@ Drupal.behaviors.socialShare = {
         }
       };
       mediaQuery.addEventListener('change', handleMediaQueryChange);
-      handleMediaQueryChange(mediaQuery);
+      setTimeout(() => handleMediaQueryChange(mediaQuery), 100);
     });
   },
 };

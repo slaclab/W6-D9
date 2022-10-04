@@ -13,12 +13,6 @@
   {% endset %}
 {% endif %}
 
-{% if content.field_list|field_value[0]['#markup'] == 'teaser' %}
-  {% set modifier_classes =  'c-card--teaser' %}
-{% elseif content.field_list|field_value[0]['#markup'] == 'large_card' %}
-  {% set modifier_classes = 'c-card--bio c-card--bio-large' %}
-{% endif %}
-
 {% include '@components/card/card.twig' with {
   kicker: content.field_text|field_value,
   title: is_link_card ? title : content.field_short_text|field_value,

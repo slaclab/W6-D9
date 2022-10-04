@@ -9,7 +9,7 @@
 
   &.u-align-center {
     clear: both;
-    margin: rem(gesso-spacing(9)) auto;
+    margin: em(7px, 18px) auto 0;
     max-width: gesso-constrain(images);
     width: 100%;
 

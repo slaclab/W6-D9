@@ -134,7 +134,7 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
       'links' => $links,
     ];
 
-    if ($this->configuration['hero_type']) {
+    if (isset($this->configuration['hero_type'])) {
       $build['hero_type'] = Html::cleanCssIdentifier($this->configuration['hero_type']);
     }
 

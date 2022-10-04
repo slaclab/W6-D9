@@ -122,32 +122,7 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          expose:
-            field_identifier: title
+      sorts: {  }
       arguments: {  }
       filters:
         status:
@@ -1769,7 +1744,23 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         status:
           id: status
@@ -1849,7 +1840,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-page-title\">\r\n  <h1>News & Events</h1>\r\n  <p class=\"c-lede\">Stay up to date on the latest scientific achievements and happenings at the laboratory.</p>\r\n  <p><a href=\"#\" class=\"c-button c-button--chevron\">News Center</a><a href=\"#\" class=\"c-button c-button--chevron\">Events</a></p>\r\n</div>"
+            value: "<div class=\"c-page-title\">\r\n  <h1>News & Events</h1>\r\n  <p class=\"c-lede\">Stay up to date on the latest scientific achievements and happenings at the laboratory.</p>\r\n  <p><a href=\"/news-and-events/news-center\" class=\"c-button c-button--chevron\">News Center</a>&nbsp;<a href=\"/news-and-events/events\" class=\"c-button c-button--chevron\">Events</a></p>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
@@ -1872,6 +1863,21 @@ display:
         options:
           offset: 0
           items_per_page: 1
+      sorts:
+        field_datetime_range_end_value:
+          id: field_datetime_range_end_value
+          table: node__field_datetime_range
+          field: field_datetime_range_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         status:
           id: status
@@ -1985,6 +1991,7 @@ display:
       defaults:
         style: false
         row: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -2031,6 +2038,30 @@ display:
             value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
             format: full_html
           tokenize: false
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          expose:
+            field_identifier: title
+        field_datetime_range_end_value:
+          id: field_datetime_range_end_value
+          table: node__field_datetime_range
+          field: field_datetime_range_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         status:
           id: status
@@ -2145,6 +2176,7 @@ display:
       defaults:
         empty: false
         cache: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''

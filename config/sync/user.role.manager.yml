@@ -40,6 +40,7 @@ dependencies:
     - masquerade
     - media
     - node
+    - paragraphs
     - path
     - rabbit_hole
     - search_api
@@ -66,7 +67,6 @@ permissions:
   - 'access own webform configuration'
   - 'access site reports'
   - 'access site settings overview'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access webform help'
   - 'access webform overview'
@@ -90,6 +90,7 @@ permissions:
   - 'create homepage content'
   - 'create image media'
   - 'create landing_page content'
+  - 'create media'
   - 'create media_mention content'
   - 'create news_article content'
   - 'create news_collection content'
@@ -164,6 +165,7 @@ permissions:
   - 'edit any resource content'
   - 'edit any webform'
   - 'edit any webform submission'
+  - 'edit behavior plugin settings'
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit site setting entities'

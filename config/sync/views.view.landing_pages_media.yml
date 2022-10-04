@@ -260,7 +260,7 @@ display:
       tags: {  }
   images_video_landing_page_mosaic:
     id: images_video_landing_page_mosaic
-    display_title: 'Images and Videos Landing Page (Mosaic) [Exposed Filters]'
+    display_title: 'Images and Videos Landing Page (Mosaic)'
     display_plugin: embed
     position: 1
     display_options:
@@ -268,7 +268,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 30
+          items_per_page: 40
       filters:
         status:
           id: status

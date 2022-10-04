@@ -45,8 +45,8 @@
 
 <div class="c-main__meta">
   {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
 </div>
-{{ drupal_block('share_this_page_block') }}
 
 {% set media_caption = content.field_body|field_value %}
 {% if media_caption is empty %}

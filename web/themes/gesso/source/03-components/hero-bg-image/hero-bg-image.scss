@@ -17,6 +17,7 @@
 }
 
 .c-hero-bg-image {
+  color: var(--gesso-text-color);
   overflow: hidden;
   padding: 0;
   position: relative;
@@ -29,6 +30,7 @@
   }
 
   .c-kicker {
+    color: var(--gesso-text-color);
     display: table;
     margin-bottom: rem(gesso-spacing(1));
   }
@@ -66,11 +68,11 @@
 }
 
 .c-hero-bg-image--white {
-  color: gesso-color(text, on-dark);
+  --gesso-text-color: #{gesso-color(text, on-dark)};
 }
 
 .c-hero-bg-image--black {
-  color: gesso-color(text, on-light);
+  --gesso-text-color: #{gesso-color(text, on-light)};
 }
 
 .c-hero-bg-image__content {

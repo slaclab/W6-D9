@@ -10,13 +10,15 @@ dependencies:
     - field.field.node.news_collection.field_paragraphs_1
     - field.field.node.news_collection.field_tags
     - field.field.node.news_collection.field_teaser
+    - field.field.node.news_collection.field_teaser_image
     - field.field.node.news_collection.field_text
     - node.type.news_collection
     - workflows.workflow.content
   module:
+    - allowed_formats
     - content_moderation
-    - cshs
     - field_group
+    - media_library
     - paragraphs
     - path
     - term_reference_tree
@@ -61,6 +63,7 @@ third_party_settings:
       children:
         - field_text
         - field_teaser
+        - field_teaser_image
         - field_tags
       label: Metadata
       region: content
@@ -81,7 +84,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -160,7 +163,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
-    weight: 4
+    weight: 5
     region: content
     settings:
       start_minimized: true
@@ -180,6 +183,13 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_teaser_image:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_text:
     type: string_textfield
     weight: 2
@@ -190,26 +200,40 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -224,7 +248,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -233,7 +257,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

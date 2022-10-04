@@ -120,20 +120,21 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
-          table: taxonomy_index
-          field: created
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: date
-          order: DESC
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments: {  }
       filters:
         status:
@@ -349,11 +350,11 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: true
+          distinct: false
           replica: false
           query_tags: {  }
       relationships: {  }
-      group_by: true
+      group_by: false
       header: {  }
       footer: {  }
       display_extenders: {  }

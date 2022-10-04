@@ -104,6 +104,9 @@
 {% if is_microsite %}
   {% include '@components/article/article.twig' with {
     'title': null,
+    'author': null,
+    'author_name': null,
+    'date': null,
     'show_admin_info': show_admin_info,
     'admin_info': admin_info,
     'show_footer': false,
@@ -121,6 +124,6 @@
     'admin_info': admin_info,
     'show_footer': false,
     'rdf_metadata': metadata,
-    'content': content.field_paragraphs,
+    'content': content|without('field_hero_paragraph', 'field_text'),
   } %}
 {% endif %}

@@ -5,9 +5,12 @@ dependencies:
   config:
     - field.storage.paragraph.field_node
     - node.type.event
+    - node.type.landing_page
     - node.type.news_article
+    - node.type.news_collection
     - node.type.page
     - node.type.person
+    - node.type.resource
     - paragraphs.paragraphs_type.content_embed
 id: paragraph.content_embed.field_node
 field_name: field_node
@@ -25,8 +28,11 @@ settings:
     target_bundles:
       page: page
       event: event
+      landing_page: landing_page
       news_article: news_article
+      news_collection: news_collection
       person: person
+      resource: resource
     sort:
       field: _none
       direction: ASC

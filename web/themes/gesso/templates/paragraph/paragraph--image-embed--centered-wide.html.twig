@@ -38,10 +38,16 @@
  * @ingroup themeable
  */
 #}
+{% set image_caption %}
+  {{- caption -}}
+  {{- credit -}}
+{% endset %}
+
 {% set image_embed %}
   {% include '@components/figure/figure.twig' with {
     modifier_classes: 'u-align-center u-align-wide',
     media: content.field_image|field_value,
+    caption: image_caption,
   } %}
 {% endset %}
 
@@ -53,3 +59,5 @@
     has_constrain: true
   } %}
 {% endif %}
+
+{% set catch_cache = content|render %}

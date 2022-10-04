@@ -252,8 +252,15 @@
     }
 
     .c-icon {
+      color: #e98300;
       font-size: 0.85em;
       margin-left: rem(gesso-spacing(0.5));
+    }
+  }
+
+  &.l-section--dark {
+    .l-section__title .c-icon {
+      color: var(--gesso-text-color);
     }
   }
 }

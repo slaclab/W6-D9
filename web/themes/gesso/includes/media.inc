@@ -76,7 +76,11 @@ function gesso_preprocess_media(array &$variables) {
       // and the stillframe image that will trigger the lightbox.
       $lightbox_id = Html::getUniqueId("lightbox-${video_id}");
       $variables['lightbox_id'] = $lightbox_id;
-      $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+      if (isset($variables['content']['field_thumbnail'][0])) {
+        $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+      } elseif (isset($variables['content']['thumbnail'][0])) {
+        $variables['content']['thumbnail'][0]['#lightbox_id'] = $lightbox_id;
+      }
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.
       if ($video_media->hasField('field_boolean') &&

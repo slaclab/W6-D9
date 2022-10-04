@@ -141,7 +141,7 @@ function slac_core_media_view(array &$build, EntityInterface $entity, EntityView
   if ($displayId === 'media.image.default' || $displayId === 'media.remote_video.default') {
     if ($entity->field_boolean->first()->getValue()["value"] == 0) {
       $roles = \Drupal::currentUser()->getRoles();
-      if (in_array('anonoymous', $roles, TRUE)) {
+      if (in_array('anonymous', $roles, TRUE)) {
         throw new AccessDeniedHttpException();
       }
     }

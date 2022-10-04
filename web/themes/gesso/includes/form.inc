@@ -146,6 +146,7 @@ function gesso_theme_suggestions_input_alter(array &$suggestions, array $variabl
  */
 function gesso_preprocess_form(array &$variables) {
   if ($variables['element']['#form_id'] == 'views_exposed_form' &&
+    isset($variables['element']['#view_id']) &&
     $variables['element']['#view_id'] == 'search'
   ) {
     // Remove the keywords input

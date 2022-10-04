@@ -1,6 +1,7 @@
 {% set classes = [
   'c-card',
   'c-card--small-bio',
+  not title_url ? 'c-card--no-link' : '',
   color ? 'c-card--' ~ color : '',
   modifier_classes ? modifier_classes : ''
 ] %}

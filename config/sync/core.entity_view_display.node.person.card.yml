@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
     - field.field.node.person.field_image
+    - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
     - field.field.node.person.field_teaser
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.person.field_text_title
     - node.type.person
   module:
+    - link
     - slac_core
     - user
 id: node.person.card
@@ -48,6 +50,18 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph

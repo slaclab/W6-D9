@@ -84,3 +84,7 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
     }
   }
 }
+
+.c-tooltip__credit {
+  display: block;
+}

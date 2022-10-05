@@ -161,7 +161,14 @@ function _gesso_set_hero_caption(&$vars) {
 
   // Assign the credit, always using the image entity's field.
   if (!empty($image->field_credit[0])) {
-    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view() : NULL;
+    $credit_view_mode = 'default';
+    if (in_array($paragraph->bundle(), ['image_hero', 'overlap_image', 'microsite_hero', 'article_hero', 'extra_large_card'])) {
+      $credit_view_mode = 'tooltip';
+    }
+    if ($paragraph->bundle() == 'image_embed' && $vars['view_mode'] == 'two_column_hero') {
+      $credit_view_mode = 'tooltip';
+    }
+    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view($credit_view_mode) : NULL;
   }
 }
 

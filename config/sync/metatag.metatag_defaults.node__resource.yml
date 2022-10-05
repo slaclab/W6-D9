@@ -5,7 +5,7 @@ dependencies: {  }
 id: node__resource
 label: 'Content: Resource'
 tags:
-  twitter_cards_description: '[node:field_description]'
+  twitter_cards_description: '[node:field_teaser:value]'
   twitter_cards_image: '[current-page:field_image]'
   twitter_cards_image_alt: '[current-page:field_image:alt]'
   twitter_cards_page_url: '[current-page:url]'

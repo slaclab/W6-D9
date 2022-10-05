@@ -54,7 +54,6 @@
 {% if is_nested %}{{ image_embed }}{% else %}
   {% include '@layouts/section/section.twig' with {
     section_content: image_embed,
-    modifier_classes: 'l-section--no-padding',
     constrain_modifier_classes: 'l-constrain--large',
     has_constrain: true
   } %}

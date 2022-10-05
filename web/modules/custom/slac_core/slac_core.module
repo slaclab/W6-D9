@@ -107,23 +107,25 @@ function slac_core_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
   if ($view->id() == 'related_content_for_detail_pages' && $view->current_display == 'news_article_related_stories') {
     $excluded_terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
       'vid' => 'tags',
-      'name' => t('Science News'),
+      'name' => 'Science News',
     ]);
 
-    foreach ($query->where as &$condition_group) {
-      foreach ($condition_group['conditions'] as &$condition) {
-        if ($condition['field'] == 'node__field_tags.field_tags_target_id = :node__field_tags_field_tags_target_id') {
-          $current_terms = explode('+', $condition['value'][':node__field_tags_field_tags_target_id']);
-          // Keep the excluded term if it's the only term assigned to the current node.
-          $excluded_terms = $current_terms == array_keys($excluded_terms) ? [] : $excluded_terms;
-          $desired_terms = implode('+', array_diff($current_terms, array_keys($excluded_terms)));
-          $condition = [
-            'field' => 'node__field_tags.field_tags_target_id = :node__field_tags_field_tags_target_id',
-            'value' => [
-              ':node__field_tags_field_tags_target_id' => $desired_terms,
-            ],
-            'operator' => 'formula',
-          ];
+    if ($excluded_terms) {
+      foreach ($query->where as &$condition_group) {
+        foreach ($condition_group['conditions'] as &$condition) {
+          if ($condition['field'] == 'node__field_tags.field_tags_target_id = :node__field_tags_field_tags_target_id') {
+            $current_terms = explode('+', $condition['value'][':node__field_tags_field_tags_target_id']);
+            // Keep the excluded term if it's the only term assigned to the current node.
+            $excluded_terms = $current_terms == array_keys($excluded_terms) ? [] : $excluded_terms;
+            $desired_terms = implode('+', array_diff($current_terms, array_keys($excluded_terms)));
+            $condition = [
+              'field' => 'node__field_tags.field_tags_target_id = :node__field_tags_field_tags_target_id',
+              'value' => [
+                ':node__field_tags_field_tags_target_id' => $desired_terms,
+              ],
+              'operator' => 'formula',
+            ];
+          }
         }
       }
     }

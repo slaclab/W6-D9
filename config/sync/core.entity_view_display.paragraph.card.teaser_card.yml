@@ -1,8 +1,9 @@
-uuid: e6beb91c-42f7-424e-bbc8-97c56d9b0553
+uuid: 8231b717-4f71-4744-b081-af68f62ec73d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.teaser_card
     - field.field.paragraph.card.field_body
     - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
@@ -14,11 +15,10 @@ dependencies:
   module:
     - link
     - text
-    - view_mode_switch
-id: paragraph.card.default
+id: paragraph.card.teaser_card
 targetEntityType: paragraph
 bundle: card
-mode: default
+mode: teaser_card
 content:
   field_body:
     type: text_default
@@ -27,18 +27,11 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_display_style:
-    type: view_mode_switch_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card_image_only
+      view_mode: large_image_only
       link: false
     third_party_settings: {  }
     weight: 0
@@ -84,4 +77,5 @@ content:
     weight: 1
     region: content
 hidden:
+  field_display_style: true
   search_api_excerpt: true

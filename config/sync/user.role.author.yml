@@ -21,6 +21,7 @@ dependencies:
     - content_moderation
     - media
     - node
+    - paragraphs
     - system
     - toolbar
 id: author
@@ -54,6 +55,7 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own resource content'
+  - 'edit behavior plugin settings'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'

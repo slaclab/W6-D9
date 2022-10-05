@@ -78,8 +78,12 @@ function gesso_preprocess_media(array &$variables) {
       $variables['lightbox_id'] = $lightbox_id;
       if (isset($variables['content']['field_thumbnail'][0])) {
         $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
+        $variables['content']['field_thumbnail'][0]['#media']->video_caption[] = $video_media->field_caption->view();
+        $variables['content']['field_thumbnail'][0]['#media']->video_caption[] = $video_media->field_credit->view();
       } elseif (isset($variables['content']['thumbnail'][0])) {
         $variables['content']['thumbnail'][0]['#lightbox_id'] = $lightbox_id;
+        $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->field_caption->view();
+        $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->field_credit->view();
       }
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.
@@ -89,8 +93,9 @@ function gesso_preprocess_media(array &$variables) {
         $variables['detail_page_url'] = $video_media->toUrl()->toString();
       }
       $variables['created'] = $video_media->getCreatedTime();
-    } else if ($variables['bundle'] == 'image') {
+    } elseif ($variables['bundle'] == 'image') {
       $variables['lightbox_id'] = $variables['elements']['#media']->lightbox_id;
+      $variables['video_caption'] = $variables['elements']['#media']->video_caption;
     }
   }
   if ($variables['view_mode'] == 'full') {

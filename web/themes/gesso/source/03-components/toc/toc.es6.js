@@ -2,8 +2,9 @@ import Drupal from 'drupal';
 import { BREAKPOINTS } from '../../00-config/_GESSO.es6';
 
 Drupal.behaviors.toc = {
-  attach(context) {
+  attach(context, settings) {
     const tocs = context.querySelectorAll('.c-toc');
+    const imagePath = settings.gesso.gessoImagePath;
     tocs.forEach(toc => {
       const mediaQuery = window.matchMedia(
         `(max-width: ${parseInt(BREAKPOINTS.desktop, 10) - 1}px)`
@@ -23,7 +24,7 @@ Drupal.behaviors.toc = {
           tocButton.setAttribute('role', 'button');
           tocButton.insertAdjacentHTML(
             'beforeend',
-            `<svg class="c-icon c-toc__icon" aria-hidden="true"><use xlink:href="../images/sprite.artifact.svg#angle-down"></use></use> </svg>`
+            `<svg class="c-icon c-toc__icon" aria-hidden="true"><use xlink:href="${imagePath}/sprite.artifact.svg#angle-down"></use></svg>`
           );
           tocLinks.hidden = true;
           tocLinks.setAttribute('aria-expanded', 'false');

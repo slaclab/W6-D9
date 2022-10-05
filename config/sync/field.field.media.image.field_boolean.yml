@@ -9,7 +9,7 @@ id: media.image.field_boolean
 field_name: field_boolean
 entity_type: media
 bundle: image
-label: 'Hide detail page from public?'
+label: 'Enable detail page for this media'
 description: ''
 required: false
 translatable: true

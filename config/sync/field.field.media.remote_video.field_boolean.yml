@@ -9,7 +9,7 @@ id: media.remote_video.field_boolean
 field_name: field_boolean
 entity_type: media
 bundle: remote_video
-label: 'Hide detail page from public?'
+label: 'Enable detail page for this media'
 description: ''
 required: false
 translatable: false

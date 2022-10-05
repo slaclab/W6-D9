@@ -124,8 +124,14 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
 
     // Always include the email link. We assume the 'mailto:' protocol won't
     // be changing or need any configuration.
+    // Get the page title
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+      $title = \Drupal::service('title_resolver')->getTitle($request, $route); 
+    }
+
     $links['#email'] = [
-      'url' => 'mailto:' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
+      'url' => 'mailto:' . '?subject=' . $title . '&body=' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
       'title' => $this->t('Email'),
       'icon_name' => 'email',
     ];

@@ -18,7 +18,7 @@ Drupal.behaviors.socialShare = {
     const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINTS.desktop})`);
     socialLinks.forEach(socialLink => {
       let trigger;
-      const links = socialLink.querySelectorAll('a');
+      const links = socialLink.querySelectorAll('a:not[href^=mailto]');
       links.forEach(link => {
         link.addEventListener('click', event => {
           event.preventDefault();
@@ -30,19 +30,19 @@ Drupal.behaviors.socialShare = {
           trigger = ScrollTrigger.create({
             trigger: socialLink,
             start: () => {
-              const headerHeight = parseInt(
-                getComputedStyle(
-                  document.documentElement
-                  ).getPropertyValue(
+              const headerHeight =
+                parseInt(
+                  getComputedStyle(document.documentElement).getPropertyValue(
                     '--gesso-header-current-height'
-                    ),
-                10
-              ) + parseInt(
-                getComputedStyle(
-                  document.documentElement
-                ).getPropertyValue('--ginToolbarHeight'),
-                10
-              ) ;
+                  ),
+                  10
+                ) +
+                parseInt(
+                  getComputedStyle(document.documentElement).getPropertyValue(
+                    '--ginToolbarHeight'
+                  ),
+                  10
+                );
               return `top ${headerHeight + 60}px`;
             },
             pin: true,

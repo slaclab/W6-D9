@@ -71,6 +71,11 @@
   }
 }
 
+.l-section__content {
+  // stylelint-disable-next-line property-no-unknown
+  container-type: inline-size;
+}
+
 .l-section__buttons {
   margin-top: rem(gesso-spacing(5));
 

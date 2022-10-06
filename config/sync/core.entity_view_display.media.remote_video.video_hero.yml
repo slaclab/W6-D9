@@ -40,6 +40,13 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_credit:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_media_oembed_video:
     type: iframe_url
     label: hidden
@@ -70,7 +77,6 @@ hidden:
   created: true
   field_body: true
   field_boolean: true
-  field_credit: true
   field_display_style: true
   field_duration: true
   field_internal_tags: true

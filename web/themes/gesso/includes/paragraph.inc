@@ -122,6 +122,7 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     $hero_videos[] = [
       'embed' => $media->field_media_oembed_video->view('video_hero'),
       'caption' => $media->field_caption->view('video_hero'),
+      'credit' => $media->field_credit->view('video_hero'),
       'fallback_image' => $media->field_thumbnail->view('video_hero')
     ];
   }

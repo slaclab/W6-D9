@@ -11,6 +11,7 @@
     {% for video in hero_videos %}
       <div data-src="{{ video.embed }}" class="c-video-hero__video" data-image-src="{{ video.fallback_image }}" data-image-alt="{{ video.fallback_image_alt }}">
         {{ video.caption }}
+        {{ video.credit }}
       </div>
     {% endfor %}
   </div>

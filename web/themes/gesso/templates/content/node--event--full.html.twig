@@ -77,7 +77,7 @@
 {% set is_past_event = node.isPastEvent() %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -86,7 +86,10 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
+</div>
 
 {% set additional_links = [] %}
 {% if content.field_link2|field_value %}
@@ -101,7 +104,7 @@
 {% endif %}
 
 {% set details %}
-  {% embed '@components/event-details/event-details.twig' with {
+{% embed '@components/event-details/event-details.twig' with {
     'image': content.field_image|field_value,
     'video': content.field_video|field_value,
     'event_type': content.field_type|render|striptags|trim,
@@ -111,18 +114,24 @@
     'map_link_text': not is_past_event ? content.field_link|field_value : FALSE,
     'is_past_event': is_past_event
   } %}
-    {% block event_ctas %}{{ content.field_links }}{% endblock %}
-  {% endembed %}
+  {% block event_ctas %}
+    {{ content.field_links }}
+  {% endblock %}
+{% endembed %}
 {% endset %}
 
 {% set author_content %}
-  {% if content.field_name|field_value %}{{ content.field_name }}{% endif %}
-  {{ content.field_person_image|field_value }}
-  {{ content.field_long_text|field_value }}
+{% if content.field_name|field_value %}
+  {{ content.field_name }}
+{% endif %}
+{{ content.field_person_image|field_value }}
+{{ content.field_long_text|field_value }}
 {% endset %}
 
 {% set kicker %}
-{{- node.getEventTense() }} Event · {{ content.field_text|field_value -}}
+{{- node.getEventTense() }}
+Event ·
+{{ content.field_text|field_value -}}
 {% endset %}
 
 {% include '@templates/event-detail/event-detail.twig' with {

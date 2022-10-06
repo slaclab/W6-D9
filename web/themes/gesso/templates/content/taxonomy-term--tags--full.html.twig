@@ -30,7 +30,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -39,16 +39,19 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
+</div>
 
 {% if content.field_image|field_value is not empty %}
   {% set image_with_caption %}
-    {% set tooltip %}
-      {{- term.field_image.0.entity.field_caption|view -}}
-      {{- term.field_image.0.entity.field_credit|view -}}
-    {% endset %}
+  {% set tooltip %}
+  {{- term.field_image.0.entity.field_caption|view -}}
+  {{- term.field_image.0.entity.field_credit|view -}}
+  {% endset %}
 
-    {% include '@components/small-captioned-image/small-captioned-image.twig' with {
+  {% include '@components/small-captioned-image/small-captioned-image.twig' with {
       image: content.field_image|field_value,
       caption: tooltip
     } %}
@@ -65,13 +68,13 @@
 } %}
 
 {% set term_content %}
-  {% include '@layouts/section/section.twig' with {
+{% include '@layouts/section/section.twig' with {
     'section_title': null,
     'section_content': drupal_view('landing_page_topic_views', 'topic_content_media_card'),
     'has_constrain': true,
     'modifier_classes': 'l-section--white',
   } %}
-  {{ content.field_paragraphs }}
+{{ content.field_paragraphs }}
 {% endset %}
 
 {% include '@components/article/article.twig' with {

@@ -71,12 +71,13 @@
   node.isPromoted() ? 'is-promoted',
   node.isSticky() ? 'is-sticky',
   not node.isPublished() ? 'is-unpublished',
+  "image-hero",
 ] %}
 
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -85,8 +86,10 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block')}}
+</div>
 
 {% if not node.field_boolean.value == '1' %}
   {% include '@components/page-title/page-title.twig' with {
@@ -109,4 +112,3 @@
   'rdf_metadata': metadata,
   'content': content.field_paragraphs,
 } %}
-

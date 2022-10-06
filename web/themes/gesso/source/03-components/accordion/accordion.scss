@@ -55,8 +55,8 @@ $accordion-item-icon-size: gesso-font-size(2);
     span {
       @include underline;
       color: inherit;
-      text-decoration: underline;
       text-decoration-color: gesso-color(text, link-hover);
+      text-decoration-line: underline;
     }
   }
 

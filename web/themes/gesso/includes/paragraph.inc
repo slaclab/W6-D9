@@ -122,6 +122,7 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     $hero_videos[] = [
       'embed' => $media->field_media_oembed_video->view('video_hero'),
       'caption' => $media->field_caption->view('video_hero'),
+      'credit' => $media->field_credit->view('video_hero'),
       'fallback_image' => $media->field_thumbnail->view('video_hero')
     ];
   }
@@ -142,12 +143,12 @@ function _gesso_set_hero_caption(&$vars) {
   // into the template as the caption of the hero.
   switch ($paragraph->bundle()) {
     case 'article_hero':
-      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
+      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body->view() : NULL;
       $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
       break;
     // See template field--paragraph--field-long-text--image-embed.html.twig for caption processing.
     case 'image_embed':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) && $paragraph->field_boolean->value ? $paragraph->field_long_text[0]->view('two_column_hero') : NULL;
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) && $paragraph->field_boolean->value ? $paragraph->field_long_text->view('two_column_hero') : NULL;
       $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
       break;
     // See template field--paragraph--field-long-text--overlap-image.html.twig for caption processing.

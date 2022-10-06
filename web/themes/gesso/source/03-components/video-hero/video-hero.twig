@@ -10,7 +10,8 @@
   <div class="c-video-hero__media">
     {% for video in hero_videos %}
       <div data-src="{{ video.embed }}" class="c-video-hero__video" data-image-src="{{ video.fallback_image }}" data-image-alt="{{ video.fallback_image_alt }}">
-        {{ video.caption }}
+        <p>{{ video.caption }}</p>
+        <p>{{ video.credit }}</p>
       </div>
     {% endfor %}
   </div>

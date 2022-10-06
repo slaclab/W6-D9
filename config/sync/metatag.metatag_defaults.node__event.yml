@@ -1,0 +1,13 @@
+uuid: f5c8f995-833a-4fa0-a3eb-e20447ceb614
+langcode: en
+status: true
+dependencies: {  }
+id: node__event
+label: 'Content: Event'
+tags:
+  twitter_cards_description: '[node:field_teaser:value],[node:field_body]'
+  twitter_cards_image: '[current-page:field_image]'
+  twitter_cards_image_alt: '[current-pge:field_image:alt]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_type: summary_large_image

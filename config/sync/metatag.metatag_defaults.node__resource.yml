@@ -1,0 +1,13 @@
+uuid: 213148dc-30d8-437e-8524-1bc6e70d21cb
+langcode: en
+status: true
+dependencies: {  }
+id: node__resource
+label: 'Content: Resource'
+tags:
+  twitter_cards_description: '[node:field_teaser:value]'
+  twitter_cards_image: '[current-page:field_image]'
+  twitter_cards_image_alt: '[current-page:field_image:alt]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_type: summary_large_image

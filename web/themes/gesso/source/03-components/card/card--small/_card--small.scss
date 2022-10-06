@@ -11,9 +11,11 @@
   }
 
   .c-card__media {
+    backface-visibility: hidden;
     border-radius: 50%;
     height: 120px;
     margin-bottom: rem(gesso-spacing(1));
+    transform: translate3d(0, 0, 0);
     width: 120px;
   }
 

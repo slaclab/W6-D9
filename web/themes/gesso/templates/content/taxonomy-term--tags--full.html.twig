@@ -53,7 +53,8 @@
 
   {% include '@components/small-captioned-image/small-captioned-image.twig' with {
       image: content.field_image|field_value,
-      caption: tooltip
+      caption: tooltip,
+      modifier_classes: 'u-desktop-only',
     } %}
   {% endset %}
 {% endif %}

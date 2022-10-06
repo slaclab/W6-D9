@@ -40,6 +40,13 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_credit:
     type: text_default
     label: hidden
@@ -89,7 +96,7 @@ content:
     region: content
   field_tags:
     type: gesso_tag
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -113,7 +120,6 @@ content:
 hidden:
   created: true
   field_boolean: true
-  field_caption: true
   field_display_style: true
   field_duration: true
   field_internal_tags: true

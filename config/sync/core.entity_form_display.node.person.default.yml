@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
+    - field.field.node.person.field_source_link
     - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
@@ -42,6 +43,7 @@ third_party_settings:
       children:
         - field_teaser
         - field_link
+        - field_source_link
       label: Metadata
       region: content
       parent_name: group_content
@@ -82,7 +84,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -138,6 +140,14 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_source_link:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_teaser:
     type: text_textarea
     weight: 5
@@ -200,7 +210,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -215,7 +225,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS

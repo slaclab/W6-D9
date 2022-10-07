@@ -1,0 +1,23 @@
+uuid: a98aea94-6b03-4551-ae3f-659351af0b08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_link
+    - node.type.person
+  module:
+    - link
+id: node.person.field_source_link
+field_name: field_source_link
+entity_type: node
+bundle: person
+label: 'Source Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

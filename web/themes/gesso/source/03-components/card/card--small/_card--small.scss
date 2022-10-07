@@ -24,6 +24,9 @@
   }
 
   .c-card__description {
+    line-height: gesso-line-height(tight);
+    margin-top: rem(gesso-spacing(0.5));
+
     p:last-child {
       margin-bottom: 0;
     }

@@ -54,6 +54,17 @@
     }
   }
 
+  &.has-bottom-overlay {
+    &::after {
+      background-image: linear-gradient(
+        gesso-grayscale(white) 0%,
+        gesso-grayscale(white) 50.52%,
+        gesso-grayscale(white) 59%,
+        gesso-grayscale(stanford-black) 100%
+      );
+    }
+  }
+
   @media (min-height: 768px) {
     > img {
       aspect-ratio: initial;

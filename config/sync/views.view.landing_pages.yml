@@ -231,6 +231,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>There are no other upcoming events.</p>'
+            format: basic_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -390,6 +404,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         cache: false
         pager: false
         sorts: false
@@ -406,7 +421,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: text
-          empty: false
+          empty: true
           content:
             value: "<div class=\"c-page-title\">\r\n  <h1>Events</h1>\r\n<p class=\"c-lede\">SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"#\" class=\"c-button c-button--chevron\">Events archive</a></p>\r\n</div>"
             format: full_html

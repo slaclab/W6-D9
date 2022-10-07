@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
-    - field.field.node.person.field_source_link
     - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
@@ -107,7 +106,6 @@ content:
     weight: 4
     region: content
 hidden:
-  field_source_link: true
   field_teaser: true
   langcode: true
   search_api_excerpt: true

@@ -44,6 +44,14 @@
   }
 }
 
+.l-section--padding-bottom {
+  padding-top: 0;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding-top: 0;
+  }
+}
+
 .l-section__title {
   @include responsive-font-size(11);
   color: var(--gesso-text-color);

@@ -92,8 +92,21 @@
   @include display-text-style(display);
   color: inherit;
 
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    max-width: 80%;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    max-width: 70%;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    max-width: 60%;
+  }
+
   @media (max-height: 767px) {
     font-size: rem(gesso-font-size(8));
+    max-width: 60%;
   }
 }
 

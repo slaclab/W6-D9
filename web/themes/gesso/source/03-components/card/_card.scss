@@ -46,8 +46,8 @@ $card-padding: rem(gesso-spacing(4));
     margin-top: -8px;
   }
 
-  .c-card:hover &,
-  .c-card:focus-within & {
+  .c-card:not(.c-card--no-link):hover &,
+  .c-card:not(.c-card--no-link):focus-within & {
     color: $card-link-color-hover;
 
     @media (prefers-reduced-motion: no-preference) {

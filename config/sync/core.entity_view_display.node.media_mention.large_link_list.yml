@@ -28,6 +28,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_research_area: true
   field_tags: true
   langcode: true
   links: true

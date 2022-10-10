@@ -1,0 +1,15 @@
+uuid: 5df1761b-7d94-4520-b1c7-93b450f64849
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: local
+description: 'Settings and configuration for the local development environment.'
+weight: 0
+folder: ../config/splits/local
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

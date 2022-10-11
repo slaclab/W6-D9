@@ -3,7 +3,7 @@
 @use '00-config' as *;
 
 :where(.external-link .c-icon) {
-  color: var(--gesso-accent-color);
+  color: var(--gesso-link-color);
 }
 
 .external-link .c-icon {
@@ -13,6 +13,8 @@
 .external-link:hover .c-icon,
 .external-link:focus .c-icon,
 .external-link:active .c-icon {
+  color: var(--gesso-link-hover-color);
+
   @media (prefers-reduced-motion: no-preference) {
     transform: translate(rem(3px), rem(-3px));
   }

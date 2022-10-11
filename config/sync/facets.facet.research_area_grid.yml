@@ -19,7 +19,7 @@ field_identifier: research_area
 query_operator: or
 hard_limit: 0
 exclude: false
-use_hierarchy: true
+use_hierarchy: false
 keep_hierarchy_parents_active: false
 hierarchy:
   type: taxonomy

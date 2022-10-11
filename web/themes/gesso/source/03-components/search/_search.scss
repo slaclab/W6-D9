@@ -120,6 +120,10 @@
   right: calc(#{rem(gesso-spacing(1.5))} + 1px);
   top: calc(#{rem(gesso-spacing(1))} + 1px);
 
+  .c-search--in-page & {
+    top: calc(#{rem(gesso-spacing(1))} + 1px + 0.25rem);
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     font-size: calc(var(--gesso-search-font-size) - 0.5rem);
     top: calc(#{rem(gesso-spacing(0.5))} + 1px + 0.25rem);

@@ -82,6 +82,11 @@
 .l-section__content {
   // stylelint-disable-next-line property-no-unknown
   container-type: inline-size;
+
+  .has-open-lightbox & {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: initial;
+  }
 }
 
 .l-section__buttons {

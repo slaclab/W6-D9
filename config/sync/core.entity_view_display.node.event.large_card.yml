@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.event.field_name
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_research_area
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
@@ -169,6 +170,7 @@ hidden:
   field_long_text: true
   field_name: true
   field_person_image: true
+  field_research_area: true
   field_site_setting: true
   field_tags: true
   field_video: true

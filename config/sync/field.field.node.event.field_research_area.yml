@@ -1,16 +1,16 @@
-uuid: c581541a-6f46-44b2-970b-d72198aaa119
+uuid: a838e61d-e748-425a-ac59-1a7518249b7d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_research_area
     - node.type.event
-    - taxonomy.vocabulary.tags
-id: node.event.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.research_area
+id: node.event.field_research_area
+field_name: field_research_area
 entity_type: node
 bundle: event
-label: Tags
+label: 'Research Area'
 description: ''
 required: false
 translatable: true
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      research_area: research_area
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: research_area
+    auto_create_bundle: ''
 field_type: entity_reference

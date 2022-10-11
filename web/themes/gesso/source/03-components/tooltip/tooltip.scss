@@ -28,6 +28,7 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
   border-radius: 4px;
   border-width: 0 0 rem(gesso-spacing(1));
   bottom: calc(100% + #{$tooltip-arrow-height} + #{rem(gesso-spacing(1))});
+  color: var(--gesso-text-color);
   font-size: rem(gesso-font-size(1));
   padding: rem(gesso-spacing(2.5)) rem(gesso-spacing(2.5))
     rem(gesso-spacing(1.5));

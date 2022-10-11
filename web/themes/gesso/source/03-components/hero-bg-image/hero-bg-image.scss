@@ -79,11 +79,11 @@
 }
 
 .c-hero-bg-image--white {
-  --gesso-text-color: #{gesso-color(text, on-dark)};
+  @include on-dark-variables;
 }
 
 .c-hero-bg-image--black {
-  --gesso-text-color: #{gesso-color(text, on-light)};
+  @include on-light-variables;
 }
 
 .c-hero-bg-image__content {

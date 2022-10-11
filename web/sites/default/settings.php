@@ -93,6 +93,13 @@ $conf['environment_indicator_overwrite'] = TRUE;
   $conf['environment_indicator_overwritten_position'] = 'top';
   $conf['environment_indicator_overwritten_fixed'] = FALSE;
 
+/*
+* Config Split settings
+*/
+$config['config_split.config_split.prod']['status'] = TRUE;
+$config['config_split.config_split.local']['status'] = FALSE;
+
+
   // Pantheon Env Specific Config
   if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       switch ($_ENV['PANTHEON_ENVIRONMENT']) {

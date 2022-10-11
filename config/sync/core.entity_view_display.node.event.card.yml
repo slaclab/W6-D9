@@ -169,6 +169,7 @@ hidden:
   field_long_text: true
   field_name: true
   field_person_image: true
+  field_research_area: true
   field_site_setting: true
   field_tags: true
   field_video: true

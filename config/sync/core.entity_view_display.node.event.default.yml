@@ -342,5 +342,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_research_area: true
   langcode: true
   search_api_excerpt: true

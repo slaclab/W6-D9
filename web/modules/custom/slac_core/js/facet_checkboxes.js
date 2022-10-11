@@ -119,6 +119,10 @@
       }
 
       checklist.addEventListener("change", clickHandler);
+      const resetLink = document.getElementById("facet-list-reset-link");
+      if (resetLink) {
+        resetLink.addEventListener("click", clickHandler);
+      }
     },
   };
 })(Drupal);

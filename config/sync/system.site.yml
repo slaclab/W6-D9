@@ -7,7 +7,7 @@ mail: noreply@slac.stanford.edu
 slogan: ''
 page:
   403: ''
-  404: ''
+  404: /node/5288
   front: /node/5139
 admin_compact_mode: false
 weight_select_max: 100

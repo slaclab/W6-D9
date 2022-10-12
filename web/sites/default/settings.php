@@ -100,18 +100,21 @@ $conf['environment_indicator_overwrite'] = TRUE;
           $config['environment_indicator.indicator']['name'] = 'Dev';
           $config['environment_indicator.indicator']['bg_color'] = '#307b24';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
           break;
         case 'test':
           $config['environment_indicator.indicator']['name'] = 'Test';
           $config['environment_indicator.indicator']['bg_color'] = '#b85c00';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
           break;
         case 'live':
           $config['environment_indicator.indicator']['name'] = 'Live!';
           $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = FALSE;
           $config['config_split.config_split.prod']['status'] = TRUE;
           break;
         default:
@@ -119,7 +122,8 @@ $conf['environment_indicator_overwrite'] = TRUE;
           $config['environment_indicator.indicator']['name'] = 'Multidev';
           $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
           break;
       }
   }

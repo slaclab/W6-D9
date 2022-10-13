@@ -11,3 +11,7 @@ document.documentElement.addEventListener('sitewide-alert-rendered', () => {
     }, 0);
   }
 });
+
+document.documentElement.addEventListener('sitewide-alert-removed', () => {
+  document.documentElement.style.setProperty('--gesso-alert-bar-height', '0px');
+});

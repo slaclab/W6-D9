@@ -50,6 +50,11 @@
   .c-overlap-image--teal & {
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       width: min(1127px, 81vw);
+
+      img {
+        display: block;
+        max-width: none;
+      }
     }
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -61,6 +66,10 @@
   .c-overlap-image--center-left &,
   .c-overlap-image--bottom-left & {
     background-position-x: 100%;
+
+    img {
+      margin-left: auto;
+    }
   }
 
   .c-overlap-image--top-right &,

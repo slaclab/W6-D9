@@ -150,9 +150,6 @@ settings:
         weight: -40
         enabled: true
       two_column_hero:
-        weight: -39
-        enabled: true
-      two_column_hero:
         weight: 68
         enabled: false
       video_hero:

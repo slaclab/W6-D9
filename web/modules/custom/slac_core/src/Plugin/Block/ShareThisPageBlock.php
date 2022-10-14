@@ -130,6 +130,10 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
       $title = \Drupal::service('title_resolver')->getTitle($request, $route); 
     }
 
+    if (is_array($title) && !empty($title['#markup'])) {
+      $title = $title['#markup'];
+    }
+
     $links['#email'] = [
       'url' => 'mailto:' . '?subject=' . $title . '&body=' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
       'title' => $this->t('Email'),

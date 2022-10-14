@@ -44,7 +44,8 @@
   }
 }
 
-.l-section--padding-bottom {
+.l-section--padding-bottom,
+.l-section.l-section--padding-bottom {
   padding-top: 0;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {

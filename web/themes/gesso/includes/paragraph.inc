@@ -124,6 +124,7 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
       'embed' => $media->field_media_oembed_video->view('video_hero'),
       'caption' => $media->field_caption->view('video_hero'),
       'credit' => $media->field_credit->view('video_hero'),
+      'url' => $media->field_boolean->value ? $media->toUrl()->toString() : NULL,
       'fallback_image' => $media->field_thumbnail->view('video_hero')
     ];
   }
@@ -172,6 +173,9 @@ function _gesso_set_hero_caption(&$vars) {
     }
     $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view($credit_view_mode) : NULL;
   }
+
+  // Assign the link to the image detail page, if present.
+  $vars['hero_url'] = $image->field_boolean->value ? $image->toUrl()->toString() : NULL;
 }
 
 /**

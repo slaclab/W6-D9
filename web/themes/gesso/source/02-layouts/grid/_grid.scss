@@ -14,6 +14,11 @@ $nested-grid-gutter: gesso-spacing(2);
     @include css-fixed-grid(1);
     align-items: flex-start;
   }
+
+  .has-open-lightbox & {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: initial;
+  }
 }
 
 .l-grid--2-col {

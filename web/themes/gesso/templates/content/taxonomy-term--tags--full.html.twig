@@ -64,6 +64,7 @@
   lede: content.field_lede|field_value,
   kicker: content.field_kicker|field_value,
   rss_url: content.field_rss.0['#url'],
+  has_sidebar: true,
   sidebar_content: image_with_caption ?: null ,
   has_constrain: true,
 } %}
@@ -73,7 +74,7 @@
     'section_title': null,
     'section_content': drupal_view('landing_page_topic_views', 'topic_content_media_card'),
     'has_constrain': true,
-    'modifier_classes': 'l-section--white',
+    'modifier_classes': 'l-section--white l-section--padding-bottom',
   } %}
 {{ content.field_paragraphs }}
 {% endset %}

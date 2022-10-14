@@ -38,6 +38,10 @@ $card-padding: rem(gesso-spacing(4));
   }
 }
 
+.c-card--on-dark {
+  @include on-dark-variables;
+}
+
 .c-card__title {
   @include responsive-font-size(5);
   margin: 0;
@@ -68,7 +72,6 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card__link {
-  color: inherit;
   text-decoration-line: none;
 }
 
@@ -91,7 +94,6 @@ $card-padding: rem(gesso-spacing(4));
   z-index: 1;
 
   .c-card--on-dark & {
-    --gesso-text-color: #{gesso-color(text, on-dark)};
     background: transparent;
   }
 }

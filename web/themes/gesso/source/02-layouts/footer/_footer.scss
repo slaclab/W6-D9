@@ -4,6 +4,7 @@
 
 .l-footer {
   @include responsive-font-size(1);
+  @include on-dark-variables;
   background: linear-gradient(
       to bottom,
       rgba(45, 45, 41, 0) 0%,

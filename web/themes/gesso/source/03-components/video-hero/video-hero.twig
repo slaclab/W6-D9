@@ -12,6 +12,7 @@
       <div data-src="{{ video.embed }}" class="c-video-hero__video" data-image-src="{{ video.fallback_image }}" data-image-alt="{{ video.fallback_image_alt }}">
         <p>{{ video.caption }}</p>
         <p>{{ video.credit }}</p>
+        {% if video.url %}<p><a href="{{ video.url }}">{{ 'Video details'|t }}</a></p>{% endif %}
       </div>
     {% endfor %}
   </div>

@@ -8,7 +8,7 @@
 
 $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
-$card-link-color-hover: gesso-brand(digital-red, base) !default;
+$card-link-color-hover: var(--gesso-link-hover-color);
 $card-meta-color: inherit;
 $card-padding: rem(gesso-spacing(4));
 

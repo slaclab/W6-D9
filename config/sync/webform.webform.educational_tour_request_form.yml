@@ -61,6 +61,8 @@ elements: |-
     first_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
       '#title': 'First Choice of Tour Date (Tuesdays or Thursdays)'
+      '#help': 'Enter date in format MM/DD/YYYY'
+      '#placeholder': MM/DD/YYYY
       '#required': true
       '#date_days':
         - '2'
@@ -79,6 +81,8 @@ elements: |-
     second_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
       '#title': 'Second Choice of Tour Date (Tuesdays or Thursdays)'
+      '#help': 'Enter date in format MM/DD/YYYY'
+      '#placeholder': MM/DD/YYYY
       '#date_days':
         - '2'
         - '4'
@@ -95,6 +99,8 @@ elements: |-
     third_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
       '#title': 'Third Choice of Tour Date (Tuesdays or Thursdays)'
+      '#help': 'Enter date in format MM/DD/YYYY'
+      '#placeholder': MM/DD/YYYY
       '#date_days':
         - '2'
         - '4'

@@ -453,6 +453,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable\">\r\n    \r\n\r\n<figure class=\"c-large__media c-figure\" role=\"group\">\r\n  \r\n  <div class=\"c-figure__media selectionShareable\">\r\n      <img loading=\"eager\" src=\"/themes/gesso/dist/images/placeholder_image.jpg\" width=\"740\" height=\"463\" alt=\"Placeholder image for the events landing page\" typeof=\"foaf:Image\">\r\n\r\n\r\n\r\n\r\n      </div>\r\n  </figure>\r\n\r\n  </div>"
+            format: full_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -624,6 +638,7 @@ display:
           relationship: none
           view_mode: large_card
       defaults:
+        empty: false
         cache: false
         pager: false
         style: false

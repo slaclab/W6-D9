@@ -36,4 +36,6 @@
  * @see template_preprocess_field()
  */
 #}
-{% extends 'field--no-wrapper.html.twig' %}
+{%- for item in items -%}
+  {{- item.content -}}
+{%- endfor -%}

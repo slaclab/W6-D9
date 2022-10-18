@@ -57,15 +57,24 @@
 
 .l-footer__contact-links {
   @include list-clean;
-  font-size: 15px;
+  font-size: rem(15px);
+  line-height: gesso-line-height(loose);
   margin-top: rem(gesso-spacing(2.5));
 
   li {
-    margin-bottom: rem(gesso-spacing(0.5));
+    margin-bottom: rem(gesso-spacing(1));
   }
 
   a {
     @include arrow-link(white);
+  }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    line-height: gesso-line-height(base);
+
+    li {
+      margin-bottom: rem(gesso-spacing(0.5));
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-uuid: 2d5399fd-289c-4ff8-bc2e-887a2bf83fb0
+uuid: d26789a1-8702-43ce-9e24-41f31fe76e44
 langcode: en
 status: true
 dependencies: {  }
@@ -8,6 +8,5 @@ id: node
 label: Content
 tags:
   canonical_url: '[node:url]'
-  description: '[node:field_body]'
-  image_src: '[current-page:image:url]'
+  description: '[node:field_teaser:value]'
   title: '[node:title] | [site:name]'

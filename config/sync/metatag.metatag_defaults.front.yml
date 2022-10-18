@@ -1,4 +1,4 @@
-uuid: 5a2249ff-7def-4f09-9a2c-d1414cee965b
+uuid: 2a0681f7-0780-4ff0-8a50-1c0d4fcfcc40
 langcode: en
 status: true
 dependencies: {  }
@@ -8,4 +8,12 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  og_description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  og_site_name: '[site:name]'
+  og_url: '[current-page:url]'
   shortlink: '[site:url]'
+  title: '[site:name]'
+  twitter_cards_description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  twitter_cards_title: '[site:name]'
+  twitter_cards_type: summary

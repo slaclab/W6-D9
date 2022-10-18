@@ -1,4 +1,4 @@
-uuid: 0e616892-0f1e-4fa7-9f46-893df239a68c
+uuid: a362fe36-1311-4283-87c2-d3db87e164a0
 langcode: en
 status: true
 dependencies: {  }
@@ -7,6 +7,6 @@ _core:
 id: '403'
 label: '403 access denied'
 tags:
-  canonical_url: '[site:url]'
   robots: noindex
+  canonical_url: '[site:url]'
   shortlink: '[site:url]'

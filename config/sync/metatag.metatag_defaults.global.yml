@@ -1,4 +1,4 @@
-uuid: 38f1ed69-e255-44e5-b274-f8c5b21d08e5
+uuid: 1015c1df-d33a-4897-95d1-a1c15c5fc275
 langcode: en
 status: true
 dependencies: {  }
@@ -8,16 +8,16 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
-  description: '[node:field_teaser:value], [node:field_text:value]'
-  image_src: '[current-page:image:url]'
-  og_image: '[current-page:image:url]'
+  description: '[current-page:field_teaser:value]'
+  image_src: '[current-page:field_teaser_image]'
+  og_description: '[current-page:field_teaser:value]'
+  og_image: '[current-page:field_teaser_image]'
   og_site_name: '[site:name]'
-  og_title: '[current-page:title]'
+  og_title: '[current-page:title] | [site:name]'
   og_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
-  twitter_cards_description: '[node:field_teaser:value],[node:field_lede]'
-  twitter_cards_image: '[current-page:field_image]'
-  twitter_cards_image_alt: '[current-page:field_image:alt]'
+  twitter_cards_description: '[node:field_teaser:value]'
+  twitter_cards_image: '[current-page:field_teaser_image]'
   twitter_cards_page_url: '[current-page:url]'
-  twitter_cards_title: '[current-page:title]'
+  twitter_cards_title: '[current-page:title] | [site:name]'
   twitter_cards_type: summary_large_image

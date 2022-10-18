@@ -464,7 +464,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable\">\r\n    \r\n\r\n<figure class=\"c-large__media c-figure\" role=\"group\">\r\n  \r\n  <div class=\"c-figure__media selectionShareable\">\r\n      <img loading=\"eager\" src=\"/themes/gesso/dist/images/placeholder_image.jpg\" width=\"740\" height=\"463\" alt=\"Placeholder image for the events landing page\" typeof=\"foaf:Image\">\r\n\r\n\r\n\r\n\r\n      </div>\r\n  </figure>\r\n\r\n  </div>"
+            value: "<div class=\"c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable\">\r\n    \r\n\r\n<figure class=\"c-large__media c-figure\" role=\"group\">\r\n  \r\n  <div class=\"c-figure__media selectionShareable\">\r\n      <img loading=\"eager\" src=\"/themes/gesso/dist/images/placeholder_image.jpg\" width=\"600\" height=\"378\" alt=\"Placeholder image for the events landing page\" typeof=\"foaf:Image\">\r\n\r\n\r\n\r\n\r\n      </div>\r\n  </figure>\r\n\r\n  </div>"
             format: full_html
           tokenize: false
       sorts:

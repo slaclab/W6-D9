@@ -20,39 +20,39 @@ category: ''
 elements: |-
   name:
     '#type': textfield
-    '#title': 'Your Name:'
+    '#title': 'Your name:'
     '#required': true
     '#default_value': '[current-user:display-name]'
   email:
     '#type': email
-    '#title': 'Your Email:'
+    '#title': 'Your email:'
     '#required': true
     '#default_value': '[current-user:mail]'
   your_organization_affiliation:
     '#type': textfield
-    '#title': 'Your Organization / Affiliation:'
+    '#title': 'Your organization/affiliation:'
     '#required': true
   topic_of_your_questions_comments_or_inquiries_:
     '#type': select
-    '#title': 'Topic of Your Questions, Comments or Inquiries:'
+    '#title': 'Topic of your questions, comments or inquiries:'
     '#options':
-      'Career Opportunities/ Employment': 'Career Opportunities/ EmploymentCareer Opportunities/ Employment'
-      'Research Collaboration': 'Research Collaboration'
-      'Doing Business with SLAC': 'Doing Business with SLAC'
-      'Teachers and Students': 'Teachers and Students'
-      'Media Inquiries/Questions': 'Media Inquiries/Questions'
+      'Career opportunities/employment': 'Career opportunities/employment'
+      'Research collaboration': 'Research collaboration'
+      'Doing business with SLAC': 'Doing business with SLAC'
+      'Teachers and students': 'Teachers and students'
+      'Media inquiries/questions': 'Media inquiries/questions'
       Other: Other
     '#empty_option': 'Please make a selection'
     '#required': true
   message:
     '#type': textarea
-    '#title': 'Your Questions, Comments or Inquiries:'
+    '#title': 'Your questions, comments or inquiries:'
     '#required': true
     '#test': 'Please ignore this email.'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
-    '#submit__label': 'send comments or questions'
+    '#submit__label': 'Send comments or questions'
 css: ''
 javascript: ''
 settings:

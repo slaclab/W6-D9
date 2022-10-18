@@ -11,6 +11,10 @@
     {
       "type": "path",
       "url": "upstream-configuration"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:SLAC/W6-D9-saml.git"
     }
   ],
   "require": {
@@ -70,6 +74,7 @@
     "drupal/search_api_pantheon": "^8",
     "drupal/selection_sharer": "^1.4",
     "drupal/simple_sitemap": "^3.11",
+    "drupal/simplesamlphp_auth": "^3.3",
     "drupal/site_settings": "^1.19",
     "drupal/sitewide_alert": "^2.0",
     "drupal/smart_trim": "^1.3",
@@ -93,6 +98,7 @@
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
+    "slac/w6_d9_saml": "dev-main",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"
   },
@@ -162,10 +168,12 @@
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
     ],
     "post-create-project-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"

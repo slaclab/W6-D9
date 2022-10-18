@@ -7,8 +7,7 @@
  *
  * See: https://simplesamlphp.org/docs/stable/simplesamlphp-reference-idp-remote
  */
-$metadata['https://dev-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp, https://test-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp,   https://live-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp, https://pmu-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp,  https://int.slac.stanford.edu:443/simplesaml/module.php/saml/sp/metadata.php/default-sp'] = [
-  'entityid' => 'https://dev-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp, https://test-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp,   https://live-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp, https://pmu-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp,  https://int.slac.stanford.edu:443/simplesaml/module.php/saml/sp/metadata.php/default-sp',
+$metadata['https://test-adfs.slac.stanford.edu'] = [
   'contacts' => [
     [
       'contactType' => 'technical',
@@ -19,59 +18,7 @@ $metadata['https://dev-slac-internal-d7.pantheonsite.io:443/simplesaml/module.ph
       ],
     ],
   ],
-  'metadata-set' => 'saml20-sp-remote',
-  'AssertionConsumerService' => [
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://dev-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 0,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
-      'Location' => 'https://dev-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 1,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://test-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 2,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
-      'Location' => 'https://test-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 3,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://live-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 4,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
-      'Location' => 'https://live-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 5,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://pmu-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 6,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
-      'Location' => 'https://pmu-slac-internal-d7.pantheonsite.io:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 7,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://int.slac.stanford.edu:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 8,
-    ],
-    [
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact',
-      'Location' => 'https://int.slac.stanford.edu:443/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-      'index' => 9,
-    ],
-  ],
+  'metadata-set' => 'saml20-idp-remote',
   'SingleLogoutService' => [
     [
       'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect',

@@ -82,7 +82,7 @@ $config = [
      * also as the technical contact in generated metadata.
      */
     'technicalcontact_name' => 'Administrator',
-    'technicalcontact_email' => 'na@example.org',
+    'technicalcontact_email' => 'mgaskey@forumone.com',
 
     /*
      * (Optional) The method by which email is delivered.  Defaults to mail which utilizes the
@@ -123,7 +123,7 @@ $config = [
      *
      * See this page for a list of valid timezones: http://php.net/manual/en/timezones.php
      */
-    'timezone' => null,
+    'timezone' => 'America/Los_Angeles',
 
 
 
@@ -139,7 +139,7 @@ $config = [
      * A possible way to generate a random salt is by running the following command from a unix shell:
      * LC_CTYPE=C tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo
      */
-    'secretsalt' => 'defaultsecretsalt',
+    'secretsalt' => 'msgisbetterthansalt',
 
     /*
      * This password must be kept secret, and modified from the default value 123.
@@ -147,7 +147,7 @@ $config = [
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => '123',
+    'auth.adminpassword' => 'samlintegration',
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface
@@ -184,7 +184,7 @@ $config = [
      * Example:
      *   'trusted.url.domains' => ['sp.example.com', 'app.example.com'],
      */
-    'trusted.url.domains' => [],
+    'trusted.url.domains' => ['integration-slac-w6-d9.pantheonsite.io'],
 
     /*
      * Enable regular expression matching of trusted.url.domains.
@@ -471,7 +471,7 @@ $config = [
      *
      * Note that shib13-idp has been deprecated and will be removed in SimpleSAMLphp 2.0.
      */
-    'enable.saml20-idp' => false,
+    'enable.saml20-idp' => true,
     'enable.shib13-idp' => false,
     'enable.adfs-idp' => false,
 

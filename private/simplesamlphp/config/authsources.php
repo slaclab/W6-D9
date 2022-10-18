@@ -29,7 +29,7 @@ $config = [
 
         // The entity ID of this SP.
         // Can be NULL/unset, in which case an entity ID is generated based on the metadata URL.
-        'entityID' => 'http://test-adfs.slac.stanford.edu/',
+        'entityID' => 'https://integration-slac-w6-d9.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/TEST_SLAC_IDP',
 
         // The entity ID of the IdP this SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.

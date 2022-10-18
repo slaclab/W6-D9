@@ -6,12 +6,15 @@ dependencies:
     - field.field.node.resource.field_audience_terms
     - field.field.node.resource.field_image
     - field.field.node.resource.field_link
+    - field.field.node.resource.field_meta_tags
     - field.field.node.resource.field_teaser
     - node.type.resource
   module:
     - allowed_formats
+    - content_moderation
     - link
     - media_library
+    - metatag
     - path
     - text
 id: node.resource.default
@@ -45,6 +48,14 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_teaser:
     type: text_textarea

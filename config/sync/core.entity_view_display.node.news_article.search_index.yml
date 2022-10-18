@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_internal_tags
     - field.field.node.news_article.field_lede
+    - field.field.node.news_article.field_meta_tags
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
@@ -77,6 +78,7 @@ hidden:
   field_hero_paragraph: true
   field_internal_tags: true
   field_lede: true
+  field_meta_tags: true
   field_news_source: true
   field_paragraphs_1: true
   field_research_area: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.homepage.field_hero_paragraph
+    - field.field.node.homepage.field_meta_tags
     - field.field.node.homepage.field_paragraphs
     - node.type.homepage
   module:
@@ -33,6 +34,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

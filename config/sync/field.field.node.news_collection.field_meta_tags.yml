@@ -1,0 +1,21 @@
+uuid: 9f16eb8f-9827-4858-9b8b-0508b29d259c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.news_collection
+  module:
+    - metatag
+id: node.news_collection.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: news_collection
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

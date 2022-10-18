@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.resource.field_audience_terms
     - field.field.node.resource.field_image
     - field.field.node.resource.field_link
+    - field.field.node.resource.field_meta_tags
     - field.field.node.resource.field_teaser
     - node.type.resource
   module:
@@ -23,7 +24,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_image:
     type: entity_reference_label
@@ -31,7 +32,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_link:
     type: link
@@ -43,20 +44,21 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_teaser:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   search_api_excerpt: true

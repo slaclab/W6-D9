@@ -17,9 +17,11 @@ dependencies:
     - field.field.node.event.field_link2
     - field.field.node.event.field_links
     - field.field.node.event.field_long_text
+    - field.field.node.event.field_meta_tags
     - field.field.node.event.field_name
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_research_area
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
@@ -44,7 +46,7 @@ third_party_settings:
       label: 'Page Content'
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -102,7 +104,6 @@ third_party_settings:
         - field_featured
         - field_type
         - field_tags
-        - field_internal_tags
         - field_bio_related_content
       label: Metadata
       parent_name: group_page_content
@@ -123,7 +124,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_bio_related_content:
     type: entity_reference_label
@@ -342,6 +343,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_meta_tags: true
   field_research_area: true
   langcode: true
   search_api_excerpt: true

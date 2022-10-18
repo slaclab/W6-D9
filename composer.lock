@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "360cb85bfc93d7bb9fdb51732ae0f564",
+    "content-hash": "2a102973114bfc516d3e4273f4ec9a5c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12623,35 +12623,6 @@
                 "source": "https://github.com/simplesamlphp/twig-configurable-i18n"
             },
             "time": "2020-08-27T12:51:10+00:00"
-        },
-        {
-            "name": "slac/w6_d9_saml",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:SLAC/W6-D9-saml.git",
-                "reference": "d66bbd14373788ef32aa26ba0caad21c22beff96"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SLAC/W6-D9-saml/zipball/d66bbd14373788ef32aa26ba0caad21c22beff96",
-                "reference": "d66bbd14373788ef32aa26ba0caad21c22beff96",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "default-branch": true,
-            "type": "drupal-private-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Private repo to store saml settings for SLAC W6",
-            "support": {
-                "source": "https://github.com/SLAC/W6-D9-saml/tree/main",
-                "issues": "https://github.com/SLAC/W6-D9-saml/issues"
-            },
-            "time": "2022-10-18T18:22:07+00:00"
         },
         {
             "name": "solarium/solarium",

@@ -96,20 +96,13 @@
   @include text-button;
 
   &:hover {
-    color: gesso-color(text, link-hover);
+    color: var(--gesso-link-hover-color);
   }
 }
 
 .c-search__button {
+  color: var(--gesso-link-color);
   z-index: 4;
-
-  .has-inverse-nav & {
-    color: gesso-color(text, on-dark);
-  }
-
-  .has-open-menu & {
-    color: gesso-color(text, link);
-  }
 }
 
 .c-search__submit {

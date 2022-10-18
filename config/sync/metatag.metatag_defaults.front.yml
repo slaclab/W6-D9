@@ -1,0 +1,23 @@
+uuid: 006465b4-4fd1-483f-9c03-ee2373da963f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  og_description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  og_image: /sites/default/files/styles/scale_large/public/2022-09/Drone_Quad_0610_DJI_0041%20%281%29%20%281%29.jpg
+  og_site_name: '[site:name]'
+  og_title: '[site:name]'
+  og_url: '[current-page:url]'
+  shortlink: '[site:url]'
+  title: '[site:name]'
+  twitter_cards_description: 'We explore how the universe works at the biggest, smallest and fastest scales and invent powerful tools used by scientists around the globe. Our research helps solve real-world problems and advances the interests of the nation.'
+  twitter_cards_image: /sites/default/files/styles/scale_large/public/2022-09/Drone_Quad_0610_DJI_0041%20%281%29%20%281%29.jpg
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[site:name]'
+  twitter_cards_type: summary_large_image

@@ -24,16 +24,16 @@ $config = [
 
     // An authentication source which can authenticate against both SAML 2.0
     // and Shibboleth 1.3 IdPs.
-    'default-sp' => [
+    'TEST_SLAC_IDP' => [
         'saml:SP',
 
         // The entity ID of this SP.
         // Can be NULL/unset, in which case an entity ID is generated based on the metadata URL.
-        'entityID' => null,
+        'entityID' => 'http://test-adfs.slac.stanford.edu/',
 
         // The entity ID of the IdP this SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.
-        'idp' => 'https://test-adfs.slac.stanford.edu',
+        'idp' => 'http://test-adfs.slac.stanford.edu',
 
         // The URL to the discovery service.
         // Can be NULL/unset, in which case a builtin discovery service will be used.

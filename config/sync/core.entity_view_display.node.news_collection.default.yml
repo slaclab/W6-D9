@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_collection.field_boolean
     - field.field.node.news_collection.field_hero_paragraph
     - field.field.node.news_collection.field_long_text
+    - field.field.node.news_collection.field_meta_tags
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
     - field.field.node.news_collection.field_tags
@@ -25,7 +26,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_boolean:
     type: boolean
@@ -35,7 +36,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 4
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -44,14 +45,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_long_text:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 9
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -60,7 +61,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_paragraphs_1:
     type: entity_reference_revisions_entity_view
@@ -69,7 +70,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 5
     region: content
   field_tags:
     type: entity_reference_label
@@ -77,14 +78,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 8
     region: content
   field_teaser:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 106
+    weight: 7
     region: content
   field_teaser_image:
     type: entity_reference_label
@@ -92,7 +93,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 109
+    weight: 10
     region: content
   field_text:
     type: string
@@ -100,13 +101,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 6
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   search_api_excerpt: true

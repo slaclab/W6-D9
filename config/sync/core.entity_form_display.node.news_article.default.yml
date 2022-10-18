@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_internal_tags
     - field.field.node.news_article.field_lede
+    - field.field.node.news_article.field_meta_tags
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
@@ -31,6 +32,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - metatag
     - paragraphs
     - path
     - term_reference_tree
@@ -186,6 +188,14 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_news_source:
     type: options_select
     weight: 13

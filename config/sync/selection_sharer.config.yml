@@ -2,4 +2,4 @@ _core:
   default_config_hash: 1p4ujWNTUVk9JMkt8QntsHVHzxVbWFSFo93hS7rntC4
 selection_sharer:
   jquery_selectors: body
-jquery_selectors: ".c-wysiwyg div\r\n.c-wysiwyg h1\r\n.c-wysiwyg h2\r\n.c-wysiwyg h3\r\n.c-wysiwyg h4\r\n.c-wysiwyg h5\r\n.c-wysiwyg h6\r\n.c-wysiwyg p"
+jquery_selectors: ".c-wysiwyg div\r\n.c-wysiwyg h1\r\n.c-wysiwyg h2\r\n.c-wysiwyg h3\r\n.c-wysiwyg h4\r\n.c-wysiwyg h5\r\n.c-wysiwyg h6\r\n.c-wysiwyg p\r\n.c-quote"

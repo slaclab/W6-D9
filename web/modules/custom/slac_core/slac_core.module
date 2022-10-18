@@ -61,6 +61,10 @@ function slac_core_theme($existing, $type, $theme, $path) {
  * Implements hook_oembed_resource_data_alter().
  */
 function slac_core_oembed_resource_data_alter(array &$data, $url) {
+  if (!isset($data['thumbnail_url'])) {
+    return;
+  }
+
   $client = \Drupal::httpClient();
   if (strpos($url, 'youtube.com/oembed') !== FALSE) {
     $default = 'hqdefault';

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
+    - field.field.node.person.field_meta_tags
     - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
@@ -19,6 +20,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - metatag
     - path
     - text
 third_party_settings:
@@ -139,6 +141,14 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_teaser:
     type: text_textarea
     weight: 5

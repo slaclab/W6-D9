@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.resource.field_audience_terms
     - field.field.node.resource.field_image
     - field.field.node.resource.field_link
+    - field.field.node.resource.field_meta_tags
     - field.field.node.resource.field_teaser
     - node.type.resource
   module:
@@ -48,6 +49,7 @@ content:
     region: content
 hidden:
   field_audience_terms: true
+  field_meta_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

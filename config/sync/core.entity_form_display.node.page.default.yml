@@ -4,17 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_hero_paragraph
+    - field.field.node.page.field_meta_tags
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
     - field.field.node.page.field_text
     - node.type.page
-    - workflows.workflow.content
   module:
     - content_moderation
     - field_group
     - media_library
+    - metatag
     - paragraphs
     - path
     - term_reference_tree
@@ -101,6 +102,14 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 101
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_paragraphs:
     type: paragraphs

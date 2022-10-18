@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_boolean
     - field.field.node.landing_page.field_long_text
+    - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
     - field.field.node.landing_page.field_teaser_image
@@ -59,6 +60,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_meta_tags: true
   field_teaser: true
   field_teaser_image: true
   langcode: true

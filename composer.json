@@ -11,10 +11,6 @@
     {
       "type": "path",
       "url": "upstream-configuration"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:SLAC/W6-D9-saml.git"
     }
   ],
   "require": {
@@ -98,7 +94,6 @@
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
-    "slac/w6_d9_saml": "dev-main",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"
   },

@@ -1,0 +1,30 @@
+_core:
+  default_config_hash: RMy8ch2MOT68bCD63OGZQRdMk2pD6UXPEZMuCIisbfs
+langcode: en
+activate: false
+auth_source: TEST_SLAC_IDP
+login_link_display_name: 'SLAC SAML SignIn'
+login_link_show: true
+user_name: eduPersonPrincipalName
+unique_id: eduPersonPrincipalName
+mail_attr: mail
+header_no_cache: false
+role:
+  population: null
+  eval_every_time: false
+register_users: true
+allow:
+  set_drupal_pwd: false
+  default_login: true
+  default_login_roles:
+    administrator: administrator
+  default_login_users: '1'
+logout_goto_url: ''
+user_register_original: visitors_admin_approval
+sync:
+  mail: true
+  user_name: true
+autoenablesaml: false
+debug: true
+secure: false
+httponly: false

@@ -20931,5 +20931,5 @@
         "ext-opcache": "1.0.0",
         "ext-pdo": "1.0.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.1.0"
 }

@@ -51,6 +51,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - tour
     - ultimate_cron
     - update
     - views_ui
@@ -69,12 +70,14 @@ permissions:
   - 'access site reports'
   - 'access site settings overview'
   - 'access toolbar'
+  - 'access tour'
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission user'
   - 'add site setting entities'
   - 'add sitewide alert entities'
   - 'administer google tag manager'
+  - 'administer nodes'
   - 'administer search_api'
   - 'administer site setting entities'
   - 'administer sitewide alert entities'

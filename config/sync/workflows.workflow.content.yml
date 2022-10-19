@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - node.type.event
+    - node.type.homepage
+    - node.type.landing_page
+    - node.type.media_mention
     - node.type.news_article
     - node.type.news_collection
     - node.type.page
+    - node.type.person
+    - node.type.resource
   module:
     - content_moderation
 id: content
@@ -55,7 +60,12 @@ type_settings:
   entity_types:
     node:
       - event
+      - homepage
+      - landing_page
+      - media_mention
       - news_article
       - news_collection
       - page
+      - person
+      - resource
   default_moderation_state: draft

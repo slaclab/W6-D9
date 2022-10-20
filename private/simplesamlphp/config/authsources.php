@@ -24,12 +24,12 @@ $config = [
 
     // An authentication source which can authenticate against both SAML 2.0
     // and Shibboleth 1.3 IdPs.
-    'TEST_SLAC_IDP' => [
+    'default-sp' => [
         'saml:SP',
 
         // The entity ID of this SP.
         // Can be NULL/unset, in which case an entity ID is generated based on the metadata URL.
-        'entityID' => 'https://integration-slac-w6-d9.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/TEST_SLAC_IDP',
+        'entityID' => 'https://integration-slac-w6-d9.pantheonsite.io:443/simplesaml/module.php/saml/sp/metadata.php/default-sp',
 
         // The entity ID of the IdP this SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.

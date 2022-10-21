@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.embed_block
     - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
     - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
+    - site_settings.site_setting_entity_type.event_visitor_details
 id: paragraph.embed_block.field_block
 field_name: field_block
 entity_type: paragraph
@@ -23,6 +24,7 @@ settings:
     target_bundles:
       colorful_tagline_for_homepage: colorful_tagline_for_homepage
       colorful_tagline_for_our_story: colorful_tagline_for_our_story
+      event_visitor_details: event_visitor_details
     sort:
       field: _none
       direction: ASC

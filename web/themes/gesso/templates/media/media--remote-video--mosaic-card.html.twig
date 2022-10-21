@@ -32,7 +32,7 @@
     'label': 'Video'|t,
     'kicker': 'Video'|t,
     'title': content.field_long_text|field_value is not empty ? content.field_long_text|field_value : name,
-    'link': content.field_boolean['#items'].value == 0 ? url : null,
+    'link': content.field_boolean['#items'].value == 1 ? url : null,
     'attributes': false
   } %}
 </div>

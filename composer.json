@@ -14,11 +14,7 @@
     },
     {
       "type": "vcs",
-<<<<<<< HEAD
-      "url": "git@github.com:SLAC/W6-D9-saml.git"
-=======
       "url": "https://github.com/SU-SWS/stanford_ssp"
->>>>>>> SLAC22-19-bed-sso
     }
   ],
   "require": {

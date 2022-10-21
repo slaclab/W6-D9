@@ -16,6 +16,7 @@ dependencies:
     - media
     - node
     - search_api
+    - slac_core
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -242,9 +243,22 @@ processor_settings:
       preprocess_index: -15
       preprocess_query: -15
     all_fields: true
-    fields: {  }
+    fields:
+      - body
+      - caption
+      - display_name
+      - entity_type
+      - field_long_text
+      - lede
+      - media_name
+      - rendered_item
+      - research_area
+      - speaker_name
+      - teaser
+      - title
     replacement: '|9999999998|'
   entity_type: {  }
+  exclude_hidden_media: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   solr_boost_more_recent:

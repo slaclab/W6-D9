@@ -11,10 +11,6 @@
     {
       "type": "path",
       "url": "upstream-configuration"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/SU-SWS/stanford_ssp"
     }
   ],
   "require": {
@@ -99,7 +95,6 @@
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
-    "su-sws/stanford_ssp": "^8.2",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"
   },

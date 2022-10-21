@@ -280,7 +280,7 @@ display:
       tags: {  }
   related_images_videos:
     id: related_images_videos
-    display_title: 'Related Images & Videos (Card)'
+    display_title: 'Related images & videos (Card)'
     display_plugin: block
     position: 1
     display_options:

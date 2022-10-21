@@ -39,7 +39,7 @@ const ImageDetailPage = () => (
     {SectionWithBlueGreenGradient({
       ...SectionWithBlueGreenGradient.args,
       section_kicker: 'Dig Deeper',
-      section_title: 'Related Images & Videos',
+      section_title: 'Related images & videos',
       section_intro: false,
       section_title_url: false,
       section_content: expandableContentTemplate({

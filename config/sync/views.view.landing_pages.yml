@@ -2384,7 +2384,7 @@ display:
           exposed: true
           expose:
             operator_id: field_audience_terms_target_id_op
-            label: 'Filter by Audience'
+            label: 'Filter by audience'
             description: ''
             use_operator: false
             operator: field_audience_terms_target_id_op

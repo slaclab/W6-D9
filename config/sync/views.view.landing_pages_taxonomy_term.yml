@@ -108,7 +108,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show All'
+                    filter_rewrite_values: '- Any -|Show all'
                   collapsible: false
                   is_secondary: false
       access:

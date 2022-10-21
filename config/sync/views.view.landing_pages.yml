@@ -699,7 +699,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show All'
+                    filter_rewrite_values: '- Any -|Show all'
                   collapsible: false
                   is_secondary: false
       sorts:
@@ -1186,7 +1186,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show All'
+                    filter_rewrite_values: '- Any -|Show all'
                   collapsible: false
                   is_secondary: false
               field_type_target_id:
@@ -1194,7 +1194,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show All'
+                    filter_rewrite_values: '- Any -|Show all'
                   collapsible: false
                   is_secondary: false
       filters:

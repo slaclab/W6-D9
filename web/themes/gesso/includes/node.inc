@@ -111,16 +111,16 @@ function gesso_preprocess_node__event(&$vars) {
       $vars['end_date'] = NULL;
       $vars['formatted_date_time'] = date('l, F j, Y', $start_date) . '<br>';
       if (date('a', $start_date) == date('a', $end_date)) {
-        $vars['formatted_date_time'] .= date('g:i', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= date('g:i', $start_date) . '&ndash;' . date('g:i a T', $end_date);
       } else {
-        $vars['formatted_date_time'] .= date('g:i a', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= date('g:i a', $start_date) . '&ndash;' . date('g:i a T', $end_date);
       }
     } else {
       $vars['end_date'] = [
         'month' => date('M', $end_date),
         'day' => date('j', $end_date),
       ];
-      $vars['formatted_date_time'] = date('l, F j', $start_date) . ' &ndash; ' . date('l, F j, Y', $end_date);
+      $vars['formatted_date_time'] = date('l, F j', $start_date) . '&ndash;' . date('l, F j, Y', $end_date);
     }
     if (!empty($vars['content']['field_override_text'][0])) {
       $vars['content']['field_datetime_range'][0]['start_date'] = $vars['content']['field_override_text'][0];

@@ -1,17 +1,17 @@
 _core:
   default_config_hash: RMy8ch2MOT68bCD63OGZQRdMk2pD6UXPEZMuCIisbfs
 langcode: en
-activate: false
-auth_source: TEST_SLAC_IDP
-login_link_display_name: 'SLAC SAML SignIn'
+activate: true
+auth_source: default-sp
+login_link_display_name: 'SUNetID Login'
 login_link_show: true
-user_name: eduPersonPrincipalName
-unique_id: eduPersonPrincipalName
+user_name: uid
+unique_id: uid
 mail_attr: mail
-header_no_cache: false
+header_no_cache: true
 role:
   population: null
-  eval_every_time: false
+  eval_every_time: 2
 register_users: true
 allow:
   set_drupal_pwd: false
@@ -24,7 +24,7 @@ user_register_original: visitors_admin_approval
 sync:
   mail: true
   user_name: true
-autoenablesaml: false
+autoenablesaml: true
 debug: true
-secure: false
+secure: true
 httponly: false

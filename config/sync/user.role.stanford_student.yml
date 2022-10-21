@@ -1,0 +1,11 @@
+uuid: 0c454fa0-b830-4f2e-8e0e-2ebcf75bec2b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: utSJJ9cSylZEVzqaBr7cYV5wyXdC4xubL0L3QevhYRg
+id: stanford_student
+label: 'Stanford Student'
+weight: 8
+is_admin: null
+permissions: {  }

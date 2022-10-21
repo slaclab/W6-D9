@@ -122,8 +122,8 @@ $conf['environment_indicator_overwrite'] = TRUE;
           $config['environment_indicator.indicator']['name'] = 'Multidev';
           $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = TRUE;
-          $config['config_split.config_split.prod']['status'] = FALSE;
+          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.prod']['status'] = TRUE;
           break;
       }
   }

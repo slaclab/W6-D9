@@ -11,10 +11,6 @@
     {
       "type": "path",
       "url": "upstream-configuration"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/SU-SWS/stanford_ssp"
     }
   ],
   "require": {

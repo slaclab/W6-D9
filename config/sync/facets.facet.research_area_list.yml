@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: research_area_list
-name: 'Filter by Research Area'
+name: 'Filter by research area'
 weight: 0
 min_count: 1
 missing: false

@@ -940,7 +940,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
             format: full_html
           tokenize: false
       sorts:
@@ -1320,7 +1320,7 @@ display:
           exposed: true
           expose:
             operator_id: field_research_area_target_id_op
-            label: 'Filter by Research Area'
+            label: 'Filter by research area'
             description: ''
             use_operator: false
             operator: field_research_area_target_id_op

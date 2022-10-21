@@ -7,10 +7,10 @@
 {% set filter_id = 'filter-by-research-area'|unique_id %}
 
 <div class="c-form-item--select">
-  <label class="u-visually-hidden" for="{{ filter_id }}">{{ 'Filter by Research area'|t }}</label>
+  <label class="u-visually-hidden" for="{{ filter_id }}">{{ 'Filter by research area'|t }}</label>
   <select class="c-topic-grid__select c-form-item__select" id="{{ filter_id }}">
     <option value="*">
-      Filter by Research area
+      Filter by research area
     </option>
     {% for item in research_areas %}
       <option value="{{ '.js-filter-' ~ item.id }}">

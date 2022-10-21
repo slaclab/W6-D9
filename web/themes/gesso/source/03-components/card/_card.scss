@@ -85,7 +85,6 @@ $card-padding: rem(gesso-spacing(4));
 }
 
 .c-card__body {
-  --gesso-text-color: #{gesso-color(text, primary)};
   background: gesso-color(background, site);
   display: flex;
   flex-direction: column;

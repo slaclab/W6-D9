@@ -38,11 +38,11 @@
  * @ingroup themeable
  */
 #}
-{% set tooltip %}
+{% set tooltip %}{% spaceless %}
   {{- hero_caption -}}
   {% if hero_credit|field_value %}<p>{{- hero_credit -}}</p>{% endif %}
   {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
-{% endset %}
+{% endspaceless %}{% endset %}
 
 {% include '@components/microsite-hero/microsite-hero.twig' with {
   'microsite_hero_title': node_title,

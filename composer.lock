@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< Updated upstream
-    "content-hash": "5e0d56245c64b6cc04ec4312e37dbaae",
-=======
-    "content-hash": "84350fed7a28067ca148e2098fe4238a",
->>>>>>> Stashed changes
+    "content-hash": "62c7480867bdba95ac57584b795ec52b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12745,47 +12741,6 @@
                 "source": "https://github.com/stackphp/builder/tree/v1.0.6"
             },
             "time": "2020-01-30T12:17:27+00:00"
-        },
-        {
-            "name": "su-sws/stanford_ssp",
-            "version": "8.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SU-SWS/stanford_ssp.git",
-                "reference": "c166d9a8bed1a9b7bf7657e7c9452836dac705dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SU-SWS/stanford_ssp/zipball/c166d9a8bed1a9b7bf7657e7c9452836dac705dc",
-                "reference": "c166d9a8bed1a9b7bf7657e7c9452836dac705dc",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.2",
-                "drupal/simplesamlphp_auth": "^3.1",
-                "ext-json": "*",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "su-sws/drupal-patches": "^8.0"
-            },
-            "type": "drupal-custom-module",
-            "extra": {
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "A Drupal Authentication Module.",
-            "support": {
-                "source": "https://github.com/SU-SWS/stanford_ssp/tree/8.2.5",
-                "issues": "https://github.com/SU-SWS/stanford_ssp/issues"
-            },
-            "time": "2022-07-08T20:24:12+00:00"
         },
         {
             "name": "symfony-cmf/routing",

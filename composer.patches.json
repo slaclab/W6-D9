@@ -14,6 +14,10 @@
     "drupal/viewsreference": {
       "Exposed filters not working for Views in Paragraphs": "https://www.drupal.org/files/issues/2021-12-07/viewsreference-exposed_filters_not_working-3129609-12.patch"
     },
+    "drupal/viewsreference_filter": {
+      "Multiple blocks on a page share settings": "https://www.drupal.org/files/issues/2021-06-07/viewsreference_filter-shared_config-3132416-8.patch",
+      "Taxonomy autocomplete shows Array after settings are saved": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-and-sort-combined-3201294-6--3168765-4.patch"
+    },
     "drupal/entity_reference_revisions": {
       "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
     }

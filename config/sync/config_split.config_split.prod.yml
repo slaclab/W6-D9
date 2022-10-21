@@ -11,6 +11,7 @@ module: {  }
 theme: {  }
 blacklist:
   - google_tag.container.main
+  - simplesamlphp_auth.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

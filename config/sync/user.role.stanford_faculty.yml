@@ -1,0 +1,11 @@
+uuid: 2d474b58-b859-4943-858c-7f71d60a05e6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 5Vm5wwYvL9cixzOqX2aUdfHLoZhPTJr0oHrLgP-vrV0
+id: stanford_faculty
+label: 'Stanford Faculty'
+weight: 6
+is_admin: null
+permissions: {  }

@@ -39,11 +39,11 @@
  */
 #}
 
-{% set tooltip %}
+{% set tooltip %}{% spaceless %}
   {{- hero_caption -}}
-  <p>{{- hero_credit -}}</p>
+  {% if hero_credit|field_value %}<p>{{- hero_credit -}}</p>{% endif %}
   {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
-{% endset %}
+{% endspaceless %}{% endset %}
 
 {% include '@components/article-hero/article-hero.twig' with {
   hero_image: content.field_image|field_value,

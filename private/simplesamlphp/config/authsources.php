@@ -33,7 +33,7 @@ $config = [
 
         // The entity ID of the IdP this SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.
-        'idp' => 'https://test-adfs.slac.stanford.edu/adfs/services/trust',
+        'idp' => 'https://adfs.slac.stanford.edu/adfs/services/trust',
 
         // The URL to the discovery service.
         // Can be NULL/unset, in which case a builtin discovery service will be used.

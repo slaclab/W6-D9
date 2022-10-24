@@ -18,7 +18,7 @@ function stanford_ssp_install() {
   $config = \Drupal::configFactory()
     ->getEditable('simplesamlphp_auth.settings');
   $config->set('activate', TRUE);
-  $config->set('login_link_display_name', 'SUNetID Login');
+  $config->set('login_link_display_name', 'Log in with your SLAC ID');
   $config->set('mail_attr', 'mail');
   $config->set('unique_id', 'uid');
   $config->set('user_name', 'uid');

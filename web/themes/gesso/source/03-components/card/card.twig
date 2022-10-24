@@ -9,7 +9,7 @@
 {% if is_teaser %}
   {% if kicker and type %}
     {% set kicker %}
-    {{ type }} {{ kicker }}
+    {{ type }} · {{ kicker }}
     {% endset %}
   {% elseif type and not kicker %}
     {% set kicker = type %}

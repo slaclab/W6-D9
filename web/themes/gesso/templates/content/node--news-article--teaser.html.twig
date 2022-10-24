@@ -102,7 +102,7 @@
 {% include '@components/card/card.twig' with {
   'title': label,
   'url': card_link,
-  'kicker': kicker,
+  'kicker': kicker|trim,
   'type': content.field_type|field_value,
   'footer': footer,
   'media': content.field_teaser_image|field_value,

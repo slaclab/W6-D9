@@ -4,5 +4,5 @@
 ]|join(' ')|trim %}
 
 <a {{ add_attributes({ 'class': classes })}} href="{{ url }}" title="{{ title }}" rel="home">
-  <img class="c-logo__image" src="{{ logo }}" alt="{{ title }}" />
+  <img class="c-logo__image" src="{{ logo }}" alt="{{ title }}" loading="{{ loading|default("lazy") }}" width="{{ width }}" height="{{ height }}" />
 </a>

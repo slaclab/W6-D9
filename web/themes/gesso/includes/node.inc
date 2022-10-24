@@ -111,9 +111,9 @@ function gesso_preprocess_node__event(&$vars) {
       $vars['end_date'] = NULL;
       $vars['formatted_date_time'] = date('l, F j, Y', $start_date) . '<br>';
       if (date('a', $start_date) == date('a', $end_date)) {
-        $vars['formatted_date_time'] .= date('g:i', $start_date) . '&ndash;' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= date('g:i', $start_date) . '&ndash;' . str_replace('m', '.m.', date('g:i a T', $end_date));
       } else {
-        $vars['formatted_date_time'] .= date('g:i a', $start_date) . '&ndash;' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= str_replace('m', '.m.', date('g:i a', $start_date)) . '&ndash;' . str_replace('m', '.m.', date('g:i a T', $end_date));
       }
     } else {
       $vars['end_date'] = [

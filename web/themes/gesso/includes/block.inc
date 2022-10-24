@@ -6,6 +6,7 @@
  */
 
 use Drupal\block_content\BlockContentInterface;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -22,6 +23,17 @@ function gesso_theme_suggestions_block_alter(array &$suggestions, array $variabl
     if (!empty($variables['elements']['#id'])) {
       $suggestions[] = 'block__' . $variables['elements']['#id'];
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_container().
+ */
+function gesso_preprocess_container(&$variables) {
+  if (isset($variables['attributes']['class']) &&
+      in_array('addtocal', $variables['attributes']['class']) &&
+      isset($variables['children'])) {
+    $variables['children'] = Markup::create('Add to calendar');
   }
 }
 

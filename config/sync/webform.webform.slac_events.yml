@@ -14,8 +14,8 @@ uid: 1
 template: false
 archive: false
 id: slac_events
-title: 'SLAC Events'
-description: '<p>SLAC Events</p>'
+title: 'SLAC events'
+description: '<p>SLAC events</p>'
 category: ''
 elements: |-
   name:

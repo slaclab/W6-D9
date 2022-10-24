@@ -112,7 +112,7 @@ function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_st
       $data = \Drupal::cache()->get($cid);
       if (!$data) {
         $options = [];
-        $options[''] = t('Show All');
+        $options[''] = t('Show all');
         $query = \Drupal::entityQuery('node');
         $query->condition('type', $node_type)
           ->condition('status', 1)

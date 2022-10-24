@@ -130,8 +130,10 @@
 
 {% set kicker %}
 {{- node.getEventTense() }}
-Event ·
-{{ content.field_text|field_value -}}
+Event
+  {% if content.field_text|field_value %}
+    · {{ content.field_text|field_value -}}
+  {% endif %}
 {% endset %}
 
 {% include '@templates/event-detail/event-detail.twig' with {

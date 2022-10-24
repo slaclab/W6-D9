@@ -63,7 +63,7 @@ const FiftyFiftyargs = {
 };
 
 const settings = {
-  title: 'Templates/Event Detail',
+  title: 'Templates/Event detail',
 };
 
 const EventDetail = args =>

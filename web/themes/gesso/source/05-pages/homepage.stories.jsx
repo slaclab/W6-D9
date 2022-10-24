@@ -168,7 +168,7 @@ const Homepage = args => (
     {parse(
       sectionTwigTemplate({
         has_constrain: true,
-        section_kicker: 'SLAC Events',
+        section_kicker: 'SLAC events',
         section_title: "What's Happening",
         section_title_url: '#0',
         section_content: gridTwigTemplate({

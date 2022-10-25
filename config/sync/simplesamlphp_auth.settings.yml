@@ -1,0 +1,10 @@
+user_name: 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6'
+unique_id: 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6'
+mail_attr: 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6'
+role:
+  population: 'content_editor:urn:oid:1.3.6.1.4.1.5923.1.1.1.7,=,http://slac.stanford.edu/drupal/Editor|author:urn:oid:1.3.6.1.4.1.5923.1.1.1.7,=,http://slac.stanford.edu/drupal/Author|reviewer:urn:oid:1.3.6.1.4.1.5923.1.1.1.7,=,http://slac.stanford.edu/drupal/Reviewer|manager:urn:oid:1.3.6.1.4.1.5923.1.1.1.7,=,http://slac.stanford.edu/drupal/Developer|administrator:urn:oid:1.3.6.1.4.1.5923.1.1.1.7,=,http://slac.stanford.edu/drupal/Administrator'
+  eval_every_time: 2
+sync:
+  mail: true
+  user_name: true
+autoenablesaml: true

@@ -17,6 +17,9 @@ Drupal.behaviors.megaMenu = {
           imagePath: settings.gesso.gessoImagePath,
         });
         mobileMenu.init();
+        if (Drupal.behaviors.search) {
+          Drupal.behaviors.search.attach(mobileMenu.overlay);
+        }
       });
     }
   },

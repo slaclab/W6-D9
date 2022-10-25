@@ -148,6 +148,8 @@ function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_st
       }
     }
 
+    krsort($options);
+    
     if ($node_type == 'event') {
       $form['event_archive_year'] = [
         '#type' => 'select',

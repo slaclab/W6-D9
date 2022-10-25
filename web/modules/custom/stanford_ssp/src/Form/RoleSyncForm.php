@@ -9,7 +9,6 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\simplesamlphp_auth\Form\SyncingSettingsForm;
 use Drupal\stanford_ssp\Service\StanfordSSPDrupalAuth;
-use Drupal\stanford_ssp\Service\StanfordSSPWorkgroupApiInterface;
 use Drupal\user\RoleInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -28,13 +27,6 @@ class RoleSyncForm extends SyncingSettingsForm {
   protected $moduleHandler;
 
   /**
-   * Workgroup API service.
-   *
-   * @var \Drupal\stanford_ssp\Service\StanfordSSPWorkgroupApiInterface
-   */
-  protected $workgroupApi;
-
-  /**
    * Entity type manager service.
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -48,7 +40,6 @@ class RoleSyncForm extends SyncingSettingsForm {
     return new static(
       $container->get('config.factory'),
       $container->get('module_handler'),
-      $container->get('stanford_ssp.workgroup_api'),
       $container->get('entity_type.manager')
     );
   }
@@ -56,10 +47,9 @@ class RoleSyncForm extends SyncingSettingsForm {
   /**
    * {@inheritdoc}
    */
-  public function __construct(ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, StanfordSSPWorkgroupApiInterface $workgroup_api, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(ConfigFactoryInterface $config_factory, ModuleHandlerInterface $module_handler, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($config_factory);
     $this->moduleHandler = $module_handler;
-    $this->workgroupApi = $workgroup_api;
     $this->entityTypeManager = $entity_type_manager;
   }
 
@@ -98,21 +88,19 @@ class RoleSyncForm extends SyncingSettingsForm {
       '#title' => $this->t('Add Role'),
       '#options' => user_role_names(TRUE),
     ];
-    unset($form['user_info']['role_population']['add']['role_id']['#options'][RoleInterface::AUTHENTICATED_ID]);
     unset($form['user_info']['role_population']['add']['role_id']['#options'][RoleInterface::ANONYMOUS_ID]);
 
     $form['user_info']['role_population']['add']['attribute'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Attribute Key'),
-      '#description' => $this->t('The value in the SAML data to use as the key for matching. eg: eduPersonEnttitlement'),
+      '#title' => $this->t('Key'),
+      '#description' => $this->t('The value in the SAML data to use as the key for matching. eg: urn:oid:x.x.x.x'),
       '#attributes' => ['placeholder' => $this->getDefaultSamlAttribute()],
     ];
 
-    $form['user_info']['role_population']['add']['workgroup'] = [
+    $form['user_info']['role_population']['add']['slac_role'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Attribute Value'),
-      '#description' => $this->t('The value in the SAML data to use as the value for matching. eg: uit:sws'),
-      // '#element_validate' => [[$this, 'validateWorkgroup']],
+      '#title' => $this->t('Value'),
+      '#description' => $this->t('The value in the SAML data to use as the value for matching. eg: http://slac.stanford.edu/drupal/role_name'),
     ];
     $form['user_info']['role_population']['add']['add_mapping'] = [
       '#type' => 'submit',
@@ -135,51 +123,7 @@ class RoleSyncForm extends SyncingSettingsForm {
       StanfordSSPDrupalAuth::ROLE_ADDITIVE => $this->t('Grant new roles only. Will only add roles based on role assignments.'),
     ];
 
-    $this->buildWorkgroupApiForm($form, $form_state);
     return $form;
-  }
-
-  /**
-   * Build the workgroup api form portion.
-   *
-   * @param array $form
-   *   Complete form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Current form state.
-   */
-  protected function buildWorkgroupApiForm(array &$form, FormStateInterface $form_state) {
-    $stanford_config = $this->config('stanford_ssp.settings');
-    $form['user_info']['use_workgroup_api'] = [
-      '#type' => 'radios',
-      '#title' => $this->t('Source to validate role mapping groups against.'),
-      '#default_value' => $stanford_config->get('use_workgroup_api') ?: 0,
-      '#options' => [
-        $this->t('SAML Attribute'),
-        $this->t('Workgroup API'),
-      ],
-    ];
-
-    $states = [
-      'visible' => [
-        'input[name="use_workgroup_api"]' => ['value' => 1],
-      ],
-    ];
-
-    $form['user_info']['workgroup_api_cert'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Path to Workgroup API SSL Certificate.'),
-      '#description' => $this->t('For more information on how to get a certificate please see: https://uit.stanford.edu/service/registry/certificates.'),
-      '#default_value' => $stanford_config->get('workgroup_api_cert'),
-      '#states' => $states,
-    ];
-
-    $form['user_info']['workgroup_api_key'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Key to Workgroup API SSL Key.'),
-      '#description' => $this->t('For more information on how to get a key please see: https://uit.stanford.edu/service/registry/certificates.'),
-      '#default_value' => $stanford_config->get('workgroup_api_key'),
-      '#states' => $states,
-    ];
   }
 
   /**
@@ -190,9 +134,9 @@ class RoleSyncForm extends SyncingSettingsForm {
    */
   protected function getRoleHeaders() {
     return [
-      $this->t('Role'),
+      $this->t('Drupal Role'),
       $this->t('Attribute'),
-      $this->t('Workgroup'),
+      $this->t('SLAC Role'),
       $this->t('Actions'),
     ];
   }
@@ -237,7 +181,7 @@ class RoleSyncForm extends SyncingSettingsForm {
   }
 
   /**
-   * Add/remove a new workgroup mapping callback.
+   * Add/remove a new slac_role mapping callback.
    *
    * @param array $form
    *   Compolete Form.
@@ -252,8 +196,8 @@ class RoleSyncForm extends SyncingSettingsForm {
   }
 
   /**
-   * Add a new workgroup mapping submit callback.
-   *
+   * Add a new slac_role mapping submit callback.
+   *slac_role
    * @param array $form
    *   Compolete Form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
@@ -262,13 +206,13 @@ class RoleSyncForm extends SyncingSettingsForm {
   public function addMappingCallback(array $form, FormStateInterface $form_state) {
     $user_input = $form_state->getUserInput();
     $role_id = $user_input['role_population']['add']['role_id'];
-    $workgroup = trim(Html::escape($user_input['role_population']['add']['workgroup']));
+    $slac_role = trim(Html::escape($user_input['role_population']['add']['slac_role']));
     $attribute = trim(Html::escape($user_input['role_population']['add']['attribute']));
-    if ($role_id && $workgroup) {
+    if ($role_id && $slac_role) {
       // If the user didn't enter an attribute, use the default one from config.
       $attribute = $attribute ?: $this->getDefaultSamlAttribute();
 
-      $mapping_string = "$role_id:$attribute,=,$workgroup";
+      $mapping_string = "$role_id:$attribute,=,$slac_role";
       $form_state->set(['mappings', $mapping_string], $mapping_string);
 
       $this->messenger()
@@ -279,7 +223,7 @@ class RoleSyncForm extends SyncingSettingsForm {
   }
 
   /**
-   * Remove a workgroup mapping submit callback.
+   * Remove a slac_role mapping submit callback.
    *
    * @param array $form
    *   Compolete Form.
@@ -294,80 +238,20 @@ class RoleSyncForm extends SyncingSettingsForm {
   }
 
   /**
-   * Validate the workgroup textfield input.
-   *
-   * @param array $element
-   *   Field render array.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   Current form state.
-   */
-  public function validateWorkgroup(array $element, FormStateInterface $form_state) {
-    $workgroup = $form_state->getValue($element['#parents']);
-    if ($workgroup && $this->workgroupApi->isWorkgroupValid($workgroup) === FALSE) {
-      $form_state->setError($element, $this->t('Workgroup is not accessible. Please verify permissions are public.'));
-    }
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $mappings = $form_state->get('mappings');
 
     // Add the role mapping that wasn't added via the ajax callback.
-    if ($workgroup = $form_state->getValue(['role_population', 'add', 'workgroup'])) {
+    if ($slac_role = $form_state->getValue(['role_population', 'add', 'slac_role'])) {
       $role_id = $form_state->getValue(['role_population', 'add', 'role_id']);
       $attribute = $form_state->getValue(['role_population', 'add', 'attribute']) ?: 'eduPersonEnttitlement';
-      $mappings[] = "$role_id:$attribute,=,$workgroup";
+      $mappings[] = "$role_id:$attribute,=,$slac_role";
     }
 
     $form_state->setValue('role_population', implode('|', $mappings));
     parent::validateForm($form, $form_state);
-
-    // If using SAML attributes, unset api settings.
-    if (!$form_state->getValue('use_workgroup_api')) {
-      $form_state->setValue('workgroup_api_cert', '');
-      $form_state->setValue('workgroup_api_key', '');
-      return;
-    }
-
-    $cert_path = $form_state->getValue('workgroup_api_cert');
-    $key_path = $form_state->getValue('workgroup_api_key');
-
-    // When the cert values are overridden by settings.php, we will skip
-    // validating the files are accurate.
-    // @codeCoverageIgnoreStart
-    if (self::hasOverriddenApiCert()) {
-      return;
-    }
-    // @codeCoverageIgnoreEnd
-
-    // Both cert and Key have to be populated.
-    if (!$cert_path || !$key_path) {
-      $form_state->setError($form['user_info']['workgroup_api_cert'], $this->t('Cert and Key are required if using workgroup API.'));
-    }
-
-    // User error when they put in the same path for both cert and key.
-    if ($cert_path == $key_path) {
-      $form_state->setError($form['user_info']['workgroup_api_cert'], $this->t('Cert and Key must be different.'));
-    }
-
-    if (!is_file($cert_path)) {
-      $form_state->setError($form['user_info']['workgroup_api_cert'], $this->t('Cert must be a file path.'));
-    }
-
-    if (!is_file($key_path)) {
-      $form_state->setError($form['user_info']['workgroup_api_key'], $this->t('Cert must be a file path.'));
-    }
-
-    // Dont bother testing the workgroup api connection if there are any errors.
-    if (!$form_state::hasAnyErrors()) {
-      $this->workgroupApi->setCert($cert_path);
-      $this->workgroupApi->setKey($key_path);
-      if (!$this->workgroupApi->connectionSuccessful()) {
-        $form_state->setError($form['user_info']['workgroup_api_cert'], $this->t('Cert information invalid. See database logs for more information.'));
-      }
-    }
   }
 
   /**
@@ -377,9 +261,6 @@ class RoleSyncForm extends SyncingSettingsForm {
     parent::submitForm($form, $form_state);
 
     $this->config('stanford_ssp.settings')
-      ->set('use_workgroup_api', $form_state->getValue('use_workgroup_api'))
-      ->set('workgroup_api_cert', $form_state->getValue('workgroup_api_cert'))
-      ->set('workgroup_api_key', $form_state->getValue('workgroup_api_key'))
       ->save();
   }
 
@@ -392,20 +273,6 @@ class RoleSyncForm extends SyncingSettingsForm {
   protected function getDefaultSamlAttribute() {
     return $this->config('stanford_ssp.settings')
       ->get('saml_attribute') ?: 'eduPersonEntitlement';
-  }
-
-  /**
-   * Check if the api cert paths are overridden by some other manner.
-   *
-   * @return bool
-   *   If the cert and key paths are overridden.
-   *
-   * @codeCoverageIgnore
-   *   Ignore so that we can simulate this in the test.
-   */
-  protected static function hasOverriddenApiCert() {
-    $config = \Drupal::config('stanford_ssp.settings');
-    return $config->hasOverrides('workgroup_api_cert') && $config->hasOverrides('workgroup_api_key');
   }
 
 }

@@ -4,7 +4,6 @@ namespace Drupal\Tests\stanford_ssp\Kernel\Form;
 
 use Drupal\Core\Form\FormState;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\stanford_ssp\Service\StanfordSSPWorkgroupApiInterface;
 use Drupal\user\Entity\Role;
 use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -120,57 +119,8 @@ class RoleSyncFormTest extends KernelTestBase {
     $form_state = new FormState();
     $form_state->setValues([
       'unique_id' => $this->randomMachineName(),
-      'user_name' => $this->randomMachineName(),
-      'use_workgroup_api' => FALSE,
-      'workgroup_api_cert' => __DIR__ . '/test.crt',
+      'user_name' => $this->randomMachineName()
     ]);
-
-    // Not configured to use workgroup api.
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertFalse($form_state::hasAnyErrors());
-    $this->assertEmpty(\Drupal::config('stanford_ssp.settings')
-      ->get('workgroup_api_cert'));
-
-    // Cert set, but key not set.
-    $form_state->setValue('use_workgroup_api', TRUE);
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertTrue($form_state::hasAnyErrors());
-
-    // Cert and keys are the same error.
-    $form_state->clearErrors();
-    $form_state->setValue('workgroup_api_key', $form_state->getValue('workgroup_api_cert'));
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertTrue($form_state::hasAnyErrors());
-
-    // Key path is not a file error.
-    $form_state->clearErrors();
-    $form_state->setValue('workgroup_api_key', $this->randomMachineName());
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertTrue($form_state::hasAnyErrors());
-
-    // Cert path is not a file error.
-    $form_state->clearErrors();
-    $form_state->setValue('workgroup_api_key', __DIR__ . '/test.key');
-    $form_state->setValue('workgroup_api_cert', $this->randomMachineName());
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertTrue($form_state::hasAnyErrors());
-
-    // Workgroup api connection unsuccessful error.
-    $this->setWorkgroupApiMock();
-    $form_state->clearErrors();
-    $form_state->setValue('workgroup_api_key', __DIR__ . '/test.key');
-    $form_state->setValue('workgroup_api_cert', __DIR__ . '/test.crt');
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertTrue($form_state::hasAnyErrors());
-
-    // Workgroup api connection successful config check.
-    $this->setWorkgroupApiMock(TRUE);
-    $form_state->clearErrors();
-    \Drupal::formBuilder()->submitForm($this->formId, $form_state);
-    $this->assertFalse($form_state::hasAnyErrors());
-
-    $this->assertEquals(__DIR__ . '/test.crt', \Drupal::config('stanford_ssp.settings')
-      ->get('workgroup_api_cert'));
   }
 
   /**
@@ -197,19 +147,6 @@ class RoleSyncFormTest extends KernelTestBase {
     \Drupal::formBuilder()->submitForm($this->formId, $form_state);
     $this->assertEquals('role1:eduPersonEnttitlement,=,foo:bar', \Drupal::config('simplesamlphp_auth.settings')
       ->get('role.population'));
-  }
-
-  /**
-   * Set the workgroup mock object to the drupal container.
-   *
-   * @param bool $successful_connection
-   *   If the connection should be successful.
-   */
-  protected function setWorkgroupApiMock($successful_connection = FALSE) {
-    $workgroup_api = $this->createMock(StanfordSSPWorkgroupApiInterface::class);
-    $workgroup_api->method('connectionSuccessful')
-      ->willReturn($successful_connection);
-    \Drupal::getContainer()->set('stanford_ssp.workgroup_api', $workgroup_api);
   }
 
 }

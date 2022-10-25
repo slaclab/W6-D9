@@ -22,7 +22,7 @@ class SamlLoginBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    return ['link_text' => 'SLAC ID Login'] + parent::defaultConfiguration();
+    return ['link_text' => 'Log in with your SLAC ID'] + parent::defaultConfiguration();
   }
 
   /**

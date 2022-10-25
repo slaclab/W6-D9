@@ -9,7 +9,6 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\externalauth\ExternalAuthInterface;
 use Drupal\stanford_ssp\Service\StanfordSSPAuthManager;
 use Drupal\stanford_ssp\Service\StanfordSSPDrupalAuth;
-use Drupal\stanford_ssp\Service\StanfordSSPWorkgroupApiInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\user\UserInterface;
 use Psr\Log\LoggerInterface;
@@ -75,9 +74,6 @@ class StanfordSSPDrupalAuthTest extends UnitTestCase {
         'debug' => TRUE,
         'register_users' => TRUE,
       ],
-      'stanford_ssp.settings' => [
-        'use_workgroup_api' => TRUE,
-      ],
     ]);
     $account = $this->createMock(UserInterface::class);
     $account->method('getRoles')->willReturn([$this->removeRole]);
@@ -95,10 +91,8 @@ class StanfordSSPDrupalAuthTest extends UnitTestCase {
     $external_auth->method('login')->willReturn($return_account ? $account : NULL);
     $messenger = $this->createMock(MessengerInterface::class);
     $module_handler = $this->createMock(ModuleHandlerInterface::class);
-    $workgroup_api = $this->createMock(StanfordSSPWorkgroupApiInterface::class);
-    $workgroup_api->method('getRolesFromAuthName')->willReturn([$this->addRole]);
 
-    return new StanfordSSPDrupalAuth($auth, $config_factory, $entity_type_manager, $logger, $external_auth, $account, $messenger, $module_handler, $workgroup_api);
+    return new StanfordSSPDrupalAuth($auth, $config_factory, $entity_type_manager, $logger, $external_auth, $account, $messenger, $module_handler);
   }
 
   /**

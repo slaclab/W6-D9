@@ -20,7 +20,8 @@
   <form class="c-search__form c-mega-menu__section" id="{{ search_form_id }}" hidden>
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
-       {% include '@components/search/_search-input.twig' %}
+        <div class="c-search__hidden"></div>
+        {% include '@components/search/_search-input.twig' %}
         <fieldset class="c-search__fieldset">
           <div>
             <input type="radio" name="search_type" value="site" id="{{ site_search_id }}" checked/>

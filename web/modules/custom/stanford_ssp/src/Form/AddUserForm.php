@@ -74,8 +74,8 @@ class AddUserForm extends FormBase {
 
     $form['sunetid'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('SUNetID'),
-      '#description' => $this->t('Enter the SUNetID of the user you wish to add.'),
+      '#title' => $this->t('SLAC ID'),
+      '#description' => $this->t('Enter the SLAC ID of the user you wish to add.'),
       '#required' => TRUE,
     ];
 
@@ -114,7 +114,7 @@ class AddUserForm extends FormBase {
 
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Add SUNetID User'),
+      '#value' => $this->t('Add SLAC ID User'),
     ];
     return $form;
   }
@@ -143,7 +143,7 @@ class AddUserForm extends FormBase {
     $form_state->setValue('sunetid', $sunet);
 
     if ($this->authmap->getUid($sunet, 'simplesamlphp_auth')) {
-      $form_state->setError($form['sunetid'], $this->t('Could not create user. Authname %name already exists. Has the user already been created with a different username but the same SUNetID?', ['%name' => $sunet]));
+      $form_state->setError($form['sunetid'], $this->t('Could not create user. Authname %name already exists. Has the user already been created with a different username but the same SLAC ID?', ['%name' => $sunet]));
       return;
     }
 

@@ -984,14 +984,11 @@ $config = [
      * Both Shibboleth and SAML 2.0
      */
     'authproc.idp' => [
-        /* Enable the authproc filter below to add URN prefixes to all attributes
-        10 => array[
-            'class' => 'core:AttributeMap', 'addurnprefix'
-        ],
-        */
-        /* Enable the authproc filter below to automatically generated eduPersonTargetedID.
-        20 => 'core:TargetedID',
-        */
+        // Enable the authproc filter below to add URN prefixes to all attributes
+        10 => array('class' => 'core:AttributeMap', 'addurnprefix'),
+
+        // Enable the authproc filter below to automatically generated eduPersonTargetedID.
+        // 20 => array('class' => 'core:TargetedID', 'attributename' => 'uid'),
 
         // Adopts language from attribute to use in UI
         30 => 'core:LanguageAdaptor',

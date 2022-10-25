@@ -40,7 +40,7 @@ class SamlLoginBlockTest extends UnitTestCase {
    * Test configuration and form methods.
    */
   public function testBlock() {
-    $this->assertEquals(['link_text' => 'SUNetID Login'], $this->block->defaultConfiguration());
+    $this->assertEquals(['link_text' => 'SLAC ID Login'], $this->block->defaultConfiguration());
     $form_state = new FormState();
     $form = $this->block->blockForm([], $form_state);
     $this->assertCount(1, $form);
@@ -74,7 +74,7 @@ class SamlLoginBlockTest extends UnitTestCase {
     $this->assertCount(1, $build);
     $this->assertArrayHasKey('saml_link', $build);
     $this->assertTrue($build['saml_link']['#type'] == 'link');
-    $this->assertTrue($build['saml_link']['#title'] == 'SUNetID Login');
+    $this->assertTrue($build['saml_link']['#title'] == 'SLAC ID Login');
     $this->assertInstanceOf('\Drupal\Core\Url', $build['saml_link']['#url']);
   }
 

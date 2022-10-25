@@ -112,7 +112,7 @@ class RoleSyncForm extends SyncingSettingsForm {
       '#type' => 'textfield',
       '#title' => $this->t('Attribute Value'),
       '#description' => $this->t('The value in the SAML data to use as the value for matching. eg: uit:sws'),
-      '#element_validate' => [[$this, 'validateWorkgroup']],
+      // '#element_validate' => [[$this, 'validateWorkgroup']],
     ];
     $form['user_info']['role_population']['add']['add_mapping'] = [
       '#type' => 'submit',

@@ -1206,6 +1206,23 @@ display:
                     filter_rewrite_values: '- Any -|Show all'
                   collapsible: false
                   is_secondary: false
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         status:
           id: status
@@ -1446,6 +1463,7 @@ display:
         exposed_form: false
         style: false
         row: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''

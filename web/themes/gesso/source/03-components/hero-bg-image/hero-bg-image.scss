@@ -17,15 +17,21 @@
 }
 
 .c-hero-bg-image {
+  align-items: flex-end;
   color: var(--gesso-text-color);
+  display: flex;
+  min-height: 74.362819vh;
   overflow: hidden;
   padding: 0;
   position: relative;
   text-align: center;
 
   > img {
-    height: 74.362819vh;
+    height: 100%;
+    left: 0;
     object-fit: cover;
+    position: absolute;
+    top: 0;
     width: 100%;
   }
 
@@ -66,14 +72,6 @@
   }
 
   @media (min-height: 768px) {
-    > img {
-      aspect-ratio: initial;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
     height: 768px;
   }
 }
@@ -87,15 +85,13 @@
 }
 
 .c-hero-bg-image__content {
-  bottom: rem(gesso-spacing(5));
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
+  padding-block: rem(gesso-spacing(5));
+  position: relative;
   width: 100%;
   z-index: 2;
 
   @media (min-height: 768px) {
-    bottom: rem(gesso-spacing(10));
+    padding-block: rem(gesso-spacing(10));
   }
 }
 
@@ -115,7 +111,7 @@
     max-width: 60%;
   }
 
-  @media (max-height: 767px) {
+  @media (max-height: 767px) and (min-width: gesso-breakpoint(desktop-lg)) {
     font-size: rem(gesso-font-size(8));
     max-width: 60%;
   }

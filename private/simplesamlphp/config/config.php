@@ -987,6 +987,14 @@ $config = [
         // Enable the authproc filter below to add URN prefixes to all attributes
         10 => array('class' => 'core:AttributeMap', 'addurnprefix'),
 
+        // Create a username from the provided email address
+        11 => array(
+            'class' => 'core:AttributeAlter',
+            'subject' => 'urn:oid:0.9.2342.19200300.100.1.3',
+            'pattern' => '/@elac.stanford.edu',
+            'replacement' => '',
+        ),
+
         // Enable the authproc filter below to automatically generated eduPersonTargetedID.
         // 20 => array('class' => 'core:TargetedID', 'attributename' => 'uid'),
 

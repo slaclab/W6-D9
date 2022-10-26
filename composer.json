@@ -61,6 +61,7 @@
     "drupal/oembed_providers": "^2.0",
     "drupal/pantheon_advanced_page_cache": "^2.0",
     "drupal/paragraphs": "^1.14",
+    "drupal/path_redirect_import": "^2.0",
     "drupal/pathauto": "^1.11",
     "drupal/rabbit_hole": "^1.0@beta",
     "drupal/redirect": "^1.6",

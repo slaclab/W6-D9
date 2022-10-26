@@ -991,7 +991,7 @@ $config = [
         11 => array(
             'class' => 'core:AttributeAlter',
             'subject' => 'urn:oid:0.9.2342.19200300.100.1.3',
-            'pattern' => '/@elac.stanford.edu',
+            'pattern' => '/@slac.stanford.edu/',
             'replacement' => '',
         ),
 

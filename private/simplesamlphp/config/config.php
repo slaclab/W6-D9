@@ -1037,17 +1037,31 @@ $config = [
      * Both Shibboleth and SAML 2.0
      */
     'authproc.sp' => [
-        /*
+        // Map oid names
         10 => [
-            'class' => 'core:AttributeMap', 'removeurnprefix'
+            'class' => 'core:AttributeMap',
+            'oid2name'
         ],
-        */
-        // Create a username from the provided email address
+
         11 => [
+            'class' => 'core:AttributeMap',
+            'removeurnprefix'
+        ],
+
+        // Create a username from the provided email address
+        12 => [
             'class' => 'core:AttributeAlter',
-            'subject' => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6',
+            'subject' => 'eduPersonPrincipalName',
             'pattern' => '/@slac.stanford.edu/',
             'replacement' => '',
+        ],
+
+        // uid is not included in the response as a separate attribute. Since
+        // the stanford_ssp module depends on it, we set uid as
+        // eduPersonPrincipalName.
+        13 => [
+            'class' => 'core:AttributeCopy',
+            'eduPersonPrincipalName' => 'uid',
         ],
 
         /*

@@ -987,14 +987,6 @@ $config = [
         // Enable the authproc filter below to add URN prefixes to all attributes
         10 => array('class' => 'core:AttributeMap', 'addurnprefix'),
 
-        // Create a username from the provided email address
-        11 => array(
-            'class' => 'core:AttributeAlter',
-            'subject' => 'eduPersonPrincipalName',
-            'pattern' => '/@slac.stanford.edu/',
-            'replacement' => '',
-        ),
-
         // Enable the authproc filter below to automatically generated eduPersonTargetedID.
         // 20 => array('class' => 'core:TargetedID', 'attributename' => 'uid'),
 
@@ -1050,6 +1042,18 @@ $config = [
             'class' => 'core:AttributeMap', 'removeurnprefix'
         ],
         */
+        // Create a username from the provided email address
+        11 => [
+            'class' => 'core:AttributeAlter',
+            'subject' => 'eduPersonPrincipalName',
+            'pattern' => '/@slac.stanford.edu/',
+            'replacement' => '',
+        ],
+
+        50 => [
+            'class' => 'core:AttributeCopy',
+            'eduPersonPrincipalName' => 'uid',
+        ],
 
         /*
          * Generate the 'group' attribute populated from other variables, including eduPersonAffiliation.

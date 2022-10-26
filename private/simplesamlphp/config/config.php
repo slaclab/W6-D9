@@ -1045,14 +1045,9 @@ $config = [
         // Create a username from the provided email address
         11 => [
             'class' => 'core:AttributeAlter',
-            'subject' => 'eduPersonPrincipalName',
+            'subject' => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6',
             'pattern' => '/@slac.stanford.edu/',
             'replacement' => '',
-        ],
-
-        50 => [
-            'class' => 'core:AttributeCopy',
-            'eduPersonPrincipalName' => 'uid',
         ],
 
         /*

@@ -985,7 +985,7 @@ $config = [
      */
     'authproc.idp' => [
         // Enable the authproc filter below to add URN prefixes to all attributes
-        10 => array('class' => 'core:AttributeMap', 'addurnprefix'),
+        // 10 => array('class' => 'core:AttributeMap', 'addurnprefix'),
 
         // Enable the authproc filter below to automatically generated eduPersonTargetedID.
         // 20 => array('class' => 'core:TargetedID', 'attributename' => 'uid'),

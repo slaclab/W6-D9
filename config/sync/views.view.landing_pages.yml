@@ -423,7 +423,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-page-title\">\r\n  <h1>Events</h1>\r\n<p class=\"c-lede\">SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"/news-and-events/events/subscribe\" class=\"c-button c-button--chevron\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"/news-and-events/events/archive\" class=\"c-button c-button--chevron\">Events archive</a></p>\r\n</div>"
+            value: "<div class=\"c-page-title\">\r\n  <h1>Events</h1>\r\n<p class=\"c-lede\">SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n\r\n<p><a href=\"http://eepurl.com/h67YzH\" class=\"c-button c-button--chevron\">Subscribe to events newsletter</a></p>\r\n<p><a href=\"/news-and-events/events/archive\" class=\"c-button c-button--chevron\">Events archive</a></p>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
@@ -699,7 +699,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show all'
+                    filter_rewrite_values: '- Any -|Show All'
                   collapsible: false
                   is_secondary: false
       sorts:
@@ -891,16 +891,7 @@ display:
         options:
           relationship: none
           view_mode: teaser
-      query:
-        type: views_query
-        options:
-          query_comment: ''
-          disable_sql_rewrite: false
-          distinct: true
-          replica: false
-          query_tags: {  }
       defaults:
-        query: false
         exposed_form: false
         style: false
         row: false
@@ -949,7 +940,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
             format: full_html
           tokenize: false
       sorts:
@@ -1195,7 +1186,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show all'
+                    filter_rewrite_values: '- Any -|Show All'
                   collapsible: false
                   is_secondary: false
               field_type_target_id:
@@ -1203,9 +1194,26 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Show all'
+                    filter_rewrite_values: '- Any -|Show All'
                   collapsible: false
                   is_secondary: false
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: hour
       filters:
         status:
           id: status
@@ -1329,7 +1337,7 @@ display:
           exposed: true
           expose:
             operator_id: field_research_area_target_id_op
-            label: 'Filter by research area'
+            label: 'Filter by Research Area'
             description: ''
             use_operator: false
             operator: field_research_area_target_id_op
@@ -1433,19 +1441,11 @@ display:
         options:
           relationship: none
           view_mode: teaser
-      query:
-        type: views_query
-        options:
-          query_comment: ''
-          disable_sql_rewrite: false
-          distinct: true
-          replica: false
-          query_tags: {  }
       defaults:
-        query: false
         exposed_form: false
         style: false
         row: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -2099,7 +2099,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
+            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
             format: full_html
           tokenize: false
       sorts:
@@ -2402,7 +2402,7 @@ display:
           exposed: true
           expose:
             operator_id: field_audience_terms_target_id_op
-            label: 'Filter by audience'
+            label: 'Filter by Audience'
             description: ''
             use_operator: false
             operator: field_audience_terms_target_id_op
@@ -2443,17 +2443,8 @@ display:
         operator: AND
         groups:
           1: AND
-      query:
-        type: views_query
-        options:
-          query_comment: ''
-          disable_sql_rewrite: false
-          distinct: true
-          replica: false
-          query_tags: {  }
       defaults:
         cache: false
-        query: false
         pager: false
         exposed_form: false
         sorts: false

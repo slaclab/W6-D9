@@ -20,47 +20,47 @@ category: ''
 elements: |-
   full_name_of_point_of_contact:
     '#type': textfield
-    '#title': 'Full Name of Point of Contact'
+    '#title': 'Full name of point of contact'
     '#required': true
   email:
     '#type': email
-    '#title': 'Email of Point of Contact'
+    '#title': 'Email of point of contact'
     '#required': true
     '#default_value': '[current-user:mail]'
   phone_number_of_point_of_contact:
     '#type': tel
-    '#title': 'Phone Number of Point of Contact'
+    '#title': 'Phone number of point of contact'
     '#required': true
   name_of_group:
     '#type': textfield
-    '#title': 'Name of Group'
+    '#title': 'Name of group'
     '#required': true
   affiliation_of_group:
     '#type': textfield
-    '#title': 'Affiliation of Group'
+    '#title': 'Affiliation of group'
   number_of_tour_participants_max_25_:
     '#type': number
-    '#title': 'Number of Tour Participants (Max. 25)'
+    '#title': 'Number of tour participants (max. 25)'
     '#required': true
     '#max': 25
   number_of_tour_participants_under_the_age_of_18:
     '#type': number
-    '#title': 'Number of Tour Participants Under the Age of 18'
+    '#title': 'Number of tour participants under the age of 18'
     '#help': '<strong>Note: Participants must be at least 12 years old.</strong>'
     '#required': true
   age_range_of_tour_participants_under_the_age_of_18:
     '#type': textfield
-    '#title': 'Age Range of Tour Participants Under the Age of 18'
+    '#title': 'Age range of tour participants under the age of 18'
   group_tours_are_admitted_on_tuesdays_and_thursdays_9_a_m_12_p_m_:
     '#type': webform_section
-    '#title': 'Group tours are admitted on Tuesdays and Thursdays, 9 a.m. – 12 p.m. Pacific Time (PT). Please select up to three possible dates/times for your group tour.'
+    '#title': 'Group tours are admitted on Tuesdays and Thursdays, 9:00 a.m.–12:00 p.m. Pacific Time (PT). Please select up to three possible dates/times for your group tour.'
     '#title_tag': div
     '#title_attributes':
       class:
         - h5
     first_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
-      '#title': 'First Choice of Tour Date (Tuesdays or Thursdays)'
+      '#title': 'First choice of tour date (Tuesdays or Thursdays)'
       '#help': 'Enter date in format MM/DD/YYYY'
       '#placeholder': MM/DD/YYYY
       '#required': true
@@ -72,7 +72,7 @@ elements: |-
       '#date_date_format': m/d/Y
     first_choice_of_tour_start_time:
       '#type': webform_time
-      '#title': 'First Choice of Tour Start Time'
+      '#title': 'First choice of tour start time'
       '#required': true
       '#timepicker': true
       '#min': '09:00:00'
@@ -80,7 +80,7 @@ elements: |-
       '#step': 600
     second_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
-      '#title': 'Second Choice of Tour Date (Tuesdays or Thursdays)'
+      '#title': 'Second choice of tour date (Tuesdays or Thursdays)'
       '#help': 'Enter date in format MM/DD/YYYY'
       '#placeholder': MM/DD/YYYY
       '#date_days':
@@ -91,14 +91,14 @@ elements: |-
       '#date_date_format': m/d/Y
     second_choice_of_tour_start_time:
       '#type': webform_time
-      '#title': 'Second Choice of Tour Start Time'
+      '#title': 'Second choice of tour start time'
       '#timepicker': true
       '#min': '09:00:00'
       '#max': '12:00:00'
       '#step': 600
     third_choice_of_tour_date_tuesdays_or_thursdays_:
       '#type': date
-      '#title': 'Third Choice of Tour Date (Tuesdays or Thursdays)'
+      '#title': 'Third choice of tour date (Tuesdays or Thursdays)'
       '#help': 'Enter date in format MM/DD/YYYY'
       '#placeholder': MM/DD/YYYY
       '#date_days':
@@ -109,7 +109,7 @@ elements: |-
       '#date_date_format': m/d/Y
     third_choice_of_tour_start_time:
       '#type': webform_time
-      '#title': 'Third Choice of Tour Start Time'
+      '#title': 'Third choice of tour start time'
       '#timepicker': true
       '#min': '09:00:00'
       '#max': '12:00:00'
@@ -119,11 +119,11 @@ elements: |-
     '#title': 'Check this box if your tour dates are flexible.'
   additional_comments_e_g_accessibility_requirements_:
     '#type': textarea
-    '#title': 'Additional Comments (E.g. Accessibility Requirements)'
+    '#title': 'Additional comments (e.g. accessibility requirements)'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
-    '#submit__label': 'Submit Request'
+    '#submit__label': 'Submit request'
 css: ''
 javascript: ''
 settings:

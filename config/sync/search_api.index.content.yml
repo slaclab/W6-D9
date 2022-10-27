@@ -4,9 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_caption
+    - field.storage.media.field_boolean
     - field.storage.media.field_long_text
-    - field.storage.node.field_long_text
     - field.storage.node.field_lede
+    - field.storage.node.field_long_text
     - field.storage.node.field_name
     - search_api.server.pantheon_solr8
     - core.entity_view_mode.media.search_index
@@ -111,6 +112,14 @@ field_settings:
       fields:
         - 'entity:media/bundle'
         - 'entity:node/type'
+  field_boolean:
+    label: 'Enable detail page for this media'
+    datasource_id: 'entity:media'
+    property_path: field_boolean
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.media.field_boolean
   field_long_text:
     label: 'Speaker bio'
     datasource_id: 'entity:node'

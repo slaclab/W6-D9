@@ -98,8 +98,10 @@
 .c-hero-bg-image__title {
   @include display-text-style(display);
   color: inherit;
+  hyphens: auto;
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
+    hyphens: none;
     max-width: 80%;
   }
 

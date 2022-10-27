@@ -100,7 +100,7 @@
   color: inherit;
   hyphens: auto;
 
-  @include breakpoint-min(gesso-breakpoint(375px)) {
+  @include breakpoint-min(375px) {
     hyphens: none;
   }
 

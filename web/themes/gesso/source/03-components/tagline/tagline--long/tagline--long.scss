@@ -68,10 +68,9 @@ $c-tagline-gutter: rem(30px);
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-    min-height: 66.1971831vw;
-
     .c-tagline__section img {
       left: 0;
+      max-height: 100%;
       position: absolute;
       top: 0;
       width: calc(50% - #{$c-tagline-gutter/2});

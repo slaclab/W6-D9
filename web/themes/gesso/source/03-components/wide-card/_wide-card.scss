@@ -15,4 +15,22 @@
   .l-media__content {
     padding-top: 30px;
   }
+
+  @include breakpoint-max(gesso-breakpoint(tablet), true) {
+    .l-media__object {
+      aspect-ratio: 387 / 246;
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .l-media__content {
+      padding-top: 0;
+    }
+  }
 }

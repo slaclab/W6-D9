@@ -100,8 +100,11 @@
   color: inherit;
   hyphens: auto;
 
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
+  @include breakpoint-min(gesso-breakpoint(375px)) {
     hyphens: none;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
     max-width: 80%;
   }
 

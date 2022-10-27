@@ -9,10 +9,10 @@
   }
 
   .c-fifty-fifty-staggered__col:nth-child(even) {
-    margin-top: rem(gesso-spacing(12)) * -1;
+    grid-column-start: 2;
   }
 
   .c-fifty-fifty-staggered__col:nth-child(odd) {
-    grid-column-start: 2;
+    margin-top: rem(gesso-spacing(12)) * -1;
   }
 }

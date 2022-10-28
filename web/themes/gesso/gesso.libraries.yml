@@ -208,6 +208,16 @@ mobile_menu:
   dependencies:
     - gesso/hamburger_button
 
+overlap_image:
+  css:
+    theme:
+      dist/css/overlap-image.css: {}
+  js:
+    dist/js/overlap-image.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 overlay_menu:
   css:
     theme:

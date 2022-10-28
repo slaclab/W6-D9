@@ -4,6 +4,9 @@ import twigTemplate from './overlap-image.twig';
 import data from './overlap-image.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
+import './overlap-image.scss';
+import './overlap-image.es6';
+
 const settings = {
   title: 'Components/Overlap Image',
   argTypes: {

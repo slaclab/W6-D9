@@ -50,6 +50,7 @@
 <div{{ attributes.addClass(classes) }}>
   {% include '@components/figure/figure.twig' with {
     modifier_classes: 'c-carousel__media',
+    attributes: false,
     media: content.field_image|field_value,
     caption: image_caption,
   } %}

@@ -63,6 +63,8 @@ $mobile-menu-border-color: gesso-brand(sky, base);
 }
 
 .c-mobile-menu__logo {
+  background: transparent;
+
   path {
     fill: gesso-color(text, on-dark);
   }

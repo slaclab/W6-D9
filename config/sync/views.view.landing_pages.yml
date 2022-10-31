@@ -1213,7 +1213,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: hour
+          granularity: second
       filters:
         status:
           id: status

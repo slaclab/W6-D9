@@ -10,7 +10,7 @@ unique_id: uid
 mail_attr: mail
 header_no_cache: true
 role:
-  population: 'content_editor:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Editor|author:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Author|reviewer:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Reviewer|manager:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Developer|administrator:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Administrator|authenticated:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Allowed'
+  population: 'content_editor:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Editor|author:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Author|reviewer:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Reviewer|manager:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Manager|administrator:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Administrator|authenticated:eduPersonEntitlement,=,http://slac.stanford.edu/drupal/Allowed'
   eval_every_time: true
 register_users: true
 allow:

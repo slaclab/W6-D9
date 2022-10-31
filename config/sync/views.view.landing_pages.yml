@@ -121,7 +121,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'There are currently no events scheduled in this series. Please visit our <a href="/news-and-events/events">events page</a> for more information.'
+            format: basic_html
+          tokenize: false
       sorts: {  }
       arguments: {  }
       filters:

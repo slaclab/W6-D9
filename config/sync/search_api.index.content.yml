@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_caption
-    - field.storage.media.field_boolean
     - field.storage.media.field_long_text
-    - field.storage.node.field_lede
+    - field.storage.media.field_boolean
     - field.storage.node.field_long_text
+    - field.storage.node.field_lede
     - field.storage.node.field_name
     - search_api.server.pantheon_solr8
     - core.entity_view_mode.media.search_index
@@ -18,6 +18,7 @@ dependencies:
     - node
     - search_api
     - slac_core
+    - search_api_exclude
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -269,6 +270,7 @@ processor_settings:
   entity_type: {  }
   exclude_hidden_media: {  }
   language_with_fallback: {  }
+  node_exclude: {  }
   rendered_item: {  }
   solr_boost_more_recent:
     weights:

@@ -9,6 +9,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use phpDocumentor\Reflection\PseudoTypes\False_;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -148,6 +149,8 @@ function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_st
       }
     }
 
+    arsort($options);
+    
     if ($node_type == 'event') {
       $form['event_archive_year'] = [
         '#type' => 'select',

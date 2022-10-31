@@ -6,10 +6,12 @@ dependencies:
     - field.field.taxonomy_term.event_type.field_content
     - field.field.taxonomy_term.event_type.field_display_name
     - field.field.taxonomy_term.event_type.field_lede
+    - field.field.taxonomy_term.event_type.field_meta_tags
     - field.field.taxonomy_term.event_type.field_paragraph
     - taxonomy.vocabulary.event_type
   module:
     - allowed_formats
+    - metatag
     - paragraphs
     - path
     - text
@@ -55,6 +57,14 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 7
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_paragraph:
     type: paragraphs
     weight: 3

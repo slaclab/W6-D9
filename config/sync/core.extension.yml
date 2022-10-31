@@ -135,6 +135,9 @@ module:
   view_mode_switch: 0
   view_modes_display: 0
   views_display_switch: 0
+  views_rss: 0
+  views_rss_core: 0
+  views_rss_format: 0
   views_ui: 0
   views_year_filter: 0
   viewsreference: 0

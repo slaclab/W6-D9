@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2940e4bf8330c1942038c1b1757591d1",
+    "content-hash": "d2ce450b10ef2034495999cbae4de353",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7404,6 +7404,82 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/views_display_switch",
                 "issues": "https://www.drupal.org/project/issues/views_display_switch"
+            }
+        },
+        {
+            "name": "drupal/views_rss",
+            "version": "2.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_rss.git",
+                "reference": "8.x-2.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_rss-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "7b47cd9677dd6aea316aa0fde3b80ce2350773bd"
+            },
+            "require": {
+                "drupal/core": "^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1661863230",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "alex_b",
+                    "homepage": "https://www.drupal.org/user/53995"
+                },
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "David Goode",
+                    "homepage": "https://www.drupal.org/user/291318"
+                },
+                {
+                    "name": "idebr",
+                    "homepage": "https://www.drupal.org/user/1879760"
+                },
+                {
+                    "name": "maciej.zgadzaj",
+                    "homepage": "https://www.drupal.org/user/271491"
+                },
+                {
+                    "name": "MiSc",
+                    "homepage": "https://www.drupal.org/user/382892"
+                },
+                {
+                    "name": "Nate_S",
+                    "homepage": "https://www.drupal.org/user/3531716"
+                },
+                {
+                    "name": "rsoden",
+                    "homepage": "https://www.drupal.org/user/226437"
+                },
+                {
+                    "name": "Will White",
+                    "homepage": "https://www.drupal.org/user/32237"
+                }
+            ],
+            "description": "Extends the possibilites to create RSS with Views",
+            "homepage": "https://www.drupal.org/project/views_rss",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_rss"
             }
         },
         {
@@ -18624,6 +18700,7 @@
         "drupal/rh_media": 10,
         "drupal/style_options": 15,
         "drupal/ultimate_cron": 15,
+        "drupal/views_rss": 5,
         "drupal/viewsreference": 10,
         "drupal/yaml_content": 15,
         "pantheon-upstreams/upstream-configuration": 20

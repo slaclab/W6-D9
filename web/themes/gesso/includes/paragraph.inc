@@ -9,6 +9,8 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\Cache;
 use Drupal\slac_core\Services\MicrositeUtilities;
 
+require_once 'shared.inc';
+
 function gesso_preprocess_paragraph(&$vars) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $vars['paragraph'];
@@ -129,53 +131,6 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     ];
   }
   $vars['hero_videos'] = $hero_videos;
-}
-
-/**
- * Set the hero caption and/or credit.
- */
-function _gesso_set_hero_caption(&$vars) {
-  /** @var \Drupal\media\Entity\Media $media */
-  $image = $vars['content']['field_image'][0]['#media'];
-
-  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-  $paragraph = $vars['paragraph'];
-
-  // Assign either the paragraph's body field or the image's caption field
-  // into the template as the caption of the hero.
-  switch ($paragraph->bundle()) {
-    case 'article_hero':
-      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body->view('tooltip') : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('tooltip') : NULL);
-      break;
-    // See template field--paragraph--field-long-text--image-embed.html.twig for caption processing.
-    case 'image_embed':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) && $paragraph->field_boolean->value ? $paragraph->field_long_text->view('two_column_hero') : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view($vars['view_mode'] == 'two_column_hero' ? 'tooltip' : 'default') : NULL);
-      break;
-    // See template field--paragraph--field-long-text--overlap-image.html.twig for caption processing.
-    case 'overlap_image':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text->view('tooltip') : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('tooltip') : NULL);
-      break;
-    default:
-      $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view(in_array($paragraph->bundle(), ['image_hero', 'microsite_hero', 'extra_large_card']) ? 'tooltip' : 'default') : NULL;
-  }
-
-  // Assign the credit, always using the image entity's field.
-  if (!empty($image->field_credit[0])) {
-    $credit_view_mode = 'default';
-    if (in_array($paragraph->bundle(), ['image_hero', 'overlap_image', 'microsite_hero', 'article_hero', 'extra_large_card'])) {
-      $credit_view_mode = 'tooltip';
-    }
-    if ($paragraph->bundle() == 'image_embed' && $vars['view_mode'] == 'two_column_hero') {
-      $credit_view_mode = 'tooltip';
-    }
-    $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view($credit_view_mode) : NULL;
-  }
-
-  // Assign the link to the image detail page, if present.
-  $vars['hero_url'] = $image->field_boolean->value ? $image->toUrl()->toString() : NULL;
 }
 
 /**

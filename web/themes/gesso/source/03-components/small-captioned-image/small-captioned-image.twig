@@ -20,7 +20,8 @@
     <div class="c-small-captioned-image__inner">
       {% include '@components/tooltip/tooltip.twig' with {
         tooltip_content: caption,
-        tooltip_id: caption_id
+        tooltip_id: caption_id,
+        modifier_classes: false
       } %}
     </div>
   {% endif %}

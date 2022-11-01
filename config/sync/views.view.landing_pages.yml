@@ -702,6 +702,20 @@ display:
                     filter_rewrite_values: '- Any -|Show All'
                   collapsible: false
                   is_secondary: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'There are currently no events scheduled in this series. Please visit our <a href="/news-and-events/events">events page</a> for more information.'
+            format: basic_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -892,6 +906,7 @@ display:
           relationship: none
           view_mode: teaser
       defaults:
+        empty: false
         exposed_form: false
         style: false
         row: false

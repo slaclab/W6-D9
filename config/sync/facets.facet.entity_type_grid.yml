@@ -65,7 +65,7 @@ processor_configs:
     weights:
       post_query: 50
     settings:
-      replacements: "remote_video|Video\r\nnews_article|News\r\nevent|Event\r\nperson|Person\r\nimage|Image"
+      replacements: "remote_video|Video\r\nnews_article|News\r\nevent|Event\r\nperson|Person\r\nimage|Image\r\npage|Page\r\nnews_collection|News Collection"
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

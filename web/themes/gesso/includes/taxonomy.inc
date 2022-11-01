@@ -33,6 +33,10 @@ function gesso_preprocess_taxonomy_term(array &$variables) {
       }
     }
   }
+
+  if ($variables['view_mode'] == 'full' && !empty($variables['content']['field_image'][0])) {
+    _gesso_set_hero_caption($variables);
+  }
 }
 
 

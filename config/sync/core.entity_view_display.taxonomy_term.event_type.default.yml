@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.event_type.field_content
     - field.field.taxonomy_term.event_type.field_display_name
     - field.field.taxonomy_term.event_type.field_lede
+    - field.field.taxonomy_term.event_type.field_meta_tags
     - field.field.taxonomy_term.event_type.field_paragraph
     - taxonomy.vocabulary.event_type
   module:
@@ -54,8 +55,9 @@ content:
       view_mode: large_image
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 4
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   search_api_excerpt: true

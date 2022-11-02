@@ -3,15 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.video_lightbox.field_body
     - field.field.paragraph.video_lightbox.field_video
     - paragraphs.paragraphs_type.video_lightbox
   module:
+    - allowed_formats
     - media_library
+    - text
 id: paragraph.video_lightbox.default
 targetEntityType: paragraph
 bundle: video_lightbox
 mode: default
 content:
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_video:
     type: media_library_widget
     weight: 0

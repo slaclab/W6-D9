@@ -1,0 +1,26 @@
+uuid: c6c0d073-8baa-412d-b1ca-b01a34a79321
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.video_lightbox
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.video_lightbox.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: video_lightbox
+label: 'Override Caption'
+description: 'If populated, this caption will be displayed below the ligthbox instead of the video''s caption from the media library.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

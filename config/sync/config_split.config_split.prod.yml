@@ -10,7 +10,9 @@ folder: ../config/splits/prod
 module: {  }
 theme: {  }
 blacklist:
+  - block.block.simplesamlphpauthstatus
   - google_tag.container.main
+  - simplesamlphp_auth.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

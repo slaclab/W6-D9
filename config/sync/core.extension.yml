@@ -109,6 +109,7 @@ module:
   search_api_solr: 0
   selection_sharer: 0
   shortcut: 0
+  simplesamlphp_auth: 0
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
@@ -148,6 +149,7 @@ module:
   workflows: 0
   yaml_content: 0
   pathauto: 1
+  externalauth: 10
   views: 10
   paragraphs: 11
   minimal: 1000

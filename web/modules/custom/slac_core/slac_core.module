@@ -12,6 +12,7 @@
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\slac_core\Entity\Event;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -154,6 +155,45 @@ function slac_core_media_view(array &$build, EntityInterface $entity, EntityView
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function slac_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['simplesamlphp_auth_login_link'])) {
+
+    $form['login_title'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h1',
+      '#value' => t('Login'),
+      '#weight' => -999,
+    ];
+    $form['intro_text'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => t('Welcome back! Log in to access the website'),
+      '#weight' => -998,
+    ];
+    $form['simplesamlphp_auth_login_link']['#weight'] = -99;
+
+    // Moves the original form elements into a collapsed group.
+    // $form['manual'] = [
+    //   '#type' => 'details',
+    //   '#title' => t('Drupal Login'),
+    //   '#open' => FALSE,
+    // ];
+    // $form['manual']['name'] = $form['name'];
+    // $form['manual']['pass'] = $form['pass'];
+    // $form['manual']['actions'] = $form['actions'];
+    // $form['manual']['actions']['reset'] = [
+    //   '#type' => 'link',
+    //   '#url' => Url::fromRoute('user.pass'),
+    //   '#title' => t('Reset Password'),
+    // ];
+    unset($form['name'], $form['pass'], $form['actions']);
+
+  }
+}
+
+ /*
  * Implements hook_views_pre_render().
  */
 function slac_core_views_pre_render(ViewExecutable $view) {

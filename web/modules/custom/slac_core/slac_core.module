@@ -192,3 +192,20 @@ function slac_core_form_user_login_form_alter(&$form, FormStateInterface $form_s
     unset($form['name'], $form['pass'], $form['actions']);
   }
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function slac_core_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'news_article_rss_intranet' && $view->current_display == 'feed_1') {
+    foreach ($view->result as $row) {
+      $node = $row->_entity;
+      $node_internal_tags = $node->field_internal_tags;
+      foreach ($node_internal_tags as $tag) {
+        $node->field_tags->appendItem([
+          "target_id" => $tag->target_id,
+        ]);
+      }
+    }
+  }
+}

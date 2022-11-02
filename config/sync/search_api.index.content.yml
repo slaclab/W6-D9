@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_caption
-    - field.storage.media.field_long_text
     - field.storage.media.field_boolean
-    - field.storage.node.field_long_text
+    - field.storage.media.field_long_text
     - field.storage.node.field_lede
+    - field.storage.node.field_long_text
     - field.storage.node.field_name
     - search_api.server.pantheon_solr8
     - core.entity_view_mode.media.search_index
@@ -17,8 +17,8 @@ dependencies:
     - media
     - node
     - search_api
-    - slac_core
     - search_api_exclude
+    - slac_core
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -164,11 +164,13 @@ field_settings:
       view_mode:
         'entity:media':
           image: search_index
-          remote_video: ''
+          remote_video: search_index
         'entity:node':
-          event: ''
+          event: search_index
           news_article: search_index
-          person: ''
+          news_collection: search_index
+          page: search_index
+          person: search_index
   research_area:
     label: 'Research area'
     property_path: aggregated_field
@@ -239,6 +241,8 @@ datasource_settings:
       selected:
         - event
         - news_article
+        - news_collection
+        - page
         - person
     languages:
       default: true

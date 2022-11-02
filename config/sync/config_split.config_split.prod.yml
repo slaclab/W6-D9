@@ -12,6 +12,7 @@ theme: {  }
 blacklist:
   - block.block.simplesamlphpauthstatus
   - google_tag.container.main
+  - simplesamlphp_auth.settings
 graylist:
   - mailsystem.settings
 graylist_dependents: true

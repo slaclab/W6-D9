@@ -173,23 +173,24 @@ function slac_core_form_user_login_form_alter(&$form, FormStateInterface $form_s
       '#value' => t('Welcome back! Log in to access the website'),
       '#weight' => -998,
     ];
+    $form['simplesamlphp_auth_login_link']['#weight'] = -99;
 
     // Moves the original form elements into a collapsed group.
-    $form['simplesamlphp_auth_login_link']['#weight'] = -99;
-    $form['manual'] = [
-      '#type' => 'details',
-      '#title' => t('Drupal Login'),
-      '#open' => FALSE,
-    ];
-    $form['manual']['name'] = $form['name'];
-    $form['manual']['pass'] = $form['pass'];
-    $form['manual']['actions'] = $form['actions'];
-    $form['manual']['actions']['reset'] = [
-      '#type' => 'link',
-      '#url' => Url::fromRoute('user.pass'),
-      '#title' => t('Reset Password'),
-    ];
+    // $form['manual'] = [
+    //   '#type' => 'details',
+    //   '#title' => t('Drupal Login'),
+    //   '#open' => FALSE,
+    // ];
+    // $form['manual']['name'] = $form['name'];
+    // $form['manual']['pass'] = $form['pass'];
+    // $form['manual']['actions'] = $form['actions'];
+    // $form['manual']['actions']['reset'] = [
+    //   '#type' => 'link',
+    //   '#url' => Url::fromRoute('user.pass'),
+    //   '#title' => t('Reset Password'),
+    // ];
     unset($form['name'], $form['pass'], $form['actions']);
+
   }
 }
 

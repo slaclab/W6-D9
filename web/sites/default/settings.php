@@ -89,9 +89,13 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 * Environment Indicator module settings.
 * see: https://pantheon.io/docs/guides/environment-configuration/environment-indicator
 */
-$conf['environment_indicator_overwrite'] = TRUE;
+  $conf['environment_indicator_overwrite'] = TRUE;
   $conf['environment_indicator_overwritten_position'] = 'top';
   $conf['environment_indicator_overwritten_fixed'] = FALSE;
+
+  // Set local config split to be active on local environments.
+  $config['config_split.config_split.local']['status'] = TRUE;
+  $config['config_split.config_split.prod']['status'] = FALSE;
 
   // Pantheon Env Specific Config
   if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {

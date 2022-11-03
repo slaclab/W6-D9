@@ -101,6 +101,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   // Set local config split to be active on local environments.
   $config['config_split.config_split.local']['status'] = TRUE;
   $config['config_split.config_split.prod']['status'] = FALSE;
+  $config['config_split.config_split.dev']['status'] = FALSE;
 
   // Pantheon Env Specific Config
   if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
@@ -109,15 +110,17 @@ if (defined('PANTHEON_ENVIRONMENT')) {
           $config['environment_indicator.indicator']['name'] = 'Dev';
           $config['environment_indicator.indicator']['bg_color'] = '#307b24';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.local']['status'] = FALSE;
           $config['config_split.config_split.prod']['status'] = FALSE;
+          $config['config_split.config_split.dev']['status'] = TRUE;
           break;
         case 'test':
           $config['environment_indicator.indicator']['name'] = 'Test';
           $config['environment_indicator.indicator']['bg_color'] = '#b85c00';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.local']['status'] = FALSE;
           $config['config_split.config_split.prod']['status'] = FALSE;
+          $config['config_split.config_split.dev']['status'] = TRUE;
           break;
         case 'live':
           $config['environment_indicator.indicator']['name'] = 'Live!';
@@ -125,6 +128,15 @@ if (defined('PANTHEON_ENVIRONMENT')) {
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
           $config['config_split.config_split.local']['status'] = FALSE;
           $config['config_split.config_split.prod']['status'] = TRUE;
+          $config['config_split.config_split.dev']['status'] = FALSE;
+          break;
+        case 'pmu':
+          $config['environment_indicator.indicator']['name'] = 'PMU';
+          $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
+          $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
+          $config['config_split.config_split.dev']['status'] = TRUE;
           break;
         default:
           //Multidev catchall
@@ -133,6 +145,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
           $config['config_split.config_split.local']['status'] = TRUE;
           $config['config_split.config_split.prod']['status'] = FALSE;
+          $config['config_split.config_split.dev']['status'] = FALSE;
           break;
       }
   }

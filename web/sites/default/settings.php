@@ -130,8 +130,8 @@ if (defined('PANTHEON_ENVIRONMENT')) {
           $config['config_split.config_split.prod']['status'] = TRUE;
           $config['config_split.config_split.dev']['status'] = FALSE;
           break;
-        case 'pmu':
-          $config['environment_indicator.indicator']['name'] = 'PMU';
+        case 'integration':
+          $config['environment_indicator.indicator']['name'] = 'Integration';
           $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
           $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
           $config['config_split.config_split.local']['status'] = FALSE;

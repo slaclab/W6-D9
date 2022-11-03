@@ -17,7 +17,7 @@ field_name: field_body
 entity_type: paragraph
 bundle: video_lightbox
 label: 'Override Caption'
-description: 'If populated, this caption will be displayed below the ligthbox instead of the video''s caption from the media library.'
+description: 'If populated, this caption will be displayed below the lightbox instead of the video''s caption from the media library.'
 required: false
 translatable: true
 default_value: {  }

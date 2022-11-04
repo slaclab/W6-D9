@@ -23,7 +23,6 @@ dependencies:
     - media
     - node
     - paragraphs
-    - search
     - shortcut
     - site_settings
     - sitewide_alert
@@ -55,7 +54,6 @@ permissions:
   - 'edit own resource content'
   - 'post comments'
   - 'preview view modes'
-  - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'

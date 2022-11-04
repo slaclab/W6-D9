@@ -1477,6 +1477,7 @@ display:
         exposed_form: false
         style: false
         row: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''

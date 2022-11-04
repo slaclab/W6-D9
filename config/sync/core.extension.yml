@@ -16,7 +16,6 @@ module:
   breakpoint: 0
   ckeditor: 0
   ckeditor5: 0
-  color: 0
   comment: 0
   components: 0
   conditional_fields: 0
@@ -52,6 +51,7 @@ module:
   google_tag: 0
   help: 0
   history: 0
+  honeypot: 0
   image: 0
   inline_form_errors: 0
   jquery_ui: 0
@@ -102,7 +102,6 @@ module:
   redis: 0
   responsive_image: 0
   rh_media: 0
-  search: 0
   search_api: 0
   search_api_exclude: 0
   search_api_pantheon: 0

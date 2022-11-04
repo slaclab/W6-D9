@@ -9,7 +9,6 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - media
-    - search
     - site_settings
     - sitewide_alert
     - system
@@ -23,7 +22,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'display eu cookie compliance popup'
-  - 'search content'
   - 'use text format restricted_html'
   - 'view media'
   - 'view published site setting entities'

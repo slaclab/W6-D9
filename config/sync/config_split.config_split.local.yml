@@ -10,6 +10,7 @@ folder: ../config/splits/local
 module: {  }
 theme: {  }
 blacklist: {  }
-graylist: {  }
+graylist:
+  - simplesamlphp_auth.settings
 graylist_dependents: true
 graylist_skip_equal: true

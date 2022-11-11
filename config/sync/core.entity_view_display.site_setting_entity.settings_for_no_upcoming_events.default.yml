@@ -1,0 +1,65 @@
+uuid: 2f2b5f16-d56e-4f0b-9f01-d7d8a7575a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.settings_for_no_upcoming_events.field_body
+    - field.field.site_setting_entity.settings_for_no_upcoming_events.field_heading
+    - field.field.site_setting_entity.settings_for_no_upcoming_events.field_image
+    - site_settings.site_setting_entity_type.settings_for_no_upcoming_events
+  module:
+    - text
+    - user
+id: site_setting_entity.settings_for_no_upcoming_events.default
+targetEntityType: site_setting_entity
+bundle: settings_for_no_upcoming_events
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

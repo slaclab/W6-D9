@@ -1,0 +1,8 @@
+uuid: ac2bbbaf-2ce2-4b90-8859-ea3c66045082
+langcode: en
+status: true
+dependencies: {  }
+id: settings_for_no_upcoming_events
+label: 'Settings for No Upcoming Events'
+fieldset: 'Settings for No Upcoming Events'
+multiple: false

@@ -28,7 +28,6 @@ dependencies:
     - sitewide_alert
     - system
     - toolbar
-    - view_modes_display
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
@@ -53,7 +52,6 @@ permissions:
   - 'edit own person content'
   - 'edit own resource content'
   - 'post comments'
-  - 'preview view modes'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'

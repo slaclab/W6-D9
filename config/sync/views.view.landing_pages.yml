@@ -453,7 +453,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Manage this content via the "Settings for No Upcoming Events" site setting.'
+            format: full_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -939,7 +952,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Manage this content via the "Settings for No Upcoming Events" site setting.'
+            format: full_html
+          tokenize: false
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -2094,7 +2120,20 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Manage this content via the "Settings for No Upcoming Events" site setting.'
+            format: full_html
+          tokenize: false
       sorts:
         title:
           id: title

@@ -1,4 +1,4 @@
 index: true
-priority: '0.5'
-changefreq: always
+priority: '0.6'
+changefreq: monthly
 include_images: false

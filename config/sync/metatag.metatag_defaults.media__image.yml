@@ -1,0 +1,9 @@
+uuid: 75b94325-2203-4e23-bea2-61e1998507b1
+langcode: en
+status: true
+dependencies: {  }
+id: media__image
+label: 'Media: Image'
+tags:
+  og_title: 'Image: [media:field_long_text:value] | [site:name]'
+  title: 'Image: [media:field_long_text:value] | [site:name]'

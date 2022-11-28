@@ -1,0 +1,13 @@
+uuid: 65cb7260-47b4-4eca-b387-00973d2529eb
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term__tags
+label: 'Taxonomy term: Tags'
+tags:
+  description: '[term:field_lede:value]'
+  image_src: '[term:field_image:entity:field_media_image]'
+  og_description: '[term:field_lede:value]'
+  og_image: '[term:field_image:entity:field_media_image]'
+  og_title: 'Topic: [term:name] | [site:name]'
+  title: 'Topic: [term:name] | [site:name]'

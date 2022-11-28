@@ -1,0 +1,15 @@
+uuid: 8376dd09-af19-40ac-8fb5-8a2492be9a76
+langcode: en
+status: true
+dependencies: {  }
+name: event_card
+label: 'Event Card (600x378)'
+effects:
+  d6db74fb-4d94-4090-a3b2-dadf57195914:
+    uuid: d6db74fb-4d94-4090-a3b2-dadf57195914
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 378
+      anchor: center-center

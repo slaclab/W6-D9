@@ -35,7 +35,7 @@ Drupal.behaviors.filterModal = {
         const urlParams = new URLSearchParams(currentUrl.search);
         // Clear out the existing facet and sort by parameters
         const filteredParams = Array.from(urlParams.entries()).filter(
-          param => param[0].indexOf('f[') !== 0 && param[0] !== 'sort_by'
+          param => param[0].indexOf('f[') !== 0 && param[0] !== 'sort_by' && param[0] !== 'page'
         );
         // Add params for currently selected facets.
         const checked = modalInner.querySelectorAll(

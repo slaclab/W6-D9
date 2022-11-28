@@ -29,7 +29,7 @@
 1. Run `ddev drush si --existing-config`
 1. Ensure all latest config is installed and clear cache: `ddev drush deploy`
 
-### To install the latest database and files from `stage`:
+### To install the latest database and files from `integration`:
 
 #### Ensure `ddev` is configured with terminus authentication:
 1. Login to your Pantheon Dashboard, and [Generate a Machine Token](https://pantheon.io/docs/machine-tokens/) for ddev to use.

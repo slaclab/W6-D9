@@ -1276,6 +1276,8 @@ display:
             'entity:node':
               event: card
               news_article: card
+              news_collection: card
+              page: card
               person: card
       defaults:
         pager: true
@@ -1346,6 +1348,8 @@ display:
             'entity:node':
               event: teaser
               news_article: teaser
+              news_collection: teaser
+              page: teaser
               person: teaser
       defaults:
         access: true

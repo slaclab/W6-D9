@@ -453,20 +453,7 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: "<div class=\"c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable\">\r\n    \r\n\r\n<figure class=\"c-large__media c-figure\" role=\"group\">\r\n  \r\n  <div class=\"c-figure__media selectionShareable\">\r\n      <img loading=\"eager\" src=\"/themes/gesso/dist/images/placeholder_image.jpg\" width=\"600\" height=\"378\" alt=\"Placeholder image for the events landing page\" typeof=\"foaf:Image\">\r\n\r\n\r\n\r\n\r\n      </div>\r\n  </figure>\r\n\r\n  </div>"
-            format: full_html
-          tokenize: false
+      empty: {  }
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -952,20 +939,7 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
-            format: full_html
-          tokenize: false
+      empty: {  }
       sorts:
         field_datetime_range_value:
           id: field_datetime_range_value
@@ -2120,20 +2094,7 @@ display:
           results_lifespan_custom: 0
           output_lifespan: 3600
           output_lifespan_custom: 0
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: "<div class=\"c-card\">\r\n  <div class=\"c-card__body\">\r\n        <div class=\"c-card__header\">\r\n      <h3 class=\"c-card__title h5\"><a href=\"/news-and-events/events\" class=\"c-card__link c-arrow-link\">SLAC Events</a></h3>          </div>\r\n    <div class=\"c-card__content\">\r\n      <p>SLAC hosts a range of exciting events to raise awareness, inform, educate and connect with sitewide staff, the Stanford and local communities and the general public.</p>\r\n    </div>\r\n      </div>\r\n          <div class=\"c-card__media\">\r\n      <img src=\"/themes/gesso/dist/images/placeholder_image.jpg\" alt=\"\">\r\n\r\n      \r\n          </div>\r\n  </div>"
-            format: full_html
-          tokenize: false
+      empty: {  }
       sorts:
         title:
           id: title

@@ -36,12 +36,14 @@
 {% if not rows %}
   {% set empty %}
     {% set no_event_settings = site_settings.settings_for_no_upcoming_events.settings_for_no_upcoming_events %}
-    <div class="c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable">
-      <figure class="c-large__media c-figure" role="group">
-        <div class="c-figure__media selectionShareable">
-          {{ drupal_field('field_media_image', 'media', no_event_settings.field_image, {type: 'image', settings: {image_style: 'event_card'}})|without('#theme') }}
-        </div>
-      </figure>
-    </div>
+    {% if no_event_settings.field_image %}
+      <div class="c-paragraph c-paragraph--type-image-embed c-paragraph--view-mode-large-image selectionShareable">
+        <figure class="c-large__media c-figure" role="group">
+          <div class="c-figure__media selectionShareable">
+            {{ drupal_field('field_media_image', 'media', no_event_settings.field_image, {type: 'image', settings: {image_style: 'event_card'}})|without('#theme') }}
+          </div>
+        </figure>
+      </div>
+    {% endif %}
   {% endset %}
 {% endif %}

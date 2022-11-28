@@ -33,24 +33,27 @@
 {# The class 'view' is necessary because it's used by ajax_view.js in core. #}
 {% extends 'views-view.html.twig' %}
 
-{% set empty_content %}
-  {% set no_event_settings = site_settings.settings_for_no_upcoming_events.settings_for_no_upcoming_events %}
-  <div class="c-card">
-    <div class="c-card__body">
-      <div class="c-card__header">
-        <h3 class="c-card__title h5">
-          <a href="/news-and-events/events" class="c-card__link c-arrow-link">{{ no_event_settings.field_heading }}</a>
-        </h3>
+{% set no_event_settings = site_settings.settings_for_no_upcoming_events.settings_for_no_upcoming_events %}
+{% if no_event_settings.field_image %}
+  {% set empty_content %}
+    <div class="c-card">
+      <div class="c-card__body">
+        <div class="c-card__header">
+          <h3 class="c-card__title h5">
+            <a href="/news-and-events/events" class="c-card__link c-arrow-link">{{ no_event_settings.field_heading }}</a>
+          </h3>
+        </div>
+        <div class="c-card__content">
+          {{ no_event_settings.field_body.value|raw }}
+        </div>
       </div>
-      <div class="c-card__content">
-        {{ no_event_settings.field_body.value|raw }}
+      <div class="c-card__media">
+        {{ drupal_field('field_media_image', 'media', no_event_settings.field_image, {type: 'image', settings: {image_style: 'event_card'}})|without('#theme') }}
       </div>
     </div>
-    <div class="c-card__media">
-      {{ drupal_field('field_media_image', 'media', no_event_settings.field_image, {type: 'image', settings: {image_style: 'event_card'}})|without('#theme') }}
-    </div>
-  </div>
-{% endset %}
+  {% endset %}
+{% endif %}
+
 
 {% if not rows %}
   {% set empty %}

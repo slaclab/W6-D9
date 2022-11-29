@@ -210,15 +210,3 @@ function slac_core_views_pre_render(ViewExecutable $view) {
     }
   }
 }
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function slac_core_form_system_rss_feeds_settings_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['feed_view_mode']['#options'] = [
-    'title' =>t('Titles only'),
-    'teaser' => t('Titles plus teaser'),
-    'image' => t('Titles plus teaser plus teaser image'),
-    'fulltext' => t('Full text'),
-  ];
-}

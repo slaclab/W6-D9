@@ -54,27 +54,23 @@
 }
 
 .c-carousel__pager-item {
-  @include focus();
+  @include focus($offset: 0);
   background-color: currentcolor;
-  border: 0;
+  border: 3px solid gesso-grayscale(white);
   border-radius: 50%;
   box-shadow: none;
   color: inherit;
   cursor: pointer;
-  height: rem(12px);
+  height: rem(18px);
   padding: 0;
-  width: rem(12px);
+  width: rem(18px);
 
   &.tns-nav-active {
+    box-shadow: 0 0 0 1px gesso-grayscale(black);
     color: gesso-grayscale(black);
-    outline: 1px solid currentcolor;
-    outline-offset: 3px;
-
-    &:focus:not(:focus-visible) {
-      outline: 1px solid currentcolor;
-    }
 
     &:focus-visible {
+      box-shadow: none;
       outline-color: gesso-color(ui, generic, focus);
       outline-width: 3px;
     }
@@ -98,6 +94,7 @@
 
 .tns-item {
   .c-figure__caption {
+    line-height: gesso-line-height(base);
     opacity: 0;
     transition: 0.35s opacity 0.15s;
   }

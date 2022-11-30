@@ -20,15 +20,15 @@
       </h3>
     {% endspaceless %}
   </div>
-  <div class="c-card__body">
-    {% if name %}
+  {% if name %}
+    <div class="c-card__body">
       {% if name_url %}
         <a href="{{ name_url }}" class="c-arrow-link">
-        {% endif %}
+      {% endif %}
         {{ name }}
-        {% if name_url %}
+      {% if name_url %}
         </a>
       {% endif %}
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 </div>

@@ -53,12 +53,17 @@
       @include arrow-link(red);
     }
 
-    a {
-      text-decoration-line: none;
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .external-link {
+      text-decoration-color: transparent;
 
       &:hover,
-      &:focus {
-        text-decoration-line: underline;
+      &:focus,
+      &:active {
+        text-decoration-color: currentColor;
       }
     }
   }
@@ -91,7 +96,7 @@
 
 /* stylelint-disable selector-class-pattern */
 .c-card--small-bio__link {
-  span {
+  > span {
     white-space: nowrap;
 
     &::after {
@@ -109,7 +114,8 @@
     }
   }
 
-  .c-icon {
+  .c-icon,
+  .c-icon::after {
     display: none;
   }
 

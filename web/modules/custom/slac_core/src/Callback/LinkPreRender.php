@@ -26,10 +26,14 @@ class LinkPreRender implements TrustedCallbackInterface {
    *   The modified form element.
    */
   public static function preRenderLink($element) {
-    $element['#title'] = [
-      '#type' => 'markup',
-      '#markup' => $element['#title'],
-    ];
+    if (isset($element['#title']) && !is_array($element['#title'])) {
+      $title = [
+        '#type' => 'markup',
+        '#markup' => $element['#title'],
+      ];
+      // TODO: Implement dependency injection if possible.
+      $element['#title'] = \Drupal::service('renderer')->render($title);
+    }
     return $element;
   }
 

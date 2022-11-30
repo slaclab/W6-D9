@@ -54,7 +54,7 @@
 }
 
 .c-carousel__pager-item {
-  @include focus($offset: 3px);
+  @include focus($offset: 0);
   background-clip: content-box;
   background-color: currentcolor;
   border: 0;

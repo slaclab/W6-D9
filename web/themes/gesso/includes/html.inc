@@ -5,6 +5,8 @@
  * HTML-related hook implementations.
  */
 
+use Drupal\slac_core\Callback\LinkPreRender;
+
 /**
  * Implements hook_preprocess().
  */
@@ -42,5 +44,20 @@ function gesso_page_attachments_alter(array &$attachments) {
     $themeConfig = \Drupal::config('gesso.settings');
     $renderer->addCacheableDependency($attachments, $themeConfig);
 
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function gesso_element_info_alter(array &$types) {
+  // Allow for html tags in link label fields.
+  if (isset($types['link'])) {
+    // The new prerender needs to happen first.
+    $types['link']['#pre_render'][1] = $types['link']['#pre_render'][0];
+    $types['link']['#pre_render'][0] = [
+      LinkPreRender::class,
+      'preRenderLink',
+    ];
   }
 }

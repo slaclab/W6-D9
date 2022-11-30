@@ -31,6 +31,7 @@ class LinkPreRender implements TrustedCallbackInterface {
         '#type' => 'markup',
         '#markup' => $element['#title'],
       ];
+      // TODO: Implement dependency injection if possible.
       $element['#title'] = \Drupal::service('renderer')->render($title);
     }
     return $element;

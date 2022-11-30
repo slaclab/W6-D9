@@ -71,3 +71,18 @@ function gesso_element_info_alter(array &$types) {
     ];
   }
 }
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function gesso_element_info_alter(array &$types) {
+  // Allow for html tags in link label fields.
+  if (isset($types['link'])) {
+    // The new prerender needs to happen first.
+    $types['link']['#pre_render'][1] = $types['link']['#pre_render'][0];
+    $types['link']['#pre_render'][0] = [
+      LinkPreRender::class,
+      'preRenderLink',
+    ];
+  }
+}

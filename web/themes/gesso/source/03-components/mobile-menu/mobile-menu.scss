@@ -34,6 +34,10 @@ $mobile-menu-border-color: gesso-brand(sky, base);
   width: 100%;
   z-index: gesso-z-index(modal);
 
+  @supports(padding:max(0px)) {
+    padding-bottom: min(4px, env(safe-area-inset-bottom));
+  }
+
   &.is-open {
     display: block;
   }

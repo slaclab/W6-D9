@@ -1313,7 +1313,7 @@ display:
           exposed: true
           expose:
             operator_id: created_op
-            label: 'Filter by Year'
+            label: 'Filter by year'
             description: ''
             use_operator: false
             operator: created_op
@@ -1411,7 +1411,7 @@ display:
           exposed: true
           expose:
             operator_id: field_type_target_id_op
-            label: 'Filter by Article Type'
+            label: 'Filter by article type'
             description: ''
             use_operator: false
             operator: field_type_target_id_op
@@ -1448,6 +1448,13 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+          save_lineage: false
+          force_deepest: false
+          parent: null
+          level_labels: ''
+          hierarchy_depth: 0
+          required_depth: 0
+          none_label: '- Please select -'
       filter_groups:
         operator: AND
         groups:

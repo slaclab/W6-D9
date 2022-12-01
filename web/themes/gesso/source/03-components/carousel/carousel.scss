@@ -55,22 +55,23 @@
 
 .c-carousel__pager-item {
   @include focus($offset: 0);
+  background-clip: content-box;
   background-color: currentcolor;
-  border: 3px solid gesso-grayscale(white);
+  border: 0;
   border-radius: 50%;
   box-shadow: none;
   color: inherit;
   cursor: pointer;
   height: rem(18px);
-  padding: 0;
+  padding: 3px;
   width: rem(18px);
 
   &.tns-nav-active {
-    box-shadow: 0 0 0 1px gesso-grayscale(black);
+    border: 1px solid currentColor;
     color: gesso-grayscale(black);
 
     &:focus-visible {
-      box-shadow: none;
+      border: 0;
       outline-color: gesso-color(ui, generic, focus);
       outline-width: 3px;
     }

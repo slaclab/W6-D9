@@ -253,7 +253,7 @@ handlers:
       bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
+      from_mail: noreply@slac.stanford.edu
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
       reply_to: ''

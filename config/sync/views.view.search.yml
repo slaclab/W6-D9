@@ -1320,7 +1320,7 @@ display:
           admin_label: ''
           plugin_id: area_filter_modal
           empty: true
-          content: 'Filter (@total @results)'
+          content: 'Filter results (@total @results)'
         display_switch:
           id: display_switch
           table: views
@@ -1457,7 +1457,7 @@ display:
           admin_label: ''
           plugin_id: area_filter_modal
           empty: true
-          content: 'Filter (@total @results)'
+          content: 'Filter results (@total @results)'
         display_switch:
           id: display_switch
           table: views

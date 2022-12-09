@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
   module:
     - media_library
+    - media_library_edit
     - text
 id: paragraph.article_hero.default
 targetEntityType: paragraph
@@ -28,7 +29,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
 hidden:
   created: true
   status: true

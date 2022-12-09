@@ -15,6 +15,7 @@ dependencies:
     - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
   module:
     - media_library
+    - media_library_edit
     - text
 id: site_setting_entity.colorful_tagline_for_our_story.default
 targetEntityType: site_setting_entity
@@ -59,21 +60,27 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_image_2:
     type: media_library_widget
     weight: 16
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_image_3:
     type: media_library_widget
     weight: 19
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_line_2:
     type: string_textfield
     weight: 14

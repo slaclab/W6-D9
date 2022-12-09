@@ -38,6 +38,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - media_library_edit
     - metatag
     - path
     - term_reference_tree
@@ -259,7 +260,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_lede:
     type: text_textarea
     weight: 10
@@ -405,6 +408,8 @@ content:
       media_types: {  }
     third_party_settings:
       conditional_fields: {  }
+      media_library_edit:
+        show_edit: '1'
   field_research_area:
     type: term_reference_tree
     weight: 14
@@ -499,6 +504,8 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+      media_library_edit:
+        show_edit: '1'
   group_metadata:
     weight: 27
     region: content

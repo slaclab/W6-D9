@@ -166,7 +166,11 @@ class OverlayMenu {
       this.handleButtonClick.bind(this)
     );
     this.closeButton.addEventListener('keydown', (e) => {
-      if (e.key === "Enter" || e.key === "Space") {
+      if (e.key === "Enter") {
+        this.menuButton.focus();
+      }else if (e.code === "Space") {
+        e.preventDefault();
+        this.closeMenu();
         this.menuButton.focus();
       }
     });

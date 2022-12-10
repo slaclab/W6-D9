@@ -62,6 +62,7 @@ class MobileMenu extends OverlayMenu {
     const overlay = document.createElement('div');
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
+    overlay.ariaLabel = "Search and Menu";
     overlay.classList.add('c-mobile-menu');
     return this.menu.insertAdjacentElement('afterend', overlay);
   }
@@ -280,12 +281,7 @@ class MobileMenu extends OverlayMenu {
       });
     }
     
-    // Added Nav and Label to make cloned menu more accessible
-    const menuNavWrapper = document.createElement('nav');
-    menuNavWrapper.setAttribute('aria-label', 'Main Menu');
-    menuNavWrapper.insertAdjacentElement('afterbegin', menuClone);
-
-    return menuNavWrapper;
+    return menuClone;
   }
 
   /**

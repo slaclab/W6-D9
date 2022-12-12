@@ -66,6 +66,7 @@ module:
   masquerade: 0
   media: 0
   media_library: 0
+  media_library_edit: 0
   media_migration: 0
   menu_block: 0
   menu_item_extras: 0

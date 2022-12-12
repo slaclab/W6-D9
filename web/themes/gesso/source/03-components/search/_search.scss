@@ -6,7 +6,7 @@
   align-self: flex-end;
   bottom: 100%;
   position: absolute;
-  right: gesso-site-margins(desktop);
+  right: 0;
   z-index: 1;
 
   .is-sticky & {

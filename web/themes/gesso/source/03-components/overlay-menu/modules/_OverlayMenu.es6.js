@@ -31,7 +31,7 @@ class OverlayMenu {
     menuButton.setAttribute('aria-controls', this.overlay.id);
     menuButton.setAttribute('aria-expanded', 'true');
     menuButton.innerHTML =
-      '<span class="c-hamburger-button__icon">Close</span>';
+      '<span class="c-hamburger-button__icon">Close</span><span class="visually-hidden">Drawer</span>';
     menuButton.hidden = true;
     return this.overlay.insertAdjacentElement('afterbegin', menuButton);
   }

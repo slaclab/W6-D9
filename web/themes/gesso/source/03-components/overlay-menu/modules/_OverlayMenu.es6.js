@@ -56,14 +56,15 @@ class OverlayMenu {
    * @return void
    */
   openMenu() {
-    this.menuButton.hidden = true;
-    this.menuButton.setAttribute('aria-expanded', 'true');
     this.closeButton.hidden = false;
+    this.menuButton.hidden = true;  
+    this.menuButton.setAttribute('aria-expanded', 'true');
     this.closeButton.setAttribute('aria-expanded', 'true');
     this.overlay.classList.add('is-open');
     document.body.classList.add('has-open-menu');
     window.addEventListener('keydown', this.handleKeydown);
     this.enableTab(this.overlay);
+    this.closeButton.focus();
   }
 
   /**
@@ -96,7 +97,7 @@ class OverlayMenu {
   handleKeydown(event) {
     if (event.key === 'Escape') {
       this.closeMenu();
-    }
+    }   
     // Keep the user from tabbing out of the menu.
     const focusable = Array.from(
       this.overlay.querySelectorAll('button, [href], input, select, textarea')

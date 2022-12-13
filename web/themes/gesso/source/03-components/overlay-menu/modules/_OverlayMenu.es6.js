@@ -49,7 +49,6 @@ class OverlayMenu {
     document.body.classList.remove('has-open-menu');
     window.removeEventListener('keydown', this.handleKeydown);
     this.disableTab(this.overlay);
-    this.menuButton.focus();
   }
 
   /**
@@ -166,6 +165,15 @@ class OverlayMenu {
       'click',
       this.handleButtonClick.bind(this)
     );
+    this.closeButton.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        this.menuButton.focus();
+      }else if (e.code === "Space") {
+        e.preventDefault();
+        this.closeMenu();
+        this.menuButton.focus();
+      }
+    });
     this.disableTab(this.overlay);
   }
 }

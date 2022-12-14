@@ -56,14 +56,15 @@ class OverlayMenu {
    * @return void
    */
   openMenu() {
+    this.closeButton.hidden = false;
     this.menuButton.hidden = true;
     this.menuButton.setAttribute('aria-expanded', 'true');
-    this.closeButton.hidden = false;
     this.closeButton.setAttribute('aria-expanded', 'true');
     this.overlay.classList.add('is-open');
     document.body.classList.add('has-open-menu');
     window.addEventListener('keydown', this.handleKeydown);
     this.enableTab(this.overlay);
+    this.closeButton.focus();
   }
 
   /**

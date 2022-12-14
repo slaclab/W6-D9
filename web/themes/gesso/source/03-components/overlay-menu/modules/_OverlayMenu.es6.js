@@ -96,6 +96,7 @@ class OverlayMenu {
   handleKeydown(event) {
     if (event.key === 'Escape') {
       this.closeMenu();
+      this.menuButton.focus();
     }
     // Keep the user from tabbing out of the menu.
     const focusable = Array.from(
@@ -164,6 +165,15 @@ class OverlayMenu {
       'click',
       this.handleButtonClick.bind(this)
     );
+    this.closeButton.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        this.menuButton.focus();
+      }else if (e.code === "Space") {
+        e.preventDefault();
+        this.closeMenu();
+        this.menuButton.focus();
+      }
+    });
     this.disableTab(this.overlay);
   }
 }

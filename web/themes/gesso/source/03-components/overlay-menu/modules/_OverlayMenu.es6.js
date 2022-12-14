@@ -31,7 +31,7 @@ class OverlayMenu {
     menuButton.setAttribute('aria-controls', this.overlay.id);
     menuButton.setAttribute('aria-expanded', 'true');
     menuButton.innerHTML =
-      '<span class="c-hamburger-button__icon">Close</span>';
+      '<span class="c-hamburger-button__icon">Close</span><span class="visually-hidden">Drawer</span>';
     menuButton.hidden = true;
     return this.overlay.insertAdjacentElement('afterbegin', menuButton);
   }
@@ -56,14 +56,15 @@ class OverlayMenu {
    * @return void
    */
   openMenu() {
+    this.closeButton.hidden = false;
     this.menuButton.hidden = true;
     this.menuButton.setAttribute('aria-expanded', 'true');
-    this.closeButton.hidden = false;
     this.closeButton.setAttribute('aria-expanded', 'true');
     this.overlay.classList.add('is-open');
     document.body.classList.add('has-open-menu');
     window.addEventListener('keydown', this.handleKeydown);
     this.enableTab(this.overlay);
+    this.closeButton.focus();
   }
 
   /**
@@ -96,6 +97,7 @@ class OverlayMenu {
   handleKeydown(event) {
     if (event.key === 'Escape') {
       this.closeMenu();
+      this.menuButton.focus();
     }
     // Keep the user from tabbing out of the menu.
     const focusable = Array.from(
@@ -164,6 +166,15 @@ class OverlayMenu {
       'click',
       this.handleButtonClick.bind(this)
     );
+    this.closeButton.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        this.menuButton.focus();
+      }else if (e.code === "Space") {
+        e.preventDefault();
+        this.closeMenu();
+        this.menuButton.focus();
+      }
+    });
     this.disableTab(this.overlay);
   }
 }

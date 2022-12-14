@@ -57,7 +57,7 @@ class OverlayMenu {
    */
   openMenu() {
     this.closeButton.hidden = false;
-    this.menuButton.hidden = true;  
+    this.menuButton.hidden = true;
     this.menuButton.setAttribute('aria-expanded', 'true');
     this.closeButton.setAttribute('aria-expanded', 'true');
     this.overlay.classList.add('is-open');
@@ -97,7 +97,8 @@ class OverlayMenu {
   handleKeydown(event) {
     if (event.key === 'Escape') {
       this.closeMenu();
-    }   
+      this.menuButton.focus();
+    }
     // Keep the user from tabbing out of the menu.
     const focusable = Array.from(
       this.overlay.querySelectorAll('button, [href], input, select, textarea')

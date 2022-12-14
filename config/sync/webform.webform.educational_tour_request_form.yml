@@ -2,9 +2,14 @@ uuid: 9ec5ab3c-4f58-41a8-8cda-ee36c865d7e3
 langcode: en
 status: open
 dependencies:
+  module:
+    - antibot
   enforced:
     module:
       - webform
+third_party_settings:
+  antibot:
+    antibot: true
 _core:
   default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0

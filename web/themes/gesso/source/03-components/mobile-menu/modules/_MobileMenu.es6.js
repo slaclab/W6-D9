@@ -59,8 +59,10 @@ class MobileMenu extends OverlayMenu {
    * @return {HTMLElement}
    */
   createMenuOverlay() {
-    const overlay = document.createElement('nav');
+    const overlay = document.createElement('div');
+    overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
+    overlay.ariaLabel = "Search and Menu";
     overlay.classList.add('c-mobile-menu');
     return this.menu.insertAdjacentElement('afterend', overlay);
   }
@@ -278,6 +280,7 @@ class MobileMenu extends OverlayMenu {
         }
       });
     }
+    
     return menuClone;
   }
 

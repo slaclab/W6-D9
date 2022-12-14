@@ -13,13 +13,8 @@
  */
 #}
 {% if content %}
-  {% embed '@layouts/header/header.twig' with {
+  {% include '@layouts/header/header.twig' with {
     'has_constrain': true,
+    'header_content': content,
   } %}
-
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-
-  {% endembed %}
 {% endif %}

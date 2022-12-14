@@ -101,15 +101,16 @@ class MobileMenu extends OverlayMenu {
    * @param {HTMLElement} subnav - The submenu the toggle button will be used to display.
    * @return {Element}
    */
-  createToggleButton(subnav) {
+  createToggleButton(link, subnav) {;
+    const buttonText = link.innerHTML;
     const button = document.createElement('button');
     button.classList.add('c-mobile-menu__subnav-toggle');
     button.setAttribute('aria-controls', subnav.id);
     button.setAttribute('aria-expanded', 'false');
     button.innerHTML = `<svg class="c-icon c-mobile-menu__subnav-icon" role="img">
-  <title>Toggle submenu</title>
-  <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
-</svg>`;
+      <title>${buttonText} Menu Toggle</title>
+      <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
+    </svg>`;
     return subnav.insertAdjacentElement('beforebegin', button);
   }
 
@@ -121,7 +122,7 @@ class MobileMenu extends OverlayMenu {
    */
   setupSubnav(link, subnav) {
     const toggleButton =
-      link.tagName === 'BUTTON' ? link : this.createToggleButton(subnav);
+      link.tagName === 'BUTTON' ? link : this.createToggleButton(link, subnav);
     subnav.style.display = 'none';
     toggleButton.addEventListener('click', event => {
       event.preventDefault();

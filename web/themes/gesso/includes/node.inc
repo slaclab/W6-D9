@@ -145,7 +145,7 @@ function gesso_preprocess_node__person(&$vars) {
         'type' => 'text_trimmed',
         'label' => 'hidden',
         'settings' => [
-          'trim_length' => 500
+          'trim_length' => 530
         ],
       ]);
     }

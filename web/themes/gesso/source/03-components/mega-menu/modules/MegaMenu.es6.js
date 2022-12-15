@@ -37,8 +37,14 @@ class MegaMenu {
   toggleSection(section, hide) {
     if (hide) {
       section.hidden = true;
+      setTimeout(() => {
+        section.style.display = 'none';
+      }, 405)
     } else {
-      section.hidden = !section.hidden;
+      section.style.display = 'block';
+      setTimeout(() => {
+        section.hidden = !section.hidden;
+      }, 100)
     }
     const focusable = section.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]'

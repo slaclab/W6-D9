@@ -2,9 +2,14 @@ uuid: 57100f4e-a8e6-4616-9d43-076677402021
 langcode: en
 status: open
 dependencies:
+  module:
+    - antibot
   enforced:
     module:
       - webform
+third_party_settings:
+  antibot:
+    antibot: true
 _core:
   default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0

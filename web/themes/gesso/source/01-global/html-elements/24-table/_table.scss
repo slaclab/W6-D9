@@ -24,6 +24,10 @@
     background-color: gesso-color(table, background);
     border: 1px solid gesso-color(table, border);
     padding: rem(gesso-spacing(2));
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   tfoot {

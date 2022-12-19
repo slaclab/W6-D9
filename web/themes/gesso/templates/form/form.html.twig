@@ -10,7 +10,6 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes.setAttribute('id', attributes.id) }}>
-  {{ element.antibot_key }}
-  {{ children }}
+<form{{attributes.setAttribute('id',attributes.id|unique_id)}}>
+	{{ children }}
 </form>

@@ -52,7 +52,7 @@
               {{ item.featured }}
             {% endblock %}
           </div>
-          <button aria-label="{{ 'Close menu'|t }}" class="c-mega-menu__section-close c-menu__section-close">
+          <button aria-label="{{ 'Close ' ~ item_section ~ ' menu'|t }}" class="c-mega-menu__section-close c-menu__section-close">
             {% include '@components/icon/icon.twig' with {
               icon_name: 'close',
               modifier_classes: 'c-menu__close-icon',

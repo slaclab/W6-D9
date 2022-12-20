@@ -246,7 +246,7 @@ class MegaMenu {
    */
   handleKeydownAnywhere(event) {
     if (event.key === 'Escape' && this.openIndex !== null) {
-      this.menuSections[this.openIndex].focus();
+      this.menuSections[this.openIndex].previousElementSibling.focus();
       this.toggleExpand(this.openIndex, false);
       this.closeMenu();
     } else if (event.key === 'Tab') {

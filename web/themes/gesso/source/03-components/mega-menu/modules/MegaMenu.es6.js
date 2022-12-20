@@ -215,6 +215,14 @@ class MegaMenu {
     button.addEventListener('click', this.handleButtonClick.bind(this));
     button.addEventListener('keydown', this.handleButtonKeydown.bind(this));
     closeButton.addEventListener('click', this.handleCloseClick.bind(this));
+    closeButton.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        button.focus();
+      } else if (e.code === "Space") {
+        this.handleButtonClick(e);
+        button.focus();
+      }
+    });
   }
 
   /**

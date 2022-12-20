@@ -142,10 +142,13 @@ function gesso_preprocess_node__person(&$vars) {
     if (!empty($vars['content']['field_body'][0])) {
       $body_field = $vars['elements']['#node']->get('field_body');
       $vars['content']['field_body_trimmed'] = $body_field->view([
-        'type' => 'text_trimmed',
+        'type' => 'smart_trim',
         'label' => 'hidden',
         'settings' => [
-          'trim_length' => 530
+          'trim_length' => 530,
+          'trim_type' => 'chars',
+          'trim_suffix' => '...',
+          'summary_handler' => 'ignore'
         ],
       ]);
     }

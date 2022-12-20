@@ -42,19 +42,22 @@ class MegaMenu {
       }, 405)
     } else {
       section.style.display = 'block';
+      // Needed to make sure css animation continues to work
       setTimeout(() => {
         section.hidden = !section.hidden;
-      }, 100)
+      }, 10)
     }
     const focusable = section.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]'
     );
-    focusable.forEach(focusableItem => {
-      focusableItem.tabIndex = section.hidden ? -1 : 0;
-    });
-    if (!section.hidden) {
-      focusable[0].focus();
-    }
+    setTimeout(() => {
+      focusable.forEach(focusableItem => {
+        focusableItem.tabIndex = section.hidden ? -1 : 0;
+      });
+      if (!section.hidden) {
+        focusable[0].focus();
+      }
+    }, 15)
   }
 
   /**

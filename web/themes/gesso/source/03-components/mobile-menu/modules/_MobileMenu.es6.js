@@ -66,6 +66,16 @@ class MobileMenu extends OverlayMenu {
   }
 
   /**
+   * Adjust the mobile menu dropdown to the current height of the window.
+   *
+   * This is useful for situations such as growing and shrinking address bars.
+   */
+  menuOverlayHeight() {
+    const doc = document.documentElement;
+    doc.style.setProperty('--mobile-menu-height', `${window.innerHeight}px`);
+  }
+
+  /**
    * Clone a Drupal block to include in the mobile menu.
    * @param {HTMLElement} block - The block to clone
    * @param {string} blockClass - Optional CSS class to add to the cloned block
@@ -413,7 +423,11 @@ class MobileMenu extends OverlayMenu {
         resizeTimeout = setTimeout(this.toggleMenuDisplay, 200);
         lastWindowWidth = currWindowWidth;
       }
+
+      this.menuOverlayHeight();
     });
+
+    this.menuOverlayHeight();
   }
 }
 

@@ -45,16 +45,6 @@ function gesso_page_attachments_alter(array &$attachments) {
     $renderer->addCacheableDependency($attachments, $themeConfig);
 
   }
-
-  $viewport = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-      'name' => 'viewport',
-      'content' => 'initial-scale=1.0, viewport-fit=cover',
-    ],
-  ];
-  $attachments['#attached']['html_head'][] = [$viewport, 'viewport'];
 }
 
 /**

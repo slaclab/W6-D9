@@ -102,7 +102,9 @@
 .c-search__button {
   @include text-button;
   color: var(--gesso-link-color);
-  text-decoration: underline;
+  margin-bottom: -2px;
+  padding-bottom: 2px;
+  text-decoration: none;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
@@ -110,9 +112,11 @@
   z-index: 4;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
-    text-decoration-color: currentColor;
+    color: var(--gesso-link-color);
+    text-decoration: underline;
+    text-decoration-color: var(--gesso-link-color);
   }
 }
 

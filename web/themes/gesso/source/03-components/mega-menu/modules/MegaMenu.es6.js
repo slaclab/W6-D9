@@ -37,18 +37,27 @@ class MegaMenu {
   toggleSection(section, hide) {
     if (hide) {
       section.hidden = true;
+      setTimeout(() => {
+        section.style.display = 'none';
+      }, 405)
     } else {
-      section.hidden = !section.hidden;
+      section.style.display = 'block';
+      // Needed to make sure css animation continues to work
+      setTimeout(() => {
+        section.hidden = !section.hidden;
+      }, 10)
     }
     const focusable = section.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]'
     );
-    focusable.forEach(focusableItem => {
-      focusableItem.tabIndex = section.hidden ? -1 : 0;
-    });
-    if (!section.hidden) {
-      focusable[0].focus();
-    }
+    setTimeout(() => {
+      focusable.forEach(focusableItem => {
+        focusableItem.tabIndex = section.hidden ? -1 : 0;
+      });
+      if (!section.hidden) {
+        focusable[0].focus();
+      }
+    }, 15)
   }
 
   /**
@@ -206,6 +215,14 @@ class MegaMenu {
     button.addEventListener('click', this.handleButtonClick.bind(this));
     button.addEventListener('keydown', this.handleButtonKeydown.bind(this));
     closeButton.addEventListener('click', this.handleCloseClick.bind(this));
+    closeButton.addEventListener('keydown', (e) => {
+      if (e.key === "Enter") {
+        button.focus();
+      } else if (e.code === "Space") {
+        this.handleButtonClick(e);
+        button.focus();
+      }
+    });
   }
 
   /**
@@ -237,7 +254,7 @@ class MegaMenu {
    */
   handleKeydownAnywhere(event) {
     if (event.key === 'Escape' && this.openIndex !== null) {
-      this.menuSections[this.openIndex].focus();
+      this.menuSections[this.openIndex].previousElementSibling.focus();
       this.toggleExpand(this.openIndex, false);
       this.closeMenu();
     } else if (event.key === 'Tab') {

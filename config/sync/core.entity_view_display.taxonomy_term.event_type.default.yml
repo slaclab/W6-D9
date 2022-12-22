@@ -38,14 +38,14 @@ content:
     label: above
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: { }
     weight: 2
     region: content
   field_lede:
     type: text_default
     label: above
-    settings: {  }
-    third_party_settings: {  }
+    settings: { }
+    third_party_settings: { }
     weight: 3
     region: content
   field_paragraph:

@@ -11,10 +11,28 @@ dependencies:
     - field.field.media.remote_audio.field_transcript
     - media.type.remote_audio
   module:
+    - field_group
     - media
     - path
     - term_reference_tree
     - text
+third_party_settings:
+  field_group:
+    group_transcript:
+      children:
+        - field_transcript
+      label: Transcript
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: media.remote_audio.default
 targetEntityType: media
 bundle: remote_audio
@@ -22,20 +40,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_caption:
     type: text_textarea
-    weight: 4
+    weight: 5
     region: content
     settings:
       rows: 5
@@ -43,7 +61,7 @@ content:
     third_party_settings: {  }
   field_long_text:
     type: text_textarea
-    weight: 3
+    weight: 4
     region: content
     settings:
       rows: 1
@@ -62,7 +80,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
-    weight: 7
+    weight: 9
     region: content
     settings:
       start_minimized: true
@@ -73,7 +91,7 @@ content:
     third_party_settings: {  }
   field_transcript:
     type: text_textarea
-    weight: 6
+    weight: 8
     region: content
     settings:
       rows: 5
@@ -88,13 +106,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 11
     region: content
     settings:
       display_label: true

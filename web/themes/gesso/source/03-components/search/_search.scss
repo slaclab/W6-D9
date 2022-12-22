@@ -6,7 +6,7 @@
   align-self: flex-end;
   bottom: 100%;
   position: absolute;
-  right: gesso-site-margins(desktop);
+  right: 0;
   z-index: 1;
 
   .is-sticky & {
@@ -91,7 +91,6 @@
   }
 }
 
-.c-search__button,
 .c-search__submit {
   @include text-button;
 
@@ -101,8 +100,20 @@
 }
 
 .c-search__button {
+  @include text-button;
   color: var(--gesso-link-color);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+  text-underline-position: under;
   z-index: 4;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration-color: currentColor;
+  }
 }
 
 .c-search__submit {

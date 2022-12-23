@@ -101,14 +101,11 @@
 
 .c-search__button {
   @include text-button;
+  @include underline();
   color: var(--gesso-link-color);
   margin-bottom: -2px;
   padding-bottom: 2px;
   text-decoration: none;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 1px;
-  text-underline-position: under;
   z-index: 4;
 
   &:hover,

@@ -64,9 +64,13 @@
 }
 
 .c-promo-box__content {
+  .external-link {
+    margin-bottom: 2rem;
+  }
+
   a,
   span {
-    display: table;
+    display: block;
     margin-bottom: 1rem;
     text-decoration-color: currentColor;
   }

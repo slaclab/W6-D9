@@ -13,6 +13,7 @@ $form-select-arrow-size: 24px !default;
     background-position: right $form-select-arrow-size center; // LTR
     background-repeat: no-repeat;
     background-size: rem($form-select-arrow-size);
+    color: var(--gesso-text-color);
     padding-left: 24px;
     padding-right: rem($form-select-arrow-size * 2); // LTR
 

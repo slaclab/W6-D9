@@ -73,7 +73,7 @@
 
 .l-header__brand {
   background-color: gesso-color(background, site);
-  flex: 1;
+  flex: 0;
   z-index: gesso-z-index(nav) + 1;
 
   .has-transparent-nav & {

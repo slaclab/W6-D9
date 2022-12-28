@@ -35,6 +35,14 @@
     .c-icon {
       color: inherit;
     }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .c-icon {
+        color: inherit;
+      }
+    }
   }
 
   .c-wysiwyg & {

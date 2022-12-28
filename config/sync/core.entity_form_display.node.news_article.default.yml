@@ -32,6 +32,7 @@ dependencies:
     - field_group
     - link
     - media_library
+    - media_library_edit
     - metatag
     - paragraphs
     - path
@@ -298,7 +299,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_text:
     type: string_textfield
     weight: 6
@@ -338,6 +341,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

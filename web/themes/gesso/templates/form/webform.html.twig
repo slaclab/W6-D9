@@ -1,1 +1,17 @@
-{% extends 'form.html.twig' %}
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{attributes.setAttribute('id',attributes.id)}}>
+  {{ element.antibot_key }}
+	{{ children }}
+</form>
+

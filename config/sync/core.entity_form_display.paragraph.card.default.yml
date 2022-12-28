@@ -14,6 +14,7 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - text
     - view_mode_switch
 id: paragraph.card.default
@@ -41,7 +42,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_link:
     type: link_default
     weight: 3

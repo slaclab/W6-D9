@@ -12,6 +12,7 @@ dependencies:
   module:
     - lottiefiles_field
     - media_library
+    - media_library_edit
     - paragraphs
     - text
 id: paragraph.overlap_image.default
@@ -25,7 +26,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_long_text:
     type: text_textarea
     weight: 1

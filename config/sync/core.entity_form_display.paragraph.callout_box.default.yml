@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.callout_box
   module:
     - media_library
+    - media_library_edit
     - text
 id: paragraph.callout_box.default
 targetEntityType: paragraph
@@ -29,7 +30,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_short_text:
     type: string_textfield
     weight: 1

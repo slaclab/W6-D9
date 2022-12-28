@@ -236,3 +236,7 @@ button.c-mobile-menu__link {
     color: inherit;
   }
 }
+
+.c-mobile-menu__subnav-toggle {
+  @include focus();
+}

@@ -6,6 +6,8 @@
 $form-select-arrow-size: 24px !default;
 
 .c-form-item--select {
+  color: var(--gesso-text-color);
+
   .c-form-item__select {
     @include svg-background(menu-arrow-down);
     background-position: right $form-select-arrow-size center; // LTR

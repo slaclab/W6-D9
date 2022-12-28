@@ -91,7 +91,6 @@
   }
 }
 
-.c-search__button,
 .c-search__submit {
   @include text-button;
 
@@ -101,8 +100,21 @@
 }
 
 .c-search__button {
+  @include text-button;
+  @include underline();
   color: var(--gesso-link-color);
+  margin-bottom: -2px;
+  padding-bottom: 2px;
+  text-decoration: none;
   z-index: 4;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: var(--gesso-link-color);
+    text-decoration: underline;
+    text-decoration-color: var(--gesso-link-color);
+  }
 }
 
 .c-search__submit {

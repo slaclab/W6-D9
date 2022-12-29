@@ -4,13 +4,13 @@ namespace Drupal\slac_core\Callback;
 
 use Drupal\Core\Security\TrustedCallbackInterface;
 
-class LinkPreRender implements TrustedCallbackInterface {
+class TextPreRender implements TrustedCallbackInterface {
 
   /**
    * {@inheritDoc}
    */
   public static function trustedCallbacks() {
-    return ['preRenderLink'];
+    return ['preRenderText'];
   }
 
   /**
@@ -25,14 +25,12 @@ class LinkPreRender implements TrustedCallbackInterface {
    * @return array
    *   The modified form element.
    */
-  public static function preRenderLink($element) {
-    if (isset($element['#title']) && !is_array($element['#title'])) {
-      $title = [
-        '#type' => 'markup',
-        '#markup' => $element['#title'],
-      ];
-      // TODO: Implement dependency injection if possible.
-      $element['#title'] = \Drupal::service('renderer')->render($title);
+  public static function preRenderText($element) {
+    if (isset($element['#context']) &&
+      isset($element['#template']) &&
+      $element['#template'] === '{{ value|nl2br }}'
+    ) {
+      $element['#markup'] = $element['#context']['value'];
     }
     return $element;
   }

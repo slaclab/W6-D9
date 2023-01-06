@@ -100,7 +100,6 @@
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
     "pantheon-systems/drupal-integrations": "^9",
-    "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"

@@ -6,6 +6,7 @@
  */
 
 use Drupal\slac_core\Callback\LinkPreRender;
+use Drupal\slac_core\Callback\TextPreRender;
 
 /**
  * Implements hook_preprocess().
@@ -52,12 +53,18 @@ function gesso_page_attachments_alter(array &$attachments) {
  */
 function gesso_element_info_alter(array &$types) {
   // Allow for html tags in link label fields.
-  if (isset($types['link'])) {
+  if (isset($types['link']) || isset($types['inline_template'])) {
     // The new prerender needs to happen first.
     $types['link']['#pre_render'][1] = $types['link']['#pre_render'][0];
     $types['link']['#pre_render'][0] = [
       LinkPreRender::class,
       'preRenderLink',
+    ];
+
+    // The new prerender needs to happen first.
+    $types['inline_template']['#pre_render'][0] = [
+      TextPreRender::class,
+      'preRenderText',
     ];
   }
 }

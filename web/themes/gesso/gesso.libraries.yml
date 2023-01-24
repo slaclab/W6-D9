@@ -5,11 +5,11 @@ global:
       dist/css/styles.css: {}
   js:
     dist/js/arrow-link.es6.js: {}
-    dist/js/external-link.es6.js: {}
     dist/js/header.es6.js: {}
     dist/js/transitions.es6.js: {}
     dist/js/embed.es6.js: {}
     dist/js/search.es6.js: {}
+    dist/js/selection-sharer.es6 : {}
   dependencies:
     - gesso/common
     - core/drupal

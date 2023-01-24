@@ -147,11 +147,30 @@ function gesso_preprocess_paragraph__image_hero(&$vars) {
   _gesso_set_hero_caption($vars);
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+
   if ($paragraph->hasField('field_text_color')) {
     $text_color = $paragraph->field_text_color->value;
     if ($text_color == 'white') {
       $vars['#attached']['library'][] = 'gesso/inverse_nav';
     }
+  }
+
+  if ($parent && $parent->getEntityType()->id() == 'node') {
+    $vars['title'] = $parent->get('title')->view();
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__two_column_hero(&$vars) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $vars['paragraph'];
+  $parent = $paragraph->getParentEntity();
+
+  if ($parent && $parent->getEntityType()->id() == 'node') {
+    $vars['title'] = $parent->get('title')->view();
   }
 }
 
@@ -175,7 +194,7 @@ function gesso_preprocess_paragraph__microsite_hero(&$vars) {
   $parent = $paragraph->getParentEntity();
 
   if ($parent && $parent->getEntityType()->id() == 'node') {
-    $vars['node_title'] = $parent->title->value;
+    $vars['title'] = $parent->get('title')->view();
   }
 
   /** @var MicrositeUtilities $microsite_utilities */

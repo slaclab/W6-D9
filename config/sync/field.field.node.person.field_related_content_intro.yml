@@ -1,0 +1,19 @@
+uuid: 42f38df3-0fba-4105-b7ec-948fcbb1fc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content_intro
+    - node.type.person
+id: node.person.field_related_content_intro
+field_name: field_related_content_intro
+entity_type: node
+bundle: person
+label: 'Related Content Intro'
+description: 'Optionally change the intro text for Related Content.  By default this will read "Selected stories featuring [person]".  Do not enter the person''s name in this field, as it will be automatically generated from the Title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

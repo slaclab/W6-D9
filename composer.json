@@ -95,7 +95,7 @@
     "drupal/views_year_filter": "^2.0",
     "drupal/viewsreference": "^2.0@beta",
     "drupal/viewsreference_filter": "^1.0",
-    "drupal/webform": "^6.1",
+    "drupal/webform": "6.1.4",
     "drupal/webform_spam_words": "^2.0",
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",

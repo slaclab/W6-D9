@@ -15,6 +15,7 @@ dependencies:
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_related_person
     - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
@@ -51,6 +52,7 @@ hidden:
   field_link: true
   field_long_text: true
   field_paragraphs: true
+  field_related_person: true
   field_research_area: true
   field_tags: true
   field_teaser: true

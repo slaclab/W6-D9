@@ -16,6 +16,7 @@ dependencies:
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_paragraphs
+    - field.field.media.remote_video.field_related_person
     - field.field.media.remote_video.field_research_area
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
@@ -136,6 +137,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_related_person:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_research_area:
     type: entity_reference_label

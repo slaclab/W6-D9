@@ -17,6 +17,7 @@ dependencies:
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_paragraphs
+    - field.field.media.remote_video.field_related_person
     - field.field.media.remote_video.field_research_area
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
@@ -85,6 +86,7 @@ hidden:
   field_link: true
   field_long_text: true
   field_paragraphs: true
+  field_related_person: true
   field_research_area: true
   field_source_name: true
   field_tags: true

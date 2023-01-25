@@ -1,0 +1,29 @@
+uuid: 3d8cc36f-bb52-49b0-80c0-c1df78ac385b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_related_person
+    - media.type.image
+    - node.type.person
+id: media.image.field_related_person
+field_name: field_related_person
+entity_type: media
+bundle: image
+label: 'Related Person'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

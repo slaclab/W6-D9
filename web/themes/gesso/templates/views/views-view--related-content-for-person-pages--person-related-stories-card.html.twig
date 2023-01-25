@@ -41,9 +41,14 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
+{% set custom_header %}
+  <div class="c-kicker">Related News</div>
+  <h2 class="h3">{{ intro ? intro : "Selected stories featuring" }} {{ node_title }}</h2>
+{% endset %}
+
 {% include '@components/view/views-view--toggle/views-view--toggle.twig' with {
   'element': 'div',
-  'header': header,
+  'header': custom_header,
   'exposed': exposed,
   'attachment_before': attachment_before,
   'rows': rows,

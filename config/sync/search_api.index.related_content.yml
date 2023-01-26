@@ -83,7 +83,7 @@ field_settings:
     property_path: aggregated_field
     type: integer
     configuration:
-      type: first
+      type: union
       fields:
         - 'entity:media/field_related_person'
         - 'entity:node/field_bio'

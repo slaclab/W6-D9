@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.person
     - search_api.index.related_content
   module:
     - search_api
@@ -410,11 +411,16 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
-            type: none
+            type: 'entity:node'
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            bundles:
+              person: person
+            access: false
+            operation: view
+            multiple: 1
           break_phrase: false
           not: false
       filters: {  }

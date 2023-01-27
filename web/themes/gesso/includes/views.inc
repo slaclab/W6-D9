@@ -45,8 +45,11 @@ function gesso_preprocess_views_view__images_video_landing_page_mosaic(array &$v
  * Implements hook_preprocess_views_view__HOOK().
  */
 function gesso_preprocess_views_view__related_content_for_person_pages(array &$variables) {
-  $node = \Drupal::request()->attributes->get('node');
-  $variables['node_title'] = $node->getTitle();
+  $nid = $variables['view']->args[0];
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
 
   if ($node->field_related_content_intro->value) {
     $variables['intro'] = $node->field_related_content_intro->value;

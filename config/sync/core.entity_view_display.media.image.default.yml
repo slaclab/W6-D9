@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_related_person
     - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
@@ -100,6 +101,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_related_person:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_research_area:
     type: entity_reference_label

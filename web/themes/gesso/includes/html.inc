@@ -53,18 +53,20 @@ function gesso_page_attachments_alter(array &$attachments) {
  */
 function gesso_element_info_alter(array &$types) {
   // Allow for html tags in link label fields.
-  if (isset($types['link']) || isset($types['inline_template'])) {
-    // The new prerender needs to happen first.
-    $types['link']['#pre_render'][1] = $types['link']['#pre_render'][0];
-    $types['link']['#pre_render'][0] = [
+  if (isset($types['link'])) {
+    // The new prerender needs to happen first for links.
+    array_unshift($types['link']['#pre_render'], [
       LinkPreRender::class,
       'preRenderLink',
-    ];
+    ]);
+  }
 
-    // The new prerender needs to happen first.
-    $types['inline_template']['#pre_render'][0] = [
+  if (isset($types['inline_template'])) {
+    // Add our prerender to the list.
+    $types['inline_template']['#pre_render'][] = [
       TextPreRender::class,
       'preRenderText',
     ];
   }
+
 }

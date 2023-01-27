@@ -44,10 +44,6 @@
   {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
 {% endspaceless %}{% endset %}
 
-{% set title %}
-  {% autoescape false %}{{ drupal_token('current-page:title') }}{% endautoescape %}
-{% endset %}
-
 {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
   'modifier_classes': 'transparent_nav',
   'hero_caption': tooltip,

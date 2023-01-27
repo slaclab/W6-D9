@@ -30,7 +30,7 @@ class TextPreRender implements TrustedCallbackInterface {
       isset($element['#template']) &&
       $element['#template'] === '{{ value|nl2br }}'
     ) {
-      $element['#markup'] = $element['#context']['value'];
+      $element['#markup'] = check_markup($element['#context']['value'], 'basic_html');
     }
     return $element;
   }

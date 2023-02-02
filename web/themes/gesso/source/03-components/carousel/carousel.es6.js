@@ -8,7 +8,7 @@ Drupal.behaviors.carousel = {
     const carousels = context.querySelectorAll('.c-carousel__slides');
     carousels.forEach(carousel => {
       const slider = tns({
-        arrowKeys: true,
+        arrowKeys: false,
         autoWidth: true,
         center: false,
         container: carousel,

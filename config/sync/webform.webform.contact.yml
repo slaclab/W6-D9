@@ -3,13 +3,10 @@ langcode: en
 status: open
 dependencies:
   module:
-    - antibot
+    - webform_spam_words
   enforced:
     module:
       - webform
-third_party_settings:
-  antibot:
-    antibot: true
 _core:
   default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0
@@ -247,7 +244,7 @@ handlers:
     notes: ''
     status: true
     conditions: {  }
-    weight: 2
+    weight: -49
     settings:
       states:
         - completed
@@ -277,4 +274,13 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+  webform_spam_words:
+    id: webform_spam_words
+    handler_id: webform_spam_words
+    label: 'Webform Spam Words'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings: {  }
 variants: {  }

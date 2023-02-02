@@ -38,12 +38,8 @@
  * @ingroup themeable
  */
 #}
-{% set page_title %}
-  {% autoescape false %}{{ drupal_token('current-page:title') }}{% endautoescape %}
-{% endset %}
-
 {% include '@components/page-title/page-title.twig' with {
-  page_title: page_title,
+  page_title: title,
   lede: content.field_body|field_value,
   kicker: content.field_text|field_value,
   rss_url: content.field_button_link|field_value,

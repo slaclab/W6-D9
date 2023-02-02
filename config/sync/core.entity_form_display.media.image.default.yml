@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_related_person
     - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
@@ -77,6 +78,7 @@ third_party_settings:
         - field_tags
         - field_internal_tags
         - field_research_area
+        - field_related_person
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -205,6 +207,16 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_related_person:
+    type: entity_reference_autocomplete
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_research_area:
     type: term_reference_tree

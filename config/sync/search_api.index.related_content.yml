@@ -1,0 +1,149 @@
+uuid: 436641d4-b141-42ee-8554-57d4aa39161d
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.related_content
+    - core.entity_view_mode.media.search_index
+    - core.entity_view_mode.node.search_index
+  module:
+    - search_api_solr
+    - search_api
+    - media
+    - node
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      specific_languages:
+        en: '0'
+id: related_content
+name: 'Related Content'
+description: ''
+read_only: false
+field_settings:
+  entity_id:
+    label: 'Entity ID'
+    property_path: aggregated_field
+    type: integer
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/mid'
+        - 'entity:node/nid'
+  published:
+    label: Published
+    property_path: aggregated_field
+    type: boolean
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/status'
+        - 'entity:node/status'
+  related_person:
+    label: 'Related Person'
+    property_path: aggregated_field
+    type: integer
+    configuration:
+      type: union
+      fields:
+        - 'entity:media/field_related_person'
+        - 'entity:node/field_bio'
+        - 'entity:node/field_bio_related_content'
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: solr_string_storage
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:media':
+          image: search_index
+          remote_video: search_index
+        'entity:node':
+          event: search_index
+          news_article: search_index
+  sort_date:
+    label: 'Sort date'
+    property_path: aggregated_field
+    type: date
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/created'
+        - 'entity:node/created'
+        - 'entity:node/field_datetime_range'
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - image
+        - remote_video
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - event
+        - news_article
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: related_content

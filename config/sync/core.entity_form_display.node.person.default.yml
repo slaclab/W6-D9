@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
     - field.field.node.person.field_meta_tags
+    - field.field.node.person.field_related_content_intro
     - field.field.node.person.field_teaser
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
@@ -67,6 +68,7 @@ third_party_settings:
         - field_links
         - field_long_text
         - field_boolean
+        - field_related_content_intro
       label: 'Person Details'
       region: content
       parent_name: group_content
@@ -152,6 +154,31 @@ content:
       sidebar: true
       use_details: true
     third_party_settings: {  }
+  field_related_content_intro:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d3875256-328f-460e-b054-21d7c18141da:
+          entity_type: node
+          bundle: person
+          dependee: field_boolean
+          settings:
+            state: visible
+            condition: '!checked'
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_teaser:
     type: text_textarea
     weight: 5

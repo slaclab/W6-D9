@@ -41,6 +41,21 @@ function gesso_preprocess_views_view__images_video_landing_page_mosaic(array &$v
   gesso_generate_research_area_list($variables);
 }
 
+/**
+ * Implements hook_preprocess_views_view__HOOK().
+ */
+function gesso_preprocess_views_view__related_content_for_person_pages(array &$variables) {
+  $nid = $variables['view']->args[0];
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
+
+  if ($node->field_related_content_intro->value) {
+    $variables['intro'] = $node->field_related_content_intro->value;
+  }
+}
+
 function gesso_generate_research_area_list(array &$variables) {
   $research_area_terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadTree('research_area', 0, 1, TRUE);
   $variables['research_areas'] = [];
@@ -150,7 +165,7 @@ function gesso_form_views_exposed_form_alter(&$form, FormStateInterface $form_st
     }
 
     arsort($options);
-    
+
     if ($node_type == 'event') {
       $form['event_archive_year'] = [
         '#type' => 'select',

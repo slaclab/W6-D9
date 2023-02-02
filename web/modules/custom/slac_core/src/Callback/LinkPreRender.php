@@ -29,7 +29,7 @@ class LinkPreRender implements TrustedCallbackInterface {
     if (isset($element['#title']) && !is_array($element['#title'])) {
       $title = [
         '#type' => 'markup',
-        '#markup' => $element['#title'],
+        '#markup' => check_markup($element['#title'], 'basic_html'),
       ];
       // TODO: Implement dependency injection if possible.
       $element['#title'] = \Drupal::service('renderer')->render($title);

@@ -3,13 +3,10 @@ langcode: en
 status: open
 dependencies:
   module:
-    - antibot
+    - webform_spam_words
   enforced:
     module:
       - webform
-third_party_settings:
-  antibot:
-    antibot: true
 _core:
   default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0
@@ -318,11 +315,11 @@ handlers:
     notes: ''
     status: true
     conditions: {  }
-    weight: 2
+    weight: -49
     settings:
       states:
         - completed
-      to_mail: tours@slac.stanford.edu
+      to_mail: 'tours@slac.stanford.edu, jennyv@slac.stanford.edu'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -330,13 +327,13 @@ handlers:
       cc_options: {  }
       from_mail: noreply@slac.stanford.edu
       from_options: {  }
-      from_name: '[webform_submission:values:name:raw]'
+      from_name: '[webform_submission:values:full_name_of_point_of_contact:raw]'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: 'Webform submission: Educational tour request form'
+      body: _default
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -348,4 +345,13 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+  webform_spam_words:
+    id: webform_spam_words
+    handler_id: webform_spam_words
+    label: 'Webform Spam Words'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings: {  }
 variants: {  }

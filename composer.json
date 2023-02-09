@@ -32,7 +32,7 @@
     "drupal/cshs": "^3.6",
     "drupal/devel": "^4.1",
     "drupal/diff": "^1.0",
-    "drupal/duration_field": "^2.0",
+    "drupal/duration_field": "2.1.0",
     "drupal/easy_breadcrumb": "^2.0",
     "drupal/entity_reference_revisions": "^1.9",
     "drupal/environment_indicator": "^4.0",

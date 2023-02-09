@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "051400bb12c203b670d074a5fa604ff4",
+    "content-hash": "05156772cfa55761d9c7c53ec7c7b514",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3575,17 +3575,17 @@
         },
         {
             "name": "drupal/environment_indicator",
-            "version": "4.0.10",
+            "version": "4.0.14",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/environment_indicator.git",
-                "reference": "4.0.10"
+                "reference": "4.0.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.10.zip",
-                "reference": "4.0.10",
-                "shasum": "461c8099e6f9e3ac140534b1608f5e85b83c2025"
+                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.14.zip",
+                "reference": "4.0.14",
+                "shasum": "ff4fe11fcd5fa08b7ba7a451302cf93e5f68449c"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -3593,8 +3593,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.10",
-                    "datestamp": "1664535402",
+                    "version": "4.0.14",
+                    "datestamp": "1674120945",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

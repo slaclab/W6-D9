@@ -2,6 +2,7 @@
 
 namespace Drupal\slac_core\Callback;
 
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Security\TrustedCallbackInterface;
 
 class LinkPreRender implements TrustedCallbackInterface {
@@ -26,13 +27,8 @@ class LinkPreRender implements TrustedCallbackInterface {
    *   The modified form element.
    */
   public static function preRenderLink($element) {
-    if (isset($element['#title']) && !is_array($element['#title'])) {
-      $title = [
-        '#type' => 'markup',
-        '#markup' => check_markup($element['#title'], 'basic_html'),
-      ];
-      // TODO: Implement dependency injection if possible.
-      $element['#title'] = \Drupal::service('renderer')->render($title);
+    if (isset($element['#title']) && gettype($element['#title']) === "string") {
+      $element['#title'] = Markup::create(check_markup($element['#title'], 'basic_html'));
     }
     return $element;
   }

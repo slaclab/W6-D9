@@ -157,7 +157,7 @@ function gesso_preprocess_paragraph__image_hero(&$vars) {
   }
 
   if ($parent && $parent->getEntityType()->id() == 'node') {
-    $vars['title'] = $parent->get('title')->view();
+    $vars['node_title'] = $parent->get('title')->value;
   }
 }
 
@@ -170,7 +170,7 @@ function gesso_preprocess_paragraph__two_column_hero(&$vars) {
   $parent = $paragraph->getParentEntity();
 
   if ($parent && $parent->getEntityType()->id() == 'node') {
-    $vars['title'] = $parent->get('title')->view();
+    $vars['node_title'] = $parent->get('title')->value;
   }
 }
 
@@ -194,7 +194,7 @@ function gesso_preprocess_paragraph__microsite_hero(&$vars) {
   $parent = $paragraph->getParentEntity();
 
   if ($parent && $parent->getEntityType()->id() == 'node') {
-    $vars['title'] = $parent->get('title')->view();
+    $vars['node_title'] = $parent->get('title')->value;
   }
 
   /** @var MicrositeUtilities $microsite_utilities */

@@ -61,12 +61,4 @@ function gesso_element_info_alter(array &$types) {
     ]);
   }
 
-  if (isset($types['inline_template'])) {
-    // Add our prerender to the list.
-    $types['inline_template']['#pre_render'][] = [
-      TextPreRender::class,
-      'preRenderText',
-    ];
-  }
-
 }

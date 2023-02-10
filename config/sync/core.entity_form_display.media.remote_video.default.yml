@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
+    - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_internal_tags
@@ -144,7 +145,7 @@ content:
     third_party_settings: {  }
   field_caption:
     type: text_textarea
-    weight: 5
+    weight: 4
     region: content
     settings:
       rows: 5

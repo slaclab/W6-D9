@@ -21,6 +21,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Implements hook_form_FORM_ID_alter() for the search_block_form form.
+ *
  */
 function slac_core_form_slac_search_form_alter(&$form, FormStateInterface $form_state) {
   // Since the exposed search form is a GET form, do not send the form tokens.
@@ -193,7 +194,7 @@ function slac_core_form_user_login_form_alter(&$form, FormStateInterface $form_s
   }
 }
 
- /*
+/**
  * Implements hook_views_pre_render().
  */
 function slac_core_views_pre_render(ViewExecutable $view) {

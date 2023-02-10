@@ -8,6 +8,7 @@ dependencies:
     - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
+    - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_internal_tags
@@ -43,6 +44,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

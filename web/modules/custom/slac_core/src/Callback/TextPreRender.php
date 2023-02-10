@@ -2,6 +2,7 @@
 
 namespace Drupal\slac_core\Callback;
 
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Security\TrustedCallbackInterface;
 
 class TextPreRender implements TrustedCallbackInterface {
@@ -30,7 +31,7 @@ class TextPreRender implements TrustedCallbackInterface {
       isset($element['#template']) &&
       $element['#template'] === '{{ value|nl2br }}'
     ) {
-      $element['#markup'] = check_markup($element['#context']['value'], 'basic_html');
+      $element['#markup'] = Markup::create(check_markup($element['#context']['value'], 'basic_html'));
     }
     return $element;
   }

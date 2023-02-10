@@ -49,7 +49,7 @@
   'hero_caption': tooltip,
   'hero_kicker': content.field_text|field_value,
   'hero_image': content.field_image|field_value,
-  'hero_title': title,
+  'hero_title': node_title,
   'hero_summary': content|without('field_caption', 'field_lottiefile', 'field_text', 'field_image'),
   'text_color': paragraph.field_text_color.value|default('white')
 } %}

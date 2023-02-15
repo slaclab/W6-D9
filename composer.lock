@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15409d735660f05b50e625688bcef0c8",
+    "content-hash": "d4743153b7162bdc5edeb8d67f80b5df",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7941,17 +7941,17 @@
         },
         {
             "name": "drupal/views_year_filter",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_year_filter.git",
-                "reference": "2.0.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_year_filter-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "73662f88d2a2323d69ba1ee2b885d671143f702f"
+                "url": "https://ftp.drupal.org/files/projects/views_year_filter-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "8db1dc4fa9e1298ef06f34a09af8fef36705e885"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -7959,8 +7959,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1660679553",
+                    "version": "2.1.1",
+                    "datestamp": "1669398495",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb2656fc1fa5a216f1964d6f5686ec89",
+    "content-hash": "15409d735660f05b50e625688bcef0c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7824,26 +7824,26 @@
         },
         {
             "name": "drupal/views_display_switch",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_display_switch.git",
-                "reference": "1.1.3"
+                "reference": "1.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_display_switch-1.1.3.zip",
-                "reference": "1.1.3",
-                "shasum": "1c19ef01dd56dfadaec08f3d06b7dda8e4f0023f"
+                "url": "https://ftp.drupal.org/files/projects/views_display_switch-1.1.4.zip",
+                "reference": "1.1.4",
+                "shasum": "4482e2f0c494401a4cb5daecff475be894bffc8b"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.3",
-                    "datestamp": "1625807356",
+                    "version": "1.1.4",
+                    "datestamp": "1671403145",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46d5d6376fe043cd6bd06c0e33eefb8a",
+    "content-hash": "1045bd8de6a3ee39b6c2f97f6c6c84a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6315,16 +6315,16 @@
         },
         {
             "name": "drupal/rh_media",
-            "version": "1.0.0-beta10",
+            "version": "1.0.0-beta11",
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "drupal/rabbit_hole": "*"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta10",
-                    "datestamp": "1610813035",
+                    "version": "8.x-1.0-beta11",
+                    "datestamp": "1670668459",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -21742,7 +21742,6 @@
         "drupal/maxlength": 5,
         "drupal/media_migration": 15,
         "drupal/migrate_devel": 15,
-        "drupal/rh_media": 10,
         "drupal/style_options": 15,
         "drupal/ultimate_cron": 15,
         "drupal/views_rss": 5,

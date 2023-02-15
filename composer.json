@@ -75,7 +75,7 @@
     "drupal/search_api_pantheon": "8.1.0",
     "drupal/selection_sharer": "^1.4",
     "drupal/sendgrid_integration": "^2.0",
-    "drupal/simple_sitemap": "^4.1",
+    "drupal/simple_sitemap": "4.1.4",
     "drupal/simplesamlphp_auth": "^3.3",
     "drupal/site_settings": "^1.19",
     "drupal/sitewide_alert": "^2.0",

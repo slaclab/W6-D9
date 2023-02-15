@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb1d0aeb4390db3938e2d2b1f24a25a1",
+    "content-hash": "fa160cb4e84fad4b78c1c1cc4c762504",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5834,17 +5834,17 @@
         },
         {
             "name": "drupal/pantheon_advanced_page_cache",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pantheon_advanced_page_cache.git",
-                "reference": "2.1.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pantheon_advanced_page_cache-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "9be04c50d1351cf0873ccddcaa0623ab5f985621"
+                "url": "https://ftp.drupal.org/files/projects/pantheon_advanced_page_cache-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "adbac68a8c5290e6a32fe0b8cc9a6a7fb91a64d3"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10"
@@ -5857,8 +5857,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1665602647",
+                    "version": "2.1.1",
+                    "datestamp": "1669644382",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

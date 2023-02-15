@@ -66,7 +66,7 @@
     "drupal/paragraphs": "^1.14",
     "drupal/path_redirect_import": "^2.0",
     "drupal/pathauto": "^1.11",
-    "drupal/rabbit_hole": "^1.0@beta",
+    "drupal/rabbit_hole": "1.0.0-beta11",
     "drupal/redirect": "^1.6",
     "drupal/redis": "^1.5",
     "drupal/rh_media": "^1.0@beta",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f0d7b55cb1d5c297546055f0ada11b6",
+    "content-hash": "dcfa8b3e3a34bfe12f797c971369f1ed",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6961,26 +6961,26 @@
         },
         {
             "name": "drupal/site_settings",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/site_settings.git",
-                "reference": "8.x-1.19"
+                "reference": "8.x-1.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/site_settings-8.x-1.19.zip",
-                "reference": "8.x-1.19",
-                "shasum": "93977299549d33c4fbaad7a332fe7d3e1e2648b8"
+                "url": "https://ftp.drupal.org/files/projects/site_settings-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "b1e3b07437ef0ff7a907b7b6319f16db3942fb1c"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.19",
-                    "datestamp": "1590234916",
+                    "version": "8.x-1.20",
+                    "datestamp": "1669790573",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

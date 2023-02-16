@@ -11,7 +11,7 @@ field_name: field_internal_tags
 entity_type: node
 bundle: news_article
 label: 'Internal Tags'
-description: ''
+description: 'Used for pulling in stories to SLAC Today.'
 required: false
 translatable: true
 default_value: {  }

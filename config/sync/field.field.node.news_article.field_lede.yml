@@ -16,8 +16,8 @@ id: node.news_article.field_lede
 field_name: field_lede
 entity_type: node
 bundle: news_article
-label: Lede
-description: 'Plain text field summarizing the most important aspects of the news article.'
+label: 'Summary (dek)'
+description: 'Note: We no longer italicize this text.'
 required: false
 translatable: true
 default_value: {  }

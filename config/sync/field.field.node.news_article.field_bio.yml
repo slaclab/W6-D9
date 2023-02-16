@@ -11,7 +11,7 @@ field_name: field_bio
 entity_type: node
 bundle: news_article
 label: 'Author (Bio)'
-description: ''
+description: 'Start typing the author name to select it. Note: for Staff writers with Person bio pages.'
 required: false
 translatable: false
 default_value: {  }

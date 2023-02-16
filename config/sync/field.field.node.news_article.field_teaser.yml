@@ -17,8 +17,8 @@ field_name: field_teaser
 entity_type: node
 bundle: news_article
 label: Teaser
-description: 'Leave blank to use trimmed value of full text as the teaser.'
-required: false
+description: 'Duplicate or customize the Summary (dek) text here. This text may appear in SLAC Today, Science news Slack channel, rss feeds, google search, and social shares.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

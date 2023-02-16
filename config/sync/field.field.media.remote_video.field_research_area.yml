@@ -11,7 +11,7 @@ field_name: field_research_area
 entity_type: media
 bundle: remote_video
 label: 'Research Area'
-description: ''
+description: 'These tags categorize content for Search filters. See this <a href="https://docs.google.com/document/d/1nMXrPliTXxndvo1oyKpFFUHjuiWwcT6H1PV2LH-b7DM/edit?usp=sharing" target="_blank">Research Area document</a> if you need help.'
 required: false
 translatable: true
 default_value: {  }

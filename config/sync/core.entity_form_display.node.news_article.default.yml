@@ -71,8 +71,8 @@ third_party_settings:
         - field_research_area
         - field_internal_tags
         - field_source_link
-        - field_source_name
         - field_news_source
+        - field_source_name
         - field_bio_related_content
       label: Metadata
       region: content
@@ -199,7 +199,7 @@ content:
     third_party_settings: {  }
   field_news_source:
     type: options_select
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -262,7 +262,7 @@ content:
     third_party_settings: {  }
   field_source_name:
     type: text_textarea
-    weight: 12
+    weight: 13
     region: content
     settings:
       rows: 5

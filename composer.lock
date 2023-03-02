@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b135c649d01b3213b9f8ab8d88865559",
+    "content-hash": "0f523843c778b8aaee32cb92ab0a5a1c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5784,17 +5784,17 @@
         },
         {
             "name": "drupal/sendgrid_integration",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sendgrid_integration.git",
-                "reference": "8.x-2.0"
+                "reference": "8.x-2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sendgrid_integration-8.x-2.0.zip",
-                "reference": "8.x-2.0",
-                "shasum": "b5be08b04ec27a8923917d53bfdef5a86384d143"
+                "url": "https://ftp.drupal.org/files/projects/sendgrid_integration-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "b22be8fb60828ff5015b116ba39c65772c7475d4"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -5806,8 +5806,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0",
-                    "datestamp": "1665446175",
+                    "version": "8.x-2.1",
+                    "datestamp": "1677204686",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

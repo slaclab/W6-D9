@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f523843c778b8aaee32cb92ab0a5a1c",
+    "content-hash": "3c1de1bff3a548f22020561ea3c94245",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6182,27 +6182,27 @@
         },
         {
             "name": "drupal/svg_image_field",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/svg_image_field.git",
-                "reference": "2.1.1"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/svg_image_field-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "72fb90cb6eadffab35a32b9b14e2ae22dd48c218"
+                "url": "https://ftp.drupal.org/files/projects/svg_image_field-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "f54fd34dec47bdce4600d824b52b4bd788cfb8ce"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^9.3 || ^10",
                 "enshrined/svg-sanitize": "~0.15"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1646078279",
+                    "version": "2.2.0",
+                    "datestamp": "1676832585",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

@@ -74,7 +74,7 @@
     "drupal/term_reference_tree": "^1.1",
     "drupal/token_filter": "^1.4",
     "drupal/twig_field_value": "2.0.2",
-    "drupal/twig_tweak": "^3.1",
+    "drupal/twig_tweak": "3.2.1",
     "drupal/ultimate_cron": "^2.0@alpha",
     "drupal/view_mode_switch": "2.0.4",
     "drupal/views_display_switch": "1.1.4",

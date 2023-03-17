@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_caption
-    - field.storage.media.field_boolean
     - field.storage.media.field_long_text
-    - field.storage.node.field_lede
+    - field.storage.node.field_keyword_boost
+    - field.storage.media.field_boolean
     - field.storage.node.field_long_text
+    - field.storage.node.field_lede
     - field.storage.node.field_name
     - search_api.server.pantheon_solr8
     - core.entity_view_mode.media.search_index
@@ -17,6 +18,7 @@ dependencies:
     - media
     - node
     - search_api
+    - search_api_best_bets
     - search_api_exclude
     - slac_core
 third_party_settings:
@@ -61,9 +63,9 @@ third_party_settings:
     multilingual:
       limit_to_content_language: false
       include_language_independent: true
+      use_language_undefined_as_fallback_language: false
       specific_languages:
         en: '0'
-      use_language_undefined_as_fallback_language: false
       use_universal_collation: false
 id: content
 name: Content
@@ -115,6 +117,14 @@ field_settings:
       fields:
         - 'entity:media/bundle'
         - 'entity:node/type'
+  exclude:
+    label: 'Keyword boost » Exclude from results'
+    datasource_id: 'entity:node'
+    property_path: 'field_keyword_boost:exclude'
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_keyword_boost
   field_boolean:
     label: 'Enable detail page for this media'
     datasource_id: 'entity:media'
@@ -156,6 +166,14 @@ field_settings:
       fields:
         - 'entity:media/status'
         - 'entity:node/status'
+  query_text:
+    label: 'Keyword boost » Search query text.'
+    datasource_id: 'entity:node'
+    property_path: 'field_keyword_boost:query_text'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_keyword_boost
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
@@ -267,6 +285,7 @@ processor_settings:
       - field_long_text
       - lede
       - media_name
+      - query_text
       - rendered_item
       - research_area
       - speaker_name
@@ -278,6 +297,16 @@ processor_settings:
   language_with_fallback: {  }
   node_exclude: {  }
   rendered_item: {  }
+  search_api_best_bets_processor:
+    weights:
+      postprocess_query: 10
+      preprocess_query: 99
+    fields:
+      media: {  }
+      node:
+        - field_keyword_boost
+    query_handler: solr
+    result_elevated_flag: query_handler
   solr_boost_more_recent:
     weights:
       preprocess_query: 0

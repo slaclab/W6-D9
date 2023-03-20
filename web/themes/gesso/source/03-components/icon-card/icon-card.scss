@@ -4,6 +4,7 @@
 
 .c-icon-card {
   @include default-variables;
+  align-self: stretch;
   background: rgba(gesso-grayscale(white), 0.87);
   color: gesso-color(text, primary);
   display: block;

@@ -14,15 +14,7 @@ Drupal.behaviors.search = {
         let searchUrl = '/search';
         let searchInputName = 'keywords';
         searchHidden.innerHTML = '';
-        if (selectedSearch === 'slac_web') {
-          searchUrl =
-            'https://www-psearch.slac.stanford.edu/SLACSearch/app/slac/index';
-          searchInputName = 'qt';
-          searchHidden.insertAdjacentHTML(
-            'beforeend',
-            `<input type="hidden" name="style" value="mainSite" />`
-          );
-        } else if (selectedSearch === 'people') {
+        if (selectedSearch === 'people') {
           searchUrl =
             'https://www-public.slac.stanford.edu/phonebook/dirsearch.aspx';
           searchInputName = 'NAME';

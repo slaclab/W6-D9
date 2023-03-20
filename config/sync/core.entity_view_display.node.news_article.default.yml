@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_internal_tags
+    - field.field.node.news_article.field_keyword_boost
     - field.field.node.news_article.field_lede
     - field.field.node.news_article.field_meta_tags
     - field.field.node.news_article.field_news_source
@@ -265,6 +266,7 @@ content:
     weight: 2
     region: content
 hidden:
+  field_keyword_boost: true
   field_meta_tags: true
   langcode: true
   search_api_excerpt: true

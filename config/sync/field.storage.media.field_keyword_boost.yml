@@ -1,13 +1,13 @@
-uuid: fa7cb29b-1239-447c-9867-b95d36887907
+uuid: 874d5ca5-5bd1-4fac-98ed-0fc1331a8ad9
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - media
     - search_api_best_bets
-id: node.field_keyword_boost
+id: media.field_keyword_boost
 field_name: field_keyword_boost
-entity_type: node
+entity_type: media
 type: search_api_best_bets
 settings: {  }
 module: search_api_best_bets

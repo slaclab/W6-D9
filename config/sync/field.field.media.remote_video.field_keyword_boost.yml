@@ -1,0 +1,21 @@
+uuid: 2f2cdeef-98b2-4451-97ee-50ad37fbafd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_keyword_boost
+    - media.type.remote_video
+  module:
+    - search_api_best_bets
+id: media.remote_video.field_keyword_boost
+field_name: field_keyword_boost
+entity_type: media
+bundle: remote_video
+label: 'Keyword boost'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: search_api_best_bets

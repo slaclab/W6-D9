@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_site_setting
     - node.type.event
-    - site_settings.site_setting_entity_type.map
+    - site_settings.site_setting_entity_type.event_maps
 id: node.event.field_site_setting
 field_name: field_site_setting
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:site_setting_entity'
   handler_settings:
     target_bundles:
-      map: map
+      event_maps: event_maps
     sort:
       field: _none
       direction: ASC

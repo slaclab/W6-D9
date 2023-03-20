@@ -5,9 +5,12 @@ global:
       dist/css/styles.css: {}
   js:
     dist/js/arrow-link.es6.js: {}
-    dist/js/external-link.es6.js: {}
     dist/js/header.es6.js: {}
     dist/js/transitions.es6.js: {}
+    dist/js/embed.es6.js: {}
+    dist/js/search.es6.js: {}
+    dist/js/external-link.es6.js: {}
+
   dependencies:
     - gesso/common
     - core/drupal
@@ -23,6 +26,17 @@ accordion:
   dependencies:
     - gesso/common
     - core/drupal
+
+addtocal_a11y:
+  js:
+    dist/js/addtocal-a11y.es6.js: {}
+
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+  js:
+    dist/js/alert-bar.es6.js: {}
 
 animated_icon:
   css:
@@ -52,6 +66,15 @@ carousel:
   dependencies:
     - gesso/common
     - core/drupal
+
+checkbox_widget:
+  js:
+    dist/js/checkbox-widget.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+    - facets/widget
+    - core/once
 
 drawer:
   css:
@@ -89,6 +112,25 @@ event_details:
     theme:
       dist/css/event-details.css: {}
 
+filter_modal:
+  css:
+    theme:
+      dist/css/filter-modal.css: {}
+  js:
+    dist/js/filter-modal.es6.js: {}
+  dependencies:
+    - gesso/lightbox
+
+grid_with_featured:
+  css:
+    theme:
+      dist/css/grid-with-featured.css: {}
+  js:
+    dist/js/grid-with-featured.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 hamburger_button:
   css:
     theme:
@@ -119,6 +161,20 @@ icon_card:
     - gesso/common
     - core/drupal
 
+inverse_nav:
+  css:
+    theme:
+      dist/css/inverse-nav.css: {}
+  dependencies:
+    - gesso/transparent_nav
+
+lightbox:
+  js:
+    dist/js/lightbox.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 mega_menu:
   css:
     theme:
@@ -131,12 +187,37 @@ mega_menu:
     - core/drupal
     - core/drupalSettings
 
+media_detail:
+  css:
+    theme:
+      dist/css/media-detail.css: {}
+
+microsite_hero:
+  css:
+    theme:
+      dist/css/microsite-hero.css: {}
+  js:
+    dist/js/microsite-hero.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 mobile_menu:
   css:
     theme:
       dist/css/mobile-menu.css: {}
   dependencies:
     - gesso/hamburger_button
+
+overlap_image:
+  css:
+    theme:
+      dist/css/overlap-image.css: {}
+  js:
+    dist/js/overlap-image.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 overlay_menu:
   css:
@@ -147,6 +228,13 @@ overlay_menu:
   dependencies:
     - gesso/common
     - gesso/hamburger_button
+
+search:
+  css:
+    theme:
+      dist/css/views-view-search.css: {}
+  dependencies:
+    - gesso/lightbox
 
 social_share:
   css:
@@ -167,6 +255,16 @@ side_menu:
     - gesso/common
     - gesso/hamburger_button
 
+tagline_long:
+  css:
+    theme:
+      dist/css/tagline--long.css: {}
+  js:
+    dist/js/tagline--long.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
+
 toc:
   css:
     theme:
@@ -175,6 +273,16 @@ toc:
     dist/js/toc.es6.js: {}
   dependencies:
     - gesso/common
+
+topic_grid:
+  css:
+    theme:
+      dist/css/topic-grid.css: {}
+  js:
+    dist/js/topic-grid.es6.js: {}
+  dependencies:
+    - gesso/common
+    - core/drupal
 
 tooltip:
   css:
@@ -205,11 +313,8 @@ video_lightbox:
   css:
     theme:
       dist/css/video-lightbox.css: {}
-  js:
-    dist/js/video-lightbox.es6.js: {}
   dependencies:
-    - gesso/common
-    - core/drupal
+    - gesso/lightbox
 
 views-toggle:
   css:

@@ -51,6 +51,6 @@
 
   @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
     @include layout-half-full-bleed($direction: 'left');
-    padding-left: 0;
+    margin-left: 0;
   }
 }

@@ -1,0 +1,26 @@
+uuid: b570c784-81ee-4de6-b902-c1627e4f65c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lede
+    - node.type.news_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.news_article.field_lede
+field_name: field_lede
+entity_type: node
+bundle: news_article
+label: 'Summary (dek)'
+description: 'Note: We no longer italicize this text.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

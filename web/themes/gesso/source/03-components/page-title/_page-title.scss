@@ -8,14 +8,22 @@
   h1 {
     margin: 0;
   }
+
+  h1 + p {
+    margin-top: 1rem;
+  }
 }
 
 .c-page-title--sidebar .l-constrain {
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     align-items: center;
     display: grid;
-    gap: rem(146px);
+    gap: rem(32px);
     grid-template-columns: min(50%, rem(gesso-constrain(sm))) 1fr;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    gap: rem(146px);
   }
 }
 

@@ -103,3 +103,6 @@ composer-manifest.yaml
 
 # Ignore .env files as they are personal
 /.env
+
+# Ignore the private folder
+/private/

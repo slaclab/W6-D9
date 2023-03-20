@@ -71,15 +71,6 @@
     > .c-mega-menu__link {
       @include menu_link;
       z-index: gesso-z-index(drawer) + 1;
-
-      .has-inverse-nav & {
-        color: gesso-color(text, on-dark);
-      }
-
-      .has-open-menu &,
-      .is-sticky & {
-        color: gesso-color(text, link);
-      }
     }
 
     button.c-mega-menu__link {
@@ -107,6 +98,7 @@
   bottom: 100%;
   box-shadow: gesso-box-shadow(1);
   color: gesso-color(text, link);
+  display: block;
   margin-bottom: 0;
   margin-top: 0;
   max-height: calc(
@@ -149,7 +141,6 @@
 
   &[hidden] {
     box-shadow: none;
-    display: block;
     opacity: 0;
     transform: translate3d(
       0,

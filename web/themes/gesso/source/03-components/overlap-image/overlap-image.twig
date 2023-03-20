@@ -1,3 +1,5 @@
+{{ attach_library('gesso/overlap_image') }}
+
 {% set classes = [
   'c-overlap-image',
   has_parallax ? 'c-overlap-image--parallax' : '',
@@ -10,7 +12,7 @@
 
 <div {{ add_attributes({ class: classes }) }}>
   {% if position == 'top-left' or position == 'top-right' or overlap_image_content_2 %}
-    <div class="c-overlap-image__text{% if icon %} u-animate-icon{% endif %}">
+    <div class="c-overlap-image__text{% if icon or icon_content %} u-animate-icon{% endif %}">
       {% if icon %}
         {% include '@components/animated-icon/animated-icon.twig' with {
           animation: icon,
@@ -18,6 +20,7 @@
           modifier_classes: 'c-overlap-image__icon c-animated-icon--small'
         } %}
       {% endif %}
+      {% if icon_content %}{{ icon_content }}{% endif %}
       {{ overlap_image_content }}
     </div>
   {% endif  %}
@@ -28,13 +31,13 @@
         {% include '@components/tooltip/tooltip.twig' with {
           tooltip_content: image_caption,
           tooltip_id: caption_id,
-          modifier_classes: position == 'top-right' or position == 'center-right' or position == 'bottom-right' ? 'c-tooltip--align-left' : ''
+          modifier_classes: position == 'top-right' or position == 'center-right' or position == 'bottom-right' or overlap_image_content_2 ? 'c-tooltip--align-left' : ''
         } %}
       </div>
     {% endif %}
   </div>
   {% if position != 'top-left' and position != 'top-right' and not overlap_image_content_2 %}
-    <div class="c-overlap-image__text{% if icon %} u-animate-icon{% endif %}">
+    <div class="c-overlap-image__text{% if icon or icon_content %} u-animate-icon{% endif %}">
       {% if icon %}
         {% include '@components/animated-icon/animated-icon.twig' with {
           animation: icon,
@@ -42,6 +45,7 @@
           modifier_classes: 'c-overlap-image__icon c-animated-icon--small'
         } %}
       {% endif %}
+      {% if icon_content %}{{ icon_content }}{% endif %}
       {{ overlap_image_content }}
     </div>
   {% endif %}

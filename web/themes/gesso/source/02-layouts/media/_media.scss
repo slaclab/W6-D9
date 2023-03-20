@@ -16,7 +16,12 @@ $media-gutter: rem(gesso-spacing(5));
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 0;
-  margin: 0 $media-gutter 0 0;
+  margin: 0 0 $media-gutter 0;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    margin-bottom: 0;
+    margin-right: $media-gutter;
+  }
 }
 
 .l-media__content {

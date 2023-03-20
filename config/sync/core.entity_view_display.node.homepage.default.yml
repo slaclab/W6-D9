@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.homepage.field_hero_paragraph
+    - field.field.node.homepage.field_meta_tags
     - field.field.node.homepage.field_paragraphs
     - node.type.homepage
   module:
@@ -21,7 +22,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -30,11 +31,10 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
-hidden: {  }
+hidden:
+  field_meta_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

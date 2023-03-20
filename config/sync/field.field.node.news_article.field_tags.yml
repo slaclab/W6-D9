@@ -10,8 +10,8 @@ id: node.news_article.field_tags
 field_name: field_tags
 entity_type: node
 bundle: news_article
-label: Tags
-description: ''
+label: 'Related Topics'
+description: 'Tags categorize content for Topics pages and RSS feeds.'
 required: false
 translatable: true
 default_value: {  }

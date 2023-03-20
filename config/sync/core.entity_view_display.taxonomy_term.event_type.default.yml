@@ -1,9 +1,13 @@
-uuid: 33573258-59b7-4557-8bdf-9ae610b92ef3
+uuid: adf3e7bc-4ad5-4ae0-bff6-1bdbc4947df9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.event_type.field_paragraphs
+    - field.field.taxonomy_term.event_type.field_content
+    - field.field.taxonomy_term.event_type.field_display_name
+    - field.field.taxonomy_term.event_type.field_lede
+    - field.field.taxonomy_term.event_type.field_meta_tags
+    - field.field.taxonomy_term.event_type.field_paragraph
     - taxonomy.vocabulary.event_type
   module:
     - entity_reference_revisions
@@ -20,7 +24,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_paragraphs:
+  field_content:
     type: entity_reference_revisions_entity_view
     label: above
     settings:
@@ -29,4 +33,31 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+  field_display_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lede:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: large_image
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_meta_tags: true
+  langcode: true
+  search_api_excerpt: true

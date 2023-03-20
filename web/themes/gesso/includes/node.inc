@@ -40,6 +40,26 @@ function gesso_preprocess_node(&$variables) {
         $variables['toc_list'] = gesso_preprocess_node_generate_toc_list($items);
       }
     }
+
+    // Determine hte type of the hero paragraph if the field exists.
+    if ($node->hasField('field_hero_paragraph')) {
+      if($node->get('field_hero_paragraph')->first()) {
+        $hero_field = $node->get('field_hero_paragraph')->first()->getValue();
+
+        /** @var Paragraph $hero_paragraph */
+        $hero_paragraph = Paragraph::load($hero_field['target_id']);
+        $variables['hero_type'] = $hero_paragraph->getType();
+
+        // In the special case that the hero type indicates the page is
+        // being used as a microsite, indicate as such to the template.
+        if ($variables['hero_type'] == 'microsite_hero') {
+          $variables['is_microsite'] = TRUE;
+        }
+      }
+      else {
+        $variables['hero_type'] = 'none';
+      }
+    }
   }
 }
 
@@ -91,18 +111,26 @@ function gesso_preprocess_node__event(&$vars) {
       $vars['end_date'] = NULL;
       $vars['formatted_date_time'] = date('l, F j, Y', $start_date) . '<br>';
       if (date('a', $start_date) == date('a', $end_date)) {
-        $vars['formatted_date_time'] .= date('g:i', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= date('g:i', $start_date) . '&ndash;' . str_replace('m', '.m.', date('g:i a T', $end_date));
       } else {
-        $vars['formatted_date_time'] .= date('g:i a', $start_date) . ' &ndash; ' . date('g:i a T', $end_date);
+        $vars['formatted_date_time'] .= str_replace('m', '.m.', date('g:i a', $start_date)) . '&ndash;' . str_replace('m', '.m.', date('g:i a T', $end_date));
       }
     } else {
       $vars['end_date'] = [
         'month' => date('M', $end_date),
         'day' => date('j', $end_date),
       ];
-      $vars['formatted_date_time'] = date('l, F j', $start_date) . ' &ndash; ' . date('l, F j, Y', $end_date);
+      $vars['formatted_date_time'] = date('l, F j', $start_date) . '&ndash;' . date('l, F j, Y', $end_date);
     }
-
+    if (!empty($vars['content']['field_override_text'][0])) {
+      $vars['content']['field_datetime_range'][0]['start_date'] = $vars['content']['field_override_text'][0];
+    } else {
+      $vars['content']['field_datetime_range'][0]['start_date'] = [
+        '#markup' => $vars['formatted_date_time'],
+      ];
+    }
+    $vars['content']['field_datetime_range'][0]['separator'] = NULL;
+    $vars['content']['field_datetime_range'][0]['end_date'] = NULL;
   }
 }
 
@@ -114,10 +142,13 @@ function gesso_preprocess_node__person(&$vars) {
     if (!empty($vars['content']['field_body'][0])) {
       $body_field = $vars['elements']['#node']->get('field_body');
       $vars['content']['field_body_trimmed'] = $body_field->view([
-        'type' => 'text_trimmed',
+        'type' => 'smart_trim',
         'label' => 'hidden',
         'settings' => [
-          'trim_length' => 500
+          'trim_length' => 530,
+          'trim_type' => 'chars',
+          'trim_suffix' => '...',
+          'summary_handler' => 'ignore'
         ],
       ]);
     }
@@ -172,4 +203,3 @@ function gesso_preprocess_node_generate_toc_list($items) {
 
   return $links;
 }
-

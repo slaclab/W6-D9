@@ -1,4 +1,4 @@
-uuid: d6b22e2e-a39a-43e0-823f-b7373f6411b4
+uuid: 5cbab8fa-b245-43fb-9d13-9499cfe9d24f
 langcode: en
 status: true
 dependencies:
@@ -28,93 +28,108 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 31
-        enabled: false
-      accordion_item:
-        weight: 32
-        enabled: false
-      article_hero:
-        weight: 33
-        enabled: false
-      callout_box:
-        weight: 34
-        enabled: false
-      card:
-        weight: 35
-        enabled: false
-      content_embed:
         weight: 36
         enabled: false
-      embed_block:
+      accordion_item:
         weight: 37
         enabled: false
-      embed_full_html_:
+      article_hero:
         weight: 38
         enabled: false
-      embed_view:
+      callout_box:
         weight: 39
         enabled: false
-      extra_large_card:
+      card:
         weight: 40
         enabled: false
-      fifty_fifty:
+      cards_with_show_more:
         weight: 41
         enabled: false
-      image_carousel:
+      content_card:
         weight: 42
         enabled: false
-      image_embed:
+      content_embed:
         weight: 43
         enabled: false
-      image_hero:
+      embed_block:
         weight: 44
         enabled: false
-      microsite_hero:
+      embed_full_html_:
         weight: 45
         enabled: false
-      microsite_navigation_marker:
+      embed_view:
         weight: 46
         enabled: false
-      overlap_image:
+      extra_large_card:
         weight: 47
         enabled: false
-      promo_box:
+      fifty_fifty:
         weight: 48
         enabled: false
-      quote:
+      fifty_fifty_staggered:
         weight: 49
-        enabled: true
-      section:
+        enabled: false
+      image_carousel:
         weight: 50
         enabled: false
-      small_card_with_icon:
+      image_embed:
         weight: 51
         enabled: false
-      small_card_with_image:
+      image_hero:
         weight: 52
         enabled: false
-      small_card_with_solid_background:
+      media_card:
         weight: 53
         enabled: false
-      table_of_contents:
+      microsite_hero:
         weight: 54
         enabled: false
-      text_block:
+      microsite_navigation_marker:
         weight: 55
         enabled: false
-      tout:
+      overlap_image:
         weight: 56
         enabled: false
-      video_hero:
+      promo_box:
         weight: 57
         enabled: false
-      video_lightbox:
+      quote:
         weight: 58
-        enabled: false
-      wide_card:
+        enabled: true
+      section:
         weight: 59
         enabled: false
-      wysiwyg:
+      small_card_with_icon:
         weight: 60
+        enabled: false
+      small_card_with_image:
+        weight: 61
+        enabled: false
+      small_card_with_solid_background:
+        weight: 62
+        enabled: false
+      table_of_contents:
+        weight: 63
+        enabled: false
+      text_block:
+        weight: 64
+        enabled: false
+      tout:
+        weight: 65
+        enabled: false
+      two_column_hero:
+        weight: 66
+        enabled: false
+      video_hero:
+        weight: 67
+        enabled: false
+      video_lightbox:
+        weight: 68
+        enabled: false
+      wide_card:
+        weight: 69
+        enabled: false
+      wysiwyg:
+        weight: 70
         enabled: true
 field_type: entity_reference_revisions

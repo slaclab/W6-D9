@@ -11,7 +11,6 @@ dependencies:
     - paragraphs.paragraphs_type.image_hero
   module:
     - lottiefiles_field
-    - options
     - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
@@ -20,39 +19,35 @@ mode: default
 content:
   field_body:
     type: text_default
-    label: above
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: image_hero
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
-  field_image:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_lottiefile:
-    type: lottiefiles_field
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
-  field_text_color:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-hidden: {  }
+hidden:
+  field_text_color: true
+  search_api_excerpt: true

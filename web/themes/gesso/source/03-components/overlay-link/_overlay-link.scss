@@ -30,10 +30,15 @@
   .c-overlay-link:active & {
     opacity: 1;
   }
+
+  .c-kicker {
+    color: inherit;
+  }
 }
 
 .c-overlay-link__title {
-  @include responsive-font-size(7);
+  @include responsive-font-size(5);
+  word-wrap: break-word;
 
   &:hover,
   &:focus {

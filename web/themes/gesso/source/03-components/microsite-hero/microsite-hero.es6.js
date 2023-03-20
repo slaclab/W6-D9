@@ -6,13 +6,15 @@ import MobileMenu from '../mobile-menu/modules/_MobileMenu.es6';
 gsap.registerPlugin(ScrollTrigger);
 
 Drupal.behaviors.micrositeHero = {
-  attach(context) {
+  attach(context, settings) {
     const menuNodes = context.querySelectorAll('.c-microsite-hero__menu');
     const menuSections = context.querySelectorAll('.js-microsite-section');
     menuNodes.forEach(menuNode => {
       const mobileMenu = new MobileMenu(menuNode, context, {
         classPrefix: 'c-microsite-hero__menu',
         otherBlockClass: '.c-microsite-hero__title--mobile',
+        imagePath: settings.gesso.gessoImagePath,
+        logoClass: '.l-header__brand',
       });
       mobileMenu.init();
       menuSections.forEach(section => {

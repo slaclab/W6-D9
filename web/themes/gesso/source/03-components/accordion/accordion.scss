@@ -3,12 +3,16 @@
 
 @use '00-config' as *;
 
-$accordion-item-border-color: gesso-grayscale(gray-2) !default;
+$accordion-item-border-color: var(--gesso-text-color);
 $accordion-item-icon-color: gesso-color(text, primary) !default;
 $accordion-item-icon-size: gesso-font-size(2);
 
 .c-accordion-item {
   border-bottom: solid 1px $accordion-item-border-color;
+
+  &:first-of-type {
+    border-top: solid 1px $accordion-item-border-color;
+  }
 }
 
 .c-accordion-item__heading {
@@ -27,6 +31,7 @@ $accordion-item-icon-size: gesso-font-size(2);
   align-items: center;
   background-color: transparent;
   border: 0;
+  color: var(--gesso-text-color);
   cursor: pointer;
   display: flex;
   font-weight: inherit;
@@ -39,7 +44,7 @@ $accordion-item-icon-size: gesso-font-size(2);
   transition: all gesso-duration(short) gesso-easing(ease-out);
   width: 100%;
 
-  // Allow pointer events if accordion is prcessed
+  // Allow pointer events if accordion is processed
   [accordion-processed] & {
     pointer-events: visible;
   }
@@ -51,8 +56,8 @@ $accordion-item-icon-size: gesso-font-size(2);
     span {
       @include underline;
       color: inherit;
-      text-decoration: underline;
       text-decoration-color: gesso-color(text, link-hover);
+      text-decoration-line: underline;
     }
   }
 

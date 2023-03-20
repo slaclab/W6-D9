@@ -1,0 +1,9 @@
+uuid: 4ec066e0-0c87-47cd-ba45-b9176a0d7ac7
+langcode: en
+status: true
+dependencies: {  }
+id: media__remote_video
+label: 'Media: Remote Video'
+tags:
+  og_title: '[media:field_long_text:value] | [site:name]'
+  title: 'Video: [media:field_long_text:value] | [site:name]'

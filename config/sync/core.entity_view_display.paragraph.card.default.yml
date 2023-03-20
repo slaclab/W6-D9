@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card.field_body
+    - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_links
@@ -13,6 +14,7 @@ dependencies:
   module:
     - link
     - text
+    - view_mode_switch
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
@@ -25,11 +27,18 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_display_style:
+    type: view_mode_switch_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
+      view_mode: card_image_only
       link: false
     third_party_settings: {  }
     weight: 0
@@ -74,4 +83,5 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

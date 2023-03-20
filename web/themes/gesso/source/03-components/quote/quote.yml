@@ -3,4 +3,5 @@ quote_content: 'By understanding the fundamental reactions that occur within the
 quote_author: 'Patrick Herring'
 quote_author_desc: 'Toyota Research Institute'
 quote_image: '<img src="https://picsum.photos/120" alt="Placeholder photo">'
+quote_link: 'http://google.com'
 has_constrain: true

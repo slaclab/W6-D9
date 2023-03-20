@@ -70,7 +70,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -78,6 +78,11 @@
 {% if admin_info|striptags('<drupal-render-placeholder>')|trim %}
   {% set show_admin_info = true %}
 {% endif %}
+
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
+</div>
 
 {% include '@templates/people-profile/people-profile.twig' with {
   'bio_name': label,
@@ -87,9 +92,10 @@
   'bio_page_content': content.field_body|field_value,
   'bio_page_content_collapsed': content.field_body_trimmed|field_value,
   'bio_page_quote': content.field_long_text|field_value,
-  'bio_page_buttons': content.field_link,
+  'bio_page_buttons': content.field_links,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
+  'related_content': node.field_boolean.value != '1' ? drupal_view('related_content_for_person_pages', 'person_related_stories_card') : false
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

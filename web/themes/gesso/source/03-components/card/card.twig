@@ -8,7 +8,9 @@
 {% set is_teaser = 'c-card--teaser' in modifier_classes %}
 {% if is_teaser %}
   {% if kicker and type %}
-    {% set kicker = type ~ ' · ' ~ kicker %}
+    {% set kicker %}
+    {{ type }} · {{ kicker }}
+    {% endset %}
   {% elseif type and not kicker %}
     {% set kicker = type %}
   {% endif %}
@@ -77,10 +79,13 @@
     {% endif %}
   </div>
   {% if media %}
+    {% if event_type %}
+      {% include '@components/event-hat/event-hat.twig' %}
+    {% endif %}
     <div class="c-card__media">
       {{ media }}
 
-      {% if is_event %}
+      {% if is_event and start_date %}
         <div class="c-card__gradient"></div>
         {% include '@components/event-date/event-date.twig' %}
       {% endif %}

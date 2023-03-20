@@ -1,7 +1,8 @@
 @use '00-cms-styles/toolbar-menu/toolbar-menu';
-@use 'alert-bar/alert-bar';
+@use '00-cms-styles/social-sharer/social-sharer';
 @use 'arrow-link/arrow-link';
 @use 'article/article';
+@use 'article-hero/article-hero';
 @use 'author/author';
 @use 'back-to-top/back-to-top';
 @use 'breadcrumb/breadcrumb';
@@ -15,6 +16,7 @@
 @use 'embed/embed';
 @use 'external-link/external-link';
 @use 'event-date/event-date';
+@use 'event-hat/event-hat';
 @use 'facet/facet';
 @use 'facet-list/facet-list';
 @use 'field/field--list/field--list';
@@ -30,7 +32,6 @@
 @use 'form-item/form-item--radios/form-item--radios';
 @use 'form-item/form-item--range/form-item--range';
 @use 'form-item/form-item--select/form-item--select';
-@use 'filter-modal/filter-modal';
 @use 'icon/icon';
 @use 'icon/icon--pager';
 @use 'image-teaser/image-teaser';
@@ -45,7 +46,6 @@
 @use 'menu/menu--footer/menu--footer';
 @use 'menu/menu--subfooter/menu--subfooter';
 @use 'message/message';
-@use 'overlap-image/overlap-image';
 @use 'overlay-link/overlay-link';
 @use 'page-title/page-title';
 @use 'pager/pager';
@@ -60,6 +60,7 @@
 @use 'site-name/site-name';
 @use 'site-slogan/site-slogan';
 @use 'skiplinks/skiplinks';
+@use 'small-captioned-image/small-captioned-image';
 @use 'small-paragraph/small-paragraph';
 @use 'tag/tag';
 @use 'tagline/tagline';

@@ -1,0 +1,18 @@
+uuid: 1118edec-b205-45a6-8eca-e30e9e5b770d
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: 'dev / stage'
+description: 'Settings for development and staging environments.'
+weight: 0
+folder: ../config/splits/dev
+module: {  }
+theme: {  }
+blacklist:
+  - simplesamlphp_auth.settings
+  - block.block.simplesamlphpauthstatus
+graylist:
+  - simplesamlphp_auth.settings
+graylist_dependents: true
+graylist_skip_equal: true

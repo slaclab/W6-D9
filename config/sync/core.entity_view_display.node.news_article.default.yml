@@ -6,18 +6,27 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
+    - field.field.node.news_article.field_lede
+    - field.field.node.news_article.field_meta_tags
     - field.field.node.news_article.field_news_source
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
     - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
     - field.field.node.news_article.field_text
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
     - entity_reference_revisions
+    - estimated_read_time
     - field_group
     - layout_paragraphs
     - link
@@ -32,7 +41,7 @@ third_party_settings:
       label: 'Page Content'
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -45,6 +54,7 @@ third_party_settings:
         - field_teaser
         - field_tags
         - field_source_link
+        - field_source_name
         - field_news_source
         - field_bio_related_content
         - field_text
@@ -66,6 +76,7 @@ third_party_settings:
         - field_bio
         - field_paragraphs
         - field_boolean
+        - field_estimated_read_time
       label: 'Main Content'
       parent_name: group_page_content
       region: content
@@ -82,6 +93,11 @@ targetEntityType: node
 bundle: news_article
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_bio:
     type: entity_reference_label
     label: above
@@ -96,9 +112,27 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_boolean:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_estimated_read_time:
+    type: estimated_read_time_text
+    label: above
+    settings:
+      tokenized_string: '@minutes min read'
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_featured:
     type: boolean
     label: above
     settings:
@@ -117,13 +151,28 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_internal_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_lede:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_news_source:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_paragraphs:
     type: layout_paragraphs
@@ -132,7 +181,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_paragraphs_1:
     type: entity_reference_revisions_entity_view
@@ -141,7 +190,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 11
+    weight: 4
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_source_link:
     type: link
@@ -154,6 +211,13 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_source_name:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_tags:
     type: entity_reference_label
@@ -169,6 +233,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_text:
     type: string
@@ -189,6 +262,9 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 2
     region: content
-hidden: {  }
+hidden:
+  field_meta_tags: true
+  langcode: true
+  search_api_excerpt: true

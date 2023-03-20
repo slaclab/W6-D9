@@ -4,7 +4,7 @@ import PageWrapper from './page-wrappers/default.jsx';
 import { EventDetail as PageTemplate } from '../04-templates/event-detail/event-detail.stories';
 
 export default {
-  title: 'Pages/Event Detail Page',
+  title: 'Pages/Event detail Page',
   parameters: {
     controls: {
       include: ['show_admin_info'],

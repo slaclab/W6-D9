@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tout.field_body
-    - field.field.paragraph.tout.field_button_links
     - field.field.paragraph.tout.field_image
     - field.field.paragraph.tout.field_link
     - field.field.paragraph.tout.field_text
@@ -12,6 +11,7 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - text
 id: paragraph.tout.default
 targetEntityType: paragraph
@@ -26,21 +26,15 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_button_links:
-    type: link_default
-    weight: 4
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 3
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_link:
     type: link_default
     weight: 1

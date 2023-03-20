@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card.field_body
+    - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_links
@@ -13,7 +14,9 @@ dependencies:
   module:
     - link
     - media_library
+    - media_library_edit
     - text
+    - view_mode_switch
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
@@ -27,13 +30,21 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_display_style:
+    type: view_mode_switch
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_link:
     type: link_default
     weight: 3

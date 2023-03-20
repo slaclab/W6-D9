@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.menu
     - field.field.paragraph.card.field_body
+    - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_links
@@ -30,7 +31,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
+      view_mode: card_image_only
       link: false
     third_party_settings: {  }
     weight: 0
@@ -75,4 +76,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  field_display_style: true
+  search_api_excerpt: true

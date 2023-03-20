@@ -20,14 +20,23 @@
   {% if has_constrain %}
     <div {{ add_attributes({ 'class': constrain_classes }) }}>
   {% endif %}
-  {% block logo %}
-    <a href="{{ url('<front>') }}" class="l-header__brand">
-      {% include '@layouts/header/_slac-logo.twig' %}
-    </a>
-  {% endblock %}
-  {% block content %}
-    {{ header_content }}
-  {% endblock %}
+  {% set header_content %}
+    {% block logo %}
+      <a href="{{ url('<front>') }}" class="l-header__brand">
+        {% include '@layouts/header/_slac-logo.twig' %}
+      </a>
+      {% endblock %} 
+      {% block content %}
+        {{ header_content }}
+    {% endblock %}
+  {% endset %}
+  {% include '@layouts/nav/nav.twig' with {
+      classes: false,
+      hide_title: true, 
+      nav_id: 'primary',
+      title: 'Primary',
+      nav_content: header_content
+    } %}
   {% if has_constrain %}
     </div>
   {% endif %}

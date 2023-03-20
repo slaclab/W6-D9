@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.su_display_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -15,6 +16,11 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  masquerade:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
   member_for:
     weight: 5
     region: content
@@ -29,4 +35,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true
+  su_display_name: true

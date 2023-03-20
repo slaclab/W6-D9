@@ -15,8 +15,12 @@ Drupal.behaviors.megaMenu = {
           utilityNavClass: false,
           searchBlockClass: '.c-search__form',
           imagePath: settings.gesso.gessoImagePath,
+          logoClass: '.l-header__brand',
         });
         mobileMenu.init();
+        if (Drupal.behaviors.search) {
+          Drupal.behaviors.search.attach(mobileMenu.overlay);
+        }
       });
     }
   },

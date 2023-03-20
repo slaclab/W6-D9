@@ -18,9 +18,11 @@ dependencies:
     - field.field.node.event.field_link2
     - field.field.node.event.field_links
     - field.field.node.event.field_long_text
+    - field.field.node.event.field_meta_tags
     - field.field.node.event.field_name
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_research_area
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
@@ -29,38 +31,151 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
+    - datetime_range
+    - link
+    - slac_core
+    - text
     - user
 id: node.event.teaser
 targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  links:
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: -20
+    region: content
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_datetime_range:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_override_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_bio_related_content: true
-  field_body: true
-  field_boolean: true
   field_boolean2: true
-  field_datetime_range: true
   field_detail_text: true
-  field_external_link: true
   field_featured: true
-  field_image: true
   field_lede: true
-  field_link: true
   field_link2: true
   field_links: true
   field_long_text: true
+  field_meta_tags: true
   field_name: true
-  field_override_text: true
   field_person_image: true
+  field_research_area: true
   field_site_setting: true
   field_tags: true
-  field_teaser: true
-  field_text: true
-  field_type: true
   field_video: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -59,10 +59,22 @@ class MobileMenu extends OverlayMenu {
    * @return {HTMLElement}
    */
   createMenuOverlay() {
-    const overlay = document.createElement('nav');
+    const overlay = document.createElement('div');
+    overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
+    overlay.ariaLabel = "Menu";
     overlay.classList.add('c-mobile-menu');
     return this.menu.insertAdjacentElement('afterend', overlay);
+  }
+
+  /**
+   * Adjust the mobile menu dropdown to the current height of the window.
+   *
+   * This is useful for situations such as growing and shrinking address bars.
+   */
+  menuOverlayHeight() {
+    const doc = document.documentElement;
+    doc.style.setProperty('--mobile-menu-height', `${window.innerHeight}px`);
   }
 
   /**
@@ -73,7 +85,7 @@ class MobileMenu extends OverlayMenu {
    */
   cloneBlock(block, blockClass = '') {
     const blockClone = block.cloneNode(true);
-    const idsToUpdate = blockClone.querySelectorAll('[id], [for], [name]');
+    const idsToUpdate = blockClone.querySelectorAll('[id], [for]');
     if (blockClass) {
       blockClone.classList.add(blockClass);
     }
@@ -90,11 +102,7 @@ class MobileMenu extends OverlayMenu {
       if (element.hasAttribute('for')) {
         element.setAttribute('for', `${element.getAttribute('for')}-mobile`);
       }
-
-      if (element.hasAttribute('name')) {
-        element.setAttribute('name', `${element.getAttribute('name')}-mobile`);
-      }
-    })
+    });
     return blockClone;
   }
 
@@ -103,15 +111,16 @@ class MobileMenu extends OverlayMenu {
    * @param {HTMLElement} subnav - The submenu the toggle button will be used to display.
    * @return {Element}
    */
-  createToggleButton(subnav) {
+  createToggleButton(link, subnav) {;
+    const buttonText = link.innerHTML;
     const button = document.createElement('button');
     button.classList.add('c-mobile-menu__subnav-toggle');
     button.setAttribute('aria-controls', subnav.id);
     button.setAttribute('aria-expanded', 'false');
     button.innerHTML = `<svg class="c-icon c-mobile-menu__subnav-icon" role="img">
-  <title>Toggle submenu</title>
-  <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
-</svg>`;
+      <title>${buttonText} Menu Toggle</title>
+      <use xlink:href="${this.options.imagePath}/sprite.artifact.svg#plus"></use>
+    </svg>`;
     return subnav.insertAdjacentElement('beforebegin', button);
   }
 
@@ -123,7 +132,7 @@ class MobileMenu extends OverlayMenu {
    */
   setupSubnav(link, subnav) {
     const toggleButton =
-      link.tagName === 'BUTTON' ? link : this.createToggleButton(subnav);
+      link.tagName === 'BUTTON' ? link : this.createToggleButton(link, subnav);
     subnav.style.display = 'none';
     toggleButton.addEventListener('click', event => {
       event.preventDefault();
@@ -186,6 +195,9 @@ class MobileMenu extends OverlayMenu {
       link.classList.remove(`${this.options.classPrefix}__link`);
       link.classList.remove(`${this.options.classPrefix}-link`);
       link.classList.add('c-mobile-menu__link');
+      if (link.classList.contains('c-arrow-link')) {
+        link.classList.add('c-arrow-link--white');
+      }
     });
 
     // Swap classes on mobile menu descriptions.
@@ -205,6 +217,7 @@ class MobileMenu extends OverlayMenu {
       menuSections.forEach(section => {
         section.classList.remove(`${this.options.classPrefix}__section`);
         section.classList.add('c-mobile-menu__section');
+        section.id = `${section.id}-mobile`;
 
         const sectionInner = section.querySelector(
           `.${this.options.classPrefix}__section-inner`
@@ -278,6 +291,7 @@ class MobileMenu extends OverlayMenu {
         }
       });
     }
+    
     return menuClone;
   }
 
@@ -413,7 +427,11 @@ class MobileMenu extends OverlayMenu {
         resizeTimeout = setTimeout(this.toggleMenuDisplay, 200);
         lastWindowWidth = currWindowWidth;
       }
+
+      this.menuOverlayHeight();
     });
+
+    this.menuOverlayHeight();
   }
 }
 

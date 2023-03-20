@@ -11,13 +11,13 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
+      - basic_html
 id: node.event.field_body
 field_name: field_body
 entity_type: node
 bundle: event
 label: Description
-description: ''
+description: 'In SLAC jargon this is also called an abstract.'
 required: false
 translatable: false
 default_value: {  }

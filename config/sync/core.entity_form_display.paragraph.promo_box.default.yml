@@ -6,11 +6,13 @@ dependencies:
     - field.field.paragraph.promo_box.field_button_link
     - field.field.paragraph.promo_box.field_image
     - field.field.paragraph.promo_box.field_link
+    - field.field.paragraph.promo_box.field_links
     - field.field.paragraph.promo_box.field_text
     - paragraphs.paragraphs_type.promo_box
   module:
     - link
     - media_library
+    - media_library_edit
 id: paragraph.promo_box.default
 targetEntityType: paragraph
 bundle: promo_box
@@ -30,10 +32,20 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_link:
     type: link_default
     weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 4
     region: content
     settings:
       placeholder_url: ''

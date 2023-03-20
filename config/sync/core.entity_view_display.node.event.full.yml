@@ -18,9 +18,11 @@ dependencies:
     - field.field.node.event.field_link2
     - field.field.node.event.field_links
     - field.field.node.event.field_long_text
+    - field.field.node.event.field_meta_tags
     - field.field.node.event.field_name
     - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_research_area
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
@@ -29,7 +31,7 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - datetime_range
+    - addtocal
     - gesso_helper
     - link
     - text
@@ -39,6 +41,11 @@ targetEntityType: node
 bundle: event
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_body:
     type: text_default
     label: hidden
@@ -57,11 +64,19 @@ content:
     weight: 17
     region: content
   field_datetime_range:
-    type: daterange_plain
+    type: addtocal_view
     label: hidden
     settings:
       timezone_override: ''
       separator: '-'
+      location:
+        value: false
+        tokenized: ''
+      description:
+        value: false
+        tokenized: ''
+      past_events: false
+      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
     weight: 6
     region: content
@@ -76,16 +91,15 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: large
+      view_mode: large_image_only
       link: false
     third_party_settings: {  }
     weight: 10
     region: content
   field_lede:
-    type: string
+    type: text_default
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
@@ -168,10 +182,10 @@ content:
     weight: 18
     region: content
   field_tags:
-    type: entity_reference_label
+    type: gesso_tag
     label: hidden
     settings:
-      link: true
+      link: '1'
     third_party_settings: {  }
     weight: 9
     region: content
@@ -193,9 +207,9 @@ content:
     region: content
   field_video:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: video_lightbox
       link: false
     third_party_settings: {  }
     weight: 11
@@ -210,4 +224,8 @@ hidden:
   field_boolean: true
   field_external_link: true
   field_featured: true
+  field_meta_tags: true
+  field_research_area: true
   field_teaser: true
+  langcode: true
+  search_api_excerpt: true

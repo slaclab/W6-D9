@@ -46,6 +46,8 @@
 }
 
 .c-toc__icon {
+  top: 0;
+
   [aria-expanded='true'] & {
     transform: rotate(180deg);
   }

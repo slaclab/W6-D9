@@ -9,7 +9,7 @@
 
   &.u-align-center {
     clear: both;
-    margin: rem(gesso-spacing(9)) auto;
+    margin: em(7px, 18px) auto 0;
     max-width: gesso-constrain(images);
     width: 100%;
 
@@ -79,6 +79,7 @@
 .c-figure__caption {
   @include custom-responsive-font-size(rem(12px), rem(16px));
   caption-side: bottom;
+  color: var(--gesso-text-color);
   font-family: gesso-font-family(primary);
   font-style: normal;
   font-weight: gesso-font-weight(regular);
@@ -100,6 +101,7 @@
   }
 
   .u-align-wide & {
+    max-width: none;
     padding: 0 rem(gesso-spacing(2.5));
 
     @include breakpoint(1280px) {
@@ -118,6 +120,7 @@
 }
 
 .c-figure__button {
+  @include focus;
   appearance: none;
   background: transparent;
   border: 0;
@@ -131,4 +134,8 @@
 
 .c-figure__icon {
   pointer-events: none;
+}
+
+.c-figure .c-figure__gradient {
+  background-size: contain;
 }

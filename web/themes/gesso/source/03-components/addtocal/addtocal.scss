@@ -4,6 +4,7 @@
 @use '00-config' as *;
 
 .addtocal-container {
+  margin-top: 8px;
   position: relative;
 
   .is-past-event & {
@@ -38,10 +39,13 @@
     }
 
     + div {
+      @include font-family-primary;
       background: gesso-grayscale(white);
       border: 1px solid gesso-color(button, primary, border);
       border-radius: 4px;
       display: none;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
       list-style-type: none;
       margin-bottom: 0;
       margin-left: 0;
@@ -54,7 +58,10 @@
       .js-form-type-radio {
         color: inherit;
         display: block;
-        padding: gesso-spacing(0.5);
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 0;
+        padding: 4px 8px;
         text-decoration: none;
 
         &:hover,
@@ -67,7 +74,9 @@
         }
 
         label {
+          color: inherit;
           display: block;
+          font-weight: inherit;
           width: 100%;
         }
 

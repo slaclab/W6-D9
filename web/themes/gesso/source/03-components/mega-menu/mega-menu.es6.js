@@ -12,7 +12,7 @@ Drupal.behaviors.megaMenu = {
         const menuElem = menu.querySelector('.c-mega-menu');
         const mobileMenu = new MobileMenu(menuElem, context, {
           classPrefix: 'c-mega-menu',
-          utilityNavClass: false,
+          utilityNavClass: '.c-search__links',
           searchBlockClass: '.c-search__form',
           imagePath: settings.gesso.gessoImagePath,
           logoClass: '.l-header__brand',

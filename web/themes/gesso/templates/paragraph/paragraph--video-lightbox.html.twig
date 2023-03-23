@@ -38,11 +38,25 @@
  * @ingroup themeable
  */
 #}
-{% set lightbox %}{{ content }}{% endset %}
+{% set lightbox_caption %}
+  {{- caption -}}
+  {{- credit -}}
+{% endset %}
 
-{% if is_nested %}{{ lightbox }}{% else %}
+{% set lightbox %}
+  {% include '@components/figure/figure.twig' with {
+    modifier_classes: 'u-align-center',
+    media: content.field_video|field_value,
+    caption: lightbox_caption,
+  } %}
+{% endset %}
+
+{% if is_nested %}{{ image_embed }}{% else %}
   {% include '@layouts/section/section.twig' with {
     section_content: lightbox,
     has_constrain: true
   } %}
 {% endif %}
+
+{% set catch_cache = content|render %}
+

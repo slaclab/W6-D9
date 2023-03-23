@@ -43,8 +43,6 @@
     'video_title': content.field_long_text|field_value ? content.field_long_text : name,
     'video_date': created|date('F j, Y'),
     'video_embed': content.field_media_oembed_video,
-    'video_description': content.field_caption|field_value,
-    'video_credit': content.field_credit|field_value,
     'video_details_url': detail_page_url
   } %}
   {% set catch_cache = content|render %}

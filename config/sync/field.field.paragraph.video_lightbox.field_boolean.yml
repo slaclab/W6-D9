@@ -1,0 +1,23 @@
+uuid: 45e5d52b-ec7c-4fb8-b46d-40a1c0e77607
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.video_lightbox
+id: paragraph.video_lightbox.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: video_lightbox
+label: 'Override caption?'
+description: 'Caption saved in the media library will be used unless the caption is overridden.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

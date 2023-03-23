@@ -46,7 +46,7 @@
 {% set lightbox %}
   {% include '@components/figure/figure.twig' with {
     modifier_classes: 'u-align-center',
-    media: content.field_video|field_value,
+    media: content.field_video,
     caption: lightbox_caption,
   } %}
 {% endset %}

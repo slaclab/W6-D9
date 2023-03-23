@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_internal_tags
+    - field.field.media.remote_video.field_keyword_boost
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -42,14 +43,14 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_body:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 13
     region: content
   field_boolean:
     type: boolean
@@ -80,7 +81,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: content
   field_internal_tags:
     type: entity_reference_label
@@ -88,7 +89,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 15
+    weight: 17
     region: content
   field_landing_display:
     type: boolean
@@ -98,7 +99,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
   field_link:
     type: link
@@ -135,7 +136,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 15
     region: content
   field_related_person:
     type: entity_reference_label
@@ -143,7 +144,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 16
+    weight: 18
     region: content
   field_research_area:
     type: entity_reference_label
@@ -151,14 +152,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 14
+    weight: 16
     region: content
   field_source_name:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_tags:
     type: entity_reference_label
@@ -173,7 +174,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 14
     region: content
   field_thumbnail:
     type: entity_reference_entity_view
@@ -193,6 +194,7 @@ content:
     region: content
 hidden:
   field_duration: true
+  field_keyword_boost: true
   langcode: true
   name: true
   search_api_excerpt: true

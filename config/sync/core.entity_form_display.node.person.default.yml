@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
     - field.field.node.person.field_image
+    - field.field.node.person.field_keyword_boost
     - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.person.field_text
     - field.field.node.person.field_text_title
     - node.type.person
+    - workflows.workflow.content
   module:
     - allowed_formats
     - content_moderation
@@ -24,12 +26,14 @@ dependencies:
     - media_library_edit
     - metatag
     - path
+    - search_api_best_bets
     - text
 third_party_settings:
   field_group:
     group_content:
       children:
         - group_person_details
+        - field_keyword_boost
         - group_metadata
       label: Content
       region: content
@@ -46,11 +50,10 @@ third_party_settings:
       children:
         - field_teaser
         - field_link
-        - field_source_link
       label: Metadata
       region: content
       parent_name: group_content
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -88,7 +91,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -119,6 +122,19 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+  field_keyword_boost:
+    type: search_api_best_bets_widget
+    weight: 4
+    region: content
+    settings:
+      elevate_label: 'Elevate query'
+      elevate_placeholder: 'Write search queries....'
+      elevate_description: 'Specify queries that will elevate this entity to the top of the result. Separate multiple by comma.'
+      exclude_label: 'Exclude query'
+      exclude_placeholder: 'Write search queries....'
+      exclude_description: 'Specify queries that will exclude this entity from the search result. Separate multiple by comma.'
+      disable_exclude: 0
+    third_party_settings: {  }
   field_link:
     type: link_default
     weight: 6
@@ -148,7 +164,7 @@ content:
         hide_guidelines: '1'
   field_meta_tags:
     type: metatag_firehose
-    weight: 26
+    weight: 13
     region: content
     settings:
       sidebar: true
@@ -208,14 +224,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -233,7 +249,7 @@ content:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -246,7 +262,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -261,7 +277,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

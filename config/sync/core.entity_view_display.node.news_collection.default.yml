@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news_collection.field_boolean
     - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_keyword_boost
     - field.field.node.news_collection.field_long_text
     - field.field.node.news_collection.field_meta_tags
     - field.field.node.news_collection.field_paragraphs
@@ -109,6 +110,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_keyword_boost: true
   field_meta_tags: true
   langcode: true
   search_api_excerpt: true

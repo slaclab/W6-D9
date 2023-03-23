@@ -288,6 +288,20 @@ function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
       $media->paragraph_override_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body : NULL;
       $media->addCacheableDependency($paragraph);
       $media->addCacheContexts(['url']);
+
+      // If a caption override is selected and the override text field is populated,
+      // write the override caption into a template variable.
+      if ($paragraph->field_boolean->value) {
+        // Assign the paragraph's caption field into the caption field.
+        // If there's no override caption, empty out the media's caption field.
+        $vars['caption'] = ($paragraph->field_body->value) ? $paragraph->field_body->view() : NULL;
+      } else {
+        // Paragraph is not overriding the caption, so assign the image's caption to the template variable
+        $vars['caption'] = $media->field_caption->view();
+      }
+
+      // Always use the credit from the image, assign to a template variable.
+      $vars['credit'] = $media->field_credit->view();
     }
   }
 }

@@ -305,3 +305,30 @@ function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_paragraph__HOOK().
+ */
+function gesso_preprocess_paragraph__floating_image_embed(&$vars) {
+  // Retrieve the paragraph and the image entity from the paragraph. Note that image field is a required field.
+  $paragraph = $vars['elements']['#paragraph'];
+  if ($paragraph->get('field_image')->first()) {
+    $image_field = $paragraph->get('field_image')->first()->getValue();
+    /** @var \Drupal\media\Entity\Media $media */
+    $image = Drupal\media\Entity\Media::load($image_field['target_id']);
+
+    // If a caption override is selected and the override text field is populated,
+    // write the override caption into a template variable.
+    if ($paragraph->field_boolean->value) {
+      // Assign the paragraph's caption field into the caption field.
+      // If there's no override caption, empty out the media's caption field.
+      $vars['caption'] = ($paragraph->field_long_text->value) ? $paragraph->field_long_text->view() : NULL;
+    } else {
+      // Paragraph is not overriding the caption, so assign the image's caption to the template variable
+      $vars['caption'] = $image->field_caption->view();
+    }
+
+    // Always use the credit from the image, assign to a template variable.
+    $vars['credit'] = $image->field_credit->view();
+  }
+}

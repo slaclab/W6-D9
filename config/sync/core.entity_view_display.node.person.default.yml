@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
     - field.field.node.person.field_image
+    - field.field.node.person.field_keyword_boost
     - field.field.node.person.field_link
     - field.field.node.person.field_links
     - field.field.node.person.field_long_text
@@ -28,7 +29,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_body:
     type: text_default
@@ -112,6 +113,7 @@ content:
     weight: 5
     region: content
 hidden:
+  field_keyword_boost: true
   field_meta_tags: true
   field_related_content_intro: true
   field_teaser: true

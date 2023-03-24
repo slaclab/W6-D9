@@ -1,0 +1,12 @@
+.c-floated-image {
+  .c-figure {
+    float: right;
+    margin-left: 32px;
+    margin-right: -100px;
+    width: calc(50% + 100px);
+
+    img {
+      width: 100%;
+    }
+  }
+}

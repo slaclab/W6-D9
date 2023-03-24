@@ -101,49 +101,49 @@ settings:
         weight: -59
         enabled: false
       floating_image_embed:
-        weight: 52
+        weight: -58
         enabled: false
       image_carousel:
-        weight: -58
+        weight: -57
         enabled: true
       image_embed:
-        weight: -57
+        weight: -56
         enabled: false
       image_hero:
-        weight: -56
-        enabled: true
-      media_card:
         weight: -55
         enabled: true
-      microsite_hero:
+      media_card:
         weight: -54
         enabled: true
-      microsite_navigation_marker:
+      microsite_hero:
         weight: -53
-        enabled: false
-      overlap_image:
+        enabled: true
+      microsite_navigation_marker:
         weight: -52
         enabled: false
-      promo_box:
+      overlap_image:
         weight: -51
         enabled: false
-      quote:
+      promo_box:
         weight: -50
         enabled: false
-      section:
+      quote:
         weight: -49
         enabled: false
-      small_card_with_icon:
+      section:
         weight: -48
-        enabled: true
-      small_card_with_image:
+        enabled: false
+      small_card_with_icon:
         weight: -47
         enabled: true
-      small_card_with_solid_background:
+      small_card_with_image:
         weight: -46
         enabled: true
-      table_of_contents:
+      small_card_with_solid_background:
         weight: -45
+        enabled: true
+      table_of_contents:
+        weight: -44
         enabled: false
       tout:
         weight: -43

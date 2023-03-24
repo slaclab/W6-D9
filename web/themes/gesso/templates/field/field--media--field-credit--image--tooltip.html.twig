@@ -47,9 +47,7 @@
 
 <em {{ attributes.addClass('c-tooltip__credit') }}>
   {{- title_suffix.contextual_links }}
-
-  {%- for item in field_items -%}
+  ({%- for item in field_items -%}
     {{- item.content|raw -}}
-  {%- endfor -%}
-
+  {%- endfor -%})
 </em>

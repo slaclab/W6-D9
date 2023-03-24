@@ -38,11 +38,21 @@
  * @ingroup themeable
  */
 #}
-{% set tooltip %}{% spaceless %}
+{% set tooltip %}
+{% spaceless %}
   {{- hero_caption -}}
-  {% if hero_credit|field_value %}<p>{{- hero_credit -}}</p>{% endif %}
-  {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
-{% endspaceless %}{% endset %}
+  {% if hero_credit|field_value %}
+    {{- hero_credit -}}
+  {% endif %}
+  {% if hero_url %}
+    <p>
+      <a href="{{ hero_url }}">
+        {{ 'Image details'|t }}
+      </a>
+    </p>
+  {% endif %}
+{% endspaceless %}
+{% endset %}
 
 {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
   'modifier_classes': 'transparent_nav',
@@ -57,4 +67,3 @@
     {{ content.field_lottiefile|field_value }}
   {% endblock %}
 {% endembed %}
-

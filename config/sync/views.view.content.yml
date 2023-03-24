@@ -2,8 +2,11 @@ uuid: 9bb74e73-1762-4a93-bf07-ee4b3a2fd3c0
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.storage.node.field_keyword_boost
   module:
     - node
+    - search_api_best_bets
     - user
 _core:
   default_config_hash: vBKWYGGDoAX-tFd1JErB8tZLSxx3lJ0foouVsgpcbB4
@@ -165,6 +168,68 @@ display:
             format: custom
             format_custom_false: Unpublished
             format_custom_true: Published
+        field_keyword_boost:
+          id: field_keyword_boost
+          table: node__field_keyword_boost
+          field: field_keyword_boost
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Keyword boost'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: query_text
+          type: search_api_best_bets_formatter
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         changed:
           id: changed
           table: node_field_data
@@ -514,6 +579,51 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        field_keyword_boost_query_text:
+          id: field_keyword_boost_query_text
+          table: node__field_keyword_boost
+          field: field_keyword_boost_query_text
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_keyword_boost_query_text_op
+            label: 'Keyword boost'
+            description: ''
+            use_operator: false
+            operator: field_keyword_boost_query_text_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_keyword_boost_query_text
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -635,7 +745,8 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_keyword_boost'
   page_1:
     id: page_1
     display_title: Page
@@ -667,4 +778,5 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_keyword_boost'

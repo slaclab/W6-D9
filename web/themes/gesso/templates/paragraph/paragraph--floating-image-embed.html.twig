@@ -45,22 +45,16 @@
 
 {% set image_embed %}
   {% include '@components/figure/figure.twig' with {
-    modifier_classes: 'u-align-center',
+    modifier_classes: 'c-floated-image__figure u-align-' ~ content.field_alignment|field_value|render|lower,
     media: content.field_image|field_value,
     caption: image_caption,
   } %}
 {% endset %}
 
-{% set wysiwyg_content %}
-<p>This is a paragraph that goes next to the image.  There is a security update available for your version of Drupal. To ensure the security of your server, you should update immediately! See the available updates page for more information and to install your missing updates.</p>
-<p>This is a paragraph that goes next to the image.  There is a security update available for your version of Drupal. To ensure the security of your server, you should update immediately! See the available updates page for more information and to install your missing updates.</p>
-<p>This is a paragraph that goes next to the image.  There is a security update available for your version of Drupal. To ensure the security of your server, you should update immediately! See the available updates page for more information and to install your missing updates.</p>
-{% endset %}
-
 {% set section_content %}
   <div class="c-wysiwyg">
   {{ image_embed }}
-  {{ wysiwyg_content }}
+  {{ content.field_body|field_value }}
   </div>
   {% endset %}
 

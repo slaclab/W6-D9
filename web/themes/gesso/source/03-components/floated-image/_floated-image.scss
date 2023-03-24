@@ -1,12 +1,32 @@
-.c-floated-image {
-  .c-figure {
-    float: right;
-    margin-left: 32px;
-    margin-right: -100px;
-    width: calc(50% + 100px);
+@use '00-config' as *;
 
-    img {
-      width: 100%;
+.c-floated-image {
+  --float-image-offset: -120px;
+
+  img {
+    width: 100%;
+  }
+
+  .c-floated-image__figure {
+    max-width: calc(40% - var(--float-image-offset)) !important;
+
+    &.u-align-left {
+      margin-left: var(--float-image-offset);
+    }
+
+    &.u-align-right {
+      margin-right: var(--float-image-offset);
+    }
+
+    @include breakpoint-max(gesso-breakpoint(tablet-lg)) {
+      &,
+      &.u-align-left,
+      &.u-align-right {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100% !important;
+      }
     }
   }
 }

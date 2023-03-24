@@ -12,7 +12,6 @@ dependencies:
     - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.embed_view
-    - paragraphs.paragraphs_type.floating_image_embed
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.media_card
@@ -58,7 +57,6 @@ settings:
       tout: tout
       video_hero: video_hero
       wide_card: wide_card
-      floating_image_embed: floating_image_embed
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -108,7 +106,7 @@ settings:
         enabled: false
       floating_image_embed:
         weight: 52
-        enabled: true
+        enabled: false
       image_carousel:
         weight: -54
         enabled: true

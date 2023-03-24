@@ -451,6 +451,51 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_keyword_boost_query_text:
+          id: field_keyword_boost_query_text
+          table: media__field_keyword_boost
+          field: field_keyword_boost_query_text
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_keyword_boost_query_text_op
+            label: 'Keyword boost'
+            description: ''
+            use_operator: false
+            operator: field_keyword_boost_query_text_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_keyword_boost_query_text
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:

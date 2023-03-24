@@ -21,7 +21,7 @@ third_party_settings:
       label: 'WYSIWYG Content'
       region: content
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: fieldset
       format_settings:
         classes: ''
@@ -39,15 +39,14 @@ third_party_settings:
       label: 'Image Embed'
       region: content
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: fieldset
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        description: ''
+        description: 'Select an image and set whether the image will float to the left or right of the text. Text entered in to the WYSIWYG below will float around the image. When the content collapses into a single column on smaller screens, the image will be displayed above the text.'
         required_fields: true
-        open: '1'
 id: paragraph.floating_image_embed.default
 targetEntityType: paragraph
 bundle: floating_image_embed

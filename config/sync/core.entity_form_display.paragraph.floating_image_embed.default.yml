@@ -4,13 +4,50 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.floating_image_embed.field_alignment
+    - field.field.paragraph.floating_image_embed.field_body
     - field.field.paragraph.floating_image_embed.field_boolean
     - field.field.paragraph.floating_image_embed.field_image
     - field.field.paragraph.floating_image_embed.field_long_text
     - paragraphs.paragraphs_type.floating_image_embed
   module:
+    - field_group
     - media_library
     - text
+third_party_settings:
+  field_group:
+    group_wysiwyg:
+      children:
+        - field_body
+      label: 'WYSIWYG Content'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+        open: '1'
+    group_image_embed:
+      children:
+        - field_image
+        - field_boolean
+        - field_long_text
+        - field_alignment
+      label: 'Image Embed'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+        open: '1'
 id: paragraph.floating_image_embed.default
 targetEntityType: paragraph
 bundle: floating_image_embed
@@ -18,27 +55,35 @@ mode: default
 content:
   field_alignment:
     type: options_select
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
-    weight: 1
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 0
+    weight: 2
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_long_text:
     type: text_textarea
-    weight: 2
+    weight: 4
     region: content
     settings:
       rows: 5

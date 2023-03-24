@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.floating_image_embed.field_alignment
+    - field.field.paragraph.floating_image_embed.field_body
     - field.field.paragraph.floating_image_embed.field_boolean
     - field.field.paragraph.floating_image_embed.field_image
     - field.field.paragraph.floating_image_embed.field_long_text
@@ -22,6 +23,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_boolean:
     type: boolean

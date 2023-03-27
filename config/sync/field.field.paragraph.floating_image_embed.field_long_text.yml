@@ -1,0 +1,26 @@
+uuid: b914d770-146e-478d-b65d-f607b401fba9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.floating_image_embed
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.floating_image_embed.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: floating_image_embed
+label: 'Override Caption Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

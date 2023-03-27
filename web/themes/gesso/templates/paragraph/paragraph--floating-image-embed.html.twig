@@ -38,38 +38,32 @@
  * @ingroup themeable
  */
 #}
-
-{% set tooltip %}
-{{- hero_caption -}}
-{% if hero_credit|field_value %}
-  {{- hero_credit -}}
-{% endif %}
-{% if hero_url %}
-  <p>
-    <a href="{{ hero_url }}">
-      {{ 'Image details'|t }}
-    </a>
-  </p>
-{% endif %}
+{% set image_caption %}
+  {{- caption -}}
+  {{- credit -}}
 {% endset %}
 
-{% set overlap_image %}
-{% include '@components/overlap-image/overlap-image.twig' with {
-    'image_caption': tooltip,
-    'overlap_image_content': content.field_paragraph|field_value,
-    'icon_content': content.field_lottiefile|field_value,
-    'overlap_image_content_2': content.field_paragraph_2|field_value,
-    'has_parallax': attributes.hasClass('c-overlap-image--parallax')
+{% set image_embed %}
+  {% include '@components/figure/figure.twig' with {
+    modifier_classes: 'c-floated-image__figure u-align-' ~ content.field_alignment|field_value|render|lower,
+    media: content.field_image|field_value,
+    caption: image_caption,
   } %}
 {% endset %}
 
-{% if is_nested %}
-  {{ overlap_image }}
-{% else %}
+{% set section_content %}
+  <div class="c-wysiwyg">
+  {{ image_embed }}
+  {{ content.field_body|field_value }}
+  </div>
+  {% endset %}
+
+{% if is_nested %}{{ section_content }}{% else %}
   {% include '@layouts/section/section.twig' with {
-    section_content: overlap_image,
-    modifier_classes: 'l-section--no-padding',
-    has_constrain: true
+    section_content: section_content,
+    has_constrain: true,
+    no_padding: true,
+    modifier_classes: 'c-floated-image',
   } %}
 {% endif %}
 

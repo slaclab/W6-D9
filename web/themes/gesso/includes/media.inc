@@ -84,7 +84,20 @@ function gesso_preprocess_media(array &$variables) {
         $variables['content']['thumbnail'][0]['#lightbox_id'] = $lightbox_id;
         $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->paragraph_override_caption ? $video_media->paragraph_override_caption->view() : $video_media->field_caption->view();
         $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->field_credit->view();
+
+        // If a caption override is selected and the override text field is populated,
+        // write the override caption into a template variable.
+        if ($video_media->paragraph_override_caption_bool) {
+          // Assign the paragraph's caption field into the caption field.
+          // If there's no override caption, empty out the media's caption field.
+          $variables['caption'] = $video_media->paragraph_override_caption ? $video_media->paragraph_override_caption->view() : $video_media->field_caption->view();
+        } else {
+          // Paragraph is not overriding the caption, so assign the image's caption to the template variable
+          $variables['caption'] = $video_media->field_caption->view();
+        }
+
       }
+
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.
       if ($video_media->hasField('field_boolean') &&

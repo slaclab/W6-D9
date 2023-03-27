@@ -286,6 +286,7 @@ function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
       /** @var \Drupal\Media\entity\Media $media */
       $media = $vars['content']['field_video'][0]['#media'];
       $media->paragraph_override_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body : NULL;
+      $media->paragraph_override_caption_bool = $paragraph->field_boolean->value;
       $media->addCacheableDependency($paragraph);
       $media->addCacheContexts(['url']);
 

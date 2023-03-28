@@ -108,6 +108,12 @@
       padding: 0;
     }
   }
+
+  .u-full-width & {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 rem(gesso-spacing(2.5));
+  }
 }
 
 .c-figure--iframe {

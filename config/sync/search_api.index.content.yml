@@ -6,6 +6,7 @@ dependencies:
     - field.storage.media.field_caption
     - field.storage.media.field_long_text
     - field.storage.node.field_keyword_boost
+    - field.storage.media.field_keyword_boost
     - field.storage.media.field_boolean
     - field.storage.node.field_long_text
     - field.storage.node.field_lede
@@ -125,6 +126,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_keyword_boost
+  exclude_1:
+    label: 'Keyword boost » Exclude from results'
+    datasource_id: 'entity:media'
+    property_path: 'field_keyword_boost:exclude'
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.media.field_keyword_boost
   field_boolean:
     label: 'Enable detail page for this media'
     datasource_id: 'entity:media'
@@ -174,6 +183,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_keyword_boost
+  query_text_1:
+    label: 'Keyword boost » Search query text.'
+    datasource_id: 'entity:media'
+    property_path: 'field_keyword_boost:query_text'
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_keyword_boost
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
@@ -286,6 +303,7 @@ processor_settings:
       - lede
       - media_name
       - query_text
+      - query_text_1
       - rendered_item
       - research_area
       - speaker_name
@@ -302,7 +320,8 @@ processor_settings:
       postprocess_query: 10
       preprocess_query: 99
     fields:
-      media: {  }
+      media:
+        - field_keyword_boost
       node:
         - field_keyword_boost
     query_handler: solr

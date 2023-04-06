@@ -45,6 +45,7 @@ dependencies:
     - path
     - rabbit_hole
     - search_api
+    - search_api_best_bets
     - search_api_pantheon_admin
     - site_settings
     - sitewide_alert
@@ -193,6 +194,7 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own webform'
   - 'edit own webform submission'
+  - 'edit search_api_best_bets keywords'
   - 'edit site setting entities'
   - 'edit sitewide alert entities'
   - 'edit terms in article_type'

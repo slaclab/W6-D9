@@ -23,6 +23,7 @@ dependencies:
     - media
     - node
     - paragraphs
+    - search_api_best_bets
     - shortcut
     - site_settings
     - sitewide_alert
@@ -69,6 +70,7 @@ permissions:
   - 'view published site setting entities'
   - 'view published sitewide alert entities'
   - 'view resource revisions'
+  - 'view search_api_best_bets keywords'
   - 'view unpublished paragraphs'
   - 'view unpublished site setting entities'
   - 'view unpublished sitewide alert entities'

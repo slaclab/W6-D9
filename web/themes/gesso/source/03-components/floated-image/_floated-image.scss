@@ -11,6 +11,7 @@
   }
 
   .c-floated-image__figure {
+    margin-top: 0.5em;
     max-width: 40cqw !important;
 
     &.u-align-left {
@@ -25,6 +26,8 @@
     margin: 1em auto;
 
     .c-floated-image__figure {
+      margin-top: 0;
+
       &,
       &.u-align-left,
       &.u-align-right {

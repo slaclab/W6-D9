@@ -1,24 +1,30 @@
 @use '00-config' as *;
 
 .c-floated-image {
-  --float-image-offset: -120px;
+  .l-section__content {
+    // stylelint-disable
+    container-type: inline-size;
+  }
 
   img {
     width: 100%;
   }
 
   .c-floated-image__figure {
-    max-width: calc(40% - var(--float-image-offset)) !important;
+    max-width: 40cqw !important;
 
     &.u-align-left {
-      margin-left: var(--float-image-offset);
+      margin-left: calc(-50cqw + 50%);
     }
 
     &.u-align-right {
-      margin-right: var(--float-image-offset);
+      margin-right: calc(-50cqw + 50%);
     }
+  }
+  @include breakpoint-max(gesso-breakpoint(tablet-lg)) {
+    margin: 1em auto;
 
-    @include breakpoint-max(gesso-breakpoint(tablet-lg)) {
+    .c-floated-image__figure {
       &,
       &.u-align-left,
       &.u-align-right {

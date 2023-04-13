@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 name: scale_full_width
-label: 'Scale full-width'
+label: 'Scale full-width (2800)'
 effects:
   b441747f-1ac2-4ea7-aa27-61bcb991a968:
     uuid: b441747f-1ac2-4ea7-aa27-61bcb991a968

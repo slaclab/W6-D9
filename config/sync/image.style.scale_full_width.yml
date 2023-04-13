@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies: {  }
 name: scale_full_width
-label: 'Scale full-width (2800)'
+label: 'Scale full-width (1440)'
 effects:
   b441747f-1ac2-4ea7-aa27-61bcb991a968:
     uuid: b441747f-1ac2-4ea7-aa27-61bcb991a968
     id: image_scale
     weight: 1
     data:
-      width: 2800
+      width: 1440
       height: null
       upscale: false

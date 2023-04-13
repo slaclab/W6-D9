@@ -1,0 +1,25 @@
+uuid: 7bbb5807-d882-45e0-8bfe-20870143d337
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.scale_full_width
+    - image.style.scale_full_width_0_25x
+    - image.style.scale_full_width_0_5x
+    - image.style.scale_full_width_2x
+id: scale_full_width
+label: 'Scale Full Width'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - scale_full_width
+        - scale_full_width_0_25x
+        - scale_full_width_0_5x
+        - scale_full_width_2x
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: scale_full_width_0_25x

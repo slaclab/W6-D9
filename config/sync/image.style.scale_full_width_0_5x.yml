@@ -1,0 +1,15 @@
+uuid: cf823db1-6d9d-43ba-85fe-e13304a9048d
+langcode: en
+status: true
+dependencies: {  }
+name: scale_full_width_0_5x
+label: 'Scale full-width (.5x)'
+effects:
+  aa2c497c-c005-4eaa-b535-a48cc134bcaf:
+    uuid: aa2c497c-c005-4eaa-b535-a48cc134bcaf
+    id: image_scale
+    weight: 1
+    data:
+      width: 720
+      height: null
+      upscale: false

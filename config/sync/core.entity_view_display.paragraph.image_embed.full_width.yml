@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_embed
   module:
     - text
+    - view_mode_switch
 id: paragraph.image_embed.full_width
 targetEntityType: paragraph
 bundle: image_embed
@@ -30,18 +31,24 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: scale_full_width
+      view_mode: full_width
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
   field_long_text:
     type: text_default
-    label: hidden
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
+  field_view_mode:
+    type: view_mode_switch_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
-  field_view_mode: true
   search_api_excerpt: true

@@ -81,7 +81,8 @@
 {% include '@components/card/card.twig' with {
   'modifier_classes': 'c-card--bio',
   'title': label,
-  'kicker': content.field_text|field_value,
+  'kicker': false,
+  'type': content.field_text|field_value,
   'url': link,
   'card_metadata': content.field_text_title|field_value,
   'media': content.field_image|field_value,

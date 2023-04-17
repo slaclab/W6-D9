@@ -5,8 +5,8 @@ activate: false
 auth_source: default-sp
 login_link_display_name: 'Log in with your SLAC ID'
 login_link_show: false
-user_name: uid
-unique_id: uid
+user_name: eduPersonPrincipalName
+unique_id: eduPersonPrincipalName
 mail_attr: mail
 header_no_cache: true
 role:

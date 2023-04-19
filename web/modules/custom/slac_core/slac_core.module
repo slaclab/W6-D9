@@ -210,3 +210,19 @@ function slac_core_views_pre_render(ViewExecutable $view) {
     }
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function slac_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Hide the keyword boost filter on media and content overview unless the user
+  // is an administrator.
+  if (in_array($form['#id'], [
+    'views-exposed-form-content-page-1',
+    'views-exposed-form-media-media-page-list',
+    'views-exposed-form-media-library-page'])) {
+    if (!in_array('administrator', \Drupal::currentUser()->getRoles())) {
+      $form['field_keyword_boost_query_text']['#access'] = FALSE;
+    }
+  }
+}

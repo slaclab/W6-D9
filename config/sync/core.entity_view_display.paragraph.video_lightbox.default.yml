@@ -7,30 +7,11 @@ dependencies:
     - field.field.paragraph.video_lightbox.field_boolean
     - field.field.paragraph.video_lightbox.field_video
     - paragraphs.paragraphs_type.video_lightbox
-  module:
-    - text
 id: paragraph.video_lightbox.default
 targetEntityType: paragraph
 bundle: video_lightbox
 mode: default
 content:
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_boolean:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_video:
     type: entity_reference_entity_view
     label: hidden
@@ -41,4 +22,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_body: true
+  field_boolean: true
   search_api_excerpt: true

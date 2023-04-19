@@ -277,32 +277,19 @@ function gesso_preprocess_paragraph__overlap_image(array &$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
-  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
-  $paragraph = !empty($vars['paragraph']) ? $vars['paragraph'] : NULL;
+  if (isset($vars['paragraph'])) {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $vars['paragraph'];
 
-  if ($paragraph) {
     // Add the override caption to the media entity, if it exists.
-    if ($vars['content']['field_video'][0]['#media']) {
+    if (isset($vars['content']['field_video'][0]['#media'])) {
       /** @var \Drupal\Media\entity\Media $media */
       $media = $vars['content']['field_video'][0]['#media'];
-      $media->paragraph_override_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body : NULL;
-      $media->paragraph_override_caption_bool = $paragraph->field_boolean->value;
+      if ($paragraph->field_boolean->value) {
+        $media->paragraph_override_caption = $paragraph->field_body->view() ?? NULL;
+      }
       $media->addCacheableDependency($paragraph);
       $media->addCacheContexts(['url']);
-
-      // If a caption override is selected and the override text field is populated,
-      // write the override caption into a template variable.
-      if ($paragraph->field_boolean->value) {
-        // Assign the paragraph's caption field into the caption field.
-        // If there's no override caption, empty out the media's caption field.
-        $vars['caption'] = ($paragraph->field_body->value) ? $paragraph->field_body->view() : NULL;
-      } else {
-        // Paragraph is not overriding the caption, so assign the image's caption to the template variable
-        $vars['caption'] = $media->field_caption->view();
-      }
-
-      // Always use the credit from the image, assign to a template variable.
-      $vars['credit'] = $media->field_credit->view();
     }
   }
 }

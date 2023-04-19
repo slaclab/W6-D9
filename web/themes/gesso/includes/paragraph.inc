@@ -277,15 +277,17 @@ function gesso_preprocess_paragraph__overlap_image(array &$vars) {
  * Implements hook_preprocess_paragraph__HOOK().
  */
 function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
-  /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
-  $paragraph = !empty($vars['paragraph']) ? $vars['paragraph'] : NULL;
+  if (isset($vars['paragraph'])) {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $vars['paragraph'];
 
-  if ($paragraph) {
     // Add the override caption to the media entity, if it exists.
-    if ($vars['content']['field_video'][0]['#media']) {
+    if (isset($vars['content']['field_video'][0]['#media'])) {
       /** @var \Drupal\Media\entity\Media $media */
       $media = $vars['content']['field_video'][0]['#media'];
-      $media->paragraph_override_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body : NULL;
+      if ($paragraph->field_boolean->value) {
+        $media->paragraph_override_caption = $paragraph->field_body->view() ?? NULL;
+      }
       $media->addCacheableDependency($paragraph);
       $media->addCacheContexts(['url']);
     }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.video_lightbox.field_body
+    - field.field.paragraph.video_lightbox.field_boolean
     - field.field.paragraph.video_lightbox.field_video
     - paragraphs.paragraphs_type.video_lightbox
 id: paragraph.video_lightbox.default
@@ -22,4 +23,5 @@ content:
     region: content
 hidden:
   field_body: true
+  field_boolean: true
   search_api_excerpt: true

@@ -17,6 +17,12 @@
     },
     "drupal/entity_reference_revisions": {
       "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+    },
+    "drupal/search_api_best_bets": {
+      "Fix Java error. https://www.drupal.org/project/search_api_best_bets/issues/3124980": "https://www.drupal.org/files/issues/2023-01-19/search_api_best_bets-3124980-19.patch"
+    },
+    "drupal/style_options": {
+      "Remove unneeded failing hook": "patches/style_options-remove-failing-hook.patch"
     }
   }
 }

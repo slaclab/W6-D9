@@ -345,6 +345,12 @@ $card-padding: rem(gesso-spacing(4));
     aspect-ratio: 1/1;
   }
 
+  .c-view--search & {
+    .c-card__media {
+      aspect-ratio: 387 / 246;
+    }
+  }
+
   .c-figure {
     width: 100%;
   }

@@ -1,0 +1,10 @@
+uuid: f7412a05-c70d-40c6-bcc7-767e8d8aca07
+langcode: en
+status: true
+dependencies: {  }
+id: floating_image_embed
+label: 'Floating Image Embed'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

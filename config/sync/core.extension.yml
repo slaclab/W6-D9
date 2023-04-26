@@ -90,6 +90,7 @@ module:
   responsive_image: 0
   rh_media: 0
   search_api: 0
+  search_api_best_bets: 0
   search_api_exclude: 0
   search_api_pantheon: 0
   search_api_pantheon_admin: 0

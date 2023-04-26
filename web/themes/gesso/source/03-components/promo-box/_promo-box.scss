@@ -60,6 +60,7 @@
 }
 
 .c-promo-box__title {
+  @include responsive-font-size(6);
   max-width: rem(280px);
 }
 

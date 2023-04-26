@@ -30,12 +30,6 @@
             </label>
           </div>
           <div>
-            <input type="radio" name="search_type" value="slac_web" id="{{ slac_web_id }}"/>
-            <label for="{{ slac_web_id }}">
-              {{ 'SLAC web'|t }}
-            </label>
-          </div>
-          <div>
             <input type="radio" name="search_type" value="people" id="{{ people_id }}"/>
             <label for="{{ people_id }}">
               {{ 'Search people'|t }}
@@ -50,9 +44,9 @@
         </button>
       </div>
       {% if search_links %}
-      <div class="c-search__links">
-        {{ search_links }}
-      </div>
+        <div class="c-search__links">
+          {{ search_links }}
+        </div>
       {% endif %}
     </div>
     <button aria-label="{{ 'Close menu'|t }}" class="c-mega-menu__section-close c-menu__section-close">

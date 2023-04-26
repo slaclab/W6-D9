@@ -1,0 +1,41 @@
+@use '00-config' as *;
+
+.c-floated-image {
+  .l-section__content {
+    // stylelint-disable
+    container-type: inline-size;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .c-floated-image__figure {
+    margin-top: 0.5em;
+    max-width: 40cqw !important;
+
+    &.u-align-left {
+      margin-left: calc(-50cqw + 50%);
+    }
+
+    &.u-align-right {
+      margin-right: calc(-50cqw + 50%);
+    }
+  }
+  @include breakpoint-max(gesso-breakpoint(tablet-lg)) {
+    margin: 1em auto;
+
+    .c-floated-image__figure {
+      margin-top: 0;
+
+      &,
+      &.u-align-left,
+      &.u-align-right {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100% !important;
+      }
+    }
+  }
+}

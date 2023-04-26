@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.video_lightbox.field_body
+    - field.field.paragraph.video_lightbox.field_boolean
     - field.field.paragraph.video_lightbox.field_video
     - paragraphs.paragraphs_type.video_lightbox
   module:
@@ -18,7 +19,7 @@ mode: default
 content:
   field_body:
     type: text_textarea
-    weight: 1
+    weight: 2
     region: content
     settings:
       rows: 2
@@ -27,6 +28,13 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_boolean:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_video:
     type: media_library_widget
     weight: 0

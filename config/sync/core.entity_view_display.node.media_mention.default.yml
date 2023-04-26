@@ -14,6 +14,11 @@ targetEntityType: node
 bundle: media_mention
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_link:
     type: link_separate
     label: above

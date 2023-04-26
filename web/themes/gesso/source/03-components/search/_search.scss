@@ -175,6 +175,24 @@
 .c-search__links {
   display: none;
 
+  &.c-mobile-menu__menu--show-subnav {
+    display: block;
+    margin-top: 1.5em;
+
+    a {
+      color: gesso-grayscale(white);
+      display: table;
+      font-size: 16px;
+      margin-bottom: 0.75em;
+      padding: 0.25em 0.5em;
+      text-decoration-color: currentColor;
+    }
+
+    .c-icon {
+      color: gesso-grayscale(white);
+    }
+  }
+
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     border-top: 1px solid gesso-color(ui, generic, border);
     display: flex;

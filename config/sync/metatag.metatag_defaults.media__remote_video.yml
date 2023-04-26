@@ -5,5 +5,9 @@ dependencies: {  }
 id: media__remote_video
 label: 'Media: Remote Video'
 tags:
+  description: '[media:field_teaser:value]'
+  image_src: '[media:field_thumbnail:entity:field_thumbnail]'
+  og_description: '[media:field_teaser:value]'
+  og_image: '[media:field_thumbnail:entity:field_thumbnail]'
   og_title: '[media:field_long_text:value] | [site:name]'
   title: 'Video: [media:field_long_text:value] | [site:name]'

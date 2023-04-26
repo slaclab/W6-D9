@@ -16,7 +16,7 @@ field_name: field_paragraphs_1
 entity_type: node
 bundle: news_article
 label: 'Bottom paragraphs'
-description: ''
+description: 'This is an optional area to display a paragraph below the related topics, such as a Promo Box.'
 required: false
 translatable: false
 default_value: {  }

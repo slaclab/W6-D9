@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_keyword_boost
     - field.field.node.page.field_meta_tags
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_research_area
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
@@ -69,6 +70,7 @@ hidden:
   content_moderation_control: true
   field_keyword_boost: true
   field_meta_tags: true
+  field_research_area: true
   field_teaser_image: true
   langcode: true
   links: true

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news_collection.field_meta_tags
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_research_area
     - field.field.node.news_collection.field_tags
     - field.field.node.news_collection.field_teaser
     - field.field.node.news_collection.field_teaser_image
@@ -94,6 +95,7 @@ content:
 hidden:
   field_keyword_boost: true
   field_meta_tags: true
+  field_research_area: true
   field_teaser: true
   field_teaser_image: true
   langcode: true

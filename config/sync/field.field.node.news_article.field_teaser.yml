@@ -17,7 +17,7 @@ field_name: field_teaser
 entity_type: node
 bundle: news_article
 label: Teaser
-description: 'Duplicate or customize the Summary (dek) text here. This text may appear in SLAC Today, Science news Slack channel, rss feeds, google search, and social shares.'
+description: 'Limit ~22 words or 138 characters. Duplicate or customize the Summary (dek) text here. This text may appear in SLAC Today, Science news Slack channel, rss feeds, google search, and social shares.'
 required: true
 translatable: true
 default_value: {  }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b3ca3bc4b6456fc8cd6e25b7ded0de7",
+    "content-hash": "9f7b60bfb2f723a185d257c34bc346a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5456,6 +5456,56 @@
             }
         },
         {
+            "name": "drupal/search_api_best_bets",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_best_bets.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_best_bets-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "d6d64c48122b4e6e1cbfb5ee301e682ee9f974d0"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/search_api": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1672865708",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Beltofte",
+                    "homepage": "https://www.drupal.org/u/beltofte"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
+                }
+            ],
+            "description": "Let editors define best bets / promoted search results per entity in Drupal.",
+            "homepage": "https://www.drupal.org/project/search_api_best_bets",
+            "support": {
+                "source": "http://git.drupal.org/project/search_api_best_bets.git",
+                "issues": "https://www.drupal.org/project/issues/search_api_best_bets"
+            }
+        },
+        {
             "name": "drupal/search_api_exclude",
             "version": "2.0.0",
             "source": {
@@ -6134,26 +6184,26 @@
         },
         {
             "name": "drupal/style_options",
-            "version": "1.0.0-alpha1",
+            "version": "1.0.0-alpha2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/style_options.git",
-                "reference": "1.0.0-alpha1"
+                "reference": "1.0.0-alpha2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/style_options-1.0.0-alpha1.zip",
-                "reference": "1.0.0-alpha1",
-                "shasum": "2b61b90f4aa29b13db3fd0a000a1361c0b24d08d"
+                "url": "https://ftp.drupal.org/files/projects/style_options-1.0.0-alpha2.zip",
+                "reference": "1.0.0-alpha2",
+                "shasum": "1c1cd3bdfcb6951694f39dd3071b1a1e9f16525b"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-alpha1",
-                    "datestamp": "1633108251",
+                    "version": "1.0.0-alpha2",
+                    "datestamp": "1681742117",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -6175,9 +6225,10 @@
                 }
             ],
             "description": "Provide an API to reuse style options throughout the Drupal ecosystem.",
-            "homepage": "https://www.drupal.org/project/style_options",
+            "homepage": "http://drupal.org/project/style_options",
             "support": {
-                "source": "https://git.drupalcode.org/project/style_options"
+                "source": "https://git.drupalcode.org/project/style_options",
+                "issues": "https://www.drupal.org/project/issues/style_options"
             }
         },
         {

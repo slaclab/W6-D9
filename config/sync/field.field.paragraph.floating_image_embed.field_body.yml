@@ -1,0 +1,26 @@
+uuid: cdeeb48a-9a53-4122-9798-73ba5b9477ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.floating_image_embed
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: paragraph.floating_image_embed.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: floating_image_embed
+label: WYSIWYG
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -10,6 +10,7 @@ dependencies:
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
     - field.field.media.remote_video.field_internal_tags
+    - field.field.media.remote_video.field_keyword_boost
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
@@ -32,6 +33,7 @@ dependencies:
     - media_library
     - paragraphs
     - path
+    - search_api_best_bets
     - term_reference_tree
     - text
 third_party_settings:
@@ -39,6 +41,7 @@ third_party_settings:
     group_page_content:
       children:
         - group_main_content
+        - field_keyword_boost
         - group_metadata
       label: 'Page Content'
       region: content
@@ -88,7 +91,7 @@ third_party_settings:
       label: Metadata
       region: content
       parent_name: group_page_content
-      weight: 21
+      weight: 22
       format_type: tab
       format_settings:
         classes: ''
@@ -137,7 +140,7 @@ content:
         hide_guidelines: '1'
   field_boolean:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -166,25 +169,38 @@ content:
         hide_guidelines: '1'
   field_display_style:
     type: options_select
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_duration:
     type: duration_widget
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_internal_tags:
     type: options_buttons
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_keyword_boost:
+    type: search_api_best_bets_widget
+    weight: 21
+    region: content
+    settings:
+      elevate_label: 'Elevate query'
+      elevate_placeholder: 'Write search queries....'
+      elevate_description: 'Specify queries that will elevate this entity to the top of the result. Separate multiple by comma.'
+      exclude_label: 'Exclude query'
+      exclude_placeholder: 'Write search queries....'
+      exclude_description: 'Specify queries that will exclude this entity from the search result. Separate multiple by comma.'
+      disable_exclude: 0
+    third_party_settings: {  }
   field_landing_display:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -237,7 +253,7 @@ content:
     third_party_settings: {  }
   field_related_person:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -247,7 +263,7 @@ content:
     third_party_settings: {  }
   field_research_area:
     type: term_reference_tree
-    weight: 16
+    weight: 17
     region: content
     settings:
       start_minimized: true
@@ -258,7 +274,7 @@ content:
     third_party_settings: {  }
   field_source_name:
     type: text_textarea
-    weight: 9
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -269,7 +285,7 @@ content:
         hide_guidelines: '1'
   field_tags:
     type: term_reference_tree
-    weight: 14
+    weight: 15
     region: content
     settings:
       start_minimized: true
@@ -291,7 +307,7 @@ content:
         hide_guidelines: '1'
   field_thumbnail:
     type: media_library_widget
-    weight: 8
+    weight: 9
     region: content
     settings:
       media_types: {  }

@@ -46,11 +46,21 @@
 
 {% if content.field_image|field_value is not empty %}
   {% set image_with_caption %}
-    {% set tooltip %}{% spaceless %}
-      {{- hero_caption -}}
-      {% if hero_credit|field_value %}<p>{{- hero_credit -}}</p>{% endif %}
-      {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
-    {% endspaceless %}{% endset %}
+  {% set tooltip %}
+  {% spaceless %}
+    {{- hero_caption -}}
+    {% if hero_credit|field_value %}
+      {{- hero_credit -}}
+    {% endif %}
+    {% if hero_url %}
+      <p>
+        <a href="{{ hero_url }}">
+          {{ 'Image details'|t }}
+        </a>
+      </p>
+    {% endif %}
+  {% endspaceless %}
+  {% endset %}
 
   {% include '@components/small-captioned-image/small-captioned-image.twig' with {
       image: content.field_image|field_value,

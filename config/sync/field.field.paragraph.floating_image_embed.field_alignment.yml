@@ -1,0 +1,21 @@
+uuid: 1bac5989-9567-423d-9dc9-b3e3e05c081b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alignment
+    - paragraphs.paragraphs_type.floating_image_embed
+  module:
+    - options
+id: paragraph.floating_image_embed.field_alignment
+field_name: field_alignment
+entity_type: paragraph
+bundle: floating_image_embed
+label: Alignment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

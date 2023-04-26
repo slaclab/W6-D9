@@ -28,7 +28,7 @@ field_name: field_paragraphs
 entity_type: node
 bundle: page
 label: Content
-description: ''
+description: 'Choose a paragraph type from the dropdown list below.'
 required: false
 translatable: true
 default_value: {  }

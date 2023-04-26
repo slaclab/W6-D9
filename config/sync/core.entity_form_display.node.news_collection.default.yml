@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_collection.field_meta_tags
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_research_area
     - field.field.node.news_collection.field_tags
     - field.field.node.news_collection.field_teaser
     - field.field.node.news_collection.field_teaser_image
@@ -189,6 +190,16 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_research_area:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree

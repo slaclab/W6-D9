@@ -10,7 +10,7 @@ field_name: field_boolean
 entity_type: media
 bundle: image
 label: 'Enable detail page for this media'
-description: ''
+description: 'Only toggle this "on" if the credit is copyright SLAC.'
 required: false
 translatable: true
 default_value:

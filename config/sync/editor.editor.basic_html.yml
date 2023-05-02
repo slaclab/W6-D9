@@ -19,6 +19,7 @@ settings:
       - subscript
       - superscript
       - link
+      - alignment
       - bulletedList
       - numberedList
       - blockQuote
@@ -91,6 +92,12 @@ settings:
     ckeditor5_list:
       reversed: false
       startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
     media_media:
       allow_view_mode_override: false
 image_upload:

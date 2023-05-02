@@ -3,12 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.media.field_boolean
+    - field.storage.media.field_credit
     - field.storage.media.field_keyword_boost
+    - field.storage.media.field_research_area
     - image.style.thumbnail
   module:
     - image
     - media
     - search_api_best_bets
+    - text
     - user
 _core:
   default_config_hash: diywn6VdMoQOlDA-xslKdKrDko3SsTKfaK3WBG45UAg
@@ -573,6 +577,196 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: true
+        field_boolean:
+          id: field_boolean
+          table: media__field_boolean
+          field: field_boolean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Detail page?'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_false: ''
+            format_custom_true: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_credit:
+          id: field_credit
+          table: media__field_credit
+          field: field_credit
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Credit
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_research_area:
+          id: field_research_area
+          table: media__field_research_area
+          field: field_research_area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Research Area'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: full
         options:
@@ -989,7 +1183,10 @@ display:
         - user
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_boolean'
+        - 'config:field.storage.media.field_credit'
         - 'config:field.storage.media.field_keyword_boost'
+        - 'config:field.storage.media.field_research_area'
   media_page_list:
     id: media_page_list
     display_title: Media
@@ -1018,4 +1215,7 @@ display:
         - user
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_boolean'
+        - 'config:field.storage.media.field_credit'
         - 'config:field.storage.media.field_keyword_boost'
+        - 'config:field.storage.media.field_research_area'

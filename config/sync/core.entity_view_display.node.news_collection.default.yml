@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.news_collection.field_meta_tags
     - field.field.node.news_collection.field_paragraphs
     - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_research_area
     - field.field.node.news_collection.field_tags
     - field.field.node.news_collection.field_teaser
     - field.field.node.news_collection.field_teaser_image
@@ -72,6 +73,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_tags:
     type: entity_reference_label

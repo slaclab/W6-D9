@@ -1,0 +1,53 @@
+diff --git a/style_options.install b/style_options.install
+index 5d6c115..5711279 100644
+--- a/style_options.install
++++ b/style_options.install
+@@ -12,48 +12,4 @@ use Drupal\paragraphs\Entity\ParagraphsType;
+  */
+ function style_options_update_9001() {
+
+-  $layout_plugin_manager = \Drupal::service('plugin.manager.core.layout');
+-  $style_options_discovery = \Drupal::service('style_options.discovery');
+-  $paragraph_types = ParagraphsType::loadMultiple();
+-
+-  foreach ($paragraph_types as $paragraph_type) {
+-    $behavior_plugins = $paragraph_type->getEnabledBehaviorPlugins();
+-    if (isset($behavior_plugins['layout_paragraphs'])) {
+-      $paragraphs = \Drupal::service('entity_type.manager')
+-        ->getStorage('paragraph')
+-        ->loadByProperties(['type' => $paragraph_type->id()]);
+-
+-      /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+-      foreach ($paragraphs as $paragraph) {
+-        $behavior_settings = $paragraph->getAllBehaviorSettings();
+-        // Style options were previously stored in 'layout_settings_options'.
+-        if (isset($behavior_settings['layout_paragraphs']['config']['layout_settings_options'])) {
+-          $original_config = $behavior_settings['layout_paragraphs']['config'];
+-          $layout_config = [
+-            'layout' => [],
+-            'regions' => [],
+-          ];
+-          $layout = $behavior_settings['layout_paragraphs']['layout'];
+-          $layout_definition = $layout_plugin_manager->getDefinition($layout);
+-          $regions = $layout_definition->getRegions();
+-          $style_options_config = $style_options_discovery->getProcessedContextDefinition('layout', $layout);
+-          foreach (array_keys($regions) as $region_name) {
+-            if (!empty($original_config[$region_name])) {
+-              $layout_config['regions'][$region_name] = $original_config[$region_name];
+-            }
+-          }
+-          if (!empty($style_options_config['options'])) {
+-            foreach (array_keys($style_options_config['options']) as $option_name) {
+-              if (!empty($original_config['layout_settings_options'][$option_name])) {
+-                $layout_config['layout'][$option_name] = $original_config['layout_settings_options'][$option_name];
+-              }
+-            }
+-          }
+-          $behavior_settings['layout_paragraphs']['config'] = $layout_config;
+-          $paragraph->setAllBehaviorSettings($behavior_settings);
+-          $paragraph->save();
+-        }
+-      }
+-    }
+-  }
+ }

@@ -79,11 +79,11 @@ function gesso_preprocess_media(array &$variables) {
       if (isset($variables['content']['field_thumbnail'][0])) {
         $variables['content']['field_thumbnail'][0]['#media']->lightbox_id = $lightbox_id;
         $variables['content']['field_thumbnail'][0]['#media']->video_caption[] = $video_media->paragraph_override_caption ?: $video_media->field_caption->view();
-        $variables['content']['field_thumbnail'][0]['#media']->video_caption[] = $video_media->field_credit->view();
+        $variables['content']['field_thumbnail'][0]['#media']->video_caption[] = $video_media->is_caption_overridden ? NULL : $video_media->field_credit->view();
       } elseif (isset($variables['content']['thumbnail'][0])) {
         $variables['content']['thumbnail'][0]['#lightbox_id'] = $lightbox_id;
         $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->paragraph_override_caption ?: $video_media->field_caption->view();
-        $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->field_credit->view();
+        $variables['content']['thumbnail'][0]['#video_caption'][] = $video_media->is_caption_overridden ? NULL : $video_media->field_credit->view();
       }
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.

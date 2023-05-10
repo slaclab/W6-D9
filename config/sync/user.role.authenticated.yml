@@ -17,6 +17,7 @@ dependencies:
   module:
     - comment
     - contextual
+    - entity_usage
     - environment_indicator
     - eu_cookie_compliance
     - filter
@@ -38,6 +39,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access contextual links'
+  - 'access entity usage statistics'
   - 'access environment indicator'
   - 'access shortcuts'
   - 'access toolbar'

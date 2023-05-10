@@ -88,6 +88,7 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       } else {
         // Paragraph is not overriding the caption, so assign the image's caption to the template variable
         $vars['caption'] = $image->field_caption->view();
+        $vars['credit'] = $image->field_credit->view();
       }
     }
   }
@@ -312,6 +313,7 @@ function gesso_preprocess_paragraph__floating_image_embed(&$vars) {
     } else {
       // Paragraph is not overriding the caption, so assign the image's caption to the template variable
       $vars['caption'] = $image->field_caption->view();
+      $vars['credit'] = $image->field_credit->view();
     }
   }
 }

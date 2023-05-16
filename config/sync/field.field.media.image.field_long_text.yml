@@ -18,7 +18,7 @@ field_name: field_long_text
 entity_type: media
 bundle: image
 label: 'Display name'
-description: '<strong>Note:</strong> Be sure to enter a display name if this media entity has a detail page, or will be displayed as a poster.'
+description: '<strong>Note:</strong> Be sure to enter a display name if this media entity has a detail page, or will be displayed as a poster. Ensure display name is unique and no longer than 35 characters.'
 required: false
 translatable: true
 default_value: {  }

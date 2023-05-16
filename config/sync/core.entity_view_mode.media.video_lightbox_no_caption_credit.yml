@@ -1,0 +1,10 @@
+uuid: b3618ed9-afd8-467b-a345-ea81eb668a80
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_lightbox_no_caption_credit
+label: 'Video Lightbox (No Caption / Credit)'
+targetEntityType: media
+cache: true

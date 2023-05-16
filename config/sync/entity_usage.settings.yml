@@ -1,0 +1,56 @@
+_core:
+  default_config_hash: AXUBMTvVtpcNp0jKjDaWjSHqMy6HjuUf7j4yVbXgazI
+local_task_enabled_entity_types:
+  - media
+  - site_setting_entity
+  - taxonomy_term
+track_enabled_source_entity_types:
+  - node
+  - content_moderation_state
+  - crop
+  - block_content
+  - menu_link_content
+  - media
+  - paragraph
+  - redirect
+  - search_api_task
+  - shortcut
+  - site_setting_entity
+  - sitewide_alert
+  - taxonomy_term
+  - path_alias
+  - webform_submission
+track_enabled_target_entity_types:
+  - node
+  - content_moderation_state
+  - crop
+  - block_content
+  - menu_link_content
+  - media
+  - paragraph
+  - redirect
+  - search_api_task
+  - shortcut
+  - site_setting_entity
+  - sitewide_alert
+  - taxonomy_term
+  - path_alias
+  - webform_submission
+track_enabled_plugins:
+  - link
+  - linkit
+  - media_embed
+  - entity_embed
+  - html_link
+  - ckeditor_image
+  - layout_builder
+  - entity_reference
+  - block_field
+  - dynamic_entity_reference
+track_enabled_base_fields: false
+site_domains:
+  - 'https://www6.slac.stanford.edu'
+edit_warning_message_entity_types:
+  - media
+delete_warning_message_entity_types: {  }
+usage_controller_items_per_page: 25

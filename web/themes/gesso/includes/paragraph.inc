@@ -88,10 +88,8 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
       } else {
         // Paragraph is not overriding the caption, so assign the image's caption to the template variable
         $vars['caption'] = $image->field_caption->view();
+        $vars['credit'] = $image->field_credit->view();
       }
-
-      // Always use the credit from the image, assign to a template variable.
-      $vars['credit'] = $image->field_credit->view();
     }
   }
 }
@@ -285,6 +283,7 @@ function gesso_preprocess_paragraph__video_lightbox(array &$vars) {
     if (isset($vars['content']['field_video'][0]['#media'])) {
       /** @var \Drupal\Media\entity\Media $media */
       $media = $vars['content']['field_video'][0]['#media'];
+      $media->is_caption_overridden = $paragraph->field_boolean->value;
       if ($paragraph->field_boolean->value) {
         $media->paragraph_override_caption = $paragraph->field_body->view() ?? NULL;
       }
@@ -314,9 +313,7 @@ function gesso_preprocess_paragraph__floating_image_embed(&$vars) {
     } else {
       // Paragraph is not overriding the caption, so assign the image's caption to the template variable
       $vars['caption'] = $image->field_caption->view();
+      $vars['credit'] = $image->field_credit->view();
     }
-
-    // Always use the credit from the image, assign to a template variable.
-    $vars['credit'] = $image->field_credit->view();
   }
 }

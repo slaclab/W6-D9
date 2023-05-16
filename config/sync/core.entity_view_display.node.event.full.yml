@@ -210,7 +210,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: video_lightbox
+      view_mode: video_lightbox_no_caption_credit
       link: false
     third_party_settings: {  }
     weight: 11

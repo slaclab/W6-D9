@@ -248,7 +248,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'communications@slac.stanford.edu,webteam@slac.stanford.edu,jennyv@slac.stanford.edu'
+      to_mail: 'communications@slac.stanford.edu,jennyv@slac.stanford.edu'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1ae838d3ce518847605f0d5844e1478",
+    "content-hash": "a578cbdebbf97a7fb4957c2f16b38540",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2322,17 +2322,17 @@
         },
         {
             "name": "drupal/conditional_fields",
-            "version": "4.0.0-alpha2",
+            "version": "4.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/conditional_fields.git",
-                "reference": "4.0.0-alpha2"
+                "reference": "4.0.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/conditional_fields-4.0.0-alpha2.zip",
-                "reference": "4.0.0-alpha2",
-                "shasum": "acc5658cb370583449d119a4172b7e0c2d81c86a"
+                "url": "https://ftp.drupal.org/files/projects/conditional_fields-4.0.0-alpha3.zip",
+                "reference": "4.0.0-alpha3",
+                "shasum": "6024d7527bc81e45832e8d1da01792268df94224"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -2343,8 +2343,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.0-alpha2",
-                    "datestamp": "1677271425",
+                    "version": "4.0.0-alpha3",
+                    "datestamp": "1683751149",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."

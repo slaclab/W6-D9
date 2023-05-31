@@ -46,7 +46,7 @@
     "drupal/google_tag": "^2.0.2",
     "drupal/honeypot": "^2.1",
     "drupal/layout_paragraphs": "^2.0.3",
-    "drupal/lottiefiles_field": "^1.0",
+    "drupal/lottiefiles_field": "^2.0.1",
     "drupal/masquerade": "^2.0@RC",
     "drupal/media_library_edit": "3.0.2",
     "drupal/menu_block": "1.10.0",

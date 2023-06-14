@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2969f805bb91142d912be685ed6ba5d2",
+    "content-hash": "70c9a5f410fab032a9b1993afaa9600c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5939,17 +5939,17 @@
         },
         {
             "name": "drupal/sendgrid_integration",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sendgrid_integration.git",
-                "reference": "8.x-2.1"
+                "reference": "8.x-2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sendgrid_integration-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "b22be8fb60828ff5015b116ba39c65772c7475d4"
+                "url": "https://ftp.drupal.org/files/projects/sendgrid_integration-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "36d1ac9c5705d500b44139689c062bd38f181584"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
@@ -5961,8 +5961,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1677204686",
+                    "version": "8.x-2.2",
+                    "datestamp": "1684800137",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7725,30 +7725,30 @@
         },
         {
             "name": "fastglass/sendgrid",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/taz77/sendgrid-php-ng.git",
-                "reference": "6444c8f9e5448897681392ab7eb1b3e632da8d8a"
+                "reference": "7b4485d6c43be1c2b2dd357de717a5dee6eb1a7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/taz77/sendgrid-php-ng/zipball/6444c8f9e5448897681392ab7eb1b3e632da8d8a",
-                "reference": "6444c8f9e5448897681392ab7eb1b3e632da8d8a",
+                "url": "https://api.github.com/repos/taz77/sendgrid-php-ng/zipball/7b4485d6c43be1c2b2dd357de717a5dee6eb1a7b",
+                "reference": "7b4485d6c43be1c2b2dd357de717a5dee6eb1a7b",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "guzzlehttp/guzzle": "^6.3|^7.0",
-                "php": ">=7.2",
+                "php": ">=8.1",
                 "starkbank/ecdsa": "^0.0.4"
             },
             "replace": {
                 "sendgrid/sendgrid-php": "*"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8",
+                "phpunit/phpunit": "dev-main",
                 "squizlabs/php_codesniffer": "3.*",
                 "swaggest/json-diff": "^3.4",
                 "vlucas/phpdotenv": "~1.0"
@@ -7781,9 +7781,9 @@
             ],
             "support": {
                 "issues": "https://github.com/taz77/sendgrid-php-ng/issues",
-                "source": "https://github.com/taz77/sendgrid-php-ng/tree/2.0.5"
+                "source": "https://github.com/taz77/sendgrid-php-ng/tree/2.0.6"
             },
-            "time": "2022-06-08T02:04:25+00:00"
+            "time": "2023-01-10T23:58:50+00:00"
         },
         {
             "name": "gettext/gettext",

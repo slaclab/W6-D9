@@ -59,7 +59,7 @@
     "drupal/pathauto": "^1.11",
     "drupal/rabbit_hole": "^1.0.0-beta11",
     "drupal/redirect": "^1.6",
-    "drupal/redis": "^1.6.0",
+    "drupal/redis": "^1.7.0",
     "drupal/rh_media": "^1.0.0-beta11",
     "drupal/search_api": "^1.29.0",
     "drupal/search_api_best_bets": "^2.0",

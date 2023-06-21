@@ -29,7 +29,7 @@
     "drupal/core-composer-scaffold": "~9.5.9",
     "drupal/core-recommended": "~9.5.9",
     "drupal/core-vendor-hardening": "~9.5.9",
-    "drupal/cshs": "^3.6",
+    "drupal/cshs": "^4.0.0",
     "drupal/devel": "^4.1",
     "drupal/duration_field": "^2.0",
     "drupal/easy_breadcrumb": "^2.0",

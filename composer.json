@@ -40,7 +40,7 @@
     "drupal/eu_cookie_compliance": "^1.19",
     "drupal/facets": "^3",
     "drupal/field_group": "^3.2",
-    "drupal/focal_point": "^1.5",
+    "drupal/focal_point": "^2.0.0",
     "drupal/gin": "^3.0.0-rc3",
     "drupal/gin_toolbar": "^1.0.0-rc1",
     "drupal/google_tag": "^1.6.0",

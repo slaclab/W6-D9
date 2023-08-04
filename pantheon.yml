@@ -4,4 +4,4 @@ api_version: 1
 build_step: true
 search:
   version: 8
-php_version: 8.0
+php_version: 8.1

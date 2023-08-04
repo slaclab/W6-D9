@@ -1914,14 +1914,6 @@
             ],
             "authors": [
                 {
-                    "name": "Greg Boggs",
-                    "homepage": "https://www.drupal.org/user/153069"
-                },
-                {
-                    "name": "andrei.colesnic",
-                    "homepage": "https://www.drupal.org/user/3272384"
-                },
-                {
                     "name": "bdimaggio",
                     "homepage": "https://www.drupal.org/user/70688"
                 },
@@ -1930,12 +1922,24 @@
                     "homepage": "https://www.drupal.org/user/1682976"
                 },
                 {
+                    "name": "Greg Boggs",
+                    "homepage": "https://www.drupal.org/user/153069"
+                },
+                {
+                    "name": "kescoto-thinkshout",
+                    "homepage": "https://www.drupal.org/user/3664824"
+                },
+                {
                     "name": "levelos",
                     "homepage": "https://www.drupal.org/user/54135"
                 },
                 {
                     "name": "tauno",
                     "homepage": "https://www.drupal.org/user/105595"
+                },
+                {
+                    "name": "the.tai.pen@gmail.com",
+                    "homepage": "https://www.drupal.org/user/3272384"
                 },
                 {
                     "name": "wxactly",
@@ -3297,7 +3301,7 @@
                     "homepage": "https://www.drupal.org/user/3094661"
                 },
                 {
-                    "name": "RenatoG",
+                    "name": "renatog",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
@@ -4797,6 +4801,10 @@
                     "name": "Mykhailo Gurei",
                     "homepage": "https://www.drupal.org/u/ozin",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "voleger",
+                    "homepage": "https://www.drupal.org/user/3260314"
                 }
             ],
             "description": "Provide an additional custom fields which can be used on Menu link",

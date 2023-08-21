@@ -106,3 +106,5 @@ composer-manifest.yaml
 
 # Ignore the private folder
 /private/
+
+# Empty commit

@@ -15,9 +15,6 @@
       "Multiple blocks on a page share settings": "https://www.drupal.org/files/issues/2021-06-07/viewsreference_filter-shared_config-3132416-8.patch",
       "Taxonomy autocomplete shows Array after settings are saved": "https://www.drupal.org/files/issues/2021-03-26/viewsreference_filter-autocomplete_problems-and-sort-combined-3201294-6--3168765-4.patch"
     },
-    "drupal/entity_reference_revisions": {
-      "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
-    },
     "drupal/search_api_best_bets": {
       "Fix Java error. https://www.drupal.org/project/search_api_best_bets/issues/3124980": "https://www.drupal.org/files/issues/2023-01-19/search_api_best_bets-3124980-19.patch"
     },
